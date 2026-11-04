@@ -1,0 +1,650 @@
+{
+ "examples": [
+  {
+   "def": "Photo",
+   "note": "แม่วันรับปริญญา",
+   "value": {
+    "id": "p01",
+    "title_th": "แม่วันรับปริญญา",
+    "year_est": 1989,
+    "is_bw": false,
+    "px_w": 900,
+    "px_h": 1260,
+    "faces": 1,
+    "people": [
+     "แม่"
+    ],
+    "scan": {
+     "scratches": 0.6,
+     "fading": 0.8,
+     "tears": 0.3,
+     "blur": 0.4,
+     "stains": 0.5
+    },
+    "skewed": true,
+    "glare": true
+   }
+  },
+  {
+   "def": "DamageReport",
+   "note": "",
+   "value": {
+    "photo_id": "p01",
+    "score": 52,
+    "level": "heavy",
+    "level_th": "หนัก"
+   }
+  },
+  {
+   "def": "RestorePlan",
+   "note": "",
+   "value": {
+    "photo_id": "p01",
+    "steps": [
+     "perspective",
+     "deglare",
+     "repair",
+     "denoise",
+     "face_enhance",
+     "sharpen",
+     "upscale"
+    ],
+    "upscale_factor": 2
+   }
+  },
+  {
+   "def": "PrintOptions",
+   "note": "p01 after x2",
+   "value": {
+    "4x6": {
+     "dpi": 421,
+     "ok": true
+    },
+    "5x7": {
+     "dpi": 359,
+     "ok": true
+    },
+    "8x10": {
+     "dpi": 225,
+     "ok": true
+    },
+    "A4": {
+     "dpi": 215,
+     "ok": true
+    }
+   }
+  },
+  {
+   "def": "Photo",
+   "note": "ตายายวันแต่งงาน",
+   "value": {
+    "id": "p02",
+    "title_th": "ตายายวันแต่งงาน",
+    "year_est": 1962,
+    "is_bw": true,
+    "px_w": 700,
+    "px_h": 980,
+    "faces": 2,
+    "people": [
+     "ตา",
+     "ยาย"
+    ],
+    "scan": {
+     "scratches": 0.8,
+     "fading": 0.6,
+     "tears": 0.7,
+     "blur": 0.5,
+     "stains": 0.6
+    },
+    "skewed": false,
+    "glare": false
+   }
+  },
+  {
+   "def": "DamageReport",
+   "note": "",
+   "value": {
+    "photo_id": "p02",
+    "score": 66,
+    "level": "heavy",
+    "level_th": "หนัก"
+   }
+  },
+  {
+   "def": "RestorePlan",
+   "note": "",
+   "value": {
+    "photo_id": "p02",
+    "steps": [
+     "repair",
+     "denoise",
+     "face_enhance",
+     "sharpen",
+     "colorize",
+     "upscale"
+    ],
+    "upscale_factor": 4
+   }
+  },
+  {
+   "def": "PrintOptions",
+   "note": "p02 after x4",
+   "value": {
+    "4x6": {
+     "dpi": 655,
+     "ok": true
+    },
+    "5x7": {
+     "dpi": 559,
+     "ok": true
+    },
+    "8x10": {
+     "dpi": 350,
+     "ok": true
+    },
+    "A4": {
+     "dpi": 335,
+     "ok": true
+    }
+   }
+  },
+  {
+   "def": "Photo",
+   "note": "พ่อแม่ที่บางแสน",
+   "value": {
+    "id": "p03",
+    "title_th": "พ่อแม่ที่บางแสน",
+    "year_est": 1993,
+    "is_bw": false,
+    "px_w": 2400,
+    "px_h": 1600,
+    "faces": 2,
+    "people": [
+     "พ่อ",
+     "แม่"
+    ],
+    "scan": {
+     "scratches": 0.1,
+     "fading": 0.3,
+     "tears": 0.0,
+     "blur": 0.1,
+     "stains": 0.0
+    },
+    "skewed": false,
+    "glare": true
+   }
+  },
+  {
+   "def": "DamageReport",
+   "note": "",
+   "value": {
+    "photo_id": "p03",
+    "score": 10,
+    "level": "light",
+    "level_th": "เบา"
+   }
+  },
+  {
+   "def": "RestorePlan",
+   "note": "",
+   "value": {
+    "photo_id": "p03",
+    "steps": [
+     "deglare",
+     "repair",
+     "denoise",
+     "face_enhance",
+     "sharpen"
+    ],
+    "upscale_factor": 2
+   }
+  },
+  {
+   "def": "PrintOptions",
+   "note": "p03 after x2",
+   "value": {
+    "4x6": {
+     "dpi": 796,
+     "ok": true
+    },
+    "5x7": {
+     "dpi": 640,
+     "ok": true
+    },
+    "8x10": {
+     "dpi": 400,
+     "ok": true
+    },
+    "A4": {
+     "dpi": 387,
+     "ok": true
+    }
+   }
+  },
+  {
+   "def": "Photo",
+   "note": "ต้นตอน 1 ขวบ",
+   "value": {
+    "id": "p04",
+    "title_th": "ต้นตอน 1 ขวบ",
+    "year_est": 1998,
+    "is_bw": false,
+    "px_w": 1500,
+    "px_h": 1000,
+    "faces": 1,
+    "people": [
+     "ต้น"
+    ],
+    "scan": {
+     "scratches": 0.0,
+     "fading": 0.1,
+     "tears": 0.0,
+     "blur": 0.05,
+     "stains": 0.0
+    },
+    "skewed": false,
+    "glare": false
+   }
+  },
+  {
+   "def": "DamageReport",
+   "note": "",
+   "value": {
+    "photo_id": "p04",
+    "score": 3,
+    "level": "light",
+    "level_th": "เบา"
+   }
+  },
+  {
+   "def": "RestorePlan",
+   "note": "",
+   "value": {
+    "photo_id": "p04",
+    "steps": [
+     "face_enhance",
+     "sharpen",
+     "upscale"
+    ],
+    "upscale_factor": 2
+   }
+  },
+  {
+   "def": "PrintOptions",
+   "note": "p04 after x2",
+   "value": {
+    "4x6": {
+     "dpi": 498,
+     "ok": true
+    },
+    "5x7": {
+     "dpi": 400,
+     "ok": true
+    },
+    "8x10": {
+     "dpi": 250,
+     "ok": true
+    },
+    "A4": {
+     "dpi": 241,
+     "ok": true
+    }
+   }
+  },
+  {
+   "def": "Photo",
+   "note": "บ้านเก่าที่ต่างจังหวัด",
+   "value": {
+    "id": "p05",
+    "title_th": "บ้านเก่าที่ต่างจังหวัด",
+    "year_est": null,
+    "is_bw": true,
+    "px_w": 1100,
+    "px_h": 800,
+    "faces": 0,
+    "people": [],
+    "scan": {
+     "scratches": 0.4,
+     "fading": 0.5,
+     "tears": 0.1,
+     "blur": 0.3,
+     "stains": 0.2
+    },
+    "skewed": true,
+    "glare": false
+   }
+  },
+  {
+   "def": "DamageReport",
+   "note": "",
+   "value": {
+    "photo_id": "p05",
+    "score": 30,
+    "level": "medium",
+    "level_th": "กลาง"
+   }
+  },
+  {
+   "def": "RestorePlan",
+   "note": "",
+   "value": {
+    "photo_id": "p05",
+    "steps": [
+     "perspective",
+     "repair",
+     "denoise",
+     "sharpen",
+     "colorize",
+     "upscale"
+    ],
+    "upscale_factor": 4
+   }
+  },
+  {
+   "def": "PrintOptions",
+   "note": "p05 after x4",
+   "value": {
+    "4x6": {
+     "dpi": 735,
+     "ok": true
+    },
+    "5x7": {
+     "dpi": 627,
+     "ok": true
+    },
+    "8x10": {
+     "dpi": 400,
+     "ok": true
+    },
+    "A4": {
+     "dpi": 376,
+     "ok": true
+    }
+   }
+  },
+  {
+   "def": "PrintOptions",
+   "note": "p02 raw scan before upscale",
+   "value": {
+    "4x6": {
+     "dpi": 163,
+     "ok": false
+    },
+    "5x7": {
+     "dpi": 139,
+     "ok": false
+    },
+    "8x10": {
+     "dpi": 87,
+     "ok": false
+    },
+    "A4": {
+     "dpi": 83,
+     "ok": false
+    }
+   }
+  },
+  {
+   "def": "ScanExtract",
+   "note": "",
+   "value": {
+    "photo_found": true,
+    "corners": [
+     [
+      0.08,
+      0.06
+     ],
+     [
+      0.93,
+      0.05
+     ],
+     [
+      0.95,
+      0.94
+     ],
+     [
+      0.06,
+      0.96
+     ]
+    ],
+    "glare": false,
+    "is_bw": true,
+    "faces": 2,
+    "damage": {
+     "scratches": 0.8,
+     "fading": 0.6,
+     "tears": 0.7,
+     "blur": 0.5,
+     "stains": 0.6
+    },
+    "year_est": 1962,
+    "year_confidence": 0.55,
+    "era_clues_th": [
+     "ชุดไทยแต่งงานทรงยุคก่อน",
+     "ขอบรูปหยัก",
+     "ฟิล์มขาวดำ"
+    ],
+    "retake_reason_th": null
+   }
+  },
+  {
+   "def": "ScanExtract",
+   "note": "retake",
+   "value": {
+    "photo_found": false,
+    "corners": null,
+    "glare": true,
+    "is_bw": false,
+    "faces": 0,
+    "damage": {
+     "scratches": 0,
+     "fading": 0,
+     "tears": 0,
+     "blur": 0,
+     "stains": 0
+    },
+    "year_est": null,
+    "year_confidence": 0,
+    "era_clues_th": [],
+    "retake_reason_th": "แสงสะท้อนบังรูป ลองเอียงมือถือ 15° หรือปิดไฟเพดาน"
+   }
+  },
+  {
+   "def": "RestoreJob",
+   "note": "",
+   "value": {
+    "photo_id": "p02",
+    "status": "done",
+    "steps_done": [
+     "repair",
+     "denoise",
+     "face_enhance",
+     "sharpen",
+     "colorize",
+     "upscale"
+    ],
+    "before_url": "local://p02_before.jpg",
+    "after_url": "local://p02_after.jpg",
+    "identity_check": "pass",
+    "note_th": null
+   }
+  },
+  {
+   "def": "RestoreJob",
+   "note": "identity guard",
+   "value": {
+    "photo_id": "p01",
+    "status": "failed",
+    "steps_done": [
+     "perspective",
+     "deglare",
+     "repair"
+    ],
+    "before_url": "local://p01_before.jpg",
+    "after_url": null,
+    "identity_check": "fail",
+    "note_th": "หน้าเปลี่ยนเกินไป ใช้ผลแบบไม่เสริมหน้าแทน"
+   }
+  },
+  {
+   "def": "TimelineGroup",
+   "note": "",
+   "value": {
+    "decade": 1960,
+    "label_th": "ยุค 2503s (ค.ศ. 1960s)",
+    "ids": [
+     "p02"
+    ]
+   }
+  },
+  {
+   "def": "TimelineGroup",
+   "note": "",
+   "value": {
+    "decade": 1980,
+    "label_th": "ยุค 2523s (ค.ศ. 1980s)",
+    "ids": [
+     "p01"
+    ]
+   }
+  },
+  {
+   "def": "TimelineGroup",
+   "note": "",
+   "value": {
+    "decade": 1990,
+    "label_th": "ยุค 2533s (ค.ศ. 1990s)",
+    "ids": [
+     "p03",
+     "p04"
+    ]
+   }
+  },
+  {
+   "def": "TimelineGroup",
+   "note": "",
+   "value": {
+    "decade": null,
+    "label_th": "ไม่ทราบปี",
+    "ids": [
+     "p05"
+    ]
+   }
+  },
+  {
+   "def": "PeopleIndex",
+   "note": "",
+   "value": {
+    "แม่": [
+     "p01",
+     "p03"
+    ],
+    "ตา": [
+     "p02"
+    ],
+    "ต้น": [
+     "p04"
+    ],
+    "พ่อ": [
+     "p03"
+    ],
+    "ยาย": [
+     "p02"
+    ]
+   }
+  },
+  {
+   "def": "ThenNow",
+   "note": "",
+   "value": {
+    "person": "แม่",
+    "then_photo_id": "p01",
+    "now_photo_url": "local://mom_2026.jpg",
+    "caption_th": "แม่ ปี 2532 → 2569 (37 ปี)"
+   }
+  },
+  {
+   "def": "VoiceStory",
+   "note": "",
+   "value": {
+    "photo_id": "p02",
+    "audio_url": "local://p02_story.m4a",
+    "duration_s": 74,
+    "transcript_th": "(ตัวอย่าง) ยายเล่าว่าวันนั้นฝนตกทั้งวัน แต่ตาก็ยังมาตรงเวลา",
+    "teller": "แม่"
+   }
+  },
+  {
+   "def": "MotionRequest",
+   "note": "",
+   "value": {
+    "photo_id": "p02",
+    "person_status": "deceased",
+    "consent": true,
+    "allowed": true
+   }
+  },
+  {
+   "def": "MotionRequest",
+   "note": "",
+   "value": {
+    "photo_id": "p02",
+    "person_status": "living",
+    "consent": false,
+    "allowed": false
+   }
+  },
+  {
+   "def": "MotionRequest",
+   "note": "",
+   "value": {
+    "photo_id": "p02",
+    "person_status": "minor",
+    "consent": true,
+    "allowed": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free day, 2 used",
+   "value": {
+    "allowed": 1,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "",
+   "value": {
+    "allowed": 1,
+    "left_after": 2,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "",
+   "value": {
+    "title_th": "ตายายวันแต่งงาน",
+    "headline_th": "รูปอายุ 64 ปี · ซ่อมจากความเสียหาย 66%",
+    "badges": [
+     "repair",
+     "face_enhance",
+     "colorize"
+    ],
+    "watermark": "AI restored · MemoryFix",
+    "cta_th": "ลองซ่อมรูปบ้านคุณ ลิงก์ในไบโอ"
+   }
+  }
+ ]
+}

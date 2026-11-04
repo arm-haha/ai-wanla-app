@@ -1,0 +1,558 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/memoryfix.schema.json",
+ "title": "MemoryFix",
+ "$defs": {
+  "Photo": {
+   "type": "object",
+   "required": [
+    "id",
+    "title_th",
+    "year_est",
+    "is_bw",
+    "px_w",
+    "px_h",
+    "faces",
+    "people",
+    "scan",
+    "skewed",
+    "glare"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^p[0-9]{2,}$"
+    },
+    "title_th": {
+     "type": "string"
+    },
+    "year_est": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 1850,
+     "maximum": 2030
+    },
+    "is_bw": {
+     "type": "boolean"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "faces": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "people": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "scan": {
+     "type": "object",
+     "required": [
+      "scratches",
+      "fading",
+      "tears",
+      "blur",
+      "stains"
+     ],
+     "properties": {
+      "scratches": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "fading": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "tears": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "blur": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "stains": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     },
+     "additionalProperties": false
+    },
+    "skewed": {
+     "type": "boolean"
+    },
+    "glare": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanExtract": {
+   "type": "object",
+   "required": [
+    "photo_found",
+    "corners",
+    "glare",
+    "is_bw",
+    "faces",
+    "damage",
+    "year_est",
+    "year_confidence",
+    "era_clues_th",
+    "retake_reason_th"
+   ],
+   "properties": {
+    "photo_found": {
+     "type": "boolean"
+    },
+    "corners": {
+     "type": [
+      "array",
+      "null"
+     ],
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+     },
+     "minItems": 4,
+     "maxItems": 4
+    },
+    "glare": {
+     "type": "boolean"
+    },
+    "is_bw": {
+     "type": "boolean"
+    },
+    "faces": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "damage": {
+     "type": "object",
+     "required": [
+      "scratches",
+      "fading",
+      "tears",
+      "blur",
+      "stains"
+     ],
+     "properties": {
+      "scratches": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "fading": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "tears": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "blur": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "stains": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     },
+     "additionalProperties": false
+    },
+    "year_est": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 1850,
+     "maximum": 2030
+    },
+    "year_confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "era_clues_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "retake_reason_th": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "DamageReport": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "score",
+    "level",
+    "level_th"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "level": {
+     "enum": [
+      "light",
+      "medium",
+      "heavy",
+      "severe"
+     ]
+    },
+    "level_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "RestorePlan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "steps",
+    "upscale_factor"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "perspective",
+       "deglare",
+       "repair",
+       "denoise",
+       "face_enhance",
+       "sharpen",
+       "colorize",
+       "upscale"
+      ]
+     },
+     "uniqueItems": true
+    },
+    "upscale_factor": {
+     "enum": [
+      1,
+      2,
+      4
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "RestoreJob": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "status",
+    "steps_done",
+    "before_url",
+    "after_url"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "status": {
+     "enum": [
+      "queued",
+      "running",
+      "done",
+      "failed",
+      "blocked"
+     ]
+    },
+    "steps_done": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "perspective",
+       "deglare",
+       "repair",
+       "denoise",
+       "face_enhance",
+       "sharpen",
+       "colorize",
+       "upscale"
+      ]
+     }
+    },
+    "before_url": {
+     "type": "string"
+    },
+    "after_url": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "identity_check": {
+     "enum": [
+      "pass",
+      "fail",
+      "skipped"
+     ]
+    },
+    "note_th": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "PrintOption": {
+   "type": "object",
+   "required": [
+    "dpi",
+    "ok"
+   ],
+   "properties": {
+    "dpi": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "ok": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PrintOptions": {
+   "type": "object",
+   "propertyNames": {
+    "enum": [
+     "4x6",
+     "5x7",
+     "8x10",
+     "A4"
+    ]
+   },
+   "additionalProperties": {
+    "$ref": "#/$defs/PrintOption"
+   }
+  },
+  "TimelineGroup": {
+   "type": "object",
+   "required": [
+    "decade",
+    "label_th",
+    "ids"
+   ],
+   "properties": {
+    "decade": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "ids": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "PeopleIndex": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "array",
+    "items": {
+     "type": "string"
+    }
+   }
+  },
+  "ThenNow": {
+   "type": "object",
+   "required": [
+    "person",
+    "then_photo_id",
+    "now_photo_url",
+    "caption_th"
+   ],
+   "properties": {
+    "person": {
+     "type": "string"
+    },
+    "then_photo_id": {
+     "type": "string"
+    },
+    "now_photo_url": {
+     "type": "string"
+    },
+    "caption_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "VoiceStory": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "audio_url",
+    "duration_s",
+    "transcript_th"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "audio_url": {
+     "type": "string"
+    },
+    "duration_s": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 180
+    },
+    "transcript_th": {
+     "type": "string"
+    },
+    "teller": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "MotionRequest": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "person_status",
+    "consent",
+    "allowed"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "person_status": {
+     "enum": [
+      "deceased",
+      "living",
+      "minor"
+     ]
+    },
+    "consent": {
+     "type": "boolean"
+    },
+    "allowed": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "badges",
+    "watermark",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "badges": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "perspective",
+       "deglare",
+       "repair",
+       "denoise",
+       "face_enhance",
+       "sharpen",
+       "colorize",
+       "upscale"
+      ]
+     }
+    },
+    "watermark": {
+     "const": "AI restored · MemoryFix"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
