@@ -1,0 +1,1149 @@
+{
+  "meta": {
+    "app": "BiteLog",
+    "channel": "AI วันละแอป",
+    "day_index": 3,
+    "total_days": 10,
+    "date": "2026-09-30",
+    "timezone": "Asia/Bangkok",
+    "hook_th": "ถ่ายอาหาร → รู้แคลอรี่และมื้อไทย ใน 10 วินาที",
+    "stack": "Next.js 14 App Router + TypeScript + Tailwind + shadcn/ui + mock_demo vision + localStorage",
+    "brand": {
+      "bg": "#FFF7ED",
+      "accent": "#F97316",
+      "healthy": "#22C55E",
+      "ink": "#1C1917",
+      "muted": "#78716C"
+    },
+    "disclaimer_th": "ตัวเลขในตัวอย่างเป็นประมาณการเพื่อเดโมและบันทึกส่วนตัว ไม่ใช่คำแนะนำทางการแพทย์หรือผลวิเคราะห์ทางห้องปฏิบัติการ"
+  },
+  "feature_checklist_example": {
+    "app": "BiteLog",
+    "date": "2026-09-30",
+    "must_implemented_count": 5,
+    "ready_to_film": true,
+    "features": [
+      {
+        "id": "photo_bite_scan",
+        "name_th": "Photo Bite Scan",
+        "name_en": "Photo Bite Scan",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "ปุ่มใช้รูปเดโม + การ์ดผลเมนูไทย+kcal ใน ≤2s"
+      },
+      {
+        "id": "thai_food_library",
+        "name_th": "Thai Food Library",
+        "name_en": "Thai Food Library",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "ค้นหาได้อย่างน้อยข้าวผัด ส้มตำ ชาไทย"
+      },
+      {
+        "id": "daily_macro_dashboard",
+        "name_th": "Daily Macro Dashboard",
+        "name_en": "Daily Macro Dashboard",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "วงแหวน kcal + แถบ P/C/F + ไทม์ไลน์มื้อ"
+      },
+      {
+        "id": "quick_add_favorites",
+        "name_th": "Quick Add & Favorites",
+        "name_en": "Quick Add & Favorites",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": false,
+        "notes": "โชว์สั้นในคลิปได้ถ้าเวลาเหลือ — ต้องใช้ได้จริง"
+      },
+      {
+        "id": "share_progress_card",
+        "name_th": "Share Progress Card",
+        "name_en": "Share Progress Card",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "การ์ดวัน+แคปชันคัดลอกได้บนมือถือ"
+      },
+      {
+        "id": "water_tracker",
+        "name_th": "Water tracker",
+        "name_en": "Water tracker",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": "เสริมถ้าเสร็จเร็ว"
+      },
+      {
+        "id": "meal_tags",
+        "name_th": "Meal tags",
+        "name_en": "Meal tags",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": "เช้า/กลางวัน/เย็น/ของว่าง"
+      },
+      {
+        "id": "weekly_chart",
+        "name_th": "Weekly chart",
+        "name_en": "Weekly chart",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": ""
+      },
+      {
+        "id": "streak_reminders",
+        "name_th": "Streak & gentle reminders",
+        "name_en": "Streak & gentle reminders",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": "โทนอ่อนโยนเท่านั้น"
+      },
+      {
+        "id": "offline_history",
+        "name_th": "Offline localStorage history",
+        "name_en": "Offline localStorage history",
+        "tier": "nice",
+        "implemented": true,
+        "demo_in_reel": false,
+        "notes": "เก็บ daily logs ท้องถิ่นเป็นค่าเริ่ม"
+      }
+    ]
+  },
+  "ui_copy_th": {
+    "home_headline": "ถ่ายอาหาร → รู้แคลอรี่และมื้อไทย ใน 10 วินาที",
+    "home_sub": "บันทึกมื้อไทยแบบสบายๆ ดูแมโครรายวัน แล้วแชร์การ์ดความคืบหน้าได้เลย",
+    "home_cta": "ถ่ายมื้อนี้",
+    "home_demo_cta": "ใช้รูปเดโม",
+    "scan_loading": "กำลังดูมื้อนี้…",
+    "scan_done": "ได้ประมาณการแล้ว — ปรับปริมาณได้",
+    "scan_fail": "อ่านรูปไม่สำเร็จ ลองถ่ายใหม่หรือค้นจากไลบรารี",
+    "scan_low_confidence": "ยังไม่แน่ใจเต็มที่ — ช่วยเลือกเมนูให้ตรงขึ้นได้",
+    "confirm_cta": "บันทึกมื้อนี้",
+    "confirm_edit_name": "แก้ชื่อเมนู",
+    "portion_minus": "ลดปริมาณ",
+    "portion_plus": "เพิ่มปริมาณ",
+    "logged_toast": "บันทึกมื้อแล้ว แดชบอร์ดอัปเดตแล้ว",
+    "library_title": "ไลบรารีอาหารไทย",
+    "library_placeholder": "ค้นหา เช่น ก๋วยเตี๋ยว ส้มตำ ชาไทย",
+    "library_empty": "ไม่เจอเมนูนี้ ลองคำอื่นหรือถ่ายรูปแทน",
+    "favorite_added": "บันทึกเป็นรายการโปรดแล้ว",
+    "quick_add_done": "เพิ่มมื้อโปรดแล้ว",
+    "dashboard_title": "มื้อวันนี้",
+    "dashboard_remaining": "เหลืออีก {kcal} kcal",
+    "over_target_gentle": "วันนี้เกินเป้าเล็กน้อย — ไม่เป็นไร พรุ่งนี้เริ่มใหม่ได้",
+    "empty_dashboard": "ยังไม่มีมื้อวันนี้ — ถ่ายจานแรกเลย",
+    "share_title": "แชร์ความคืบหน้า",
+    "share_copied": "คัดลอกแคปชันแล้ว",
+    "share_fail": "แชร์ไม่สำเร็จ ลองบันทึกรูปแทน",
+    "water_add": "เพิ่มน้ำ +250 ml",
+    "disclaimer": "ตัวเลขเป็นประมาณการเพื่อบันทึกส่วนตัว ไม่ใช่คำแนะนำทางการแพทย์",
+    "streak_gentle": "ต่อเนื่อง {days} วันแล้ว เก่งมาก",
+    "cta_comment": "คอมเมนต์「แคล」เพื่อรับลิงก์"
+  },
+  "macro_targets_example": {
+    "kcal": 2000,
+    "protein_g": 100,
+    "carb_g": 250,
+    "fat_g": 65,
+    "water_ml": 2000,
+    "label_th": "ทั่วไป",
+    "updated_at": "2026-09-30T07:30:00+07:00"
+  },
+  "meal_scan_example": {
+    "engine": "mock_demo",
+    "raw_note": "fixture เดโมจานข้าวผัดกุ้งไข่ดาว แสงธรรมชาติ มุม Overhead",
+    "scan_ms": 1120,
+    "confidence": 0.86,
+    "detected_name_th": "ข้าวผัดกุ้งไข่ดาว",
+    "detected_name_en": "Shrimp fried rice with fried egg",
+    "nutrients": {
+      "kcal": 720,
+      "protein_g": 32,
+      "carb_g": 78,
+      "fat_g": 28,
+      "fiber_g": 3
+    },
+    "portion": {
+      "unit": "plate",
+      "amount": 1,
+      "step": 0.25,
+      "label_th": "จาน",
+      "grams_estimate": 420
+    },
+    "items": [
+      {
+        "food_item_id": "food_khao_pad_kung",
+        "name_th": "ข้าวผัดกุ้ง",
+        "name_en": "Shrimp fried rice",
+        "confidence": 0.88,
+        "nutrients": {
+          "kcal": 560,
+          "protein_g": 24,
+          "carb_g": 70,
+          "fat_g": 18
+        },
+        "typical_portion": {
+          "unit": "plate",
+          "amount": 1,
+          "label_th": "จาน",
+          "step": 0.25
+        },
+        "bounding_hint": "center-plate"
+      },
+      {
+        "food_item_id": "food_kai_dao",
+        "name_th": "ไข่ดาว",
+        "name_en": "Fried egg",
+        "confidence": 0.91,
+        "nutrients": {
+          "kcal": 160,
+          "protein_g": 8,
+          "carb_g": 8,
+          "fat_g": 10
+        },
+        "typical_portion": {
+          "unit": "piece",
+          "amount": 1,
+          "label_th": "ฟอง",
+          "step": 1
+        },
+        "bounding_hint": "top-right"
+      }
+    ],
+    "alternatives": [
+      {
+        "name_th": "ข้าวผัดกุ้ง",
+        "confidence": 0.72,
+        "nutrients": {
+          "kcal": 560,
+          "protein_g": 24,
+          "carb_g": 70,
+          "fat_g": 18
+        },
+        "typical_portion": {
+          "unit": "plate",
+          "amount": 1,
+          "label_th": "จาน"
+        }
+      },
+      {
+        "name_th": "ข้าวผัดไข่",
+        "confidence": 0.61,
+        "nutrients": {
+          "kcal": 520,
+          "protein_g": 16,
+          "carb_g": 68,
+          "fat_g": 20
+        },
+        "typical_portion": {
+          "unit": "plate",
+          "amount": 1,
+          "label_th": "จาน"
+        }
+      },
+      {
+        "name_th": "ข้าวผัดทะเล",
+        "confidence": 0.48,
+        "nutrients": {
+          "kcal": 610,
+          "protein_g": 28,
+          "carb_g": 72,
+          "fat_g": 22
+        },
+        "typical_portion": {
+          "unit": "plate",
+          "amount": 1,
+          "label_th": "จาน"
+        }
+      }
+    ],
+    "image_data_url": "/fixtures/demo-meal-fried-rice.jpg",
+    "disclaimer_th": "ตัวเลขเป็นประมาณการเพื่อบันทึกส่วนตัว ไม่ใช่คำแนะนำทางการแพทย์",
+    "scanned_at": "2026-09-30T12:18:00+07:00"
+  },
+  "thai_food_library_sample": [
+    {
+      "id": "food_kuay_tiew_ruea",
+      "name_th": "ก๋วยเตี๋ยวเรือหมู",
+      "name_en": "Boat noodles with pork",
+      "category": "noodle",
+      "tags": [
+        "กลางวัน",
+        "เย็น",
+        "น้ำ"
+      ],
+      "search_aliases": [
+        "ก๋วยเตี๋ยว",
+        "เรือ",
+        "ก๋วยเตี๋ยวหมู"
+      ],
+      "typical_portion": {
+        "unit": "bowl",
+        "amount": 1,
+        "label_th": "ชาม",
+        "step": 0.5,
+        "grams_estimate": 350
+      },
+      "nutrients": {
+        "kcal": 380,
+        "protein_g": 18,
+        "carb_g": 48,
+        "fat_g": 12
+      },
+      "emoji": "🍜",
+      "is_preset": true,
+      "notes_th": "ประมาณการสูตรเรือทั่วไป ไม่รวมเครื่องเคียงพิเศษ"
+    },
+    {
+      "id": "food_khao_pad_kung",
+      "name_th": "ข้าวผัดกุ้ง",
+      "name_en": "Shrimp fried rice",
+      "category": "rice",
+      "tags": [
+        "จานเดียว",
+        "กลางวัน"
+      ],
+      "search_aliases": [
+        "ข้าวผัด",
+        "ผัดกุ้ง"
+      ],
+      "typical_portion": {
+        "unit": "plate",
+        "amount": 1,
+        "label_th": "จาน",
+        "step": 0.25,
+        "grams_estimate": 380
+      },
+      "nutrients": {
+        "kcal": 560,
+        "protein_g": 24,
+        "carb_g": 70,
+        "fat_g": 18
+      },
+      "emoji": "🍤",
+      "is_preset": true
+    },
+    {
+      "id": "food_khao_pad_kung_egg",
+      "name_th": "ข้าวผัดกุ้งไข่ดาว",
+      "name_en": "Shrimp fried rice with fried egg",
+      "category": "rice",
+      "tags": [
+        "จานเดียว",
+        "เดโม"
+      ],
+      "search_aliases": [
+        "ข้าวผัดกุ้ง",
+        "ไข่ดาว"
+      ],
+      "typical_portion": {
+        "unit": "plate",
+        "amount": 1,
+        "label_th": "จาน",
+        "step": 0.25,
+        "grams_estimate": 420
+      },
+      "nutrients": {
+        "kcal": 720,
+        "protein_g": 32,
+        "carb_g": 78,
+        "fat_g": 28
+      },
+      "emoji": "🍳",
+      "is_preset": true,
+      "notes_th": "คอมโบเดโมหลักสำหรับ Reel"
+    },
+    {
+      "id": "food_som_tum_thai",
+      "name_th": "ส้มตำไทย",
+      "name_en": "Som tum Thai",
+      "category": "salad",
+      "tags": [
+        "เผ็ด",
+        "กลางวัน",
+        "เย็น"
+      ],
+      "search_aliases": [
+        "ส้มตำ",
+        "ตำไทย"
+      ],
+      "typical_portion": {
+        "unit": "plate",
+        "amount": 1,
+        "label_th": "จาน",
+        "step": 0.5,
+        "grams_estimate": 250
+      },
+      "nutrients": {
+        "kcal": 180,
+        "protein_g": 6,
+        "carb_g": 28,
+        "fat_g": 5
+      },
+      "emoji": "🥗",
+      "is_preset": true
+    },
+    {
+      "id": "food_gai_yang",
+      "name_th": "ไก่ย่าง",
+      "name_en": "Grilled chicken",
+      "category": "grill",
+      "tags": [
+        "โปรตีน",
+        "เย็น"
+      ],
+      "search_aliases": [
+        "ไก่",
+        "ย่าง"
+      ],
+      "typical_portion": {
+        "unit": "serving",
+        "amount": 1,
+        "label_th": "ชุด",
+        "step": 0.5,
+        "grams_estimate": 200
+      },
+      "nutrients": {
+        "kcal": 320,
+        "protein_g": 36,
+        "carb_g": 4,
+        "fat_g": 18
+      },
+      "emoji": "🍗",
+      "is_preset": true
+    },
+    {
+      "id": "food_pad_thai",
+      "name_th": "ผัดไทยกุ้ง",
+      "name_en": "Pad Thai with shrimp",
+      "category": "noodle",
+      "tags": [
+        "จานเดียว",
+        "กลางวัน"
+      ],
+      "search_aliases": [
+        "ผัดไทย",
+        "pad thai"
+      ],
+      "typical_portion": {
+        "unit": "plate",
+        "amount": 1,
+        "label_th": "จาน",
+        "step": 0.25,
+        "grams_estimate": 400
+      },
+      "nutrients": {
+        "kcal": 540,
+        "protein_g": 22,
+        "carb_g": 72,
+        "fat_g": 18
+      },
+      "emoji": "🍝",
+      "is_preset": true
+    },
+    {
+      "id": "food_tom_yum_kung",
+      "name_th": "ต้มยำกุ้งน้ำข้น",
+      "name_en": "Tom yum goong (creamy)",
+      "category": "soup",
+      "tags": [
+        "เผ็ด",
+        "เย็น"
+      ],
+      "search_aliases": [
+        "ต้มยำ",
+        "ต้มยำกุ้ง"
+      ],
+      "typical_portion": {
+        "unit": "bowl",
+        "amount": 1,
+        "label_th": "ชาม",
+        "step": 0.5,
+        "grams_estimate": 350
+      },
+      "nutrients": {
+        "kcal": 280,
+        "protein_g": 20,
+        "carb_g": 12,
+        "fat_g": 16
+      },
+      "emoji": "🍲",
+      "is_preset": true
+    },
+    {
+      "id": "food_khao_man_gai",
+      "name_th": "ข้าวมันไก่",
+      "name_en": "Chicken rice",
+      "category": "rice",
+      "tags": [
+        "จานเดียว",
+        "กลางวัน"
+      ],
+      "search_aliases": [
+        "ข้าวมัน",
+        "ข้าวมันไก่"
+      ],
+      "typical_portion": {
+        "unit": "plate",
+        "amount": 1,
+        "label_th": "จาน",
+        "step": 0.25,
+        "grams_estimate": 400
+      },
+      "nutrients": {
+        "kcal": 610,
+        "protein_g": 28,
+        "carb_g": 68,
+        "fat_g": 24
+      },
+      "emoji": "🍚",
+      "is_preset": true
+    },
+    {
+      "id": "food_cha_thai",
+      "name_th": "ชาไทยเย็น",
+      "name_en": "Thai iced tea",
+      "category": "drink",
+      "tags": [
+        "เครื่องดื่ม",
+        "ของว่าง"
+      ],
+      "search_aliases": [
+        "ชาไทย",
+        "ชาเย็น"
+      ],
+      "typical_portion": {
+        "unit": "glass",
+        "amount": 1,
+        "label_th": "แก้ว",
+        "step": 0.5,
+        "grams_estimate": 250
+      },
+      "nutrients": {
+        "kcal": 220,
+        "protein_g": 2,
+        "carb_g": 36,
+        "fat_g": 8
+      },
+      "emoji": "🧋",
+      "is_preset": true
+    },
+    {
+      "id": "food_mango_sticky_rice",
+      "name_th": "ข้าวเหนียวมะม่วง",
+      "name_en": "Mango sticky rice",
+      "category": "dessert",
+      "tags": [
+        "ของหวาน",
+        "ของว่าง"
+      ],
+      "search_aliases": [
+        "มะม่วง",
+        "ข้าวเหนียว"
+      ],
+      "typical_portion": {
+        "unit": "plate",
+        "amount": 1,
+        "label_th": "จาน",
+        "step": 0.5,
+        "grams_estimate": 220
+      },
+      "nutrients": {
+        "kcal": 390,
+        "protein_g": 5,
+        "carb_g": 72,
+        "fat_g": 10
+      },
+      "emoji": "🥭",
+      "is_preset": true
+    },
+    {
+      "id": "food_kai_jeow_moo",
+      "name_th": "ไข่เจียวหมูสับ",
+      "name_en": "Thai omelette with minced pork",
+      "category": "stir_fry",
+      "tags": [
+        "กับข้าว",
+        "เย็น"
+      ],
+      "search_aliases": [
+        "ไข่เจียว",
+        "หมูสับ"
+      ],
+      "typical_portion": {
+        "unit": "plate",
+        "amount": 1,
+        "label_th": "จาน",
+        "step": 0.5,
+        "grams_estimate": 180
+      },
+      "nutrients": {
+        "kcal": 340,
+        "protein_g": 18,
+        "carb_g": 4,
+        "fat_g": 28
+      },
+      "emoji": "🥚",
+      "is_preset": true
+    },
+    {
+      "id": "food_iced_coffee",
+      "name_th": "กาแฟเย็น",
+      "name_en": "Iced coffee (Thai style sweet)",
+      "category": "drink",
+      "tags": [
+        "เครื่องดื่ม",
+        "เช้า"
+      ],
+      "search_aliases": [
+        "กาแฟ",
+        "เย็น"
+      ],
+      "typical_portion": {
+        "unit": "glass",
+        "amount": 1,
+        "label_th": "แก้ว",
+        "step": 0.5,
+        "grams_estimate": 240
+      },
+      "nutrients": {
+        "kcal": 180,
+        "protein_g": 2,
+        "carb_g": 28,
+        "fat_g": 6
+      },
+      "emoji": "☕",
+      "is_preset": true
+    }
+  ],
+  "daily_log_example": {
+    "date": "2026-09-30",
+    "timezone": "Asia/Bangkok",
+    "targets": {
+      "kcal": 2000,
+      "protein_g": 100,
+      "carb_g": 250,
+      "fat_g": 65,
+      "water_ml": 2000,
+      "label_th": "ทั่วไป"
+    },
+    "meals": [
+      {
+        "id": "meal_001",
+        "logged_at": "2026-09-30T08:10:00+07:00",
+        "date": "2026-09-30",
+        "name_th": "กาแฟเย็น",
+        "name_en": "Iced coffee",
+        "food_item_id": "food_iced_coffee",
+        "meal_tag": "breakfast",
+        "portion": {
+          "unit": "glass",
+          "amount": 1,
+          "label_th": "แก้ว",
+          "step": 0.5
+        },
+        "multiplier": 1.0,
+        "nutrients": {
+          "kcal": 180,
+          "protein_g": 2,
+          "carb_g": 28,
+          "fat_g": 6
+        },
+        "source": "library",
+        "emoji": "☕"
+      },
+      {
+        "id": "meal_002",
+        "logged_at": "2026-09-30T12:20:00+07:00",
+        "date": "2026-09-30",
+        "name_th": "ข้าวผัดกุ้งไข่ดาว",
+        "name_en": "Shrimp fried rice with fried egg",
+        "food_item_id": "food_khao_pad_kung_egg",
+        "meal_tag": "lunch",
+        "portion": {
+          "unit": "plate",
+          "amount": 1,
+          "label_th": "จาน",
+          "step": 0.25
+        },
+        "multiplier": 1.0,
+        "nutrients": {
+          "kcal": 720,
+          "protein_g": 32,
+          "carb_g": 78,
+          "fat_g": 28
+        },
+        "source": "scan",
+        "emoji": "🍳",
+        "image_thumb": "/fixtures/demo-meal-fried-rice.jpg",
+        "scan_confidence": 0.86
+      },
+      {
+        "id": "meal_003",
+        "logged_at": "2026-09-30T15:40:00+07:00",
+        "date": "2026-09-30",
+        "name_th": "ชาไทยเย็น",
+        "name_en": "Thai iced tea",
+        "food_item_id": "food_cha_thai",
+        "meal_tag": "snack",
+        "portion": {
+          "unit": "glass",
+          "amount": 1,
+          "label_th": "แก้ว",
+          "step": 0.5
+        },
+        "multiplier": 1.0,
+        "nutrients": {
+          "kcal": 220,
+          "protein_g": 2,
+          "carb_g": 36,
+          "fat_g": 8
+        },
+        "source": "favorite",
+        "emoji": "🧋",
+        "favorite_id": "fav_cha_thai"
+      }
+    ],
+    "consumed": {
+      "kcal": 1120,
+      "protein_g": 36,
+      "carb_g": 142,
+      "fat_g": 42
+    },
+    "remaining": {
+      "kcal": 880,
+      "protein_g": 64,
+      "carb_g": 108,
+      "fat_g": 23
+    },
+    "progress_pct": {
+      "kcal": 56,
+      "protein_g": 36,
+      "carb_g": 56.8,
+      "fat_g": 64.6
+    },
+    "meals_count": 3,
+    "water": {
+      "date": "2026-09-30",
+      "ml": 750,
+      "step_ml": 250,
+      "updated_at": "2026-09-30T15:41:00+07:00"
+    },
+    "streak_days": 3,
+    "updated_at": "2026-09-30T15:41:00+07:00"
+  },
+  "favorites_example": [
+    {
+      "id": "fav_cha_thai",
+      "name_th": "ชาไทยเย็น",
+      "name_en": "Thai iced tea",
+      "food_item_id": "food_cha_thai",
+      "portion": {
+        "unit": "glass",
+        "amount": 1,
+        "label_th": "แก้ว",
+        "step": 0.5
+      },
+      "default_multiplier": 1.0,
+      "nutrients": {
+        "kcal": 220,
+        "protein_g": 2,
+        "carb_g": 36,
+        "fat_g": 8
+      },
+      "emoji": "🧋",
+      "meal_tag": "snack",
+      "use_count": 6,
+      "created_at": "2026-09-28T10:00:00+07:00",
+      "last_used_at": "2026-09-30T15:40:00+07:00"
+    },
+    {
+      "id": "fav_som_tum",
+      "name_th": "ส้มตำไทย",
+      "name_en": "Som tum Thai",
+      "food_item_id": "food_som_tum_thai",
+      "portion": {
+        "unit": "plate",
+        "amount": 1,
+        "label_th": "จาน",
+        "step": 0.5
+      },
+      "default_multiplier": 1.0,
+      "nutrients": {
+        "kcal": 180,
+        "protein_g": 6,
+        "carb_g": 28,
+        "fat_g": 5
+      },
+      "emoji": "🥗",
+      "meal_tag": "lunch",
+      "use_count": 3,
+      "created_at": "2026-09-29T12:00:00+07:00",
+      "last_used_at": "2026-09-29T12:30:00+07:00"
+    },
+    {
+      "id": "fav_khao_pad",
+      "name_th": "ข้าวผัดกุ้งไข่ดาว",
+      "food_item_id": "food_khao_pad_kung_egg",
+      "portion": {
+        "unit": "plate",
+        "amount": 1,
+        "label_th": "จาน",
+        "step": 0.25
+      },
+      "default_multiplier": 1.0,
+      "nutrients": {
+        "kcal": 720,
+        "protein_g": 32,
+        "carb_g": 78,
+        "fat_g": 28
+      },
+      "emoji": "🍳",
+      "meal_tag": "lunch",
+      "use_count": 1,
+      "created_at": "2026-09-30T12:22:00+07:00",
+      "last_used_at": "2026-09-30T12:22:00+07:00"
+    }
+  ],
+  "share_card_example": {
+    "date": "2026-09-30",
+    "title_th": "สรุปมื้อวันนี้",
+    "kcal_consumed": 1120,
+    "kcal_target": 2000,
+    "macros_line_th": "โปรตีน 36g · คาร์บ 142g · ไขมัน 42g",
+    "meals_count": 3,
+    "streak_days": 3,
+    "highlight_meal_th": "มื้อเด่น: ข้าวผัดกุ้งไข่ดาว",
+    "accent": "#F97316",
+    "footer_th": "BiteLog · AI วันละแอป",
+    "theme": "cream_coral",
+    "caption_th": "วันนี้บันทึก 3 มื้อด้วย BiteLog แล้ว ~1,120 kcal จากเป้า 2,000\nมื้อเด่น: ข้าวผัดกุ้งไข่ดาว 🍳\nต่อเนื่อง 3 วันแล้ว — ประมาณการเพื่อบันทึกส่วนตัว ไม่ใช่คำแนะนำแพทย์\n#BiteLog #AIวันละแอป #แคลอรี่",
+    "caption_hashtags": [
+      "#BiteLog",
+      "#AIวันละแอป",
+      "#แคลอรี่",
+      "#มื้อไทย"
+    ],
+    "card_filename": "bitelog-2026-09-30-154100.png",
+    "mock_link": "https://bitelog.app/d/2026-09-30"
+  },
+  "local_store_example": {
+    "version": 1,
+    "settings": {
+      "display_name_th": "มิ้นต์",
+      "targets": {
+        "kcal": 2000,
+        "protein_g": 100,
+        "carb_g": 250,
+        "fat_g": 65,
+        "water_ml": 2000,
+        "label_th": "ทั่วไป"
+      },
+      "vision_engine": "mock_demo",
+      "gentle_reminders": true,
+      "locale": "th-TH",
+      "theme": "cream_coral"
+    },
+    "favorites": [
+      {
+        "$ref_note": "ดู favorites_example"
+      }
+    ],
+    "daily_logs": [
+      {
+        "$ref_note": "ดู daily_log_example สำหรับวันนี้"
+      }
+    ],
+    "recent_meal_ids": [
+      "meal_003",
+      "meal_002",
+      "meal_001"
+    ],
+    "streak": {
+      "current_days": 3,
+      "best_days": 5,
+      "last_active_date": "2026-09-30"
+    }
+  },
+  "analytics_events_sample": [
+    {
+      "name": "app_open",
+      "ts": "2026-09-30T08:05:00+07:00",
+      "props": {
+        "source": "pwa"
+      }
+    },
+    {
+      "name": "scan_start",
+      "ts": "2026-09-30T12:18:00+07:00",
+      "props": {
+        "engine": "mock_demo"
+      }
+    },
+    {
+      "name": "scan_success",
+      "ts": "2026-09-30T12:18:02+07:00",
+      "props": {
+        "scan_ms": 1120,
+        "confidence": 0.86
+      }
+    },
+    {
+      "name": "meal_logged",
+      "ts": "2026-09-30T12:20:00+07:00",
+      "props": {
+        "source": "scan",
+        "kcal": 720,
+        "meal_tag": "lunch"
+      }
+    },
+    {
+      "name": "library_search",
+      "ts": "2026-09-30T15:35:00+07:00",
+      "props": {
+        "q": "ชาไทย"
+      }
+    },
+    {
+      "name": "favorite_quick_add",
+      "ts": "2026-09-30T15:40:00+07:00",
+      "props": {
+        "favorite_id": "fav_cha_thai"
+      }
+    },
+    {
+      "name": "dashboard_view",
+      "ts": "2026-09-30T15:41:00+07:00",
+      "props": {
+        "meals_count": 3
+      }
+    },
+    {
+      "name": "share_open",
+      "ts": "2026-09-30T15:42:00+07:00",
+      "props": {}
+    },
+    {
+      "name": "copy_caption",
+      "ts": "2026-09-30T15:42:10+07:00",
+      "props": {}
+    },
+    {
+      "name": "share_success",
+      "ts": "2026-09-30T15:42:20+07:00",
+      "props": {
+        "method": "native_share"
+      }
+    }
+  ],
+  "qa_test_matrix_example": [
+    {
+      "case_th": "โหลดรูปเดโมข้าวผัดกุ้งไข่ดาว",
+      "expected_th": "ได้ชื่อไทย + ~720 kcal",
+      "severity": "blocker"
+    },
+    {
+      "case_th": "ปรับ portion เป็น 1.25 จาน",
+      "expected_th": "kcal ≈ 900 และ macros สเกลตาม",
+      "severity": "blocker"
+    },
+    {
+      "case_th": "บันทึกมื้อแล้วเปิด Dashboard",
+      "expected_th": "rings/bars + ไทม์ไลน์อัปเดต",
+      "severity": "blocker"
+    },
+    {
+      "case_th": "ค้น Library คำว่า ส้มตำ",
+      "expected_th": "เจอส้มตำไทย เพิ่มมื้อได้",
+      "severity": "major"
+    },
+    {
+      "case_th": "Quick Add ชาไทยจาก Favorites",
+      "expected_th": "เพิ่มมื้อใน ≤3 แตะ",
+      "severity": "major"
+    },
+    {
+      "case_th": "แชร์การ์ด + คัดลอกแคปชันบน iPhone",
+      "expected_th": "ได้รูปและข้อความ",
+      "severity": "blocker"
+    },
+    {
+      "case_th": "localStorage ว่างเปิดแอปใหม่",
+      "expected_th": "ไม่แครช แสดง empty state",
+      "severity": "major"
+    },
+    {
+      "case_th": "ตรวจสำเนา guilt/medical",
+      "expected_th": "ไม่มีคำดูถูกหรือเคลมหมอ",
+      "severity": "blocker"
+    }
+  ],
+  "reel_script_th": {
+    "duration_sec": 32,
+    "hook_th": "ถ่ายอาหาร → รู้แคลอรี่และมื้อไทย ใน 10 วินาที",
+    "cta_th": "ลองฟรีที่ลิงก์ในไบโอ แล้วคอมเมนต์「แคล」",
+    "comment_keyword_th": "แคล",
+    "props_needed_th": [
+      "มือถือจริง 1 เครื่อง ความกว้างจอโชว์ ~390px",
+      "รูปเดโมข้าวผัดกุ้งไข่ดาว 1 ใบ",
+      "แดชบอร์ดที่มีอย่างน้อย 2–3 มื้อ",
+      "โหมด mock_demo พร้อมปุ่มใช้รูปเดโม"
+    ],
+    "shots": [
+      {
+        "start_sec": 0,
+        "end_sec": 3,
+        "visual_th": "รูปจานข้าวผัดมุมเอียง/เบลอเล็กน้อย ตัดทันทีเป็นการ์ดโภชนาการสีสด",
+        "on_screen_th": "ถ่ายแล้วรู้แคล",
+        "voice_th": "ถ่ายจานเดียว รู้แคลกับแมโครทันที"
+      },
+      {
+        "start_sec": 3,
+        "end_sec": 8,
+        "visual_th": "มอนทาจหน้าจอ codegen / โลโก้ BiteLog บนพื้นครีม",
+        "on_screen_th": "สร้างด้วย AI วันนี้",
+        "voice_th": "วันนี้ทำแอป BiteLog สดๆ จากช่อง AI วันละแอป"
+      },
+      {
+        "start_sec": 8,
+        "end_sec": 14,
+        "visual_th": "กดใช้รูปเดโม → progress → การ์ดผลข้าวผัดกุ้งไข่ดาว + kcal ใหญ่",
+        "on_screen_th": "Photo Bite Scan",
+        "voice_th": "ถ่ายข้าวผัดกุ้ง ขึ้นชื่อไทยและแคลให้เลย"
+      },
+      {
+        "start_sec": 14,
+        "end_sec": 22,
+        "visual_th": "ปรับ portion แล้วกดบันทึก → วงแหวนแดชบอร์ดขยับ + ไทม์ไลน์มื้อ",
+        "on_screen_th": "บันทึกแล้วดูเป้าวัน",
+        "voice_th": "ปรับปริมาณ บันทึก วงแหวนอัปเดตทันที"
+      },
+      {
+        "start_sec": 22,
+        "end_sec": 28,
+        "visual_th": "เปิด Library/Favorites แป๊บ + เปิด Share Progress Card สวยๆ",
+        "on_screen_th": "ไลบรารีไทย แชร์ได้",
+        "voice_th": "มีไลบรารีเมนูไทย เพิ่มเร็ว แล้วแชร์การ์ดความคืบหน้า"
+      },
+      {
+        "start_sec": 28,
+        "end_sec": 32,
+        "visual_th": "การ์ดสุดท้าย + ข้อความลิงก์ในไบโอ",
+        "on_screen_th": "ลิงก์ในไบโอ",
+        "voice_th": "ลองฟรีที่ลิงก์ในไบโอ แล้วคอมเมนต์คำว่า แคล"
+      }
+    ]
+  },
+  "chat_post_one_liner_th": "ถ่ายอาหาร → รู้แคลอรี่และมื้อไทย ใน 10 วินาที",
+  "chat_post_long_th": "กินข้าวแล้วไม่รู้จะใส่มื้อไหนกี่แคล วันนี้แจกแอป BiteLog จากช่อง AI วันละแอป ถ่ายจานรู้ชื่อเมนูไทย+แคลอรี่ ประมาณแมโคร ดูแดชบอร์ดรายวัน แล้วแชร์การ์ดความคืบหน้าได้เลย ลองฟรีที่ลิงก์ในไบโอ",
+  "codegen_smoke_checklist": [
+    "npm run dev ขึ้นพอร์ตได้",
+    "หน้า Home ภาษาไทย ปุ่มถ่ายมื้อนี้ + ใช้รูปเดโม",
+    "รูปเดโม → ScanResult ตาม meal_scan_example",
+    "บันทึกมื้อ → DailyLog consumed อัปเดต",
+    "Library มี ≥8 เมนูไทยค้นหาได้",
+    "Favorites quick add ทำงาน",
+    "Share card เรนเดอร์ PNG หรือ fallback ดาวน์โหลดได้",
+    "390px ไม่เละ",
+    "disclaimer มองเห็นใกล้ผลสแกน"
+  ],
+  "sample_meals_for_reel": [
+    {
+      "role": "hero_demo",
+      "name_th": "ข้าวผัดกุ้งไข่ดาว",
+      "kcal": 720,
+      "why_th": "wow ชัด ชื่อไทยคุ้น ตัวเลขกลม อ่านบน Reel ง่าย"
+    },
+    {
+      "role": "library_demo",
+      "name_th": "ส้มตำไทย",
+      "kcal": 180,
+      "why_th": "โชว์ค้นไลบรารีเร็ว คอนทราสต์แคลต่ำคู่จานหลัก"
+    },
+    {
+      "role": "favorite_demo",
+      "name_th": "ชาไทยเย็น",
+      "kcal": 220,
+      "why_th": "Quick Add 1 แตะ สีส้มเข้าแบรนด์"
+    }
+  ],
+  "risk_traps_th": [
+    {
+      "id": "medical_claim",
+      "title_th": "อย่าเคลมความแม่นระดับแพทย์/นักโภชนาการ",
+      "detail_th": "ผู้ชมอาจเข้าใจว่าตัวเลขใช้วางแผนสุขภาพจริงแบบคลินิก",
+      "mitigation_th": "ใส่ disclaimer ประมาณการทุกจุดใกล้ตัวเลข และพูดในคลิปว่าประมาณการเพื่อบันทึกส่วนตัว",
+      "severity": "blocker"
+    },
+    {
+      "id": "mock_ok_for_reel",
+      "title_th": "mock_demo ใช้ถ่าย Reel ได้ — อย่ารอ Vision API",
+      "detail_th": "ถ้าไปพึ่ง API จริงตอนถ่าย รูปมืด/เน็ตช้าจะพังฮุค 3 วินาที",
+      "mitigation_th": "ฮุคหลักใช้รูปเดโม fixture คุณภาพดี; Vision จริงเป็นออปชันหลังคลิป",
+      "severity": "major"
+    },
+    {
+      "id": "guilt_shame_ux",
+      "title_th": "เลี่ยง UX แบบดูถูกหรือทำให้ผิด",
+      "detail_th": "คำว่าผิด ห้ามกิน อ้วน ล้มเหลว ทำให้คนปิดแอปและคอมเมนต์ลบ",
+      "mitigation_th": "ใช้สำเนาอ่อนโยนตาม ui_copy_th โดยเฉพาะ over_target_gentle",
+      "severity": "blocker"
+    },
+    {
+      "id": "estimate_not_lab",
+      "title_th": "แคลอรี่เป็นประมาณการร้านทั่วไป",
+      "detail_th": "สูตรร้านต่างกันมาก อย่าใส่ทศนิยมหลอกความแม่น",
+      "mitigation_th": "แสดง kcal จำนวนเต็ม และเขียนประมาณในคัดก็อปปี้",
+      "severity": "major"
+    },
+    {
+      "id": "no_weight_bmi_on_card",
+      "title_th": "ห้ามโชว์น้ำหนักตัว/BMI บนการ์ดแชร์",
+      "detail_th": "ธีม Reel คือมื้อไทยและความสะดวก ไม่ใช่บอดี้เชม",
+      "mitigation_th": "ShareCard มีแค่ kcal มื้อ สตรีค และแมโคร",
+      "severity": "major"
+    }
+  ],
+  "wow_moment_th": {
+    "title_th": "รูปอาหารธรรมดา → การ์ดโภชนาการสีสด + ชื่อเมนูไทย",
+    "before_th": "รูปจานข้าวผัดมุมไม่สวย/เบลอเล็กน้อย คนสงสัยกี่แคล",
+    "after_th": "การ์ดครีม-coral ชื่อ「ข้าวผัดกุ้งไข่ดาว」kcal 720 ตัวใหญ่ + chips โปรตีน/คาร์บ/ไขมัน",
+    "timing_sec": "0–3 และซ้ำตอน 8–14"
+  },
+  "happy_path_timing_th": {
+    "target_sec": 60,
+    "steps": [
+      {
+        "step": 1,
+        "th": "เปิดแอป กดใช้รูปเดโม",
+        "sec": 5
+      },
+      {
+        "step": 2,
+        "th": "รอ scan progress แล้วเห็นผล",
+        "sec": 10
+      },
+      {
+        "step": 3,
+        "th": "ปรับ portion ถ้าต้องการ แล้วบันทึก",
+        "sec": 20
+      },
+      {
+        "step": 4,
+        "th": "ดู Dashboard rings อัปเดต",
+        "sec": 35
+      },
+      {
+        "step": 5,
+        "th": "เปิด Share Card + คัดลอกแคปชัน",
+        "sec": 55
+      }
+    ]
+  }
+}

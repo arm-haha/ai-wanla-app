@@ -1,0 +1,773 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sceneswap.studio/schemas/v1.json",
+  "title": "SceneSwap Studio Schemas",
+  "description": "ชุด JSON Schema ละเอียดสำหรับ SceneSwap Studio (AI วันละแอป 2026-09-28) — ใช้ validate state, manifest, export, history และ feature checklist",
+  "definitions": {
+    "Transform": {
+      "type": "object",
+      "description": "ตำแหน่ง/สเกล/มุมของ subject บน canvas โดย x,y เป็น offset จากกึ่งกลางเฟรม",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y",
+        "scale",
+        "rotation"
+      ],
+      "properties": {
+        "x": {
+          "type": "number",
+          "description": "offset X จากกึ่งกลาง canvas (พิกเซล)"
+        },
+        "y": {
+          "type": "number",
+          "description": "offset Y จากกึ่งกลาง canvas (พิกเซล) ค่าบวกเลื่อนลง"
+        },
+        "scale": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 5,
+          "default": 1,
+          "description": "ตัวคูณขนาด subject"
+        },
+        "rotation": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180,
+          "default": 0,
+          "description": "องศาหมุนตามเข็มนาฬิกา"
+        }
+      }
+    },
+    "LightSettings": {
+      "type": "object",
+      "description": "พารามิเตอร์จับคู่แสง/เงากับฉาก ใช้ใน compose engine",
+      "additionalProperties": false,
+      "required": [
+        "brightness",
+        "contrast",
+        "shadowStrength",
+        "shadowOffsetY"
+      ],
+      "properties": {
+        "brightness": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 1.5,
+          "default": 1,
+          "description": "1 = เดิม; >1 สว่างขึ้น (กระทบ subject เป็นหลัก)"
+        },
+        "contrast": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 1.5,
+          "default": 1,
+          "description": "ความคมต่างของ subject"
+        },
+        "shadowStrength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.35,
+          "description": "ความทึบของเงาจำลองใต้เท้า/วัตถุ"
+        },
+        "shadowOffsetY": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 80,
+          "default": 24,
+          "description": "ระยะเงาแนวตั้งจากจุดศูนย์กลาง subject (พิกเซล)"
+        }
+      }
+    },
+    "IsoDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 รวม offset เช่น 2026-09-28T08:05:12+07:00"
+    }
+  },
+  "SceneCategory": {
+    "type": "string",
+    "description": "หมวดฉากในไลบรารี",
+    "enum": [
+      "studio",
+      "city",
+      "nature",
+      "cafe",
+      "gradient",
+      "abstract"
+    ]
+  },
+  "ExportPresetId": {
+    "type": "string",
+    "description": "รหัสพรีเซ็ตส่งออกคงที่ของ MVP",
+    "enum": [
+      "transparent_png",
+      "ig_square",
+      "story_9_16",
+      "linkedin",
+      "shopee"
+    ]
+  },
+  "CutoutEngine": {
+    "type": "string",
+    "description": "เอ็นจินที่ใช้ถอดพื้นหลังในเซสชันนั้น",
+    "enum": [
+      "imgly_client",
+      "remove_bg",
+      "replicate",
+      "manual"
+    ]
+  },
+  "ProjectStatus": {
+    "type": "string",
+    "description": "สถานะวงจรชีวิตของโปรเจกต์แก้ไขภาพ",
+    "enum": [
+      "idle",
+      "cutting",
+      "ready",
+      "exporting",
+      "error"
+    ]
+  },
+  "SceneAsset": {
+    "type": "object",
+    "description": "เมตาดาต้าฉากหนึ่งใบในไลบรารี",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "title_th",
+      "category",
+      "src",
+      "thumb",
+      "orientation"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "รหัสฉาก เช่น studio-01",
+        "pattern": "^[a-z]+-[0-9]{2}$"
+      },
+      "title_th": {
+        "type": "string",
+        "description": "ชื่อแสดงภาษาไทย",
+        "minLength": 1,
+        "maxLength": 80
+      },
+      "title_en": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "ชื่อภาษาอังกฤษ (ออปชัน)"
+      },
+      "category": {
+        "$ref": "#/SceneCategory"
+      },
+      "src": {
+        "type": "string",
+        "description": "พาธภาพเต็มใน /public เช่น /scenes/studio-01.jpg"
+      },
+      "thumb": {
+        "type": "string",
+        "description": "พาธ thumbnail"
+      },
+      "orientation": {
+        "type": "string",
+        "enum": [
+          "portrait",
+          "landscape",
+          "square"
+        ],
+        "description": "สัดส่วนหลักของไฟล์ฉาก"
+      },
+      "tags": {
+        "type": "array",
+        "description": "แท็กค้นหาภาษาอังกฤษสั้นๆ",
+        "items": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32
+        },
+        "maxItems": 12
+      },
+      "license": {
+        "type": "string",
+        "enum": [
+          "generated",
+          "unsplash",
+          "owned"
+        ],
+        "description": "ที่มาสิทธิ์การใช้ฉาก"
+      },
+      "dominant_light": {
+        "type": "string",
+        "enum": [
+          "warm",
+          "cool",
+          "neutral",
+          "neon",
+          "overcast"
+        ],
+        "description": "คำใบ้แสงสำหรับค่าเริ่ม LightSettings"
+      }
+    }
+  },
+  "SceneManifest": {
+    "type": "object",
+    "description": "ไฟล์รวมฉากทั้งหมดของแอป ต้องมีอย่างน้อย 20 ฉาก",
+    "additionalProperties": false,
+    "required": [
+      "version",
+      "scenes"
+    ],
+    "properties": {
+      "version": {
+        "type": "string",
+        "const": "1.0.0",
+        "description": "เวอร์ชันรูปแบบ manifest"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "scenes": {
+        "type": "array",
+        "minItems": 20,
+        "items": {
+          "$ref": "#/SceneAsset"
+        }
+      }
+    }
+  },
+  "SubjectState": {
+    "type": "object",
+    "description": "ข้อมูลรูปต้นฉบับและผล cutout",
+    "additionalProperties": false,
+    "required": [
+      "source_object_url",
+      "cutout_object_url"
+    ],
+    "properties": {
+      "source_object_url": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "blob:/URL รูปต้นทาง"
+      },
+      "cutout_object_url": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "blob:/URL รูปพื้นหลังโปร่งใส"
+      },
+      "width": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 1
+      },
+      "height": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 1
+      },
+      "cutout_engine": {
+        "$ref": "#/CutoutEngine"
+      },
+      "cutout_ms": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 0,
+        "description": "เวลาตัดพื้นหลังมิลลิวินาที"
+      }
+    }
+  },
+  "SceneSelection": {
+    "type": "object",
+    "description": "ฉากที่เลือกอยู่ใน editor",
+    "additionalProperties": false,
+    "required": [
+      "mode"
+    ],
+    "properties": {
+      "mode": {
+        "type": "string",
+        "enum": [
+          "library",
+          "custom",
+          "none"
+        ],
+        "description": "แหล่งฉากปัจจุบัน"
+      },
+      "scene_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "ตั้งเมื่อ mode=library"
+      },
+      "custom_object_url": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "ตั้งเมื่อ mode=custom"
+      }
+    }
+  },
+  "RefineState": {
+    "type": "object",
+    "description": "สถานะเครื่องมือ Hair/Edge Refine (nice-to-have)",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "default": false
+      },
+      "brush_size": {
+        "type": "integer",
+        "minimum": 4,
+        "maximum": 128,
+        "default": 24
+      },
+      "mode": {
+        "type": "string",
+        "enum": [
+          "erase",
+          "restore"
+        ],
+        "default": "erase"
+      }
+    }
+  },
+  "ProjectState": {
+    "type": "object",
+    "description": "สถานะโปรเจกต์แก้ไขทั้งหมดในหน่วยความจำ/เซสชัน",
+    "additionalProperties": false,
+    "required": [
+      "project_id",
+      "created_at",
+      "updated_at",
+      "subject",
+      "scene",
+      "transform",
+      "light",
+      "status"
+    ],
+    "properties": {
+      "project_id": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "created_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "status": {
+        "$ref": "#/ProjectStatus"
+      },
+      "subject": {
+        "$ref": "#/SubjectState"
+      },
+      "scene": {
+        "$ref": "#/SceneSelection"
+      },
+      "transform": {
+        "$ref": "#/definitions/Transform"
+      },
+      "light": {
+        "$ref": "#/definitions/LightSettings"
+      },
+      "refine": {
+        "$ref": "#/RefineState"
+      },
+      "error": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "ข้อความผิดพลาดภาษาไทยสั้นๆ เมื่อ status=error"
+      }
+    }
+  },
+  "ExportPresetConfig": {
+    "type": "object",
+    "description": "คำจำกัดความพรีเซ็ตส่งออกที่โชว์ใน UI",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "label_th",
+      "width",
+      "height",
+      "format",
+      "include_scene"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "#/ExportPresetId"
+      },
+      "label_th": {
+        "type": "string",
+        "description": "ป้ายภาษาไทยบนการ์ด export"
+      },
+      "width": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "0 = ใช้ขนาดต้นฉบับ (กรณี transparent_png)"
+      },
+      "height": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "format": {
+        "type": "string",
+        "enum": [
+          "png",
+          "jpg"
+        ]
+      },
+      "include_scene": {
+        "type": "boolean",
+        "description": "false = ส่งเฉพาะ subject โปร่งใส"
+      },
+      "aspect_label": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "เช่น 1:1 หรือ 9:16 สำหรับ UI"
+      }
+    }
+  },
+  "ExportJob": {
+    "type": "object",
+    "description": "งานส่งออกหนึ่งครั้งที่สร้างจากพรีเซ็ต + สถานะโปรเจกต์",
+    "additionalProperties": false,
+    "required": [
+      "job_id",
+      "preset",
+      "format",
+      "width",
+      "height",
+      "include_scene"
+    ],
+    "properties": {
+      "job_id": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "preset": {
+        "$ref": "#/ExportPresetId"
+      },
+      "format": {
+        "type": "string",
+        "enum": [
+          "png",
+          "jpg",
+          "webp"
+        ]
+      },
+      "width": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "height": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "include_scene": {
+        "type": "boolean"
+      },
+      "quality": {
+        "type": "number",
+        "minimum": 0.5,
+        "maximum": 1,
+        "default": 0.92,
+        "description": "คุณภาพ lossy (jpg/webp)"
+      },
+      "filename": {
+        "type": "string",
+        "description": "ชื่อไฟล์แนะนำ sceneswap-{preset}-{timestamp}.{ext}"
+      }
+    }
+  },
+  "HistoryItem": {
+    "type": "object",
+    "description": "รายการประวัติผลลัพธ์ที่เก็บใน localStorage",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "created_at",
+      "thumb_data_url",
+      "scene_title_th"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "created_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "thumb_data_url": {
+        "type": "string",
+        "description": "data URL ภาพย่อ (จำกัดขนาดตอนบันทึก)"
+      },
+      "scene_title_th": {
+        "type": "string"
+      },
+      "preset_last_used": {
+        "$ref": "#/ExportPresetId"
+      }
+    }
+  },
+  "LocalStore": {
+    "type": "object",
+    "description": "โครงข้อมูลทั้งก้อนใน localStorage key เช่น sceneswap.v1",
+    "additionalProperties": false,
+    "properties": {
+      "favorites_scene_ids": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "maxItems": 50,
+        "description": "รายการ scene id ที่กดหัวใจ"
+      },
+      "history": {
+        "type": "array",
+        "items": {
+          "$ref": "#/HistoryItem"
+        },
+        "maxItems": 10,
+        "description": "ผลลัพธ์ล่าสุด สูงสุด 10 รายการ (ใหม่สุดไว้หน้า)"
+      },
+      "settings": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "locale": {
+            "type": "string",
+            "enum": [
+              "th-TH",
+              "en-US"
+            ],
+            "default": "th-TH"
+          },
+          "prefer_client_cutout": {
+            "type": "boolean",
+            "default": true,
+            "description": "true = ใช้ @imgly/background-removal ก่อน API ภายนอก"
+          }
+        }
+      }
+    }
+  },
+  "AnalyticsEvent": {
+    "type": "object",
+    "description": "อีเวนต์วัดพฤติกรรมฝั่ง client สำหรับช่องและผลิตภัณฑ์",
+    "additionalProperties": false,
+    "required": [
+      "name",
+      "ts"
+    ],
+    "properties": {
+      "name": {
+        "type": "string",
+        "enum": [
+          "app_open",
+          "cutout_start",
+          "cutout_success",
+          "cutout_fail",
+          "scene_select",
+          "custom_scene_upload",
+          "light_adjust",
+          "export_click",
+          "export_success",
+          "share_click",
+          "favorite_toggle",
+          "history_open"
+        ]
+      },
+      "ts": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "props": {
+        "type": "object",
+        "additionalProperties": true,
+        "description": "เพย์โหลดเพิ่ม เช่น scene_id, ms, preset, ref"
+      }
+    }
+  },
+  "FeatureChecklistItem": {
+    "type": "object",
+    "description": "รายการยืนยันทีละฟีเจอร์ก่อนปล่อยคลิป",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "name_th",
+      "tier",
+      "implemented",
+      "demo_in_reel"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name_th": {
+        "type": "string"
+      },
+      "tier": {
+        "type": "string",
+        "enum": [
+          "must",
+          "nice"
+        ],
+        "description": "must = บังคับครบก่อนลงคลิป"
+      },
+      "implemented": {
+        "type": "boolean"
+      },
+      "demo_in_reel": {
+        "type": "boolean",
+        "description": "โชว์ในคลิป Reel นี้หรือไม่"
+      },
+      "notes": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    }
+  },
+  "FeatureChecklist": {
+    "type": "object",
+    "description": "ใช้ยืนยันกฎขั้นต่ำ ≥5 ฟีเจอร์ must ก่อนปล่อยคลิป AI วันละแอป",
+    "additionalProperties": false,
+    "required": [
+      "app",
+      "date",
+      "features"
+    ],
+    "properties": {
+      "app": {
+        "type": "string",
+        "const": "SceneSwap Studio"
+      },
+      "date": {
+        "type": "string",
+        "format": "date",
+        "description": "วันคลิป Asia/Bangkok"
+      },
+      "features": {
+        "type": "array",
+        "minItems": 5,
+        "items": {
+          "$ref": "#/FeatureChecklistItem"
+        }
+      },
+      "must_implemented_count": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "จำนวนฟีเจอร์ tier=must ที่ implemented=true ต้อง ≥5"
+      }
+    }
+  },
+  "UiCopyTh": {
+    "type": "object",
+    "description": "ชุดข้อความ UI ภาษาไทยมาตรฐาน กันสะกดไม่ตรงกันตอน codegen",
+    "additionalProperties": {
+      "type": "string"
+    },
+    "properties": {
+      "home_headline": {
+        "type": "string"
+      },
+      "home_cta": {
+        "type": "string"
+      },
+      "cutout_loading": {
+        "type": "string"
+      },
+      "cutout_done": {
+        "type": "string"
+      },
+      "cutout_fail": {
+        "type": "string"
+      },
+      "scene_changed": {
+        "type": "string"
+      },
+      "export_done": {
+        "type": "string"
+      },
+      "export_fail": {
+        "type": "string"
+      }
+    }
+  },
+  "ReelScript": {
+    "type": "object",
+    "description": "สคริปต์ถ่าย Reel หนึ่งคลิป",
+    "additionalProperties": false,
+    "required": [
+      "duration_sec",
+      "hook_th",
+      "shots"
+    ],
+    "properties": {
+      "duration_sec": {
+        "type": "integer",
+        "minimum": 15,
+        "maximum": 60
+      },
+      "hook_th": {
+        "type": "string",
+        "description": "ประโยคฮุคโพสต์/เปิดคลิป"
+      },
+      "cta_th": {
+        "type": "string"
+      },
+      "shots": {
+        "type": "array",
+        "minItems": 4,
+        "items": {
+          "type": "object",
+          "required": [
+            "t",
+            "on_screen",
+            "voice"
+          ],
+          "properties": {
+            "t": {
+              "type": "string",
+              "description": "ช่วงเวลา เช่น 0-3"
+            },
+            "on_screen": {
+              "type": "string",
+              "maxLength": 40
+            },
+            "voice": {
+              "type": "string"
+            },
+            "visual": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "คำอธิบายภาพที่จะถ่าย"
+            }
+          }
+        }
+      }
+    }
+  }
+}

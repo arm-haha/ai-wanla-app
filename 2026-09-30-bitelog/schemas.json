@@ -1,0 +1,1133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-wanla-app.local/bitelog/schemas.json",
+  "title": "BiteLog Schemas",
+  "description": "ชุด JSON Schema ละเอียดสำหรับ BiteLog (AI วันละแอป 2026-09-30) — ใช้ validate state, fixtures, share payload และ feature checklist ก่อนถ่าย Reel; คีย์ภาษาอังกฤษ คำอธิบายรองรับภาษาไทยใน description",
+  "definitions": {
+    "IsoDate": {
+      "type": "string",
+      "description": "วันที่แบบ YYYY-MM-DD ตามปฏิทินที่ผู้ใช้เห็น (Asia/Bangkok สำหรับช่องนี้)",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "IsoDateTime": {
+      "type": "string",
+      "description": "เวลา ISO-8601 พร้อม offset หรือ Z — ตอนแสดงผลให้แปลงเป็น Asia/Bangkok",
+      "format": "date-time"
+    },
+    "Uuid": {
+      "type": "string",
+      "description": "ตัวระบุไม่ซ้ำ ใช้ uuid v4 หรือ nanoid ก็ได้ใน MVP",
+      "minLength": 8
+    },
+    "MacroNutrients": {
+      "type": "object",
+      "description": "ชุดสารอาหารหลักที่ใช้ทั้งใน FoodItem, MealEntry, DailyLog.consumed — ค่าเป็นประมาณการไม่ใช่ผลแล็บ",
+      "additionalProperties": false,
+      "required": [
+        "kcal",
+        "protein_g",
+        "carb_g",
+        "fat_g"
+      ],
+      "properties": {
+        "kcal": {
+          "type": "number",
+          "minimum": 0,
+          "description": "พลังงานกิโลแคลอรี่ — แสดงผลเป็นจำนวนเต็มหลังปัด"
+        },
+        "protein_g": {
+          "type": "number",
+          "minimum": 0,
+          "description": "โปรตีน กรัม"
+        },
+        "carb_g": {
+          "type": "number",
+          "minimum": 0,
+          "description": "คาร์โบไฮเดรต กรัม"
+        },
+        "fat_g": {
+          "type": "number",
+          "minimum": 0,
+          "description": "ไขมัน กรัม"
+        },
+        "fiber_g": {
+          "type": "number",
+          "minimum": 0,
+          "description": "ไฟเบอร์ กรัม (ออปชัน โชว์ถ้ามี)"
+        },
+        "sugar_g": {
+          "type": "number",
+          "minimum": 0,
+          "description": "น้ำตาล กรัม (ออปชัน)"
+        }
+      }
+    },
+    "Percent0to100": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 200,
+      "description": "เปอร์เซ็นต์ความคืบหน้า — UI แหวนอาจแคปที่ 100 แต่ค่าจริงเก็บเกินได้เมื่อเกินเป้า"
+    }
+  },
+  "VisionEngine": {
+    "type": "string",
+    "description": "เอนจินวิเคราะห์รูปมื้อ — ค่าเริ่มต้น mock_demo สำหรับเดโม/Reel",
+    "enum": [
+      "mock_demo",
+      "vision_api",
+      "manual"
+    ]
+  },
+  "MealTag": {
+    "type": "string",
+    "description": "แท็กมื้ออาหารตามช่วงวันแบบคนไทยคุ้น",
+    "enum": [
+      "breakfast",
+      "lunch",
+      "dinner",
+      "snack",
+      "drink",
+      "other"
+    ]
+  },
+  "FoodCategory": {
+    "type": "string",
+    "description": "หมวดเมนูใน Thai Food Library",
+    "enum": [
+      "noodle",
+      "rice",
+      "salad",
+      "grill",
+      "soup",
+      "stir_fry",
+      "dessert",
+      "drink",
+      "other"
+    ]
+  },
+  "PortionUnit": {
+    "type": "string",
+    "description": "หน่วยปริมาณเสิร์ฟที่ UI ใช้ปรับ +/-",
+    "enum": [
+      "plate",
+      "bowl",
+      "cup",
+      "glass",
+      "piece",
+      "gram",
+      "ml",
+      "scoop",
+      "serving"
+    ]
+  },
+  "AppStatus": {
+    "type": "string",
+    "description": "สถานะโฟลว์สแกน/บันทึกหลักบน client",
+    "enum": [
+      "idle",
+      "scanning",
+      "confirming",
+      "logged",
+      "sharing",
+      "error"
+    ]
+  },
+  "Portion": {
+    "type": "object",
+    "description": "คำอธิบายขนาดเสิร์ฟมาตรฐานของเมนูหนึ่งรายการ พร้อมป้ายไทยสำหรับ stepper",
+    "additionalProperties": false,
+    "required": [
+      "unit",
+      "amount",
+      "label_th"
+    ],
+    "properties": {
+      "unit": {
+        "$ref": "#/PortionUnit"
+      },
+      "amount": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "ปริมาณฐาน เช่น 1 สำหรับ 1 จาน"
+      },
+      "step": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "ช่วง +/- ต่อครั้ง ค่าแนะนำ 0.25",
+        "default": 0.25
+      },
+      "label_th": {
+        "type": "string",
+        "description": "ป้ายภาษาไทย เช่น จาน, ชาม, แก้ว, ชิ้น"
+      },
+      "grams_estimate": {
+        "type": "number",
+        "minimum": 0,
+        "description": "ประมาณกรัมต่อหน่วยฐาน ถ้าทราบ (ออปชัน)"
+      }
+    }
+  },
+  "FoodItem": {
+    "type": "object",
+    "description": "รายการอาหารใน Thai Food Library หรือรายการที่สแกนแล้วจับคู่ได้",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "name_th",
+      "category",
+      "typical_portion",
+      "nutrients"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "name_th": {
+        "type": "string",
+        "minLength": 1,
+        "description": "ชื่อเมนูภาษาไทยที่แสดงหลัก"
+      },
+      "name_en": {
+        "type": "string",
+        "description": "ชื่ออังกฤษรอง"
+      },
+      "category": {
+        "$ref": "#/FoodCategory"
+      },
+      "tags": {
+        "type": "array",
+        "description": "แท็กช่วยค้นหา/กรอง เช่น กลางวัน, ของว่าง, เผ็ด",
+        "items": {
+          "type": "string"
+        }
+      },
+      "search_aliases": {
+        "type": "array",
+        "description": "ชื่อเล่นหรือคำค้นทางเลือก",
+        "items": {
+          "type": "string"
+        }
+      },
+      "typical_portion": {
+        "$ref": "#/Portion"
+      },
+      "nutrients": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/MacroNutrients"
+          }
+        ],
+        "description": "สารอาหารต่อ typical_portion (multiplier = 1.0)"
+      },
+      "emoji": {
+        "type": "string",
+        "description": "อีโมจิแทนรูปถ้าไม่มีรูป"
+      },
+      "image_url": {
+        "type": "string",
+        "description": "พาธหรือ URL รูปตัวอย่าง (ออปชัน)"
+      },
+      "is_preset": {
+        "type": "boolean",
+        "description": "true ถ้ามาจากไลบรารีในตัวแอป",
+        "default": true
+      },
+      "notes_th": {
+        "type": "string",
+        "description": "หมายเหตุสั้น เช่น สูตรร้านทั่วไป"
+      }
+    }
+  },
+  "ScanDetectedItem": {
+    "type": "object",
+    "description": "รายการที่ vision/mock ตรวจเจอในรูปหนึ่งใบ อาจมีหลายชิ้นก่อนรวมเป็น MealEntry",
+    "additionalProperties": false,
+    "required": [
+      "name_th",
+      "confidence",
+      "nutrients"
+    ],
+    "properties": {
+      "food_item_id": {
+        "type": "string",
+        "description": "อ้าง FoodItem ในไลบรารีถ้าจับคู่ได้"
+      },
+      "name_th": {
+        "type": "string"
+      },
+      "name_en": {
+        "type": "string"
+      },
+      "confidence": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1,
+        "description": "ความมั่นใจ 0–1"
+      },
+      "nutrients": {
+        "$ref": "#/definitions/MacroNutrients"
+      },
+      "typical_portion": {
+        "$ref": "#/Portion"
+      },
+      "bounding_hint": {
+        "type": "string",
+        "description": "คำใบ้ตำแหน่งในรูป เช่น center-plate (ออปชันสำหรับ UI)"
+      }
+    }
+  },
+  "ScanResult": {
+    "type": "object",
+    "description": "ผลลัพธ์จาก Photo Bite Scan หรือ mock_demo fixture — ใช้ก่อนหน้า Confirm",
+    "additionalProperties": false,
+    "required": [
+      "engine",
+      "scan_ms",
+      "confidence",
+      "detected_name_th",
+      "nutrients",
+      "portion"
+    ],
+    "properties": {
+      "engine": {
+        "$ref": "#/VisionEngine"
+      },
+      "raw_note": {
+        "type": "string",
+        "description": "บันทึกดิบหรือคำอธิบาย fixture"
+      },
+      "scan_ms": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "เวลาประมวลผลมิลลิวินาที"
+      },
+      "confidence": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "detected_name_th": {
+        "type": "string",
+        "description": "ชื่อมื้อหลักภาษาไทยที่เสนอให้ผู้ใช้"
+      },
+      "detected_name_en": {
+        "type": "string"
+      },
+      "nutrients": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/MacroNutrients"
+          }
+        ],
+        "description": "แมโครรวมที่เสนอสำหรับ portion ฐาน"
+      },
+      "portion": {
+        "$ref": "#/Portion"
+      },
+      "items": {
+        "type": "array",
+        "description": "รายการย่อยในจานถ้าแยกได้",
+        "items": {
+          "$ref": "#/ScanDetectedItem"
+        }
+      },
+      "alternatives": {
+        "type": "array",
+        "description": "ทางเลือกชื่อเมนูอื่นให้ผู้ใช้แตะเปลี่ยน",
+        "items": {
+          "$ref": "#/ScanDetectedItem"
+        }
+      },
+      "image_data_url": {
+        "type": "string",
+        "description": "พรีวิวรูปที่ผู้ใช้อัปโหลดหรือพาธ fixture"
+      },
+      "disclaimer_th": {
+        "type": "string",
+        "description": "ข้อความประมาณการบังคับโชว์ใกล้ผลลัพธ์",
+        "default": "ตัวเลขเป็นประมาณการเพื่อบันทึกส่วนตัว ไม่ใช่คำแนะนำทางการแพทย์"
+      },
+      "scanned_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "MealEntry": {
+    "type": "object",
+    "description": "มื้อที่บันทึกลง DailyLog แล้ว หลังยืนยันจากสแกน ไลบรารี หรือ Quick Add",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "logged_at",
+      "name_th",
+      "nutrients",
+      "portion",
+      "multiplier",
+      "source"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "logged_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "date": {
+        "$ref": "#/definitions/IsoDate",
+        "description": "วันตาม Asia/Bangkok ที่นับเข้า DailyLog"
+      },
+      "name_th": {
+        "type": "string"
+      },
+      "name_en": {
+        "type": "string"
+      },
+      "food_item_id": {
+        "type": "string",
+        "description": "อ้างไลบรารีถ้ามี"
+      },
+      "meal_tag": {
+        "$ref": "#/MealTag"
+      },
+      "portion": {
+        "$ref": "#/Portion"
+      },
+      "multiplier": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "ตัวคูณเทียบ typical portion เช่น 1.25 = 1.25 จาน",
+        "default": 1.0
+      },
+      "nutrients": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/MacroNutrients"
+          }
+        ],
+        "description": "แมโครหลังคูณ multiplier แล้ว"
+      },
+      "source": {
+        "type": "string",
+        "enum": [
+          "scan",
+          "library",
+          "favorite",
+          "recent",
+          "manual"
+        ],
+        "description": "ที่มาของการเพิ่มมื้อ"
+      },
+      "image_thumb": {
+        "type": "string",
+        "description": "รูปย่อหรืออีโมจิ"
+      },
+      "emoji": {
+        "type": "string"
+      },
+      "favorite_id": {
+        "type": "string",
+        "description": "ถ้ามาจาก Favorite"
+      },
+      "notes_th": {
+        "type": "string"
+      },
+      "scan_confidence": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      }
+    }
+  },
+  "MacroTargets": {
+    "type": "object",
+    "description": "เป้าโภชนาการรายวันที่ผู้ใช้ตั้งเองหรือใช้ค่าเริ่มต้นแอป — ไม่บังคับคำนวณจากน้ำหนักใน MVP",
+    "additionalProperties": false,
+    "required": [
+      "kcal",
+      "protein_g",
+      "carb_g",
+      "fat_g"
+    ],
+    "properties": {
+      "kcal": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "เป้าพลังงานต่อวัน"
+      },
+      "protein_g": {
+        "type": "number",
+        "exclusiveMinimum": 0
+      },
+      "carb_g": {
+        "type": "number",
+        "exclusiveMinimum": 0
+      },
+      "fat_g": {
+        "type": "number",
+        "exclusiveMinimum": 0
+      },
+      "water_ml": {
+        "type": "number",
+        "minimum": 0,
+        "description": "เป้าน้ำต่อวัน มิลลิลิตร (nice)",
+        "default": 2000
+      },
+      "label_th": {
+        "type": "string",
+        "description": "ป้ายเป้า เช่น ทั่วไป, รักษาสมดุล",
+        "default": "ทั่วไป"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "WaterLog": {
+    "type": "object",
+    "description": "บันทึกน้ำรายวันแบบง่าย (nice-to-have)",
+    "additionalProperties": false,
+    "required": [
+      "date",
+      "ml"
+    ],
+    "properties": {
+      "date": {
+        "$ref": "#/definitions/IsoDate"
+      },
+      "ml": {
+        "type": "number",
+        "minimum": 0,
+        "description": "ปริมาณน้ำรวมวันนี้"
+      },
+      "step_ml": {
+        "type": "number",
+        "default": 250,
+        "description": "ปริมาณต่อแตะ"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "DailyLog": {
+    "type": "object",
+    "description": "สรุปหนึ่งวันสำหรับ Dashboard และ Share Card — คำนวณจาก MealEntry[] + MacroTargets",
+    "additionalProperties": false,
+    "required": [
+      "date",
+      "targets",
+      "meals",
+      "consumed",
+      "remaining",
+      "progress_pct"
+    ],
+    "properties": {
+      "date": {
+        "$ref": "#/definitions/IsoDate"
+      },
+      "timezone": {
+        "type": "string",
+        "default": "Asia/Bangkok",
+        "description": "โซนเวลาที่ใช้ตัดวัน"
+      },
+      "targets": {
+        "$ref": "#/MacroTargets"
+      },
+      "meals": {
+        "type": "array",
+        "description": "มื้อทั้งหมดของวันนี้ เรียงตาม logged_at",
+        "items": {
+          "$ref": "#/MealEntry"
+        }
+      },
+      "consumed": {
+        "$ref": "#/definitions/MacroNutrients"
+      },
+      "remaining": {
+        "type": "object",
+        "description": "เป้า − บริโภค; ค่าติดลบได้เมื่อเกินเป้า",
+        "required": [
+          "kcal",
+          "protein_g",
+          "carb_g",
+          "fat_g"
+        ],
+        "properties": {
+          "kcal": {
+            "type": "number"
+          },
+          "protein_g": {
+            "type": "number"
+          },
+          "carb_g": {
+            "type": "number"
+          },
+          "fat_g": {
+            "type": "number"
+          }
+        }
+      },
+      "progress_pct": {
+        "type": "object",
+        "description": "เปอร์เซ็นต์เทียบเป้าต่อชนิดสารอาหาร",
+        "required": [
+          "kcal",
+          "protein_g",
+          "carb_g",
+          "fat_g"
+        ],
+        "properties": {
+          "kcal": {
+            "$ref": "#/definitions/Percent0to100"
+          },
+          "protein_g": {
+            "$ref": "#/definitions/Percent0to100"
+          },
+          "carb_g": {
+            "$ref": "#/definitions/Percent0to100"
+          },
+          "fat_g": {
+            "$ref": "#/definitions/Percent0to100"
+          }
+        }
+      },
+      "meals_count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "water": {
+        "$ref": "#/WaterLog"
+      },
+      "streak_days": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "จำนวนวันติดต่อกันที่มี ≥1 มื้อ (nice)"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "Favorite": {
+    "type": "object",
+    "description": "มื้อโปรดสำหรับ Quick Add — เก็บ snapshot ชื่อ+portion+nutrients ฐาน",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "name_th",
+      "nutrients",
+      "portion",
+      "created_at"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "name_th": {
+        "type": "string"
+      },
+      "name_en": {
+        "type": "string"
+      },
+      "food_item_id": {
+        "type": "string"
+      },
+      "portion": {
+        "$ref": "#/Portion"
+      },
+      "default_multiplier": {
+        "type": "number",
+        "default": 1.0,
+        "exclusiveMinimum": 0
+      },
+      "nutrients": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/MacroNutrients"
+          }
+        ],
+        "description": "แมโครที่ multiplier = 1.0"
+      },
+      "emoji": {
+        "type": "string"
+      },
+      "meal_tag": {
+        "$ref": "#/MealTag"
+      },
+      "use_count": {
+        "type": "integer",
+        "minimum": 0,
+        "default": 0
+      },
+      "created_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "last_used_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "ShareCard": {
+    "type": "object",
+    "description": "ข้อมูลที่ใช้เรนเดอร์การ์ดความคืบหน้าวัน/สตรีค",
+    "additionalProperties": false,
+    "required": [
+      "date",
+      "title_th",
+      "kcal_consumed",
+      "kcal_target",
+      "macros_line_th"
+    ],
+    "properties": {
+      "date": {
+        "$ref": "#/definitions/IsoDate"
+      },
+      "title_th": {
+        "type": "string",
+        "description": "หัวการ์ด เช่น สรุปมื้อวันนี้"
+      },
+      "kcal_consumed": {
+        "type": "number"
+      },
+      "kcal_target": {
+        "type": "number"
+      },
+      "macros_line_th": {
+        "type": "string",
+        "description": "บรรทัดสรุป P/C/F ภาษาไทย"
+      },
+      "meals_count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "streak_days": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "highlight_meal_th": {
+        "type": "string",
+        "description": "มื้อเด่นบนการ์ด เช่น ข้าวผัดกุ้งไข่ดาว"
+      },
+      "accent": {
+        "type": "string",
+        "description": "รหัสสี accent เช่น #F97316"
+      },
+      "footer_th": {
+        "type": "string",
+        "default": "BiteLog · AI วันละแอป"
+      },
+      "theme": {
+        "type": "string",
+        "enum": [
+          "cream_coral",
+          "cream_green"
+        ],
+        "default": "cream_coral"
+      }
+    }
+  },
+  "SharePayload": {
+    "type": "object",
+    "description": "เพย์โหลดแผงแชร์ — รูป + แคปชัน + เมตา",
+    "additionalProperties": false,
+    "required": [
+      "date",
+      "caption_th",
+      "card_filename"
+    ],
+    "properties": {
+      "date": {
+        "$ref": "#/definitions/IsoDate"
+      },
+      "caption_th": {
+        "type": "string",
+        "description": "ข้อความคัดลอกไป IG/LINE"
+      },
+      "caption_hashtags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "แฮชแท็กแนะนำ ไม่บังคับใส่ครบ"
+      },
+      "card": {
+        "$ref": "#/ShareCard"
+      },
+      "card_filename": {
+        "type": "string"
+      },
+      "mock_link": {
+        "type": "string",
+        "description": "ลิงก์ mock เช่น https://bitelog.app/d/{date}"
+      },
+      "include_streak": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "UserSettings": {
+    "type": "object",
+    "description": "ตั้งค่าเบาๆ ใน localStorage",
+    "additionalProperties": false,
+    "properties": {
+      "display_name_th": {
+        "type": "string",
+        "description": "ชื่อเล่นบนการ์ดแชร์ (ออปชัน)"
+      },
+      "targets": {
+        "$ref": "#/MacroTargets"
+      },
+      "vision_engine": {
+        "$ref": "#/VisionEngine"
+      },
+      "gentle_reminders": {
+        "type": "boolean",
+        "default": true,
+        "description": "เปิดสำเนาเตือนอ่อนโยน"
+      },
+      "locale": {
+        "type": "string",
+        "default": "th-TH"
+      },
+      "theme": {
+        "type": "string",
+        "enum": [
+          "cream_coral",
+          "system"
+        ],
+        "default": "cream_coral"
+      }
+    }
+  },
+  "LocalStore": {
+    "type": "object",
+    "description": "โครงข้อมูลทั้งก้อนใน localStorage key เช่น bitelog.v1",
+    "additionalProperties": false,
+    "properties": {
+      "version": {
+        "type": "integer",
+        "minimum": 1,
+        "default": 1
+      },
+      "settings": {
+        "$ref": "#/UserSettings"
+      },
+      "favorites": {
+        "type": "array",
+        "items": {
+          "$ref": "#/Favorite"
+        }
+      },
+      "daily_logs": {
+        "type": "array",
+        "description": "ประวัติรายวันล่าสุด สูงสุดประมาณ 30 วัน",
+        "items": {
+          "$ref": "#/DailyLog"
+        }
+      },
+      "recent_meal_ids": {
+        "type": "array",
+        "description": "เรียง id มื้อล่าสุดสำหรับ Quick Add",
+        "items": {
+          "type": "string"
+        }
+      },
+      "streak": {
+        "type": "object",
+        "properties": {
+          "current_days": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "best_days": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "last_active_date": {
+            "$ref": "#/definitions/IsoDate"
+          }
+        }
+      }
+    }
+  },
+  "AnalyticsEvent": {
+    "type": "object",
+    "description": "อีเวนต์วัดพฤติกรรมฝั่ง client สำหรับช่องและผลิตภัณฑ์",
+    "additionalProperties": false,
+    "required": [
+      "name",
+      "ts"
+    ],
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "ชื่ออีเวนต์มาตรฐาน",
+        "enum": [
+          "app_open",
+          "scan_start",
+          "scan_success",
+          "scan_fail",
+          "meal_confirm_open",
+          "meal_logged",
+          "library_search",
+          "library_add",
+          "favorite_add",
+          "favorite_quick_add",
+          "dashboard_view",
+          "share_open",
+          "share_success",
+          "copy_caption",
+          "water_add",
+          "target_edit"
+        ]
+      },
+      "ts": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "props": {
+        "type": "object",
+        "description": "คุณสมบัติเพิ่ม เช่น scan_ms, source, meal_tag",
+        "additionalProperties": true
+      }
+    }
+  },
+  "FeatureChecklistItem": {
+    "type": "object",
+    "description": "รายการยืนยันทีละฟีเจอร์ก่อนปล่อยคลิป",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "name_th",
+      "tier",
+      "implemented",
+      "demo_in_reel"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name_th": {
+        "type": "string"
+      },
+      "name_en": {
+        "type": "string"
+      },
+      "tier": {
+        "type": "string",
+        "enum": [
+          "must",
+          "nice"
+        ]
+      },
+      "implemented": {
+        "type": "boolean"
+      },
+      "demo_in_reel": {
+        "type": "boolean"
+      },
+      "notes": {
+        "type": "string"
+      }
+    }
+  },
+  "FeatureChecklist": {
+    "type": "object",
+    "description": "ใช้ยืนยันกฎขั้นต่ำ ≥5 ฟีเจอร์ must ก่อนปล่อยคลิป AI วันละแอป",
+    "additionalProperties": false,
+    "required": [
+      "app",
+      "date",
+      "features",
+      "must_implemented_count"
+    ],
+    "properties": {
+      "app": {
+        "type": "string",
+        "const": "BiteLog"
+      },
+      "date": {
+        "$ref": "#/definitions/IsoDate"
+      },
+      "features": {
+        "type": "array",
+        "minItems": 5,
+        "items": {
+          "$ref": "#/FeatureChecklistItem"
+        }
+      },
+      "must_implemented_count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "ready_to_film": {
+        "type": "boolean"
+      }
+    }
+  },
+  "UiCopyTh": {
+    "type": "object",
+    "description": "ชุดข้อความ UI ภาษาไทยมาตรฐาน กันสะกดไม่ตรงกันตอน codegen",
+    "additionalProperties": {
+      "type": "string"
+    },
+    "properties": {
+      "home_headline": {
+        "type": "string"
+      },
+      "home_sub": {
+        "type": "string"
+      },
+      "home_cta": {
+        "type": "string"
+      },
+      "home_demo_cta": {
+        "type": "string"
+      },
+      "scan_loading": {
+        "type": "string"
+      },
+      "scan_done": {
+        "type": "string"
+      },
+      "scan_fail": {
+        "type": "string"
+      },
+      "confirm_cta": {
+        "type": "string"
+      },
+      "logged_toast": {
+        "type": "string"
+      },
+      "library_placeholder": {
+        "type": "string"
+      },
+      "favorite_added": {
+        "type": "string"
+      },
+      "quick_add_done": {
+        "type": "string"
+      },
+      "share_copied": {
+        "type": "string"
+      },
+      "share_fail": {
+        "type": "string"
+      },
+      "over_target_gentle": {
+        "type": "string"
+      },
+      "disclaimer": {
+        "type": "string"
+      },
+      "empty_dashboard": {
+        "type": "string"
+      }
+    }
+  },
+  "ReelShot": {
+    "type": "object",
+    "description": "หนึ่งช็อตในสคริปต์ Reel",
+    "additionalProperties": false,
+    "required": [
+      "start_sec",
+      "end_sec",
+      "on_screen_th",
+      "voice_th",
+      "visual_th"
+    ],
+    "properties": {
+      "start_sec": {
+        "type": "number",
+        "minimum": 0
+      },
+      "end_sec": {
+        "type": "number",
+        "minimum": 0
+      },
+      "on_screen_th": {
+        "type": "string",
+        "description": "ข้อความบนจอ สั้น ≤8 คำ"
+      },
+      "voice_th": {
+        "type": "string"
+      },
+      "visual_th": {
+        "type": "string",
+        "description": "สิ่งที่เห็นในเฟรม"
+      }
+    }
+  },
+  "ReelScript": {
+    "type": "object",
+    "description": "สคริปต์ถ่าย Reel หนึ่งคลิป",
+    "additionalProperties": false,
+    "required": [
+      "duration_sec",
+      "hook_th",
+      "cta_th",
+      "shots"
+    ],
+    "properties": {
+      "duration_sec": {
+        "type": "number"
+      },
+      "hook_th": {
+        "type": "string"
+      },
+      "cta_th": {
+        "type": "string"
+      },
+      "comment_keyword_th": {
+        "type": "string",
+        "default": "แคล"
+      },
+      "shots": {
+        "type": "array",
+        "minItems": 4,
+        "items": {
+          "$ref": "#/ReelShot"
+        }
+      },
+      "props_needed_th": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "RiskTrap": {
+    "type": "object",
+    "description": "กับดักความเสี่ยงที่ทีมถ่าย/codegen ต้องเลี่ยง",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "title_th",
+      "detail_th",
+      "mitigation_th"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "title_th": {
+        "type": "string"
+      },
+      "detail_th": {
+        "type": "string"
+      },
+      "mitigation_th": {
+        "type": "string"
+      },
+      "severity": {
+        "type": "string",
+        "enum": [
+          "blocker",
+          "major",
+          "minor"
+        ]
+      }
+    }
+  }
+}

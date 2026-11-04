@@ -1,0 +1,986 @@
+{
+  "meta": {
+    "app": "ExamDeck",
+    "channel": "AI วันละแอป",
+    "day_index": 4,
+    "total_days": 10,
+    "date": "2026-10-01",
+    "timezone": "Asia/Bangkok",
+    "hook_th": "ถ่ายโน้ต/ข้อสอบ → ได้เด็คทวนทันที ใน 10 วินาที",
+    "stack": "Next.js 14 App Router + TypeScript + Tailwind + shadcn/ui + mock_demo extract + localStorage",
+    "brand": {
+      "bg": "#FAFAF9",
+      "primary": "#4F46E5",
+      "primary_soft": "#6366F1",
+      "accent": "#F59E0B",
+      "card": "#FFFFFF",
+      "ink": "#1E1B4B",
+      "muted": "#64748B"
+    },
+    "disclaimer_th": "ExamDeck เป็นเครื่องมือทวนและฝึกจำจากโน้ตของคุณ ไม่ใช่เฉลยข้อสอบสดหรือรับประกันผลสอบ",
+    "demo_fixture_primary_th": "ม.ปลาย ชีวะ ระบบหายใจ → 7 การ์ด Q&A",
+    "demo_fixture_backup_th": "คณิต สมการเชิงเส้น → 5 การ์ด"
+  },
+  "feature_checklist_example": {
+    "app": "ExamDeck",
+    "date": "2026-10-01",
+    "must_implemented_count": 5,
+    "ready_to_film": true,
+    "features": [
+      {
+        "id": "photo_to_cards",
+        "name_th": "Photo → Cards",
+        "name_en": "Photo → Cards",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "ปุ่มใช้รูปเดโม + กองการ์ด Q&A โผล่ใน ≤2s"
+      },
+      {
+        "id": "swipe_quiz",
+        "name_th": "Swipe Quiz",
+        "name_en": "Swipe Quiz",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "พลิกการ์ด + รู้แล้ว/ยังไม่ชัวร์ + สตรีค"
+      },
+      {
+        "id": "deck_library",
+        "name_th": "Deck Library",
+        "name_en": "Deck Library",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "โฟลเดอร์วิชา + สร้าง/เปลี่ยนชื่อเด็ค"
+      },
+      {
+        "id": "mastery_dashboard",
+        "name_th": "Mastery Dashboard",
+        "name_en": "Mastery Dashboard",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "% ชำนาญ · due วันนี้ · สตรีควงแหวน"
+      },
+      {
+        "id": "share_study_card",
+        "name_th": "Share Study Card",
+        "name_en": "Share Study Card",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "การ์ดสตรีค+แคปชันคัดลอกได้บนมือถือ"
+      },
+      {
+        "id": "paste_text_cards",
+        "name_th": "Paste Text → Cards",
+        "name_en": "Paste Text → Cards",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": "เสริมถ้าเสร็จเร็ว"
+      },
+      {
+        "id": "multi_choice_mode",
+        "name_th": "Multi-choice mode",
+        "name_en": "Multi-choice mode",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": ""
+      },
+      {
+        "id": "exam_countdown",
+        "name_th": "Exam countdown timer",
+        "name_en": "Exam countdown timer",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": ""
+      },
+      {
+        "id": "voice_read",
+        "name_th": "Voice read question",
+        "name_en": "Voice read question",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": "speechSynthesis th-TH"
+      },
+      {
+        "id": "dark_study_mode",
+        "name_th": "Dark study mode",
+        "name_en": "Dark study mode",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": ""
+      },
+      {
+        "id": "offline_history",
+        "name_th": "Offline history",
+        "name_en": "Offline history",
+        "tier": "nice",
+        "implemented": true,
+        "demo_in_reel": false,
+        "notes": "เก็บ decks/sessions ท้องถิ่นเป็นค่าเริ่ม"
+      }
+    ]
+  },
+  "ui_copy_th": {
+    "home_headline": "ถ่ายโน้ต/ข้อสอบ → ได้เด็คทวนทันที ใน 10 วินาที",
+    "home_sub": "แตกโน้ตเป็นแฟลชการ์ด สไวป์ทวน ดูความชำนาญ แล้วแชร์สตรีคได้เลย",
+    "home_cta": "ถ่ายโน้ต",
+    "home_demo_cta": "ใช้รูปเดโม",
+    "extract_loading": "กำลังแตกโน้ตเป็นการ์ด…",
+    "extract_done": "ได้เด็คทวนแล้ว — แก้คำถามก่อนบันทึกได้",
+    "extract_fail": "อ่านรูปไม่สำเร็จ ลองถ่ายใหม่หรือแก้การ์ดมือ",
+    "extract_low_confidence": "ยังไม่แน่ใจเต็มที่ — ช่วยแก้คำถามให้ตรงขึ้นได้",
+    "confirm_cta": "บันทึกเด็คนี้",
+    "confirm_edit_q": "แก้คำถาม",
+    "confirm_edit_a": "แก้คำตอบ",
+    "deck_name_placeholder": "ชื่อเด็ค เช่น ชีวะ · ระบบหายใจ",
+    "saved_toast": "บันทึกเด็คแล้ว พร้อมทวนเลย",
+    "quiz_flip": "แตะเพื่อดูคำตอบ",
+    "quiz_known": "รู้แล้ว",
+    "quiz_unsure": "ยังไม่ชัวร์",
+    "quiz_known_toast": "เก่ง! ไปใบถัดไป",
+    "quiz_unsure_toast": "โอเค เก็บไว้ทวนอีกครั้ง",
+    "quiz_streak": "ต่อเนื่อง {n} ใบ!",
+    "quiz_done": "จบรอบนี้แล้ว ดูความชำนาญได้เลย",
+    "library_title": "ไลบรารีเด็ค",
+    "library_create": "สร้างเด็คใหม่",
+    "library_rename": "เปลี่ยนชื่อเด็ค",
+    "library_empty": "ยังไม่มีเด็ค — ถ่ายโน้ตแรกเลย",
+    "dashboard_title": "ความชำนาญ",
+    "dashboard_due": "ทวนวันนี้ {n} ใบ",
+    "dashboard_mastery": "ชำนาญ {pct}%",
+    "empty_dashboard": "ยังไม่มีเด็ค — ถ่ายโน้ตแรกเลย",
+    "share_title": "แชร์การ์ดทวน",
+    "share_copied": "คัดลอกแคปชันแล้ว",
+    "share_fail": "แชร์ไม่สำเร็จ ลองบันทึกรูปแทน",
+    "disclaimer": "เครื่องมือทวนและฝึกจำ ไม่ใช่เฉลยข้อสอบสดหรือรับประกันผลสอบ",
+    "streak_gentle": "ทวนต่อเนื่อง {days} วันแล้ว สุดยอด",
+    "cta_comment": "คอมเมนต์「เด็ค」เพื่อรับลิงก์"
+  },
+  "subjects_sample": [
+    {
+      "id": "math",
+      "name_th": "คณิต",
+      "name_en": "Math",
+      "emoji": "🔢",
+      "color_hex": "#4F46E5",
+      "deck_count": 1
+    },
+    {
+      "id": "english",
+      "name_th": "อังกฤษ",
+      "name_en": "English",
+      "emoji": "🔤",
+      "color_hex": "#6366F1",
+      "deck_count": 0
+    },
+    {
+      "id": "biology",
+      "name_th": "ชีวะ",
+      "name_en": "Biology",
+      "emoji": "🧬",
+      "color_hex": "#10B981",
+      "deck_count": 1
+    },
+    {
+      "id": "history",
+      "name_th": "ประวัติ",
+      "name_en": "History",
+      "emoji": "📜",
+      "color_hex": "#F59E0B",
+      "deck_count": 0
+    },
+    {
+      "id": "physics",
+      "name_th": "ฟิสิกส์",
+      "name_en": "Physics",
+      "emoji": "⚡️",
+      "color_hex": "#8B5CF6",
+      "deck_count": 0
+    },
+    {
+      "id": "other",
+      "name_th": "อื่นๆ",
+      "name_en": "Other",
+      "emoji": "📚",
+      "color_hex": "#64748B",
+      "deck_count": 0
+    }
+  ],
+  "photo_extract_example": {
+    "engine": "mock_demo",
+    "raw_note": "fixture เดโมโน้ตม.ปลายชีวะหัวข้อระบบหายใจ แสงธรรมชาติ มุมเหนือหน้ากระดาษ",
+    "source_image_name": "demo-note-respiratory.jpg",
+    "extract_ms": 1180,
+    "confidence": 0.87,
+    "subject_id": "biology",
+    "suggested_deck_title_th": "ชีวะ · ระบบหายใจ",
+    "suggested_deck_title_en": "Biology · Respiratory system",
+    "extracted_at": "2026-10-01T07:58:00+07:00",
+    "warnings_th": [],
+    "cards": [
+      {
+        "temp_id": "c1",
+        "question_th": "อวัยวะหลักในระบบหายใจมีอะไรบ้าง?",
+        "answer_th": "จมูก คอหอย กล่องเสียง หลอดลม หลอดลมฝอย ถุงลม และปอด",
+        "question_en": "What are the main organs of the respiratory system?",
+        "confidence": 0.9
+      },
+      {
+        "temp_id": "c2",
+        "question_th": "แก๊สที่ร่างกายต้องการตอนหายใจเข้าคืออะไร?",
+        "answer_th": "ออกซิเจน (O₂)",
+        "confidence": 0.92
+      },
+      {
+        "temp_id": "c3",
+        "question_th": "การแลกเปลี่ยนแก๊สในปอดเกิดที่โครงสร้างใด?",
+        "answer_th": "ถุงลมปอด (alveoli)",
+        "hint_th": "โครงสร้างเล็กปลายหลอดลมฝอย",
+        "confidence": 0.88
+      },
+      {
+        "temp_id": "c4",
+        "question_th": "กล้ามเนื้อสำคัญที่ช่วยในการหายใจคืออะไร?",
+        "answer_th": "กะบังลม (diaphragm)",
+        "confidence": 0.91
+      },
+      {
+        "temp_id": "c5",
+        "question_th": "ตอนหายใจเข้า ปริมาตรช่องอกและความดันเป็นอย่างไร?",
+        "answer_th": "ปริมาตรช่องอกเพิ่มขึ้น ความดันลดลง อากาศจึงไหลเข้าปอด",
+        "confidence": 0.85
+      },
+      {
+        "temp_id": "c6",
+        "question_th": "ยกตัวอย่างโรคหรือภาวะที่เกี่ยวกับระบบหายใจ (สำหรับทวน)",
+        "answer_th": "เช่น หอบหืด ปอดบวม — ใช้ทวนชื่อเท่านั้น ไม่ใช่วินิจฉัย",
+        "confidence": 0.8
+      },
+      {
+        "temp_id": "c7",
+        "question_th": "หลอดเลือดที่นำเลือดจากปอดกลับสู่หัวใจเรียกว่าอะไร และเลือดมีแก๊สใดสูง?",
+        "answer_th": "หลอดเลือดดำปอด (pulmonary veins) — เลือดมีออกซิเจนสูง",
+        "confidence": 0.84
+      }
+    ]
+  },
+  "photo_extract_backup_math": {
+    "engine": "mock_demo",
+    "subject_id": "math",
+    "suggested_deck_title_th": "คณิต · สมการเชิงเส้น",
+    "extract_ms": 980,
+    "confidence": 0.83,
+    "cards": [
+      {
+        "temp_id": "m1",
+        "question_th": "รูปแบบมาตรฐานของสมการเชิงเส้นหนึ่งตัวแปรคืออะไร?",
+        "answer_th": "ax + b = 0 เมื่อ a ≠ 0"
+      },
+      {
+        "temp_id": "m2",
+        "question_th": "แก้สมการ 2x + 6 = 0 ได้ x เท่าใด?",
+        "answer_th": "x = -3"
+      },
+      {
+        "temp_id": "m3",
+        "question_th": "กราฟของสมการเชิงเส้นสองตัวแปรเป็นรูปอะไร?",
+        "answer_th": "เส้นตรง"
+      },
+      {
+        "temp_id": "m4",
+        "question_th": "ความชันของเส้นตรงจากสมการ y = mx + c คือตัวใด?",
+        "answer_th": "m (ค่าความชัน)"
+      },
+      {
+        "temp_id": "m5",
+        "question_th": "จุดตัดแกน y ของ y = mx + c คืออะไร?",
+        "answer_th": "(0, c)"
+      }
+    ]
+  },
+  "deck_library_example": {
+    "decks": [
+      {
+        "id": "deck_bio_resp_001",
+        "title_th": "ชีวะ · ระบบหายใจ",
+        "title_en": "Biology · Respiratory system",
+        "subject_id": "biology",
+        "cover_emoji": "🫁",
+        "card_ids": [
+          "card_001",
+          "card_002",
+          "card_003",
+          "card_004",
+          "card_005",
+          "card_006",
+          "card_007"
+        ],
+        "card_count": 7,
+        "mastery_pct": 43,
+        "created_at": "2026-10-01T08:05:00+07:00",
+        "updated_at": "2026-10-01T08:20:00+07:00"
+      },
+      {
+        "id": "deck_math_linear_001",
+        "title_th": "คณิต · สมการเชิงเส้น",
+        "title_en": "Math · Linear equations",
+        "subject_id": "math",
+        "cover_emoji": "📐",
+        "card_ids": [
+          "card_m1",
+          "card_m2",
+          "card_m3",
+          "card_m4",
+          "card_m5"
+        ],
+        "card_count": 5,
+        "mastery_pct": 20,
+        "exam_date": "2026-10-15",
+        "created_at": "2026-10-01T08:25:00+07:00",
+        "updated_at": "2026-10-01T08:25:00+07:00"
+      }
+    ]
+  },
+  "flashcards_example": [
+    {
+      "id": "card_001",
+      "deck_id": "deck_bio_resp_001",
+      "question_th": "อวัยวะหลักในระบบหายใจมีอะไรบ้าง?",
+      "answer_th": "จมูก คอหอย กล่องเสียง หลอดลม หลอดลมฝอย ถุงลม และปอด",
+      "status": "mastered",
+      "known_streak": 2,
+      "times_seen": 3,
+      "times_known": 2,
+      "times_unsure": 1,
+      "source": "photo_extract",
+      "created_at": "2026-10-01T08:05:00+07:00",
+      "last_reviewed_at": "2026-10-01T08:18:00+07:00"
+    },
+    {
+      "id": "card_002",
+      "deck_id": "deck_bio_resp_001",
+      "question_th": "แก๊สที่ร่างกายต้องการตอนหายใจเข้าคืออะไร?",
+      "answer_th": "ออกซิเจน (O₂)",
+      "status": "mastered",
+      "known_streak": 2,
+      "times_seen": 2,
+      "times_known": 2,
+      "times_unsure": 0,
+      "source": "photo_extract",
+      "created_at": "2026-10-01T08:05:00+07:00",
+      "last_reviewed_at": "2026-10-01T08:18:30+07:00"
+    },
+    {
+      "id": "card_003",
+      "deck_id": "deck_bio_resp_001",
+      "question_th": "การแลกเปลี่ยนแก๊สในปอดเกิดที่โครงสร้างใด?",
+      "answer_th": "ถุงลมปอด (alveoli)",
+      "status": "learning",
+      "known_streak": 0,
+      "times_seen": 2,
+      "times_known": 0,
+      "times_unsure": 2,
+      "source": "photo_extract",
+      "created_at": "2026-10-01T08:05:00+07:00",
+      "last_reviewed_at": "2026-10-01T08:19:00+07:00"
+    },
+    {
+      "id": "card_004",
+      "deck_id": "deck_bio_resp_001",
+      "question_th": "กล้ามเนื้อสำคัญที่ช่วยในการหายใจคืออะไร?",
+      "answer_th": "กะบังลม (diaphragm)",
+      "status": "learning",
+      "known_streak": 1,
+      "times_seen": 1,
+      "times_known": 1,
+      "times_unsure": 0,
+      "source": "photo_extract",
+      "created_at": "2026-10-01T08:05:00+07:00",
+      "last_reviewed_at": "2026-10-01T08:19:20+07:00"
+    },
+    {
+      "id": "card_005",
+      "deck_id": "deck_bio_resp_001",
+      "question_th": "ตอนหายใจเข้า ปริมาตรช่องอกและความดันเป็นอย่างไร?",
+      "answer_th": "ปริมาตรช่องอกเพิ่มขึ้น ความดันลดลง อากาศจึงไหลเข้าปอด",
+      "status": "new",
+      "known_streak": 0,
+      "times_seen": 0,
+      "times_known": 0,
+      "times_unsure": 0,
+      "source": "photo_extract",
+      "created_at": "2026-10-01T08:05:00+07:00"
+    },
+    {
+      "id": "card_006",
+      "deck_id": "deck_bio_resp_001",
+      "question_th": "ยกตัวอย่างโรคหรือภาวะที่เกี่ยวกับระบบหายใจ (สำหรับทวน)",
+      "answer_th": "เช่น หอบหืด ปอดบวม — ใช้ทวนชื่อเท่านั้น ไม่ใช่วินิจฉัย",
+      "status": "new",
+      "known_streak": 0,
+      "times_seen": 0,
+      "times_known": 0,
+      "times_unsure": 0,
+      "source": "photo_extract",
+      "created_at": "2026-10-01T08:05:00+07:00"
+    },
+    {
+      "id": "card_007",
+      "deck_id": "deck_bio_resp_001",
+      "question_th": "หลอดเลือดที่นำเลือดจากปอดกลับสู่หัวใจเรียกว่าอะไร และเลือดมีแก๊สใดสูง?",
+      "answer_th": "หลอดเลือดดำปอด (pulmonary veins) — เลือดมีออกซิเจนสูง",
+      "status": "mastered",
+      "known_streak": 2,
+      "times_seen": 2,
+      "times_known": 2,
+      "times_unsure": 0,
+      "source": "photo_extract",
+      "created_at": "2026-10-01T08:05:00+07:00",
+      "last_reviewed_at": "2026-10-01T08:19:40+07:00"
+    }
+  ],
+  "study_session_example": {
+    "id": "sess_001",
+    "deck_id": "deck_bio_resp_001",
+    "started_at": "2026-10-01T08:17:00+07:00",
+    "ended_at": "2026-10-01T08:20:00+07:00",
+    "mode": "swipe",
+    "known_count": 4,
+    "unsure_count": 1,
+    "max_streak": 3,
+    "answers": [
+      {
+        "card_id": "card_001",
+        "verdict": "known",
+        "flipped": true,
+        "latency_ms": 4200,
+        "answered_at": "2026-10-01T08:17:20+07:00"
+      },
+      {
+        "card_id": "card_002",
+        "verdict": "known",
+        "flipped": true,
+        "latency_ms": 3100,
+        "answered_at": "2026-10-01T08:17:50+07:00"
+      },
+      {
+        "card_id": "card_003",
+        "verdict": "unsure",
+        "flipped": true,
+        "latency_ms": 5600,
+        "answered_at": "2026-10-01T08:18:30+07:00"
+      },
+      {
+        "card_id": "card_004",
+        "verdict": "known",
+        "flipped": true,
+        "latency_ms": 3800,
+        "answered_at": "2026-10-01T08:19:10+07:00"
+      },
+      {
+        "card_id": "card_007",
+        "verdict": "known",
+        "flipped": true,
+        "latency_ms": 4500,
+        "answered_at": "2026-10-01T08:19:50+07:00"
+      }
+    ]
+  },
+  "mastery_dashboard_example": {
+    "as_of_date": "2026-10-01",
+    "scope": "all",
+    "total_cards": 12,
+    "mastered_count": 4,
+    "learning_count": 3,
+    "new_count": 5,
+    "mastery_pct": 33,
+    "due_today": 8,
+    "streak_days": 3,
+    "cards_reviewed_today": 5,
+    "sessions_today": 1,
+    "best_session_streak": 3,
+    "decks_summary": [
+      {
+        "deck_id": "deck_bio_resp_001",
+        "title_th": "ชีวะ · ระบบหายใจ",
+        "mastery_pct": 43,
+        "due_today": 4
+      },
+      {
+        "deck_id": "deck_math_linear_001",
+        "title_th": "คณิต · สมการเชิงเส้น",
+        "mastery_pct": 20,
+        "due_today": 4
+      }
+    ]
+  },
+  "share_card_example": {
+    "card": {
+      "kind": "streak",
+      "title_th": "ทวนต่อเนื่อง 3 วันแล้ว",
+      "subtitle_th": "ExamDeck · AI วันละแอป",
+      "deck_title_th": "ชีวะ · ระบบหายใจ",
+      "mastery_pct": 43,
+      "streak_days": 3,
+      "cards_reviewed_today": 5,
+      "stats_lines": [
+        "ชำนาญ 43%",
+        "ทวนวันนี้ 5 ใบ",
+        "สตรีค 3 วัน"
+      ],
+      "footer_th": "ExamDeck · เครื่องมือทวน ไม่ใช่เฉลยข้อสอบ",
+      "accent": {
+        "primary": "#4F46E5",
+        "accent": "#F59E0B",
+        "bg": "#FAFAF9"
+      },
+      "width": 1080,
+      "height": 1350
+    },
+    "caption_th": "ทวนโน้ตชีวะด้วย ExamDeck ต่อเนื่อง 3 วันแล้ว 🫁✨\nถ่ายโน้ต → ได้เด็คทวนทันที\nวันนี้ทวน 5 ใบ · ชำนาญ 43%\n#ExamDeck #AIวันละแอป #ทวนสอบ #ชีวะ",
+    "filename": "examdeck-2026-10-01-082000.png",
+    "hashtags": [
+      "ExamDeck",
+      "AIวันละแอป",
+      "ทวนสอบ",
+      "ชีวะ"
+    ]
+  },
+  "local_store_example": {
+    "version": 1,
+    "decks": [
+      {
+        "id": "deck_bio_resp_001",
+        "title_th": "ชีวะ · ระบบหายใจ",
+        "title_en": "Biology · Respiratory system",
+        "subject_id": "biology",
+        "cover_emoji": "🫁",
+        "card_ids": [
+          "card_001",
+          "card_002",
+          "card_003",
+          "card_004",
+          "card_005",
+          "card_006",
+          "card_007"
+        ],
+        "card_count": 7,
+        "mastery_pct": 43,
+        "created_at": "2026-10-01T08:05:00+07:00",
+        "updated_at": "2026-10-01T08:20:00+07:00"
+      },
+      {
+        "id": "deck_math_linear_001",
+        "title_th": "คณิต · สมการเชิงเส้น",
+        "title_en": "Math · Linear equations",
+        "subject_id": "math",
+        "cover_emoji": "📐",
+        "card_ids": [
+          "card_m1",
+          "card_m2",
+          "card_m3",
+          "card_m4",
+          "card_m5"
+        ],
+        "card_count": 5,
+        "mastery_pct": 20,
+        "exam_date": "2026-10-15",
+        "created_at": "2026-10-01T08:25:00+07:00",
+        "updated_at": "2026-10-01T08:25:00+07:00"
+      }
+    ],
+    "cards": [
+      {
+        "id": "card_001",
+        "deck_id": "deck_bio_resp_001",
+        "question_th": "อวัยวะหลักในระบบหายใจมีอะไรบ้าง?",
+        "answer_th": "จมูก คอหอย กล่องเสียง หลอดลม หลอดลมฝอย ถุงลม และปอด",
+        "status": "mastered",
+        "known_streak": 2,
+        "times_seen": 3,
+        "times_known": 2,
+        "times_unsure": 1,
+        "source": "photo_extract",
+        "created_at": "2026-10-01T08:05:00+07:00",
+        "last_reviewed_at": "2026-10-01T08:18:00+07:00"
+      },
+      {
+        "id": "card_002",
+        "deck_id": "deck_bio_resp_001",
+        "question_th": "แก๊สที่ร่างกายต้องการตอนหายใจเข้าคืออะไร?",
+        "answer_th": "ออกซิเจน (O₂)",
+        "status": "mastered",
+        "known_streak": 2,
+        "times_seen": 2,
+        "times_known": 2,
+        "times_unsure": 0,
+        "source": "photo_extract",
+        "created_at": "2026-10-01T08:05:00+07:00",
+        "last_reviewed_at": "2026-10-01T08:18:30+07:00"
+      },
+      {
+        "id": "card_003",
+        "deck_id": "deck_bio_resp_001",
+        "question_th": "การแลกเปลี่ยนแก๊สในปอดเกิดที่โครงสร้างใด?",
+        "answer_th": "ถุงลมปอด (alveoli)",
+        "status": "learning",
+        "known_streak": 0,
+        "times_seen": 2,
+        "times_known": 0,
+        "times_unsure": 2,
+        "source": "photo_extract",
+        "created_at": "2026-10-01T08:05:00+07:00",
+        "last_reviewed_at": "2026-10-01T08:19:00+07:00"
+      },
+      {
+        "id": "card_004",
+        "deck_id": "deck_bio_resp_001",
+        "question_th": "กล้ามเนื้อสำคัญที่ช่วยในการหายใจคืออะไร?",
+        "answer_th": "กะบังลม (diaphragm)",
+        "status": "learning",
+        "known_streak": 1,
+        "times_seen": 1,
+        "times_known": 1,
+        "times_unsure": 0,
+        "source": "photo_extract",
+        "created_at": "2026-10-01T08:05:00+07:00",
+        "last_reviewed_at": "2026-10-01T08:19:20+07:00"
+      },
+      {
+        "id": "card_005",
+        "deck_id": "deck_bio_resp_001",
+        "question_th": "ตอนหายใจเข้า ปริมาตรช่องอกและความดันเป็นอย่างไร?",
+        "answer_th": "ปริมาตรช่องอกเพิ่มขึ้น ความดันลดลง อากาศจึงไหลเข้าปอด",
+        "status": "new",
+        "known_streak": 0,
+        "times_seen": 0,
+        "times_known": 0,
+        "times_unsure": 0,
+        "source": "photo_extract",
+        "created_at": "2026-10-01T08:05:00+07:00"
+      },
+      {
+        "id": "card_006",
+        "deck_id": "deck_bio_resp_001",
+        "question_th": "ยกตัวอย่างโรคหรือภาวะที่เกี่ยวกับระบบหายใจ (สำหรับทวน)",
+        "answer_th": "เช่น หอบหืด ปอดบวม — ใช้ทวนชื่อเท่านั้น ไม่ใช่วินิจฉัย",
+        "status": "new",
+        "known_streak": 0,
+        "times_seen": 0,
+        "times_known": 0,
+        "times_unsure": 0,
+        "source": "photo_extract",
+        "created_at": "2026-10-01T08:05:00+07:00"
+      },
+      {
+        "id": "card_007",
+        "deck_id": "deck_bio_resp_001",
+        "question_th": "หลอดเลือดที่นำเลือดจากปอดกลับสู่หัวใจเรียกว่าอะไร และเลือดมีแก๊สใดสูง?",
+        "answer_th": "หลอดเลือดดำปอด (pulmonary veins) — เลือดมีออกซิเจนสูง",
+        "status": "mastered",
+        "known_streak": 2,
+        "times_seen": 2,
+        "times_known": 2,
+        "times_unsure": 0,
+        "source": "photo_extract",
+        "created_at": "2026-10-01T08:05:00+07:00",
+        "last_reviewed_at": "2026-10-01T08:19:40+07:00"
+      }
+    ],
+    "sessions": [
+      {
+        "id": "sess_001",
+        "deck_id": "deck_bio_resp_001",
+        "started_at": "2026-10-01T08:17:00+07:00",
+        "ended_at": "2026-10-01T08:20:00+07:00",
+        "mode": "swipe",
+        "known_count": 4,
+        "unsure_count": 1,
+        "max_streak": 3,
+        "answers": [
+          {
+            "card_id": "card_001",
+            "verdict": "known",
+            "flipped": true,
+            "latency_ms": 4200,
+            "answered_at": "2026-10-01T08:17:20+07:00"
+          },
+          {
+            "card_id": "card_002",
+            "verdict": "known",
+            "flipped": true,
+            "latency_ms": 3100,
+            "answered_at": "2026-10-01T08:17:50+07:00"
+          },
+          {
+            "card_id": "card_003",
+            "verdict": "unsure",
+            "flipped": true,
+            "latency_ms": 5600,
+            "answered_at": "2026-10-01T08:18:30+07:00"
+          },
+          {
+            "card_id": "card_004",
+            "verdict": "known",
+            "flipped": true,
+            "latency_ms": 3800,
+            "answered_at": "2026-10-01T08:19:10+07:00"
+          },
+          {
+            "card_id": "card_007",
+            "verdict": "known",
+            "flipped": true,
+            "latency_ms": 4500,
+            "answered_at": "2026-10-01T08:19:50+07:00"
+          }
+        ]
+      }
+    ],
+    "subjects": [
+      {
+        "id": "math",
+        "name_th": "คณิต",
+        "name_en": "Math",
+        "emoji": "🔢",
+        "color_hex": "#4F46E5",
+        "deck_count": 1
+      },
+      {
+        "id": "english",
+        "name_th": "อังกฤษ",
+        "name_en": "English",
+        "emoji": "🔤",
+        "color_hex": "#6366F1",
+        "deck_count": 0
+      },
+      {
+        "id": "biology",
+        "name_th": "ชีวะ",
+        "name_en": "Biology",
+        "emoji": "🧬",
+        "color_hex": "#10B981",
+        "deck_count": 1
+      },
+      {
+        "id": "history",
+        "name_th": "ประวัติ",
+        "name_en": "History",
+        "emoji": "📜",
+        "color_hex": "#F59E0B",
+        "deck_count": 0
+      },
+      {
+        "id": "physics",
+        "name_th": "ฟิสิกส์",
+        "name_en": "Physics",
+        "emoji": "⚡️",
+        "color_hex": "#8B5CF6",
+        "deck_count": 0
+      },
+      {
+        "id": "other",
+        "name_th": "อื่นๆ",
+        "name_en": "Other",
+        "emoji": "📚",
+        "color_hex": "#64748B",
+        "deck_count": 0
+      }
+    ],
+    "settings": {
+      "locale": "th-TH",
+      "extract_engine": "mock_demo",
+      "mastered_known_streak_threshold": 2,
+      "dark_study_mode": false,
+      "voice_read_enabled": false,
+      "user_display_name": "พลอย"
+    },
+    "last_open_at": "2026-10-01T07:58:00+07:00"
+  },
+  "analytics_events_sample": [
+    {
+      "name": "app_open",
+      "ts": "2026-10-01T07:58:00+07:00",
+      "props": {
+        "locale": "th-TH"
+      }
+    },
+    {
+      "name": "demo_photo_loaded",
+      "ts": "2026-10-01T07:58:10+07:00",
+      "props": {
+        "fixture": "demo-note-respiratory"
+      }
+    },
+    {
+      "name": "extract_success",
+      "ts": "2026-10-01T07:58:12+07:00",
+      "props": {
+        "extract_ms": 1180,
+        "card_count": 7
+      }
+    },
+    {
+      "name": "deck_saved",
+      "ts": "2026-10-01T08:05:00+07:00",
+      "props": {
+        "deck_id": "deck_bio_resp_001",
+        "subject_id": "biology"
+      }
+    },
+    {
+      "name": "quiz_session_completed",
+      "ts": "2026-10-01T08:20:00+07:00",
+      "props": {
+        "known": 4,
+        "unsure": 1,
+        "max_streak": 3
+      }
+    },
+    {
+      "name": "share_success",
+      "ts": "2026-10-01T08:21:00+07:00",
+      "props": {
+        "kind": "streak"
+      }
+    }
+  ],
+  "qa_test_matrix_example": [
+    {
+      "case": "โหลดรูปเดโมระบบหายใจ",
+      "expect": "ได้ 7 การ์ดไทยใน ≤2s",
+      "severity": "blocker"
+    },
+    {
+      "case": "แก้คำถาม 1 ใบแล้วบันทึกเด็ค",
+      "expect": "เด็คโผล่ใน Library",
+      "severity": "blocker"
+    },
+    {
+      "case": "Swipe Quiz 5 ใบ",
+      "expect": "known/unsure อัปเดต + สรุปเซสชัน",
+      "severity": "blocker"
+    },
+    {
+      "case": "Mastery Dashboard",
+      "expect": "% / due / streak ตรงสถิติ",
+      "severity": "blocker"
+    },
+    {
+      "case": "สร้าง/เปลี่ยนชื่อเด็ค",
+      "expect": "ชื่อใหม่โชว์ทันที",
+      "severity": "major"
+    },
+    {
+      "case": "แชร์การ์ด + คัดลอกแคปชัน",
+      "expect": "ได้รูปและข้อความบนมือถือ",
+      "severity": "blocker"
+    },
+    {
+      "case": "UI 390px",
+      "expect": "ไม่เละ ปุ่มนิ้วกดง่าย",
+      "severity": "major"
+    },
+    {
+      "case": "ไม่มีเคลมสอบผ่านใน UI",
+      "expect": "มีแต่ disclaimer เครื่องมือทวน",
+      "severity": "blocker"
+    }
+  ],
+  "reel_script_th": {
+    "title_th": "ExamDeck — ถ่ายโน้ตได้เด็คทวน",
+    "duration_s": 32,
+    "hook_th": "ถ่ายโน้ต/ข้อสอบ → ได้เด็คทวนทันที ใน 10 วินาที",
+    "cta_comment_th": "เด็ค",
+    "props_needed_th": [
+      "มือถือจริง 1 เครื่อง ความกว้างพรีวิว ~390px",
+      "รูปโน้ตเดโมชีวะระบบหายใจ 1 หน้า",
+      "เด็คที่บันทึกแล้วมี ≥5 การ์ด",
+      "แดชบอร์ดที่มีสตรีคอย่างน้อย 1 วัน (หรือ seed)"
+    ],
+    "shots": [
+      {
+        "t": "0-3s",
+        "visual": "รูปโน้ตเบลอเล็กน้อย → กองการ์ด Q&A indigo โผล่พร้อมอนิเมชัน",
+        "on_screen_th": "ถ่ายแล้วได้เด็ค",
+        "voice_th": "ถ่ายโน้ตใบเดียว ได้เด็คทวนทันที"
+      },
+      {
+        "t": "3-8s",
+        "visual": "มอนทาจ codegen / โลโก้ ExamDeck สั้นๆ",
+        "on_screen_th": "สร้างด้วย AI วันนี้",
+        "voice_th": "วันนี้ทำแอป ExamDeck สดๆ จากช่อง AI วันละแอป"
+      },
+      {
+        "t": "8-14s",
+        "visual": "กดใช้รูปเดโม → progress → การ์ด 7 ใบเลื่อน",
+        "on_screen_th": "Photo → Cards",
+        "voice_th": "ถ่ายโน้ตชีวะ ระบบหายใจ ได้การ์ดถาม-ตอบเลย"
+      },
+      {
+        "t": "14-22s",
+        "visual": "Swipe Quiz พลิก + กดรู้แล้ว สองสามใบ แล้วตัดไป Mastery rings",
+        "on_screen_th": "สไวป์ทวน · ดูชำนาญ",
+        "voice_th": "สไวป์ว่ารู้แล้วหรือยังไม่ชัวร์ แดชบอร์ดอัปเดตทันที"
+      },
+      {
+        "t": "22-28s",
+        "visual": "Deck Library โฟลเดอร์วิชา + Share Study Card พรีวิว",
+        "on_screen_th": "เด็คตามวิชา แชร์ได้",
+        "voice_th": "จัดเด็คตามวิชา แล้วแชร์การ์ดสตรีคสวยๆ ได้"
+      },
+      {
+        "t": "28-35s",
+        "visual": "หน้า Home + ลิงก์ไบโอ / คอมเมนต์",
+        "on_screen_th": "ลิงก์ในไบโอ",
+        "voice_th": "ลองฟรีที่ลิงก์ในไบโอ แล้วคอมเมนต์คำว่าเด็ค"
+      }
+    ]
+  },
+  "chat_post_one_liner_th": "ถ่ายโน้ต/ข้อสอบ → ได้เด็คทวนทันที ใน 10 วินาที",
+  "chat_post_long_th": "ถ่ายโน้ตแล้วไม่เคยทวน? วันนี้แจกแอป ExamDeck จากช่อง AI วันละแอป ถ่ายโน้ต/ข้อสอบได้เด็คแฟลชการ์ดทันที สไวป์ทวน ดูความชำนาญ แล้วแชร์การ์ดสตรีคได้เลย ลองฟรีที่ลิงก์ในไบโอ",
+  "codegen_smoke_checklist": [
+    "npm run dev ผ่านที่ localhost",
+    "ปุ่มใช้รูปเดโมโหลด photo_extract_example",
+    "บันทึกเด็คชีวะ · ระบบหายใจ ได้",
+    "Swipe Quiz ตอบ known/unsure ได้ไม่แครช",
+    "Mastery Dashboard ตัวเลขไม่ว่าง/NaN",
+    "Share คัดลอกแคปชันได้",
+    "รีเฟรชแล้วยังเห็นเด็คจาก localStorage"
+  ],
+  "sample_cards_for_reel": [
+    {
+      "q": "แก๊สที่ร่างกายต้องการตอนหายใจเข้าคืออะไร?",
+      "a": "ออกซิเจน (O₂)"
+    },
+    {
+      "q": "การแลกเปลี่ยนแก๊สเกิดที่ใด?",
+      "a": "ถุงลมปอด (alveoli)"
+    },
+    {
+      "q": "กล้ามเนื้อสำคัญที่ช่วยหายใจคืออะไร?",
+      "a": "กะบังลม (diaphragm)"
+    }
+  ],
+  "risk_traps_th": [
+    "อย่าพูดในคลิปว่าสอบผ่านชัวร์หรือเป็นเฉลยข้อสอบวัดผล",
+    "อย่าใช้รูปข้อสอบจริงที่มีลิขสิทธิ์สำนักพิมพ์ — ใช้ fixture โน้ตสมมติ",
+    "อย่าพึ่ง Vision API จริงเป็นฮุค Reel — mock_demo ต้องสวยพอ",
+    "อย่าทำ UI เดสก์ท็อปกว้างในคลิป — บังคับมือถือแนวตั้ง",
+    "อย่าลืม disclaimer เครื่องมือทวนอย่างน้อย 1 จุดที่มองเห็น"
+  ],
+  "wow_moment_th": "รูปโน้ตชีวะ「ระบบหายใจ」→ กองการ์ด Q&A สี indigo พลิกได้โผล่ทีละใบในไม่กี่วินาที",
+  "happy_path_timing_th": [
+    "0–10s: เปิดแอป → ใช้รูปเดโม → เห็น 7 การ์ด",
+    "10–25s: ตั้งชื่อเด็ค → บันทึก → เข้า Swipe Quiz 2–3 ใบ",
+    "25–45s: ดู Mastery Dashboard อัปเดต",
+    "45–60s: เปิด Share Study Card → คัดลอกแคปชัน"
+  ]
+}

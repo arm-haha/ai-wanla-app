@@ -1,0 +1,1591 @@
+{
+  "_meta": {
+    "app": "VoiceMood",
+    "pack_date": "2026-10-07",
+    "timezone": "Asia/Bangkok",
+    "channel": "AI วันละแอป",
+    "day": "8/10",
+    "note_th": "ข้อมูลทั้งหมดเป็นตัวละครสมมติ ('น้ำหวาน' + แมว 'ข้าวตู') คะแนนทุกตัวคำนวณซ้ำด้วยกติกา lexicon_v1 (prd.md §8) แล้วตรงกัน",
+    "verified": {
+      "schema_errors": 0,
+      "rules_recomputed": true
+    }
+  },
+  "demo_persona": {
+    "nickname": "น้ำหวาน",
+    "age_band": "25-29",
+    "job_th": "กราฟิกดีไซเนอร์ออฟฟิศ กรุงเทพฯ",
+    "pet_name": "ข้าวตู",
+    "fictional": true
+  },
+  "lexicon_th": [
+    {
+      "term": "ประชุมด่วน",
+      "valence": -1,
+      "energy": 2,
+      "theme": "work"
+    },
+    {
+      "term": "โดนแก้",
+      "valence": -1,
+      "energy": 1,
+      "theme": "work"
+    },
+    {
+      "term": "เดดไลน์",
+      "valence": -1,
+      "energy": 2,
+      "theme": "work"
+    },
+    {
+      "term": "หัวหน้าชม",
+      "valence": 2,
+      "energy": 1,
+      "theme": "work"
+    },
+    {
+      "term": "งานเสร็จ",
+      "valence": 2,
+      "energy": 1,
+      "theme": "work"
+    },
+    {
+      "term": "ทำโอที",
+      "valence": -1,
+      "energy": -1,
+      "theme": "work"
+    },
+    {
+      "term": "นอนน้อย",
+      "valence": -1,
+      "energy": -2,
+      "theme": "sleep"
+    },
+    {
+      "term": "นอนไม่หลับ",
+      "valence": -2,
+      "energy": -1,
+      "theme": "sleep"
+    },
+    {
+      "term": "ได้นอนเต็มอิ่ม",
+      "valence": 2,
+      "energy": 2,
+      "theme": "sleep"
+    },
+    {
+      "term": "เหนื่อย",
+      "valence": -2,
+      "energy": -3,
+      "theme": "body"
+    },
+    {
+      "term": "ปวดหัว",
+      "valence": -1,
+      "energy": -1,
+      "theme": "body"
+    },
+    {
+      "term": "สดชื่น",
+      "valence": 2,
+      "energy": 2,
+      "theme": "body"
+    },
+    {
+      "term": "แมว",
+      "valence": 1,
+      "energy": 0,
+      "theme": "pet"
+    },
+    {
+      "term": "เจอเพื่อน",
+      "valence": 2,
+      "energy": 2,
+      "theme": "friends"
+    },
+    {
+      "term": "เพื่อนเท",
+      "valence": -2,
+      "energy": 0,
+      "theme": "friends"
+    },
+    {
+      "term": "หัวเราะ",
+      "valence": 2,
+      "energy": 1,
+      "theme": "friends"
+    },
+    {
+      "term": "โทรหาแม่",
+      "valence": 1,
+      "energy": 0,
+      "theme": "family"
+    },
+    {
+      "term": "ทะเลาะกับที่บ้าน",
+      "valence": -3,
+      "energy": 2,
+      "theme": "family"
+    },
+    {
+      "term": "เงินเดือนออก",
+      "valence": 2,
+      "energy": 2,
+      "theme": "money"
+    },
+    {
+      "term": "เงินไม่พอ",
+      "valence": -2,
+      "energy": 1,
+      "theme": "money"
+    },
+    {
+      "term": "รถติด",
+      "valence": -1,
+      "energy": 1,
+      "theme": "commute"
+    },
+    {
+      "term": "ไปวิ่ง",
+      "valence": 2,
+      "energy": 2,
+      "theme": "exercise"
+    },
+    {
+      "term": "โยคะ",
+      "valence": 1,
+      "energy": 1,
+      "theme": "exercise"
+    },
+    {
+      "term": "ชาบู",
+      "valence": 1,
+      "energy": 1,
+      "theme": "food"
+    },
+    {
+      "term": "ชานม",
+      "valence": 1,
+      "energy": 1,
+      "theme": "food"
+    },
+    {
+      "term": "แฟน",
+      "valence": 1,
+      "energy": 1,
+      "theme": "love"
+    },
+    {
+      "term": "เครียด",
+      "valence": -2,
+      "energy": 2,
+      "theme": "feeling"
+    },
+    {
+      "term": "กังวล",
+      "valence": -2,
+      "energy": 1,
+      "theme": "feeling"
+    },
+    {
+      "term": "เหงา",
+      "valence": -2,
+      "energy": -1,
+      "theme": "feeling"
+    },
+    {
+      "term": "เบื่อ",
+      "valence": -1,
+      "energy": -2,
+      "theme": "feeling"
+    },
+    {
+      "term": "โกรธ",
+      "valence": -3,
+      "energy": 3,
+      "theme": "feeling"
+    },
+    {
+      "term": "ดีใจ",
+      "valence": 3,
+      "energy": 2,
+      "theme": "feeling"
+    },
+    {
+      "term": "มีความสุข",
+      "valence": 3,
+      "energy": 1,
+      "theme": "feeling"
+    },
+    {
+      "term": "สบายใจ",
+      "valence": 2,
+      "energy": -1,
+      "theme": "feeling"
+    },
+    {
+      "term": "ภูมิใจ",
+      "valence": 3,
+      "energy": 1,
+      "theme": "feeling"
+    },
+    {
+      "term": "ไม่อยากทำอะไร",
+      "valence": -1,
+      "energy": -3,
+      "theme": "feeling"
+    },
+    {
+      "term": "ดีขึ้น",
+      "valence": 1,
+      "energy": 1,
+      "theme": "feeling"
+    },
+    {
+      "term": "ขอบคุณ",
+      "valence": 1,
+      "energy": 0,
+      "theme": "feeling"
+    },
+    {
+      "term": "ผ่อนคลาย",
+      "valence": 2,
+      "energy": -2,
+      "theme": "feeling"
+    }
+  ],
+  "mood_rules": {
+    "match": "เรียง term ยาวไปสั้น หา occurrence แรกที่ไม่ทับช่วงที่ใช้ไปแล้ว นับครั้งเดียวต่อ term",
+    "negation": "ถ้า 3 ตัวอักษรก่อน term คือ 'ไม่' และ term ไม่ได้ขึ้นต้นด้วย 'ไม่' → valence กลับเครื่องหมาย, energy = 0",
+    "valence": "v = clamp(Σvalence, -8, 8)",
+    "energy": "energy = round((clamp(Σenergy, -8, 8) + 8) / 16 * 10)  // 0–10",
+    "score": "score = round((v + 8) / 16 * 100)  // 0–100, round = floor(x + 0.5)",
+    "quadrant": "v == 0 → neutral · v > 0 → (energy ≥ 6 ? bright : calm) · v < 0 → (energy ≥ 6 ? tense : low)",
+    "weather": [
+      {
+        "min": 80,
+        "key": "sunny",
+        "emoji": "☀️",
+        "label_th": "แดดจ้า"
+      },
+      {
+        "min": 60,
+        "key": "clear",
+        "emoji": "⛅",
+        "label_th": "ฟ้าโปร่ง"
+      },
+      {
+        "min": 41,
+        "key": "cloudy",
+        "emoji": "☁️",
+        "label_th": "เมฆครึ้ม"
+      },
+      {
+        "min": 21,
+        "key": "drizzle",
+        "emoji": "🌧️",
+        "label_th": "ฝนพรำ"
+      },
+      {
+        "min": 0,
+        "key": "storm",
+        "emoji": "⛈️",
+        "label_th": "พายุเข้า"
+      }
+    ],
+    "quadrant_palette": {
+      "bright": {
+        "label_th": "สดใส มีพลัง",
+        "primary": "#FACC15",
+        "secondary": "#FDE68A"
+      },
+      "calm": {
+        "label_th": "สงบ สบายใจ",
+        "primary": "#34D399",
+        "secondary": "#A7F3D0"
+      },
+      "tense": {
+        "label_th": "เครียด ร้อนรน",
+        "primary": "#FB7185",
+        "secondary": "#FDA4AF"
+      },
+      "low": {
+        "label_th": "หม่น เหนื่อยล้า",
+        "primary": "#818CF8",
+        "secondary": "#C7D2FE"
+      },
+      "neutral": {
+        "label_th": "กลางๆ เรื่อยๆ",
+        "primary": "#C4B5FD",
+        "secondary": "#EDE9FE"
+      }
+    },
+    "themes": "themes = theme ของ term ที่เจอ (ไม่รวม feeling) เรียงตามตำแหน่งแรกที่เจอ ไม่ซ้ำ",
+    "day": "คะแนนวัน = round(ค่าเฉลี่ย score ทุก entry ของวันนั้น) · สีวัน = quadrant ของ entry ล่าสุด",
+    "triggers": "สำหรับแต่ละ theme ที่มี entries_with ≥ 3 และ entries_without ≥ 1: delta = avg(score ที่มี theme) − avg(score ที่ไม่มี) · ≥ +5 lifts · ≤ −5 drains · เรียงตาม |delta|",
+    "safety_first": "ตรวจ safety_terms ก่อนทุกอย่าง ถ้าเจอ → ไม่คำนวณคะแนน ไม่โชว์อากาศ ไม่ให้แชร์ เปิด Support Sheet"
+  },
+  "voice_input_example": {
+    "id": "in_014",
+    "source": "mic",
+    "lang": "th-TH",
+    "started_at": "2026-10-07T19:47:00+07:00",
+    "duration_sec": 28,
+    "transcript_raw": "วันนี้หัวหน้าเรียกประชุมด่วนตอนห้าโมงเย็น งานโดนแก้รอบที่สามแล้ว เหนื่อยมาก รถติดอีก กลับถึงห้องก็ไม่อยากทำอะไรเลย แต่พอแมวมานอนตักก็ดีขึ้นนิดนึง",
+    "transcript_edited": null,
+    "interim_chunks": [
+      "วันนี้หัวหน้าเรียกประชุมด่วน",
+      "ตอนห้าโมงเย็น งานโดนแก้รอบที่สามแล้ว",
+      "เหนื่อยมาก รถติดอีก",
+      "กลับถึงห้องก็ไม่อยากทำอะไรเลย",
+      "แต่พอแมวมานอนตักก็ดีขึ้นนิดนึง"
+    ],
+    "audio_kept": false,
+    "stt_engine": "web_speech"
+  },
+  "analysis_example": {
+    "entry_id": "vm_014",
+    "engine": "lexicon_v1",
+    "lexicon_version": "th-2026.10",
+    "valence_sum": -4,
+    "energy_sum": -1,
+    "valence": -4,
+    "energy": 4,
+    "score": 25,
+    "quadrant": "low",
+    "label_th": "หม่น เหนื่อยล้า",
+    "weather": {
+      "key": "drizzle",
+      "label_th": "ฝนพรำ",
+      "emoji": "🌧️"
+    },
+    "aura": {
+      "primary": "#818CF8",
+      "secondary": "#C7D2FE",
+      "glow_intensity": 0.68,
+      "motion": "pulse_slow"
+    },
+    "themes": [
+      {
+        "key": "work",
+        "label_th": "งาน",
+        "emoji": "💼"
+      },
+      {
+        "key": "body",
+        "label_th": "ร่างกาย",
+        "emoji": "🫀"
+      },
+      {
+        "key": "commute",
+        "label_th": "การเดินทาง",
+        "emoji": "🚗"
+      },
+      {
+        "key": "pet",
+        "label_th": "สัตว์เลี้ยง",
+        "emoji": "🐱"
+      }
+    ],
+    "matched_terms": [
+      {
+        "term": "ประชุมด่วน",
+        "index": 18,
+        "valence": -1,
+        "energy": 2,
+        "theme": "work",
+        "negated": false
+      },
+      {
+        "term": "โดนแก้",
+        "index": 45,
+        "valence": -1,
+        "energy": 1,
+        "theme": "work",
+        "negated": false
+      },
+      {
+        "term": "เหนื่อย",
+        "index": 65,
+        "valence": -2,
+        "energy": -3,
+        "theme": "body",
+        "negated": false
+      },
+      {
+        "term": "รถติด",
+        "index": 76,
+        "valence": -1,
+        "energy": 1,
+        "theme": "commute",
+        "negated": false
+      },
+      {
+        "term": "ไม่อยากทำอะไร",
+        "index": 98,
+        "valence": -1,
+        "energy": -3,
+        "theme": "feeling",
+        "negated": false
+      },
+      {
+        "term": "แมว",
+        "index": 120,
+        "valence": 1,
+        "energy": 0,
+        "theme": "pet",
+        "negated": false
+      },
+      {
+        "term": "ดีขึ้น",
+        "index": 133,
+        "valence": 1,
+        "energy": 1,
+        "theme": "feeling",
+        "negated": false
+      }
+    ],
+    "summary_th": "วันนี้งานกดดันหนัก ทั้งประชุมด่วนและงานโดนแก้ซ้ำ บวกรถติดจนหมดแรง แต่ช่วงท้ายมีแมวช่วยให้ใจเบาลงนิดหนึ่ง",
+    "safety": {
+      "risk_level": "none",
+      "matched": []
+    }
+  },
+  "comfort_card_example": {
+    "entry_id": "vm_014",
+    "engine": "template_v1",
+    "quadrant": "low",
+    "validate_th": "วันแบบนี้ใครเจอก็หมดแรง งานโดนแก้ซ้ำๆ ไม่ได้แปลว่าคุณทำได้ไม่ดี",
+    "reframe_th": "คุณยังเห็นช่วงเล็กๆ ที่ใจเบาลงตอนข้าวตูมานอนตัก แปลว่าคุณยังมีที่พักใจอยู่",
+    "tiny_action": {
+      "type": "breathe",
+      "text_th": "หายใจตามวงกลม 60 วินาที",
+      "minutes": 1,
+      "cta_th": "เริ่มหายใจ"
+    },
+    "alt_actions": [
+      {
+        "type": "gratitude",
+        "text_th": "เขียน 3 อย่างเล็กๆ ที่ยังดีวันนี้",
+        "minutes": 2,
+        "cta_th": "เขียนเลย"
+      },
+      {
+        "type": "rest",
+        "text_th": "วางมือถือ ไปอาบน้ำอุ่นก่อนนอน",
+        "minutes": 15,
+        "cta_th": "โอเค"
+      }
+    ],
+    "disclaimer_th": "VoiceMood เป็นสมุดบันทึกอารมณ์ ไม่ใช่การวินิจฉัยทางการแพทย์"
+  },
+  "breath_session_example": {
+    "id": "br_007",
+    "entry_id": "vm_014",
+    "pattern": "4-4-6",
+    "cycles": 4,
+    "duration_sec": 56,
+    "started_at": "2026-10-07T19:49:00+07:00",
+    "completed": true,
+    "orb_from": "#818CF8",
+    "orb_to": "#34D399",
+    "haptics": true
+  },
+  "recheck_example": {
+    "before_entry_id": "vm_014",
+    "after_entry_id": "vm_015",
+    "input_after": {
+      "id": "in_015",
+      "source": "mic",
+      "lang": "th-TH",
+      "started_at": "2026-10-07T19:51:00+07:00",
+      "duration_sec": 9,
+      "transcript_raw": "หายใจตามวงกลมแล้วรู้สึกดีขึ้น สบายใจขึ้นหน่อย ขอบคุณตัวเองที่ไม่ยอมแพ้วันนี้",
+      "transcript_edited": null,
+      "interim_chunks": [
+        "หายใจตามวงกลมแล้วรู้สึกดีขึ้น สบายใจขึ้นหน่อย ขอบคุณตัวเองที่ไม่ยอมแพ้วันนี้"
+      ],
+      "audio_kept": false,
+      "stt_engine": "web_speech"
+    },
+    "analysis_after": {
+      "entry_id": "vm_015",
+      "engine": "lexicon_v1",
+      "lexicon_version": "th-2026.10",
+      "valence_sum": 4,
+      "energy_sum": 0,
+      "valence": 4,
+      "energy": 5,
+      "score": 75,
+      "quadrant": "calm",
+      "label_th": "สงบ สบายใจ",
+      "weather": {
+        "key": "clear",
+        "label_th": "ฟ้าโปร่ง",
+        "emoji": "⛅"
+      },
+      "aura": {
+        "primary": "#34D399",
+        "secondary": "#A7F3D0",
+        "glow_intensity": 0.68,
+        "motion": "pulse_slow"
+      },
+      "themes": [],
+      "matched_terms": [
+        {
+          "term": "ดีขึ้น",
+          "index": 23,
+          "valence": 1,
+          "energy": 1,
+          "theme": "feeling",
+          "negated": false
+        },
+        {
+          "term": "สบายใจ",
+          "index": 30,
+          "valence": 2,
+          "energy": -1,
+          "theme": "feeling",
+          "negated": false
+        },
+        {
+          "term": "ขอบคุณ",
+          "index": 46,
+          "valence": 1,
+          "energy": 0,
+          "theme": "feeling",
+          "negated": false
+        }
+      ],
+      "summary_th": "หลังหายใจช้าๆ คุณบอกว่าสบายใจขึ้น และขอบคุณตัวเองที่ผ่านวันนี้มาได้",
+      "safety": {
+        "risk_level": "none",
+        "matched": []
+      }
+    },
+    "before_score": 25,
+    "after_score": 75,
+    "delta": 50,
+    "caption_th": "ก่อน 25 🌧️ → หลัง 75 ⛅ (จากคำที่คุณเล่าเอง)"
+  },
+  "history_entries": [
+    {
+      "id": "vm_001",
+      "date": "2026-09-24",
+      "created_at": "2026-09-24T21:42:00+07:00",
+      "transcript": "วันนี้ได้นอนเต็มอิ่ม ตื่นมาสดชื่น ทำงานเสร็จก่อนเที่ยง ข้าวตูแมวที่บ้านมาปลุกด้วย",
+      "score": 94,
+      "energy": 8,
+      "quadrant": "bright",
+      "weather_emoji": "☀️",
+      "themes": [
+        "sleep",
+        "body",
+        "work",
+        "pet"
+      ],
+      "color": "#FACC15"
+    },
+    {
+      "id": "vm_002",
+      "date": "2026-09-25",
+      "created_at": "2026-09-25T22:10:00+07:00",
+      "transcript": "เดดไลน์ชนกันสองงาน เครียดมาก รถติดชั่วโมงครึ่ง กลับมานอนน้อยอีกแล้ว",
+      "score": 19,
+      "energy": 7,
+      "quadrant": "tense",
+      "weather_emoji": "⛈️",
+      "themes": [
+        "work",
+        "commute",
+        "sleep"
+      ],
+      "color": "#FB7185"
+    },
+    {
+      "id": "vm_003",
+      "date": "2026-09-26",
+      "created_at": "2026-09-26T20:55:00+07:00",
+      "transcript": "เจอเพื่อนสมัยมหาลัย กินชาบูกัน หัวเราะทั้งคืน มีความสุขสุดๆ",
+      "score": 100,
+      "energy": 8,
+      "quadrant": "bright",
+      "weather_emoji": "☀️",
+      "themes": [
+        "friends",
+        "food"
+      ],
+      "color": "#FACC15"
+    },
+    {
+      "id": "vm_004",
+      "date": "2026-09-27",
+      "created_at": "2026-09-27T19:30:00+07:00",
+      "transcript": "วันเสาร์อยู่ห้องเฉยๆ เบื่อนิดหน่อย แต่ได้นอนกอดแมวก็สบายใจ",
+      "score": 63,
+      "energy": 3,
+      "quadrant": "calm",
+      "weather_emoji": "⛅",
+      "themes": [
+        "pet"
+      ],
+      "color": "#34D399"
+    },
+    {
+      "id": "vm_005",
+      "date": "2026-09-28",
+      "created_at": "2026-09-28T21:05:00+07:00",
+      "transcript": "ไปวิ่งสวนลุมตอนเช้า สดชื่น แต่บ่ายโดนแก้งานจนปวดหัว",
+      "score": 63,
+      "energy": 8,
+      "quadrant": "bright",
+      "weather_emoji": "⛅",
+      "themes": [
+        "exercise",
+        "body",
+        "work"
+      ],
+      "color": "#FACC15"
+    },
+    {
+      "id": "vm_006",
+      "date": "2026-09-29",
+      "created_at": "2026-09-29T23:18:00+07:00",
+      "transcript": "นอนไม่หลับเพราะกังวลเรื่องพรีเซนต์พรุ่งนี้ ทำโอทีถึงสี่ทุ่ม",
+      "score": 19,
+      "energy": 4,
+      "quadrant": "low",
+      "weather_emoji": "⛈️",
+      "themes": [
+        "sleep",
+        "work"
+      ],
+      "color": "#818CF8"
+    },
+    {
+      "id": "vm_007",
+      "date": "2026-09-30",
+      "created_at": "2026-09-30T20:12:00+07:00",
+      "transcript": "พรีเซนต์ผ่าน หัวหน้าชมต่อหน้าทีม ภูมิใจในตัวเองมาก",
+      "score": 81,
+      "energy": 6,
+      "quadrant": "bright",
+      "weather_emoji": "☀️",
+      "themes": [
+        "work"
+      ],
+      "color": "#FACC15"
+    },
+    {
+      "id": "vm_008",
+      "date": "2026-10-01",
+      "created_at": "2026-10-01T21:47:00+07:00",
+      "transcript": "เงินเดือนออก ซื้อชานมให้ตัวเอง แล้วโทรหาแม่คุยกันยาว",
+      "score": 75,
+      "energy": 7,
+      "quadrant": "bright",
+      "weather_emoji": "⛅",
+      "themes": [
+        "money",
+        "food",
+        "family"
+      ],
+      "color": "#FACC15"
+    },
+    {
+      "id": "vm_009",
+      "date": "2026-10-02",
+      "created_at": "2026-10-02T22:36:00+07:00",
+      "transcript": "ประชุมด่วนตอนห้าโมง เพื่อนเทนัดกินข้าว เหงานิดๆ",
+      "score": 19,
+      "energy": 6,
+      "quadrant": "tense",
+      "weather_emoji": "⛈️",
+      "themes": [
+        "work",
+        "friends"
+      ],
+      "color": "#FB7185"
+    },
+    {
+      "id": "vm_010",
+      "date": "2026-10-03",
+      "created_at": "2026-10-03T18:50:00+07:00",
+      "transcript": "เล่นโยคะกับแมวที่บ้าน ผ่อนคลายมาก",
+      "score": 75,
+      "energy": 4,
+      "quadrant": "calm",
+      "weather_emoji": "⛅",
+      "themes": [
+        "exercise",
+        "pet"
+      ],
+      "color": "#34D399"
+    },
+    {
+      "id": "vm_011",
+      "date": "2026-10-04",
+      "created_at": "2026-10-04T20:20:00+07:00",
+      "transcript": "ทะเลาะกับที่บ้านเรื่องเงินไม่พอ พูดแรงไปหน่อย",
+      "score": 19,
+      "energy": 7,
+      "quadrant": "tense",
+      "weather_emoji": "⛈️",
+      "themes": [
+        "family",
+        "money"
+      ],
+      "color": "#FB7185"
+    },
+    {
+      "id": "vm_012",
+      "date": "2026-10-05",
+      "created_at": "2026-10-05T21:15:00+07:00",
+      "transcript": "โทรหาแม่ขอโทษแล้ว คุยกันดีขึ้น ไปวิ่งเย็นนี้ด้วย",
+      "score": 75,
+      "energy": 7,
+      "quadrant": "bright",
+      "weather_emoji": "⛅",
+      "themes": [
+        "family",
+        "exercise"
+      ],
+      "color": "#FACC15"
+    },
+    {
+      "id": "vm_013",
+      "date": "2026-10-06",
+      "created_at": "2026-10-06T22:02:00+07:00",
+      "transcript": "เดดไลน์เลื่อนมาเร็วขึ้น นอนน้อย แต่แฟนซื้อขนมมาให้ ดีใจ",
+      "score": 63,
+      "energy": 7,
+      "quadrant": "bright",
+      "weather_emoji": "⛅",
+      "themes": [
+        "work",
+        "sleep",
+        "love"
+      ],
+      "color": "#FACC15"
+    },
+    {
+      "id": "vm_014",
+      "date": "2026-10-07",
+      "created_at": "2026-10-07T19:48:00+07:00",
+      "transcript": "วันนี้หัวหน้าเรียกประชุมด่วนตอนห้าโมงเย็น งานโดนแก้รอบที่สามแล้ว เหนื่อยมาก รถติดอีก กลับถึงห้องก็ไม่อยากทำอะไรเลย แต่พอแมวมานอนตักก็ดีขึ้นนิดนึง",
+      "score": 25,
+      "energy": 4,
+      "quadrant": "low",
+      "weather_emoji": "🌧️",
+      "themes": [
+        "work",
+        "body",
+        "commute",
+        "pet"
+      ],
+      "color": "#818CF8"
+    },
+    {
+      "id": "vm_015",
+      "date": "2026-10-07",
+      "created_at": "2026-10-07T19:51:00+07:00",
+      "transcript": "หายใจตามวงกลมแล้วรู้สึกดีขึ้น สบายใจขึ้นหน่อย ขอบคุณตัวเองที่ไม่ยอมแพ้วันนี้",
+      "score": 75,
+      "energy": 5,
+      "quadrant": "calm",
+      "weather_emoji": "⛅",
+      "themes": [],
+      "color": "#34D399"
+    }
+  ],
+  "garden_example": {
+    "month": "2026-10",
+    "style": "orbs",
+    "first_weekday": "mon",
+    "days": [
+      {
+        "date": "2026-10-01",
+        "entry_ids": [
+          "vm_008"
+        ],
+        "score": 75,
+        "quadrant": "bright",
+        "color": "#FACC15",
+        "weather_emoji": "⛅"
+      },
+      {
+        "date": "2026-10-02",
+        "entry_ids": [
+          "vm_009"
+        ],
+        "score": 19,
+        "quadrant": "tense",
+        "color": "#FB7185",
+        "weather_emoji": "⛈️"
+      },
+      {
+        "date": "2026-10-03",
+        "entry_ids": [
+          "vm_010"
+        ],
+        "score": 75,
+        "quadrant": "calm",
+        "color": "#34D399",
+        "weather_emoji": "⛅"
+      },
+      {
+        "date": "2026-10-04",
+        "entry_ids": [
+          "vm_011"
+        ],
+        "score": 19,
+        "quadrant": "tense",
+        "color": "#FB7185",
+        "weather_emoji": "⛈️"
+      },
+      {
+        "date": "2026-10-05",
+        "entry_ids": [
+          "vm_012"
+        ],
+        "score": 75,
+        "quadrant": "bright",
+        "color": "#FACC15",
+        "weather_emoji": "⛅"
+      },
+      {
+        "date": "2026-10-06",
+        "entry_ids": [
+          "vm_013"
+        ],
+        "score": 63,
+        "quadrant": "bright",
+        "color": "#FACC15",
+        "weather_emoji": "⛅"
+      },
+      {
+        "date": "2026-10-07",
+        "entry_ids": [
+          "vm_014",
+          "vm_015"
+        ],
+        "score": 50,
+        "quadrant": "calm",
+        "color": "#34D399",
+        "weather_emoji": "⛅"
+      },
+      {
+        "date": "2026-10-08",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-09",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-10",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-11",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-12",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-13",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-14",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-15",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-16",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-17",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-18",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-19",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-20",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-21",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-22",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-23",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-24",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-25",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-26",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-27",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-28",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-29",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-30",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      },
+      {
+        "date": "2026-10-31",
+        "entry_ids": [],
+        "score": null,
+        "quadrant": null,
+        "color": null,
+        "weather_emoji": null
+      }
+    ],
+    "filled_days": 7,
+    "streak_days": 14
+  },
+  "trigger_insights_example": {
+    "window": {
+      "from": "2026-09-24",
+      "to": "2026-10-07"
+    },
+    "entry_count": 15,
+    "min_entries_with": 3,
+    "insights": [
+      {
+        "theme": "work",
+        "label_th": "งาน",
+        "emoji": "💼",
+        "entries_with": 8,
+        "entries_without": 7,
+        "avg_score_with": 47.9,
+        "avg_score_without": 68.9,
+        "delta": -21.0,
+        "direction": "drains",
+        "text_th": "วันที่มีเรื่องงาน 💼 ใจคุณต่ำกว่าปกติ −21 คะแนน"
+      },
+      {
+        "theme": "exercise",
+        "label_th": "ออกกำลังกาย",
+        "emoji": "🏃",
+        "entries_with": 3,
+        "entries_without": 12,
+        "avg_score_with": 71.0,
+        "avg_score_without": 54.3,
+        "delta": 16.7,
+        "direction": "lifts",
+        "text_th": "วันที่มีเรื่องออกกำลังกาย 🏃 ใจคุณดีกว่าปกติ +17 คะแนน"
+      },
+      {
+        "theme": "sleep",
+        "label_th": "การนอน",
+        "emoji": "😴",
+        "entries_with": 4,
+        "entries_without": 11,
+        "avg_score_with": 48.8,
+        "avg_score_without": 60.9,
+        "delta": -12.2,
+        "direction": "drains",
+        "text_th": "วันที่มีเรื่องการนอน 😴 ใจคุณต่ำกว่าปกติ −12 คะแนน"
+      },
+      {
+        "theme": "pet",
+        "label_th": "สัตว์เลี้ยง",
+        "emoji": "🐱",
+        "entries_with": 4,
+        "entries_without": 11,
+        "avg_score_with": 64.2,
+        "avg_score_without": 55.3,
+        "delta": 9.0,
+        "direction": "lifts",
+        "text_th": "วันที่มีเรื่องสัตว์เลี้ยง 🐱 ใจคุณดีกว่าปกติ +9 คะแนน"
+      },
+      {
+        "theme": "body",
+        "label_th": "ร่างกาย",
+        "emoji": "🫀",
+        "entries_with": 3,
+        "entries_without": 12,
+        "avg_score_with": 60.7,
+        "avg_score_without": 56.9,
+        "delta": 3.8,
+        "direction": "neutral",
+        "text_th": "เรื่องร่างกาย 🫀 ไม่ค่อยเปลี่ยนอารมณ์คุณ"
+      },
+      {
+        "theme": "family",
+        "label_th": "ครอบครัว",
+        "emoji": "🏠",
+        "entries_with": 3,
+        "entries_without": 12,
+        "avg_score_with": 56.3,
+        "avg_score_without": 58.0,
+        "delta": -1.7,
+        "direction": "neutral",
+        "text_th": "เรื่องครอบครัว 🏠 ไม่ค่อยเปลี่ยนอารมณ์คุณ"
+      }
+    ]
+  },
+  "mood_wrapped_example": {
+    "id": "wr_2026w40",
+    "period": {
+      "from": "2026-10-01",
+      "to": "2026-10-07"
+    },
+    "entries": 8,
+    "avg_score": 53.2,
+    "top_quadrant": "bright",
+    "quadrant_counts": {
+      "bright": 3,
+      "tense": 2,
+      "calm": 2,
+      "low": 1
+    },
+    "best_day": {
+      "date": "2026-10-01",
+      "score": 75
+    },
+    "hardest_day": {
+      "date": "2026-10-02",
+      "score": 19
+    },
+    "top_lift": {
+      "theme": "exercise",
+      "label_th": "ออกกำลังกาย",
+      "emoji": "🏃",
+      "entries_with": 3,
+      "entries_without": 12,
+      "avg_score_with": 71.0,
+      "avg_score_without": 54.3,
+      "delta": 16.7,
+      "direction": "lifts",
+      "text_th": "วันที่มีเรื่องออกกำลังกาย 🏃 ใจคุณดีกว่าปกติ +17 คะแนน"
+    },
+    "top_drain": {
+      "theme": "work",
+      "label_th": "งาน",
+      "emoji": "💼",
+      "entries_with": 8,
+      "entries_without": 7,
+      "avg_score_with": 47.9,
+      "avg_score_without": 68.9,
+      "delta": -21.0,
+      "direction": "drains",
+      "text_th": "วันที่มีเรื่องงาน 💼 ใจคุณต่ำกว่าปกติ −21 คะแนน"
+    },
+    "minutes_spoken": 3.4,
+    "streak_days": 14,
+    "slides_th": [
+      "สัปดาห์นี้คุณเล่าเรื่องใจ 8 ครั้ง",
+      "สีที่เจอบ่อยสุด: สดใส มีพลัง 💛",
+      "วันที่ใจฟูสุด: 1 ต.ค. (75 ⛅)",
+      "สิ่งที่ชาร์จใจคุณ: ออกกำลังกาย 🏃",
+      "สิ่งที่ดูดพลัง: งาน 💼",
+      "สตรีค 14 วัน 🔥 เก่งมาก"
+    ]
+  },
+  "gratitude_example": {
+    "id": "gr_007",
+    "date": "2026-10-07",
+    "items_th": [
+      "ข้าวตูมานอนตัก",
+      "ได้กลับห้องแล้ว",
+      "พรุ่งนี้วันพฤหัส อีกนิดเดียว"
+    ],
+    "created_at": "2026-10-07T19:53:00+07:00"
+  },
+  "time_capsule_example": {
+    "id": "tc_001",
+    "created_at": "2026-10-07T19:55:00+07:00",
+    "open_at": "2027-01-07T20:00:00+07:00",
+    "text_th": "ถึงน้ำหวานอีก 3 เดือนข้างหน้า วันนี้เหนื่อยมาก แต่เราผ่านมาได้นะ",
+    "audio_kept": false,
+    "opened": false
+  },
+  "reminder_example": {
+    "id": "rm_01",
+    "enabled": true,
+    "time_local": "21:30",
+    "days": [
+      "mon",
+      "tue",
+      "wed",
+      "thu",
+      "fri",
+      "sat",
+      "sun"
+    ],
+    "text_th": "วันนี้ใจคุณสีอะไร? พูดสัก 30 วิ 🎙️",
+    "channel": "web_push"
+  },
+  "share_card_example": {
+    "id": "sc_014",
+    "entry_id": "vm_014",
+    "variant": "aura_story",
+    "size": {
+      "w": 1080,
+      "h": 1920
+    },
+    "show_transcript": false,
+    "show_score": true,
+    "show_themes": true,
+    "headline_th": "ใจฉันวันนี้ 🌧️ ฝนพรำ",
+    "sub_th": "หม่น เหนื่อยล้า · แต่มีแมวช่วย 🐱",
+    "after_badge_th": "หายใจ 1 นาที → ⛅ 75",
+    "watermark_th": "VoiceMood · AI วันละแอป",
+    "colors": {
+      "bg": "#14112B",
+      "aura_1": "#818CF8",
+      "aura_2": "#34D399"
+    },
+    "file_name": "voicemood_2026-10-07.png"
+  },
+  "safety_terms_th": [
+    "อยากตาย",
+    "ไม่อยากอยู่แล้ว",
+    "ฆ่าตัวตาย",
+    "ทำร้ายตัวเอง",
+    "จบชีวิต"
+  ],
+  "safety_check_examples": [
+    {
+      "input_text": "วันนี้หัวหน้าเรียกประชุมด่วนตอนห้าโมงเย็น งานโดนแก้รอบที่สามแล้ว เหนื่อยมาก รถติดอีก กลับถึงห้องก็ไม่อยากทำอะไรเลย แต่พอแมวมานอนตักก็ดีขึ้นนิดนึง",
+      "risk_level": "none",
+      "matched": [],
+      "action": "continue",
+      "resources": []
+    },
+    {
+      "input_text": "(ตัวอย่างทดสอบ) เหนื่อยจนไม่อยากอยู่แล้ว",
+      "risk_level": "urgent",
+      "matched": [
+        "ไม่อยากอยู่แล้ว"
+      ],
+      "action": "show_support_sheet",
+      "message_th": "ขอบคุณที่เล่าให้ฟังนะ ตอนนี้คุณไม่ต้องอยู่กับความรู้สึกนี้คนเดียว คุยกับคนที่พร้อมรับฟังได้เลย",
+      "resources": [
+        {
+          "name_th": "สายด่วนสุขภาพจิต กรมสุขภาพจิต",
+          "phone": "1323",
+          "hours_th": "24 ชั่วโมง ฟรี",
+          "verify_before_launch": true
+        },
+        {
+          "name_th": "เจ็บป่วยฉุกเฉิน (สพฉ.)",
+          "phone": "1669",
+          "hours_th": "24 ชั่วโมง",
+          "verify_before_launch": true
+        }
+      ]
+    }
+  ],
+  "settings_example": {
+    "lang": "th",
+    "stt_engine": "web_speech",
+    "ai_engine": "lexicon_v1",
+    "keep_audio": false,
+    "pin_lock": false,
+    "reminder_id": "rm_01",
+    "sound": true,
+    "haptics": true,
+    "theme": "night",
+    "share_defaults": {
+      "show_transcript": false,
+      "show_score": true
+    }
+  },
+  "local_store_example": {
+    "version": 1,
+    "key": "voicemood:v1",
+    "settings": {
+      "lang": "th",
+      "stt_engine": "web_speech",
+      "ai_engine": "lexicon_v1",
+      "keep_audio": false,
+      "pin_lock": false,
+      "reminder_id": "rm_01",
+      "sound": true,
+      "haptics": true,
+      "theme": "night",
+      "share_defaults": {
+        "show_transcript": false,
+        "show_score": true
+      }
+    },
+    "entry_ids": [
+      "vm_001",
+      "vm_002",
+      "vm_003",
+      "vm_004",
+      "vm_005",
+      "vm_006",
+      "vm_007",
+      "vm_008",
+      "vm_009",
+      "vm_010",
+      "vm_011",
+      "vm_012",
+      "vm_013",
+      "vm_014",
+      "vm_015"
+    ],
+    "last_opened": "2026-10-07T19:56:00+07:00",
+    "streak": {
+      "current": 14,
+      "best": 14,
+      "last_date": "2026-10-07"
+    }
+  },
+  "analytics_examples": [
+    {
+      "event": "record_start",
+      "ts": "2026-10-07T19:47:00+07:00",
+      "props": {
+        "source": "mic"
+      }
+    },
+    {
+      "event": "analysis_done",
+      "ts": "2026-10-07T19:48:00+07:00",
+      "props": {
+        "engine": "lexicon_v1",
+        "score": 25,
+        "quadrant": "low",
+        "ms": 2600
+      }
+    },
+    {
+      "event": "breath_done",
+      "ts": "2026-10-07T19:50:00+07:00",
+      "props": {
+        "duration_sec": 56
+      }
+    },
+    {
+      "event": "recheck_done",
+      "ts": "2026-10-07T19:51:00+07:00",
+      "props": {
+        "delta": 50
+      }
+    },
+    {
+      "event": "share_card_export",
+      "ts": "2026-10-07T19:54:00+07:00",
+      "props": {
+        "variant": "aura_story",
+        "show_transcript": false
+      }
+    }
+  ],
+  "feature_checklist_example": {
+    "must_have": [
+      {
+        "id": "voice_to_aura",
+        "name_th": "Voice Vent → Mood Aura",
+        "done": true
+      },
+      {
+        "id": "comfort_card",
+        "name_th": "Comfort Card + หายใจ 60 วิ + เช็กใจอีกรอบ",
+        "done": true
+      },
+      {
+        "id": "mood_garden",
+        "name_th": "Mood Garden ปฏิทินลูกแก้วอารมณ์",
+        "done": true
+      },
+      {
+        "id": "triggers",
+        "name_th": "Mood Triggers อะไรชาร์จ/ดูดพลัง",
+        "done": true
+      },
+      {
+        "id": "share_card",
+        "name_th": "Share Aura Card (ซ่อนข้อความค่าเริ่ม)",
+        "done": true
+      }
+    ],
+    "nice_to_have": [
+      {
+        "id": "mood_wrapped",
+        "name_th": "Mood Wrapped รายสัปดาห์",
+        "done": false
+      },
+      {
+        "id": "gratitude",
+        "name_th": "ขอบคุณ 3 อย่าง",
+        "done": false
+      },
+      {
+        "id": "time_capsule",
+        "name_th": "จดหมายถึงตัวเองในอนาคต",
+        "done": false
+      },
+      {
+        "id": "reminder",
+        "name_th": "เตือนเช็กใจ 21:30",
+        "done": false
+      },
+      {
+        "id": "pin_lock",
+        "name_th": "ล็อก PIN",
+        "done": false
+      },
+      {
+        "id": "typed_mode",
+        "name_th": "โหมดพิมพ์แทนพูด",
+        "done": false
+      },
+      {
+        "id": "export_txt",
+        "name_th": "ส่งออกบันทึก .txt",
+        "done": false
+      }
+    ],
+    "min_features_rule": 5,
+    "must_count": 5
+  },
+  "ui_copy_th": {
+    "home_title": "วันนี้ใจคุณสีอะไร?",
+    "home_sub": "กดค้าง แล้วเล่าให้ฟังสัก 30 วิ",
+    "mic_hold": "กดค้างเพื่อพูด",
+    "mic_listening": "กำลังฟังอยู่นะ…",
+    "mic_denied": "ยังไม่ได้อนุญาตไมค์ — พิมพ์เล่าแทนได้เลย",
+    "analyzing": "กำลังอ่านสีใจคุณ…",
+    "result_score": "คะแนนใจวันนี้",
+    "score_note": "คะแนนจากคำที่คุณเล่าเอง ไม่ใช่การวัดทางการแพทย์",
+    "breathe_cta": "หายใจตามวงกลม 60 วิ",
+    "breathe_in": "หายใจเข้า…",
+    "breathe_hold": "ค้างไว้…",
+    "breathe_out": "ผ่อนออกช้าๆ…",
+    "recheck_cta": "เช็กใจอีกรอบ",
+    "garden_title": "สวนอารมณ์เดือนนี้",
+    "triggers_title": "อะไรชาร์จใจ / ดูดพลังคุณ",
+    "triggers_need_more": "เล่าอีก {n} วัน แอปจะเริ่มเห็นแพทเทิร์น",
+    "share_cta": "แชร์สีใจวันนี้",
+    "share_privacy": "ข้อความที่พูดจะไม่ถูกใส่ในการ์ด (เปิดได้ถ้าต้องการ)",
+    "demo_cta": "ลองข้อมูลตัวอย่าง (น้ำหวาน)",
+    "privacy_badge": "เก็บในเครื่องคุณเท่านั้น · ไม่เก็บไฟล์เสียง",
+    "disclaimer": "VoiceMood เป็นสมุดบันทึกอารมณ์ ไม่ใช่การวินิจฉัยหรือการรักษา",
+    "support_title": "คุณไม่ได้อยู่คนเดียวนะ",
+    "support_call": "โทร 1323 (สายด่วนสุขภาพจิต)",
+    "nav": [
+      "เล่า",
+      "สวนอารมณ์",
+      "แพทเทิร์น",
+      "ตั้งค่า"
+    ]
+  },
+  "reel_script_th": {
+    "length_sec": 30,
+    "caption_th": "พูดระบายแค่ 30 วิ… AI บอกว่าวันนี้ใจคุณสีอะไร 🔮 คอมเมนต์ \"สีใจ\" รับลิงก์ฟรี",
+    "shots": [
+      {
+        "t": "0-3",
+        "shot": "หน้าตรง เหนื่อยๆ ในห้องมืด ถือมือถือ",
+        "overlay": "วันนี้ใจฉันสีอะไร?",
+        "audio": "ถอนหายใจ"
+      },
+      {
+        "t": "3-6",
+        "shot": "หน้าจอโค้ด/AI gen แอป speed-ramp",
+        "overlay": "ให้ AI สร้างแอปให้ใน 1 คืน",
+        "audio": "beat drop"
+      },
+      {
+        "t": "6-12",
+        "shot": "กดค้างไมค์ พูดเรื่องวันนี้ คำลอยขึ้นเป็นตัวหนังสือ วงคลื่นเต้น",
+        "overlay": "เล่าให้ฟัง 30 วิ",
+        "audio": "เสียงพูดจริง (ข้อมูลน้ำหวาน)"
+      },
+      {
+        "t": "12-16",
+        "shot": "คำถูกดูดเข้าลูกแก้ว → ลูกแก้วเปลี่ยนเป็นสีม่วงฟ้า + 🌧️ 25",
+        "overlay": "วันนี้ใจคุณ: ฝนพรำ 🌧️",
+        "audio": "whoosh + ding"
+      },
+      {
+        "t": "16-21",
+        "shot": "Comfort Card เลื่อนขึ้น → หายใจตามลูกแก้วที่พองยุบ → เช็กใจอีกรอบ 25 → 75 ⛅ สีเปลี่ยนเป็นเขียวมิ้นต์",
+        "overlay": "หายใจ 1 นาที ใจเปลี่ยนสี",
+        "audio": "chime"
+      },
+      {
+        "t": "21-25",
+        "shot": "สวนอารมณ์ 14 วัน ลูกแก้วสีๆ เด้งเรียงทีละวัน → การ์ดแพทเทิร์น 'ออกกำลังกาย +17 · งาน −21'",
+        "overlay": "แอปรู้ว่าอะไรชาร์จใจคุณ",
+        "audio": "pop pop pop"
+      },
+      {
+        "t": "25-30",
+        "shot": "การ์ดแชร์สตอรี่ aura สวยๆ + โลโก้ช่อง",
+        "overlay": "คอมเมนต์ \"สีใจ\" รับลิงก์ฟรี",
+        "audio": "outro"
+      }
+    ]
+  },
+  "alt_reel_ideas_th": [
+    "ให้แฟน/เพื่อนพูดแล้วเทียบสีใจกัน 2 คน",
+    "เช็กใจทุกคืน 7 วันแล้วเปิด Mood Wrapped ตอนจบ",
+    "พูดเรื่องเดียวกันแบบบ่น vs แบบมองบวก แล้วดูสีเปลี่ยน",
+    "สวนอารมณ์ทั้งเดือนตุลา time-lapse"
+  ],
+  "unit_test_vectors": [
+    {
+      "text": "วันนี้ไม่สบายใจเลย",
+      "expect": {
+        "score": 38,
+        "energy": 5,
+        "quadrant": "low",
+        "valence_sum": -2,
+        "energy_sum": 0
+      }
+    },
+    {
+      "text": "วันนี้กินข้าวแล้ว",
+      "expect": {
+        "score": 50,
+        "energy": 5,
+        "quadrant": "neutral",
+        "valence_sum": 0,
+        "energy_sum": 0
+      }
+    },
+    {
+      "text": "วันนี้เหนื่อยมากแต่ดีใจที่ได้เจอเพื่อน",
+      "expect": {
+        "score": 69,
+        "energy": 6,
+        "quadrant": "bright",
+        "valence_sum": 3,
+        "energy_sum": 1
+      }
+    }
+  ]
+}

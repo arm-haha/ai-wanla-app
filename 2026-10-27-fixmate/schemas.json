@@ -1,0 +1,478 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "fixmate.schemas.json",
+ "title": "FixMate schemas",
+ "$defs": {
+  "HomeProfile": {
+   "type": "object",
+   "required": [
+    "home_type",
+    "owned_tools",
+    "skill_level"
+   ],
+   "properties": {
+    "home_type": {
+     "enum": [
+      "condo",
+      "house",
+      "dorm",
+      "townhouse"
+     ]
+    },
+    "owned_tools": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "skill_level": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 5
+    },
+    "province": {
+     "type": "string"
+    }
+   }
+  },
+  "Cause": {
+   "type": "object",
+   "required": [
+    "cause_th",
+    "p"
+   ],
+   "properties": {
+    "cause_th": {
+     "type": "string"
+    },
+    "p": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   }
+  },
+  "Diagnosis": {
+   "type": "object",
+   "required": [
+    "issue_id",
+    "title_th",
+    "symptom_th",
+    "category",
+    "confidence",
+    "difficulty",
+    "minutes",
+    "hazard_tags",
+    "causes"
+   ],
+   "properties": {
+    "issue_id": {
+     "type": "string"
+    },
+    "title_th": {
+     "type": "string",
+     "minLength": 1
+    },
+    "symptom_th": {
+     "type": "string"
+    },
+    "category": {
+     "enum": [
+      "plumbing",
+      "electrical",
+      "appliance",
+      "furniture",
+      "wall_floor",
+      "door_window"
+     ]
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "difficulty": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 5
+    },
+    "minutes": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "hazard_tags": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "burn_mark",
+       "ceiling_sag",
+       "gas_smell",
+       "heavy_lift",
+       "hot_surface_smell",
+       "ladder_over_2m",
+       "main_panel",
+       "power_tool",
+       "refrigerant",
+       "sharp_edge",
+       "shutoff_unknown",
+       "sparking",
+       "structural_crack",
+       "water_near_power"
+      ]
+     }
+    },
+    "causes": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "$ref": "#/$defs/Cause"
+     }
+    },
+    "pins": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "label_th",
+       "xy"
+      ],
+      "properties": {
+       "label_th": {
+        "type": "string"
+       },
+       "xy": {
+        "type": "array",
+        "items": {
+         "type": "number",
+         "minimum": 0,
+         "maximum": 1
+        },
+        "minItems": 2,
+        "maxItems": 2
+       }
+      }
+     }
+    }
+   }
+  },
+  "SafetyGate": {
+   "type": "object",
+   "required": [
+    "level",
+    "reasons",
+    "allow_diy"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "caution",
+      "stop"
+     ]
+    },
+    "reasons": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "allow_diy": {
+     "type": "boolean"
+    }
+   }
+  },
+  "Part": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "search_kw",
+    "price_thb"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "search_kw": {
+     "type": "string"
+    },
+    "price_thb": {
+     "type": "number",
+     "minimum": 0
+    },
+    "qty": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "price_source": {
+     "enum": [
+      "user_set",
+      "example"
+     ]
+    }
+   }
+  },
+  "Tool": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "price_thb"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "price_thb": {
+     "type": "number",
+     "minimum": 0
+    }
+   }
+  },
+  "FixStep": {
+   "type": "object",
+   "required": [
+    "id",
+    "text_th",
+    "minutes"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "text_th": {
+     "type": "string"
+    },
+    "minutes": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "arrow_xy": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "minItems": 2,
+     "maxItems": 2
+    },
+    "warn_th": {
+     "type": "string"
+    }
+   }
+  },
+  "Verdict": {
+   "type": "object",
+   "required": [
+    "verdict",
+    "safety",
+    "diy_total_thb",
+    "pro_quote_thb",
+    "minutes",
+    "save_thb",
+    "missing_tools"
+   ],
+   "properties": {
+    "verdict": {
+     "enum": [
+      "diy",
+      "call_pro",
+      "need_photo"
+     ]
+    },
+    "safety": {
+     "enum": [
+      "ok",
+      "caution",
+      "stop"
+     ]
+    },
+    "diy_total_thb": {
+     "type": "number"
+    },
+    "pro_quote_thb": {
+     "type": "number",
+     "exclusiveMinimum": 0
+    },
+    "minutes": {
+     "type": "integer"
+    },
+    "save_thb": {
+     "type": "number",
+     "minimum": 0
+    },
+    "missing_tools": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "DripWaste": {
+   "type": "object",
+   "required": [
+    "liters_month",
+    "buckets_10l"
+   ],
+   "properties": {
+    "liters_month": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "buckets_10l": {
+     "type": "integer",
+     "minimum": 0
+    }
+   }
+  },
+  "StepProgress": {
+   "type": "object",
+   "required": [
+    "done",
+    "total",
+    "pct",
+    "minutes_left",
+    "next_step"
+   ],
+   "properties": {
+    "done": {
+     "type": "integer"
+    },
+    "total": {
+     "type": "integer"
+    },
+    "pct": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "minutes_left": {
+     "type": "integer"
+    },
+    "next_step": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   }
+  },
+  "CareItem": {
+   "type": "object",
+   "required": [
+    "id",
+    "title_th",
+    "next_due",
+    "overdue_days",
+    "due_in_days"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "title_th": {
+     "type": "string"
+    },
+    "next_due": {
+     "type": "string",
+     "format": "date"
+    },
+    "overdue_days": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "due_in_days": {
+     "type": "integer",
+     "minimum": 0
+    }
+   }
+  },
+  "SavingsTally": {
+   "type": "object",
+   "required": [
+    "fixes",
+    "saved_thb",
+    "minutes",
+    "badge"
+   ],
+   "properties": {
+    "fixes": {
+     "type": "integer"
+    },
+    "saved_thb": {
+     "type": "number"
+    },
+    "minutes": {
+     "type": "integer"
+    },
+    "badge": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   }
+  },
+  "ProMessage": {
+   "type": "object",
+   "required": [
+    "channel",
+    "text_th",
+    "photos"
+   ],
+   "properties": {
+    "channel": {
+     "enum": [
+      "line",
+      "sms",
+      "copy"
+     ]
+    },
+    "text_th": {
+     "type": "string"
+    },
+    "photos": {
+     "type": "integer",
+     "minimum": 0
+    }
+   }
+  },
+  "ReelCard": {
+   "type": "object",
+   "required": [
+    "kind",
+    "title_th",
+    "before",
+    "after"
+   ],
+   "properties": {
+    "kind": {
+     "enum": [
+      "fix_glowup",
+      "saved_money",
+      "safety_stop",
+      "care_streak"
+     ]
+    },
+    "title_th": {
+     "type": "string"
+    },
+    "before": {
+     "type": "string"
+    },
+    "after": {
+     "type": "string"
+    },
+    "stat": {
+     "type": "string"
+    }
+   }
+  }
+ }
+}

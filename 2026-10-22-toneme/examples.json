@@ -1,0 +1,941 @@
+{
+  "_note": "ข้อมูลทั้งหมดเป็นตัวอย่างสมมติ (มายด์) สร้างโดย reference/build.py",
+  "today": "2026-10-22",
+  "colors": {
+    "linen": "#FBF7F2",
+    "ink": "#2B2238",
+    "rose": "#E8879B",
+    "peach": "#F6B48F",
+    "sage": "#8FB8A0",
+    "sky": "#8DB6E8",
+    "gold": "#D4A64A",
+    "no": "#E5484D"
+  },
+  "palettes": {
+    "spring": {
+      "best": [
+        {
+          "name_th": "พีชคอรัล",
+          "hex": "#FF7F66"
+        },
+        {
+          "name_th": "แอปริคอต",
+          "hex": "#FBB273"
+        },
+        {
+          "name_th": "เหลืองดอกทานตะวัน",
+          "hex": "#FFD23F"
+        },
+        {
+          "name_th": "เขียวแอปเปิล",
+          "hex": "#8DC63F"
+        },
+        {
+          "name_th": "เทอร์คอยซ์อุ่น",
+          "hex": "#2EC4B6"
+        },
+        {
+          "name_th": "ฟ้าน้ำทะเลใส",
+          "hex": "#4FB3E8"
+        },
+        {
+          "name_th": "แซลมอน",
+          "hex": "#FA8072"
+        },
+        {
+          "name_th": "ครีมงาช้าง",
+          "hex": "#FFF4DC"
+        },
+        {
+          "name_th": "คาราเมลอ่อน",
+          "hex": "#C68E5A"
+        },
+        {
+          "name_th": "ชมพูแตงโม",
+          "hex": "#FF6F7D"
+        },
+        {
+          "name_th": "ม่วงไลแล็กอุ่น",
+          "hex": "#B79CED"
+        },
+        {
+          "name_th": "กรมท่าสว่าง",
+          "hex": "#3A5BA0"
+        }
+      ],
+      "avoid": [
+        {
+          "name_th": "ดำสนิท",
+          "hex": "#000000"
+        },
+        {
+          "name_th": "เทาเย็น",
+          "hex": "#8E9AAF"
+        },
+        {
+          "name_th": "เบอร์กันดี",
+          "hex": "#6D1A36"
+        },
+        {
+          "name_th": "ชมพูบานเย็นเย็น",
+          "hex": "#C2185B"
+        }
+      ]
+    },
+    "summer": {
+      "best": [
+        {
+          "name_th": "ชมพูกุหลาบฝุ่น",
+          "hex": "#D8A1AE"
+        },
+        {
+          "name_th": "ลาเวนเดอร์",
+          "hex": "#B9A7D8"
+        },
+        {
+          "name_th": "ฟ้าพาสเทล",
+          "hex": "#9CC3E4"
+        },
+        {
+          "name_th": "เขียวเซจเย็น",
+          "hex": "#9DB5A0"
+        },
+        {
+          "name_th": "เทาฟ้า",
+          "hex": "#A3B1C2"
+        },
+        {
+          "name_th": "มินต์หม่น",
+          "hex": "#A8D5C9"
+        },
+        {
+          "name_th": "กรมท่าเทา",
+          "hex": "#4A5D7E"
+        },
+        {
+          "name_th": "ราสเบอร์รีหม่น",
+          "hex": "#B5546E"
+        },
+        {
+          "name_th": "โกโก้เย็น",
+          "hex": "#7D6B6B"
+        },
+        {
+          "name_th": "ขาวนวลเย็น",
+          "hex": "#F2F2F7"
+        },
+        {
+          "name_th": "พลัมอ่อน",
+          "hex": "#8E5E8C"
+        },
+        {
+          "name_th": "ฟ้าเดนิม",
+          "hex": "#6E8DB8"
+        }
+      ],
+      "avoid": [
+        {
+          "name_th": "ส้มสด",
+          "hex": "#FF6A00"
+        },
+        {
+          "name_th": "เหลืองมัสตาร์ด",
+          "hex": "#D4A017"
+        },
+        {
+          "name_th": "ดำสนิท",
+          "hex": "#000000"
+        },
+        {
+          "name_th": "น้ำตาลส้ม",
+          "hex": "#A0522D"
+        }
+      ]
+    },
+    "autumn": {
+      "best": [
+        {
+          "name_th": "เทอร์ราคอตตา",
+          "hex": "#C8553D"
+        },
+        {
+          "name_th": "มัสตาร์ด",
+          "hex": "#D4A017"
+        },
+        {
+          "name_th": "เขียวขี้ม้า",
+          "hex": "#6B7F3A"
+        },
+        {
+          "name_th": "น้ำตาลอิฐ",
+          "hex": "#8B4513"
+        },
+        {
+          "name_th": "ส้มฟักทอง",
+          "hex": "#E07B39"
+        },
+        {
+          "name_th": "เทียล",
+          "hex": "#2A7F7A"
+        },
+        {
+          "name_th": "ครีมอูฐ",
+          "hex": "#C19A6B"
+        },
+        {
+          "name_th": "เบอร์กันดีอุ่น",
+          "hex": "#7B2D26"
+        },
+        {
+          "name_th": "เขียวมะกอก",
+          "hex": "#808000"
+        },
+        {
+          "name_th": "แซลมอนอิฐ",
+          "hex": "#D9775F"
+        },
+        {
+          "name_th": "ทองเก่า",
+          "hex": "#B8860B"
+        },
+        {
+          "name_th": "ช็อกโกแลต",
+          "hex": "#5C3A21"
+        }
+      ],
+      "avoid": [
+        {
+          "name_th": "ชมพูบาร์บี้",
+          "hex": "#FF69B4"
+        },
+        {
+          "name_th": "ฟ้าน้ำแข็ง",
+          "hex": "#CDE8F6"
+        },
+        {
+          "name_th": "ขาวจั๊วะ",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name_th": "เทาเย็น",
+          "hex": "#8E9AAF"
+        }
+      ]
+    },
+    "winter": {
+      "best": [
+        {
+          "name_th": "ขาวจั๊วะ",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name_th": "ดำสนิท",
+          "hex": "#000000"
+        },
+        {
+          "name_th": "แดงทับทิม",
+          "hex": "#C8102E"
+        },
+        {
+          "name_th": "บานเย็น",
+          "hex": "#C2185B"
+        },
+        {
+          "name_th": "น้ำเงินรอยัล",
+          "hex": "#1F3FBF"
+        },
+        {
+          "name_th": "มรกต",
+          "hex": "#00875A"
+        },
+        {
+          "name_th": "ม่วงองุ่น",
+          "hex": "#5B2A86"
+        },
+        {
+          "name_th": "ฟ้าน้ำแข็ง",
+          "hex": "#CDE8F6"
+        },
+        {
+          "name_th": "ชมพูช็อกกิ้ง",
+          "hex": "#FF1F8E"
+        },
+        {
+          "name_th": "เทาถ่าน",
+          "hex": "#36393F"
+        },
+        {
+          "name_th": "กรมท่าเข้ม",
+          "hex": "#14213D"
+        },
+        {
+          "name_th": "เงินเย็น",
+          "hex": "#C0C6CF"
+        }
+      ],
+      "avoid": [
+        {
+          "name_th": "ส้มฟักทอง",
+          "hex": "#E07B39"
+        },
+        {
+          "name_th": "ครีมอูฐ",
+          "hex": "#C19A6B"
+        },
+        {
+          "name_th": "เขียวขี้ม้า",
+          "hex": "#6B7F3A"
+        },
+        {
+          "name_th": "พีชคอรัล",
+          "hex": "#FF7F66"
+        }
+      ]
+    }
+  },
+  "scan_sample": {
+    "skin": "#D9A27E",
+    "hair": "#2B1D14",
+    "eyes": "#3A2618",
+    "vein": "green",
+    "metal": "gold",
+    "light_ok": true
+  },
+  "profile": {
+    "season": "autumn",
+    "sub": "true",
+    "label": "True Autumn",
+    "label_th": "ออทัมน์ 🍂",
+    "warmth": 21,
+    "lightness": 48,
+    "contrast": 59,
+    "undertone": "warm",
+    "depth": "deep",
+    "chroma": "clear",
+    "confidence": 78,
+    "metal": "gold"
+  },
+  "season_demos": {
+    "light_spring": {
+      "season": "spring",
+      "sub": "light",
+      "label": "Light Spring",
+      "label_th": "สปริง 🌷",
+      "warmth": 6,
+      "lightness": 67,
+      "contrast": 47,
+      "undertone": "warm",
+      "depth": "light",
+      "chroma": "clear",
+      "confidence": 69,
+      "metal": "gold"
+    },
+    "bright_spring": {
+      "season": "spring",
+      "sub": "bright",
+      "label": "Bright Spring",
+      "label_th": "สปริง 🌷",
+      "warmth": 6,
+      "lightness": 59,
+      "contrast": 68,
+      "undertone": "warm",
+      "depth": "light",
+      "chroma": "clear",
+      "confidence": 75,
+      "metal": "gold"
+    },
+    "true_summer": {
+      "season": "summer",
+      "sub": "true",
+      "label": "True Summer",
+      "label_th": "ซัมเมอร์ 🌊",
+      "warmth": -8,
+      "lightness": 53,
+      "contrast": 73,
+      "undertone": "cool",
+      "depth": "light",
+      "chroma": "clear",
+      "confidence": 71,
+      "metal": "silver"
+    },
+    "true_winter": {
+      "season": "winter",
+      "sub": "true",
+      "label": "True Winter",
+      "label_th": "วินเทอร์ ❄️",
+      "warmth": -51,
+      "lightness": 42,
+      "contrast": 62,
+      "undertone": "cool",
+      "depth": "deep",
+      "chroma": "clear",
+      "confidence": 84,
+      "metal": "silver"
+    },
+    "true_autumn": {
+      "season": "autumn",
+      "sub": "true",
+      "label": "True Autumn",
+      "label_th": "ออทัมน์ 🍂",
+      "warmth": 21,
+      "lightness": 48,
+      "contrast": 59,
+      "undertone": "warm",
+      "depth": "deep",
+      "chroma": "clear",
+      "confidence": 78,
+      "metal": "gold"
+    }
+  },
+  "drape_battle": {
+    "a": {
+      "hex": "#E8823F",
+      "score": 96,
+      "near_th": "ส้มฟักทอง"
+    },
+    "b": {
+      "hex": "#FF69B4",
+      "score": 0,
+      "near_th": "แซลมอนอิฐ"
+    },
+    "winner": "a",
+    "gap": 96,
+    "line_th": "สีA ชนะ +96 หน้าดูสว่างขึ้น"
+  },
+  "palette_card": {
+    "name": "มายด์",
+    "label": "True Autumn",
+    "label_th": "ออทัมน์ 🍂",
+    "best": [
+      {
+        "name_th": "เทอร์ราคอตตา",
+        "hex": "#C8553D"
+      },
+      {
+        "name_th": "มัสตาร์ด",
+        "hex": "#D4A017"
+      },
+      {
+        "name_th": "เขียวขี้ม้า",
+        "hex": "#6B7F3A"
+      },
+      {
+        "name_th": "น้ำตาลอิฐ",
+        "hex": "#8B4513"
+      },
+      {
+        "name_th": "ส้มฟักทอง",
+        "hex": "#E07B39"
+      },
+      {
+        "name_th": "เทียล",
+        "hex": "#2A7F7A"
+      },
+      {
+        "name_th": "ครีมอูฐ",
+        "hex": "#C19A6B"
+      },
+      {
+        "name_th": "เบอร์กันดีอุ่น",
+        "hex": "#7B2D26"
+      },
+      {
+        "name_th": "เขียวมะกอก",
+        "hex": "#808000"
+      },
+      {
+        "name_th": "แซลมอนอิฐ",
+        "hex": "#D9775F"
+      },
+      {
+        "name_th": "ทองเก่า",
+        "hex": "#B8860B"
+      },
+      {
+        "name_th": "ช็อกโกแลต",
+        "hex": "#5C3A21"
+      }
+    ],
+    "avoid": [
+      {
+        "name_th": "ชมพูบาร์บี้",
+        "hex": "#FF69B4"
+      },
+      {
+        "name_th": "ฟ้าน้ำแข็ง",
+        "hex": "#CDE8F6"
+      },
+      {
+        "name_th": "ขาวจั๊วะ",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name_th": "เทาเย็น",
+        "hex": "#8E9AAF"
+      }
+    ],
+    "metal": "gold",
+    "size_px": [
+      1080,
+      1920
+    ],
+    "watermark": "ToneMe · AI วันละแอป"
+  },
+  "outfit_before": {
+    "overall": 50,
+    "verdict_th": "พอได้ 🙂",
+    "items": [
+      {
+        "slot": "top",
+        "hex": "#CDE8F6",
+        "score": 0,
+        "verdict_th": "ไม่ใช่ทาง 🙅",
+        "verdict": "no",
+        "swap_hex": "#2A7F7A",
+        "swap_th": "เทียล"
+      },
+      {
+        "slot": "bottom",
+        "hex": "#C19A6B",
+        "score": 100,
+        "verdict_th": "ใช่เลย 💖",
+        "verdict": "yes",
+        "swap_hex": "#C19A6B",
+        "swap_th": "ครีมอูฐ"
+      },
+      {
+        "slot": "bag",
+        "hex": "#5C3A21",
+        "score": 100,
+        "verdict_th": "ใช่เลย 💖",
+        "verdict": "yes",
+        "swap_hex": "#5C3A21",
+        "swap_th": "ช็อกโกแลต"
+      }
+    ],
+    "tip_th": "เปลี่ยนเสื้อเป็นสีเทียล จะขึ้นเป็นลุคเดียวกันทั้งตัว"
+  },
+  "outfit_after_swap": {
+    "overall": 96,
+    "verdict_th": "ใช่เลย 💖",
+    "items": [
+      {
+        "slot": "top",
+        "hex": "#2E8478",
+        "score": 93,
+        "verdict_th": "ใช่เลย 💖",
+        "verdict": "yes",
+        "swap_hex": "#2A7F7A",
+        "swap_th": "เทียล"
+      },
+      {
+        "slot": "bottom",
+        "hex": "#C19A6B",
+        "score": 100,
+        "verdict_th": "ใช่เลย 💖",
+        "verdict": "yes",
+        "swap_hex": "#C19A6B",
+        "swap_th": "ครีมอูฐ"
+      },
+      {
+        "slot": "bag",
+        "hex": "#5C3A21",
+        "score": 100,
+        "verdict_th": "ใช่เลย 💖",
+        "verdict": "yes",
+        "swap_hex": "#5C3A21",
+        "swap_th": "ช็อกโกแลต"
+      }
+    ],
+    "tip_th": "ทั้งชุดอยู่ในพาเลตต์แล้ว ปังมาก"
+  },
+  "makeup": {
+    "lip": [
+      {
+        "family_th": "อิฐ",
+        "hex": "#B4523C"
+      },
+      {
+        "family_th": "น้ำตาลส้ม",
+        "hex": "#A0522D"
+      }
+    ],
+    "blush": [
+      {
+        "family_th": "เทอร์ราคอตตา",
+        "hex": "#D27D5C"
+      }
+    ],
+    "shadow": [
+      {
+        "family_th": "บรอนซ์",
+        "hex": "#A87437"
+      },
+      {
+        "family_th": "เขียวมะกอก",
+        "hex": "#6B7F3A"
+      }
+    ],
+    "note_th": "เป็นโทนสี ไม่ใช่ยี่ห้อ ลองเทียบ swatch ที่ข้อมือในแสงกลางวัน"
+  },
+  "shop_scan": {
+    "hex": "#2A8C82",
+    "score": 91,
+    "verdict": "yes",
+    "verdict_th": "ใช่เลย 💖",
+    "near_th": "เทียล",
+    "near_hex": "#2A7F7A"
+  },
+  "closet_audit": {
+    "total": 8,
+    "yes": 4,
+    "maybe": 0,
+    "no": 4,
+    "match_pct": 50,
+    "items": [
+      {
+        "hex": "#CDE8F6",
+        "score": 0,
+        "verdict": "no",
+        "verdict_th": "ไม่ใช่ทาง 🙅",
+        "near_th": "เทียล",
+        "near_hex": "#2A7F7A",
+        "id": "c1",
+        "name_th": "เสื้อเชิ้ตฟ้าอ่อน"
+      },
+      {
+        "hex": "#0A0A0A",
+        "score": 47,
+        "verdict": "no",
+        "verdict_th": "ไม่ใช่ทาง 🙅",
+        "near_th": "ช็อกโกแลต",
+        "near_hex": "#5C3A21",
+        "id": "c2",
+        "name_th": "เดรสดำ"
+      },
+      {
+        "hex": "#CFA020",
+        "score": 95,
+        "verdict": "yes",
+        "verdict_th": "ใช่เลย 💖",
+        "near_th": "มัสตาร์ด",
+        "near_hex": "#D4A017",
+        "id": "c3",
+        "name_th": "เสื้อไหมพรมมัสตาร์ด"
+      },
+      {
+        "hex": "#C9A57A",
+        "score": 93,
+        "verdict": "yes",
+        "verdict_th": "ใช่เลย 💖",
+        "near_th": "ครีมอูฐ",
+        "near_hex": "#C19A6B",
+        "id": "c4",
+        "name_th": "กางเกงสแล็กครีม"
+      },
+      {
+        "hex": "#FFFFFF",
+        "score": 0,
+        "verdict": "no",
+        "verdict_th": "ไม่ใช่ทาง 🙅",
+        "near_th": "ครีมอูฐ",
+        "near_hex": "#C19A6B",
+        "id": "c5",
+        "name_th": "เสื้อยืดขาว"
+      },
+      {
+        "hex": "#6E7F40",
+        "score": 95,
+        "verdict": "yes",
+        "verdict_th": "ใช่เลย 💖",
+        "near_th": "เขียวขี้ม้า",
+        "near_hex": "#6B7F3A",
+        "id": "c6",
+        "name_th": "เสื้อเชิ้ตเขียวขี้ม้า"
+      },
+      {
+        "hex": "#8A4A1C",
+        "score": 93,
+        "verdict": "yes",
+        "verdict_th": "ใช่เลย 💖",
+        "near_th": "น้ำตาลอิฐ",
+        "near_hex": "#8B4513",
+        "id": "c7",
+        "name_th": "เสื้อคลุมน้ำตาลอิฐ"
+      },
+      {
+        "hex": "#FF6FB5",
+        "score": 0,
+        "verdict": "no",
+        "verdict_th": "ไม่ใช่ทาง 🙅",
+        "near_th": "แซลมอนอิฐ",
+        "near_hex": "#D9775F",
+        "id": "c8",
+        "name_th": "เสื้อชมพูบาร์บี้"
+      }
+    ],
+    "buy_next_th": [
+      "เทอร์ราคอตตา",
+      "ส้มฟักทอง",
+      "เทียล"
+    ]
+  },
+  "hair_guide": [
+    {
+      "name_th": "น้ำตาลช็อกโกแลต",
+      "hex": "#5C3A21"
+    },
+    {
+      "name_th": "แดงทองแดง",
+      "hex": "#8B3A1E"
+    }
+  ],
+  "friend_compare": {
+    "members": [
+      {
+        "name": "มายด์",
+        "season": "autumn"
+      },
+      {
+        "name": "แพร",
+        "season": "summer"
+      },
+      {
+        "name": "จูน",
+        "season": "autumn"
+      },
+      {
+        "name": "ต้น",
+        "season": "spring"
+      }
+    ],
+    "count": {
+      "spring": 1,
+      "summer": 1,
+      "autumn": 2
+    },
+    "group_color_th": "ครีมอูฐ",
+    "group_color_hex": "#C19A6B",
+    "avg_score": 85,
+    "line_th": "ใส่สีครีมอูฐไปด้วยกัน ทุกคนรอด เฉลี่ย 85/100"
+  },
+  "local_store": {
+    "version": 1,
+    "name": "มายด์",
+    "profile": {
+      "season": "autumn",
+      "sub": "true",
+      "label": "True Autumn",
+      "label_th": "ออทัมน์ 🍂",
+      "warmth": 21,
+      "lightness": 48,
+      "contrast": 59,
+      "undertone": "warm",
+      "depth": "deep",
+      "chroma": "clear",
+      "confidence": 78,
+      "metal": "gold"
+    },
+    "closet": [
+      {
+        "id": "c1",
+        "name_th": "เสื้อเชิ้ตฟ้าอ่อน",
+        "hex": "#CDE8F6"
+      },
+      {
+        "id": "c2",
+        "name_th": "เดรสดำ",
+        "hex": "#0A0A0A"
+      },
+      {
+        "id": "c3",
+        "name_th": "เสื้อไหมพรมมัสตาร์ด",
+        "hex": "#CFA020"
+      },
+      {
+        "id": "c4",
+        "name_th": "กางเกงสแล็กครีม",
+        "hex": "#C9A57A"
+      },
+      {
+        "id": "c5",
+        "name_th": "เสื้อยืดขาว",
+        "hex": "#FFFFFF"
+      },
+      {
+        "id": "c6",
+        "name_th": "เสื้อเชิ้ตเขียวขี้ม้า",
+        "hex": "#6E7F40"
+      },
+      {
+        "id": "c7",
+        "name_th": "เสื้อคลุมน้ำตาลอิฐ",
+        "hex": "#8A4A1C"
+      },
+      {
+        "id": "c8",
+        "name_th": "เสื้อชมพูบาร์บี้",
+        "hex": "#FF6FB5"
+      }
+    ],
+    "friends": [
+      {
+        "name": "มายด์",
+        "season": "autumn"
+      },
+      {
+        "name": "แพร",
+        "season": "summer"
+      },
+      {
+        "name": "จูน",
+        "season": "autumn"
+      },
+      {
+        "name": "ต้น",
+        "season": "spring"
+      }
+    ],
+    "settings": {
+      "keep_selfie": false,
+      "show_avoid": true
+    }
+  },
+  "ai_scan_response_example": {
+    "face_found": true,
+    "light_ok": true,
+    "light_issue": "none",
+    "regions": {
+      "cheek_l": [
+        0.3,
+        0.48,
+        0.1,
+        0.08
+      ],
+      "cheek_r": [
+        0.6,
+        0.48,
+        0.1,
+        0.08
+      ],
+      "forehead": [
+        0.42,
+        0.22,
+        0.16,
+        0.08
+      ],
+      "hair": [
+        0.2,
+        0.05,
+        0.6,
+        0.1
+      ],
+      "iris": [
+        0.4,
+        0.38,
+        0.04,
+        0.03
+      ]
+    },
+    "note_th": "แสงหน้าต่างด้านข้าง สม่ำเสมอดี ไม่เห็นฟิลเตอร์"
+  },
+  "ai_stylist_examples": {
+    "office": "ออทัมน์สายทำงาน เทียล+ครีมอูฐ ดูแพงแบบไม่ต้องพยายาม",
+    "date": "ลิปอิฐ+เสื้อส้มฟักทอง หน้าฉ่ำแบบไม่ต้องปัดเพิ่ม"
+  },
+  "ui_copy_th": {
+    "home_title": "สีไหนใช่เรา? ให้ AI ดูให้ใน 10 วิ",
+    "scan_cta": "🤳 สแกนหน้า (แสงกลางวัน)",
+    "light_tip": "หันหน้าเข้าหน้าต่าง ไม่แต่งหน้า ปิดฟิลเตอร์",
+    "bad_light": "แสงเหลือง/มืดไป ผลอาจเพี้ยน ลองย้ายไปริมหน้าต่างนะ",
+    "quiz_vein": "เส้นเลือดที่ข้อมือเป็นสีอะไร?",
+    "quiz_metal": "ใส่ทองหรือเงินแล้วหน้าดูดีกว่า?",
+    "reveal": "คุณคือ… {label_th}",
+    "drape_cta": "ลองทาบผ้า 2 สี ⚔️",
+    "palette_save": "เซฟพาเลตต์เป็นวอลเปเปอร์",
+    "outfit_cta": "📸 เช็กชุดวันนี้",
+    "shop_cta": "สแกนสีในร้าน",
+    "closet_title": "ตู้เสื้อผ้าเข้ากับเราแค่ไหน",
+    "friends_cta": "ชวนแก๊งหาสีกลาง",
+    "privacy": "เซลฟี่ไม่ถูกเก็บ อ่านแค่สีแล้วลบทันที",
+    "disclaimer": "ผลนี้เป็นไกด์สนุกๆ ไม่มีสีผิวไหนดีกว่ากัน ทุกโทนสวยในสีของตัวเอง"
+  },
+  "reel_script": [
+    {
+      "t": "0–3s",
+      "shot": "ถือเสื้อชมพูบาร์บี้ทาบหน้า หน้าหมอง",
+      "overlay_th": "ทำไมใส่สีนี้แล้วหน้าโทรม…"
+    },
+    {
+      "t": "3–7s",
+      "shot": "speed-ramp gen แอปด้วย AI",
+      "overlay_th": "เลยให้ AI สร้างแอปหาสีที่ใช่"
+    },
+    {
+      "t": "7–12s",
+      "shot": "เซลฟี่ → จุดสีเด้งบนแก้ม/ผม/ตา → เปิดการ์ด True Autumn 🍂",
+      "overlay_th": "เราคือ ออทัมน์ 🍂"
+    },
+    {
+      "t": "12–17s",
+      "shot": "Drape Battle สลับผ้า ส้มฟักทอง 96 vs ชมพูบาร์บี้ 0",
+      "overlay_th": "ส้ม 96 · ชมพู 0 💀"
+    },
+    {
+      "t": "17–23s",
+      "shot": "เช็กชุด เสื้อฟ้า 50 → เปลี่ยนเป็นเทียล 96",
+      "overlay_th": "แค่เปลี่ยนเสื้อ 50 → 96"
+    },
+    {
+      "t": "23–27s",
+      "shot": "แวบ ลิป/บลัช + ตู้เสื้อผ้า 50% + แก๊ง 4 คนสีครีมอูฐ",
+      "overlay_th": "ลิป ตู้เสื้อผ้า เพื่อนทั้งแก๊ง"
+    },
+    {
+      "t": "27–30s",
+      "shot": "พาเลตต์เป็นวอลเปเปอร์มือถือ",
+      "overlay_th": "คอมเมนต์ 'สี' เดี๋ยวส่งลิงก์ฟรี"
+    }
+  ],
+  "expect_locked": {
+    "profile": [
+      "True Autumn",
+      21,
+      48,
+      59,
+      78
+    ],
+    "drape": [
+      96,
+      0,
+      "a"
+    ],
+    "outfit": [
+      50,
+      96
+    ],
+    "shop": [
+      91,
+      "yes"
+    ],
+    "audit": [
+      50,
+      [
+        "เทอร์ราคอตตา",
+        "ส้มฟักทอง",
+        "เทียล"
+      ]
+    ],
+    "group": [
+      "ครีมอูฐ",
+      85
+    ],
+    "season_demos": {
+      "light_spring": "Light Spring",
+      "bright_spring": "Bright Spring",
+      "true_summer": "True Summer",
+      "true_winter": "True Winter",
+      "true_autumn": "True Autumn"
+    }
+  }
+}

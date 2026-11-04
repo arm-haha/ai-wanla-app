@@ -1,0 +1,264 @@
+{
+ "Profile": [
+  {
+   "name": "มายด์",
+   "monthly_income": 25000,
+   "work_days": 22,
+   "hours_per_day": 8,
+   "jar_goal_thb": 15000,
+   "jar_goal_name_th": "ตั๋วญี่ปุ่น"
+  },
+  {
+   "name": "พี่โอ๊ต",
+   "monthly_income": 18000,
+   "work_days": 26,
+   "hours_per_day": 9
+  }
+ ],
+ "Item": [
+  {
+   "id": "bag",
+   "name_th": "กระเป๋าสะพายข้าง",
+   "price_thb": 3990,
+   "category": "fashion",
+   "source": "screenshot"
+  },
+  {
+   "id": "sneaker",
+   "name_th": "รองเท้าวิ่ง",
+   "price_thb": 2890,
+   "category": "sport",
+   "source": "photo"
+  },
+  {
+   "id": "latte",
+   "name_th": "ลาเต้เย็น",
+   "price_thb": 75,
+   "category": "food",
+   "source": "manual"
+  },
+  {
+   "id": "phone",
+   "name_th": "มือถือรุ่นใหม่",
+   "price_thb": 32900,
+   "category": "gadget",
+   "source": "link"
+  }
+ ],
+ "VisionExtract": [
+  {
+   "name_th": "กระเป๋าสะพายข้าง",
+   "price_thb": 3990,
+   "original_price_thb": 5990,
+   "shop_hint": "แอปช้อปปิ้ง",
+   "confidence": 0.93,
+   "needs_confirm": false
+  },
+  {
+   "name_th": "ไม่แน่ใจ",
+   "price_thb": null,
+   "original_price_thb": null,
+   "shop_hint": null,
+   "confidence": 0.31,
+   "needs_confirm": true
+  }
+ ],
+ "WorkTime": [
+  {
+   "price_thb": 3990,
+   "hourly_wage": 142.05,
+   "hours": 28.1,
+   "work_days": 3.5,
+   "pct_of_month": 16.0,
+   "label_th": "ต้องทำงาน 28 ชม. 5 นาที"
+  },
+  {
+   "price_thb": 2890,
+   "hourly_wage": 142.05,
+   "hours": 20.3,
+   "work_days": 2.5,
+   "pct_of_month": 11.6,
+   "label_th": "ต้องทำงาน 20 ชม. 21 นาที"
+  },
+  {
+   "price_thb": 75,
+   "hourly_wage": 142.05,
+   "hours": 0.5,
+   "work_days": 0.1,
+   "pct_of_month": 0.3,
+   "label_th": "ต้องทำงาน 32 นาที"
+  },
+  {
+   "price_thb": 32900,
+   "hourly_wage": 142.05,
+   "hours": 231.6,
+   "work_days": 29.0,
+   "pct_of_month": 131.6,
+   "label_th": "ต้องทำงาน 231 ชม. 37 นาที"
+  }
+ ],
+ "CostPerUse": [
+  {
+   "total_uses": 144,
+   "per_use_thb": 20.07,
+   "tier": "amber"
+  },
+  {
+   "total_uses": 24,
+   "per_use_thb": 166.25,
+   "tier": "red"
+  },
+  {
+   "total_uses": 1,
+   "per_use_thb": 75.0,
+   "tier": "amber"
+  }
+ ],
+ "Answers": [
+  {
+   "need": false,
+   "have_similar": true,
+   "want_30d": false,
+   "cash_ready": true,
+   "sale_pressure": true
+  },
+  {
+   "need": true,
+   "have_similar": false,
+   "want_30d": true,
+   "cash_ready": true,
+   "sale_pressure": false
+  },
+  {
+   "need": false,
+   "have_similar": true,
+   "want_30d": true,
+   "cash_ready": false,
+   "sale_pressure": false
+  }
+ ],
+ "Verdict": [
+  {
+   "score": 5,
+   "verdict": "skip",
+   "verdict_th": "ข้ามไป เก็บเงินเข้าโหล"
+  },
+  {
+   "score": 95,
+   "verdict": "buy",
+   "verdict_th": "คุ้ม ซื้อได้"
+  },
+  {
+   "score": 30,
+   "verdict": "skip",
+   "verdict_th": "ข้ามไป เก็บเงินเข้าโหล"
+  }
+ ],
+ "CoolOff": [
+  {
+   "ends_at": "2026-10-30T08:00:00+07:00",
+   "hours_left": 12.0,
+   "unlocked": false
+  },
+  {
+   "ends_at": "2026-11-01T08:00:00+07:00",
+   "hours_left": 0.0,
+   "unlocked": true
+  }
+ ],
+ "SkipJar": [
+  {
+   "saved_thb": 6870,
+   "count": 3,
+   "goal_thb": 15000,
+   "goal_pct": 45.8,
+   "reached": false
+  },
+  {
+   "saved_thb": 0,
+   "count": 0,
+   "goal_thb": 15000,
+   "goal_pct": 0.0,
+   "reached": false
+  }
+ ],
+ "MonthReport": [
+  {
+   "bought": 1,
+   "skipped": 3,
+   "spent_thb": 2890,
+   "saved_thb": 6870,
+   "hours_saved": 48.4,
+   "biggest_skip": "กระเป๋าสะพายข้าง"
+  },
+  {
+   "bought": 0,
+   "skipped": 0,
+   "spent_thb": 0,
+   "saved_thb": 0,
+   "hours_saved": 0.0,
+   "biggest_skip": null
+  }
+ ],
+ "HabitCost": [
+  {
+   "per_month_thb": 1625.0,
+   "per_year_thb": 19500,
+   "hours_per_month": 11.4,
+   "hours_per_year": 137.3
+  },
+  {
+   "per_month_thb": 1365.0,
+   "per_year_thb": 16380,
+   "hours_per_month": 9.6,
+   "hours_per_year": 115.3
+  }
+ ],
+ "DupeQuery": [
+  {
+   "item_id": "bag",
+   "search_terms_th": [
+    "กระเป๋าสะพายข้าง หนังPU สีครีม",
+    "กระเป๋า crossbody มินิมอล"
+   ],
+   "note_th": "แอปให้แค่คำค้น ไม่เดาราคา ผู้ใช้ไปเทียบเอง"
+  }
+ ],
+ "ShareCard": [
+  {
+   "kind": "work_hours",
+   "title_th": "กระเป๋าใบนี้ = ทำงาน",
+   "big_stat": "28 ชม.",
+   "sub_th": "3.5 วันทำงาน · 16% ของเงินเดือน",
+   "disclaimer_th": "ตัวอย่างสมมติ คำนวณจากรายได้ที่ผู้ใช้กรอกเอง ไม่ใช่คำแนะนำทางการเงิน"
+  },
+  {
+   "kind": "verdict",
+   "title_th": "คุ้มไหม?",
+   "big_stat": "5/100",
+   "sub_th": "ข้ามไป เก็บเงินเข้าโหล",
+   "disclaimer_th": "ตัวอย่างสมมติ คำนวณจากรายได้ที่ผู้ใช้กรอกเอง ไม่ใช่คำแนะนำทางการเงิน"
+  },
+  {
+   "kind": "skip_jar",
+   "title_th": "เดือนนี้ไม่ซื้อไป 3 ชิ้น",
+   "big_stat": "฿6,870",
+   "sub_th": "ตั๋วญี่ปุ่น 45.8%",
+   "disclaimer_th": "ตัวอย่างสมมติ คำนวณจากรายได้ที่ผู้ใช้กรอกเอง ไม่ใช่คำแนะนำทางการเงิน"
+  },
+  {
+   "kind": "month_report",
+   "title_th": "เวลาชีวิตที่ได้คืน",
+   "big_stat": "48 ชม.",
+   "sub_th": "ซื้อ 1 · ข้าม 3",
+   "disclaimer_th": "ตัวอย่างสมมติ คำนวณจากรายได้ที่ผู้ใช้กรอกเอง ไม่ใช่คำแนะนำทางการเงิน"
+  },
+  {
+   "kind": "cooloff_win",
+   "title_th": "รอครบ 24 ชม. แล้ว",
+   "big_stat": "ไม่อยากได้แล้ว",
+   "sub_th": "+฿3,990 เข้าโหล",
+   "disclaimer_th": "ตัวอย่างสมมติ คำนวณจากรายได้ที่ผู้ใช้กรอกเอง ไม่ใช่คำแนะนำทางการเงิน"
+  }
+ ]
+}

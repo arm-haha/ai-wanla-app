@@ -1,0 +1,647 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "hairmirror.schemas.json",
+ "title": "HairMirror schemas",
+ "$defs": {
+  "Profile": {
+   "type": "object",
+   "required": [
+    "name",
+    "hair_type",
+    "max_daily_minutes",
+    "budget_month_thb"
+   ],
+   "properties": {
+    "name": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 13
+    },
+    "hair_type": {
+     "enum": [
+      "straight",
+      "wavy",
+      "curly",
+      "coily"
+     ]
+    },
+    "thickness": {
+     "enum": [
+      "fine",
+      "medium",
+      "thick"
+     ]
+    },
+    "current_length_cm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "max_daily_minutes": {
+     "type": "number",
+     "minimum": 0
+    },
+    "budget_month_thb": {
+     "type": "number",
+     "minimum": 0
+    },
+    "gender_style": {
+     "enum": [
+      "masc",
+      "femme",
+      "any"
+     ]
+    }
+   }
+  },
+  "FaceLandmarkExtract": {
+   "type": "object",
+   "required": [
+    "face_found",
+    "face_length",
+    "forehead_w",
+    "cheek_w",
+    "jaw_w",
+    "confidence",
+    "retake_reason_th"
+   ],
+   "properties": {
+    "face_found": {
+     "type": "boolean"
+    },
+    "face_length": {
+     "type": [
+      "number",
+      "null"
+     ]
+    },
+    "forehead_w": {
+     "type": [
+      "number",
+      "null"
+     ]
+    },
+    "cheek_w": {
+     "type": [
+      "number",
+      "null"
+     ]
+    },
+    "jaw_w": {
+     "type": [
+      "number",
+      "null"
+     ]
+    },
+    "hairline_visible": {
+     "type": "boolean"
+    },
+    "current_hair": {
+     "type": "object",
+     "required": [],
+     "properties": {
+      "type": {
+       "enum": [
+        "straight",
+        "wavy",
+        "curly",
+        "coily"
+       ]
+      },
+      "length_cm": {
+       "type": [
+        "number",
+        "null"
+       ]
+      },
+      "natural_level": {
+       "type": [
+        "integer",
+        "null"
+       ],
+       "minimum": 1,
+       "maximum": 10
+      }
+     }
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "retake_reason_th": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   }
+  },
+  "FaceShape": {
+   "type": "object",
+   "required": [
+    "shape",
+    "shape_th",
+    "length_to_width",
+    "jaw_to_cheek",
+    "forehead_to_cheek"
+   ],
+   "properties": {
+    "shape": {
+     "enum": [
+      "oval",
+      "round",
+      "square",
+      "heart",
+      "oblong",
+      "diamond"
+     ]
+    },
+    "shape_th": {
+     "type": "string"
+    },
+    "length_to_width": {
+     "type": "number",
+     "minimum": 0
+    },
+    "jaw_to_cheek": {
+     "type": "number",
+     "minimum": 0
+    },
+    "forehead_to_cheek": {
+     "type": "number",
+     "minimum": 0
+    }
+   }
+  },
+  "Style": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "length",
+    "suits",
+    "hair_types",
+    "daily_minutes",
+    "salon_cost_thb",
+    "maintenance_weeks",
+    "barber_phrase_th"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^[a-z0-9_]+$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "length": {
+     "enum": [
+      "short",
+      "medium",
+      "long"
+     ]
+    },
+    "suits": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "oval",
+       "round",
+       "square",
+       "heart",
+       "oblong",
+       "diamond"
+      ]
+     }
+    },
+    "hair_types": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "straight",
+       "wavy",
+       "curly",
+       "coily"
+      ]
+     }
+    },
+    "daily_minutes": {
+     "type": "number",
+     "minimum": 0
+    },
+    "salon_cost_thb": {
+     "type": "number",
+     "minimum": 0
+    },
+    "maintenance_weeks": {
+     "type": "number",
+     "exclusiveMinimum": 0
+    },
+    "neutral_ok": {
+     "type": "boolean"
+    },
+    "barber_phrase_th": {
+     "type": "string"
+    },
+    "dont_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "TryOnRequest": {
+   "type": "object",
+   "required": [
+    "style_id",
+    "source_photo",
+    "prompt"
+   ],
+   "properties": {
+    "style_id": {
+     "type": "string"
+    },
+    "source_photo": {
+     "type": "string"
+    },
+    "prompt": {
+     "type": "string"
+    },
+    "keep_identity": {
+     "type": "boolean"
+    },
+    "seed": {
+     "type": "integer"
+    }
+   }
+  },
+  "TryOnResult": {
+   "type": "object",
+   "required": [
+    "style_id",
+    "image_url",
+    "identity_ok",
+    "status"
+   ],
+   "properties": {
+    "style_id": {
+     "type": "string"
+    },
+    "image_url": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "identity_ok": {
+     "type": "boolean"
+    },
+    "status": {
+     "enum": [
+      "ok",
+      "retry",
+      "blocked"
+     ]
+    },
+    "note_th": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   }
+  },
+  "StyleMatch": {
+   "type": "object",
+   "required": [
+    "style_id",
+    "score",
+    "face_fit",
+    "upkeep_month_thb",
+    "verdict",
+    "reasons_th"
+   ],
+   "properties": {
+    "style_id": {
+     "type": "string"
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "face_fit": {
+     "type": "boolean"
+    },
+    "upkeep_month_thb": {
+     "type": "number",
+     "minimum": 0
+    },
+    "verdict": {
+     "enum": [
+      "ปัง",
+      "ลองได้",
+      "เสี่ยง"
+     ]
+    },
+    "reasons_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "BarberCard": {
+   "type": "object",
+   "required": [
+    "style_id",
+    "name_th",
+    "zones",
+    "say_to_barber_th"
+   ],
+   "properties": {
+    "style_id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "zones": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "zone",
+       "length_mm"
+      ],
+      "properties": {
+       "zone": {
+        "enum": [
+         "top",
+         "fringe",
+         "sides",
+         "back",
+         "neckline"
+        ]
+       },
+       "length_mm": {
+        "type": "number",
+        "minimum": 0
+       },
+       "note_th": {
+        "type": "string"
+       }
+      }
+     }
+    },
+    "top_to_side_ratio": {
+     "type": [
+      "number",
+      "null"
+     ]
+    },
+    "say_to_barber_th": {
+     "type": "string"
+    },
+    "dont_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "Vote": {
+   "type": "object",
+   "required": [
+    "voter",
+    "option"
+   ],
+   "properties": {
+    "voter": {
+     "type": "string",
+     "minLength": 1
+    },
+    "option": {
+     "type": "string"
+    }
+   }
+  },
+  "PollResult": {
+   "type": "object",
+   "required": [
+    "total_votes",
+    "rows",
+    "winner",
+    "tie"
+   ],
+   "properties": {
+    "total_votes": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "rows": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "option",
+       "votes",
+       "pct"
+      ],
+      "properties": {
+       "option": {
+        "type": "string"
+       },
+       "votes": {
+        "type": "integer",
+        "minimum": 0
+       },
+       "pct": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100
+       }
+      }
+     }
+    },
+    "winner": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "tie": {
+     "type": "boolean"
+    }
+   }
+  },
+  "ColorCheck": {
+   "type": "object",
+   "required": [
+    "lift_levels",
+    "needs_bleach",
+    "bleach_sessions",
+    "tone_fit",
+    "est_cost_thb",
+    "target_th",
+    "warning_th"
+   ],
+   "properties": {
+    "lift_levels": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "needs_bleach": {
+     "type": "boolean"
+    },
+    "bleach_sessions": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "tone_fit": {
+     "type": "boolean"
+    },
+    "est_cost_thb": {
+     "type": "number",
+     "minimum": 0
+    },
+    "target_th": {
+     "type": "string"
+    },
+    "warning_th": {
+     "type": "string"
+    }
+   }
+  },
+  "GrowOut": {
+   "type": "object",
+   "required": [
+    "months",
+    "weeks",
+    "trim_needed",
+    "assumption_th"
+   ],
+   "properties": {
+    "months": {
+     "type": "number",
+     "minimum": 0
+    },
+    "weeks": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "trim_needed": {
+     "type": "boolean"
+    },
+    "assumption_th": {
+     "type": "string"
+    }
+   }
+  },
+  "CutLog": {
+   "type": "object",
+   "required": [
+    "date",
+    "style_id"
+   ],
+   "properties": {
+    "date": {
+     "type": "string",
+     "format": "date"
+    },
+    "style_id": {
+     "type": "string"
+    },
+    "salon": {
+     "type": "string"
+    },
+    "price_thb": {
+     "type": "number",
+     "minimum": 0
+    },
+    "photo": {
+     "type": "boolean"
+    },
+    "rating": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 5
+    },
+    "note_th": {
+     "type": "string"
+    }
+   }
+  },
+  "CutReminder": {
+   "type": "object",
+   "required": [
+    "next_cut_date",
+    "maintenance_weeks"
+   ],
+   "properties": {
+    "next_cut_date": {
+     "type": "string",
+     "format": "date"
+    },
+    "maintenance_weeks": {
+     "type": "number",
+     "minimum": 0
+    }
+   }
+  },
+  "YearCost": {
+   "type": "object",
+   "required": [
+    "month_thb",
+    "year_thb"
+   ],
+   "properties": {
+    "month_thb": {
+     "type": "number",
+     "minimum": 0
+    },
+    "year_thb": {
+     "type": "number",
+     "minimum": 0
+    }
+   }
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "kind",
+    "title_th",
+    "big_stat",
+    "sub_th"
+   ],
+   "properties": {
+    "kind": {
+     "enum": [
+      "try_on_grid",
+      "before_after",
+      "poll",
+      "barber_card",
+      "face_shape"
+     ]
+    },
+    "title_th": {
+     "type": "string"
+    },
+    "big_stat": {
+     "type": "string"
+    },
+    "sub_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   }
+  }
+ }
+}

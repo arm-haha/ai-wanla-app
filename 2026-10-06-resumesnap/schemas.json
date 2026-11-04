@@ -1,0 +1,1445 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-wanla-app.local/resumesnap/schemas.json",
+  "title": "ResumeSnap — data contracts",
+  "description": "ResumeSnap (AI วันละแอป Day 7, 2026-10-06). Mobile-first Thai résumé mini-suite: Brain Dump → Resume, Template Flip, Job Match Tailor, Bullet Glow-up, Export & Share + nice-to-haves (Cover Letter, Interview Drill, Application Tracker, Photo Check). All data local (localStorage + IndexedDB). Times are ISO-8601 with +07:00.",
+  "$defs": {
+    "Lang": {
+      "type": "string",
+      "enum": [
+        "th",
+        "en"
+      ]
+    },
+    "TemplateId": {
+      "type": "string",
+      "enum": [
+        "clean_blue",
+        "minimal_mono",
+        "creative_side",
+        "modern_photo",
+        "ats_plain",
+        "fresh_grad"
+      ],
+      "description": "6 swipeable templates. ats_plain = single column, no icons/tables, safest for ATS parsing."
+    },
+    "AccentColor": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "InputSource": {
+      "type": "string",
+      "enum": [
+        "text",
+        "voice",
+        "photo_old_cv",
+        "line_chat",
+        "linkedin_paste"
+      ]
+    },
+    "SectionKey": {
+      "type": "string",
+      "enum": [
+        "summary",
+        "experience",
+        "projects",
+        "education",
+        "skills",
+        "languages",
+        "certifications",
+        "activities"
+      ]
+    },
+    "DateYM": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+      "description": "Year-month, e.g. 2025-06"
+    },
+    "RawInput": {
+      "type": "object",
+      "required": [
+        "id",
+        "source",
+        "text",
+        "created_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/InputSource"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000,
+          "description": "Messy free text, voice transcript, or OCR text from an old CV photo."
+        },
+        "image_url": {
+          "type": "string",
+          "description": "Optional IndexedDB key/blob URL of the old CV photo."
+        },
+        "voice_seconds": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 300
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "Link": {
+      "type": "object",
+      "required": [
+        "label",
+        "url"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string",
+          "enum": [
+            "portfolio",
+            "linkedin",
+            "github",
+            "tiktok",
+            "instagram",
+            "website",
+            "other"
+          ]
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "Contact": {
+      "type": "object",
+      "required": [
+        "full_name",
+        "headline",
+        "email",
+        "phone",
+        "location",
+        "links",
+        "show_photo",
+        "show_age"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "full_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nickname": {
+          "type": "string"
+        },
+        "headline": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "One line under the name, e.g. 'Content Marketing · เขียนคอนเทนต์ที่คนแชร์'"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "line_id": {
+          "type": "string"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Link"
+          },
+          "maxItems": 4
+        },
+        "photo_url": {
+          "type": "string"
+        },
+        "show_photo": {
+          "type": "boolean",
+          "description": "Default false. Thai employers often expect a photo; user decides."
+        },
+        "birth_year": {
+          "type": "integer",
+          "minimum": 1950,
+          "maximum": 2012
+        },
+        "show_age": {
+          "type": "boolean",
+          "description": "Default false. Never inferred by AI."
+        }
+      }
+    },
+    "Bullet": {
+      "type": "object",
+      "required": [
+        "id",
+        "text",
+        "origin",
+        "has_metric",
+        "needs_confirm"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 220
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "user",
+            "ai_extract",
+            "ai_glowup",
+            "ai_tailor"
+          ]
+        },
+        "has_metric": {
+          "type": "boolean"
+        },
+        "needs_confirm": {
+          "type": "boolean",
+          "description": "True when the bullet contains a [placeholder] or a claim the AI could not trace to the raw input. Export is blocked until resolved or user dismisses."
+        },
+        "source_quote": {
+          "type": "string",
+          "description": "Snippet from RawInput the bullet is grounded in (anti-fabrication trace)."
+        }
+      }
+    },
+    "ExperienceItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "role",
+        "org",
+        "start",
+        "end",
+        "bullets"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "org": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "full_time",
+            "part_time",
+            "internship",
+            "freelance",
+            "volunteer"
+          ]
+        },
+        "start": {
+          "$ref": "#/$defs/DateYM"
+        },
+        "end": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/DateYM"
+            },
+            {
+              "type": "string",
+              "const": "present"
+            }
+          ]
+        },
+        "location": {
+          "type": "string"
+        },
+        "bullets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Bullet"
+          },
+          "minItems": 1,
+          "maxItems": 6
+        }
+      }
+    },
+    "ProjectItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "bullets"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "link": {
+          "type": "string"
+        },
+        "date": {
+          "$ref": "#/$defs/DateYM"
+        },
+        "bullets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Bullet"
+          },
+          "minItems": 1,
+          "maxItems": 4
+        }
+      }
+    },
+    "EducationItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "degree",
+        "school",
+        "end"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "degree": {
+          "type": "string"
+        },
+        "major": {
+          "type": "string"
+        },
+        "school": {
+          "type": "string"
+        },
+        "start": {
+          "$ref": "#/$defs/DateYM"
+        },
+        "end": {
+          "$ref": "#/$defs/DateYM"
+        },
+        "gpa": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "show_gpa": {
+          "type": "boolean"
+        },
+        "highlights": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 3
+        }
+      }
+    },
+    "SkillGroup": {
+      "type": "object",
+      "required": [
+        "label",
+        "items"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "e.g. 'เครื่องมือ', 'ทักษะหลัก', 'Soft skills'"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 12
+        }
+      }
+    },
+    "LanguageSkill": {
+      "type": "object",
+      "required": [
+        "name",
+        "level"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "level": {
+          "type": "string",
+          "enum": [
+            "native",
+            "fluent",
+            "business",
+            "conversational",
+            "basic"
+          ]
+        },
+        "test": {
+          "type": "string",
+          "description": "e.g. 'TOEIC 785' — only if user provided"
+        }
+      }
+    },
+    "Certification": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "issuer": {
+          "type": "string"
+        },
+        "date": {
+          "$ref": "#/$defs/DateYM"
+        }
+      }
+    },
+    "ResumeDoc": {
+      "type": "object",
+      "required": [
+        "id",
+        "version",
+        "title",
+        "lang",
+        "template_id",
+        "accent_color",
+        "contact",
+        "summary",
+        "experience",
+        "projects",
+        "education",
+        "skills",
+        "languages",
+        "certifications",
+        "section_order",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "parent_id": {
+          "type": "string",
+          "description": "Set when this is a tailored copy of a base résumé."
+        },
+        "title": {
+          "type": "string",
+          "description": "Internal name, e.g. 'ฐานหลัก' or 'Kinjai — Content Marketing'"
+        },
+        "lang": {
+          "$ref": "#/$defs/Lang"
+        },
+        "template_id": {
+          "$ref": "#/$defs/TemplateId"
+        },
+        "accent_color": {
+          "$ref": "#/$defs/AccentColor"
+        },
+        "contact": {
+          "$ref": "#/$defs/Contact"
+        },
+        "summary": {
+          "type": "string",
+          "maxLength": 420
+        },
+        "experience": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ExperienceItem"
+          },
+          "maxItems": 8
+        },
+        "projects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ProjectItem"
+          },
+          "maxItems": 6
+        },
+        "education": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/EducationItem"
+          },
+          "maxItems": 4
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SkillGroup"
+          },
+          "maxItems": 4
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LanguageSkill"
+          },
+          "maxItems": 5
+        },
+        "certifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Certification"
+          },
+          "maxItems": 6
+        },
+        "activities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 4
+        },
+        "section_order": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SectionKey"
+          },
+          "minItems": 3,
+          "uniqueItems": true
+        },
+        "tailored_for_job_id": {
+          "type": "string"
+        },
+        "fits_one_page": {
+          "type": "boolean"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "ExtractResult": {
+      "type": "object",
+      "description": "Output of Brain Dump → Resume (LLM or mock).",
+      "required": [
+        "input_id",
+        "resume",
+        "missing_fields",
+        "warnings",
+        "confidence",
+        "latency_ms"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "input_id": {
+          "type": "string"
+        },
+        "resume": {
+          "$ref": "#/$defs/ResumeDoc"
+        },
+        "missing_fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "path",
+              "ask_th"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "JSON pointer-ish path, e.g. contact.email"
+              },
+              "ask_th": {
+                "type": "string",
+                "description": "Friendly question chip shown to user"
+              }
+            }
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "engine": {
+          "type": "string",
+          "enum": [
+            "mock_demo",
+            "llm_api"
+          ]
+        },
+        "latency_ms": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "JobKeyword": {
+      "type": "object",
+      "required": [
+        "term",
+        "kind",
+        "weight"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "term": {
+          "type": "string"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "hard_skill",
+            "tool",
+            "soft_skill",
+            "domain",
+            "qualification"
+          ]
+        },
+        "weight": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3,
+          "description": "3 = must-have in post"
+        }
+      }
+    },
+    "JobPost": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "company",
+        "source",
+        "raw_text",
+        "keywords",
+        "created_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string",
+          "enum": [
+            "jobthai",
+            "jobsdb",
+            "linkedin",
+            "facebook_group",
+            "company_site",
+            "paste"
+          ]
+        },
+        "url": {
+          "type": "string"
+        },
+        "raw_text": {
+          "type": "string",
+          "minLength": 20
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/JobKeyword"
+          },
+          "minItems": 1,
+          "maxItems": 30
+        },
+        "lang": {
+          "$ref": "#/$defs/Lang"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "TailorSuggestion": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "section",
+        "after",
+        "reason_th",
+        "grounded"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "rewrite_bullet",
+            "add_keyword_to_skills",
+            "reorder_section",
+            "rewrite_summary",
+            "add_missing_info_ask"
+          ]
+        },
+        "section": {
+          "$ref": "#/$defs/SectionKey"
+        },
+        "target_id": {
+          "type": "string"
+        },
+        "before": {
+          "type": "string"
+        },
+        "after": {
+          "type": "string"
+        },
+        "keywords_covered": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reason_th": {
+          "type": "string"
+        },
+        "grounded": {
+          "type": "boolean",
+          "description": "False = AI would be inventing; such suggestions must be shown as a question (add_missing_info_ask), never auto-applied."
+        }
+      }
+    },
+    "MatchResult": {
+      "type": "object",
+      "required": [
+        "job_id",
+        "resume_id",
+        "score",
+        "score_label",
+        "breakdown",
+        "matched_keywords",
+        "missing_keywords",
+        "suggestions"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "job_id": {
+          "type": "string"
+        },
+        "resume_id": {
+          "type": "string"
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Deterministic keyword+structure estimate. Labelled 'คะแนนประมาณ' in UI, not an official ATS score."
+        },
+        "score_label": {
+          "type": "string",
+          "enum": [
+            "ยังห่าง",
+            "พอใช้",
+            "ดี",
+            "เข้าทางมาก"
+          ]
+        },
+        "breakdown": {
+          "type": "object",
+          "required": [
+            "keywords",
+            "structure",
+            "impact",
+            "length"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "keywords": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 60
+            },
+            "structure": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 15
+            },
+            "impact": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 15
+            },
+            "length": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10
+            }
+          }
+        },
+        "matched_keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "suggestions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/TailorSuggestion"
+          },
+          "maxItems": 12
+        },
+        "previous_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    },
+    "GlowupOption": {
+      "type": "object",
+      "required": [
+        "style",
+        "text"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "style": {
+          "type": "string",
+          "enum": [
+            "impact",
+            "concise",
+            "formal"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 220
+        }
+      }
+    },
+    "BulletGlowup": {
+      "type": "object",
+      "required": [
+        "bullet_id",
+        "before",
+        "options",
+        "placeholders",
+        "needs_user_number"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "bullet_id": {
+          "type": "string"
+        },
+        "before": {
+          "type": "string"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GlowupOption"
+          },
+          "minItems": 1,
+          "maxItems": 3
+        },
+        "placeholders": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "e.g. ['[X]%'] — numbers the user must fill. AI never invents metrics."
+        },
+        "needs_user_number": {
+          "type": "boolean"
+        },
+        "lang": {
+          "$ref": "#/$defs/Lang"
+        }
+      }
+    },
+    "CoverLetter": {
+      "type": "object",
+      "required": [
+        "id",
+        "job_id",
+        "resume_id",
+        "lang",
+        "tone",
+        "subject",
+        "body",
+        "word_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "job_id": {
+          "type": "string"
+        },
+        "resume_id": {
+          "type": "string"
+        },
+        "lang": {
+          "$ref": "#/$defs/Lang"
+        },
+        "tone": {
+          "type": "string",
+          "enum": [
+            "formal",
+            "friendly_pro",
+            "short_email"
+          ]
+        },
+        "subject": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string",
+          "maxLength": 2400
+        },
+        "word_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Whitespace-separated token count (Thai has no spaces between words, so this is a rough length signal only)."
+        }
+      }
+    },
+    "InterviewQuestion": {
+      "type": "object",
+      "required": [
+        "id",
+        "q",
+        "why_asked_th",
+        "star_hint_th"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "q": {
+          "type": "string"
+        },
+        "why_asked_th": {
+          "type": "string"
+        },
+        "star_hint_th": {
+          "type": "string",
+          "description": "Which résumé item to use as the STAR story"
+        },
+        "linked_item_id": {
+          "type": "string"
+        },
+        "user_answer": {
+          "type": "string"
+        },
+        "feedback_th": {
+          "type": "string"
+        }
+      }
+    },
+    "InterviewDrill": {
+      "type": "object",
+      "required": [
+        "job_id",
+        "resume_id",
+        "questions"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "job_id": {
+          "type": "string"
+        },
+        "resume_id": {
+          "type": "string"
+        },
+        "questions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/InterviewQuestion"
+          },
+          "minItems": 3,
+          "maxItems": 8
+        }
+      }
+    },
+    "ExportJob": {
+      "type": "object",
+      "required": [
+        "resume_id",
+        "format",
+        "page_size",
+        "file_name",
+        "pages",
+        "blocked_by_unconfirmed"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "resume_id": {
+          "type": "string"
+        },
+        "format": {
+          "type": "string",
+          "enum": [
+            "pdf",
+            "png",
+            "txt_ats"
+          ]
+        },
+        "page_size": {
+          "type": "string",
+          "enum": [
+            "A4",
+            "Letter"
+          ]
+        },
+        "file_name": {
+          "type": "string",
+          "pattern": "^[^/\\\\]+\\.(pdf|png|txt)$"
+        },
+        "pages": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "blocked_by_unconfirmed": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of needs_confirm bullets still open"
+        }
+      }
+    },
+    "ShareCard": {
+      "type": "object",
+      "required": [
+        "resume_id",
+        "layout",
+        "theme",
+        "headline_th",
+        "show_score"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "resume_id": {
+          "type": "string"
+        },
+        "layout": {
+          "type": "string",
+          "enum": [
+            "story_before_after",
+            "square_preview",
+            "qr_card"
+          ]
+        },
+        "theme": {
+          "type": "string",
+          "enum": [
+            "blue_paper",
+            "highlighter",
+            "dark_ink"
+          ]
+        },
+        "headline_th": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "show_score": {
+          "type": "boolean"
+        },
+        "score_from": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "score_to": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "blur_personal_info": {
+          "type": "boolean",
+          "description": "Default true on story_before_after — blurs phone/email/surname"
+        },
+        "qr_url": {
+          "type": "string"
+        }
+      }
+    },
+    "ApplicationEntry": {
+      "type": "object",
+      "required": [
+        "id",
+        "job_id",
+        "resume_id",
+        "status",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "job_id": {
+          "type": "string"
+        },
+        "resume_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "saved",
+            "applied",
+            "interview",
+            "offer",
+            "rejected",
+            "ghosted"
+          ]
+        },
+        "applied_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "follow_up_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "PhotoCheck": {
+      "type": "object",
+      "required": [
+        "checks",
+        "overall"
+      ],
+      "additionalProperties": false,
+      "description": "Nice-to-have. Technical checks only (light, crop, background, sharpness). Never comments on face, body, age, or attractiveness.",
+      "properties": {
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "key",
+              "pass",
+              "tip_th"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "key": {
+                "type": "string",
+                "enum": [
+                  "lighting",
+                  "framing",
+                  "background",
+                  "sharpness",
+                  "aspect_ratio"
+                ]
+              },
+              "pass": {
+                "type": "boolean"
+              },
+              "tip_th": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "overall": {
+          "type": "string",
+          "enum": [
+            "ready",
+            "fixable",
+            "retake"
+          ]
+        }
+      }
+    },
+    "Settings": {
+      "type": "object",
+      "required": [
+        "ui_lang",
+        "default_resume_lang",
+        "ai_engine",
+        "show_photo_default",
+        "blur_on_share",
+        "haptics",
+        "page_size"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ui_lang": {
+          "$ref": "#/$defs/Lang"
+        },
+        "default_resume_lang": {
+          "$ref": "#/$defs/Lang"
+        },
+        "ai_engine": {
+          "type": "string",
+          "enum": [
+            "mock_demo",
+            "llm_api"
+          ]
+        },
+        "show_photo_default": {
+          "type": "boolean"
+        },
+        "blur_on_share": {
+          "type": "boolean"
+        },
+        "haptics": {
+          "type": "boolean"
+        },
+        "page_size": {
+          "type": "string",
+          "enum": [
+            "A4",
+            "Letter"
+          ]
+        },
+        "dark_mode": {
+          "type": "boolean"
+        }
+      }
+    },
+    "LocalStore": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "resumes",
+        "jobs",
+        "applications",
+        "settings"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "active_resume_id": {
+          "type": "string"
+        },
+        "resumes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ResumeDoc"
+          }
+        },
+        "jobs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/JobPost"
+          }
+        },
+        "applications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ApplicationEntry"
+          }
+        },
+        "cover_letters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CoverLetter"
+          }
+        },
+        "settings": {
+          "$ref": "#/$defs/Settings"
+        }
+      }
+    },
+    "AnalyticsEvent": {
+      "type": "object",
+      "required": [
+        "name",
+        "at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": [
+            "demo_loaded",
+            "dump_submitted",
+            "resume_generated",
+            "template_flipped",
+            "lang_toggled",
+            "job_pasted",
+            "match_scored",
+            "suggestion_applied",
+            "bullet_glowup",
+            "placeholder_filled",
+            "export_pdf",
+            "share_card",
+            "cover_letter_generated",
+            "drill_started",
+            "application_status_changed"
+          ]
+        },
+        "at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "props": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          }
+        }
+      }
+    },
+    "FeatureChecklist": {
+      "type": "object",
+      "required": [
+        "must_have",
+        "nice_to_have"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "must_have": {
+          "type": "array",
+          "minItems": 5,
+          "items": {
+            "type": "object",
+            "required": [
+              "key",
+              "name_th",
+              "done",
+              "files"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "key": {
+                "type": "string",
+                "enum": [
+                  "brain_dump",
+                  "template_flip",
+                  "job_match",
+                  "bullet_glowup",
+                  "export_share"
+                ]
+              },
+              "name_th": {
+                "type": "string"
+              },
+              "done": {
+                "type": "boolean"
+              },
+              "files": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "nice_to_have": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "key",
+              "name_th",
+              "done"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "key": {
+                "type": "string",
+                "enum": [
+                  "cover_letter",
+                  "interview_drill",
+                  "application_tracker",
+                  "photo_check",
+                  "lang_toggle_th_en",
+                  "version_compare",
+                  "dark_mode"
+                ]
+              },
+              "name_th": {
+                "type": "string"
+              },
+              "done": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

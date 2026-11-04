@@ -1,0 +1,992 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/pawtalk/schemas.json",
+  "title": "PawTalk (แมวหมาพูดได้) data contracts",
+  "$defs": {
+    "Species": {
+      "enum": [
+        "cat",
+        "dog"
+      ]
+    },
+    "Mood": {
+      "enum": [
+        "happy",
+        "chill",
+        "hungry",
+        "annoyed",
+        "scared",
+        "playful",
+        "needy"
+      ]
+    },
+    "Persona": {
+      "enum": [
+        "boss",
+        "drama",
+        "sweet"
+      ]
+    },
+    "CueId": {
+      "enum": [
+        "bark_at_door",
+        "belly_up",
+        "bringing_toy",
+        "crouch_wiggle",
+        "ears_back",
+        "ears_flat",
+        "ears_forward",
+        "ears_sideways",
+        "growl",
+        "hiss",
+        "kneading",
+        "loaf",
+        "lying_relaxed",
+        "meow_loud",
+        "play_bow",
+        "pupils_wide",
+        "purr",
+        "slow_blink",
+        "staring_at_bowl",
+        "staring_at_food",
+        "tail_flick",
+        "tail_puffed",
+        "tail_tucked",
+        "tail_up",
+        "tail_wag_loose",
+        "whale_eye",
+        "whine",
+        "yawn_lip_lick",
+        "zoomies"
+      ]
+    },
+    "SymptomId": {
+      "enum": [
+        "straining_no_urine",
+        "open_mouth_breathing",
+        "hard_breathing",
+        "seizure",
+        "ate_toxic",
+        "collapse",
+        "bloated_belly_retching",
+        "blood_vomit_stool",
+        "not_eating_24h",
+        "vomit_3plus",
+        "limping",
+        "eye_discharge_squint",
+        "lethargic_24h",
+        "vomit_once",
+        "hairball",
+        "sneeze_mild",
+        "scratching_more",
+        "soft_stool_once"
+      ]
+    },
+    "TriageLevel": {
+      "enum": [
+        "emergency",
+        "soon",
+        "watch",
+        "ok"
+      ]
+    },
+    "CareKind": {
+      "enum": [
+        "deworm",
+        "flea",
+        "vaccine",
+        "nail",
+        "bath",
+        "heartworm",
+        "grooming",
+        "litter",
+        "custom"
+      ]
+    },
+    "CareStatusEnum": {
+      "enum": [
+        "overdue",
+        "due_soon",
+        "ok"
+      ]
+    },
+    "Pet": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 24
+        },
+        "species": {
+          "$ref": "#/$defs/Species"
+        },
+        "breed_th": {
+          "type": "string"
+        },
+        "sex": {
+          "enum": [
+            "male",
+            "female",
+            "unknown"
+          ]
+        },
+        "age_years": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "weight_kg": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "neutered": {
+          "type": "boolean"
+        },
+        "size": {
+          "enum": [
+            "small",
+            "medium",
+            "large"
+          ]
+        },
+        "persona": {
+          "$ref": "#/$defs/Persona"
+        },
+        "meal_times": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+          },
+          "maxItems": 6
+        },
+        "goal": {
+          "enum": [
+            "weight_loss"
+          ]
+        },
+        "photo_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "species",
+        "age_years",
+        "weight_kg",
+        "neutered",
+        "persona",
+        "meal_times"
+      ],
+      "additionalProperties": false
+    },
+    "SnapInput": {
+      "type": "object",
+      "properties": {
+        "pet_id": {
+          "type": "string"
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+        },
+        "cues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CueId"
+          },
+          "minItems": 1,
+          "maxItems": 8,
+          "uniqueItems": true
+        },
+        "source": {
+          "enum": [
+            "ai_suggested",
+            "user_picked",
+            "demo"
+          ]
+        },
+        "photo_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "pet_id",
+        "at",
+        "cues",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "MoodShare": {
+      "type": "object",
+      "properties": {
+        "mood": {
+          "$ref": "#/$defs/Mood"
+        },
+        "points": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "pct": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "label_th": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "mood",
+        "points",
+        "pct",
+        "label_th",
+        "emoji"
+      ],
+      "additionalProperties": false
+    },
+    "MoodResult": {
+      "type": "object",
+      "properties": {
+        "species": {
+          "$ref": "#/$defs/Species"
+        },
+        "cues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CueId"
+          }
+        },
+        "meal_bonus": {
+          "type": "boolean"
+        },
+        "minutes_to_meal": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1439
+        },
+        "moods": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/MoodShare"
+          }
+        },
+        "top_mood": {
+          "$ref": "#/$defs/Mood"
+        },
+        "vibe_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "vibe_label": {
+          "enum": [
+            "ฟินมาก",
+            "โอเค",
+            "ระวังนะ"
+          ]
+        },
+        "safety_hint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "species",
+        "cues",
+        "meal_bonus",
+        "minutes_to_meal",
+        "moods",
+        "top_mood",
+        "vibe_score",
+        "vibe_label",
+        "safety_hint"
+      ],
+      "additionalProperties": false
+    },
+    "ThoughtBubble": {
+      "type": "object",
+      "properties": {
+        "pet_id": {
+          "type": "string"
+        },
+        "mood": {
+          "$ref": "#/$defs/Mood"
+        },
+        "persona": {
+          "$ref": "#/$defs/Persona"
+        },
+        "persona_th": {
+          "type": "string"
+        },
+        "template_index": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "text_th": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "badge_th": {
+          "type": "string"
+        },
+        "disclaimer_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "pet_id",
+        "mood",
+        "persona",
+        "persona_th",
+        "template_index",
+        "text_th",
+        "emoji",
+        "badge_th",
+        "disclaimer_th"
+      ],
+      "additionalProperties": false
+    },
+    "DuetLine": {
+      "type": "object",
+      "properties": {
+        "pet_id": {
+          "type": "string"
+        },
+        "text_th": {
+          "type": "string",
+          "maxLength": 80
+        }
+      },
+      "required": [
+        "pet_id",
+        "text_th"
+      ],
+      "additionalProperties": false
+    },
+    "Duet": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/DuetLine"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "CareItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "pet_id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/CareKind"
+        },
+        "label_th": {
+          "type": "string"
+        },
+        "last_done": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "interval_days": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 730
+        }
+      },
+      "required": [
+        "id",
+        "pet_id",
+        "kind",
+        "label_th",
+        "last_done",
+        "interval_days"
+      ],
+      "additionalProperties": false
+    },
+    "CareStatus": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string"
+        },
+        "pet_id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/CareKind"
+        },
+        "label_th": {
+          "type": "string"
+        },
+        "due_on": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "days_left": {
+          "type": "integer"
+        },
+        "status": {
+          "$ref": "#/$defs/CareStatusEnum"
+        }
+      },
+      "required": [
+        "task_id",
+        "pet_id",
+        "kind",
+        "label_th",
+        "due_on",
+        "days_left",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "NextMeal": {
+      "type": "object",
+      "properties": {
+        "at": {
+          "type": "string",
+          "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+        },
+        "in_min": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1439
+        }
+      },
+      "required": [
+        "at",
+        "in_min"
+      ],
+      "additionalProperties": false
+    },
+    "SymptomHit": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/SymptomId"
+        },
+        "level": {
+          "$ref": "#/$defs/TriageLevel"
+        },
+        "label_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "level",
+        "label_th"
+      ],
+      "additionalProperties": false
+    },
+    "HealthResult": {
+      "type": "object",
+      "properties": {
+        "pet_id": {
+          "type": "string"
+        },
+        "symptoms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SymptomHit"
+          }
+        },
+        "level": {
+          "$ref": "#/$defs/TriageLevel"
+        },
+        "level_th": {
+          "type": "string"
+        },
+        "escalated": {
+          "type": "boolean"
+        },
+        "show_vet_finder": {
+          "type": "boolean"
+        },
+        "disclaimer_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "pet_id",
+        "symptoms",
+        "level",
+        "level_th",
+        "escalated",
+        "show_vet_finder",
+        "disclaimer_th"
+      ],
+      "additionalProperties": false
+    },
+    "FoodPlan": {
+      "type": "object",
+      "properties": {
+        "pet_id": {
+          "type": "string"
+        },
+        "stage": {
+          "enum": [
+            "young",
+            "neutered",
+            "intact",
+            "weight_loss"
+          ]
+        },
+        "rer_kcal": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "factor": {
+          "type": "number"
+        },
+        "kcal_per_day": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "grams_per_day": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "meals_per_day": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "grams_per_meal": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "note_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "pet_id",
+        "stage",
+        "rer_kcal",
+        "factor",
+        "kcal_per_day",
+        "grams_per_day",
+        "meals_per_day",
+        "grams_per_meal",
+        "note_th"
+      ],
+      "additionalProperties": false
+    },
+    "HumanAge": {
+      "type": "object",
+      "properties": {
+        "pet_id": {
+          "type": "string"
+        },
+        "pet_years": {
+          "type": "number"
+        },
+        "human_years": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "note_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "pet_id",
+        "pet_years",
+        "human_years",
+        "note_th"
+      ],
+      "additionalProperties": false
+    },
+    "LogEntry": {
+      "type": "object",
+      "properties": {
+        "on": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "kind": {
+          "enum": [
+            "snap",
+            "care_done",
+            "health_check"
+          ]
+        },
+        "pet_id": {
+          "type": "string"
+        },
+        "mood": {
+          "$ref": "#/$defs/Mood"
+        }
+      },
+      "required": [
+        "on",
+        "kind",
+        "pet_id"
+      ],
+      "additionalProperties": false
+    },
+    "Progress": {
+      "type": "object",
+      "properties": {
+        "xp": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "level": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "streak_days": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "xp",
+        "level",
+        "streak_days"
+      ],
+      "additionalProperties": false
+    },
+    "Wrapped": {
+      "type": "object",
+      "properties": {
+        "pet_id": {
+          "type": "string"
+        },
+        "month": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}$"
+        },
+        "snaps": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mood_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "top_mood": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Mood"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "happy_pct": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "grumpiest_weekday": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "care_done": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "pet_id",
+        "month",
+        "snaps",
+        "mood_counts",
+        "top_mood",
+        "happy_pct",
+        "grumpiest_weekday",
+        "care_done"
+      ],
+      "additionalProperties": false
+    },
+    "PetIdCard": {
+      "type": "object",
+      "properties": {
+        "pet_id": {
+          "type": "string"
+        },
+        "title_th": {
+          "type": "string"
+        },
+        "lines_th": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 3,
+          "maxItems": 6
+        },
+        "human_age": {
+          "type": "integer"
+        },
+        "persona_th": {
+          "type": "string"
+        },
+        "top_mood_emoji": {
+          "type": "string"
+        },
+        "size_px": {
+          "const": [
+            1080,
+            1350
+          ]
+        },
+        "watermark": {
+          "const": "PawTalk · AI วันละแอป"
+        }
+      },
+      "required": [
+        "pet_id",
+        "title_th",
+        "lines_th",
+        "human_age",
+        "persona_th",
+        "top_mood_emoji",
+        "size_px",
+        "watermark"
+      ],
+      "additionalProperties": false
+    },
+    "MemeCard": {
+      "type": "object",
+      "properties": {
+        "pet_id": {
+          "type": "string"
+        },
+        "bubble": {
+          "$ref": "#/$defs/ThoughtBubble"
+        },
+        "size_px": {
+          "const": [
+            1080,
+            1920
+          ]
+        },
+        "layout": {
+          "enum": [
+            "bubble_top",
+            "bubble_side",
+            "duet_chat"
+          ]
+        },
+        "watermark": {
+          "const": "PawTalk · AI วันละแอป"
+        }
+      },
+      "required": [
+        "pet_id",
+        "bubble",
+        "size_px",
+        "layout",
+        "watermark"
+      ],
+      "additionalProperties": false
+    },
+    "LocalStore": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "owner_name": {
+          "type": "string"
+        },
+        "pets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Pet"
+          },
+          "maxItems": 10
+        },
+        "care": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CareItem"
+          }
+        },
+        "log": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LogEntry"
+          }
+        },
+        "settings": {
+          "type": "object",
+          "properties": {
+            "notify": {
+              "type": "boolean"
+            },
+            "lang": {
+              "enum": [
+                "th",
+                "en"
+              ]
+            }
+          },
+          "required": [
+            "notify",
+            "lang"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "owner_name",
+        "pets",
+        "care",
+        "log",
+        "settings"
+      ],
+      "additionalProperties": false
+    },
+    "AiCueRequest": {
+      "type": "object",
+      "properties": {
+        "species": {
+          "$ref": "#/$defs/Species"
+        },
+        "image": {
+          "type": "string",
+          "description": "base64 JPEG ≤ 1024px"
+        },
+        "allowed_cues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CueId"
+          }
+        }
+      },
+      "required": [
+        "species",
+        "image",
+        "allowed_cues"
+      ],
+      "additionalProperties": false
+    },
+    "AiCueResponse": {
+      "type": "object",
+      "properties": {
+        "species_seen": {
+          "enum": [
+            "cat",
+            "dog",
+            "other",
+            "none"
+          ]
+        },
+        "cues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "cue": {
+                "$ref": "#/$defs/CueId"
+              },
+              "confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "cue",
+              "confidence"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 8
+        },
+        "is_pet_photo": {
+          "type": "boolean"
+        },
+        "note_th": {
+          "type": "string",
+          "maxLength": 120
+        }
+      },
+      "required": [
+        "species_seen",
+        "cues",
+        "is_pet_photo",
+        "note_th"
+      ],
+      "additionalProperties": false
+    },
+    "AiCaptionRequest": {
+      "type": "object",
+      "properties": {
+        "bubble": {
+          "$ref": "#/$defs/ThoughtBubble"
+        },
+        "pet_name": {
+          "type": "string"
+        },
+        "max_chars": {
+          "type": "integer",
+          "maximum": 80
+        }
+      },
+      "required": [
+        "bubble",
+        "pet_name",
+        "max_chars"
+      ],
+      "additionalProperties": false
+    },
+    "AiCaptionResponse": {
+      "type": "object",
+      "properties": {
+        "text_th": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "kept_mood": {
+          "$ref": "#/$defs/Mood"
+        }
+      },
+      "required": [
+        "text_th",
+        "kept_mood"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

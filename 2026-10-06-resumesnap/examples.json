@@ -1,0 +1,1525 @@
+{
+  "_meta": {
+    "app": "ResumeSnap",
+    "day": "7/10",
+    "date": "2026-10-06",
+    "timezone": "Asia/Bangkok",
+    "channel": "AI วันละแอป",
+    "note": "ข้อมูลทั้งหมดเป็นตัวละครและบริษัทสมมติ (มายด์ / แบรนด์ดี เอเจนซี่ / บ้านดอยคาเฟ่ / Kinjai Foods) ห้ามใช้ข้อมูลคนจริงในคลิป",
+    "schema_map": {
+      "brain_dump_input": "RawInput",
+      "extract_result_example": "ExtractResult",
+      "tailored_resume_example": "ResumeDoc",
+      "job_post_example": "JobPost",
+      "match_before_example": "MatchResult",
+      "match_after_example": "MatchResult",
+      "bullet_glowup_examples[]": "BulletGlowup",
+      "cover_letter_example": "CoverLetter",
+      "interview_drill_example": "InterviewDrill",
+      "export_job_example": "ExportJob",
+      "export_blocked_example": "ExportJob",
+      "share_card_example": "ShareCard",
+      "applications_example[]": "ApplicationEntry",
+      "photo_check_example": "PhotoCheck",
+      "local_store_example": "LocalStore",
+      "analytics_examples[]": "AnalyticsEvent",
+      "feature_checklist_example": "FeatureChecklist"
+    }
+  },
+  "brain_dump_input": {
+    "id": "in_01",
+    "source": "text",
+    "text": "ชื่อ ธนพร ใจดี ชื่อเล่นมายด์ จบนิเทศ ม.เชียงใหม่ ปี 68 เกรด 3.42 เอกโฆษณา\nฝึกงาน แบรนด์ดี เอเจนซี่ (บริษัทสมมติ) มิ.ย.-ส.ค. 67 ช่วยคิดแคปชั่น ทำสไลด์พรีเซนต์ลูกค้า ทำปฏิทินโพสต์รายเดือนให้ลูกค้า 2 แบรนด์\nฟรีแลนซ์ทำ tiktok ให้ร้านกาแฟ บ้านดอยคาเฟ่ (สมมติ) ตั้งแต่ ก.พ. 68 ถึงตอนนี้ ลงคลิปอาทิตย์ละ 3 คลิป ตอนเริ่มมีคนตาม 1.2K ตอนนี้ 4.8K มีคลิปนึงวิว 310K ดู insight ทุกอาทิตย์ว่าคลิปไหนคนดูจบ\nใช้ canva capcut เป็น ใช้ chatgpt ช่วยคิดไอเดีย\nโปรเจกต์จบ ทำแคมเปญ ลดขยะแก้วพลาสติก ในมอ ได้รางวัลที่ 2 ของคณะ\nช่วยงานอีเวนต์รับน้องคณะ\nTOEIC 785 อังกฤษพอคุยได้\nเมล thanaporn.demo@example.com เบอร์ 08x-xxx-1234 อยู่ กทม. แล้ว",
+    "created_at": "2026-10-06T08:10:00+07:00"
+  },
+  "extract_result_example": {
+    "input_id": "in_01",
+    "resume": {
+      "id": "r_base",
+      "version": 1,
+      "title": "ฐานหลัก",
+      "lang": "th",
+      "template_id": "clean_blue",
+      "accent_color": "#2563EB",
+      "contact": {
+        "full_name": "ธนพร ใจดี",
+        "nickname": "มายด์",
+        "headline": "Content Creator · เขียนแคปชั่นและทำ TikTok ให้แบรนด์โต",
+        "email": "thanaporn.demo@example.com",
+        "phone": "08x-xxx-1234",
+        "location": "กรุงเทพฯ",
+        "links": [
+          {
+            "label": "tiktok",
+            "url": "https://www.tiktok.com/@baandoi.demo"
+          }
+        ],
+        "show_photo": false,
+        "show_age": false
+      },
+      "summary": "บัณฑิตนิเทศศาสตร์ เอกโฆษณา มีประสบการณ์ฝึกงานเอเจนซี่และทำ TikTok ให้ร้านกาแฟจนผู้ติดตามโต 4 เท่า ถนัดคิดแคปชั่นและตัดต่อคลิปสั้น",
+      "experience": [
+        {
+          "id": "exp_01",
+          "role": "Freelance TikTok Content Creator",
+          "org": "บ้านดอยคาเฟ่ (สมมติ)",
+          "type": "freelance",
+          "start": "2025-02",
+          "end": "present",
+          "location": "เชียงใหม่ (ออนไลน์)",
+          "bullets": [
+            {
+              "id": "b_01",
+              "text": "ทำคลิป TikTok ให้ร้านกาแฟ สัปดาห์ละ 3 คลิป",
+              "origin": "ai_extract",
+              "has_metric": true,
+              "needs_confirm": false,
+              "source_quote": "ลงคลิปอาทิตย์ละ 3 คลิป"
+            },
+            {
+              "id": "b_02",
+              "text": "ผู้ติดตามเพิ่มจาก 1.2K เป็น 4.8K มีคลิปยอดวิว 310K",
+              "origin": "ai_extract",
+              "has_metric": true,
+              "needs_confirm": false,
+              "source_quote": "ตอนเริ่มมีคนตาม 1.2K ตอนนี้ 4.8K มีคลิปนึงวิว 310K"
+            },
+            {
+              "id": "b_03",
+              "text": "ดู insight ทุกสัปดาห์เพื่อปรับคลิป",
+              "origin": "ai_extract",
+              "has_metric": false,
+              "needs_confirm": false,
+              "source_quote": "ดู insight ทุกอาทิตย์ว่าคลิปไหนคนดูจบ"
+            }
+          ]
+        },
+        {
+          "id": "exp_02",
+          "role": "Account / Content Intern",
+          "org": "แบรนด์ดี เอเจนซี่ (บริษัทสมมติ)",
+          "type": "internship",
+          "start": "2024-06",
+          "end": "2024-08",
+          "location": "กรุงเทพฯ",
+          "bullets": [
+            {
+              "id": "b_04",
+              "text": "ช่วยคิดแคปชั่นและทำสไลด์พรีเซนต์ลูกค้า",
+              "origin": "ai_extract",
+              "has_metric": false,
+              "needs_confirm": false,
+              "source_quote": "ช่วยคิดแคปชั่น ทำสไลด์พรีเซนต์ลูกค้า"
+            },
+            {
+              "id": "b_05",
+              "text": "ทำปฏิทินโพสต์รายเดือนให้ลูกค้า 2 แบรนด์",
+              "origin": "ai_extract",
+              "has_metric": true,
+              "needs_confirm": false,
+              "source_quote": "ทำปฏิทินโพสต์รายเดือนให้ลูกค้า 2 แบรนด์"
+            }
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "id": "prj_01",
+          "name": "แคมเปญลดขยะแก้วพลาสติกในมหาวิทยาลัย (โปรเจกต์จบ)",
+          "role": "ผู้วางแผนแคมเปญ",
+          "date": "2025-03",
+          "bullets": [
+            {
+              "id": "b_06",
+              "text": "ได้รางวัลที่ 2 ระดับคณะ",
+              "origin": "ai_extract",
+              "has_metric": true,
+              "needs_confirm": false,
+              "source_quote": "ได้รางวัลที่ 2 ของคณะ"
+            }
+          ]
+        }
+      ],
+      "education": [
+        {
+          "id": "edu_01",
+          "degree": "นิเทศศาสตรบัณฑิต",
+          "major": "โฆษณา",
+          "school": "มหาวิทยาลัยเชียงใหม่",
+          "end": "2025-05",
+          "gpa": 3.42,
+          "show_gpa": true,
+          "highlights": []
+        }
+      ],
+      "skills": [
+        {
+          "label": "เครื่องมือ",
+          "items": [
+            "Canva",
+            "CapCut",
+            "ChatGPT"
+          ]
+        },
+        {
+          "label": "ทักษะหลัก",
+          "items": [
+            "Copywriting",
+            "TikTok",
+            "ตัดต่อคลิปสั้น"
+          ]
+        }
+      ],
+      "languages": [
+        {
+          "name": "ไทย",
+          "level": "native"
+        },
+        {
+          "name": "อังกฤษ",
+          "level": "conversational",
+          "test": "TOEIC 785"
+        }
+      ],
+      "certifications": [],
+      "activities": [
+        "ช่วยงานอีเวนต์รับน้องคณะ"
+      ],
+      "section_order": [
+        "summary",
+        "experience",
+        "projects",
+        "education",
+        "skills",
+        "languages",
+        "activities"
+      ],
+      "fits_one_page": true,
+      "created_at": "2026-10-06T08:12:00+07:00",
+      "updated_at": "2026-10-06T08:12:00+07:00"
+    },
+    "missing_fields": [
+      {
+        "path": "contact.links[portfolio]",
+        "ask_th": "มีลิงก์พอร์ตหรือ Google Drive ผลงานไหม? ใส่แล้ว HR กดดูได้เลย"
+      },
+      {
+        "path": "activities[0]",
+        "ask_th": "อีเวนต์รับน้องมีคนเข้าร่วมประมาณกี่คน? (ไม่รู้ข้ามได้)"
+      }
+    ],
+    "warnings": [
+      "เบอร์โทรถูกปิดบางส่วนในเดโม — ของจริงใส่เต็ม",
+      "ไม่ได้ใส่อายุ/รูป เพราะคุณไม่ได้เปิดใช้"
+    ],
+    "confidence": 0.86,
+    "engine": "mock_demo",
+    "latency_ms": 2400
+  },
+  "template_catalog": [
+    {
+      "id": "clean_blue",
+      "name_th": "คลีนฟ้า",
+      "best_for_th": "งานออฟฟิศทั่วไป / มาร์เก็ตติ้ง",
+      "columns": 1,
+      "ats_safe": true
+    },
+    {
+      "id": "minimal_mono",
+      "name_th": "มินิมอลขาวดำ",
+      "best_for_th": "การเงิน / บัญชี / สายจริงจัง",
+      "columns": 1,
+      "ats_safe": true
+    },
+    {
+      "id": "creative_side",
+      "name_th": "ครีเอทีฟแถบข้าง",
+      "best_for_th": "ดีไซน์ / คอนเทนต์ / เอเจนซี่",
+      "columns": 2,
+      "ats_safe": false
+    },
+    {
+      "id": "modern_photo",
+      "name_th": "โมเดิร์นมีรูป",
+      "best_for_th": "บริษัทไทยที่ขอรูป / งานบริการ",
+      "columns": 2,
+      "ats_safe": false
+    },
+    {
+      "id": "ats_plain",
+      "name_th": "ATS เพียว",
+      "best_for_th": "สมัครผ่านเว็บใหญ่ / บริษัทต่างชาติ",
+      "columns": 1,
+      "ats_safe": true
+    },
+    {
+      "id": "fresh_grad",
+      "name_th": "เด็กจบใหม่",
+      "best_for_th": "โชว์การศึกษา+โปรเจกต์ก่อน",
+      "columns": 1,
+      "ats_safe": true
+    }
+  ],
+  "job_post_example": {
+    "id": "job_kinjai",
+    "title": "Junior Content Marketing",
+    "company": "Kinjai Foods (บริษัทสมมติ)",
+    "source": "paste",
+    "lang": "th",
+    "raw_text": "รับสมัคร Junior Content Marketing (แบรนด์อาหาร) — วางแผน content calendar รายเดือน, ผลิตคอนเทนต์ TikTok/Reels, เขียน copywriting ให้ตรง brand voice, ดู Social Media Analytics และสรุปรายงาน, ใช้ Canva/CapCut ได้, ใช้ Meta Business Suite ได้จะพิจารณาพิเศษ, สื่อสารภาษาอังกฤษได้, ทำงานเป็นทีม, มีประสบการณ์ธุรกิจอาหาร (F&B) ยินดีเป็นพิเศษ",
+    "keywords": [
+      {
+        "term": "Content Marketing",
+        "kind": "domain",
+        "weight": 3
+      },
+      {
+        "term": "TikTok",
+        "aliases": [
+          "Tik Tok"
+        ],
+        "kind": "hard_skill",
+        "weight": 3
+      },
+      {
+        "term": "Copywriting",
+        "aliases": [
+          "copy writing"
+        ],
+        "kind": "hard_skill",
+        "weight": 3
+      },
+      {
+        "term": "Content Calendar",
+        "kind": "hard_skill",
+        "weight": 2
+      },
+      {
+        "term": "Social Media Analytics",
+        "aliases": [
+          "Social Media Insights"
+        ],
+        "kind": "hard_skill",
+        "weight": 2
+      },
+      {
+        "term": "Canva",
+        "kind": "tool",
+        "weight": 2
+      },
+      {
+        "term": "CapCut",
+        "kind": "tool",
+        "weight": 2
+      },
+      {
+        "term": "Meta Business Suite",
+        "kind": "tool",
+        "weight": 1
+      },
+      {
+        "term": "English communication",
+        "aliases": [
+          "TOEIC"
+        ],
+        "kind": "qualification",
+        "weight": 2
+      },
+      {
+        "term": "Brand voice",
+        "kind": "soft_skill",
+        "weight": 1
+      },
+      {
+        "term": "Teamwork",
+        "aliases": [
+          "ทำงานเป็นทีม"
+        ],
+        "kind": "soft_skill",
+        "weight": 1
+      },
+      {
+        "term": "F&B",
+        "aliases": [
+          "Food & Beverage"
+        ],
+        "kind": "domain",
+        "weight": 1
+      }
+    ],
+    "created_at": "2026-10-06T08:18:00+07:00"
+  },
+  "score_rules": {
+    "keywords_max": 60,
+    "formula_keywords": "floor(60 * (sum weight ของ keyword ที่เจอใน resume — term หรือ aliases, case-insensitive, substring) / (sum weight ทั้งหมด))",
+    "alias_policy": "aliases ใส่ได้แค่การสะกดต่าง/คำย่อ ห้ามใส่คำไทยแปล — จุดขายคือสอนให้ใช้คำเดียวกับประกาศ",
+    "structure_max": 15,
+    "structure_rules": [
+      "มี contact ครบ email+phone (+5)",
+      "มี summary 1–3 บรรทัด (+4)",
+      "ทุก experience มีวันที่ (+3)",
+      "skills อยู่ใน 3 section แรกของ section_order (+3)"
+    ],
+    "impact_max": 15,
+    "impact_rule": "floor(15 * bullet ที่ has_metric และไม่ needs_confirm / bullet ทั้งหมดใน experience+projects)",
+    "length_max": 10,
+    "length_rule": "หน้าเดียว (+8), bullet ทุกข้อ ≤ 2 บรรทัด (+2)",
+    "labels": {
+      "0-49": "ยังห่าง",
+      "50-69": "พอใช้",
+      "70-84": "ดี",
+      "85-100": "เข้าทางมาก"
+    },
+    "disclaimer_th": "คะแนนประมาณจากคีย์เวิร์ดและโครงสร้าง ไม่ใช่คะแนนจากระบบ HR จริง"
+  },
+  "match_before_example": {
+    "job_id": "job_kinjai",
+    "resume_id": "r_base",
+    "score": 63,
+    "score_label": "พอใช้",
+    "breakdown": {
+      "keywords": 31,
+      "structure": 12,
+      "impact": 10,
+      "length": 10
+    },
+    "matched_keywords": [
+      "TikTok",
+      "Copywriting",
+      "Canva",
+      "CapCut",
+      "English communication"
+    ],
+    "missing_keywords": [
+      "Content Marketing",
+      "Content Calendar",
+      "Social Media Analytics",
+      "F&B",
+      "Meta Business Suite",
+      "Brand voice",
+      "Teamwork"
+    ],
+    "suggestions": [
+      {
+        "id": "s_01",
+        "kind": "rewrite_summary",
+        "section": "summary",
+        "before": "บัณฑิตนิเทศศาสตร์ เอกโฆษณา มีประสบการณ์ฝึกงานเอเจนซี่และทำ TikTok ให้ร้านกาแฟจนผู้ติดตามโต 4 เท่า ถนัดคิดแคปชั่นและตัดต่อคลิปสั้น",
+        "after": "บัณฑิตนิเทศศาสตร์ เอกโฆษณา ทำ Content Marketing ให้ธุรกิจ F&B จริง: วาง content calendar, ผลิต TikTok สัปดาห์ละ 3 คลิป และใช้ insight ปรับงานจนผู้ติดตามโตจาก 1.2K เป็น 4.8K",
+        "keywords_covered": [
+          "Content Marketing",
+          "F&B",
+          "Content Calendar"
+        ],
+        "reason_th": "ประกาศใช้คำว่า Content Marketing 3 ครั้ง — ใส่ในบรรทัดแรกให้ HR เห็นทันที",
+        "grounded": true
+      },
+      {
+        "id": "s_02",
+        "kind": "rewrite_bullet",
+        "section": "experience",
+        "target_id": "b_05",
+        "before": "ทำปฏิทินโพสต์รายเดือนให้ลูกค้า 2 แบรนด์",
+        "after": "จัดทำ content calendar รายเดือนให้ลูกค้า 2 แบรนด์",
+        "keywords_covered": [
+          "Content Calendar"
+        ],
+        "reason_th": "คุณทำจริงอยู่แล้ว แค่เรียกด้วยคำที่ประกาศใช้",
+        "grounded": true
+      },
+      {
+        "id": "s_03",
+        "kind": "rewrite_bullet",
+        "section": "experience",
+        "target_id": "b_01",
+        "before": "ทำคลิป TikTok ให้ร้านกาแฟ สัปดาห์ละ 3 คลิป",
+        "after": "วาง content calendar และผลิตคลิป TikTok ให้ร้านกาแฟ (F&B) สัปดาห์ละ 3 คลิป ด้วย CapCut และ Canva",
+        "keywords_covered": [
+          "F&B",
+          "TikTok",
+          "CapCut",
+          "Canva"
+        ],
+        "reason_th": "ร้านกาแฟคือธุรกิจ F&B — ตรงกับที่เขาพิจารณาพิเศษ",
+        "grounded": true
+      },
+      {
+        "id": "s_04",
+        "kind": "reorder_section",
+        "section": "skills",
+        "after": "ย้าย 'ทักษะ' ขึ้นมาต่อจากประสบการณ์ และเพิ่มคำ Content Marketing, Content Calendar, Social Media Analytics",
+        "keywords_covered": [
+          "Content Marketing",
+          "Content Calendar",
+          "Social Media Analytics"
+        ],
+        "reason_th": "คุณทำทั้ง 3 อย่างจริง (ปฏิทินโพสต์ / ดู insight) แค่ยังไม่ได้ใช้คำเดียวกับประกาศ และย้ายขึ้นให้ HR สแกนเจอครึ่งหน้าบน",
+        "grounded": true
+      },
+      {
+        "id": "s_05",
+        "kind": "add_missing_info_ask",
+        "section": "skills",
+        "after": "เคยใช้ Meta Business Suite ไหม? ถ้าเคย กดเพิ่มได้เลย",
+        "keywords_covered": [
+          "Meta Business Suite"
+        ],
+        "reason_th": "ไม่เจอในข้อมูลของคุณ — เราจะไม่ใส่ให้เองถ้าคุณไม่ได้ใช้จริง",
+        "grounded": false
+      },
+      {
+        "id": "s_06",
+        "kind": "add_missing_info_ask",
+        "section": "activities",
+        "after": "งานรับน้องคุณทำงานกับทีมกี่คน? ใส่เพื่อโชว์ Teamwork",
+        "keywords_covered": [
+          "Teamwork"
+        ],
+        "reason_th": "ประกาศขอทำงานเป็นทีม — ใช้เรื่องจริงที่มีอยู่",
+        "grounded": false
+      }
+    ]
+  },
+  "match_after_example": {
+    "job_id": "job_kinjai",
+    "resume_id": "r_kinjai",
+    "score": 87,
+    "score_label": "เข้าทางมาก",
+    "previous_score": 63,
+    "breakdown": {
+      "keywords": 52,
+      "structure": 15,
+      "impact": 10,
+      "length": 10
+    },
+    "matched_keywords": [
+      "Content Marketing",
+      "TikTok",
+      "Copywriting",
+      "Content Calendar",
+      "Social Media Analytics",
+      "Canva",
+      "CapCut",
+      "English communication",
+      "F&B"
+    ],
+    "missing_keywords": [
+      "Meta Business Suite",
+      "Brand voice",
+      "Teamwork"
+    ],
+    "suggestions": [
+      {
+        "id": "s_07",
+        "kind": "add_missing_info_ask",
+        "section": "activities",
+        "target_id": "activities",
+        "after": "เติมจำนวนผู้เข้าร่วมงานรับน้อง แทน [X]",
+        "reason_th": "ยังมีช่องว่างรอคุณยืนยัน — กรอกก่อนส่งออก PDF",
+        "grounded": false
+      }
+    ]
+  },
+  "tailored_resume_example": {
+    "id": "r_kinjai",
+    "version": 1,
+    "title": "Kinjai Foods — Junior Content Marketing",
+    "lang": "th",
+    "template_id": "clean_blue",
+    "accent_color": "#2563EB",
+    "contact": {
+      "full_name": "ธนพร ใจดี",
+      "nickname": "มายด์",
+      "headline": "Junior Content Marketing · TikTok ที่ทำให้ร้านอาหารมีคนตาม",
+      "email": "thanaporn.demo@example.com",
+      "phone": "08x-xxx-1234",
+      "location": "กรุงเทพฯ",
+      "links": [
+        {
+          "label": "tiktok",
+          "url": "https://www.tiktok.com/@baandoi.demo"
+        }
+      ],
+      "show_photo": false,
+      "show_age": false
+    },
+    "summary": "บัณฑิตนิเทศศาสตร์ เอกโฆษณา ทำ Content Marketing ให้ธุรกิจ F&B จริง: วาง content calendar, ผลิต TikTok สัปดาห์ละ 3 คลิป และใช้ insight ปรับงานจนผู้ติดตามโตจาก 1.2K เป็น 4.8K",
+    "experience": [
+      {
+        "id": "exp_01",
+        "role": "Freelance TikTok Content Creator",
+        "org": "บ้านดอยคาเฟ่ (สมมติ)",
+        "type": "freelance",
+        "start": "2025-02",
+        "end": "present",
+        "location": "เชียงใหม่ (ออนไลน์)",
+        "bullets": [
+          {
+            "id": "b_01",
+            "text": "วาง content calendar และผลิตคลิป TikTok ให้ร้านกาแฟ (F&B) สัปดาห์ละ 3 คลิป ด้วย CapCut และ Canva",
+            "origin": "ai_tailor",
+            "has_metric": true,
+            "needs_confirm": false,
+            "source_quote": "ลงคลิปอาทิตย์ละ 3 คลิป"
+          },
+          {
+            "id": "b_02",
+            "text": "เพิ่มผู้ติดตามจาก 1.2K เป็น 4.8K (4 เท่า) มีคลิปไวรัลยอดวิว 310K",
+            "origin": "ai_glowup",
+            "has_metric": true,
+            "needs_confirm": false,
+            "source_quote": "ตอนเริ่มมีคนตาม 1.2K ตอนนี้ 4.8K มีคลิปนึงวิว 310K"
+          },
+          {
+            "id": "b_03",
+            "text": "วิเคราะห์ Social Media Insights ทุกสัปดาห์ (อัตราดูจบ) แล้วปรับฮุคช่วง 3 วินาทีแรก",
+            "origin": "ai_tailor",
+            "has_metric": false,
+            "needs_confirm": false,
+            "source_quote": "ดู insight ทุกอาทิตย์ว่าคลิปไหนคนดูจบ"
+          }
+        ]
+      },
+      {
+        "id": "exp_02",
+        "role": "Account / Content Intern",
+        "org": "แบรนด์ดี เอเจนซี่ (บริษัทสมมติ)",
+        "type": "internship",
+        "start": "2024-06",
+        "end": "2024-08",
+        "location": "กรุงเทพฯ",
+        "bullets": [
+          {
+            "id": "b_04",
+            "text": "เขียน copywriting แคปชั่นโซเชียลและทำสไลด์นำเสนอให้ลูกค้าเอเจนซี่",
+            "origin": "ai_tailor",
+            "has_metric": false,
+            "needs_confirm": false,
+            "source_quote": "ช่วยคิดแคปชั่น ทำสไลด์พรีเซนต์ลูกค้า"
+          },
+          {
+            "id": "b_05",
+            "text": "จัดทำ content calendar รายเดือนให้ลูกค้า 2 แบรนด์",
+            "origin": "ai_tailor",
+            "has_metric": true,
+            "needs_confirm": false,
+            "source_quote": "ทำปฏิทินโพสต์รายเดือนให้ลูกค้า 2 แบรนด์"
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "id": "prj_01",
+        "name": "แคมเปญลดขยะแก้วพลาสติกในมหาวิทยาลัย (โปรเจกต์จบ)",
+        "role": "ผู้วางแผนแคมเปญ",
+        "date": "2025-03",
+        "bullets": [
+          {
+            "id": "b_06",
+            "text": "ได้รางวัลที่ 2 ระดับคณะ",
+            "origin": "ai_extract",
+            "has_metric": true,
+            "needs_confirm": false,
+            "source_quote": "ได้รางวัลที่ 2 ของคณะ"
+          }
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": "edu_01",
+        "degree": "นิเทศศาสตรบัณฑิต",
+        "major": "โฆษณา",
+        "school": "มหาวิทยาลัยเชียงใหม่",
+        "end": "2025-05",
+        "gpa": 3.42,
+        "show_gpa": true,
+        "highlights": []
+      }
+    ],
+    "skills": [
+      {
+        "label": "เครื่องมือ",
+        "items": [
+          "CapCut",
+          "Canva",
+          "TikTok Analytics",
+          "ChatGPT"
+        ]
+      },
+      {
+        "label": "ทักษะหลัก",
+        "items": [
+          "Content Marketing",
+          "Copywriting",
+          "Content Calendar",
+          "Social Media Analytics",
+          "Short-form Video"
+        ]
+      }
+    ],
+    "languages": [
+      {
+        "name": "ไทย",
+        "level": "native"
+      },
+      {
+        "name": "อังกฤษ",
+        "level": "conversational",
+        "test": "TOEIC 785"
+      }
+    ],
+    "certifications": [],
+    "activities": [
+      "ประสานงานอีเวนต์รับน้องคณะ ผู้เข้าร่วม [X] คน"
+    ],
+    "section_order": [
+      "summary",
+      "experience",
+      "skills",
+      "projects",
+      "education",
+      "languages",
+      "activities"
+    ],
+    "fits_one_page": true,
+    "created_at": "2026-10-06T08:21:00+07:00",
+    "updated_at": "2026-10-06T08:24:00+07:00",
+    "parent_id": "r_base",
+    "tailored_for_job_id": "job_kinjai"
+  },
+  "bullet_glowup_examples": [
+    {
+      "bullet_id": "b_02",
+      "before": "ผู้ติดตามเพิ่มจาก 1.2K เป็น 4.8K มีคลิปยอดวิว 310K",
+      "lang": "th",
+      "needs_user_number": false,
+      "placeholders": [],
+      "options": [
+        {
+          "style": "impact",
+          "text": "เพิ่มผู้ติดตามจาก 1.2K เป็น 4.8K (4 เท่า) มีคลิปไวรัลยอดวิว 310K"
+        },
+        {
+          "style": "concise",
+          "text": "โตผู้ติดตาม 4 เท่า (1.2K → 4.8K) · คลิปสูงสุด 310K วิว"
+        },
+        {
+          "style": "formal",
+          "text": "Grew TikTok followers 4x (1.2K to 4.8K); top video reached 310K views"
+        }
+      ]
+    },
+    {
+      "bullet_id": "b_act",
+      "before": "ช่วยงานอีเวนต์รับน้องคณะ",
+      "lang": "th",
+      "needs_user_number": true,
+      "placeholders": [
+        "[X] คน"
+      ],
+      "options": [
+        {
+          "style": "impact",
+          "text": "ประสานงานอีเวนต์รับน้องคณะ ผู้เข้าร่วม [X] คน"
+        },
+        {
+          "style": "concise",
+          "text": "ทีมจัดอีเวนต์รับน้อง ([X] คน)"
+        }
+      ]
+    }
+  ],
+  "cover_letter_example": {
+    "id": "cl_01",
+    "job_id": "job_kinjai",
+    "resume_id": "r_kinjai",
+    "lang": "th",
+    "tone": "short_email",
+    "subject": "สมัครงานตำแหน่ง Junior Content Marketing — ธนพร ใจดี (มายด์)",
+    "body": "เรียน ฝ่ายบุคคล Kinjai Foods\n\nดิฉันธนพร ใจดี บัณฑิตนิเทศศาสตร์ เอกโฆษณา ขอสมัครตำแหน่ง Junior Content Marketing ค่ะ ปัจจุบันดิฉันดูแล TikTok ให้ร้านกาแฟแห่งหนึ่ง วาง content calendar และลงคลิปสัปดาห์ละ 3 คลิป จนผู้ติดตามโตจาก 1.2K เป็น 4.8K และมีคลิปที่ยอดวิวถึง 310K ดิฉันอยากนำประสบการณ์ทำคอนเทนต์ให้ธุรกิจอาหารมาช่วยให้แบรนด์ของ Kinjai Foods มีคนพูดถึงมากขึ้นค่ะ\n\nแนบเรซูเม่มาพร้อมอีเมลนี้ ยินดีให้ข้อมูลเพิ่มเติมหรือส่งตัวอย่างผลงานค่ะ\n\nขอบคุณค่ะ\nธนพร ใจดี\nthanaporn.demo@example.com",
+    "word_count": 38
+  },
+  "interview_drill_example": {
+    "job_id": "job_kinjai",
+    "resume_id": "r_kinjai",
+    "questions": [
+      {
+        "id": "q1",
+        "q": "เล่าให้ฟังหน่อยว่าคลิปที่ได้ 310K วิว ทำอะไรต่างจากคลิปอื่น",
+        "why_asked_th": "เขาอยากรู้ว่าไวรัลเพราะดวงหรือเพราะคุณคิดเป็นระบบ",
+        "star_hint_th": "ใช้ b_02 + b_03: สถานการณ์ร้านคนตามน้อย → ดู insight → เปลี่ยนฮุค 3 วิแรก → ผล 310K",
+        "linked_item_id": "b_02"
+      },
+      {
+        "id": "q2",
+        "q": "ถ้าต้องทำ content calendar เดือนหน้าให้แบรนด์เรา จะเริ่มยังไง",
+        "why_asked_th": "ทดสอบการวางแผน ซึ่งเป็นงานหลักในประกาศ",
+        "star_hint_th": "ใช้ b_05: เคยทำให้ลูกค้า 2 แบรนด์ที่เอเจนซี่",
+        "linked_item_id": "b_05"
+      },
+      {
+        "id": "q3",
+        "q": "เคยทำงานกับทีมแล้วความเห็นไม่ตรงกันไหม แก้ยังไง",
+        "why_asked_th": "ประกาศขอ Teamwork",
+        "star_hint_th": "ใช้เรื่องงานรับน้องหรือโปรเจกต์จบ",
+        "linked_item_id": "prj_01"
+      },
+      {
+        "id": "q4",
+        "q": "Tell me about yourself in English, in one minute.",
+        "why_asked_th": "ประกาศขอสื่อสารภาษาอังกฤษ — มักถามสั้นๆ ตอนต้น",
+        "star_hint_th": "ใช้ summary เวอร์ชันอังกฤษ (กด TH/EN)"
+      }
+    ]
+  },
+  "export_job_example": {
+    "resume_id": "r_kinjai",
+    "format": "pdf",
+    "page_size": "A4",
+    "file_name": "Thanaporn_Jaidee_ContentMarketing.pdf",
+    "pages": 1,
+    "blocked_by_unconfirmed": 0
+  },
+  "export_blocked_example": {
+    "resume_id": "r_kinjai",
+    "format": "pdf",
+    "page_size": "A4",
+    "file_name": "Thanaporn_Jaidee_ContentMarketing.pdf",
+    "pages": 1,
+    "blocked_by_unconfirmed": 1
+  },
+  "share_card_example": {
+    "resume_id": "r_kinjai",
+    "layout": "story_before_after",
+    "theme": "highlighter",
+    "headline_th": "จากโน้ตมั่วๆ → เรซูเม่ตรงงาน 87 คะแนน",
+    "show_score": true,
+    "score_from": 63,
+    "score_to": 87,
+    "blur_personal_info": true
+  },
+  "applications_example": [
+    {
+      "id": "app_01",
+      "job_id": "job_kinjai",
+      "resume_id": "r_kinjai",
+      "status": "applied",
+      "applied_at": "2026-10-06T08:40:00+07:00",
+      "follow_up_on": "2026-10-13",
+      "note": "ส่งทางอีเมล HR",
+      "updated_at": "2026-10-06T08:40:00+07:00"
+    },
+    {
+      "id": "app_02",
+      "job_id": "job_demo_2",
+      "resume_id": "r_base",
+      "status": "saved",
+      "note": "Social Media Executive — ยังไม่ได้ปรับ",
+      "updated_at": "2026-10-06T08:41:00+07:00"
+    }
+  ],
+  "photo_check_example": {
+    "overall": "fixable",
+    "checks": [
+      {
+        "key": "lighting",
+        "pass": true,
+        "tip_th": "แสงโอเค"
+      },
+      {
+        "key": "framing",
+        "pass": false,
+        "tip_th": "ครอปให้เห็นหัวไหล่ หน้าอยู่กลางเฟรม"
+      },
+      {
+        "key": "background",
+        "pass": false,
+        "tip_th": "พื้นหลังรก ลองยืนหน้ากำแพงสีเรียบ"
+      },
+      {
+        "key": "sharpness",
+        "pass": true,
+        "tip_th": "ชัดดี"
+      },
+      {
+        "key": "aspect_ratio",
+        "pass": true,
+        "tip_th": "สัดส่วน 3:4 ใช้ได้"
+      }
+    ]
+  },
+  "local_store_example": {
+    "schema_version": 1,
+    "active_resume_id": "r_kinjai",
+    "resumes": [
+      {
+        "id": "r_base",
+        "version": 1,
+        "title": "ฐานหลัก",
+        "lang": "th",
+        "template_id": "clean_blue",
+        "accent_color": "#2563EB",
+        "contact": {
+          "full_name": "ธนพร ใจดี",
+          "nickname": "มายด์",
+          "headline": "Content Creator · เขียนแคปชั่นและทำ TikTok ให้แบรนด์โต",
+          "email": "thanaporn.demo@example.com",
+          "phone": "08x-xxx-1234",
+          "location": "กรุงเทพฯ",
+          "links": [
+            {
+              "label": "tiktok",
+              "url": "https://www.tiktok.com/@baandoi.demo"
+            }
+          ],
+          "show_photo": false,
+          "show_age": false
+        },
+        "summary": "บัณฑิตนิเทศศาสตร์ เอกโฆษณา มีประสบการณ์ฝึกงานเอเจนซี่และทำ TikTok ให้ร้านกาแฟจนผู้ติดตามโต 4 เท่า ถนัดคิดแคปชั่นและตัดต่อคลิปสั้น",
+        "experience": [
+          {
+            "id": "exp_01",
+            "role": "Freelance TikTok Content Creator",
+            "org": "บ้านดอยคาเฟ่ (สมมติ)",
+            "type": "freelance",
+            "start": "2025-02",
+            "end": "present",
+            "location": "เชียงใหม่ (ออนไลน์)",
+            "bullets": [
+              {
+                "id": "b_01",
+                "text": "ทำคลิป TikTok ให้ร้านกาแฟ สัปดาห์ละ 3 คลิป",
+                "origin": "ai_extract",
+                "has_metric": true,
+                "needs_confirm": false,
+                "source_quote": "ลงคลิปอาทิตย์ละ 3 คลิป"
+              },
+              {
+                "id": "b_02",
+                "text": "ผู้ติดตามเพิ่มจาก 1.2K เป็น 4.8K มีคลิปยอดวิว 310K",
+                "origin": "ai_extract",
+                "has_metric": true,
+                "needs_confirm": false,
+                "source_quote": "ตอนเริ่มมีคนตาม 1.2K ตอนนี้ 4.8K มีคลิปนึงวิว 310K"
+              },
+              {
+                "id": "b_03",
+                "text": "ดู insight ทุกสัปดาห์เพื่อปรับคลิป",
+                "origin": "ai_extract",
+                "has_metric": false,
+                "needs_confirm": false,
+                "source_quote": "ดู insight ทุกอาทิตย์ว่าคลิปไหนคนดูจบ"
+              }
+            ]
+          },
+          {
+            "id": "exp_02",
+            "role": "Account / Content Intern",
+            "org": "แบรนด์ดี เอเจนซี่ (บริษัทสมมติ)",
+            "type": "internship",
+            "start": "2024-06",
+            "end": "2024-08",
+            "location": "กรุงเทพฯ",
+            "bullets": [
+              {
+                "id": "b_04",
+                "text": "ช่วยคิดแคปชั่นและทำสไลด์พรีเซนต์ลูกค้า",
+                "origin": "ai_extract",
+                "has_metric": false,
+                "needs_confirm": false,
+                "source_quote": "ช่วยคิดแคปชั่น ทำสไลด์พรีเซนต์ลูกค้า"
+              },
+              {
+                "id": "b_05",
+                "text": "ทำปฏิทินโพสต์รายเดือนให้ลูกค้า 2 แบรนด์",
+                "origin": "ai_extract",
+                "has_metric": true,
+                "needs_confirm": false,
+                "source_quote": "ทำปฏิทินโพสต์รายเดือนให้ลูกค้า 2 แบรนด์"
+              }
+            ]
+          }
+        ],
+        "projects": [
+          {
+            "id": "prj_01",
+            "name": "แคมเปญลดขยะแก้วพลาสติกในมหาวิทยาลัย (โปรเจกต์จบ)",
+            "role": "ผู้วางแผนแคมเปญ",
+            "date": "2025-03",
+            "bullets": [
+              {
+                "id": "b_06",
+                "text": "ได้รางวัลที่ 2 ระดับคณะ",
+                "origin": "ai_extract",
+                "has_metric": true,
+                "needs_confirm": false,
+                "source_quote": "ได้รางวัลที่ 2 ของคณะ"
+              }
+            ]
+          }
+        ],
+        "education": [
+          {
+            "id": "edu_01",
+            "degree": "นิเทศศาสตรบัณฑิต",
+            "major": "โฆษณา",
+            "school": "มหาวิทยาลัยเชียงใหม่",
+            "end": "2025-05",
+            "gpa": 3.42,
+            "show_gpa": true,
+            "highlights": []
+          }
+        ],
+        "skills": [
+          {
+            "label": "เครื่องมือ",
+            "items": [
+              "Canva",
+              "CapCut",
+              "ChatGPT"
+            ]
+          },
+          {
+            "label": "ทักษะหลัก",
+            "items": [
+              "Copywriting",
+              "TikTok",
+              "ตัดต่อคลิปสั้น"
+            ]
+          }
+        ],
+        "languages": [
+          {
+            "name": "ไทย",
+            "level": "native"
+          },
+          {
+            "name": "อังกฤษ",
+            "level": "conversational",
+            "test": "TOEIC 785"
+          }
+        ],
+        "certifications": [],
+        "activities": [
+          "ช่วยงานอีเวนต์รับน้องคณะ"
+        ],
+        "section_order": [
+          "summary",
+          "experience",
+          "projects",
+          "education",
+          "skills",
+          "languages",
+          "activities"
+        ],
+        "fits_one_page": true,
+        "created_at": "2026-10-06T08:12:00+07:00",
+        "updated_at": "2026-10-06T08:12:00+07:00"
+      },
+      {
+        "id": "r_kinjai",
+        "version": 1,
+        "title": "Kinjai Foods — Junior Content Marketing",
+        "lang": "th",
+        "template_id": "clean_blue",
+        "accent_color": "#2563EB",
+        "contact": {
+          "full_name": "ธนพร ใจดี",
+          "nickname": "มายด์",
+          "headline": "Junior Content Marketing · TikTok ที่ทำให้ร้านอาหารมีคนตาม",
+          "email": "thanaporn.demo@example.com",
+          "phone": "08x-xxx-1234",
+          "location": "กรุงเทพฯ",
+          "links": [
+            {
+              "label": "tiktok",
+              "url": "https://www.tiktok.com/@baandoi.demo"
+            }
+          ],
+          "show_photo": false,
+          "show_age": false
+        },
+        "summary": "บัณฑิตนิเทศศาสตร์ เอกโฆษณา ทำ Content Marketing ให้ธุรกิจ F&B จริง: วาง content calendar, ผลิต TikTok สัปดาห์ละ 3 คลิป และใช้ insight ปรับงานจนผู้ติดตามโตจาก 1.2K เป็น 4.8K",
+        "experience": [
+          {
+            "id": "exp_01",
+            "role": "Freelance TikTok Content Creator",
+            "org": "บ้านดอยคาเฟ่ (สมมติ)",
+            "type": "freelance",
+            "start": "2025-02",
+            "end": "present",
+            "location": "เชียงใหม่ (ออนไลน์)",
+            "bullets": [
+              {
+                "id": "b_01",
+                "text": "วาง content calendar และผลิตคลิป TikTok ให้ร้านกาแฟ (F&B) สัปดาห์ละ 3 คลิป ด้วย CapCut และ Canva",
+                "origin": "ai_tailor",
+                "has_metric": true,
+                "needs_confirm": false,
+                "source_quote": "ลงคลิปอาทิตย์ละ 3 คลิป"
+              },
+              {
+                "id": "b_02",
+                "text": "เพิ่มผู้ติดตามจาก 1.2K เป็น 4.8K (4 เท่า) มีคลิปไวรัลยอดวิว 310K",
+                "origin": "ai_glowup",
+                "has_metric": true,
+                "needs_confirm": false,
+                "source_quote": "ตอนเริ่มมีคนตาม 1.2K ตอนนี้ 4.8K มีคลิปนึงวิว 310K"
+              },
+              {
+                "id": "b_03",
+                "text": "วิเคราะห์ Social Media Insights ทุกสัปดาห์ (อัตราดูจบ) แล้วปรับฮุคช่วง 3 วินาทีแรก",
+                "origin": "ai_tailor",
+                "has_metric": false,
+                "needs_confirm": false,
+                "source_quote": "ดู insight ทุกอาทิตย์ว่าคลิปไหนคนดูจบ"
+              }
+            ]
+          },
+          {
+            "id": "exp_02",
+            "role": "Account / Content Intern",
+            "org": "แบรนด์ดี เอเจนซี่ (บริษัทสมมติ)",
+            "type": "internship",
+            "start": "2024-06",
+            "end": "2024-08",
+            "location": "กรุงเทพฯ",
+            "bullets": [
+              {
+                "id": "b_04",
+                "text": "เขียน copywriting แคปชั่นโซเชียลและทำสไลด์นำเสนอให้ลูกค้าเอเจนซี่",
+                "origin": "ai_tailor",
+                "has_metric": false,
+                "needs_confirm": false,
+                "source_quote": "ช่วยคิดแคปชั่น ทำสไลด์พรีเซนต์ลูกค้า"
+              },
+              {
+                "id": "b_05",
+                "text": "จัดทำ content calendar รายเดือนให้ลูกค้า 2 แบรนด์",
+                "origin": "ai_tailor",
+                "has_metric": true,
+                "needs_confirm": false,
+                "source_quote": "ทำปฏิทินโพสต์รายเดือนให้ลูกค้า 2 แบรนด์"
+              }
+            ]
+          }
+        ],
+        "projects": [
+          {
+            "id": "prj_01",
+            "name": "แคมเปญลดขยะแก้วพลาสติกในมหาวิทยาลัย (โปรเจกต์จบ)",
+            "role": "ผู้วางแผนแคมเปญ",
+            "date": "2025-03",
+            "bullets": [
+              {
+                "id": "b_06",
+                "text": "ได้รางวัลที่ 2 ระดับคณะ",
+                "origin": "ai_extract",
+                "has_metric": true,
+                "needs_confirm": false,
+                "source_quote": "ได้รางวัลที่ 2 ของคณะ"
+              }
+            ]
+          }
+        ],
+        "education": [
+          {
+            "id": "edu_01",
+            "degree": "นิเทศศาสตรบัณฑิต",
+            "major": "โฆษณา",
+            "school": "มหาวิทยาลัยเชียงใหม่",
+            "end": "2025-05",
+            "gpa": 3.42,
+            "show_gpa": true,
+            "highlights": []
+          }
+        ],
+        "skills": [
+          {
+            "label": "เครื่องมือ",
+            "items": [
+              "CapCut",
+              "Canva",
+              "TikTok Analytics",
+              "ChatGPT"
+            ]
+          },
+          {
+            "label": "ทักษะหลัก",
+            "items": [
+              "Content Marketing",
+              "Copywriting",
+              "Content Calendar",
+              "Social Media Analytics",
+              "Short-form Video"
+            ]
+          }
+        ],
+        "languages": [
+          {
+            "name": "ไทย",
+            "level": "native"
+          },
+          {
+            "name": "อังกฤษ",
+            "level": "conversational",
+            "test": "TOEIC 785"
+          }
+        ],
+        "certifications": [],
+        "activities": [
+          "ประสานงานอีเวนต์รับน้องคณะ ผู้เข้าร่วม [X] คน"
+        ],
+        "section_order": [
+          "summary",
+          "experience",
+          "skills",
+          "projects",
+          "education",
+          "languages",
+          "activities"
+        ],
+        "fits_one_page": true,
+        "created_at": "2026-10-06T08:21:00+07:00",
+        "updated_at": "2026-10-06T08:24:00+07:00",
+        "parent_id": "r_base",
+        "tailored_for_job_id": "job_kinjai"
+      }
+    ],
+    "jobs": [
+      {
+        "id": "job_kinjai",
+        "title": "Junior Content Marketing",
+        "company": "Kinjai Foods (บริษัทสมมติ)",
+        "source": "paste",
+        "lang": "th",
+        "raw_text": "รับสมัคร Junior Content Marketing (แบรนด์อาหาร) — วางแผน content calendar รายเดือน, ผลิตคอนเทนต์ TikTok/Reels, เขียน copywriting ให้ตรง brand voice, ดู Social Media Analytics และสรุปรายงาน, ใช้ Canva/CapCut ได้, ใช้ Meta Business Suite ได้จะพิจารณาพิเศษ, สื่อสารภาษาอังกฤษได้, ทำงานเป็นทีม, มีประสบการณ์ธุรกิจอาหาร (F&B) ยินดีเป็นพิเศษ",
+        "keywords": [
+          {
+            "term": "Content Marketing",
+            "kind": "domain",
+            "weight": 3
+          },
+          {
+            "term": "TikTok",
+            "aliases": [
+              "Tik Tok"
+            ],
+            "kind": "hard_skill",
+            "weight": 3
+          },
+          {
+            "term": "Copywriting",
+            "aliases": [
+              "copy writing"
+            ],
+            "kind": "hard_skill",
+            "weight": 3
+          },
+          {
+            "term": "Content Calendar",
+            "kind": "hard_skill",
+            "weight": 2
+          },
+          {
+            "term": "Social Media Analytics",
+            "aliases": [
+              "Social Media Insights"
+            ],
+            "kind": "hard_skill",
+            "weight": 2
+          },
+          {
+            "term": "Canva",
+            "kind": "tool",
+            "weight": 2
+          },
+          {
+            "term": "CapCut",
+            "kind": "tool",
+            "weight": 2
+          },
+          {
+            "term": "Meta Business Suite",
+            "kind": "tool",
+            "weight": 1
+          },
+          {
+            "term": "English communication",
+            "aliases": [
+              "TOEIC"
+            ],
+            "kind": "qualification",
+            "weight": 2
+          },
+          {
+            "term": "Brand voice",
+            "kind": "soft_skill",
+            "weight": 1
+          },
+          {
+            "term": "Teamwork",
+            "aliases": [
+              "ทำงานเป็นทีม"
+            ],
+            "kind": "soft_skill",
+            "weight": 1
+          },
+          {
+            "term": "F&B",
+            "aliases": [
+              "Food & Beverage"
+            ],
+            "kind": "domain",
+            "weight": 1
+          }
+        ],
+        "created_at": "2026-10-06T08:18:00+07:00"
+      }
+    ],
+    "applications": [],
+    "settings": {
+      "ui_lang": "th",
+      "default_resume_lang": "th",
+      "ai_engine": "mock_demo",
+      "show_photo_default": false,
+      "blur_on_share": true,
+      "haptics": true,
+      "page_size": "A4",
+      "dark_mode": false
+    }
+  },
+  "analytics_examples": [
+    {
+      "name": "demo_loaded",
+      "at": "2026-10-06T08:10:00+07:00"
+    },
+    {
+      "name": "resume_generated",
+      "at": "2026-10-06T08:12:00+07:00",
+      "props": {
+        "engine": "mock_demo",
+        "latency_ms": 2400,
+        "sections": 7
+      }
+    },
+    {
+      "name": "template_flipped",
+      "at": "2026-10-06T08:13:00+07:00",
+      "props": {
+        "to": "creative_side"
+      }
+    },
+    {
+      "name": "match_scored",
+      "at": "2026-10-06T08:19:00+07:00",
+      "props": {
+        "score": 63
+      }
+    },
+    {
+      "name": "suggestion_applied",
+      "at": "2026-10-06T08:22:00+07:00",
+      "props": {
+        "kind": "rewrite_bullet",
+        "grounded": true
+      }
+    },
+    {
+      "name": "match_scored",
+      "at": "2026-10-06T08:24:00+07:00",
+      "props": {
+        "score": 87,
+        "delta": 24
+      }
+    },
+    {
+      "name": "export_pdf",
+      "at": "2026-10-06T08:30:00+07:00",
+      "props": {
+        "pages": 1,
+        "template": "clean_blue"
+      }
+    }
+  ],
+  "feature_checklist_example": {
+    "must_have": [
+      {
+        "key": "brain_dump",
+        "name_th": "เทข้อมูลมั่ว → เรซูเม่",
+        "done": false,
+        "files": [
+          "app/new/page.tsx",
+          "lib/extract.ts",
+          "lib/mockExtract.ts"
+        ]
+      },
+      {
+        "key": "template_flip",
+        "name_th": "ปัดเปลี่ยนเทมเพลต",
+        "done": false,
+        "files": [
+          "components/templates/*.tsx",
+          "components/TemplateCarousel.tsx"
+        ]
+      },
+      {
+        "key": "job_match",
+        "name_th": "วางประกาศงาน → คะแนน + ปรับให้ตรง",
+        "done": false,
+        "files": [
+          "app/match/page.tsx",
+          "lib/score.ts",
+          "lib/tailor.ts"
+        ]
+      },
+      {
+        "key": "bullet_glowup",
+        "name_th": "เปลี่ยนประโยคธรรมดาให้ปัง",
+        "done": false,
+        "files": [
+          "components/GlowupSheet.tsx",
+          "lib/glowup.ts"
+        ]
+      },
+      {
+        "key": "export_share",
+        "name_th": "PDF + การ์ดแชร์",
+        "done": false,
+        "files": [
+          "lib/export.ts",
+          "lib/share.ts",
+          "app/share/page.tsx"
+        ]
+      }
+    ],
+    "nice_to_have": [
+      {
+        "key": "cover_letter",
+        "name_th": "จดหมายสมัครงาน/อีเมลสั้น",
+        "done": false
+      },
+      {
+        "key": "interview_drill",
+        "name_th": "ซ้อมสัมภาษณ์ 4–8 ข้อ",
+        "done": false
+      },
+      {
+        "key": "application_tracker",
+        "name_th": "ตามสถานะงานที่สมัคร",
+        "done": false
+      },
+      {
+        "key": "photo_check",
+        "name_th": "เช็กรูปโปรไฟล์ (แสง/ครอป/พื้นหลัง)",
+        "done": false
+      },
+      {
+        "key": "lang_toggle_th_en",
+        "name_th": "สลับไทย/อังกฤษ",
+        "done": false
+      },
+      {
+        "key": "version_compare",
+        "name_th": "เทียบเวอร์ชันก่อน/หลัง",
+        "done": false
+      },
+      {
+        "key": "dark_mode",
+        "name_th": "โหมดมืด",
+        "done": false
+      }
+    ]
+  },
+  "ui_copy_th": {
+    "home_title": "เรซูเม่สวยใน 1 นาที",
+    "home_sub": "พิมพ์มั่วๆ พูดเอา หรือถ่ายรูปเรซูเม่เก่า — เดี๋ยวเราจัดให้",
+    "cta_new": "เริ่มจากโน้ตมั่วๆ",
+    "cta_photo": "📷 ถ่ายเรซูเม่เก่า",
+    "cta_voice": "🎙️ พูดเล่าเอา",
+    "cta_demo": "ลองข้อมูลตัวอย่าง (มายด์)",
+    "dump_placeholder": "เล่ามาเลย เรียนที่ไหน ทำงานอะไร ใช้โปรแกรมอะไรเป็น มีตัวเลขอะไรภูมิใจบ้าง… ไม่ต้องเรียบร้อย",
+    "generating": [
+      "กำลังอ่านโน้ตของคุณ…",
+      "จัดเป็นหัวข้อ…",
+      "ขัดประโยคให้ HR อ่านง่าย…",
+      "จัดหน้าให้พอดี 1 หน้า…"
+    ],
+    "template_hint": "ปัดซ้าย-ขวาเพื่อเปลี่ยนแบบ",
+    "ats_badge": "ATS ปลอดภัย",
+    "match_cta": "วางประกาศงานที่อยากได้",
+    "match_placeholder": "ก๊อปประกาศจาก JobThai / JobsDB / LinkedIn / เพจ FB มาวางได้เลย",
+    "score_disclaimer": "คะแนนประมาณจากคีย์เวิร์ดและโครงสร้าง ไม่ใช่คะแนนจากระบบ HR จริง",
+    "tailor_cta": "ปรับเรซูเม่ให้ตรงงานนี้",
+    "ungrounded_chip": "ถามก่อน — เราไม่เติมสิ่งที่คุณไม่ได้ทำ",
+    "glowup_cta": "✨ ทำให้ปัง",
+    "placeholder_warn": "ยังมีช่อง [X] รอตัวเลขจริงของคุณ",
+    "export_blocked": "เหลือ {n} จุดที่ต้องยืนยันก่อนส่งออก",
+    "export_done": "บันทึก PDF แล้ว พร้อมส่ง HR",
+    "share_cta": "แชร์ก่อน/หลัง (ปิดข้อมูลส่วนตัวให้แล้ว)",
+    "privacy_note": "ข้อมูลอยู่ในเครื่องคุณเท่านั้น",
+    "disclaimer": "AI ช่วยเรียบเรียง — ตรวจทุกข้อให้เป็นความจริงก่อนส่ง",
+    "nav": [
+      "เรซูเม่",
+      "จับคู่งาน",
+      "สมัครแล้ว",
+      "ตั้งค่า"
+    ]
+  },
+  "reel_script_th": {
+    "length_s": 28,
+    "cta_keyword": "เรซูเม่",
+    "shots": [
+      {
+        "t": "0-3",
+        "visual": "มือถือโชว์โน้ตใน LINE ส่งหาตัวเองแบบมั่วๆ ยาวเหยียด + กระดาษเรซูเม่เก่ายับ",
+        "overlay": "เรซูเม่หนูหน้าตาแบบนี้… HR ไม่ตอบเลย 😭",
+        "audio": "เสียงถอนหายใจ / trending sound"
+      },
+      {
+        "t": "3-7",
+        "visual": "ก๊อปโน้ตวางในแอป กด 'จัดให้หน่อย' → ข้อความลอยแตกเป็นหัวข้อ ประกอบเป็น A4 สีฟ้า",
+        "overlay": "วางโน้ตมั่วๆ → 3 วิ",
+        "audio": "whoosh"
+      },
+      {
+        "t": "7-11",
+        "visual": "นิ้วปัดเทมเพลต 4 แบบเร็วๆ คลีนฟ้า → ครีเอทีฟ → มินิมอล → ATS",
+        "overlay": "ปัดเปลี่ยนแบบได้ 6 สไตล์",
+        "audio": "click ต่อจังหวะ"
+      },
+      {
+        "t": "11-17",
+        "visual": "วางประกาศงาน → วงคะแนน 63 สีส้ม → แตะ 'ปรับให้ตรงงาน' → คีย์เวิร์ดไฮไลต์เหลืองวิ่งเข้า → เลขวิ่ง 63 → 87 เขียว",
+        "overlay": "วางประกาศงาน → ปรับให้ตรงเป๊ะ",
+        "audio": "ding ตอนถึง 87"
+      },
+      {
+        "t": "17-21",
+        "visual": "ประโยค 'ช่วยทำ TikTok ร้านกาแฟ' แตะ ✨ → กลายเป็น bullet มีตัวเลข 1.2K → 4.8K",
+        "overlay": "ประโยคธรรมดา → ประโยคที่ HR หยุดอ่าน",
+        "audio": "sparkle"
+      },
+      {
+        "t": "21-25",
+        "visual": "กด PDF → โชว์ไฟล์ A4 บนจอ + การ์ด before/after ปิดเบอร์โทร + โชว์หน้าอีเมลสมัคร (cover letter) แวบเดียว",
+        "overlay": "ได้ PDF + จดหมายสมัครงานด้วย",
+        "audio": "beat drop"
+      },
+      {
+        "t": "25-28",
+        "visual": "หน้าคนทำคลิปชี้ลงคอมเมนต์",
+        "overlay": "คอมเมนต์ 'เรซูเม่' รับแอปฟรี 📄",
+        "audio": "พูด: แจกฟรี คอมเมนต์ว่าเรซูเม่"
+      }
+    ]
+  },
+  "alt_reel_ideas_th": [
+    "ถ่ายรูปเรซูเม่ปี 2019 ที่ใช้ Word ตัวหนังสือ Angsana → กลายเป็นเรซูเม่โมเดิร์นใน 5 วิ",
+    "ให้เพื่อน 3 คน (เด็กจบใหม่ / เปลี่ยนสายงาน / พนักงานร้าน) ลองคนละ 10 วิ เทียบก่อน/หลัง",
+    "ประกาศงานเดียว 2 เรซูเม่ — แบบเดิม 41 คะแนน vs ปรับแล้ว 82 คะแนน ให้คนดูทายก่อนเฉลย",
+    "ซีรีส์ 'ซ้อมสัมภาษณ์กับ AI' ตอนต่อ ใช้ฟีเจอร์ Interview Drill"
+  ]
+}

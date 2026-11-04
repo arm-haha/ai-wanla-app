@@ -1,0 +1,741 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/posemate/schemas.json",
+  "title": "PoseMate (โพสท่าไม่เป็น) data contracts",
+  "$defs": {
+    "Hex": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "Spot": {
+      "enum": [
+        "cafe_window",
+        "street_wall",
+        "stairs",
+        "beach",
+        "nature",
+        "mirror"
+      ]
+    },
+    "Light": {
+      "enum": [
+        "side",
+        "window",
+        "front",
+        "shade",
+        "top",
+        "back"
+      ]
+    },
+    "Shot": {
+      "enum": [
+        "full",
+        "half",
+        "close"
+      ]
+    },
+    "Point": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "Keypoints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Point"
+      },
+      "minItems": 9,
+      "maxItems": 9,
+      "description": "ลำดับ head, neck, l_sh, r_sh, l_hand, r_hand, hip, l_foot, r_foot"
+    },
+    "Pose": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name_th": {
+          "type": "string"
+        },
+        "spots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Spot"
+          },
+          "minItems": 1
+        },
+        "people": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "shot": {
+          "$ref": "#/$defs/Shot"
+        },
+        "difficulty": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "cue_th": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "kp": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Keypoints"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "name_th",
+        "spots",
+        "people",
+        "shot",
+        "difficulty",
+        "cue_th",
+        "kp"
+      ],
+      "additionalProperties": false
+    },
+    "Scene": {
+      "type": "object",
+      "properties": {
+        "spot": {
+          "$ref": "#/$defs/Spot"
+        },
+        "spot_th": {
+          "type": "string"
+        },
+        "light": {
+          "$ref": "#/$defs/Light"
+        },
+        "light_th": {
+          "type": "string"
+        },
+        "light_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "people": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "clutter": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tip_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "spot",
+        "spot_th",
+        "light",
+        "light_th",
+        "light_score",
+        "people",
+        "clutter",
+        "tip_th"
+      ],
+      "additionalProperties": false
+    },
+    "PoseCard": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name_th": {
+          "type": "string"
+        },
+        "cue_th": {
+          "type": "string"
+        },
+        "shot": {
+          "$ref": "#/$defs/Shot"
+        },
+        "difficulty": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "ghost": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name_th",
+        "cue_th",
+        "shot",
+        "difficulty",
+        "ghost"
+      ],
+      "additionalProperties": false
+    },
+    "PoseCards": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/PoseCard"
+      },
+      "minItems": 1,
+      "maxItems": 3
+    },
+    "PoseMatch": {
+      "type": "object",
+      "properties": {
+        "pose_id": {
+          "type": "string"
+        },
+        "match": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "worst_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "pose_id",
+        "match",
+        "worst_th"
+      ],
+      "additionalProperties": false
+    },
+    "AngleCoach": {
+      "type": "object",
+      "properties": {
+        "pose_id": {
+          "type": "string"
+        },
+        "shot": {
+          "$ref": "#/$defs/Shot"
+        },
+        "height_th": {
+          "type": "string"
+        },
+        "tilt": {
+          "type": "integer",
+          "minimum": -30,
+          "maximum": 30
+        },
+        "lens": {
+          "enum": [
+            "0.5x",
+            "1x",
+            "2x"
+          ]
+        },
+        "distance_m": {
+          "type": "number",
+          "minimum": 0.3,
+          "maximum": 10
+        },
+        "tip_th": {
+          "type": "string"
+        },
+        "friend_cues_th": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "minItems": 3,
+          "maxItems": 6
+        }
+      },
+      "required": [
+        "pose_id",
+        "shot",
+        "height_th",
+        "tilt",
+        "lens",
+        "distance_m",
+        "tip_th",
+        "friend_cues_th"
+      ],
+      "additionalProperties": false
+    },
+    "ShotInput": {
+      "type": "object",
+      "properties": {
+        "tilt_deg": {
+          "type": "number",
+          "minimum": -45,
+          "maximum": 45
+        },
+        "subject_xy": {
+          "$ref": "#/$defs/Point"
+        },
+        "headroom": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "light": {
+          "$ref": "#/$defs/Light"
+        },
+        "clutter": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "pose": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "required": [
+        "tilt_deg",
+        "subject_xy",
+        "headroom",
+        "light",
+        "clutter"
+      ],
+      "additionalProperties": false
+    },
+    "ShotScore": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "grade_th": {
+          "type": "string"
+        },
+        "parts": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "thirds": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "headroom": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "light": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "clutter": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "pose": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          "required": [
+            "level",
+            "thirds",
+            "headroom",
+            "light",
+            "clutter",
+            "pose"
+          ],
+          "additionalProperties": false
+        },
+        "fixes_th": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "total",
+        "grade_th",
+        "parts",
+        "fixes_th"
+      ],
+      "additionalProperties": false
+    },
+    "GlowUp": {
+      "type": "object",
+      "properties": {
+        "before": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "after": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "delta": {
+          "type": "integer",
+          "minimum": -100,
+          "maximum": 100
+        },
+        "line_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "before",
+        "after",
+        "delta",
+        "line_th"
+      ],
+      "additionalProperties": false
+    },
+    "CaptionPack": {
+      "type": "object",
+      "properties": {
+        "spot": {
+          "$ref": "#/$defs/Spot"
+        },
+        "captions_th": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 60
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "hashtags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^#"
+          },
+          "maxItems": 8
+        },
+        "place_tag": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "spot",
+        "captions_th",
+        "hashtags",
+        "place_tag"
+      ],
+      "additionalProperties": false
+    },
+    "GridPhoto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "person",
+            "detail",
+            "scene"
+          ]
+        },
+        "hue": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "hue"
+      ],
+      "additionalProperties": false
+    },
+    "GridPlan": {
+      "type": "object",
+      "properties": {
+        "order": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 9,
+          "maxItems": 9
+        },
+        "clashes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "balance": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "required": [
+        "order",
+        "clashes",
+        "balance"
+      ],
+      "additionalProperties": false
+    },
+    "OutfitPop": {
+      "type": "object",
+      "properties": {
+        "outfit": {
+          "$ref": "#/$defs/Hex"
+        },
+        "bg": {
+          "$ref": "#/$defs/Hex"
+        },
+        "contrast": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 21
+        },
+        "hue_gap": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 180
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "verdict": {
+          "enum": [
+            "pop",
+            "ok",
+            "blend"
+          ]
+        },
+        "verdict_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "outfit",
+        "bg",
+        "contrast",
+        "hue_gap",
+        "score",
+        "verdict",
+        "verdict_th"
+      ],
+      "additionalProperties": false
+    },
+    "Session": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "scene": {
+          "$ref": "#/$defs/Scene"
+        },
+        "pose_id": {
+          "type": "string"
+        },
+        "before": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "after": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "required": [
+        "id",
+        "date",
+        "scene",
+        "pose_id",
+        "before",
+        "after"
+      ],
+      "additionalProperties": false
+    },
+    "LocalStore": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "name": {
+          "type": "string"
+        },
+        "saved_poses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sessions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Session"
+          },
+          "maxItems": 500
+        },
+        "streak_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "settings": {
+          "type": "object",
+          "properties": {
+            "keep_photos": {
+              "const": false
+            },
+            "grid_lines": {
+              "type": "boolean"
+            },
+            "sound": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "keep_photos",
+            "grid_lines",
+            "sound"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "name",
+        "saved_poses",
+        "sessions",
+        "streak_days",
+        "settings"
+      ],
+      "additionalProperties": false
+    },
+    "AiSceneRequest": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "string",
+          "description": "base64 JPEG ≤ 768px ของฉาก (ไม่ต้องมีคน) ไม่เก็บ"
+        }
+      },
+      "required": [
+        "image"
+      ],
+      "additionalProperties": false
+    },
+    "AiSceneResponse": {
+      "type": "object",
+      "properties": {
+        "spot": {
+          "$ref": "#/$defs/Spot"
+        },
+        "light": {
+          "$ref": "#/$defs/Light"
+        },
+        "clutter": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "horizon_tilt_deg": {
+          "type": "number",
+          "minimum": -45,
+          "maximum": 45
+        },
+        "bg_hex": {
+          "$ref": "#/$defs/Hex"
+        },
+        "note_th": {
+          "type": "string",
+          "maxLength": 100
+        }
+      },
+      "required": [
+        "spot",
+        "light",
+        "clutter",
+        "horizon_tilt_deg",
+        "bg_hex",
+        "note_th"
+      ],
+      "additionalProperties": false
+    },
+    "AiCaptionRequest": {
+      "type": "object",
+      "properties": {
+        "spot": {
+          "$ref": "#/$defs/Spot"
+        },
+        "pose_name_th": {
+          "type": "string"
+        },
+        "mood": {
+          "enum": [
+            "chill",
+            "cute",
+            "cool",
+            "funny"
+          ]
+        }
+      },
+      "required": [
+        "spot",
+        "pose_name_th",
+        "mood"
+      ],
+      "additionalProperties": false
+    },
+    "AiCaptionResponse": {
+      "type": "object",
+      "properties": {
+        "captions_th": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 60
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "captions_th"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

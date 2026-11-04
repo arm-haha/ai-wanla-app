@@ -1,0 +1,1035 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-wanla-app.local/fridgechef/schemas.json",
+  "title": "FridgeChef examples.json",
+  "description": "Schema for the FridgeChef pack examples + runtime data.",
+  "$defs": {
+    "DateLocal": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "HexColor": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "IngredientKey": {
+      "type": "string",
+      "enum": [
+        "egg",
+        "pork_minced",
+        "chicken",
+        "sausage",
+        "egg_tofu",
+        "holy_basil",
+        "spring_onion",
+        "chili",
+        "garlic",
+        "lime",
+        "tomato",
+        "carrot",
+        "cabbage",
+        "onion",
+        "cooked_rice",
+        "glass_noodle",
+        "milk"
+      ]
+    },
+    "Category": {
+      "type": "string",
+      "enum": [
+        "protein",
+        "herb",
+        "veg",
+        "carb",
+        "dairy"
+      ]
+    },
+    "ExpiryStatus": {
+      "type": "string",
+      "enum": [
+        "today",
+        "soon",
+        "ok",
+        "check"
+      ],
+      "description": "today ≤1d red · soon 2–3d yellow · ok ≥4d green · check <0 grey (not recommended)"
+    },
+    "DietFilter": {
+      "type": "string",
+      "enum": [
+        "not_spicy",
+        "no_pork",
+        "vegetarian"
+      ]
+    },
+    "RecipeTag": {
+      "type": "string",
+      "enum": [
+        "spicy",
+        "pork",
+        "not_spicy",
+        "vegetarian",
+        "microwave_ok",
+        "kid_friendly"
+      ]
+    },
+    "Store": {
+      "type": "string",
+      "enum": [
+        "7-Eleven",
+        "ตลาด",
+        "Lotus's"
+      ]
+    },
+    "Detection": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/IngredientKey"
+        },
+        "qty": {
+          "type": "number",
+          "minimum": 0
+        },
+        "added_on": {
+          "$ref": "#/$defs/DateLocal"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "bbox": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "minItems": 4,
+          "maxItems": 4,
+          "description": "x1,y1,x2,y2 normalized"
+        }
+      },
+      "required": [
+        "key",
+        "qty",
+        "added_on",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "CatalogItem": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/IngredientKey"
+        },
+        "name_th": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "category": {
+          "$ref": "#/$defs/Category"
+        },
+        "shelf_life_days": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "unit_th": {
+          "type": "string"
+        },
+        "price_thb": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "store": {
+          "$ref": "#/$defs/Store"
+        }
+      },
+      "required": [
+        "key",
+        "name_th",
+        "emoji",
+        "category",
+        "shelf_life_days",
+        "unit_th",
+        "price_thb",
+        "store"
+      ],
+      "additionalProperties": false
+    },
+    "InventoryItem": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/IngredientKey"
+        },
+        "name_th": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "category": {
+          "$ref": "#/$defs/Category"
+        },
+        "qty": {
+          "type": "number"
+        },
+        "unit_th": {
+          "type": "string"
+        },
+        "added_on": {
+          "$ref": "#/$defs/DateLocal"
+        },
+        "shelf_life_days": {
+          "type": "integer"
+        },
+        "days_left": {
+          "type": "integer"
+        },
+        "status": {
+          "$ref": "#/$defs/ExpiryStatus"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "confirmed": {
+          "type": "boolean"
+        },
+        "price_thb": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "key",
+        "name_th",
+        "emoji",
+        "category",
+        "qty",
+        "unit_th",
+        "added_on",
+        "shelf_life_days",
+        "days_left",
+        "status",
+        "confidence",
+        "confirmed",
+        "price_thb"
+      ],
+      "additionalProperties": false
+    },
+    "RecipeStep": {
+      "type": "object",
+      "properties": {
+        "n": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "text_th": {
+          "type": "string"
+        },
+        "timer_s": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "n",
+        "text_th",
+        "timer_s"
+      ],
+      "additionalProperties": false
+    },
+    "Recipe": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "name_th": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "time_min": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RecipeTag"
+          }
+        },
+        "required": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/IngredientKey"
+          },
+          "minItems": 1
+        },
+        "optional": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/IngredientKey"
+          }
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": [
+                "string",
+                "integer"
+              ]
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "id",
+        "name_th",
+        "emoji",
+        "time_min",
+        "tags",
+        "required",
+        "optional",
+        "steps"
+      ],
+      "additionalProperties": false
+    },
+    "MenuFilters": {
+      "type": "object",
+      "properties": {
+        "max_missing": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "time_max": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "diet": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DietFilter"
+          }
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "MenuMatch": {
+      "type": "object",
+      "properties": {
+        "recipe_id": {
+          "type": "string"
+        },
+        "name_th": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "time_min": {
+          "type": "integer"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RecipeTag"
+          }
+        },
+        "match_pct": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "uses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/IngredientKey"
+          }
+        },
+        "missing_required": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/IngredientKey"
+          }
+        },
+        "missing_optional": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/IngredientKey"
+          }
+        },
+        "rescues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/IngredientKey"
+          }
+        },
+        "rescue_value_thb": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "score": {
+          "type": "integer"
+        },
+        "badge_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "recipe_id",
+        "name_th",
+        "emoji",
+        "time_min",
+        "tags",
+        "match_pct",
+        "uses",
+        "missing_required",
+        "missing_optional",
+        "rescues",
+        "rescue_value_thb",
+        "score",
+        "badge_th"
+      ],
+      "additionalProperties": false
+    },
+    "CookMode": {
+      "type": "object",
+      "properties": {
+        "recipe_id": {
+          "type": "string"
+        },
+        "name_th": {
+          "type": "string"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RecipeStep"
+          },
+          "minItems": 1
+        },
+        "total_timer_s": {
+          "type": "integer"
+        },
+        "timer_steps": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "recipe_id",
+        "name_th",
+        "steps",
+        "total_timer_s",
+        "timer_steps"
+      ],
+      "additionalProperties": false
+    },
+    "CookProgress": {
+      "type": "object",
+      "properties": {
+        "recipe_id": {
+          "type": "string"
+        },
+        "step_n": {
+          "type": "integer"
+        },
+        "of": {
+          "type": "integer"
+        },
+        "remaining_s": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "timer_done": {
+          "type": "boolean"
+        },
+        "next_hint_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "recipe_id",
+        "step_n",
+        "of",
+        "remaining_s",
+        "timer_done",
+        "next_hint_th"
+      ],
+      "additionalProperties": false
+    },
+    "Radar": {
+      "type": "object",
+      "properties": {
+        "groups": {
+          "type": "object",
+          "properties": {
+            "today": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/IngredientKey"
+              }
+            },
+            "soon": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/IngredientKey"
+              }
+            },
+            "ok": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/IngredientKey"
+              }
+            },
+            "check": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/IngredientKey"
+              }
+            }
+          },
+          "required": [
+            "today",
+            "soon",
+            "ok",
+            "check"
+          ],
+          "additionalProperties": false
+        },
+        "at_risk_count": {
+          "type": "integer"
+        },
+        "at_risk_value_thb": {
+          "type": "integer"
+        },
+        "headline_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "groups",
+        "at_risk_count",
+        "at_risk_value_thb",
+        "headline_th"
+      ],
+      "additionalProperties": false
+    },
+    "ShoppingItem": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/IngredientKey"
+        },
+        "name_th": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "price_thb": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "key",
+        "name_th",
+        "emoji",
+        "price_thb"
+      ],
+      "additionalProperties": false
+    },
+    "ShoppingStore": {
+      "type": "object",
+      "properties": {
+        "store": {
+          "$ref": "#/$defs/Store"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ShoppingItem"
+          },
+          "minItems": 1
+        },
+        "subtotal_thb": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "store",
+        "items",
+        "subtotal_thb"
+      ],
+      "additionalProperties": false
+    },
+    "ShoppingList": {
+      "type": "object",
+      "properties": {
+        "stores": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ShoppingStore"
+          }
+        },
+        "total_thb": {
+          "type": "integer"
+        },
+        "line_text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "stores",
+        "total_thb",
+        "line_text"
+      ],
+      "additionalProperties": false
+    },
+    "DiceResult": {
+      "type": "object",
+      "properties": {
+        "seed": {
+          "type": "integer"
+        },
+        "frames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 6,
+          "maxItems": 6
+        },
+        "pick": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "seed",
+        "frames",
+        "pick"
+      ],
+      "additionalProperties": false
+    },
+    "CookLogEntry": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "$ref": "#/$defs/DateLocal"
+        },
+        "recipe_id": {
+          "type": "string"
+        },
+        "rescued": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/IngredientKey"
+          }
+        },
+        "rescued_value_thb": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "date",
+        "recipe_id",
+        "rescued",
+        "rescued_value_thb"
+      ],
+      "additionalProperties": false
+    },
+    "Wrapped": {
+      "type": "object",
+      "properties": {
+        "month": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}$"
+        },
+        "meals_cooked": {
+          "type": "integer"
+        },
+        "items_rescued": {
+          "type": "integer"
+        },
+        "value_saved_thb": {
+          "type": "integer"
+        },
+        "top_recipe_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "top_recipe_name_th": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "best_streak_days": {
+          "type": "integer"
+        },
+        "headline_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "month",
+        "meals_cooked",
+        "items_rescued",
+        "value_saved_thb",
+        "top_recipe_id",
+        "top_recipe_name_th",
+        "best_streak_days",
+        "headline_th"
+      ],
+      "additionalProperties": false
+    },
+    "ShareCard": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "rescue",
+            "wrapped",
+            "menu"
+          ]
+        },
+        "size": {
+          "type": "string",
+          "enum": [
+            "1080x1920",
+            "1080x1080"
+          ]
+        },
+        "title_th": {
+          "type": "string"
+        },
+        "lines_th": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 5
+        },
+        "bg": {
+          "$ref": "#/$defs/HexColor"
+        },
+        "accent": {
+          "$ref": "#/$defs/HexColor"
+        },
+        "footer": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "size",
+        "title_th",
+        "lines_th",
+        "bg",
+        "accent",
+        "footer"
+      ],
+      "additionalProperties": false
+    },
+    "Settings": {
+      "type": "object",
+      "properties": {
+        "staples": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "diet": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DietFilter"
+          }
+        },
+        "household": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8
+        },
+        "stove": {
+          "type": "string",
+          "enum": [
+            "gas",
+            "electric_1",
+            "microwave_only"
+          ]
+        },
+        "ai_vision": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "LocalStore": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "inventory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/InventoryItem"
+          }
+        },
+        "history": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CookLogEntry"
+          }
+        },
+        "shopping": {
+          "$ref": "#/$defs/ShoppingList"
+        },
+        "settings": {
+          "$ref": "#/$defs/Settings"
+        },
+        "last_scan_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "version",
+        "inventory",
+        "history",
+        "settings"
+      ],
+      "additionalProperties": false
+    },
+    "AiVisionRequest": {
+      "type": "object",
+      "properties": {
+        "image_base64": {
+          "type": "string"
+        },
+        "allowed_keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/IngredientKey"
+          }
+        },
+        "locale": {
+          "const": "th-TH"
+        }
+      },
+      "required": [
+        "image_base64",
+        "allowed_keys",
+        "locale"
+      ],
+      "additionalProperties": false
+    },
+    "AiVisionResponse": {
+      "type": "object",
+      "properties": {
+        "detections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "$ref": "#/$defs/IngredientKey"
+              },
+              "qty": {
+                "type": "number"
+              },
+              "confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "bbox": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 4,
+                "maxItems": 4
+              }
+            },
+            "required": [
+              "key",
+              "qty",
+              "confidence"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "unknown_items_th": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "detections",
+        "unknown_items_th"
+      ],
+      "additionalProperties": false
+    },
+    "AiRecipeRequest": {
+      "type": "object",
+      "properties": {
+        "have": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/IngredientKey"
+          }
+        },
+        "staples": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "diet": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DietFilter"
+          }
+        },
+        "time_max": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "have",
+        "staples",
+        "diet",
+        "time_max"
+      ],
+      "additionalProperties": false
+    },
+    "AiRecipeResponse": {
+      "type": "object",
+      "properties": {
+        "recipes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Recipe"
+          },
+          "maxItems": 3
+        },
+        "disclaimer_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "recipes",
+        "disclaimer_th"
+      ],
+      "additionalProperties": false
+    },
+    "TestVector": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "fn": {
+          "type": "string"
+        },
+        "input": {},
+        "expect": {}
+      },
+      "required": [
+        "id",
+        "fn",
+        "input",
+        "expect"
+      ],
+      "additionalProperties": false
+    },
+    "AnalyticsEvent": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": [
+            "scan_started",
+            "scan_done",
+            "chip_confirmed",
+            "chip_removed",
+            "menu_opened",
+            "cook_started",
+            "timer_done",
+            "cook_finished",
+            "list_shared",
+            "dice_spun",
+            "card_shared"
+          ]
+        },
+        "props": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "meta",
+    "colors",
+    "persona",
+    "catalog",
+    "recipes",
+    "demo_input",
+    "expect_locked",
+    "inventory",
+    "radar",
+    "menu_top3",
+    "menu_all",
+    "confirm_lime_rerun",
+    "filters_examples",
+    "cook_mode",
+    "cook_progress",
+    "shopping_list",
+    "dice",
+    "wrapped",
+    "share_cards",
+    "local_store_example",
+    "ai_examples",
+    "ui_copy_th",
+    "reel_script",
+    "test_vectors"
+  ],
+  "additionalProperties": true
+}

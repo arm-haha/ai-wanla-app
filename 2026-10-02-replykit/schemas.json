@@ -1,0 +1,967 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-wanla-app.local/replykit/schemas.json",
+  "title": "ReplyKit Schemas",
+  "description": "ชุด JSON Schema ละเอียดสำหรับ ReplyKit (AI วันละแอป 2026-10-02) — ใช้ validate state, fixtures, share payload และ feature checklist ก่อนถ่าย Reel; คีย์ภาษาอังกฤษ คำอธิบายรองรับภาษาไทยใน description",
+  "definitions": {
+    "IsoDate": {
+      "type": "string",
+      "description": "วันที่แบบ YYYY-MM-DD ตามปฏิทินที่ผู้ใช้เห็น (Asia/Bangkok สำหรับช่องนี้)",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "IsoDateTime": {
+      "type": "string",
+      "description": "เวลา ISO-8601 พร้อม offset หรือ Z — ตอนแสดงผลให้แปลงเป็น Asia/Bangkok",
+      "format": "date-time"
+    },
+    "Uuid": {
+      "type": "string",
+      "description": "ตัวระบุไม่ซ้ำ ใช้ uuid v4 หรือ nanoid ก็ได้ใน MVP",
+      "minLength": 8
+    },
+    "Percent0to100": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "เปอร์เซ็นต์ 0–100"
+    },
+    "Confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "ความมั่นใจของ generate/extract 0–1"
+    }
+  },
+  "ReplyEngine": {
+    "type": "string",
+    "description": "เอนจินสร้างชุดตอบ — ค่าเริ่มต้น mock_demo สำหรับเดโม/Reel",
+    "enum": [
+      "mock_demo",
+      "llm_api",
+      "template",
+      "manual"
+    ]
+  },
+  "ExtractEngine": {
+    "type": "string",
+    "description": "เอนจินดึงข้อความจากสกรีนช็อต — ค่าเริ่มต้น mock_demo",
+    "enum": [
+      "mock_demo",
+      "vision_api",
+      "manual"
+    ]
+  },
+  "ToneId": {
+    "type": "string",
+    "description": "รหัสโทนคำตอบใน Tone Dial",
+    "enum": [
+      "soft",
+      "funny",
+      "pro",
+      "firm",
+      "warm"
+    ]
+  },
+  "SituationId": {
+    "type": "string",
+    "description": "รหัสสถานการณ์ใน Situation Library (พรีเซ็ตหรือที่ผู้ใช้สร้าง)",
+    "minLength": 2
+  },
+  "AppStatus": {
+    "type": "string",
+    "description": "สถานะโฟลว์ generate/แชร์หลักบน client",
+    "enum": [
+      "idle",
+      "generating",
+      "pack_ready",
+      "tone_filtering",
+      "extracting",
+      "copying",
+      "sharing",
+      "error"
+    ]
+  },
+  "ShareKind": {
+    "type": "string",
+    "description": "ชนิดการ์ดแชร์",
+    "enum": [
+      "reply_card",
+      "tone_pack",
+      "situation_promo"
+    ]
+  },
+  "MessageRole": {
+    "type": "string",
+    "description": "บทบาทข้อความในแชทสมมติ",
+    "enum": [
+      "inbound",
+      "outbound",
+      "system"
+    ]
+  },
+  "ChatMessage": {
+    "type": "object",
+    "description": "ข้อความแชทหนึ่งข้อความ — ใช้เป็น inbound หลักหรือบริบทสั้นๆ",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "role",
+      "text_th",
+      "created_at"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "role": {
+        "$ref": "#/MessageRole"
+      },
+      "text_th": {
+        "type": "string",
+        "minLength": 1,
+        "description": "เนื้อหาภาษาไทย"
+      },
+      "text_en": {
+        "type": "string",
+        "description": "เนื้อหาภาษาอังกฤษ (ออปชัน)"
+      },
+      "sender_label_th": {
+        "type": "string",
+        "description": "ป้ายชื่อผู้ส่งแบบสมมติ เช่น เพื่อน"
+      },
+      "platform": {
+        "type": "string",
+        "enum": [
+          "line",
+          "ig",
+          "whatsapp",
+          "other",
+          "unknown"
+        ],
+        "description": "แพลตฟอร์มต้นทางโดยประมาณ"
+      },
+      "created_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "ReplyOption": {
+    "type": "object",
+    "description": "ตัวเลือกคำตอบหนึ่งใบใน Reply Pack",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "tone",
+      "text_th"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "tone": {
+        "$ref": "#/ToneId"
+      },
+      "text_th": {
+        "type": "string",
+        "minLength": 1,
+        "description": "ข้อความตอบภาษาไทยพร้อมวาง"
+      },
+      "text_en": {
+        "type": "string"
+      },
+      "short_label_th": {
+        "type": "string",
+        "description": "ป้ายสั้นบนการ์ด เช่น ขอโทษนุ่ม"
+      },
+      "emoji": {
+        "type": "string"
+      },
+      "char_count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "is_favorite": {
+        "type": "boolean"
+      },
+      "score": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1,
+        "description": "คะแนนจัดอันดับในแพ็ก (ออปชัน)"
+      }
+    }
+  },
+  "ReplyPack": {
+    "type": "object",
+    "description": "ชุดตอบหลายโทนจาก inbound หนึ่งข้อความ",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "inbound_th",
+      "replies",
+      "engine",
+      "created_at"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "inbound_th": {
+        "type": "string",
+        "minLength": 1,
+        "description": "ข้อความต้นทางภาษาไทย"
+      },
+      "inbound_en": {
+        "type": "string"
+      },
+      "situation_id": {
+        "$ref": "#/SituationId"
+      },
+      "selected_tones": {
+        "type": "array",
+        "items": {
+          "$ref": "#/ToneId"
+        },
+        "description": "โทนที่ Tone Dial เลือกตอนสร้าง/กรอง"
+      },
+      "replies": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "#/ReplyOption"
+        }
+      },
+      "engine": {
+        "$ref": "#/ReplyEngine"
+      },
+      "generate_ms": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "confidence": {
+        "$ref": "#/definitions/Confidence"
+      },
+      "warnings_th": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "source": {
+        "type": "string",
+        "enum": [
+          "paste",
+          "screenshot_extract",
+          "situation",
+          "demo",
+          "rewrite"
+        ],
+        "description": "แหล่งที่มาของ inbound"
+      },
+      "created_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "Situation": {
+    "type": "object",
+    "description": "สถานการณ์ใน Situation Library — คิทไทยที่ใช้ซ้ำ",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "title_th",
+      "created_at"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "#/SituationId"
+      },
+      "title_th": {
+        "type": "string",
+        "minLength": 1
+      },
+      "title_en": {
+        "type": "string"
+      },
+      "emoji": {
+        "type": "string"
+      },
+      "prompt_hint_th": {
+        "type": "string",
+        "description": "คำใบ้ให้ engine รู้บริบท"
+      },
+      "default_tones": {
+        "type": "array",
+        "items": {
+          "$ref": "#/ToneId"
+        }
+      },
+      "sample_inbound_th": {
+        "type": "string"
+      },
+      "color_hex": {
+        "type": "string",
+        "pattern": "^#([0-9A-Fa-f]{6})$"
+      },
+      "is_favorite": {
+        "type": "boolean"
+      },
+      "is_preset": {
+        "type": "boolean",
+        "description": "true ถ้าเป็นคิทติดมาในแอป"
+      },
+      "use_count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "created_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "ToneDialState": {
+    "type": "object",
+    "description": "สถานะ Tone Dial บน client",
+    "additionalProperties": false,
+    "required": [
+      "selected_tones",
+      "mode"
+    ],
+    "properties": {
+      "selected_tones": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "#/ToneId"
+        }
+      },
+      "mode": {
+        "type": "string",
+        "enum": [
+          "filter",
+          "regenerate"
+        ],
+        "description": "filter แพ็กปัจจุบัน หรือ regenerate ใหม่"
+      },
+      "last_changed_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "ExtractResult": {
+    "type": "object",
+    "description": "ผลดึงข้อความจากสกรีนช็อตแชท",
+    "additionalProperties": false,
+    "required": [
+      "engine",
+      "last_inbound_th",
+      "extracted_at"
+    ],
+    "properties": {
+      "engine": {
+        "$ref": "#/ExtractEngine"
+      },
+      "source_image_name": {
+        "type": "string"
+      },
+      "last_inbound_th": {
+        "type": "string",
+        "minLength": 1
+      },
+      "last_inbound_en": {
+        "type": "string"
+      },
+      "context_messages": {
+        "type": "array",
+        "items": {
+          "$ref": "#/ChatMessage"
+        },
+        "description": "บริบทสั้นๆ ก่อนข้อความล่าสุด (ออปชัน)"
+      },
+      "extract_ms": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "confidence": {
+        "$ref": "#/definitions/Confidence"
+      },
+      "warnings_th": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "suggested_situation_id": {
+        "$ref": "#/SituationId"
+      },
+      "extracted_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "ShareCard": {
+    "type": "object",
+    "description": "ข้อมูลสำหรับเรนเดอร์การ์ดแชร์",
+    "additionalProperties": false,
+    "required": [
+      "kind",
+      "headline_th",
+      "reply_text_th",
+      "tone"
+    ],
+    "properties": {
+      "kind": {
+        "$ref": "#/ShareKind"
+      },
+      "headline_th": {
+        "type": "string"
+      },
+      "inbound_preview_th": {
+        "type": "string"
+      },
+      "reply_text_th": {
+        "type": "string"
+      },
+      "tone": {
+        "$ref": "#/ToneId"
+      },
+      "tone_label_th": {
+        "type": "string"
+      },
+      "footer_th": {
+        "type": "string"
+      },
+      "accent_hex": {
+        "type": "string"
+      },
+      "bg_hex": {
+        "type": "string"
+      },
+      "width": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "height": {
+        "type": "integer",
+        "minimum": 1
+      }
+    }
+  },
+  "SharePayload": {
+    "type": "object",
+    "description": "เพย์โหลดแชร์ทั้งรูปและแคปชัน",
+    "additionalProperties": false,
+    "required": [
+      "card",
+      "caption_th",
+      "file_name"
+    ],
+    "properties": {
+      "card": {
+        "$ref": "#/ShareCard"
+      },
+      "caption_th": {
+        "type": "string"
+      },
+      "caption_en": {
+        "type": "string"
+      },
+      "file_name": {
+        "type": "string"
+      },
+      "hashtags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "AppSettings": {
+    "type": "object",
+    "description": "การตั้งค่าผู้ใช้ใน localStorage",
+    "additionalProperties": false,
+    "properties": {
+      "locale": {
+        "type": "string",
+        "enum": [
+          "th-TH",
+          "en-US"
+        ]
+      },
+      "reply_engine": {
+        "$ref": "#/ReplyEngine"
+      },
+      "extract_engine": {
+        "$ref": "#/ExtractEngine"
+      },
+      "default_tones": {
+        "type": "array",
+        "items": {
+          "$ref": "#/ToneId"
+        }
+      },
+      "dark_chat_mode": {
+        "type": "boolean"
+      },
+      "emoji_booster": {
+        "type": "boolean"
+      },
+      "voice_preview": {
+        "type": "boolean"
+      },
+      "show_disclaimer": {
+        "type": "boolean"
+      }
+    }
+  },
+  "LocalStore": {
+    "type": "object",
+    "description": "รูปทรงข้อมูลหลักใน localStorage key replykit.v1",
+    "additionalProperties": false,
+    "required": [
+      "version",
+      "packs",
+      "situations",
+      "settings"
+    ],
+    "properties": {
+      "version": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "packs": {
+        "type": "array",
+        "items": {
+          "$ref": "#/ReplyPack"
+        }
+      },
+      "situations": {
+        "type": "array",
+        "items": {
+          "$ref": "#/Situation"
+        }
+      },
+      "favorite_reply_ids": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Uuid"
+        }
+      },
+      "settings": {
+        "$ref": "#/AppSettings"
+      },
+      "last_pack_id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "AnalyticsEventName": {
+    "type": "string",
+    "description": "ชื่ออีเวนต์ฝั่ง client",
+    "enum": [
+      "app_open",
+      "demo_loaded",
+      "pack_generated",
+      "generate_fail",
+      "tone_changed",
+      "reply_copied",
+      "reply_favorited",
+      "situation_opened",
+      "situation_saved",
+      "screenshot_extract_success",
+      "screenshot_extract_fail",
+      "share_open",
+      "share_success",
+      "share_fail"
+    ]
+  },
+  "AnalyticsEvent": {
+    "type": "object",
+    "description": "อีเวนต์วิเคราะห์เบาๆ",
+    "additionalProperties": false,
+    "required": [
+      "name",
+      "ts"
+    ],
+    "properties": {
+      "name": {
+        "$ref": "#/AnalyticsEventName"
+      },
+      "ts": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "props": {
+        "type": "object",
+        "additionalProperties": true,
+        "description": "พร็อพเสริม เช่น tone, situation_id, generate_ms"
+      }
+    }
+  },
+  "FeatureTier": {
+    "type": "string",
+    "enum": [
+      "must",
+      "nice"
+    ]
+  },
+  "FeatureChecklistItem": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "name_th",
+      "tier",
+      "implemented"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name_th": {
+        "type": "string"
+      },
+      "name_en": {
+        "type": "string"
+      },
+      "tier": {
+        "$ref": "#/FeatureTier"
+      },
+      "implemented": {
+        "type": "boolean"
+      },
+      "demo_in_reel": {
+        "type": "boolean"
+      },
+      "notes": {
+        "type": "string"
+      }
+    }
+  },
+  "FeatureChecklist": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "app",
+      "date",
+      "must_implemented_count",
+      "features"
+    ],
+    "properties": {
+      "app": {
+        "type": "string"
+      },
+      "date": {
+        "$ref": "#/definitions/IsoDate"
+      },
+      "must_implemented_count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "ready_to_film": {
+        "type": "boolean"
+      },
+      "features": {
+        "type": "array",
+        "items": {
+          "$ref": "#/FeatureChecklistItem"
+        }
+      }
+    }
+  },
+  "UiCopyTh": {
+    "type": "object",
+    "description": "ชุดข้อความ UI ภาษาไทยหลัก — คีย์คงที่ให้ codegen อ้าง",
+    "additionalProperties": {
+      "type": "string"
+    }
+  },
+  "ReelShot": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "start_s",
+      "end_s",
+      "on_screen_th",
+      "voice_th"
+    ],
+    "properties": {
+      "start_s": {
+        "type": "number",
+        "minimum": 0
+      },
+      "end_s": {
+        "type": "number",
+        "minimum": 0
+      },
+      "visual_th": {
+        "type": "string"
+      },
+      "on_screen_th": {
+        "type": "string"
+      },
+      "voice_th": {
+        "type": "string"
+      },
+      "feature_ids": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "ReelScript": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "title_th",
+      "total_s",
+      "shots",
+      "cta_th"
+    ],
+    "properties": {
+      "title_th": {
+        "type": "string"
+      },
+      "total_s": {
+        "type": "number"
+      },
+      "hook_th": {
+        "type": "string"
+      },
+      "shots": {
+        "type": "array",
+        "items": {
+          "$ref": "#/ReelShot"
+        }
+      },
+      "cta_th": {
+        "type": "string"
+      },
+      "comment_keyword_th": {
+        "type": "string"
+      }
+    }
+  },
+  "ToneMeta": {
+    "type": "object",
+    "description": "เมทาดาทาโทนสำหรับ Tone Dial UI และสีป้าย",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "label_th",
+      "emoji",
+      "color_hex"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "#/ToneId"
+      },
+      "label_th": {
+        "type": "string"
+      },
+      "label_en": {
+        "type": "string"
+      },
+      "emoji": {
+        "type": "string"
+      },
+      "color_hex": {
+        "type": "string",
+        "pattern": "^#([0-9A-Fa-f]{6})$"
+      },
+      "when_th": {
+        "type": "string",
+        "description": "เมื่อไหร่ควรใช้โทนนี้"
+      },
+      "avoid_th": {
+        "type": "string",
+        "description": "สิ่งที่ควรเลี่ยงตอนเขียนโทนนี้"
+      }
+    }
+  },
+  "GenerateInput": {
+    "type": "object",
+    "description": "อินพุตเข้า lib/reply.ts generatePack()",
+    "additionalProperties": false,
+    "required": [
+      "inbound_th"
+    ],
+    "properties": {
+      "inbound_th": {
+        "type": "string",
+        "minLength": 1
+      },
+      "situation_id": {
+        "$ref": "#/SituationId"
+      },
+      "tones": {
+        "type": "array",
+        "items": {
+          "$ref": "#/ToneId"
+        }
+      },
+      "engine": {
+        "$ref": "#/ReplyEngine"
+      },
+      "max_replies": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 8
+      },
+      "bilingual": {
+        "type": "boolean"
+      },
+      "emoji_booster": {
+        "type": "boolean"
+      }
+    }
+  },
+  "CopyAction": {
+    "type": "object",
+    "description": "เหตุการณ์คัดลอกคำตอบหนึ่งใบ",
+    "additionalProperties": false,
+    "required": [
+      "reply_id",
+      "tone",
+      "copied_at"
+    ],
+    "properties": {
+      "reply_id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "tone": {
+        "$ref": "#/ToneId"
+      },
+      "text_th": {
+        "type": "string"
+      },
+      "pack_id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "copied_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "QaTestCase": {
+    "type": "object",
+    "description": "เคสใน QA matrix ก่อนถ่าย Reel",
+    "additionalProperties": false,
+    "required": [
+      "case",
+      "expect",
+      "severity"
+    ],
+    "properties": {
+      "case": {
+        "type": "string"
+      },
+      "expect": {
+        "type": "string"
+      },
+      "severity": {
+        "type": "string",
+        "enum": [
+          "blocker",
+          "major",
+          "minor"
+        ]
+      },
+      "result": {
+        "type": "string",
+        "enum": [
+          "pass",
+          "fail",
+          "skip",
+          "untested"
+        ]
+      },
+      "fix_th": {
+        "type": "string"
+      }
+    }
+  },
+  "BrandTokens": {
+    "type": "object",
+    "description": "โทเคนสีแบรนด์ ReplyKit สำหรับ Tailwind/CSS variables",
+    "additionalProperties": false,
+    "properties": {
+      "bg": {
+        "type": "string"
+      },
+      "bg_soft": {
+        "type": "string"
+      },
+      "primary": {
+        "type": "string"
+      },
+      "primary_mint": {
+        "type": "string"
+      },
+      "accent": {
+        "type": "string"
+      },
+      "card": {
+        "type": "string"
+      },
+      "ink": {
+        "type": "string"
+      },
+      "muted": {
+        "type": "string"
+      }
+    }
+  },
+  "DemoFixture": {
+    "type": "object",
+    "description": "คำอธิบาย fixture เดโมหลักให้ QA และ Reel ใช้ชุดเดียวกัน",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "inbound_th",
+      "situation_id"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "inbound_th": {
+        "type": "string"
+      },
+      "situation_id": {
+        "$ref": "#/SituationId"
+      },
+      "expected_tone_count": {
+        "type": "integer",
+        "minimum": 3,
+        "maximum": 8
+      },
+      "expected_tones": {
+        "type": "array",
+        "items": {
+          "$ref": "#/ToneId"
+        }
+      },
+      "demo_user_th": {
+        "type": "string"
+      },
+      "friend_label_th": {
+        "type": "string"
+      },
+      "one_liner_th": {
+        "type": "string"
+      }
+    }
+  }
+}

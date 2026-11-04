@@ -1,0 +1,870 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/toneme/schemas.json",
+  "title": "ToneMe (สีไหนใช่เรา) data contracts",
+  "$defs": {
+    "Hex": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "Season": {
+      "enum": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ]
+    },
+    "Sub": {
+      "enum": [
+        "light",
+        "true",
+        "bright",
+        "soft",
+        "deep"
+      ]
+    },
+    "Vein": {
+      "enum": [
+        "green",
+        "blue",
+        "mixed",
+        "unsure"
+      ]
+    },
+    "Metal": {
+      "enum": [
+        "gold",
+        "silver",
+        "both",
+        "unsure"
+      ]
+    },
+    "Slot": {
+      "enum": [
+        "top",
+        "bottom",
+        "outer",
+        "scarf",
+        "bag",
+        "shoes",
+        "glasses"
+      ]
+    },
+    "Verdict": {
+      "enum": [
+        "yes",
+        "maybe",
+        "no"
+      ]
+    },
+    "Swatch": {
+      "type": "object",
+      "properties": {
+        "name_th": {
+          "type": "string"
+        },
+        "hex": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        }
+      },
+      "required": [
+        "name_th",
+        "hex"
+      ],
+      "additionalProperties": false
+    },
+    "ScanSample": {
+      "type": "object",
+      "properties": {
+        "skin": {
+          "$ref": "#/$defs/Hex"
+        },
+        "hair": {
+          "$ref": "#/$defs/Hex"
+        },
+        "eyes": {
+          "$ref": "#/$defs/Hex"
+        },
+        "vein": {
+          "$ref": "#/$defs/Vein"
+        },
+        "metal": {
+          "$ref": "#/$defs/Metal"
+        },
+        "light_ok": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "skin",
+        "hair",
+        "eyes",
+        "vein",
+        "metal"
+      ],
+      "additionalProperties": false
+    },
+    "Profile": {
+      "type": "object",
+      "properties": {
+        "season": {
+          "$ref": "#/$defs/Season"
+        },
+        "sub": {
+          "$ref": "#/$defs/Sub"
+        },
+        "label": {
+          "type": "string"
+        },
+        "label_th": {
+          "type": "string"
+        },
+        "warmth": {
+          "type": "integer"
+        },
+        "lightness": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "contrast": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "undertone": {
+          "enum": [
+            "warm",
+            "cool"
+          ]
+        },
+        "depth": {
+          "enum": [
+            "light",
+            "deep"
+          ]
+        },
+        "chroma": {
+          "enum": [
+            "clear",
+            "soft"
+          ]
+        },
+        "confidence": {
+          "type": "integer",
+          "minimum": 50,
+          "maximum": 95
+        },
+        "metal": {
+          "enum": [
+            "gold",
+            "silver"
+          ]
+        }
+      },
+      "required": [
+        "season",
+        "sub",
+        "label",
+        "label_th",
+        "warmth",
+        "lightness",
+        "contrast",
+        "undertone",
+        "depth",
+        "chroma",
+        "confidence",
+        "metal"
+      ],
+      "additionalProperties": false
+    },
+    "DrapeSide": {
+      "type": "object",
+      "properties": {
+        "hex": {
+          "$ref": "#/$defs/Hex"
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "near_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "hex",
+        "score",
+        "near_th"
+      ],
+      "additionalProperties": false
+    },
+    "DrapeBattle": {
+      "type": "object",
+      "properties": {
+        "a": {
+          "$ref": "#/$defs/DrapeSide"
+        },
+        "b": {
+          "$ref": "#/$defs/DrapeSide"
+        },
+        "winner": {
+          "enum": [
+            "a",
+            "b"
+          ]
+        },
+        "gap": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "line_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "a",
+        "b",
+        "winner",
+        "gap",
+        "line_th"
+      ],
+      "additionalProperties": false
+    },
+    "PaletteCard": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "label_th": {
+          "type": "string"
+        },
+        "best": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Swatch"
+          },
+          "minItems": 12,
+          "maxItems": 12
+        },
+        "avoid": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Swatch"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "metal": {
+          "enum": [
+            "gold",
+            "silver"
+          ]
+        },
+        "size_px": {
+          "const": [
+            1080,
+            1920
+          ]
+        },
+        "watermark": {
+          "const": "ToneMe · AI วันละแอป"
+        }
+      },
+      "required": [
+        "name",
+        "label",
+        "label_th",
+        "best",
+        "avoid",
+        "metal",
+        "size_px",
+        "watermark"
+      ],
+      "additionalProperties": false
+    },
+    "OutfitItemInput": {
+      "type": "object",
+      "properties": {
+        "slot": {
+          "$ref": "#/$defs/Slot"
+        },
+        "hex": {
+          "$ref": "#/$defs/Hex"
+        }
+      },
+      "required": [
+        "slot",
+        "hex"
+      ],
+      "additionalProperties": false
+    },
+    "OutfitRow": {
+      "type": "object",
+      "properties": {
+        "slot": {
+          "$ref": "#/$defs/Slot"
+        },
+        "hex": {
+          "$ref": "#/$defs/Hex"
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "verdict_th": {
+          "type": "string"
+        },
+        "verdict": {
+          "$ref": "#/$defs/Verdict"
+        },
+        "swap_hex": {
+          "$ref": "#/$defs/Hex"
+        },
+        "swap_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "slot",
+        "hex",
+        "score",
+        "verdict_th",
+        "verdict",
+        "swap_hex",
+        "swap_th"
+      ],
+      "additionalProperties": false
+    },
+    "OutfitCheck": {
+      "type": "object",
+      "properties": {
+        "overall": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "verdict_th": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/OutfitRow"
+          },
+          "maxItems": 7
+        },
+        "tip_th": {
+          "type": "string",
+          "maxLength": 80
+        }
+      },
+      "required": [
+        "overall",
+        "verdict_th",
+        "items",
+        "tip_th"
+      ],
+      "additionalProperties": false
+    },
+    "Makeup": {
+      "type": "object",
+      "properties": {
+        "lip": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "family_th": {
+                "type": "string"
+              },
+              "hex": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              }
+            },
+            "required": [
+              "family_th",
+              "hex"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "blush": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "family_th": {
+                "type": "string"
+              },
+              "hex": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              }
+            },
+            "required": [
+              "family_th",
+              "hex"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "shadow": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "family_th": {
+                "type": "string"
+              },
+              "hex": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              }
+            },
+            "required": [
+              "family_th",
+              "hex"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "note_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "lip",
+        "blush",
+        "shadow",
+        "note_th"
+      ],
+      "additionalProperties": false
+    },
+    "ShopScan": {
+      "type": "object",
+      "properties": {
+        "hex": {
+          "$ref": "#/$defs/Hex"
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "verdict": {
+          "$ref": "#/$defs/Verdict"
+        },
+        "verdict_th": {
+          "type": "string"
+        },
+        "near_th": {
+          "type": "string"
+        },
+        "near_hex": {
+          "$ref": "#/$defs/Hex"
+        }
+      },
+      "required": [
+        "hex",
+        "score",
+        "verdict",
+        "verdict_th",
+        "near_th",
+        "near_hex"
+      ],
+      "additionalProperties": false
+    },
+    "ClosetItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name_th": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "hex": {
+          "$ref": "#/$defs/Hex"
+        }
+      },
+      "required": [
+        "id",
+        "name_th",
+        "hex"
+      ],
+      "additionalProperties": false
+    },
+    "ClosetRow": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name_th": {
+          "type": "string"
+        },
+        "hex": {
+          "$ref": "#/$defs/Hex"
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "verdict": {
+          "$ref": "#/$defs/Verdict"
+        },
+        "verdict_th": {
+          "type": "string"
+        },
+        "near_th": {
+          "type": "string"
+        },
+        "near_hex": {
+          "$ref": "#/$defs/Hex"
+        }
+      },
+      "required": [
+        "id",
+        "name_th",
+        "hex",
+        "score",
+        "verdict",
+        "verdict_th",
+        "near_th",
+        "near_hex"
+      ],
+      "additionalProperties": false
+    },
+    "ClosetAudit": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "yes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "maybe": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "no": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "match_pct": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ClosetRow"
+          }
+        },
+        "buy_next_th": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "total",
+        "yes",
+        "maybe",
+        "no",
+        "match_pct",
+        "items",
+        "buy_next_th"
+      ],
+      "additionalProperties": false
+    },
+    "Friend": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "season": {
+          "$ref": "#/$defs/Season"
+        }
+      },
+      "required": [
+        "name",
+        "season"
+      ],
+      "additionalProperties": false
+    },
+    "FriendCompare": {
+      "type": "object",
+      "properties": {
+        "members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Friend"
+          },
+          "minItems": 2,
+          "maxItems": 8
+        },
+        "count": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/Season"
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "group_color_th": {
+          "type": "string"
+        },
+        "group_color_hex": {
+          "$ref": "#/$defs/Hex"
+        },
+        "avg_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "line_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "members",
+        "count",
+        "group_color_th",
+        "group_color_hex",
+        "avg_score",
+        "line_th"
+      ],
+      "additionalProperties": false
+    },
+    "LocalStore": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "name": {
+          "type": "string"
+        },
+        "profile": {
+          "$ref": "#/$defs/Profile"
+        },
+        "closet": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ClosetItem"
+          },
+          "maxItems": 200
+        },
+        "friends": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Friend"
+          }
+        },
+        "settings": {
+          "type": "object",
+          "properties": {
+            "keep_selfie": {
+              "const": false
+            },
+            "show_avoid": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "keep_selfie",
+            "show_avoid"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "name",
+        "profile",
+        "closet",
+        "friends",
+        "settings"
+      ],
+      "additionalProperties": false
+    },
+    "AiScanRequest": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "string",
+          "description": "base64 JPEG ≤ 1024px, ส่งเฉพาะตอนสแกน ไม่เก็บ"
+        },
+        "white_ref": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "image",
+        "white_ref"
+      ],
+      "additionalProperties": false
+    },
+    "AiScanResponse": {
+      "type": "object",
+      "properties": {
+        "face_found": {
+          "type": "boolean"
+        },
+        "light_ok": {
+          "type": "boolean"
+        },
+        "light_issue": {
+          "enum": [
+            "none",
+            "too_dark",
+            "yellow_cast",
+            "filter",
+            "backlight",
+            "makeup_heavy"
+          ]
+        },
+        "regions": {
+          "type": "object",
+          "properties": {
+            "cheek_l": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "cheek_r": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "forehead": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "hair": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "iris": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            }
+          },
+          "required": [
+            "cheek_l",
+            "cheek_r",
+            "forehead",
+            "hair",
+            "iris"
+          ],
+          "additionalProperties": false
+        },
+        "note_th": {
+          "type": "string",
+          "maxLength": 100
+        }
+      },
+      "required": [
+        "face_found",
+        "light_ok",
+        "light_issue",
+        "regions",
+        "note_th"
+      ],
+      "additionalProperties": false
+    },
+    "AiStylistRequest": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "$ref": "#/$defs/Profile"
+        },
+        "outfit": {
+          "$ref": "#/$defs/OutfitCheck"
+        },
+        "vibe": {
+          "enum": [
+            "office",
+            "date",
+            "cafe",
+            "wedding_guest"
+          ]
+        }
+      },
+      "required": [
+        "profile",
+        "outfit",
+        "vibe"
+      ],
+      "additionalProperties": false
+    },
+    "AiStylistResponse": {
+      "type": "object",
+      "properties": {
+        "caption_th": {
+          "type": "string",
+          "maxLength": 90
+        }
+      },
+      "required": [
+        "caption_th"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

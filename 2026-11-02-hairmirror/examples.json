@@ -1,0 +1,635 @@
+{
+ "Profile": [
+  {
+   "name": "ภูมิ",
+   "age": 22,
+   "hair_type": "straight",
+   "thickness": "thick",
+   "current_length_cm": 6,
+   "max_daily_minutes": 5,
+   "budget_month_thb": 300,
+   "gender_style": "masc"
+  },
+  {
+   "name": "พลอย",
+   "hair_type": "wavy",
+   "thickness": "medium",
+   "current_length_cm": 30,
+   "max_daily_minutes": 10,
+   "budget_month_thb": 500,
+   "gender_style": "femme"
+  }
+ ],
+ "FaceLandmarkExtract": [
+  {
+   "face_found": true,
+   "face_length": 19.0,
+   "forehead_w": 14.6,
+   "cheek_w": 15.6,
+   "jaw_w": 13.4,
+   "hairline_visible": true,
+   "current_hair": {
+    "type": "straight",
+    "length_cm": 6,
+    "natural_level": 2
+   },
+   "confidence": 0.91,
+   "retake_reason_th": null
+  },
+  {
+   "face_found": true,
+   "face_length": null,
+   "forehead_w": null,
+   "cheek_w": 15.0,
+   "jaw_w": null,
+   "hairline_visible": false,
+   "current_hair": {
+    "type": "straight",
+    "length_cm": null,
+    "natural_level": null
+   },
+   "confidence": 0.34,
+   "retake_reason_th": "หมวก/หน้าม้าบังหน้าผาก ลองเปิดหน้าผากแล้วถ่ายใหม่"
+  },
+  {
+   "face_found": false,
+   "face_length": null,
+   "forehead_w": null,
+   "cheek_w": null,
+   "jaw_w": null,
+   "hairline_visible": false,
+   "current_hair": {},
+   "confidence": 0.0,
+   "retake_reason_th": "ไม่เจอใบหน้า ถ่ายหน้าตรงในที่สว่าง"
+  }
+ ],
+ "FaceShape": [
+  {
+   "shape": "round",
+   "shape_th": "หน้ากลม",
+   "length_to_width": 1.22,
+   "jaw_to_cheek": 0.86,
+   "forehead_to_cheek": 0.94
+  },
+  {
+   "shape": "oblong",
+   "shape_th": "หน้ายาว",
+   "length_to_width": 1.6,
+   "jaw_to_cheek": 0.87,
+   "forehead_to_cheek": 0.93
+  },
+  {
+   "shape": "heart",
+   "shape_th": "หน้ารูปหัวใจ",
+   "length_to_width": 1.33,
+   "jaw_to_cheek": 0.8,
+   "forehead_to_cheek": 1.03
+  },
+  {
+   "shape": "square",
+   "shape_th": "หน้าเหลี่ยม",
+   "length_to_width": 1.2,
+   "jaw_to_cheek": 0.97,
+   "forehead_to_cheek": 0.97
+  }
+ ],
+ "Style": [
+  {
+   "id": "two_block",
+   "name_th": "ทูบล็อกเท็กซ์เจอร์",
+   "length": "short",
+   "suits": [
+    "round",
+    "oval",
+    "square"
+   ],
+   "hair_types": [
+    "straight",
+    "wavy"
+   ],
+   "daily_minutes": 5,
+   "salon_cost_thb": 250,
+   "maintenance_weeks": 4,
+   "neutral_ok": true,
+   "barber_phrase_th": "ไถข้างกับหลัง 6 มิล ไม่ไล่เฟด ด้านบนเหลือ 7 ซม. ซอยเท็กซ์เจอร์ให้ฟู",
+   "dont_th": [
+    "อย่าตัดด้านบนสั้นกว่า 6 ซม."
+   ]
+  },
+  {
+   "id": "low_fade_crop",
+   "name_th": "ครอปโลว์เฟด",
+   "length": "short",
+   "suits": [
+    "oval",
+    "square",
+    "oblong"
+   ],
+   "hair_types": [
+    "straight",
+    "wavy",
+    "curly"
+   ],
+   "daily_minutes": 3,
+   "salon_cost_thb": 300,
+   "maintenance_weeks": 3,
+   "neutral_ok": true,
+   "barber_phrase_th": "โลว์เฟด 0.5 ถึง 3 มิล ด้านบน 4 ซม. หน้าม้าตัดตรงเท็กซ์เจอร์",
+   "dont_th": []
+  },
+  {
+   "id": "comma",
+   "name_th": "คอมม่าแฮร์",
+   "length": "medium",
+   "suits": [
+    "round",
+    "oval",
+    "heart",
+    "diamond"
+   ],
+   "hair_types": [
+    "straight"
+   ],
+   "daily_minutes": 10,
+   "salon_cost_thb": 350,
+   "maintenance_weeks": 6,
+   "neutral_ok": true,
+   "barber_phrase_th": "ด้านข้าง 3 ซม. ด้านบน 12 ซม. ปล่อยหน้าม้ายาวไว้ม้วนเป็นคอมม่า",
+   "dont_th": [
+    "อย่าซอยหน้าม้าบาง"
+   ]
+  },
+  {
+   "id": "buzz",
+   "name_th": "บัซคัท",
+   "length": "short",
+   "suits": [
+    "oval",
+    "square",
+    "diamond"
+   ],
+   "hair_types": [
+    "straight",
+    "wavy",
+    "curly"
+   ],
+   "daily_minutes": 0,
+   "salon_cost_thb": 150,
+   "maintenance_weeks": 2,
+   "neutral_ok": false,
+   "barber_phrase_th": "ปัตตาเลี่ยน 6 มิล ทั้งหัว เก็บไรผมตรง",
+   "dont_th": []
+  },
+  {
+   "id": "middle_part",
+   "name_th": "แสกกลางม่าน",
+   "length": "medium",
+   "suits": [
+    "round",
+    "square",
+    "heart"
+   ],
+   "hair_types": [
+    "straight",
+    "wavy"
+   ],
+   "daily_minutes": 8,
+   "salon_cost_thb": 300,
+   "maintenance_weeks": 6,
+   "neutral_ok": true,
+   "barber_phrase_th": "ด้านข้างคลุมหู 1 ซม. ด้านบน 14 ซม. แสกกลางเลเยอร์หน้า",
+   "dont_th": []
+  },
+  {
+   "id": "wolf_cut",
+   "name_th": "วูล์ฟคัท",
+   "length": "medium",
+   "suits": [
+    "oval",
+    "heart",
+    "oblong"
+   ],
+   "hair_types": [
+    "wavy",
+    "curly"
+   ],
+   "daily_minutes": 7,
+   "salon_cost_thb": 600,
+   "maintenance_weeks": 8,
+   "neutral_ok": true,
+   "barber_phrase_th": "เลเยอร์สั้นด้านบน ปล่อยท้ายทอยยาว ซอยปลายฟุ้ง",
+   "dont_th": []
+  },
+  {
+   "id": "side_part",
+   "name_th": "แสกข้างคลาสสิก",
+   "length": "short",
+   "suits": [
+    "round",
+    "oval",
+    "oblong",
+    "diamond"
+   ],
+   "hair_types": [
+    "straight",
+    "wavy"
+   ],
+   "daily_minutes": 6,
+   "salon_cost_thb": 250,
+   "maintenance_weeks": 4,
+   "neutral_ok": true,
+   "barber_phrase_th": "ข้าง 9 มิล ไล่ขึ้น ด้านบน 8 ซม. แสกซ้าย 7:3",
+   "dont_th": []
+  },
+  {
+   "id": "mullet",
+   "name_th": "มัลเล็ตโมเดิร์น",
+   "length": "medium",
+   "suits": [
+    "oval",
+    "square"
+   ],
+   "hair_types": [
+    "wavy",
+    "curly"
+   ],
+   "daily_minutes": 5,
+   "salon_cost_thb": 450,
+   "maintenance_weeks": 5,
+   "neutral_ok": false,
+   "barber_phrase_th": "ข้างสั้น 6 มิล ด้านบน 6 ซม. ท้ายทอยยาว 10 ซม.",
+   "dont_th": []
+  },
+  {
+   "id": "french_crop",
+   "name_th": "เฟรนช์ครอป",
+   "length": "short",
+   "suits": [
+    "round",
+    "oval",
+    "oblong"
+   ],
+   "hair_types": [
+    "straight",
+    "wavy"
+   ],
+   "daily_minutes": 2,
+   "salon_cost_thb": 250,
+   "maintenance_weeks": 4,
+   "neutral_ok": true,
+   "barber_phrase_th": "ข้าง 3 มิล เฟดสูง ด้านบน 5 ซม. หน้าม้าสั้นตรง",
+   "dont_th": []
+  }
+ ],
+ "TryOnRequest": [
+  {
+   "style_id": "two_block",
+   "source_photo": "local://selfie-001.jpg",
+   "prompt": "เปลี่ยนเฉพาะทรงผมเป็น two-block textured ...",
+   "keep_identity": true,
+   "seed": 42
+  }
+ ],
+ "TryOnResult": [
+  {
+   "style_id": "two_block",
+   "image_url": "local://tryon-two_block.jpg",
+   "identity_ok": true,
+   "status": "ok",
+   "note_th": null
+  },
+  {
+   "style_id": "mullet",
+   "image_url": null,
+   "identity_ok": false,
+   "status": "retry",
+   "note_th": "หน้าเพี้ยน กำลังสร้างใหม่"
+  }
+ ],
+ "StyleMatch": [
+  {
+   "style_id": "french_crop",
+   "score": 100,
+   "face_fit": true,
+   "upkeep_month_thb": 270.83,
+   "verdict": "ปัง",
+   "reasons_th": [
+    "เข้ากับหน้ากลม"
+   ]
+  },
+  {
+   "style_id": "two_block",
+   "score": 100,
+   "face_fit": true,
+   "upkeep_month_thb": 270.83,
+   "verdict": "ปัง",
+   "reasons_th": [
+    "เข้ากับหน้ากลม"
+   ]
+  },
+  {
+   "style_id": "middle_part",
+   "score": 85,
+   "face_fit": true,
+   "upkeep_month_thb": 216.67,
+   "verdict": "ปัง",
+   "reasons_th": [
+    "เข้ากับหน้ากลม",
+    "ต้องจัดทรง 8 นาที/วัน"
+   ]
+  },
+  {
+   "style_id": "comma",
+   "score": 85,
+   "face_fit": true,
+   "upkeep_month_thb": 252.78,
+   "verdict": "ปัง",
+   "reasons_th": [
+    "เข้ากับหน้ากลม",
+    "ต้องจัดทรง 10 นาที/วัน"
+   ]
+  },
+  {
+   "style_id": "side_part",
+   "score": 85,
+   "face_fit": true,
+   "upkeep_month_thb": 270.83,
+   "verdict": "ปัง",
+   "reasons_th": [
+    "เข้ากับหน้ากลม",
+    "ต้องจัดทรง 6 นาที/วัน"
+   ]
+  },
+  {
+   "style_id": "low_fade_crop",
+   "score": 55,
+   "face_fit": false,
+   "upkeep_month_thb": 433.33,
+   "verdict": "เสี่ยง",
+   "reasons_th": [
+    "พอใช้ได้กับหน้ากลม",
+    "ค่าดูแล ~฿433/เดือน เกินงบ"
+   ]
+  },
+  {
+   "style_id": "buzz",
+   "score": 35,
+   "face_fit": false,
+   "upkeep_month_thb": 325.0,
+   "verdict": "เสี่ยง",
+   "reasons_th": [
+    "ไม่ค่อยเข้ากับหน้ากลม",
+    "ค่าดูแล ~฿325/เดือน เกินงบ"
+   ]
+  },
+  {
+   "style_id": "wolf_cut",
+   "score": 20,
+   "face_fit": false,
+   "upkeep_month_thb": 325.0,
+   "verdict": "เสี่ยง",
+   "reasons_th": [
+    "พอใช้ได้กับหน้ากลม",
+    "ผมคุณอาจทรงไม่อยู่",
+    "ต้องจัดทรง 7 นาที/วัน",
+    "ค่าดูแล ~฿325/เดือน เกินงบ"
+   ]
+  },
+  {
+   "style_id": "mullet",
+   "score": 15,
+   "face_fit": false,
+   "upkeep_month_thb": 390.0,
+   "verdict": "เสี่ยง",
+   "reasons_th": [
+    "ไม่ค่อยเข้ากับหน้ากลม",
+    "ผมคุณอาจทรงไม่อยู่",
+    "ค่าดูแล ~฿390/เดือน เกินงบ"
+   ]
+  }
+ ],
+ "BarberCard": [
+  {
+   "style_id": "two_block",
+   "name_th": "ทูบล็อกเท็กซ์เจอร์",
+   "zones": [
+    {
+     "zone": "top",
+     "length_mm": 70,
+     "note_th": "ซอยเท็กซ์เจอร์"
+    },
+    {
+     "zone": "fringe",
+     "length_mm": 60,
+     "note_th": "ปัดลงเฉียง"
+    },
+    {
+     "zone": "sides",
+     "length_mm": 6,
+     "note_th": "ไถ ไม่ไล่เฟด"
+    },
+    {
+     "zone": "back",
+     "length_mm": 6,
+     "note_th": ""
+    },
+    {
+     "zone": "neckline",
+     "length_mm": 0,
+     "note_th": "เก็บโค้งธรรมชาติ"
+    }
+   ],
+   "top_to_side_ratio": 10.0,
+   "say_to_barber_th": "ไถข้างกับหลัง 6 มิล ไม่ไล่เฟด ด้านบนเหลือ 7 ซม. ซอยเท็กซ์เจอร์ให้ฟู",
+   "dont_th": [
+    "อย่าตัดด้านบนสั้นกว่า 6 ซม."
+   ]
+  }
+ ],
+ "Vote": [
+  {
+   "voter": "ต้น",
+   "option": "two_block"
+  },
+  {
+   "voter": "ฟ้า",
+   "option": "comma"
+  },
+  {
+   "voter": "มิว",
+   "option": "two_block"
+  },
+  {
+   "voter": "เจ",
+   "option": "french_crop"
+  },
+  {
+   "voter": "ปลา",
+   "option": "two_block"
+  },
+  {
+   "voter": "ฟ้า",
+   "option": "two_block"
+  },
+  {
+   "voter": "บอส",
+   "option": "comma"
+  },
+  {
+   "voter": "แนน",
+   "option": "two_block"
+  },
+  {
+   "voter": "เกม",
+   "option": "mohawk"
+  }
+ ],
+ "PollResult": [
+  {
+   "total_votes": 7,
+   "rows": [
+    {
+     "option": "two_block",
+     "votes": 5,
+     "pct": 71.43
+    },
+    {
+     "option": "comma",
+     "votes": 1,
+     "pct": 14.29
+    },
+    {
+     "option": "french_crop",
+     "votes": 1,
+     "pct": 14.29
+    }
+   ],
+   "winner": "two_block",
+   "tie": false
+  },
+  {
+   "total_votes": 2,
+   "rows": [
+    {
+     "option": "a",
+     "votes": 1,
+     "pct": 50.0
+    },
+    {
+     "option": "b",
+     "votes": 1,
+     "pct": 50.0
+    }
+   ],
+   "winner": null,
+   "tie": true
+  }
+ ],
+ "ColorCheck": [
+  {
+   "lift_levels": 4,
+   "needs_bleach": true,
+   "bleach_sessions": 1,
+   "tone_fit": true,
+   "est_cost_thb": 2300,
+   "target_th": "น้ำตาลอ่อน",
+   "warning_th": "ต้องฟอก ผมเสียง่าย ทำทรีตเมนต์ด้วย"
+  },
+  {
+   "lift_levels": 2,
+   "needs_bleach": false,
+   "bleach_sessions": 0,
+   "tone_fit": true,
+   "est_cost_thb": 1500,
+   "target_th": "น้ำตาลเข้ม",
+   "warning_th": "ไม่ต้องฟอก ทำได้ในครั้งเดียว"
+  },
+  {
+   "lift_levels": 1,
+   "needs_bleach": false,
+   "bleach_sessions": 0,
+   "tone_fit": false,
+   "est_cost_thb": 1500,
+   "target_th": "น้ำตาลเข้ม",
+   "warning_th": "ไม่ต้องฟอก ทำได้ในครั้งเดียว"
+  }
+ ],
+ "GrowOut": [
+  {
+   "months": 4.8,
+   "weeks": 21,
+   "trim_needed": false,
+   "assumption_th": "ผมยาว ~1.25 ซม./เดือน (ค่าเฉลี่ย ตั้งค่าได้)"
+  },
+  {
+   "months": 0,
+   "weeks": 0,
+   "trim_needed": true,
+   "assumption_th": "ผมยาว ~1.25 ซม./เดือน (ค่าเฉลี่ย ตั้งค่าได้)"
+  }
+ ],
+ "CutLog": [
+  {
+   "date": "2026-11-02",
+   "style_id": "two_block",
+   "salon": "ร้านตัดผมหน้าปากซอย",
+   "price_thb": 250,
+   "photo": true,
+   "rating": 5,
+   "note_th": "ช่างทำตามการ์ดเป๊ะ"
+  }
+ ],
+ "CutReminder": [
+  {
+   "next_cut_date": "2026-11-30",
+   "maintenance_weeks": 4
+  }
+ ],
+ "YearCost": [
+  {
+   "month_thb": 270.83,
+   "year_thb": 3249.96
+  },
+  {
+   "month_thb": 302.78,
+   "year_thb": 3633.36
+  }
+ ],
+ "ShareCard": [
+  {
+   "kind": "try_on_grid",
+   "title_th": "ลอง 9 ทรงใน 30 วิ",
+   "big_stat": "9 ทรง",
+   "sub_th": "หน้ากลม · ผมตรงหนา",
+   "disclaimer_th": "ภาพลองทรงสร้างด้วย AI ผลจริงขึ้นกับสภาพผมและฝีมือช่าง"
+  },
+  {
+   "kind": "before_after",
+   "title_th": "ก่อน/หลัง ทูบล็อก",
+   "big_stat": "100/100",
+   "sub_th": "เข้ากับหน้ากลม ค่าดูแล ~฿271/เดือน",
+   "disclaimer_th": "ภาพลองทรงสร้างด้วย AI ผลจริงขึ้นกับสภาพผมและฝีมือช่าง"
+  },
+  {
+   "kind": "poll",
+   "title_th": "เพื่อนเลือกให้แล้ว",
+   "big_stat": "71%",
+   "sub_th": "5 จาก 7 โหวตทูบล็อก",
+   "disclaimer_th": "ภาพลองทรงสร้างด้วย AI ผลจริงขึ้นกับสภาพผมและฝีมือช่าง"
+  },
+  {
+   "kind": "barber_card",
+   "title_th": "ยื่นให้ช่างเลย",
+   "big_stat": "ข้าง 6 มิล · บน 7 ซม.",
+   "sub_th": "ไถข้างกับหลัง 6 มิล ไม่ไล่เฟด ด้านบนเหลือ 7 ซม. ซอยเท็กซ์เจอร์ให้ฟู",
+   "disclaimer_th": "ภาพลองทรงสร้างด้วย AI ผลจริงขึ้นกับสภาพผมและฝีมือช่าง"
+  },
+  {
+   "kind": "face_shape",
+   "title_th": "หน้าฉันทรงอะไร",
+   "big_stat": "หน้ากลม",
+   "sub_th": "ยาว/กว้าง 1.22 · กราม/โหนก 0.86",
+   "disclaimer_th": "ภาพลองทรงสร้างด้วย AI ผลจริงขึ้นกับสภาพผมและฝีมือช่าง"
+  }
+ ]
+}

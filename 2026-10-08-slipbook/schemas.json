@@ -1,0 +1,1457 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-wanla-app.example/slipbook/schemas.json",
+  "title": "SlipBook data contracts",
+  "description": "SlipBook (AI วันละแอป Day 9/10, 2026-10-08). Types for lib/parse.ts, lib/categorize.ts, lib/money.ts, budgets, wrapped, share, storage, runtime AI.",
+  "$defs": {
+    "CategoryKey": {
+      "type": "string",
+      "enum": [
+        "food",
+        "cafe",
+        "transport",
+        "shopping",
+        "bills",
+        "subscription",
+        "family",
+        "friends",
+        "health",
+        "fun",
+        "other"
+      ]
+    },
+    "TxnCategory": {
+      "type": "string",
+      "enum": [
+        "food",
+        "cafe",
+        "transport",
+        "shopping",
+        "bills",
+        "subscription",
+        "family",
+        "friends",
+        "health",
+        "fun",
+        "other",
+        "income"
+      ],
+      "description": "income only for direction=in"
+    },
+    "Direction": {
+      "type": "string",
+      "enum": [
+        "out",
+        "in"
+      ]
+    },
+    "BankCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "KBANK",
+        "SCB",
+        "KTB",
+        "BBL",
+        "BAY",
+        "TTB",
+        "GSB",
+        "TRUEMONEY",
+        null
+      ]
+    },
+    "HexColor": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "DateLocal": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "YearMonth": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}$"
+    },
+    "TimeHM": {
+      "type": "string",
+      "pattern": "^\\d{2}:\\d{2}$"
+    },
+    "DateTime": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\+07:00|Z)$"
+    },
+    "Money": {
+      "type": "number",
+      "minimum": 0,
+      "multipleOf": 0.01,
+      "description": "THB, 2 decimals, always positive; sign comes from direction"
+    },
+    "MaskedAccount": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[xX\\*][-\\dxX\\* ]+$",
+      "description": "never store a full account number"
+    },
+    "Category": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/CategoryKey"
+        },
+        "label_th": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "color": {
+          "$ref": "#/$defs/HexColor"
+        }
+      },
+      "required": [
+        "key",
+        "label_th",
+        "emoji",
+        "color"
+      ],
+      "additionalProperties": false
+    },
+    "CategoryRule": {
+      "type": "object",
+      "properties": {
+        "keyword": {
+          "type": "string",
+          "minLength": 2
+        },
+        "category": {
+          "$ref": "#/$defs/CategoryKey"
+        }
+      },
+      "required": [
+        "keyword",
+        "category"
+      ],
+      "additionalProperties": false
+    },
+    "MerchantMemory": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/CategoryKey"
+      },
+      "description": "normalized counterparty (lowercase, single spaces) -> category"
+    },
+    "Settings": {
+      "type": "object",
+      "properties": {
+        "owner_names": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "lang": {
+          "enum": [
+            "th",
+            "en"
+          ]
+        },
+        "ocr_engine": {
+          "enum": [
+            "tesseract_tha_eng",
+            "server_vision",
+            "manual"
+          ]
+        },
+        "ai_parse": {
+          "enum": [
+            "off",
+            "fallback",
+            "always"
+          ]
+        },
+        "keep_images": {
+          "type": "boolean"
+        },
+        "mask_accounts": {
+          "type": "boolean"
+        },
+        "hide_amounts_on_share": {
+          "type": "boolean"
+        },
+        "month_start_day": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 28
+        },
+        "pin_lock": {
+          "type": "boolean"
+        },
+        "reminder": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "time": {
+              "$ref": "#/$defs/TimeHM"
+            }
+          },
+          "required": [
+            "enabled",
+            "time"
+          ],
+          "additionalProperties": false
+        },
+        "currency": {
+          "const": "THB"
+        }
+      },
+      "required": [
+        "owner_names",
+        "lang",
+        "ocr_engine",
+        "ai_parse",
+        "keep_images",
+        "mask_accounts",
+        "hide_amounts_on_share",
+        "month_start_day",
+        "pin_lock",
+        "reminder",
+        "currency"
+      ],
+      "additionalProperties": false
+    },
+    "Budget": {
+      "type": "object",
+      "properties": {
+        "month": {
+          "$ref": "#/$defs/YearMonth"
+        },
+        "by_category": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/CategoryKey"
+          },
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      },
+      "required": [
+        "month",
+        "by_category"
+      ],
+      "additionalProperties": false
+    },
+    "SlipRaw": {
+      "type": "object",
+      "properties": {
+        "slip_id": {
+          "type": "string"
+        },
+        "file_name": {
+          "type": "string"
+        },
+        "template_hint": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "unknown"
+          ]
+        },
+        "ocr_text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "slip_id",
+        "file_name",
+        "template_hint",
+        "ocr_text"
+      ],
+      "additionalProperties": false
+    },
+    "CategoryGuess": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/TxnCategory"
+        },
+        "source": {
+          "enum": [
+            "memory",
+            "rule",
+            "person_default",
+            "fallback",
+            "direction",
+            "ai",
+            "user"
+          ]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "category",
+        "source",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "ParsedSlip": {
+      "type": "object",
+      "properties": {
+        "slip_id": {
+          "type": "string"
+        },
+        "file_name": {
+          "type": "string"
+        },
+        "template_hint": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "unknown"
+          ]
+        },
+        "parse_engine": {
+          "enum": [
+            "regex_th_v1",
+            "ai_vision_v1"
+          ]
+        },
+        "amount": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/Money"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "currency": {
+          "const": "THB"
+        },
+        "date": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/DateLocal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "time": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/TimeHM"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "counterparty": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "counterparty_account_masked": {
+          "$ref": "#/$defs/MaskedAccount"
+        },
+        "direction": {
+          "$ref": "#/$defs/Direction"
+        },
+        "bank": {
+          "$ref": "#/$defs/BankCode"
+        },
+        "parse_confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "missing_fields": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "amount",
+              "date",
+              "time",
+              "ref",
+              "counterparty"
+            ]
+          }
+        },
+        "dedupe_key": {
+          "type": "string",
+          "pattern": "^(ref:|fp:)"
+        },
+        "category_guess": {
+          "$ref": "#/$defs/CategoryGuess"
+        },
+        "status": {
+          "enum": [
+            "ok",
+            "needs_review",
+            "duplicate",
+            "failed"
+          ]
+        },
+        "duplicate_of": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "review_reasons": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "missing_fields",
+              "who_is_this",
+              "amount_unreadable",
+              "not_a_slip"
+            ]
+          }
+        }
+      },
+      "required": [
+        "slip_id",
+        "file_name",
+        "template_hint",
+        "parse_engine",
+        "amount",
+        "currency",
+        "date",
+        "time",
+        "ref",
+        "counterparty",
+        "counterparty_account_masked",
+        "direction",
+        "bank",
+        "parse_confidence",
+        "missing_fields",
+        "dedupe_key",
+        "category_guess",
+        "status",
+        "duplicate_of",
+        "review_reasons"
+      ],
+      "additionalProperties": false
+    },
+    "ImportBatch": {
+      "type": "object",
+      "properties": {
+        "batch_id": {
+          "type": "string"
+        },
+        "created_at": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "files_dropped": {
+          "type": "integer"
+        },
+        "parsed_ok": {
+          "type": "integer"
+        },
+        "duplicates_skipped": {
+          "type": "integer"
+        },
+        "needs_review": {
+          "type": "integer"
+        },
+        "added": {
+          "type": "integer"
+        },
+        "out_total": {
+          "$ref": "#/$defs/Money"
+        },
+        "in_total": {
+          "$ref": "#/$defs/Money"
+        },
+        "duration_ms_target": {
+          "type": "integer"
+        },
+        "slip_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "batch_id",
+        "created_at",
+        "files_dropped",
+        "parsed_ok",
+        "duplicates_skipped",
+        "needs_review",
+        "added",
+        "out_total",
+        "in_total",
+        "duration_ms_target",
+        "slip_ids"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewEdit": {
+      "type": "object",
+      "properties": {
+        "slip_id": {
+          "type": "string"
+        },
+        "question_th": {
+          "type": "string"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CategoryKey"
+          }
+        },
+        "chosen": {
+          "$ref": "#/$defs/CategoryKey"
+        },
+        "remember": {
+          "type": "boolean"
+        },
+        "memory_key": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "slip_id",
+        "question_th",
+        "options",
+        "chosen",
+        "remember",
+        "memory_key",
+        "note"
+      ],
+      "additionalProperties": false
+    },
+    "Transaction": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^tx_\\d{3,}$"
+        },
+        "date": {
+          "$ref": "#/$defs/DateLocal"
+        },
+        "time": {
+          "$ref": "#/$defs/TimeHM"
+        },
+        "created_at": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "counterparty": {
+          "type": "string"
+        },
+        "amount": {
+          "$ref": "#/$defs/Money"
+        },
+        "currency": {
+          "const": "THB"
+        },
+        "direction": {
+          "$ref": "#/$defs/Direction"
+        },
+        "category": {
+          "$ref": "#/$defs/TxnCategory"
+        },
+        "category_source": {
+          "enum": [
+            "memory",
+            "rule",
+            "person_default",
+            "fallback",
+            "direction",
+            "ai",
+            "user"
+          ]
+        },
+        "source": {
+          "enum": [
+            "slip",
+            "manual",
+            "csv"
+          ]
+        },
+        "slip_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "note": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "date",
+        "time",
+        "created_at",
+        "counterparty",
+        "amount",
+        "currency",
+        "direction",
+        "category",
+        "category_source",
+        "source",
+        "slip_id",
+        "ref",
+        "note",
+        "tags"
+      ],
+      "additionalProperties": false
+    },
+    "CategoryTotal": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/CategoryKey"
+        },
+        "label_th": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "color": {
+          "$ref": "#/$defs/HexColor"
+        },
+        "amount": {
+          "$ref": "#/$defs/Money"
+        },
+        "percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "count": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "category",
+        "label_th",
+        "emoji",
+        "color",
+        "amount",
+        "percent",
+        "count"
+      ],
+      "additionalProperties": false
+    },
+    "DailyTotal": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "$ref": "#/$defs/DateLocal"
+        },
+        "amount": {
+          "$ref": "#/$defs/Money"
+        },
+        "heat": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        }
+      },
+      "required": [
+        "date",
+        "amount",
+        "heat"
+      ],
+      "additionalProperties": false
+    },
+    "Dashboard": {
+      "type": "object",
+      "properties": {
+        "month": {
+          "$ref": "#/$defs/YearMonth"
+        },
+        "spent_total": {
+          "$ref": "#/$defs/Money"
+        },
+        "income_total": {
+          "$ref": "#/$defs/Money"
+        },
+        "txn_count": {
+          "type": "integer"
+        },
+        "by_category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CategoryTotal"
+          }
+        },
+        "daily": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DailyTotal"
+          }
+        },
+        "top_counterparties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "count": {
+                "type": "integer"
+              },
+              "amount": {
+                "$ref": "#/$defs/Money"
+              }
+            },
+            "required": [
+              "name",
+              "count",
+              "amount"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 5
+        }
+      },
+      "required": [
+        "month",
+        "spent_total",
+        "income_total",
+        "txn_count",
+        "by_category",
+        "daily",
+        "top_counterparties"
+      ],
+      "additionalProperties": false
+    },
+    "Jar": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/CategoryKey"
+        },
+        "label_th": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "budget": {
+          "type": "number"
+        },
+        "spent": {
+          "$ref": "#/$defs/Money"
+        },
+        "left": {
+          "type": "number"
+        },
+        "percent": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "state": {
+          "enum": [
+            "ok",
+            "warn",
+            "over"
+          ]
+        }
+      },
+      "required": [
+        "category",
+        "label_th",
+        "emoji",
+        "budget",
+        "spent",
+        "left",
+        "percent",
+        "state"
+      ],
+      "additionalProperties": false
+    },
+    "BudgetStatus": {
+      "type": "object",
+      "properties": {
+        "month": {
+          "$ref": "#/$defs/YearMonth"
+        },
+        "today": {
+          "$ref": "#/$defs/DateLocal"
+        },
+        "days_in_month": {
+          "type": "integer"
+        },
+        "remaining_days_incl_today": {
+          "type": "integer"
+        },
+        "budget_total": {
+          "type": "number"
+        },
+        "spent_total": {
+          "$ref": "#/$defs/Money"
+        },
+        "left_total": {
+          "type": "number"
+        },
+        "safe_per_day": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "expected_percent_by_today": {
+          "type": "integer"
+        },
+        "jars": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Jar"
+          }
+        }
+      },
+      "required": [
+        "month",
+        "today",
+        "days_in_month",
+        "remaining_days_incl_today",
+        "budget_total",
+        "spent_total",
+        "left_total",
+        "safe_per_day",
+        "expected_percent_by_today",
+        "jars"
+      ],
+      "additionalProperties": false
+    },
+    "Subscription": {
+      "type": "object",
+      "properties": {
+        "counterparty": {
+          "type": "string"
+        },
+        "amount": {
+          "$ref": "#/$defs/Money"
+        },
+        "months": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/YearMonth"
+          },
+          "minItems": 2
+        },
+        "day_of_month": {
+          "type": "integer"
+        },
+        "yearly_cost": {
+          "$ref": "#/$defs/Money"
+        },
+        "category": {
+          "$ref": "#/$defs/CategoryKey"
+        }
+      },
+      "required": [
+        "counterparty",
+        "amount",
+        "months",
+        "day_of_month",
+        "yearly_cost",
+        "category"
+      ],
+      "additionalProperties": false
+    },
+    "WrappedSlide": {
+      "type": "object",
+      "properties": {
+        "n": {
+          "type": "integer"
+        },
+        "kind": {
+          "enum": [
+            "total",
+            "top_category",
+            "favorite_place",
+            "biggest_day",
+            "no_spend_days",
+            "subscriptions"
+          ]
+        },
+        "headline_th": {
+          "type": "string"
+        },
+        "sub_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "n",
+        "kind",
+        "headline_th",
+        "sub_th"
+      ],
+      "additionalProperties": false
+    },
+    "Wrapped": {
+      "type": "object",
+      "properties": {
+        "month": {
+          "$ref": "#/$defs/YearMonth"
+        },
+        "title_th": {
+          "type": "string"
+        },
+        "spent_total": {
+          "$ref": "#/$defs/Money"
+        },
+        "txn_count": {
+          "type": "integer"
+        },
+        "slides": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WrappedSlide"
+          },
+          "minItems": 6,
+          "maxItems": 6
+        },
+        "favorite": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "count": {
+              "type": "integer"
+            },
+            "amount": {
+              "$ref": "#/$defs/Money"
+            },
+            "compare_th": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "count",
+            "amount",
+            "compare_th"
+          ],
+          "additionalProperties": false
+        },
+        "no_spend_days": {
+          "type": "integer"
+        },
+        "biggest_day": {
+          "$ref": "#/$defs/DailyTotal"
+        }
+      },
+      "required": [
+        "month",
+        "title_th",
+        "spent_total",
+        "txn_count",
+        "slides",
+        "favorite",
+        "no_spend_days",
+        "biggest_day"
+      ],
+      "additionalProperties": false
+    },
+    "ShareCard": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "variant": {
+          "enum": [
+            "wrapped_story",
+            "donut_square",
+            "safe_per_day_story"
+          ]
+        },
+        "size": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "month": {
+          "$ref": "#/$defs/YearMonth"
+        },
+        "show_amounts": {
+          "type": "boolean"
+        },
+        "show_counterparties": {
+          "const": false,
+          "description": "never put names of people on a share card in v1"
+        },
+        "headline_th": {
+          "type": "string"
+        },
+        "lines_th": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 5
+        },
+        "footer_th": {
+          "type": "string"
+        },
+        "theme": {
+          "enum": [
+            "mint",
+            "night",
+            "paper"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "variant",
+        "size",
+        "month",
+        "show_amounts",
+        "show_counterparties",
+        "headline_th",
+        "lines_th",
+        "footer_th",
+        "theme"
+      ],
+      "additionalProperties": false
+    },
+    "ReelBeat": {
+      "type": "object",
+      "properties": {
+        "t": {
+          "type": "string"
+        },
+        "shot": {
+          "type": "string"
+        },
+        "overlay": {
+          "type": "string"
+        },
+        "vo": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "t",
+        "shot",
+        "overlay",
+        "vo"
+      ],
+      "additionalProperties": false
+    },
+    "TestVector": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "input_slip": {
+          "type": "string"
+        },
+        "expect": {}
+      },
+      "required": [
+        "name",
+        "expect"
+      ],
+      "additionalProperties": false
+    },
+    "FeatureItem": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "done": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "key",
+        "label",
+        "done"
+      ],
+      "additionalProperties": false
+    },
+    "FeatureChecklist": {
+      "type": "object",
+      "properties": {
+        "must_have": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FeatureItem"
+          },
+          "minItems": 5
+        },
+        "nice_to_have": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FeatureItem"
+          }
+        }
+      },
+      "required": [
+        "must_have",
+        "nice_to_have"
+      ],
+      "additionalProperties": false
+    },
+    "AnalyticsEvent": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "enum": [
+            "import_started",
+            "import_completed",
+            "category_corrected",
+            "budget_set",
+            "jar_warned",
+            "wrapped_viewed",
+            "share_card_exported",
+            "demo_loaded"
+          ]
+        },
+        "at": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "props": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "at",
+        "props"
+      ],
+      "additionalProperties": false
+    },
+    "LocalStore": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "const": "slipbook:v1"
+        },
+        "version": {
+          "const": 1
+        },
+        "settings": {
+          "$ref": "#/$defs/Settings"
+        },
+        "budgets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Budget"
+          }
+        },
+        "merchant_memory": {
+          "$ref": "#/$defs/MerchantMemory"
+        },
+        "txn_count": {
+          "type": "integer"
+        },
+        "last_import_batch": {
+          "type": "string"
+        },
+        "seen_dedupe_keys_count": {
+          "type": "integer"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "version",
+        "settings",
+        "budgets",
+        "merchant_memory",
+        "txn_count",
+        "last_import_batch",
+        "seen_dedupe_keys_count",
+        "note"
+      ],
+      "additionalProperties": false
+    },
+    "AiParseRequest": {
+      "type": "object",
+      "properties": {
+        "ocr_text": {
+          "type": "string"
+        },
+        "owner_names": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "image_attached": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "ocr_text",
+        "owner_names"
+      ],
+      "additionalProperties": false
+    },
+    "AiParseResponse": {
+      "type": "object",
+      "properties": {
+        "is_slip": {
+          "type": "boolean"
+        },
+        "amount": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "time": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "counterparty": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "direction": {
+          "$ref": "#/$defs/Direction"
+        },
+        "bank": {
+          "$ref": "#/$defs/BankCode"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "notes_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "is_slip",
+        "amount",
+        "date",
+        "time",
+        "ref",
+        "counterparty",
+        "direction",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "AiCategoryResponse": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/CategoryKey"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "reason_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "category",
+        "confidence",
+        "reason_th"
+      ],
+      "additionalProperties": false
+    },
+    "AiWrappedLines": {
+      "type": "object",
+      "properties": {
+        "headline_th": {
+          "type": "string"
+        },
+        "lines_th": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 3,
+          "maxItems": 5
+        },
+        "tip_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "headline_th",
+        "lines_th",
+        "tip_th"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "categories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Category"
+      }
+    },
+    "category_rules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/CategoryRule"
+      }
+    },
+    "merchant_memory_before": {
+      "$ref": "#/$defs/MerchantMemory"
+    },
+    "merchant_memory_after": {
+      "$ref": "#/$defs/MerchantMemory"
+    },
+    "settings_example": {
+      "$ref": "#/$defs/Settings"
+    },
+    "budgets": {
+      "$ref": "#/$defs/Budget"
+    },
+    "slips_raw": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SlipRaw"
+      }
+    },
+    "parsed_slips": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ParsedSlip"
+      }
+    },
+    "import_batch_example": {
+      "$ref": "#/$defs/ImportBatch"
+    },
+    "review_edit_example": {
+      "$ref": "#/$defs/ReviewEdit"
+    },
+    "ledger": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Transaction"
+      }
+    },
+    "dashboard_oct": {
+      "$ref": "#/$defs/Dashboard"
+    },
+    "dashboard_sep": {
+      "$ref": "#/$defs/Dashboard"
+    },
+    "budget_status_oct": {
+      "$ref": "#/$defs/BudgetStatus"
+    },
+    "subscriptions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Subscription"
+      }
+    },
+    "wrapped_sep": {
+      "$ref": "#/$defs/Wrapped"
+    },
+    "share_cards": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ShareCard"
+      }
+    },
+    "reel_script_th": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ReelBeat"
+      }
+    },
+    "test_vectors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/TestVector"
+      }
+    },
+    "feature_checklist_example": {
+      "$ref": "#/$defs/FeatureChecklist"
+    },
+    "analytics_events_example": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/AnalyticsEvent"
+      }
+    },
+    "local_store_example": {
+      "$ref": "#/$defs/LocalStore"
+    }
+  }
+}

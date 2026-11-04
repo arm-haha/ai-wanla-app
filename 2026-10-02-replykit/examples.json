@@ -1,0 +1,988 @@
+{
+  "meta": {
+    "app": "ReplyKit",
+    "channel": "AI วันละแอป",
+    "day_index": 5,
+    "total_days": 10,
+    "date": "2026-10-02",
+    "timezone": "Asia/Bangkok",
+    "hook_th": "วางข้อความแชท → ได้ชุดตอบหลายโทน ใน 10 วินาที",
+    "stack": "Next.js 14 App Router + TypeScript + Tailwind + shadcn/ui + mock_demo reply/extract + localStorage",
+    "brand": {
+      "bg": "#FFFBEB",
+      "bg_soft": "#FAFAF9",
+      "primary": "#0D9488",
+      "primary_mint": "#14B8A6",
+      "accent": "#FB7185",
+      "card": "#FFFFFF",
+      "ink": "#134E4A",
+      "muted": "#64748B"
+    },
+    "disclaimer_th": "ReplyKit เป็นตัวช่วยร่างข้อความ คุณเลือกส่งเอง — ไม่ได้รู้ความสัมพันธ์หรือเจตนาของคู่สนทนา",
+    "demo_fixture_primary_th": "เพื่อนทักเรื่องวันเสาร์ เงียบ 3 วัน → 5 ชุดตอบ soft/funny/warm/firm/pro",
+    "demo_fixture_backup_th": "ปฏิเสธนุ่มๆ คำชวนเที่ยวเสาร์ → 4 ชุดตอบ"
+  },
+  "feature_checklist_example": {
+    "app": "ReplyKit",
+    "date": "2026-10-02",
+    "must_implemented_count": 5,
+    "ready_to_film": true,
+    "features": [
+      {
+        "id": "paste_reply_pack",
+        "name_th": "Paste → Reply Pack",
+        "name_en": "Paste → Reply Pack",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "ปุ่มใช้ข้อความเดโม + กองการ์ดตอบ 4–5 โทนใน ≤2s"
+      },
+      {
+        "id": "tone_dial",
+        "name_th": "Tone Dial",
+        "name_en": "Tone Dial",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "soft/funny/pro/firm/warm — filter หรือ regen"
+      },
+      {
+        "id": "situation_library",
+        "name_th": "Situation Library",
+        "name_en": "Situation Library",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "คิทไทย ≥6 + สร้าง/rename/favorite"
+      },
+      {
+        "id": "screenshot_extract",
+        "name_th": "Screenshot → Extract",
+        "name_en": "Screenshot → Extract",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "ปุ่มใช้รูปเดโม → mock last inbound → Reply Pack"
+      },
+      {
+        "id": "copy_share_reply_card",
+        "name_th": "Copy & Share Reply Card",
+        "name_en": "Copy & Share Reply Card",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "one-tap copy + การ์ดแชร์ + แคปชันมือถือ"
+      },
+      {
+        "id": "rewrite_draft",
+        "name_th": "Rewrite my draft",
+        "name_en": "Rewrite my draft",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": "เสริมถ้าเสร็จเร็ว"
+      },
+      {
+        "id": "voice_preview",
+        "name_th": "Voice preview",
+        "name_en": "Voice preview",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": "speechSynthesis th-TH"
+      },
+      {
+        "id": "favorite_history",
+        "name_th": "Favorite replies history",
+        "name_en": "Favorite replies history",
+        "tier": "nice",
+        "implemented": true,
+        "demo_in_reel": false,
+        "notes": "เก็บใน localStorage เป็นค่าเริ่มเบาๆ"
+      },
+      {
+        "id": "bilingual",
+        "name_th": "Bilingual TH/EN",
+        "name_en": "Bilingual TH/EN",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": ""
+      },
+      {
+        "id": "emoji_booster",
+        "name_th": "emoji booster",
+        "name_en": "emoji booster",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": ""
+      },
+      {
+        "id": "dark_chat_mode",
+        "name_th": "Dark chat mode",
+        "name_en": "Dark chat mode",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": ""
+      }
+    ]
+  },
+  "ui_copy_th": {
+    "home_headline": "วางข้อความแชท → ได้ชุดตอบหลายโทน ใน 10 วินาที",
+    "home_sub": "วางแชทอึดอัด ได้ชุดตอบนุ่ม ตลก โปร หนักแน่น อบอุ่น แล้วก็อปไปวางได้เลย",
+    "home_cta": "วางข้อความ",
+    "home_demo_cta": "ใช้ข้อความเดโม",
+    "home_screenshot_cta": "ใช้รูปเดโม",
+    "composer_placeholder": "วางข้อความที่ตอบยาก เช่น เพื่อนทักเรื่องวันเสาร์…",
+    "generate_loading": "กำลังคิดชุดตอบหลายโทน…",
+    "generate_done": "ได้ชุดตอบแล้ว — เลือกโทนแล้วก็อปได้เลย",
+    "generate_fail": "สร้างชุดตอบไม่สำเร็จ ลองวางข้อความใหม่",
+    "generate_low_confidence": "อาจไม่เข้าบริบท — แก้ข้อความต้นทางแล้วลองใหม่ได้",
+    "tone_dial_title": "Tone Dial",
+    "tone_soft": "นุ่ม",
+    "tone_funny": "ตลก",
+    "tone_pro": "โปร",
+    "tone_firm": "หนักแน่น",
+    "tone_warm": "อบอุ่น",
+    "tone_changed": "โทน{name} — จัดแพ็กให้แล้ว",
+    "tone_regen": "สร้างใหม่ตามโทนนี้",
+    "copy_cta": "คัดลอก",
+    "copy_toast": "คัดลอกแล้ว ไปวางในแชทได้",
+    "favorite_toast": "เก็บในรายการโปรดแล้ว",
+    "library_title": "คลังสถานการณ์",
+    "library_create": "สร้างสถานการณ์ใหม่",
+    "library_rename": "เปลี่ยนชื่อ",
+    "library_favorite": "ติดดาว",
+    "library_empty": "ยังไม่มีสถานการณ์ — บันทึกจากชุดตอบแรกเลย",
+    "extract_loading": "กำลังอ่านข้อความจากรูป…",
+    "extract_done": "ดึงข้อความแล้ว — ตรวจคำก่อนสร้างชุดตอบ",
+    "extract_fail": "อ่านรูปไม่สำเร็จ ลองวางข้อความมือ",
+    "share_title": "แชร์การ์ดตอบ",
+    "share_copied": "คัดลอกแคปชันแล้ว",
+    "share_fail": "แชร์ไม่สำเร็จ ลองบันทึกรูปแทน",
+    "disclaimer": "ตัวช่วยร่างข้อความ — คุณเลือกส่งเอง ไม่ได้รู้ความสัมพันธ์",
+    "cta_comment": "คอมเมนต์「ตอบ」เพื่อรับลิงก์",
+    "save_situation": "บันทึกเป็นสถานการณ์",
+    "edit_inbound": "แก้ข้อความต้นทาง"
+  },
+  "tones_sample": [
+    {
+      "id": "soft",
+      "label_th": "นุ่ม",
+      "label_en": "Soft",
+      "emoji": "🥺",
+      "color_hex": "#14B8A6"
+    },
+    {
+      "id": "funny",
+      "label_th": "ตลก",
+      "label_en": "Funny",
+      "emoji": "😄",
+      "color_hex": "#F59E0B"
+    },
+    {
+      "id": "pro",
+      "label_th": "โปร",
+      "label_en": "Pro",
+      "emoji": "✉️",
+      "color_hex": "#0F766E"
+    },
+    {
+      "id": "firm",
+      "label_th": "หนักแน่น",
+      "label_en": "Firm",
+      "emoji": "✋",
+      "color_hex": "#134E4A"
+    },
+    {
+      "id": "warm",
+      "label_th": "อบอุ่น",
+      "label_en": "Warm",
+      "emoji": "💛",
+      "color_hex": "#FB7185"
+    }
+  ],
+  "paste_reply_example": {
+    "id": "pack_demo_saturday",
+    "inbound_th": "เดี๋ยวก่อนนน คุยเรื่องวันเสาร์ไปไหนกัน ทำไมเงียบ 3 วันแล้ว 🥺",
+    "inbound_en": "Hold up — about Saturday plans, why the 3-day silence? 🥺",
+    "situation_id": "reply_late",
+    "selected_tones": [
+      "soft",
+      "funny",
+      "warm",
+      "firm",
+      "pro"
+    ],
+    "replies": [
+      {
+        "id": "ro_soft_01",
+        "tone": "soft",
+        "text_th": "ขอโทษที่เงียบไปเลยนะ ช่วงนี้จมงานนิดหน่อย เรื่องวันเสาร์ยังอยากไปอยู่นะ ว่างช่วงเย็นไหม เดี๋ยวนัดใหม่ให้ชัดๆ 🥺",
+        "text_en": "Sorry I've been quiet — still want to hang Saturday. Free in the evening?",
+        "short_label_th": "ขอโทษนุ่ม",
+        "emoji": "🥺",
+        "char_count": 96,
+        "is_favorite": false,
+        "score": 0.94
+      },
+      {
+        "id": "ro_funny_01",
+        "tone": "funny",
+        "text_th": "แบตสังคมหมด 3 วันจริงๆ 555 ขอโทษค้าบ วันเสาร์ยังเสิร์ฟได้อยู่ไหม ถ้าไปได้แค่ครึ่งวันก็บอกได้ จะจัดตารางให้หายเงียบ",
+        "text_en": "Social battery died for 3 days lol — Saturday still on? Half-day works too.",
+        "short_label_th": "มุขเบา + นัดใหม่",
+        "emoji": "🔋",
+        "char_count": 108,
+        "is_favorite": true,
+        "score": 0.91
+      },
+      {
+        "id": "ro_warm_01",
+        "tone": "warm",
+        "text_th": "ขอบคุณที่ทักมาเตือนนะ หายไปจริงๆ เสียใจที่เงียบ อยากไปวันเสาร์เหมือนเดิม เดี๋ยวเย็นนี้โทรคุยรายละเอียดให้หายห่วงได้ไหม",
+        "text_en": "Thanks for checking in — still want Saturday. Call tonight?",
+        "short_label_th": "อบอุ่น + โทรคุย",
+        "emoji": "💛",
+        "char_count": 110,
+        "is_favorite": false,
+        "score": 0.9
+      },
+      {
+        "id": "ro_firm_01",
+        "tone": "firm",
+        "text_th": "ขอโทษที่เงียบไป 3 วัน ช่วงนี้ตารางแน่นมาก วันเสาร์ยังไปได้แต่ขอสั้นๆ บ่ายโมงถึงสี่โมง ถ้าไม่ไหวเลื่อนอาทิตย์หน้าได้ บอกตรงๆ นะ",
+        "text_en": "Sorry for the 3-day silence. Saturday works briefly 1–4pm, or we move to next week.",
+        "short_label_th": "ชัด + ขอบเขต",
+        "emoji": "✋",
+        "char_count": 118,
+        "is_favorite": false,
+        "score": 0.88
+      },
+      {
+        "id": "ro_pro_01",
+        "tone": "pro",
+        "text_th": "ขออภัยที่ตอบช้า ติดงานต่อเนื่องหลายวัน เรื่องนัดวันเสาร์ยังสะดวกอยู่ ขอคอนเฟิร์มเวลาอีกครั้งได้ไหม จะจัดให้เรียบร้อย",
+        "text_en": "Apologies for the delayed reply. Saturday is still open — can we reconfirm the time?",
+        "short_label_th": "สุภาพกระชับ",
+        "emoji": "✉️",
+        "char_count": 102,
+        "is_favorite": false,
+        "score": 0.86
+      }
+    ],
+    "engine": "mock_demo",
+    "generate_ms": 980,
+    "confidence": 0.9,
+    "warnings_th": [],
+    "source": "demo",
+    "created_at": "2026-10-02T07:58:00+07:00",
+    "updated_at": "2026-10-02T07:58:00+07:00",
+    "demo_user_th": "มิ้นต์",
+    "friend_label_th": "มิกซ์"
+  },
+  "paste_reply_backup_soft_no": {
+    "id": "pack_demo_soft_no",
+    "inbound_th": "เสาร์นี้ว่างไหม ไปเที่ยวกันเถอะ!",
+    "situation_id": "soft_no",
+    "selected_tones": [
+      "soft",
+      "warm",
+      "funny",
+      "firm"
+    ],
+    "replies": [
+      {
+        "id": "sn_soft",
+        "tone": "soft",
+        "text_th": "อยากไปมากเลย แต่เสาร์นี้ติดนัดครอบครัวแล้ว ขอเลื่อนได้ไหม อาทิตย์หน้าว่างกว่านี้ เดี๋ยวนัดให้ชัวร์ๆ นะ",
+        "short_label_th": "ปฏิเสธนุ่ม + เลื่อน",
+        "emoji": "🫶",
+        "char_count": 95
+      },
+      {
+        "id": "sn_warm",
+        "tone": "warm",
+        "text_th": "ขอบคุณที่ชวนนะ น่ารักมาก เสาร์นี้ไปไม่ได้จริงๆ แต่คิดถึงทริปนี้ ไว้ให้ช่วยเลือกวันใหม่ได้ไหม",
+        "short_label_th": "ขอบคุณ + เลื่อน",
+        "emoji": "💛",
+        "char_count": 88
+      },
+      {
+        "id": "sn_funny",
+        "tone": "funny",
+        "text_th": "ใจพร้อม ขาติดบ้าน 555 เสาร์นี้มีภารกิจครอบครัว เลื่อนเป็นอาทิตย์ได้ไหม จะเป็นไกด์ให้เต็มที่",
+        "short_label_th": "มุขเบา + เลื่อน",
+        "emoji": "😅",
+        "char_count": 86
+      },
+      {
+        "id": "sn_firm",
+        "tone": "firm",
+        "text_th": "เสาร์นี้ไปไม่ได้เลยนะ ตารางเต็มแล้ว ถ้าเป็นอาทิตย์หน้าบอกได้ จะจัดให้ แต่รอบนี้ขอผ่านก่อน",
+        "short_label_th": "ชัดเจนสุภาพ",
+        "emoji": "✋",
+        "char_count": 84
+      }
+    ],
+    "engine": "mock_demo",
+    "generate_ms": 860,
+    "confidence": 0.88,
+    "source": "situation",
+    "created_at": "2026-10-02T08:00:00+07:00"
+  },
+  "screenshot_extract_example": {
+    "engine": "mock_demo",
+    "source_image_name": "demo-chat-saturday.png",
+    "raw_note": "fixture สกรีนช็อต LINE สไตล์แชทกับเพื่อนมิกซ์ บับเบิล inbound ล่าสุดเรื่องวันเสาร์ เงียบ 3 วัน",
+    "last_inbound_th": "เดี๋ยวก่อนนน คุยเรื่องวันเสาร์ไปไหนกัน ทำไมเงียบ 3 วันแล้ว 🥺",
+    "last_inbound_en": "Hold up — about Saturday plans, why the 3-day silence? 🥺",
+    "context_messages": [
+      {
+        "id": "msg_prev_1",
+        "role": "outbound",
+        "text_th": "เสาร์นี้ไปไหนดี อยากออกนอกบ้าน",
+        "sender_label_th": "มิ้นต์",
+        "platform": "line",
+        "created_at": "2026-09-29T21:10:00+07:00"
+      },
+      {
+        "id": "msg_prev_2",
+        "role": "inbound",
+        "text_th": "ไปคาเฟ่ชิลๆ ไหม",
+        "sender_label_th": "มิกซ์",
+        "platform": "line",
+        "created_at": "2026-09-29T21:12:00+07:00"
+      },
+      {
+        "id": "msg_last",
+        "role": "inbound",
+        "text_th": "เดี๋ยวก่อนนน คุยเรื่องวันเสาร์ไปไหนกัน ทำไมเงียบ 3 วันแล้ว 🥺",
+        "sender_label_th": "มิกซ์",
+        "platform": "line",
+        "created_at": "2026-10-02T07:40:00+07:00"
+      }
+    ],
+    "extract_ms": 1120,
+    "confidence": 0.86,
+    "warnings_th": [],
+    "suggested_situation_id": "reply_late",
+    "extracted_at": "2026-10-02T07:58:30+07:00",
+    "follows_with_pack_id": "pack_demo_saturday"
+  },
+  "situation_library_example": {
+    "situations": [
+      {
+        "id": "reply_late",
+        "title_th": "ตอบช้า",
+        "title_en": "Reply late",
+        "emoji": "⏰",
+        "prompt_hint_th": "ขอโทษที่เงียบโดยไม่ดราม่า แล้วพาคุยต่อ",
+        "default_tones": [
+          "soft",
+          "funny",
+          "warm"
+        ],
+        "sample_inbound_th": "เดี๋ยวก่อนนน คุยเรื่องวันเสาร์ไปไหนกัน ทำไมเงียบ 3 วันแล้ว 🥺",
+        "color_hex": "#0D9488",
+        "is_favorite": true,
+        "is_preset": true,
+        "use_count": 3,
+        "created_at": "2026-10-02T07:58:00+07:00",
+        "updated_at": "2026-10-02T07:58:00+07:00"
+      },
+      {
+        "id": "soft_no",
+        "title_th": "ปฏิเสธนุ่มๆ",
+        "title_en": "Soft no",
+        "emoji": "🫶",
+        "prompt_hint_th": "ปฏิเสธโดยรักษาความสัมพันธ์ เสนอทางเลือกอื่นถ้าได้",
+        "default_tones": [
+          "soft",
+          "warm",
+          "firm"
+        ],
+        "sample_inbound_th": "เสาร์นี้ว่างไหม ไปเที่ยวกันเถอะ!",
+        "color_hex": "#14B8A6",
+        "is_favorite": false,
+        "is_preset": true,
+        "use_count": 1,
+        "created_at": "2026-10-02T07:58:00+07:00"
+      },
+      {
+        "id": "chase_work",
+        "title_th": "ทวงงาน",
+        "title_en": "Follow up work",
+        "emoji": "📎",
+        "prompt_hint_th": "ทวงงานสุภาพ ชัดเจน มีเดดไลน์",
+        "default_tones": [
+          "pro",
+          "firm",
+          "soft"
+        ],
+        "sample_inbound_th": "(เงียบในแชทงาน 2 วัน หลังขอไฟล์)",
+        "color_hex": "#0F766E",
+        "is_favorite": false,
+        "is_preset": true,
+        "use_count": 0,
+        "created_at": "2026-10-02T07:58:00+07:00"
+      },
+      {
+        "id": "talk_boss",
+        "title_th": "คุยหัวหน้า",
+        "title_en": "Talk to boss",
+        "emoji": "💼",
+        "prompt_hint_th": "สุภาพ กระชับ ไม่เยินยอเกิน",
+        "default_tones": [
+          "pro",
+          "soft",
+          "firm"
+        ],
+        "sample_inbound_th": "ช่วยสรุปสถานะโปรเจกต์ส่งวันนี้หน่อย",
+        "color_hex": "#134E4A",
+        "is_favorite": false,
+        "is_preset": true,
+        "use_count": 0,
+        "created_at": "2026-10-02T07:58:00+07:00"
+      },
+      {
+        "id": "angry_customer",
+        "title_th": "ลูกค้าโกรธ",
+        "title_en": "Angry customer",
+        "emoji": "🔥",
+        "prompt_hint_th": "รับฟัง ขอโทษเชิงบริการ เสนอแก้ชัด",
+        "default_tones": [
+          "soft",
+          "pro",
+          "firm"
+        ],
+        "sample_inbound_th": "รอนานมาก สั่งแล้วยังไม่ได้ของ ผิดหวังมาก",
+        "color_hex": "#FB7185",
+        "is_favorite": true,
+        "is_preset": true,
+        "use_count": 2,
+        "created_at": "2026-10-02T07:58:00+07:00"
+      },
+      {
+        "id": "friend_or_partner",
+        "title_th": "แชทแฟนหรือเพื่อน",
+        "title_en": "Partner or friend chat",
+        "emoji": "💬",
+        "prompt_hint_th": "โทนอบอุ่น เป็นกันเอง ไม่เล่นมุขแรงถ้าคู่สนทนาไม่โอเค",
+        "default_tones": [
+          "warm",
+          "funny",
+          "soft"
+        ],
+        "sample_inbound_th": "วันนี้ไม่ทักเลย คิดถึงนะ",
+        "color_hex": "#F472B6",
+        "is_favorite": false,
+        "is_preset": true,
+        "use_count": 1,
+        "created_at": "2026-10-02T07:58:00+07:00"
+      }
+    ],
+    "total": 6,
+    "favorites_count": 2,
+    "hero_situation_id": "reply_late"
+  },
+  "tone_dial_example": {
+    "selected_tones": [
+      "soft",
+      "funny"
+    ],
+    "mode": "filter",
+    "last_changed_at": "2026-10-02T07:59:10+07:00",
+    "filtered_reply_ids": [
+      "ro_soft_01",
+      "ro_funny_01"
+    ],
+    "note_th": "เมื่อเลือก soft+funny ให้แสดงสองใบนี้ขึ้นก่อน หรือซ่อนโทนอื่น"
+  },
+  "share_card_example": {
+    "kind": "reply_card",
+    "headline_th": "ReplyKit · โทนนุ่ม",
+    "inbound_preview_th": "ทำไมเงียบ 3 วันแล้ว 🥺",
+    "reply_text_th": "ขอโทษที่เงียบไปเลยนะ ช่วงนี้จมงานนิดหน่อย เรื่องวันเสาร์ยังอยากไปอยู่นะ ว่างช่วงเย็นไหม เดี๋ยวนัดใหม่ให้ชัดๆ 🥺",
+    "tone": "soft",
+    "tone_label_th": "นุ่ม",
+    "footer_th": "ReplyKit · AI วันละแอป",
+    "accent_hex": "#FB7185",
+    "bg_hex": "#FFFBEB",
+    "width": 1080,
+    "height": 1350,
+    "caption_th": "เงียบไป 3 วัน ไม่รู้จะตอบยังไง — วางข้อความใน ReplyKit ได้ชุดตอบหลายโทนเลย ลองฟรีที่ลิงก์ในไบโอ แล้วคอมเมนต์「ตอบ」\n\n#ReplyKit #AIวันละแอป #ตอบแชท #โทนข้อความ",
+    "caption_en": "Awkward chat? Paste it into ReplyKit for multi-tone replies.",
+    "file_name": "replykit-2026-10-02-075900.png",
+    "hashtags": [
+      "ReplyKit",
+      "AIวันละแอป",
+      "ตอบแชท",
+      "โทนข้อความ"
+    ]
+  },
+  "local_store_example": {
+    "version": 1,
+    "packs": [
+      {
+        "id": "pack_demo_saturday",
+        "inbound_th": "เดี๋ยวก่อนนน คุยเรื่องวันเสาร์ไปไหนกัน ทำไมเงียบ 3 วันแล้ว 🥺",
+        "situation_id": "reply_late",
+        "selected_tones": [
+          "soft",
+          "funny",
+          "warm",
+          "firm",
+          "pro"
+        ],
+        "replies": [
+          {
+            "id": "ro_soft_01",
+            "tone": "soft",
+            "text_th": "ขอโทษที่เงียบไปเลยนะ ช่วงนี้จมงานนิดหน่อย เรื่องวันเสาร์ยังอยากไปอยู่นะ ว่างช่วงเย็นไหม เดี๋ยวนัดใหม่ให้ชัดๆ 🥺",
+            "text_en": "Sorry I've been quiet — still want to hang Saturday. Free in the evening?",
+            "short_label_th": "ขอโทษนุ่ม",
+            "emoji": "🥺",
+            "char_count": 96,
+            "is_favorite": false,
+            "score": 0.94
+          },
+          {
+            "id": "ro_funny_01",
+            "tone": "funny",
+            "text_th": "แบตสังคมหมด 3 วันจริงๆ 555 ขอโทษค้าบ วันเสาร์ยังเสิร์ฟได้อยู่ไหม ถ้าไปได้แค่ครึ่งวันก็บอกได้ จะจัดตารางให้หายเงียบ",
+            "text_en": "Social battery died for 3 days lol — Saturday still on? Half-day works too.",
+            "short_label_th": "มุขเบา + นัดใหม่",
+            "emoji": "🔋",
+            "char_count": 108,
+            "is_favorite": true,
+            "score": 0.91
+          },
+          {
+            "id": "ro_warm_01",
+            "tone": "warm",
+            "text_th": "ขอบคุณที่ทักมาเตือนนะ หายไปจริงๆ เสียใจที่เงียบ อยากไปวันเสาร์เหมือนเดิม เดี๋ยวเย็นนี้โทรคุยรายละเอียดให้หายห่วงได้ไหม",
+            "text_en": "Thanks for checking in — still want Saturday. Call tonight?",
+            "short_label_th": "อบอุ่น + โทรคุย",
+            "emoji": "💛",
+            "char_count": 110,
+            "is_favorite": false,
+            "score": 0.9
+          },
+          {
+            "id": "ro_firm_01",
+            "tone": "firm",
+            "text_th": "ขอโทษที่เงียบไป 3 วัน ช่วงนี้ตารางแน่นมาก วันเสาร์ยังไปได้แต่ขอสั้นๆ บ่ายโมงถึงสี่โมง ถ้าไม่ไหวเลื่อนอาทิตย์หน้าได้ บอกตรงๆ นะ",
+            "text_en": "Sorry for the 3-day silence. Saturday works briefly 1–4pm, or we move to next week.",
+            "short_label_th": "ชัด + ขอบเขต",
+            "emoji": "✋",
+            "char_count": 118,
+            "is_favorite": false,
+            "score": 0.88
+          },
+          {
+            "id": "ro_pro_01",
+            "tone": "pro",
+            "text_th": "ขออภัยที่ตอบช้า ติดงานต่อเนื่องหลายวัน เรื่องนัดวันเสาร์ยังสะดวกอยู่ ขอคอนเฟิร์มเวลาอีกครั้งได้ไหม จะจัดให้เรียบร้อย",
+            "text_en": "Apologies for the delayed reply. Saturday is still open — can we reconfirm the time?",
+            "short_label_th": "สุภาพกระชับ",
+            "emoji": "✉️",
+            "char_count": 102,
+            "is_favorite": false,
+            "score": 0.86
+          }
+        ],
+        "engine": "mock_demo",
+        "generate_ms": 980,
+        "confidence": 0.9,
+        "source": "demo",
+        "created_at": "2026-10-02T07:58:00+07:00"
+      }
+    ],
+    "situations": [
+      {
+        "id": "reply_late",
+        "title_th": "ตอบช้า",
+        "title_en": "Reply late",
+        "emoji": "⏰",
+        "prompt_hint_th": "ขอโทษที่เงียบโดยไม่ดราม่า แล้วพาคุยต่อ",
+        "default_tones": [
+          "soft",
+          "funny",
+          "warm"
+        ],
+        "sample_inbound_th": "เดี๋ยวก่อนนน คุยเรื่องวันเสาร์ไปไหนกัน ทำไมเงียบ 3 วันแล้ว 🥺",
+        "color_hex": "#0D9488",
+        "is_favorite": true,
+        "is_preset": true,
+        "use_count": 3,
+        "created_at": "2026-10-02T07:58:00+07:00",
+        "updated_at": "2026-10-02T07:58:00+07:00"
+      },
+      {
+        "id": "soft_no",
+        "title_th": "ปฏิเสธนุ่มๆ",
+        "title_en": "Soft no",
+        "emoji": "🫶",
+        "prompt_hint_th": "ปฏิเสธโดยรักษาความสัมพันธ์ เสนอทางเลือกอื่นถ้าได้",
+        "default_tones": [
+          "soft",
+          "warm",
+          "firm"
+        ],
+        "sample_inbound_th": "เสาร์นี้ว่างไหม ไปเที่ยวกันเถอะ!",
+        "color_hex": "#14B8A6",
+        "is_favorite": false,
+        "is_preset": true,
+        "use_count": 1,
+        "created_at": "2026-10-02T07:58:00+07:00"
+      },
+      {
+        "id": "chase_work",
+        "title_th": "ทวงงาน",
+        "title_en": "Follow up work",
+        "emoji": "📎",
+        "prompt_hint_th": "ทวงงานสุภาพ ชัดเจน มีเดดไลน์",
+        "default_tones": [
+          "pro",
+          "firm",
+          "soft"
+        ],
+        "sample_inbound_th": "(เงียบในแชทงาน 2 วัน หลังขอไฟล์)",
+        "color_hex": "#0F766E",
+        "is_favorite": false,
+        "is_preset": true,
+        "use_count": 0,
+        "created_at": "2026-10-02T07:58:00+07:00"
+      },
+      {
+        "id": "talk_boss",
+        "title_th": "คุยหัวหน้า",
+        "title_en": "Talk to boss",
+        "emoji": "💼",
+        "prompt_hint_th": "สุภาพ กระชับ ไม่เยินยอเกิน",
+        "default_tones": [
+          "pro",
+          "soft",
+          "firm"
+        ],
+        "sample_inbound_th": "ช่วยสรุปสถานะโปรเจกต์ส่งวันนี้หน่อย",
+        "color_hex": "#134E4A",
+        "is_favorite": false,
+        "is_preset": true,
+        "use_count": 0,
+        "created_at": "2026-10-02T07:58:00+07:00"
+      },
+      {
+        "id": "angry_customer",
+        "title_th": "ลูกค้าโกรธ",
+        "title_en": "Angry customer",
+        "emoji": "🔥",
+        "prompt_hint_th": "รับฟัง ขอโทษเชิงบริการ เสนอแก้ชัด",
+        "default_tones": [
+          "soft",
+          "pro",
+          "firm"
+        ],
+        "sample_inbound_th": "รอนานมาก สั่งแล้วยังไม่ได้ของ ผิดหวังมาก",
+        "color_hex": "#FB7185",
+        "is_favorite": true,
+        "is_preset": true,
+        "use_count": 2,
+        "created_at": "2026-10-02T07:58:00+07:00"
+      },
+      {
+        "id": "friend_or_partner",
+        "title_th": "แชทแฟนหรือเพื่อน",
+        "title_en": "Partner or friend chat",
+        "emoji": "💬",
+        "prompt_hint_th": "โทนอบอุ่น เป็นกันเอง ไม่เล่นมุขแรงถ้าคู่สนทนาไม่โอเค",
+        "default_tones": [
+          "warm",
+          "funny",
+          "soft"
+        ],
+        "sample_inbound_th": "วันนี้ไม่ทักเลย คิดถึงนะ",
+        "color_hex": "#F472B6",
+        "is_favorite": false,
+        "is_preset": true,
+        "use_count": 1,
+        "created_at": "2026-10-02T07:58:00+07:00"
+      }
+    ],
+    "favorite_reply_ids": [
+      "ro_funny_01"
+    ],
+    "settings": {
+      "locale": "th-TH",
+      "reply_engine": "mock_demo",
+      "extract_engine": "mock_demo",
+      "default_tones": [
+        "soft",
+        "funny",
+        "warm",
+        "firm"
+      ],
+      "dark_chat_mode": false,
+      "emoji_booster": false,
+      "voice_preview": false,
+      "show_disclaimer": true
+    },
+    "last_pack_id": "pack_demo_saturday",
+    "updated_at": "2026-10-02T07:59:10+07:00"
+  },
+  "analytics_events_sample": [
+    {
+      "name": "app_open",
+      "ts": "2026-10-02T07:58:00+07:00",
+      "props": {
+        "source": "bio_link"
+      }
+    },
+    {
+      "name": "demo_loaded",
+      "ts": "2026-10-02T07:58:02+07:00",
+      "props": {
+        "fixture": "saturday_silence"
+      }
+    },
+    {
+      "name": "pack_generated",
+      "ts": "2026-10-02T07:58:03+07:00",
+      "props": {
+        "generate_ms": 980,
+        "reply_count": 5
+      }
+    },
+    {
+      "name": "tone_changed",
+      "ts": "2026-10-02T07:59:10+07:00",
+      "props": {
+        "tones": [
+          "soft",
+          "funny"
+        ],
+        "mode": "filter"
+      }
+    },
+    {
+      "name": "reply_copied",
+      "ts": "2026-10-02T07:59:20+07:00",
+      "props": {
+        "tone": "soft"
+      }
+    },
+    {
+      "name": "situation_opened",
+      "ts": "2026-10-02T07:59:40+07:00",
+      "props": {
+        "situation_id": "reply_late"
+      }
+    },
+    {
+      "name": "screenshot_extract_success",
+      "ts": "2026-10-02T08:00:10+07:00",
+      "props": {
+        "extract_ms": 1120
+      }
+    },
+    {
+      "name": "share_success",
+      "ts": "2026-10-02T08:00:40+07:00",
+      "props": {
+        "kind": "reply_card"
+      }
+    }
+  ],
+  "qa_test_matrix_example": [
+    {
+      "case": "โหลดข้อความเดโม",
+      "expect": "ได้ 5 โทนตาม paste_reply_example",
+      "severity": "blocker"
+    },
+    {
+      "case": "Tone Dial soft+funny",
+      "expect": "เหลือ/ยกสองใบขึ้นก่อน",
+      "severity": "blocker"
+    },
+    {
+      "case": "คัดลอกคำตอบ",
+      "expect": "toast คัดลอกแล้ว",
+      "severity": "blocker"
+    },
+    {
+      "case": "Situation Library ≥6",
+      "expect": "เห็นคิทไทยครบ + favorite ได้",
+      "severity": "blocker"
+    },
+    {
+      "case": "Screenshot รูปเดโม",
+      "expect": "ดึง inbound แล้วได้แพ็ก",
+      "severity": "blocker"
+    },
+    {
+      "case": "Share card",
+      "expect": "ได้รูป+แคปชันบนมือถือ",
+      "severity": "major"
+    },
+    {
+      "case": "localStorage ว่าง",
+      "expect": "ไม่แครช แสดง empty state",
+      "severity": "major"
+    },
+    {
+      "case": "ไม่มีคำรู้ความสัมพันธ์",
+      "expect": "UI หลักไม่มีเคลมผิด",
+      "severity": "blocker"
+    }
+  ],
+  "reel_script_th": {
+    "title_th": "ReplyKit — วางแชทได้ชุดตอบหลายโทน",
+    "total_s": 32,
+    "hook_th": "วางข้อความแชท → ได้ชุดตอบหลายโทน ใน 10 วินาที",
+    "comment_keyword_th": "ตอบ",
+    "cta_th": "ลองฟรีที่ลิงก์ในไบโอ แล้วคอมเมนต์「ตอบ」",
+    "props_th": [
+      "มือถือจริง 1 เครื่อง",
+      "ข้อความเดโมเพื่อนวันเสาร์",
+      "แพ็ก ≥4 โทน",
+      "สถานการณ์ใน Library พร้อม"
+    ],
+    "shots": [
+      {
+        "start_s": 0,
+        "end_s": 3,
+        "visual_th": "แชทเพื่อนเงียบ → กองการ์ดตอบโผล่",
+        "on_screen_th": "วางแล้วได้ชุดตอบ",
+        "voice_th": "วางแชทแป๊บเดียว ได้ชุดตอบหลายโทน",
+        "feature_ids": [
+          "paste_reply_pack"
+        ]
+      },
+      {
+        "start_s": 3,
+        "end_s": 8,
+        "visual_th": "โลโก้ ReplyKit + มอนทาจ gen",
+        "on_screen_th": "สร้างด้วย AI วันนี้",
+        "voice_th": "วันนี้ทำแอป ReplyKit สดๆ",
+        "feature_ids": []
+      },
+      {
+        "start_s": 8,
+        "end_s": 14,
+        "visual_th": "วางข้อความเดโม → แพ็ก soft/funny/warm",
+        "on_screen_th": "Paste → Reply Pack",
+        "voice_th": "เพื่อนทักวันเสาร์ เงียบ 3 วัน ได้คำตอบเลย",
+        "feature_ids": [
+          "paste_reply_pack"
+        ]
+      },
+      {
+        "start_s": 14,
+        "end_s": 22,
+        "visual_th": "หมุน Tone Dial + คัดลอก",
+        "on_screen_th": "Tone Dial · Copy",
+        "voice_th": "หมุนโทนนุ่มหรือตลก แล้วก็อปได้ทันที",
+        "feature_ids": [
+          "tone_dial",
+          "copy_share_reply_card"
+        ]
+      },
+      {
+        "start_s": 22,
+        "end_s": 28,
+        "visual_th": "Situation Library + Share card",
+        "on_screen_th": "คิทสถานการณ์ แชร์ได้",
+        "voice_th": "มีไลบรารีสถานการณ์และแชร์การ์ดสวย",
+        "feature_ids": [
+          "situation_library",
+          "copy_share_reply_card"
+        ]
+      },
+      {
+        "start_s": 28,
+        "end_s": 32,
+        "visual_th": "ผลสุดท้าย + ลิงก์ไบโอ",
+        "on_screen_th": "ลิงก์ในไบโอ",
+        "voice_th": "ลองฟรีที่ลิงก์ในไบโอ แล้วคอมเมนต์คำว่าตอบ",
+        "feature_ids": []
+      }
+    ]
+  },
+  "chat_post_one_liner_th": "วางข้อความแชท → ได้ชุดตอบหลายโทน ใน 10 วินาที",
+  "chat_post_long_th": "เพื่อนทักเรื่องวันเสาร์แล้วเงียบ 3 วัน ไม่รู้จะตอบยังไง? วันนี้แจกแอป ReplyKit จากช่อง AI วันละแอป วางข้อความได้ชุดตอบหลายโทน หมุนโทนได้ เก็บสถานการณ์บ่อยๆ แล้วแชร์การ์ดตอบสวย ลองฟรีที่ลิงก์ในไบโอ",
+  "codegen_smoke_checklist": [
+    "npm run dev ขึ้นที่ localhost",
+    "ปุ่มใช้ข้อความเดโมโหลด pack_demo_saturday",
+    "เห็นการ์ดตอบอย่างน้อย 4 ใบ",
+    "Tone Dial เปลี่ยนแล้ว UI อัปเดต",
+    "Situation Library แสดง ≥6 คิท",
+    "ปุ่มใช้รูปเดโม extract ได้ inbound",
+    "คัดลอก + แชร์ไม่แครชบนมือถือ",
+    "disclaimer มองเห็นบนหน้าผลลัพธ์"
+  ],
+  "sample_replies_for_reel": [
+    {
+      "tone": "soft",
+      "text_th": "ขอโทษที่เงียบไปเลยนะ ช่วงนี้จมงานนิดหน่อย เรื่องวันเสาร์ยังอยากไปอยู่นะ ว่างช่วงเย็นไหม เดี๋ยวนัดใหม่ให้ชัดๆ 🥺"
+    },
+    {
+      "tone": "funny",
+      "text_th": "แบตสังคมหมด 3 วันจริงๆ 555 ขอโทษค้าบ วันเสาร์ยังเสิร์ฟได้อยู่ไหม ถ้าไปได้แค่ครึ่งวันก็บอกได้ จะจัดตารางให้หายเงียบ"
+    },
+    {
+      "tone": "firm",
+      "text_th": "ขอโทษที่เงียบไป 3 วัน ช่วงนี้ตารางแน่นมาก วันเสาร์ยังไปได้แต่ขอสั้นๆ บ่ายโมงถึงสี่โมง ถ้าไม่ไหวเลื่อนอาทิตย์หน้าได้ บอกตรงๆ นะ"
+    }
+  ],
+  "risk_traps_th": [
+    "อย่าพูดว่า AI รู้ความสัมพันธ์หรือเจตนาคู่สนทนา",
+    "อย่าโชว์แชทจริงที่มีชื่อ/เบอร์คนจริง",
+    "อย่าเคลมว่าส่งข้อความเข้า LINE แทนผู้ใช้",
+    "อย่าใช้คำหยาบหรือมุขแรงใน fixture หลัก",
+    "อย่าลืม disclaimer ตัวช่วยร่างบนหน้าผลลัพธ์"
+  ],
+  "wow_moment_th": "ข้อความเพื่อน「ทำไมเงียบ 3 วันแล้ว 🥺」→ กองการ์ดตอบโทน soft/funny/warm/firm สี teal-mint + coral โผล่ทีละใบใน 10 วินาที",
+  "happy_path_timing_th": [
+    "0–5s เปิดแอป กดใช้ข้อความเดโม",
+    "5–15s เห็นชุดตอบ 5 โทน",
+    "15–30s หมุน Tone Dial เหลือ soft/funny แล้วคัดลอก",
+    "30–45s เปิด Situation Library ติดดาวตอบช้า",
+    "45–60s แชร์ Reply Card + คัดลอกแคปชัน"
+  ],
+  "captions": {
+    "ig_short_th": "วางแชทอึดอัด → ได้ชุดตอบหลายโทน ใน 10 วินาที 🔗 ลิงก์ในไบโอ คอมเมนต์「ตอบ」",
+    "ig_long_th": "เงียบไป 3 วัน เพื่อนทักเรื่องวันเสาร์ — ReplyKit ช่วยร่างคำตอบโทนนุ่ม ตลก โปร หนักแน่น อบอุ่น ให้เลือก แล้วก็อปไปวางได้เลย แอปฟรีจากช่อง AI วันละแอป",
+    "line_oa_th": "วันนี้มีแอปใหม่ ReplyKit — วางข้อความแชท ได้ชุดตอบหลายโทน ลองที่ลิงก์เลย",
+    "tiktok_th": "ตอบแชทยังไงดีเมื่อเงียบไป 3 วัน 👀 วางข้อความปุ๊บ ได้หลายโทนปั๊บ #AIวันละแอป #ReplyKit"
+  },
+  "tone_meta_table": [
+    {
+      "tone": "soft",
+      "when_th": "อยากขอโทษ/รักษาบรรยากาศ",
+      "avoid_th": "อย่ายอมผิดเกินจริงจนดูปลอม"
+    },
+    {
+      "tone": "funny",
+      "when_th": "เพื่อนสนิท บรรยากาศเบาได้",
+      "avoid_th": "อย่ามุขเสียดสีคู่สนทนา"
+    },
+    {
+      "tone": "pro",
+      "when_th": "งาน ลูกค้า คนไม่สนิท",
+      "avoid_th": "อย่าแข็งจนเย็นชา"
+    },
+    {
+      "tone": "firm",
+      "when_th": "ต้องตั้งขอบเขตชัด",
+      "avoid_th": "อย่าหยาบหรือขู่"
+    },
+    {
+      "tone": "warm",
+      "when_th": "แฟน เพื่อนสนิท คนที่ห่วง",
+      "avoid_th": "อย่าหวานเกินบริบท"
+    }
+  ]
+}

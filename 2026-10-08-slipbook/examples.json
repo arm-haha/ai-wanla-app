@@ -1,0 +1,2829 @@
+{
+  "meta": {
+    "app": "SlipBook",
+    "pack_date": "2026-10-08",
+    "day_in_queue": "9/10",
+    "channel": "AI วันละแอป",
+    "persona_note": "ต้นกล้า เป็นตัวละครสมมติ ทุกชื่อ/เลขบัญชี/เลขอ้างอิงในไฟล์นี้แต่งขึ้น",
+    "currency": "THB",
+    "timezone": "Asia/Bangkok",
+    "today": "2026-10-08"
+  },
+  "categories": [
+    {
+      "key": "food",
+      "label_th": "ของกิน",
+      "emoji": "🍜",
+      "color": "#F97316"
+    },
+    {
+      "key": "cafe",
+      "label_th": "คาเฟ่/เครื่องดื่ม",
+      "emoji": "☕",
+      "color": "#A16207"
+    },
+    {
+      "key": "transport",
+      "label_th": "เดินทาง",
+      "emoji": "🚕",
+      "color": "#0EA5E9"
+    },
+    {
+      "key": "shopping",
+      "label_th": "ช้อปปิ้ง",
+      "emoji": "🛍️",
+      "color": "#EC4899"
+    },
+    {
+      "key": "bills",
+      "label_th": "บิล/ค่าน้ำไฟเน็ต",
+      "emoji": "🧾",
+      "color": "#64748B"
+    },
+    {
+      "key": "subscription",
+      "label_th": "สมาชิกรายเดือน",
+      "emoji": "🔁",
+      "color": "#8B5CF6"
+    },
+    {
+      "key": "family",
+      "label_th": "ครอบครัว",
+      "emoji": "🏠",
+      "color": "#10B981"
+    },
+    {
+      "key": "friends",
+      "label_th": "โอนเพื่อน/หารบิล",
+      "emoji": "🫂",
+      "color": "#F59E0B"
+    },
+    {
+      "key": "health",
+      "label_th": "สุขภาพ",
+      "emoji": "💊",
+      "color": "#EF4444"
+    },
+    {
+      "key": "fun",
+      "label_th": "บันเทิง",
+      "emoji": "🎬",
+      "color": "#6366F1"
+    },
+    {
+      "key": "other",
+      "label_th": "อื่นๆ",
+      "emoji": "📦",
+      "color": "#94A3B8"
+    }
+  ],
+  "category_rules": [
+    {
+      "keyword": "7-eleven",
+      "category": "food"
+    },
+    {
+      "keyword": "เซเว่น",
+      "category": "food"
+    },
+    {
+      "keyword": "lotus",
+      "category": "food"
+    },
+    {
+      "keyword": "ข้าว",
+      "category": "food"
+    },
+    {
+      "keyword": "ก๋วยเตี๋ยว",
+      "category": "food"
+    },
+    {
+      "keyword": "ส้มตำ",
+      "category": "food"
+    },
+    {
+      "keyword": "หมูกระทะ",
+      "category": "food"
+    },
+    {
+      "keyword": "line man",
+      "category": "food"
+    },
+    {
+      "keyword": "grab food",
+      "category": "food"
+    },
+    {
+      "keyword": "foodpanda",
+      "category": "food"
+    },
+    {
+      "keyword": "ร้านอาหาร",
+      "category": "food"
+    },
+    {
+      "keyword": "café",
+      "category": "cafe"
+    },
+    {
+      "keyword": "cafe",
+      "category": "cafe"
+    },
+    {
+      "keyword": "coffee",
+      "category": "cafe"
+    },
+    {
+      "keyword": "กาแฟ",
+      "category": "cafe"
+    },
+    {
+      "keyword": "ชานม",
+      "category": "cafe"
+    },
+    {
+      "keyword": "grab",
+      "category": "transport"
+    },
+    {
+      "keyword": "bolt",
+      "category": "transport"
+    },
+    {
+      "keyword": "แรบบิท",
+      "category": "transport"
+    },
+    {
+      "keyword": "bts",
+      "category": "transport"
+    },
+    {
+      "keyword": "mrt",
+      "category": "transport"
+    },
+    {
+      "keyword": "ปตท",
+      "category": "transport"
+    },
+    {
+      "keyword": "เติมน้ำมัน",
+      "category": "transport"
+    },
+    {
+      "keyword": "shopee",
+      "category": "shopping"
+    },
+    {
+      "keyword": "lazada",
+      "category": "shopping"
+    },
+    {
+      "keyword": "tiktok shop",
+      "category": "shopping"
+    },
+    {
+      "keyword": "การไฟฟ้า",
+      "category": "bills"
+    },
+    {
+      "keyword": "การประปา",
+      "category": "bills"
+    },
+    {
+      "keyword": "ค่าเน็ต",
+      "category": "bills"
+    },
+    {
+      "keyword": "มือถือรายเดือน",
+      "category": "bills"
+    },
+    {
+      "keyword": "internet",
+      "category": "bills"
+    },
+    {
+      "keyword": "moviemax",
+      "category": "subscription"
+    },
+    {
+      "keyword": "netflix",
+      "category": "subscription"
+    },
+    {
+      "keyword": "spotify",
+      "category": "subscription"
+    },
+    {
+      "keyword": "youtube",
+      "category": "subscription"
+    },
+    {
+      "keyword": "icloud",
+      "category": "subscription"
+    },
+    {
+      "keyword": "โรงพยาบาล",
+      "category": "health"
+    },
+    {
+      "keyword": "คลินิก",
+      "category": "health"
+    },
+    {
+      "keyword": "ร้านยา",
+      "category": "health"
+    },
+    {
+      "keyword": "ฟิตเนส",
+      "category": "health"
+    },
+    {
+      "keyword": "โรงหนัง",
+      "category": "fun"
+    },
+    {
+      "keyword": "คอนเสิร์ต",
+      "category": "fun"
+    },
+    {
+      "keyword": "ตั๋ว",
+      "category": "fun"
+    }
+  ],
+  "merchant_memory_before": {
+    "นาง สมใจ ร.": "family",
+    "นาย ภูมิ ใจดี": "friends"
+  },
+  "merchant_memory_after": {
+    "นาง สมใจ ร.": "family",
+    "นาย ภูมิ ใจดี": "friends",
+    "น.ส. แพรวา ส.": "friends"
+  },
+  "settings_example": {
+    "owner_names": [
+      "ต้นกล้า"
+    ],
+    "lang": "th",
+    "ocr_engine": "tesseract_tha_eng",
+    "ai_parse": "off",
+    "keep_images": false,
+    "mask_accounts": true,
+    "hide_amounts_on_share": false,
+    "month_start_day": 1,
+    "pin_lock": false,
+    "reminder": {
+      "enabled": true,
+      "time": "21:00"
+    },
+    "currency": "THB"
+  },
+  "budgets": {
+    "month": "2026-10",
+    "by_category": {
+      "food": 4500,
+      "cafe": 1200,
+      "transport": 2000,
+      "shopping": 2000,
+      "bills": 2500,
+      "subscription": 600,
+      "family": 3000,
+      "friends": 1500,
+      "health": 800,
+      "fun": 1500,
+      "other": 500
+    }
+  },
+  "slips_raw": [
+    {
+      "slip_id": "s01",
+      "file_name": "IMG_4401.PNG",
+      "template_hint": "A",
+      "ocr_text": "K PLUS\nโอนเงินสำเร็จ\n1 ต.ค. 69 08:12 น.\nจาก น.ส. ต้นกล้า ร. xxx-x-x4821-x\nไปยัง 7-ELEVEN สาขาอโศก\nจำนวน: 89.00 บาท\nค่าธรรมเนียม: 0.00 บาท\nเลขที่รายการ: 0126274A0812KP01"
+    },
+    {
+      "slip_id": "s02",
+      "file_name": "IMG_4402.PNG",
+      "template_hint": "B",
+      "ocr_text": "SCB EASY\nทำรายการสำเร็จ\n01 Oct 2026 - 12:30\nจาก ต้นกล้า ร. xxx-xxx482-1\nถึง ร้านข้าวมันไก่ป้าแดง\nจำนวนเงิน 60.00\nรหัสอ้างอิง: 202610011230SCB0042"
+    },
+    {
+      "slip_id": "s03",
+      "file_name": "IMG_4405.PNG",
+      "template_hint": "C",
+      "ocr_text": "Krungthai NEXT\nรายการสำเร็จ\nวันที่ทำรายการ 01/10/2569 18:45:10\nผู้รับ บัตรแรบบิท เติมเงิน\n฿ 200.00\nหมายเลขอ้างอิง 2569100118451KTB77"
+    },
+    {
+      "slip_id": "s04",
+      "file_name": "IMG_4410.PNG",
+      "template_hint": "A",
+      "ocr_text": "K PLUS\nโอนเงินสำเร็จ\n2 ต.ค. 69 09:05 น.\nจาก น.ส. ต้นกล้า ร. xxx-x-x4821-x\nไปยัง Café Amazon สาขาสุขุมวิท 21\nจำนวน: 65.00 บาท\nค่าธรรมเนียม: 0.00 บาท\nเลขที่รายการ: 0226275A0905KP02"
+    },
+    {
+      "slip_id": "s05",
+      "file_name": "IMG_4413.PNG",
+      "template_hint": "B",
+      "ocr_text": "SCB EASY\nทำรายการสำเร็จ\n02 Oct 2026 - 19:20\nจาก ต้นกล้า ร. xxx-xxx482-1\nถึง GRAB\nจำนวนเงิน 142.00\nรหัสอ้างอิง: 202610021920SCB0107"
+    },
+    {
+      "slip_id": "s06",
+      "file_name": "IMG_4418.PNG",
+      "template_hint": "B",
+      "ocr_text": "SCB EASY\nทำรายการสำเร็จ\n03 Oct 2026 - 13:10\nจาก ต้นกล้า ร. xxx-xxx482-1\nถึง SHOPEE PAY\nจำนวนเงิน 459.00\nรหัสอ้างอิง: 202610031310SCB0151"
+    },
+    {
+      "slip_id": "s07",
+      "file_name": "IMG_4421.PNG",
+      "template_hint": "A",
+      "ocr_text": "K PLUS\nโอนเงินสำเร็จ\n3 ต.ค. 69 20:00 น.\nจาก น.ส. ต้นกล้า ร. xxx-x-x4821-x\nไปยัง น.ส. แพรวา ส. xxx-x-x5190-x\nจำนวน: 350.00 บาท\nค่าธรรมเนียม: 0.00 บาท\nเลขที่รายการ: 0326276A2000KP03"
+    },
+    {
+      "slip_id": "s08",
+      "file_name": "IMG_4425.PNG",
+      "template_hint": "C",
+      "ocr_text": "Krungthai NEXT\nรายการสำเร็จ\nวันที่ทำรายการ 04/10/2569 10:00:10\nผู้รับ การไฟฟ้านครหลวง\n฿ 1,284.50\nหมายเลขอ้างอิง 2569100410001KTB91"
+    },
+    {
+      "slip_id": "s09",
+      "file_name": "LINE_ALBUM_1004.JPG",
+      "template_hint": "C",
+      "ocr_text": "Krungthai NEXT\nรายการสำเร็จ\nวันที่ทำรายการ 04/10/2569 10:00:10\nผู้รับ การไฟฟ้านครหลวง\n฿ 1,284.50\nหมายเลขอ้างอิง 2569100410001KTB91"
+    },
+    {
+      "slip_id": "s10",
+      "file_name": "IMG_4430.PNG",
+      "template_hint": "A",
+      "ocr_text": "K PLUS\nโอนเงินสำเร็จ\n5 ต.ค. 69 07:50 น.\nจาก น.ส. ต้นกล้า ร. xxx-x-x4821-x\nไปยัง Café Amazon สาขาสุขุมวิท 21\nจำนวน: 65.00 บาท\nค่าธรรมเนียม: 0.00 บาท\nเลขที่รายการ: 0526278A0750KP04"
+    },
+    {
+      "slip_id": "s11",
+      "file_name": "IMG_4431.PNG",
+      "template_hint": "B",
+      "ocr_text": "SCB EASY\nทำรายการสำเร็จ\n05 Oct 2026 - 12:15\nจาก ต้นกล้า ร. xxx-xxx482-1\nถึง ร้านก๋วยเตี๋ยวเรือ\nจำนวนเงิน 50.00\nรหัสอ้างอิง: 202610051215SCB0233"
+    },
+    {
+      "slip_id": "s12",
+      "file_name": "IMG_4433.PNG",
+      "template_hint": "A",
+      "ocr_text": "K PLUS\nโอนเงินสำเร็จ\n5 ต.ค. 69 21:00 น.\nจาก น.ส. ต้นกล้า ร. xxx-x-x4821-x\nไปยัง MOVIEMAX\nจำนวน: 299.00 บาท\nค่าธรรมเนียม: 0.00 บาท\nเลขที่รายการ: 0526278A2100KP05"
+    },
+    {
+      "slip_id": "s13",
+      "file_name": "IMG_4440.PNG",
+      "template_hint": "A",
+      "ocr_text": "K PLUS\nโอนเงินสำเร็จ\n6 ต.ค. 69 08:30 น.\nจาก น.ส. ต้นกล้า ร. xxx-x-x4821-x\nไปยัง นาง สมใจ ร. xxx-x-x0062-x\nจำนวน: 3,000.00 บาท\nค่าธรรมเนียม: 0.00 บาท\nเลขที่รายการ: 0626279A0830KP06"
+    },
+    {
+      "slip_id": "s14",
+      "file_name": "Screenshot_20261006-1241.png",
+      "template_hint": "B",
+      "ocr_text": "SCB EASY\nทำรายการสำเร็จ\n06 Oct 2026 - 12:40\nถึง ร้านส้มตำนัว\nจำนวนเงิน 120.00"
+    },
+    {
+      "slip_id": "s15",
+      "file_name": "IMG_4446.PNG",
+      "template_hint": "A",
+      "ocr_text": "K PLUS\nโอนเงินสำเร็จ\n7 ต.ค. 69 09:00 น.\nจาก น.ส. ต้นกล้า ร. xxx-x-x4821-x\nไปยัง Café Amazon สาขาสุขุมวิท 21\nจำนวน: 65.00 บาท\nค่าธรรมเนียม: 0.00 บาท\nเลขที่รายการ: 0726280A0900KP07"
+    },
+    {
+      "slip_id": "s16",
+      "file_name": "IMG_4449.PNG",
+      "template_hint": "C",
+      "ocr_text": "Krungthai NEXT\nรายการสำเร็จ\nวันที่ทำรายการ 07/10/2569 18:30:10\nผู้รับ LINE MAN\n฿ 238.00\nหมายเลขอ้างอิง 2569100718301KTB12"
+    },
+    {
+      "slip_id": "s17",
+      "file_name": "IMG_4452.PNG",
+      "template_hint": "B",
+      "ocr_text": "SCB EASY\nทำรายการสำเร็จ\n08 Oct 2026 - 07:55\nจาก ต้นกล้า ร. xxx-xxx482-1\nถึง GRAB\nจำนวนเงิน 98.00\nรหัสอ้างอิง: 202610080755SCB0309"
+    },
+    {
+      "slip_id": "s18",
+      "file_name": "IMG_4453.PNG",
+      "template_hint": "A",
+      "ocr_text": "K PLUS\nโอนเงินสำเร็จ\n8 ต.ค. 69 08:10 น.\nจาก นาย ภูมิ ใจดี xxx-x-x3307-x\nไปยัง น.ส. ต้นกล้า ร. xxx-x-x4821-x\nจำนวน: 150.00 บาท\nค่าธรรมเนียม: 0.00 บาท\nเลขที่รายการ: 0826281A0810KP08"
+    }
+  ],
+  "parsed_slips": [
+    {
+      "slip_id": "s01",
+      "file_name": "IMG_4401.PNG",
+      "template_hint": "A",
+      "parse_engine": "regex_th_v1",
+      "amount": 89.0,
+      "currency": "THB",
+      "date": "2026-10-01",
+      "time": "08:12",
+      "ref": "0126274A0812KP01",
+      "counterparty": "7-ELEVEN สาขาอโศก",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "KBANK",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:0126274A0812KP01",
+      "category_guess": {
+        "category": "food",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s02",
+      "file_name": "IMG_4402.PNG",
+      "template_hint": "B",
+      "parse_engine": "regex_th_v1",
+      "amount": 60.0,
+      "currency": "THB",
+      "date": "2026-10-01",
+      "time": "12:30",
+      "ref": "202610011230SCB0042",
+      "counterparty": "ร้านข้าวมันไก่ป้าแดง",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "SCB",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:202610011230SCB0042",
+      "category_guess": {
+        "category": "food",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s03",
+      "file_name": "IMG_4405.PNG",
+      "template_hint": "C",
+      "parse_engine": "regex_th_v1",
+      "amount": 200.0,
+      "currency": "THB",
+      "date": "2026-10-01",
+      "time": "18:45",
+      "ref": "2569100118451KTB77",
+      "counterparty": "บัตรแรบบิท เติมเงิน",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "KTB",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:2569100118451KTB77",
+      "category_guess": {
+        "category": "transport",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s04",
+      "file_name": "IMG_4410.PNG",
+      "template_hint": "A",
+      "parse_engine": "regex_th_v1",
+      "amount": 65.0,
+      "currency": "THB",
+      "date": "2026-10-02",
+      "time": "09:05",
+      "ref": "0226275A0905KP02",
+      "counterparty": "Café Amazon สาขาสุขุมวิท 21",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "KBANK",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:0226275A0905KP02",
+      "category_guess": {
+        "category": "cafe",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s05",
+      "file_name": "IMG_4413.PNG",
+      "template_hint": "B",
+      "parse_engine": "regex_th_v1",
+      "amount": 142.0,
+      "currency": "THB",
+      "date": "2026-10-02",
+      "time": "19:20",
+      "ref": "202610021920SCB0107",
+      "counterparty": "GRAB",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "SCB",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:202610021920SCB0107",
+      "category_guess": {
+        "category": "transport",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s06",
+      "file_name": "IMG_4418.PNG",
+      "template_hint": "B",
+      "parse_engine": "regex_th_v1",
+      "amount": 459.0,
+      "currency": "THB",
+      "date": "2026-10-03",
+      "time": "13:10",
+      "ref": "202610031310SCB0151",
+      "counterparty": "SHOPEE PAY",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "SCB",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:202610031310SCB0151",
+      "category_guess": {
+        "category": "shopping",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s07",
+      "file_name": "IMG_4421.PNG",
+      "template_hint": "A",
+      "parse_engine": "regex_th_v1",
+      "amount": 350.0,
+      "currency": "THB",
+      "date": "2026-10-03",
+      "time": "20:00",
+      "ref": "0326276A2000KP03",
+      "counterparty": "น.ส. แพรวา ส.",
+      "counterparty_account_masked": "xxx-x-x5190-x",
+      "direction": "out",
+      "bank": "KBANK",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:0326276A2000KP03",
+      "category_guess": {
+        "category": "friends",
+        "source": "person_default",
+        "confidence": 0.5
+      },
+      "status": "needs_review",
+      "duplicate_of": null,
+      "review_reasons": [
+        "who_is_this"
+      ]
+    },
+    {
+      "slip_id": "s08",
+      "file_name": "IMG_4425.PNG",
+      "template_hint": "C",
+      "parse_engine": "regex_th_v1",
+      "amount": 1284.5,
+      "currency": "THB",
+      "date": "2026-10-04",
+      "time": "10:00",
+      "ref": "2569100410001KTB91",
+      "counterparty": "การไฟฟ้านครหลวง",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "KTB",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:2569100410001KTB91",
+      "category_guess": {
+        "category": "bills",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s09",
+      "file_name": "LINE_ALBUM_1004.JPG",
+      "template_hint": "C",
+      "parse_engine": "regex_th_v1",
+      "amount": 1284.5,
+      "currency": "THB",
+      "date": "2026-10-04",
+      "time": "10:00",
+      "ref": "2569100410001KTB91",
+      "counterparty": "การไฟฟ้านครหลวง",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "KTB",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:2569100410001KTB91",
+      "category_guess": {
+        "category": "bills",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "duplicate",
+      "duplicate_of": "s08",
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s10",
+      "file_name": "IMG_4430.PNG",
+      "template_hint": "A",
+      "parse_engine": "regex_th_v1",
+      "amount": 65.0,
+      "currency": "THB",
+      "date": "2026-10-05",
+      "time": "07:50",
+      "ref": "0526278A0750KP04",
+      "counterparty": "Café Amazon สาขาสุขุมวิท 21",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "KBANK",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:0526278A0750KP04",
+      "category_guess": {
+        "category": "cafe",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s11",
+      "file_name": "IMG_4431.PNG",
+      "template_hint": "B",
+      "parse_engine": "regex_th_v1",
+      "amount": 50.0,
+      "currency": "THB",
+      "date": "2026-10-05",
+      "time": "12:15",
+      "ref": "202610051215SCB0233",
+      "counterparty": "ร้านก๋วยเตี๋ยวเรือ",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "SCB",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:202610051215SCB0233",
+      "category_guess": {
+        "category": "food",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s12",
+      "file_name": "IMG_4433.PNG",
+      "template_hint": "A",
+      "parse_engine": "regex_th_v1",
+      "amount": 299.0,
+      "currency": "THB",
+      "date": "2026-10-05",
+      "time": "21:00",
+      "ref": "0526278A2100KP05",
+      "counterparty": "MOVIEMAX",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "KBANK",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:0526278A2100KP05",
+      "category_guess": {
+        "category": "subscription",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s13",
+      "file_name": "IMG_4440.PNG",
+      "template_hint": "A",
+      "parse_engine": "regex_th_v1",
+      "amount": 3000.0,
+      "currency": "THB",
+      "date": "2026-10-06",
+      "time": "08:30",
+      "ref": "0626279A0830KP06",
+      "counterparty": "นาง สมใจ ร.",
+      "counterparty_account_masked": "xxx-x-x0062-x",
+      "direction": "out",
+      "bank": "KBANK",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:0626279A0830KP06",
+      "category_guess": {
+        "category": "family",
+        "source": "memory",
+        "confidence": 1.0
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s14",
+      "file_name": "Screenshot_20261006-1241.png",
+      "template_hint": "B",
+      "parse_engine": "regex_th_v1",
+      "amount": 120.0,
+      "currency": "THB",
+      "date": "2026-10-06",
+      "time": "12:40",
+      "ref": null,
+      "counterparty": "ร้านส้มตำนัว",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "SCB",
+      "parse_confidence": 0.8,
+      "missing_fields": [
+        "ref"
+      ],
+      "dedupe_key": "fp:2026-10-06|12:40|120.00|ร้านส้มตำนัว",
+      "category_guess": {
+        "category": "food",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "needs_review",
+      "duplicate_of": null,
+      "review_reasons": [
+        "missing_fields"
+      ]
+    },
+    {
+      "slip_id": "s15",
+      "file_name": "IMG_4446.PNG",
+      "template_hint": "A",
+      "parse_engine": "regex_th_v1",
+      "amount": 65.0,
+      "currency": "THB",
+      "date": "2026-10-07",
+      "time": "09:00",
+      "ref": "0726280A0900KP07",
+      "counterparty": "Café Amazon สาขาสุขุมวิท 21",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "KBANK",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:0726280A0900KP07",
+      "category_guess": {
+        "category": "cafe",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s16",
+      "file_name": "IMG_4449.PNG",
+      "template_hint": "C",
+      "parse_engine": "regex_th_v1",
+      "amount": 238.0,
+      "currency": "THB",
+      "date": "2026-10-07",
+      "time": "18:30",
+      "ref": "2569100718301KTB12",
+      "counterparty": "LINE MAN",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "KTB",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:2569100718301KTB12",
+      "category_guess": {
+        "category": "food",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s17",
+      "file_name": "IMG_4452.PNG",
+      "template_hint": "B",
+      "parse_engine": "regex_th_v1",
+      "amount": 98.0,
+      "currency": "THB",
+      "date": "2026-10-08",
+      "time": "07:55",
+      "ref": "202610080755SCB0309",
+      "counterparty": "GRAB",
+      "counterparty_account_masked": null,
+      "direction": "out",
+      "bank": "SCB",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:202610080755SCB0309",
+      "category_guess": {
+        "category": "transport",
+        "source": "rule",
+        "confidence": 0.9
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    },
+    {
+      "slip_id": "s18",
+      "file_name": "IMG_4453.PNG",
+      "template_hint": "A",
+      "parse_engine": "regex_th_v1",
+      "amount": 150.0,
+      "currency": "THB",
+      "date": "2026-10-08",
+      "time": "08:10",
+      "ref": "0826281A0810KP08",
+      "counterparty": "นาย ภูมิ ใจดี",
+      "counterparty_account_masked": "xxx-x-x3307-x",
+      "direction": "in",
+      "bank": "KBANK",
+      "parse_confidence": 1.0,
+      "missing_fields": [],
+      "dedupe_key": "ref:0826281A0810KP08",
+      "category_guess": {
+        "category": "income",
+        "source": "direction",
+        "confidence": 1.0
+      },
+      "status": "ok",
+      "duplicate_of": null,
+      "review_reasons": []
+    }
+  ],
+  "import_batch_example": {
+    "batch_id": "imp_20261008_0812",
+    "created_at": "2026-10-08T08:12:00+07:00",
+    "files_dropped": 18,
+    "parsed_ok": 17,
+    "duplicates_skipped": 1,
+    "needs_review": 2,
+    "added": 17,
+    "out_total": 6584.5,
+    "in_total": 150.0,
+    "duration_ms_target": 3000,
+    "slip_ids": [
+      "s01",
+      "s02",
+      "s03",
+      "s04",
+      "s05",
+      "s06",
+      "s07",
+      "s08",
+      "s09",
+      "s10",
+      "s11",
+      "s12",
+      "s13",
+      "s14",
+      "s15",
+      "s16",
+      "s17",
+      "s18"
+    ]
+  },
+  "review_edit_example": {
+    "slip_id": "s07",
+    "question_th": "น.ส. แพรวา ส. คือใคร?",
+    "options": [
+      "family",
+      "friends",
+      "other"
+    ],
+    "chosen": "friends",
+    "remember": true,
+    "memory_key": "น.ส. แพรวา ส.",
+    "note": "หารหมูกระทะ"
+  },
+  "ledger": [
+    {
+      "id": "tx_001",
+      "date": "2026-08-05",
+      "time": "09:00",
+      "created_at": "2026-08-05T09:00:00+07:00",
+      "counterparty": "MOVIEMAX",
+      "amount": 299.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "subscription",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_002",
+      "date": "2026-08-10",
+      "time": "10:00",
+      "created_at": "2026-08-10T10:00:00+07:00",
+      "counterparty": "มือถือรายเดือน (เน็ตดี)",
+      "amount": 599.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "bills",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_003",
+      "date": "2026-08-10",
+      "time": "10:05",
+      "created_at": "2026-08-10T10:05:00+07:00",
+      "counterparty": "การไฟฟ้านครหลวง",
+      "amount": 1050.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "bills",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_004",
+      "date": "2026-09-01",
+      "time": "08:10",
+      "created_at": "2026-09-01T08:10:00+07:00",
+      "counterparty": "Café Amazon สาขาสุขุมวิท 21",
+      "amount": 65.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "cafe",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_005",
+      "date": "2026-09-01",
+      "time": "12:20",
+      "created_at": "2026-09-01T12:20:00+07:00",
+      "counterparty": "ร้านข้าวมันไก่ป้าแดง",
+      "amount": 60.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "food",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_006",
+      "date": "2026-09-02",
+      "time": "18:30",
+      "created_at": "2026-09-02T18:30:00+07:00",
+      "counterparty": "GRAB",
+      "amount": 156.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "transport",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_007",
+      "date": "2026-09-03",
+      "time": "08:05",
+      "created_at": "2026-09-03T08:05:00+07:00",
+      "counterparty": "Café Amazon สาขาสุขุมวิท 21",
+      "amount": 65.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "cafe",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_008",
+      "date": "2026-09-04",
+      "time": "19:40",
+      "created_at": "2026-09-04T19:40:00+07:00",
+      "counterparty": "LINE MAN",
+      "amount": 265.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "food",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_009",
+      "date": "2026-09-05",
+      "time": "09:00",
+      "created_at": "2026-09-05T09:00:00+07:00",
+      "counterparty": "MOVIEMAX",
+      "amount": 299.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "subscription",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_010",
+      "date": "2026-09-06",
+      "time": "13:30",
+      "created_at": "2026-09-06T13:30:00+07:00",
+      "counterparty": "SHOPEE PAY",
+      "amount": 1290.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "shopping",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_011",
+      "date": "2026-09-06",
+      "time": "20:15",
+      "created_at": "2026-09-06T20:15:00+07:00",
+      "counterparty": "นาย ภูมิ ใจดี",
+      "amount": 420.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "friends",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_012",
+      "date": "2026-09-08",
+      "time": "08:30",
+      "created_at": "2026-09-08T08:30:00+07:00",
+      "counterparty": "นาง สมใจ ร.",
+      "amount": 3000.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "family",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_013",
+      "date": "2026-09-08",
+      "time": "12:10",
+      "created_at": "2026-09-08T12:10:00+07:00",
+      "counterparty": "ร้านก๋วยเตี๋ยวเรือ",
+      "amount": 50.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "food",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_014",
+      "date": "2026-09-09",
+      "time": "08:00",
+      "created_at": "2026-09-09T08:00:00+07:00",
+      "counterparty": "Café Amazon สาขาสุขุมวิท 21",
+      "amount": 65.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "cafe",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_015",
+      "date": "2026-09-10",
+      "time": "10:00",
+      "created_at": "2026-09-10T10:00:00+07:00",
+      "counterparty": "มือถือรายเดือน (เน็ตดี)",
+      "amount": 599.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "bills",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_016",
+      "date": "2026-09-10",
+      "time": "10:05",
+      "created_at": "2026-09-10T10:05:00+07:00",
+      "counterparty": "การไฟฟ้านครหลวง",
+      "amount": 1190.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "bills",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_017",
+      "date": "2026-09-11",
+      "time": "18:50",
+      "created_at": "2026-09-11T18:50:00+07:00",
+      "counterparty": "GRAB",
+      "amount": 132.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "transport",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_018",
+      "date": "2026-09-12",
+      "time": "14:00",
+      "created_at": "2026-09-12T14:00:00+07:00",
+      "counterparty": "โรงหนัง ซีเนสตาร์",
+      "amount": 440.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "fun",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_019",
+      "date": "2026-09-13",
+      "time": "12:30",
+      "created_at": "2026-09-13T12:30:00+07:00",
+      "counterparty": "ร้านส้มตำนัว",
+      "amount": 140.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "food",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_020",
+      "date": "2026-09-15",
+      "time": "08:00",
+      "created_at": "2026-09-15T08:00:00+07:00",
+      "counterparty": "Café Amazon สาขาสุขุมวิท 21",
+      "amount": 65.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "cafe",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_021",
+      "date": "2026-09-15",
+      "time": "19:00",
+      "created_at": "2026-09-15T19:00:00+07:00",
+      "counterparty": "7-ELEVEN สาขาอโศก",
+      "amount": 156.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "food",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_022",
+      "date": "2026-09-17",
+      "time": "20:30",
+      "created_at": "2026-09-17T20:30:00+07:00",
+      "counterparty": "LINE MAN",
+      "amount": 312.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "food",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_023",
+      "date": "2026-09-18",
+      "time": "08:00",
+      "created_at": "2026-09-18T08:00:00+07:00",
+      "counterparty": "Café Amazon สาขาสุขุมวิท 21",
+      "amount": 65.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "cafe",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_024",
+      "date": "2026-09-19",
+      "time": "17:00",
+      "created_at": "2026-09-19T17:00:00+07:00",
+      "counterparty": "ร้านยาสุขใจ",
+      "amount": 285.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "health",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_025",
+      "date": "2026-09-20",
+      "time": "11:00",
+      "created_at": "2026-09-20T11:00:00+07:00",
+      "counterparty": "SHOPEE PAY",
+      "amount": 349.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "shopping",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_026",
+      "date": "2026-09-22",
+      "time": "08:00",
+      "created_at": "2026-09-22T08:00:00+07:00",
+      "counterparty": "Café Amazon สาขาสุขุมวิท 21",
+      "amount": 65.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "cafe",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_027",
+      "date": "2026-09-23",
+      "time": "18:40",
+      "created_at": "2026-09-23T18:40:00+07:00",
+      "counterparty": "GRAB",
+      "amount": 148.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "transport",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_028",
+      "date": "2026-09-24",
+      "time": "12:00",
+      "created_at": "2026-09-24T12:00:00+07:00",
+      "counterparty": "ร้านข้าวมันไก่ป้าแดง",
+      "amount": 60.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "food",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_029",
+      "date": "2026-09-25",
+      "time": "08:10",
+      "created_at": "2026-09-25T08:10:00+07:00",
+      "counterparty": "Café Amazon สาขาสุขุมวิท 21",
+      "amount": 65.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "cafe",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_030",
+      "date": "2026-09-26",
+      "time": "15:00",
+      "created_at": "2026-09-26T15:00:00+07:00",
+      "counterparty": "ชานมไข่มุก พี่ใจ",
+      "amount": 75.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "cafe",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_031",
+      "date": "2026-09-27",
+      "time": "10:00",
+      "created_at": "2026-09-27T10:00:00+07:00",
+      "counterparty": "บัตรแรบบิท เติมเงิน",
+      "amount": 200.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "transport",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_032",
+      "date": "2026-09-28",
+      "time": "20:00",
+      "created_at": "2026-09-28T20:00:00+07:00",
+      "counterparty": "LINE MAN",
+      "amount": 289.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "food",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_033",
+      "date": "2026-09-29",
+      "time": "08:00",
+      "created_at": "2026-09-29T08:00:00+07:00",
+      "counterparty": "Café Amazon สาขาสุขุมวิท 21",
+      "amount": 65.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "cafe",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_034",
+      "date": "2026-09-30",
+      "time": "19:10",
+      "created_at": "2026-09-30T19:10:00+07:00",
+      "counterparty": "7-ELEVEN สาขาอโศก",
+      "amount": 98.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "food",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": null,
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_035",
+      "date": "2026-10-01",
+      "time": "08:12",
+      "created_at": "2026-10-01T08:12:00+07:00",
+      "counterparty": "7-ELEVEN สาขาอโศก",
+      "amount": 89.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "food",
+      "category_source": "rule",
+      "source": "slip",
+      "slip_id": "s01",
+      "ref": "0126274A0812KP01",
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_036",
+      "date": "2026-10-01",
+      "time": "12:30",
+      "created_at": "2026-10-01T12:30:00+07:00",
+      "counterparty": "ร้านข้าวมันไก่ป้าแดง",
+      "amount": 60.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "food",
+      "category_source": "rule",
+      "source": "slip",
+      "slip_id": "s02",
+      "ref": "202610011230SCB0042",
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_037",
+      "date": "2026-10-01",
+      "time": "18:45",
+      "created_at": "2026-10-01T18:45:00+07:00",
+      "counterparty": "บัตรแรบบิท เติมเงิน",
+      "amount": 200.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "transport",
+      "category_source": "rule",
+      "source": "slip",
+      "slip_id": "s03",
+      "ref": "2569100118451KTB77",
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_038",
+      "date": "2026-10-02",
+      "time": "09:05",
+      "created_at": "2026-10-02T09:05:00+07:00",
+      "counterparty": "Café Amazon สาขาสุขุมวิท 21",
+      "amount": 65.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "cafe",
+      "category_source": "rule",
+      "source": "slip",
+      "slip_id": "s04",
+      "ref": "0226275A0905KP02",
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_039",
+      "date": "2026-10-02",
+      "time": "19:20",
+      "created_at": "2026-10-02T19:20:00+07:00",
+      "counterparty": "GRAB",
+      "amount": 142.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "transport",
+      "category_source": "rule",
+      "source": "slip",
+      "slip_id": "s05",
+      "ref": "202610021920SCB0107",
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_040",
+      "date": "2026-10-03",
+      "time": "13:10",
+      "created_at": "2026-10-03T13:10:00+07:00",
+      "counterparty": "SHOPEE PAY",
+      "amount": 459.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "shopping",
+      "category_source": "rule",
+      "source": "slip",
+      "slip_id": "s06",
+      "ref": "202610031310SCB0151",
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_041",
+      "date": "2026-10-03",
+      "time": "20:00",
+      "created_at": "2026-10-03T20:00:00+07:00",
+      "counterparty": "น.ส. แพรวา ส.",
+      "amount": 350.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "friends",
+      "category_source": "user",
+      "source": "slip",
+      "slip_id": "s07",
+      "ref": "0326276A2000KP03",
+      "note": "หารหมูกระทะ",
+      "tags": []
+    },
+    {
+      "id": "tx_042",
+      "date": "2026-10-04",
+      "time": "10:00",
+      "created_at": "2026-10-04T10:00:00+07:00",
+      "counterparty": "การไฟฟ้านครหลวง",
+      "amount": 1284.5,
+      "currency": "THB",
+      "direction": "out",
+      "category": "bills",
+      "category_source": "rule",
+      "source": "slip",
+      "slip_id": "s08",
+      "ref": "2569100410001KTB91",
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_043",
+      "date": "2026-10-05",
+      "time": "07:50",
+      "created_at": "2026-10-05T07:50:00+07:00",
+      "counterparty": "Café Amazon สาขาสุขุมวิท 21",
+      "amount": 65.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "cafe",
+      "category_source": "rule",
+      "source": "slip",
+      "slip_id": "s10",
+      "ref": "0526278A0750KP04",
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_044",
+      "date": "2026-10-05",
+      "time": "12:15",
+      "created_at": "2026-10-05T12:15:00+07:00",
+      "counterparty": "ร้านก๋วยเตี๋ยวเรือ",
+      "amount": 50.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "food",
+      "category_source": "rule",
+      "source": "slip",
+      "slip_id": "s11",
+      "ref": "202610051215SCB0233",
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_045",
+      "date": "2026-10-05",
+      "time": "21:00",
+      "created_at": "2026-10-05T21:00:00+07:00",
+      "counterparty": "MOVIEMAX",
+      "amount": 299.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "subscription",
+      "category_source": "rule",
+      "source": "slip",
+      "slip_id": "s12",
+      "ref": "0526278A2100KP05",
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_046",
+      "date": "2026-10-06",
+      "time": "08:30",
+      "created_at": "2026-10-06T08:30:00+07:00",
+      "counterparty": "นาง สมใจ ร.",
+      "amount": 3000.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "family",
+      "category_source": "memory",
+      "source": "slip",
+      "slip_id": "s13",
+      "ref": "0626279A0830KP06",
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_047",
+      "date": "2026-10-06",
+      "time": "12:40",
+      "created_at": "2026-10-06T12:40:00+07:00",
+      "counterparty": "ร้านส้มตำนัว",
+      "amount": 120.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "food",
+      "category_source": "rule",
+      "source": "slip",
+      "slip_id": "s14",
+      "ref": null,
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_048",
+      "date": "2026-10-07",
+      "time": "09:00",
+      "created_at": "2026-10-07T09:00:00+07:00",
+      "counterparty": "Café Amazon สาขาสุขุมวิท 21",
+      "amount": 65.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "cafe",
+      "category_source": "rule",
+      "source": "slip",
+      "slip_id": "s15",
+      "ref": "0726280A0900KP07",
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_049",
+      "date": "2026-10-07",
+      "time": "18:30",
+      "created_at": "2026-10-07T18:30:00+07:00",
+      "counterparty": "LINE MAN",
+      "amount": 238.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "food",
+      "category_source": "rule",
+      "source": "slip",
+      "slip_id": "s16",
+      "ref": "2569100718301KTB12",
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_050",
+      "date": "2026-10-08",
+      "time": "07:55",
+      "created_at": "2026-10-08T07:55:00+07:00",
+      "counterparty": "GRAB",
+      "amount": 98.0,
+      "currency": "THB",
+      "direction": "out",
+      "category": "transport",
+      "category_source": "rule",
+      "source": "slip",
+      "slip_id": "s17",
+      "ref": "202610080755SCB0309",
+      "note": "",
+      "tags": []
+    },
+    {
+      "id": "tx_051",
+      "date": "2026-10-08",
+      "time": "08:10",
+      "created_at": "2026-10-08T08:10:00+07:00",
+      "counterparty": "นาย ภูมิ ใจดี",
+      "amount": 150.0,
+      "currency": "THB",
+      "direction": "in",
+      "category": "income",
+      "category_source": "direction",
+      "source": "slip",
+      "slip_id": "s18",
+      "ref": "0826281A0810KP08",
+      "note": "คืนค่าตั๋วหนัง",
+      "tags": []
+    }
+  ],
+  "dashboard_oct": {
+    "month": "2026-10",
+    "spent_total": 6584.5,
+    "income_total": 150.0,
+    "txn_count": 16,
+    "by_category": [
+      {
+        "category": "family",
+        "label_th": "ครอบครัว",
+        "emoji": "🏠",
+        "color": "#10B981",
+        "amount": 3000.0,
+        "percent": 45.6,
+        "count": 1
+      },
+      {
+        "category": "bills",
+        "label_th": "บิล/ค่าน้ำไฟเน็ต",
+        "emoji": "🧾",
+        "color": "#64748B",
+        "amount": 1284.5,
+        "percent": 19.5,
+        "count": 1
+      },
+      {
+        "category": "food",
+        "label_th": "ของกิน",
+        "emoji": "🍜",
+        "color": "#F97316",
+        "amount": 557.0,
+        "percent": 8.5,
+        "count": 5
+      },
+      {
+        "category": "shopping",
+        "label_th": "ช้อปปิ้ง",
+        "emoji": "🛍️",
+        "color": "#EC4899",
+        "amount": 459.0,
+        "percent": 7.0,
+        "count": 1
+      },
+      {
+        "category": "transport",
+        "label_th": "เดินทาง",
+        "emoji": "🚕",
+        "color": "#0EA5E9",
+        "amount": 440.0,
+        "percent": 6.7,
+        "count": 3
+      },
+      {
+        "category": "friends",
+        "label_th": "โอนเพื่อน/หารบิล",
+        "emoji": "🫂",
+        "color": "#F59E0B",
+        "amount": 350.0,
+        "percent": 5.3,
+        "count": 1
+      },
+      {
+        "category": "subscription",
+        "label_th": "สมาชิกรายเดือน",
+        "emoji": "🔁",
+        "color": "#8B5CF6",
+        "amount": 299.0,
+        "percent": 4.5,
+        "count": 1
+      },
+      {
+        "category": "cafe",
+        "label_th": "คาเฟ่/เครื่องดื่ม",
+        "emoji": "☕",
+        "color": "#A16207",
+        "amount": 195.0,
+        "percent": 3.0,
+        "count": 3
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-10-01",
+        "amount": 349.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-10-02",
+        "amount": 207.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-10-03",
+        "amount": 809.0,
+        "heat": 2
+      },
+      {
+        "date": "2026-10-04",
+        "amount": 1284.5,
+        "heat": 2
+      },
+      {
+        "date": "2026-10-05",
+        "amount": 414.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-10-06",
+        "amount": 3120.0,
+        "heat": 4
+      },
+      {
+        "date": "2026-10-07",
+        "amount": 303.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-10-08",
+        "amount": 98.0,
+        "heat": 1
+      }
+    ],
+    "top_counterparties": [
+      {
+        "name": "นาง สมใจ ร.",
+        "count": 1,
+        "amount": 3000.0
+      },
+      {
+        "name": "การไฟฟ้านครหลวง",
+        "count": 1,
+        "amount": 1284.5
+      },
+      {
+        "name": "SHOPEE PAY",
+        "count": 1,
+        "amount": 459.0
+      },
+      {
+        "name": "น.ส. แพรวา ส.",
+        "count": 1,
+        "amount": 350.0
+      },
+      {
+        "name": "MOVIEMAX",
+        "count": 1,
+        "amount": 299.0
+      }
+    ]
+  },
+  "dashboard_sep": {
+    "month": "2026-09",
+    "spent_total": 10533.0,
+    "income_total": 0,
+    "txn_count": 31,
+    "by_category": [
+      {
+        "category": "family",
+        "label_th": "ครอบครัว",
+        "emoji": "🏠",
+        "color": "#10B981",
+        "amount": 3000.0,
+        "percent": 28.5,
+        "count": 1
+      },
+      {
+        "category": "bills",
+        "label_th": "บิล/ค่าน้ำไฟเน็ต",
+        "emoji": "🧾",
+        "color": "#64748B",
+        "amount": 1789.0,
+        "percent": 17.0,
+        "count": 2
+      },
+      {
+        "category": "shopping",
+        "label_th": "ช้อปปิ้ง",
+        "emoji": "🛍️",
+        "color": "#EC4899",
+        "amount": 1639.0,
+        "percent": 15.6,
+        "count": 2
+      },
+      {
+        "category": "food",
+        "label_th": "ของกิน",
+        "emoji": "🍜",
+        "color": "#F97316",
+        "amount": 1430.0,
+        "percent": 13.6,
+        "count": 9
+      },
+      {
+        "category": "transport",
+        "label_th": "เดินทาง",
+        "emoji": "🚕",
+        "color": "#0EA5E9",
+        "amount": 636.0,
+        "percent": 6.0,
+        "count": 4
+      },
+      {
+        "category": "cafe",
+        "label_th": "คาเฟ่/เครื่องดื่ม",
+        "emoji": "☕",
+        "color": "#A16207",
+        "amount": 595.0,
+        "percent": 5.6,
+        "count": 9
+      },
+      {
+        "category": "fun",
+        "label_th": "บันเทิง",
+        "emoji": "🎬",
+        "color": "#6366F1",
+        "amount": 440.0,
+        "percent": 4.2,
+        "count": 1
+      },
+      {
+        "category": "friends",
+        "label_th": "โอนเพื่อน/หารบิล",
+        "emoji": "🫂",
+        "color": "#F59E0B",
+        "amount": 420.0,
+        "percent": 4.0,
+        "count": 1
+      },
+      {
+        "category": "subscription",
+        "label_th": "สมาชิกรายเดือน",
+        "emoji": "🔁",
+        "color": "#8B5CF6",
+        "amount": 299.0,
+        "percent": 2.8,
+        "count": 1
+      },
+      {
+        "category": "health",
+        "label_th": "สุขภาพ",
+        "emoji": "💊",
+        "color": "#EF4444",
+        "amount": 285.0,
+        "percent": 2.7,
+        "count": 1
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-09-01",
+        "amount": 125.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-02",
+        "amount": 156.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-03",
+        "amount": 65.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-04",
+        "amount": 265.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-05",
+        "amount": 299.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-06",
+        "amount": 1710.0,
+        "heat": 3
+      },
+      {
+        "date": "2026-09-08",
+        "amount": 3050.0,
+        "heat": 4
+      },
+      {
+        "date": "2026-09-09",
+        "amount": 65.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-10",
+        "amount": 1789.0,
+        "heat": 3
+      },
+      {
+        "date": "2026-09-11",
+        "amount": 132.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-12",
+        "amount": 440.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-13",
+        "amount": 140.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-15",
+        "amount": 221.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-17",
+        "amount": 312.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-18",
+        "amount": 65.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-19",
+        "amount": 285.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-20",
+        "amount": 349.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-22",
+        "amount": 65.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-23",
+        "amount": 148.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-24",
+        "amount": 60.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-25",
+        "amount": 65.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-26",
+        "amount": 75.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-27",
+        "amount": 200.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-28",
+        "amount": 289.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-29",
+        "amount": 65.0,
+        "heat": 1
+      },
+      {
+        "date": "2026-09-30",
+        "amount": 98.0,
+        "heat": 1
+      }
+    ],
+    "top_counterparties": [
+      {
+        "name": "นาง สมใจ ร.",
+        "count": 1,
+        "amount": 3000.0
+      },
+      {
+        "name": "SHOPEE PAY",
+        "count": 2,
+        "amount": 1639.0
+      },
+      {
+        "name": "การไฟฟ้านครหลวง",
+        "count": 1,
+        "amount": 1190.0
+      },
+      {
+        "name": "LINE MAN",
+        "count": 3,
+        "amount": 866.0
+      },
+      {
+        "name": "มือถือรายเดือน (เน็ตดี)",
+        "count": 1,
+        "amount": 599.0
+      }
+    ]
+  },
+  "budget_status_oct": {
+    "month": "2026-10",
+    "today": "2026-10-08",
+    "days_in_month": 31,
+    "remaining_days_incl_today": 24,
+    "budget_total": 20100,
+    "spent_total": 6584.5,
+    "left_total": 13515.5,
+    "safe_per_day": 563,
+    "expected_percent_by_today": 26,
+    "jars": [
+      {
+        "category": "food",
+        "label_th": "ของกิน",
+        "emoji": "🍜",
+        "budget": 4500,
+        "spent": 557.0,
+        "left": 3943.0,
+        "percent": 12,
+        "state": "ok"
+      },
+      {
+        "category": "cafe",
+        "label_th": "คาเฟ่/เครื่องดื่ม",
+        "emoji": "☕",
+        "budget": 1200,
+        "spent": 195.0,
+        "left": 1005.0,
+        "percent": 16,
+        "state": "ok"
+      },
+      {
+        "category": "transport",
+        "label_th": "เดินทาง",
+        "emoji": "🚕",
+        "budget": 2000,
+        "spent": 440.0,
+        "left": 1560.0,
+        "percent": 22,
+        "state": "ok"
+      },
+      {
+        "category": "shopping",
+        "label_th": "ช้อปปิ้ง",
+        "emoji": "🛍️",
+        "budget": 2000,
+        "spent": 459.0,
+        "left": 1541.0,
+        "percent": 23,
+        "state": "ok"
+      },
+      {
+        "category": "bills",
+        "label_th": "บิล/ค่าน้ำไฟเน็ต",
+        "emoji": "🧾",
+        "budget": 2500,
+        "spent": 1284.5,
+        "left": 1215.5,
+        "percent": 51,
+        "state": "ok"
+      },
+      {
+        "category": "subscription",
+        "label_th": "สมาชิกรายเดือน",
+        "emoji": "🔁",
+        "budget": 600,
+        "spent": 299.0,
+        "left": 301.0,
+        "percent": 50,
+        "state": "ok"
+      },
+      {
+        "category": "family",
+        "label_th": "ครอบครัว",
+        "emoji": "🏠",
+        "budget": 3000,
+        "spent": 3000.0,
+        "left": 0.0,
+        "percent": 100,
+        "state": "warn"
+      },
+      {
+        "category": "friends",
+        "label_th": "โอนเพื่อน/หารบิล",
+        "emoji": "🫂",
+        "budget": 1500,
+        "spent": 350.0,
+        "left": 1150.0,
+        "percent": 23,
+        "state": "ok"
+      },
+      {
+        "category": "health",
+        "label_th": "สุขภาพ",
+        "emoji": "💊",
+        "budget": 800,
+        "spent": 0.0,
+        "left": 800.0,
+        "percent": 0,
+        "state": "ok"
+      },
+      {
+        "category": "fun",
+        "label_th": "บันเทิง",
+        "emoji": "🎬",
+        "budget": 1500,
+        "spent": 0.0,
+        "left": 1500.0,
+        "percent": 0,
+        "state": "ok"
+      },
+      {
+        "category": "other",
+        "label_th": "อื่นๆ",
+        "emoji": "📦",
+        "budget": 500,
+        "spent": 0.0,
+        "left": 500.0,
+        "percent": 0,
+        "state": "ok"
+      }
+    ]
+  },
+  "subscriptions": [
+    {
+      "counterparty": "มือถือรายเดือน (เน็ตดี)",
+      "amount": 599.0,
+      "months": [
+        "2026-08",
+        "2026-09"
+      ],
+      "day_of_month": 10,
+      "yearly_cost": 7188.0,
+      "category": "bills"
+    },
+    {
+      "counterparty": "MOVIEMAX",
+      "amount": 299.0,
+      "months": [
+        "2026-08",
+        "2026-09",
+        "2026-10"
+      ],
+      "day_of_month": 5,
+      "yearly_cost": 3588.0,
+      "category": "subscription"
+    }
+  ],
+  "wrapped_sep": {
+    "month": "2026-09",
+    "title_th": "สลิปบุ๊ก แรป · กันยายน 2026",
+    "spent_total": 10533.0,
+    "txn_count": 31,
+    "slides": [
+      {
+        "n": 1,
+        "kind": "total",
+        "headline_th": "เดือนนี้เงินออกไป ฿10,533",
+        "sub_th": "จาก 31 สลิป"
+      },
+      {
+        "n": 2,
+        "kind": "top_category",
+        "headline_th": "หมวดที่กินเงินที่สุด 🏠 ครอบครัว",
+        "sub_th": "฿3,000 · 28.5%"
+      },
+      {
+        "n": 3,
+        "kind": "favorite_place",
+        "headline_th": "ขาประจำ: Café Amazon สาขาสุขุมวิท 21",
+        "sub_th": "8 ครั้ง · ฿520 ≈ ข้าวมันไก่ 8 จาน"
+      },
+      {
+        "n": 4,
+        "kind": "biggest_day",
+        "headline_th": "วันที่ใช้หนักสุด 2026-09-08",
+        "sub_th": "฿3,050"
+      },
+      {
+        "n": 5,
+        "kind": "no_spend_days",
+        "headline_th": "วันที่ไม่จ่ายอะไรเลย 4 วัน",
+        "sub_th": "เก่งมาก 👏"
+      },
+      {
+        "n": 6,
+        "kind": "subscriptions",
+        "headline_th": "ตัดทุกเดือน 2 รายการ",
+        "sub_th": "ปีละ ฿10,776 — ยังใช้ครบไหม?"
+      }
+    ],
+    "favorite": {
+      "name": "Café Amazon สาขาสุขุมวิท 21",
+      "count": 8,
+      "amount": 520.0,
+      "compare_th": "≈ ข้าวมันไก่ 8 จาน"
+    },
+    "no_spend_days": 4,
+    "biggest_day": {
+      "date": "2026-09-08",
+      "amount": 3050.0,
+      "heat": 4
+    }
+  },
+  "share_cards": [
+    {
+      "id": "card_wrapped_sep",
+      "variant": "wrapped_story",
+      "size": [
+        1080,
+        1920
+      ],
+      "month": "2026-09",
+      "show_amounts": true,
+      "show_counterparties": false,
+      "headline_th": "เดือนนี้เงินออกไป ฿10,533",
+      "lines_th": [
+        "หมวดที่กินเงินที่สุด 🏠 ครอบครัว",
+        "ขาประจำ: Café Amazon สาขาสุขุมวิท 21",
+        "วันที่ใช้หนักสุด 2026-09-08"
+      ],
+      "footer_th": "ทำบัญชีจากสลิปใน 10 วิ · SlipBook",
+      "theme": "mint"
+    },
+    {
+      "id": "card_month_square",
+      "variant": "donut_square",
+      "size": [
+        1080,
+        1080
+      ],
+      "month": "2026-10",
+      "show_amounts": false,
+      "show_counterparties": false,
+      "headline_th": "ต.ค. เงินไหลไปไหน?",
+      "lines_th": [
+        "🏠 ครอบครัว 45.6%",
+        "🧾 บิล/ค่าน้ำไฟเน็ต 19.5%",
+        "🍜 ของกิน 8.5%",
+        "🛍️ ช้อปปิ้ง 7.0%"
+      ],
+      "footer_th": "ทำบัญชีจากสลิปใน 10 วิ · SlipBook",
+      "theme": "mint"
+    }
+  ],
+  "search_example": {
+    "query": "Café Amazon",
+    "range": [
+      "2026-09-01",
+      "2026-10-08"
+    ],
+    "matches": 11,
+    "total": 715.0
+  },
+  "ui_copy_th": {
+    "home_title": "สลิปเต็มแกลเลอรี่?",
+    "home_sub": "โยนเข้ามาเลย เดี๋ยวทำบัญชีให้",
+    "drop_cta": "เลือกสลิปจากแกลเลอรี่",
+    "demo_cta": "ลองข้อมูลตัวอย่าง (ต้นกล้า)",
+    "privacy_badge": "อ่านสลิปในเครื่อง · ไม่เก็บรูป · ปิดเลขบัญชีให้อัตโนมัติ",
+    "importing": "กำลังอ่าน {done}/{total} สลิป…",
+    "import_done": "เพิ่ม {added} รายการ · ข้ามสลิปซ้ำ {dup} · รอเช็ก {review}",
+    "dup_chip": "สลิปซ้ำ — ข้ามให้แล้ว",
+    "review_missing": "อ่านไม่ครบ ช่วยเช็กหน่อย",
+    "review_who": "{name} คือใคร?",
+    "remember_toggle": "จำไว้ ครั้งหน้าจัดให้เลย",
+    "dashboard_title": "{month} เงินไหลไปไหน?",
+    "safe_per_day": "ใช้ได้อีกวันละ ฿{amount}",
+    "jar_warn": "{emoji} {label} ใช้ไป {percent}% แล้ว",
+    "jar_over": "{emoji} {label} เกินงบ ฿{over}",
+    "subs_title": "ตัดเงินทุกเดือน",
+    "subs_line": "{name} ฿{amount}/เดือน = ฿{yearly}/ปี",
+    "wrapped_cta": "ดูสรุปเดือนนี้",
+    "share_cta": "แชร์การ์ด",
+    "hide_amounts": "ซ่อนตัวเลขเงิน",
+    "empty_month": "ยังไม่มีสลิปเดือนนี้ — ลองโยนเข้ามาสัก 3 ใบ",
+    "disclaimer": "SlipBook ช่วยจดรายจ่ายจากสลิป ไม่ได้ตรวจสอบว่าสลิปจริงหรือปลอม และไม่เชื่อมบัญชีธนาคาร"
+  },
+  "reel_script_th": [
+    {
+      "t": "0-3s",
+      "shot": "เลื่อนแกลเลอรี่ที่มีแต่สลิปโอนเงิน (ใช้สลิปตัวอย่าง)",
+      "overlay": "สลิปเต็มเครื่อง แต่ไม่รู้เงินหายไปไหน 😵",
+      "vo": "ใครแกลเลอรี่เป็นแบบนี้บ้าง"
+    },
+    {
+      "t": "3-7s",
+      "shot": "สั่ง AI สร้างแอป: จอ prompt + โค้ดวิ่ง (speed ramp)",
+      "overlay": "ให้ AI เขียนแอปให้ 1 วัน",
+      "vo": "วันนี้ให้ AI ทำแอปเปลี่ยนสลิปเป็นบัญชี"
+    },
+    {
+      "t": "7-13s",
+      "shot": "เลือก 18 สลิป → สลิปบินเข้ากองแล้วแตกเป็นแถวรายการ ตัวเลขนับขึ้น",
+      "overlay": "18 สลิป → บัญชีใน 3 วิ · ข้ามสลิปซ้ำ 1",
+      "vo": "โยนเข้าไปทีเดียว 18 ใบ"
+    },
+    {
+      "t": "13-17s",
+      "shot": "โดนัทหมวดหมู่หมุนเข้า",
+      "overlay": "ต.ค. ใช้ไป ฿6,584 · 🏠 ครอบครัว 45.6%",
+      "vo": "รู้เลยเงินไปไหน"
+    },
+    {
+      "t": "17-21s",
+      "shot": "แตะชิป 'น.ส. แพรวา ส. คือใคร?' → เลือกเพื่อน → จำไว้",
+      "overlay": "สอนครั้งเดียว ครั้งหน้าจัดให้เอง",
+      "vo": ""
+    },
+    {
+      "t": "21-25s",
+      "shot": "Budget jars + ป้าย 'ใช้ได้อีกวันละ'",
+      "overlay": "ใช้ได้อีกวันละ ฿563",
+      "vo": "แถมบอกว่าวันนี้ใช้ได้อีกเท่าไหร่"
+    },
+    {
+      "t": "25-28s",
+      "shot": "การ์ดตัดทุกเดือน + Wrapped สไลด์",
+      "overlay": "ตัดทุกเดือน ปีละ ฿10,776 😳",
+      "vo": ""
+    },
+    {
+      "t": "28-30s",
+      "shot": "หน้าผู้พูด + การ์ดแชร์",
+      "overlay": "คอมเมนต์「สลิป」รับลิงก์ฟรี",
+      "vo": "อยากได้คอมเมนต์คำว่า สลิป"
+    }
+  ],
+  "test_vectors": [
+    {
+      "name": "parse_s01_template_A",
+      "input_slip": "s01",
+      "expect": {
+        "amount": 89.0,
+        "date": "2026-10-01",
+        "time": "08:12",
+        "ref": "0126274A0812KP01",
+        "direction": "out",
+        "category": "food"
+      }
+    },
+    {
+      "name": "parse_s03_template_C_buddhist_slash",
+      "input_slip": "s03",
+      "expect": {
+        "amount": 200.0,
+        "date": "2026-10-01",
+        "time": "18:45",
+        "category": "transport"
+      }
+    },
+    {
+      "name": "thousand_separator",
+      "input_slip": "s08",
+      "expect": {
+        "amount": 1284.5,
+        "category": "bills"
+      }
+    },
+    {
+      "name": "duplicate_same_ref",
+      "input_slip": "s09",
+      "expect": {
+        "status": "duplicate",
+        "duplicate_of": "s08"
+      }
+    },
+    {
+      "name": "person_unknown_asks",
+      "input_slip": "s07",
+      "expect": {
+        "category": "friends",
+        "source": "person_default",
+        "status": "needs_review",
+        "counterparty_account_masked": "xxx-x-x5190-x"
+      }
+    },
+    {
+      "name": "memory_family",
+      "input_slip": "s13",
+      "expect": {
+        "category": "family",
+        "source": "memory"
+      }
+    },
+    {
+      "name": "missing_ref_fingerprint",
+      "input_slip": "s14",
+      "expect": {
+        "ref": null,
+        "parse_confidence": 0.8,
+        "status": "needs_review",
+        "dedupe_key": "fp:2026-10-06|12:40|120.00|ร้านส้มตำนัว"
+      }
+    },
+    {
+      "name": "incoming_by_owner_name",
+      "input_slip": "s18",
+      "expect": {
+        "direction": "in",
+        "counterparty": "นาย ภูมิ ใจดี",
+        "category": "income"
+      }
+    },
+    {
+      "name": "batch_counts",
+      "expect": {
+        "files_dropped": 18,
+        "duplicates_skipped": 1,
+        "needs_review": 2,
+        "added": 17,
+        "out_total": 6584.5,
+        "in_total": 150.0
+      }
+    },
+    {
+      "name": "dashboard_oct",
+      "expect": {
+        "spent_total": 6584.5,
+        "income_total": 150.0,
+        "txn_count": 16,
+        "top3": [
+          [
+            "family",
+            3000.0,
+            45.6
+          ],
+          [
+            "bills",
+            1284.5,
+            19.5
+          ],
+          [
+            "food",
+            557.0,
+            8.5
+          ]
+        ]
+      }
+    },
+    {
+      "name": "budget_oct_today",
+      "expect": {
+        "remaining_days_incl_today": 24,
+        "left_total": 13515.5,
+        "safe_per_day": 563,
+        "warn_or_over": [
+          "family"
+        ]
+      }
+    },
+    {
+      "name": "subscriptions",
+      "expect": [
+        [
+          "มือถือรายเดือน (เน็ตดี)",
+          599.0,
+          7188.0
+        ],
+        [
+          "MOVIEMAX",
+          299.0,
+          3588.0
+        ]
+      ]
+    },
+    {
+      "name": "wrapped_sep",
+      "expect": {
+        "spent_total": 10533.0,
+        "txn_count": 31,
+        "favorite": {
+          "name": "Café Amazon สาขาสุขุมวิท 21",
+          "count": 8,
+          "amount": 520.0,
+          "compare_th": "≈ ข้าวมันไก่ 8 จาน"
+        },
+        "no_spend_days": 4
+      }
+    }
+  ],
+  "feature_checklist_example": {
+    "must_have": [
+      {
+        "key": "slip_drop",
+        "label": "Slip Drop → Auto Book",
+        "done": true
+      },
+      {
+        "key": "smart_category",
+        "label": "Smart Category + Merchant Memory",
+        "done": true
+      },
+      {
+        "key": "month_dashboard",
+        "label": "Month Dashboard (โดนัท + ปฏิทินร้อน + ท็อปผู้รับ)",
+        "done": true
+      },
+      {
+        "key": "budget_jars",
+        "label": "Budget Jars + ใช้ได้อีกวันละ",
+        "done": true
+      },
+      {
+        "key": "share_wrapped",
+        "label": "Money Wrapped + Share Card",
+        "done": true
+      }
+    ],
+    "nice_to_have": [
+      {
+        "key": "subscription_spotter",
+        "label": "ตัดเงินทุกเดือน",
+        "done": true
+      },
+      {
+        "key": "search",
+        "label": "ค้นหา/กรอง",
+        "done": false
+      },
+      {
+        "key": "split_link",
+        "label": "ส่งต่อ SplitBill",
+        "done": false
+      },
+      {
+        "key": "export_csv",
+        "label": "ส่งออก CSV/Sheets",
+        "done": false
+      },
+      {
+        "key": "pin_lock",
+        "label": "ล็อก PIN",
+        "done": false
+      },
+      {
+        "key": "reminder",
+        "label": "เตือน 21:00 โยนสลิปวันนี้",
+        "done": false
+      },
+      {
+        "key": "quick_add",
+        "label": "เพิ่มเงินสดด้วยมือ",
+        "done": false
+      }
+    ]
+  },
+  "analytics_events_example": [
+    {
+      "name": "import_completed",
+      "at": "2026-10-08T08:12:00+07:00",
+      "props": {
+        "files": 18,
+        "added": 17,
+        "dup": 1,
+        "review": 2,
+        "ms": 2400
+      }
+    },
+    {
+      "name": "category_corrected",
+      "at": "2026-10-08T08:13:00+07:00",
+      "props": {
+        "from_source": "person_default",
+        "to": "friends",
+        "remember": true
+      }
+    },
+    {
+      "name": "share_card_exported",
+      "at": "2026-10-08T08:15:00+07:00",
+      "props": {
+        "variant": "wrapped_story",
+        "show_amounts": true
+      }
+    }
+  ],
+  "local_store_example": {
+    "key": "slipbook:v1",
+    "version": 1,
+    "settings": {
+      "owner_names": [
+        "ต้นกล้า"
+      ],
+      "lang": "th",
+      "ocr_engine": "tesseract_tha_eng",
+      "ai_parse": "off",
+      "keep_images": false,
+      "mask_accounts": true,
+      "hide_amounts_on_share": false,
+      "month_start_day": 1,
+      "pin_lock": false,
+      "reminder": {
+        "enabled": true,
+        "time": "21:00"
+      },
+      "currency": "THB"
+    },
+    "budgets": [
+      {
+        "month": "2026-10",
+        "by_category": {
+          "food": 4500,
+          "cafe": 1200,
+          "transport": 2000,
+          "shopping": 2000,
+          "bills": 2500,
+          "subscription": 600,
+          "family": 3000,
+          "friends": 1500,
+          "health": 800,
+          "fun": 1500,
+          "other": 500
+        }
+      }
+    ],
+    "merchant_memory": {
+      "นาง สมใจ ร.": "family",
+      "นาย ภูมิ ใจดี": "friends",
+      "น.ส. แพรวา ส.": "friends"
+    },
+    "txn_count": 51,
+    "last_import_batch": "imp_20261008_0812",
+    "seen_dedupe_keys_count": 17,
+    "note": "transactions อยู่ใน IndexedDB store 'txns' (ดู ledger) — localStorage เก็บแค่ค่าตั้ง/งบ/memory"
+  }
+}

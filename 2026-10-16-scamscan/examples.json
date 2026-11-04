@@ -1,0 +1,1454 @@
+{
+  "meta": {
+    "app": "ScamScan (มิจฉาสแกน)",
+    "date": "2026-10-16",
+    "engine": "scamscan-rules-1",
+    "fictional_note_th": "บุคคล ผู้ส่ง โดเมน ข้อความ ทั้งหมดเป็นตัวอย่างสมมติ",
+    "colors": {
+      "night": "#0B1220",
+      "panel": "#111A2E",
+      "paper": "#F8FAFC",
+      "siren": "#DC2626",
+      "amber": "#F97316",
+      "caution": "#FACC15",
+      "safe": "#16A34A",
+      "shield": "#38BDF8"
+    }
+  },
+  "rules": [
+    {
+      "id": "urgency",
+      "weight": 15,
+      "label_th": "เร่งให้รีบ",
+      "explain_th": "มิจฉาชอบขู่ให้รีบ จะได้ไม่มีเวลาคิดหรือถามใคร",
+      "patterns": [
+        "ด่วน",
+        "ภายใน\\s?\\d+\\s?(ชม|ชั่วโมง|นาที)",
+        "ภายในวันนี้",
+        "ทันที",
+        "ถูกระงับ",
+        "ระงับ",
+        "หมดอายุ",
+        "ล่าสุดวันนี้",
+        "หมดไว"
+      ]
+    },
+    {
+      "id": "credential",
+      "weight": 20,
+      "label_th": "ขอรหัส/OTP/ข้อมูลส่วนตัว",
+      "explain_th": "ธนาคารและหน่วยงานจริงจะไม่ขอ OTP รหัส หรือเลขบัตรผ่านลิงก์/แชต",
+      "patterns": [
+        "OTP",
+        "รหัสผ่าน",
+        "รหัส\\s?PIN",
+        "PIN",
+        "เลขบัตรประชาชน",
+        "ยืนยันตัวตน",
+        "กรอกข้อมูล"
+      ]
+    },
+    {
+      "id": "money",
+      "weight": 15,
+      "label_th": "ขอให้โอน/จ่ายเงิน",
+      "explain_th": "ขอค่าธรรมเนียม มัดจำ หรือให้โอนก่อน = สัญญาณอันตราย",
+      "patterns": [
+        "โอน(เงิน)?",
+        "ค่าธรรมเนียม",
+        "ชำระ",
+        "มัดจำ",
+        "ค่าส่ง(เพิ่ม)?",
+        "ค่าปรับ"
+      ]
+    },
+    {
+      "id": "too_good",
+      "weight": 15,
+      "label_th": "ดีเกินจริง",
+      "explain_th": "ได้รางวัล เงินคืน รายได้ง่าย ๆ ที่ไม่เคยสมัคร มักเป็นเหยื่อล่อ",
+      "patterns": [
+        "ได้รับรางวัล",
+        "ถูกรางวัล",
+        "เงินคืน",
+        "คืนภาษี",
+        "รายได้วันละ",
+        "กำไร\\s?\\d+",
+        "ฟรี!",
+        "ลด\\S*\\s?[7-9]\\d\\s?%"
+      ]
+    },
+    {
+      "id": "authority",
+      "weight": 15,
+      "label_th": "อ้างเป็นเจ้าหน้าที่",
+      "explain_th": "อ้างตำรวจ ศาล DSI ปปง. หรือหมายจับ เพื่อให้กลัว",
+      "patterns": [
+        "ตำรวจ",
+        "DSI",
+        "ดีเอสไอ",
+        "ปปง",
+        "หมายจับ",
+        "ศาล",
+        "คดี(ฟอกเงิน)?"
+      ]
+    },
+    {
+      "id": "off_platform",
+      "weight": 20,
+      "label_th": "ให้แอดไลน์/ลงแอปนอกสโตร์",
+      "explain_th": "ให้แอดไลน์แปลก ๆ หรือโหลดแอป/ไฟล์ .apk อาจโดนดูดเงินจากมือถือ",
+      "patterns": [
+        "แอดไลน์",
+        "add\\s?line",
+        "ติดตั้งแอป",
+        "ดาวน์โหลดแอป",
+        "\\.apk\\b",
+        "@\\w+\\s?\\(ไลน์\\)"
+      ]
+    },
+    {
+      "id": "link",
+      "weight": 10,
+      "label_th": "มีลิงก์ให้กด",
+      "explain_th": "ลิงก์ในข้อความที่ไม่ได้ขอ = ตรวจด้วย Link X-Ray ก่อนกดเสมอ",
+      "patterns": []
+    },
+    {
+      "id": "brand_mismatch",
+      "weight": 25,
+      "label_th": "อ้างแบรนด์ แต่ลิงก์ไม่ใช่เว็บทางการ",
+      "explain_th": "ชื่อในข้อความกับโดเมนจริงไม่ตรงกัน = ลิงก์ปลอมเลียนแบบ",
+      "patterns": []
+    },
+    {
+      "id": "shortener",
+      "weight": 10,
+      "label_th": "ลิงก์ย่อซ่อนปลายทาง",
+      "explain_th": "ลิงก์ย่อทำให้มองไม่เห็นว่าพาไปเว็บไหน",
+      "patterns": []
+    },
+    {
+      "id": "bad_tld",
+      "weight": 10,
+      "label_th": "นามสกุลเว็บแปลก",
+      "explain_th": "หน่วยงานไทยใช้ .co.th .go.th .or.th หรือ .com ของตัวเอง ไม่ใช่ .top .xyz .icu",
+      "patterns": []
+    },
+    {
+      "id": "no_https",
+      "weight": 5,
+      "label_th": "ลิงก์ไม่เข้ารหัส (http)",
+      "explain_th": "เว็บที่ให้กรอกข้อมูลต้องเป็น https อย่างน้อย",
+      "patterns": []
+    },
+    {
+      "id": "punycode",
+      "weight": 15,
+      "label_th": "โดเมนตัวอักษรหลอกตา",
+      "explain_th": "xn-- คือโดเมนที่ใช้ตัวอักษรหน้าตาเหมือน แต่ไม่ใช่ตัวจริง",
+      "patterns": []
+    },
+    {
+      "id": "ip_link",
+      "weight": 15,
+      "label_th": "ลิงก์เป็นเลข IP",
+      "explain_th": "เว็บจริงไม่ส่งลิงก์เป็นตัวเลข IP",
+      "patterns": []
+    }
+  ],
+  "brands": [
+    {
+      "id": "kbank",
+      "name_th": "ธนาคารกสิกรไทย",
+      "text": [
+        "กสิกร",
+        "kbank",
+        "K PLUS"
+      ],
+      "host": [
+        "kbank",
+        "kasikorn",
+        "kasikornbank"
+      ],
+      "official": [
+        "kasikornbank.com"
+      ],
+      "verified": false
+    },
+    {
+      "id": "scb",
+      "name_th": "ธนาคารไทยพาณิชย์",
+      "text": [
+        "ไทยพาณิชย์",
+        "SCB"
+      ],
+      "host": [
+        "scb",
+        "scbeasy"
+      ],
+      "official": [
+        "scb.co.th"
+      ],
+      "verified": false
+    },
+    {
+      "id": "ktb",
+      "name_th": "ธนาคารกรุงไทย",
+      "text": [
+        "กรุงไทย",
+        "Krungthai"
+      ],
+      "host": [
+        "krungthai",
+        "ktb"
+      ],
+      "official": [
+        "krungthai.com"
+      ],
+      "verified": false
+    },
+    {
+      "id": "krungsri",
+      "name_th": "ธนาคารกรุงศรีอยุธยา",
+      "text": [
+        "กรุงศรี",
+        "Krungsri"
+      ],
+      "host": [
+        "krungsri"
+      ],
+      "official": [
+        "krungsri.com"
+      ],
+      "verified": false
+    },
+    {
+      "id": "bbl",
+      "name_th": "ธนาคารกรุงเทพ",
+      "text": [
+        "ธนาคารกรุงเทพ",
+        "Bangkok Bank",
+        "บัวหลวง"
+      ],
+      "host": [
+        "bangkokbank",
+        "bualuang"
+      ],
+      "official": [
+        "bangkokbank.com"
+      ],
+      "verified": false
+    },
+    {
+      "id": "thaipost",
+      "name_th": "ไปรษณีย์ไทย",
+      "text": [
+        "ไปรษณีย์",
+        "Thailand Post"
+      ],
+      "host": [
+        "thaipost",
+        "thailandpost"
+      ],
+      "official": [
+        "thailandpost.co.th"
+      ],
+      "verified": false
+    },
+    {
+      "id": "revenue",
+      "name_th": "กรมสรรพากร",
+      "text": [
+        "สรรพากร",
+        "คืนภาษี"
+      ],
+      "host": [
+        "rd",
+        "revenue"
+      ],
+      "official": [
+        "rd.go.th"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pea",
+      "name_th": "การไฟฟ้าส่วนภูมิภาค",
+      "text": [
+        "การไฟฟ้า",
+        "PEA",
+        "ค่าไฟ"
+      ],
+      "host": [
+        "pea"
+      ],
+      "official": [
+        "pea.co.th"
+      ],
+      "verified": false
+    }
+  ],
+  "levels": [
+    {
+      "min": 75,
+      "level": "scam",
+      "label_th": "เข้าข่ายมิจฉาสูงมาก",
+      "color": "#DC2626",
+      "emoji": "🚨"
+    },
+    {
+      "min": 50,
+      "level": "risky",
+      "label_th": "เสี่ยงสูง อย่าเพิ่งกด",
+      "color": "#F97316",
+      "emoji": "⚠️"
+    },
+    {
+      "min": 25,
+      "level": "caution",
+      "label_th": "น่าสงสัย ตรวจก่อน",
+      "color": "#FACC15",
+      "emoji": "🤔"
+    },
+    {
+      "min": 0,
+      "level": "low",
+      "label_th": "ยังไม่เจอสัญญาณอันตราย",
+      "color": "#16A34A",
+      "emoji": "✅"
+    }
+  ],
+  "call_signs": [
+    {
+      "id": "cs_authority",
+      "weight": 20,
+      "label_th": "อ้างเป็นตำรวจ/DSI/ศาล/ปปง."
+    },
+    {
+      "id": "cs_your_case",
+      "weight": 20,
+      "label_th": "บอกว่าบัญชีเราพัวพันคดี/ฟอกเงิน"
+    },
+    {
+      "id": "cs_transfer_check",
+      "weight": 25,
+      "label_th": "ให้โอนเงินไป 'ตรวจสอบ' หรือ 'บัญชีปลอดภัย'"
+    },
+    {
+      "id": "cs_secret",
+      "weight": 15,
+      "label_th": "ห้ามบอกใคร ห้ามวางสาย"
+    },
+    {
+      "id": "cs_video_uniform",
+      "weight": 10,
+      "label_th": "วิดีโอคอลโชว์เครื่องแบบ/บัตร/ห้องสถานี"
+    },
+    {
+      "id": "cs_app_install",
+      "weight": 20,
+      "label_th": "ให้ติดตั้งแอปหรือแชร์หน้าจอ"
+    },
+    {
+      "id": "cs_otp",
+      "weight": 20,
+      "label_th": "ขอ OTP หรือรหัส"
+    },
+    {
+      "id": "cs_parcel",
+      "weight": 10,
+      "label_th": "อ้างพัสดุผิดกฎหมายติดชื่อเรา"
+    }
+  ],
+  "demo": {
+    "persona": {
+      "name_th": "ป้าแดง",
+      "age": 62,
+      "helper_th": "มิ้นท์",
+      "helper_role_th": "ลูกสาว"
+    },
+    "inbox": [
+      {
+        "id": "m1",
+        "channel": "sms",
+        "sender": "KBank-TH",
+        "text": "แจ้งเตือน: บัญชี K PLUS ของท่านถูกระงับ กรุณายืนยันตัวตนภายใน 24 ชม. ที่ https://kbank-verify-th.top/login แล้วกรอก OTP"
+      },
+      {
+        "id": "m2",
+        "channel": "sms",
+        "sender": "ThaiPost",
+        "text": "ไปรษณีย์: พัสดุของคุณค้างส่งเนื่องจากที่อยู่ไม่ครบ ชำระค่าส่งเพิ่ม 18 บาท ที่ thaipost-delivery.cc/pay ด่วน"
+      },
+      {
+        "id": "m3",
+        "channel": "line",
+        "sender": "เพื่อนใหม่ในไลน์",
+        "text": "ยินดีด้วยค่ะ คุณได้รับเงินคืนภาษี 4,280 บาท กดรับที่ bit.ly/rd-kuen แล้วแอดไลน์ @refund-th เพื่อยืนยัน"
+      },
+      {
+        "id": "m4",
+        "channel": "line",
+        "sender": "มิ้นท์",
+        "text": "แม่ เย็นนี้มิ้นท์กลับไปกินข้าวบ้านนะ ซื้อขนมครกไปฝาก"
+      }
+    ],
+    "scan_inputs": [
+      {
+        "text": "แจ้งเตือน: บัญชี K PLUS ของท่านถูกระงับ กรุณายืนยันตัวตนภายใน 24 ชม. ที่ https://kbank-verify-th.top/login แล้วกรอก OTP",
+        "sender": "KBank-TH",
+        "channel": "sms",
+        "source": "demo"
+      },
+      {
+        "text": "ไปรษณีย์: พัสดุของคุณค้างส่งเนื่องจากที่อยู่ไม่ครบ ชำระค่าส่งเพิ่ม 18 บาท ที่ thaipost-delivery.cc/pay ด่วน",
+        "sender": "ThaiPost",
+        "channel": "sms",
+        "source": "demo"
+      },
+      {
+        "text": "ยินดีด้วยค่ะ คุณได้รับเงินคืนภาษี 4,280 บาท กดรับที่ bit.ly/rd-kuen แล้วแอดไลน์ @refund-th เพื่อยืนยัน",
+        "sender": "เพื่อนใหม่ในไลน์",
+        "channel": "line",
+        "source": "demo"
+      },
+      {
+        "text": "แม่ เย็นนี้มิ้นท์กลับไปกินข้าวบ้านนะ ซื้อขนมครกไปฝาก",
+        "sender": "มิ้นท์",
+        "channel": "line",
+        "source": "demo"
+      }
+    ]
+  },
+  "scan_results": {
+    "m1": {
+      "engine": "scamscan-rules-1",
+      "channel": "sms",
+      "sender": "KBank-TH",
+      "text": "แจ้งเตือน: บัญชี K PLUS ของท่านถูกระงับ กรุณายืนยันตัวตนภายใน 24 ชม. ที่ https://kbank-verify-th.top/login แล้วกรอก OTP",
+      "score": 90,
+      "raw_score": 80,
+      "combo_bonus": 10,
+      "level": "scam",
+      "label_th": "เข้าข่ายมิจฉาสูงมาก",
+      "color": "#DC2626",
+      "emoji": "🚨",
+      "flags": [
+        {
+          "rule_id": "urgency",
+          "weight": 15,
+          "label_th": "เร่งให้รีบ",
+          "explain_th": "มิจฉาชอบขู่ให้รีบ จะได้ไม่มีเวลาคิดหรือถามใคร",
+          "hits": 3
+        },
+        {
+          "rule_id": "credential",
+          "weight": 20,
+          "label_th": "ขอรหัส/OTP/ข้อมูลส่วนตัว",
+          "explain_th": "ธนาคารและหน่วยงานจริงจะไม่ขอ OTP รหัส หรือเลขบัตรผ่านลิงก์/แชต",
+          "hits": 2
+        },
+        {
+          "rule_id": "link",
+          "weight": 10,
+          "label_th": "มีลิงก์ให้กด",
+          "explain_th": "ลิงก์ในข้อความที่ไม่ได้ขอ = ตรวจด้วย Link X-Ray ก่อนกดเสมอ",
+          "hits": 1
+        },
+        {
+          "rule_id": "brand_mismatch",
+          "weight": 25,
+          "label_th": "อ้างแบรนด์ แต่ลิงก์ไม่ใช่เว็บทางการ",
+          "explain_th": "ชื่อในข้อความกับโดเมนจริงไม่ตรงกัน = ลิงก์ปลอมเลียนแบบ",
+          "hits": 1
+        },
+        {
+          "rule_id": "bad_tld",
+          "weight": 10,
+          "label_th": "นามสกุลเว็บแปลก",
+          "explain_th": "หน่วยงานไทยใช้ .co.th .go.th .or.th หรือ .com ของตัวเอง ไม่ใช่ .top .xyz .icu",
+          "hits": 1
+        }
+      ],
+      "highlights": [
+        {
+          "start": 31,
+          "end": 39,
+          "text": "ถูกระงับ",
+          "rule_id": "urgency"
+        },
+        {
+          "start": 45,
+          "end": 56,
+          "text": "ยืนยันตัวตน",
+          "rule_id": "credential"
+        },
+        {
+          "start": 56,
+          "end": 67,
+          "text": "ภายใน 24 ชม",
+          "rule_id": "urgency"
+        },
+        {
+          "start": 73,
+          "end": 106,
+          "text": "https://kbank-verify-th.top/login",
+          "rule_id": "link"
+        },
+        {
+          "start": 116,
+          "end": 119,
+          "text": "OTP",
+          "rule_id": "credential"
+        }
+      ],
+      "links": [
+        {
+          "raw": "https://kbank-verify-th.top/login",
+          "scheme": "https",
+          "host": "kbank-verify-th.top",
+          "registered_domain": "kbank-verify-th.top",
+          "tld": "top",
+          "host_tokens": [
+            "kbank",
+            "verify",
+            "th",
+            "top"
+          ],
+          "claimed_brands": [
+            "kbank"
+          ],
+          "official_match": [],
+          "flags": [
+            "bad_tld",
+            "brand_mismatch"
+          ],
+          "verdict": "fake_lookalike",
+          "verdict_th": "ปลอมตัวเป็น ธนาคารกสิกรไทย — เว็บจริงคือ kasikornbank.com",
+          "real_site": "kasikornbank.com"
+        }
+      ],
+      "claimed_brands": [
+        "kbank"
+      ],
+      "actions": {
+        "steps": [
+          {
+            "icon": "🛑",
+            "text_th": "อย่ากดลิงก์ อย่าโอน อย่าบอก OTP"
+          },
+          {
+            "icon": "📞",
+            "text_th": "โทรถามธนาคารกสิกรไทย ด้วยเบอร์หลังบัตร/ในแอปทางการ"
+          },
+          {
+            "icon": "🚫",
+            "text_th": "บล็อกผู้ส่ง แล้วลบข้อความ"
+          },
+          {
+            "icon": "📣",
+            "text_th": "ถ้าเผลอกด/โอนแล้ว: ติดต่อธนาคารทันที แล้วแจ้ง ศูนย์ AOC รับแจ้งภัยออนไลน์ 1441"
+          }
+        ],
+        "safe_reply_th": "ขอบคุณค่ะ เดี๋ยวติดต่อหน่วยงานผ่านเบอร์ทางการเองนะคะ",
+        "best_reply_th": "ไม่ตอบเลย ดีที่สุด"
+      },
+      "disclaimer_th": "คะแนนนี้เป็นสัญญาณเตือน ไม่ใช่คำตัดสิน ถ้าไม่แน่ใจ โทรถามเบอร์ทางการที่หาเอง"
+    },
+    "m2": {
+      "engine": "scamscan-rules-1",
+      "channel": "sms",
+      "sender": "ThaiPost",
+      "text": "ไปรษณีย์: พัสดุของคุณค้างส่งเนื่องจากที่อยู่ไม่ครบ ชำระค่าส่งเพิ่ม 18 บาท ที่ thaipost-delivery.cc/pay ด่วน",
+      "score": 85,
+      "raw_score": 75,
+      "combo_bonus": 10,
+      "level": "scam",
+      "label_th": "เข้าข่ายมิจฉาสูงมาก",
+      "color": "#DC2626",
+      "emoji": "🚨",
+      "flags": [
+        {
+          "rule_id": "urgency",
+          "weight": 15,
+          "label_th": "เร่งให้รีบ",
+          "explain_th": "มิจฉาชอบขู่ให้รีบ จะได้ไม่มีเวลาคิดหรือถามใคร",
+          "hits": 1
+        },
+        {
+          "rule_id": "money",
+          "weight": 15,
+          "label_th": "ขอให้โอน/จ่ายเงิน",
+          "explain_th": "ขอค่าธรรมเนียม มัดจำ หรือให้โอนก่อน = สัญญาณอันตราย",
+          "hits": 2
+        },
+        {
+          "rule_id": "link",
+          "weight": 10,
+          "label_th": "มีลิงก์ให้กด",
+          "explain_th": "ลิงก์ในข้อความที่ไม่ได้ขอ = ตรวจด้วย Link X-Ray ก่อนกดเสมอ",
+          "hits": 1
+        },
+        {
+          "rule_id": "brand_mismatch",
+          "weight": 25,
+          "label_th": "อ้างแบรนด์ แต่ลิงก์ไม่ใช่เว็บทางการ",
+          "explain_th": "ชื่อในข้อความกับโดเมนจริงไม่ตรงกัน = ลิงก์ปลอมเลียนแบบ",
+          "hits": 1
+        },
+        {
+          "rule_id": "bad_tld",
+          "weight": 10,
+          "label_th": "นามสกุลเว็บแปลก",
+          "explain_th": "หน่วยงานไทยใช้ .co.th .go.th .or.th หรือ .com ของตัวเอง ไม่ใช่ .top .xyz .icu",
+          "hits": 1
+        }
+      ],
+      "highlights": [
+        {
+          "start": 51,
+          "end": 55,
+          "text": "ชำระ",
+          "rule_id": "money"
+        },
+        {
+          "start": 55,
+          "end": 66,
+          "text": "ค่าส่งเพิ่ม",
+          "rule_id": "money"
+        },
+        {
+          "start": 78,
+          "end": 102,
+          "text": "thaipost-delivery.cc/pay",
+          "rule_id": "link"
+        },
+        {
+          "start": 103,
+          "end": 107,
+          "text": "ด่วน",
+          "rule_id": "urgency"
+        }
+      ],
+      "links": [
+        {
+          "raw": "thaipost-delivery.cc/pay",
+          "scheme": "none",
+          "host": "thaipost-delivery.cc",
+          "registered_domain": "thaipost-delivery.cc",
+          "tld": "cc",
+          "host_tokens": [
+            "thaipost",
+            "delivery",
+            "cc"
+          ],
+          "claimed_brands": [
+            "thaipost"
+          ],
+          "official_match": [],
+          "flags": [
+            "bad_tld",
+            "brand_mismatch"
+          ],
+          "verdict": "fake_lookalike",
+          "verdict_th": "ปลอมตัวเป็น ไปรษณีย์ไทย — เว็บจริงคือ thailandpost.co.th",
+          "real_site": "thailandpost.co.th"
+        }
+      ],
+      "claimed_brands": [
+        "thaipost"
+      ],
+      "actions": {
+        "steps": [
+          {
+            "icon": "🛑",
+            "text_th": "อย่ากดลิงก์ อย่าโอน อย่าบอก OTP"
+          },
+          {
+            "icon": "📞",
+            "text_th": "โทรถามไปรษณีย์ไทย ด้วยเบอร์หลังบัตร/ในแอปทางการ"
+          },
+          {
+            "icon": "🚫",
+            "text_th": "บล็อกผู้ส่ง แล้วลบข้อความ"
+          },
+          {
+            "icon": "📣",
+            "text_th": "ถ้าเผลอกด/โอนแล้ว: ติดต่อธนาคารทันที แล้วแจ้ง ศูนย์ AOC รับแจ้งภัยออนไลน์ 1441"
+          }
+        ],
+        "safe_reply_th": "ขอบคุณค่ะ เดี๋ยวติดต่อหน่วยงานผ่านเบอร์ทางการเองนะคะ",
+        "best_reply_th": "ไม่ตอบเลย ดีที่สุด"
+      },
+      "disclaimer_th": "คะแนนนี้เป็นสัญญาณเตือน ไม่ใช่คำตัดสิน ถ้าไม่แน่ใจ โทรถามเบอร์ทางการที่หาเอง"
+    },
+    "m3": {
+      "engine": "scamscan-rules-1",
+      "channel": "line",
+      "sender": "เพื่อนใหม่ในไลน์",
+      "text": "ยินดีด้วยค่ะ คุณได้รับเงินคืนภาษี 4,280 บาท กดรับที่ bit.ly/rd-kuen แล้วแอดไลน์ @refund-th เพื่อยืนยัน",
+      "score": 55,
+      "raw_score": 55,
+      "combo_bonus": 0,
+      "level": "risky",
+      "label_th": "เสี่ยงสูง อย่าเพิ่งกด",
+      "color": "#F97316",
+      "emoji": "⚠️",
+      "flags": [
+        {
+          "rule_id": "too_good",
+          "weight": 15,
+          "label_th": "ดีเกินจริง",
+          "explain_th": "ได้รางวัล เงินคืน รายได้ง่าย ๆ ที่ไม่เคยสมัคร มักเป็นเหยื่อล่อ",
+          "hits": 2
+        },
+        {
+          "rule_id": "off_platform",
+          "weight": 20,
+          "label_th": "ให้แอดไลน์/ลงแอปนอกสโตร์",
+          "explain_th": "ให้แอดไลน์แปลก ๆ หรือโหลดแอป/ไฟล์ .apk อาจโดนดูดเงินจากมือถือ",
+          "hits": 1
+        },
+        {
+          "rule_id": "link",
+          "weight": 10,
+          "label_th": "มีลิงก์ให้กด",
+          "explain_th": "ลิงก์ในข้อความที่ไม่ได้ขอ = ตรวจด้วย Link X-Ray ก่อนกดเสมอ",
+          "hits": 1
+        },
+        {
+          "rule_id": "shortener",
+          "weight": 10,
+          "label_th": "ลิงก์ย่อซ่อนปลายทาง",
+          "explain_th": "ลิงก์ย่อทำให้มองไม่เห็นว่าพาไปเว็บไหน",
+          "hits": 1
+        }
+      ],
+      "highlights": [
+        {
+          "start": 22,
+          "end": 29,
+          "text": "เงินคืน",
+          "rule_id": "too_good"
+        },
+        {
+          "start": 53,
+          "end": 67,
+          "text": "bit.ly/rd-kuen",
+          "rule_id": "link"
+        },
+        {
+          "start": 72,
+          "end": 79,
+          "text": "แอดไลน์",
+          "rule_id": "off_platform"
+        }
+      ],
+      "links": [
+        {
+          "raw": "bit.ly/rd-kuen",
+          "scheme": "none",
+          "host": "bit.ly",
+          "registered_domain": "bit.ly",
+          "tld": "ly",
+          "host_tokens": [
+            "bit",
+            "ly"
+          ],
+          "claimed_brands": [
+            "revenue"
+          ],
+          "official_match": [],
+          "flags": [
+            "shortener"
+          ],
+          "verdict": "hidden",
+          "verdict_th": "ลิงก์ย่อ มองไม่เห็นปลายทาง อย่ากด",
+          "real_site": null
+        }
+      ],
+      "claimed_brands": [
+        "revenue"
+      ],
+      "actions": {
+        "steps": [
+          {
+            "icon": "🛑",
+            "text_th": "อย่ากดลิงก์ อย่าโอน อย่าบอก OTP"
+          },
+          {
+            "icon": "📵",
+            "text_th": "อย่าติดตั้งแอปหรือไฟล์ที่ส่งมาทางแชต"
+          },
+          {
+            "icon": "📞",
+            "text_th": "โทรถามกรมสรรพากร ด้วยเบอร์หลังบัตร/ในแอปทางการ"
+          },
+          {
+            "icon": "🚫",
+            "text_th": "บล็อกผู้ส่ง แล้วลบข้อความ"
+          },
+          {
+            "icon": "📣",
+            "text_th": "ถ้าเผลอกด/โอนแล้ว: ติดต่อธนาคารทันที แล้วแจ้ง ศูนย์ AOC รับแจ้งภัยออนไลน์ 1441"
+          }
+        ],
+        "safe_reply_th": "ขอบคุณค่ะ เดี๋ยวติดต่อหน่วยงานผ่านเบอร์ทางการเองนะคะ",
+        "best_reply_th": "ไม่ตอบเลย ดีที่สุด"
+      },
+      "disclaimer_th": "คะแนนนี้เป็นสัญญาณเตือน ไม่ใช่คำตัดสิน ถ้าไม่แน่ใจ โทรถามเบอร์ทางการที่หาเอง"
+    },
+    "m4": {
+      "engine": "scamscan-rules-1",
+      "channel": "line",
+      "sender": "มิ้นท์",
+      "text": "แม่ เย็นนี้มิ้นท์กลับไปกินข้าวบ้านนะ ซื้อขนมครกไปฝาก",
+      "score": 0,
+      "raw_score": 0,
+      "combo_bonus": 0,
+      "level": "low",
+      "label_th": "ยังไม่เจอสัญญาณอันตราย",
+      "color": "#16A34A",
+      "emoji": "✅",
+      "flags": [],
+      "highlights": [],
+      "links": [],
+      "claimed_brands": [],
+      "actions": {
+        "steps": [
+          {
+            "icon": "✅",
+            "text_th": "ยังไม่เจอสัญญาณอันตรายชัด ๆ"
+          },
+          {
+            "icon": "🧠",
+            "text_th": "ถ้ามีคนขอเงินหรือ OTP ทีหลัง ให้สแกนใหม่"
+          }
+        ],
+        "safe_reply_th": null,
+        "best_reply_th": null
+      },
+      "disclaimer_th": "คะแนนนี้เป็นสัญญาณเตือน ไม่ใช่คำตัดสิน ถ้าไม่แน่ใจ โทรถามเบอร์ทางการที่หาเอง"
+    }
+  },
+  "link_xrays": [
+    {
+      "raw": "https://kbank-verify-th.top/login",
+      "scheme": "https",
+      "host": "kbank-verify-th.top",
+      "registered_domain": "kbank-verify-th.top",
+      "tld": "top",
+      "host_tokens": [
+        "kbank",
+        "verify",
+        "th",
+        "top"
+      ],
+      "claimed_brands": [
+        "kbank"
+      ],
+      "official_match": [],
+      "flags": [
+        "bad_tld",
+        "brand_mismatch"
+      ],
+      "verdict": "fake_lookalike",
+      "verdict_th": "ปลอมตัวเป็น ธนาคารกสิกรไทย — เว็บจริงคือ kasikornbank.com",
+      "real_site": "kasikornbank.com"
+    },
+    {
+      "raw": "https://www.kasikornbank.com",
+      "scheme": "https",
+      "host": "www.kasikornbank.com",
+      "registered_domain": "kasikornbank.com",
+      "tld": "com",
+      "host_tokens": [
+        "www",
+        "kasikornbank",
+        "com"
+      ],
+      "claimed_brands": [
+        "kbank"
+      ],
+      "official_match": [
+        "kbank"
+      ],
+      "flags": [],
+      "verdict": "official",
+      "verdict_th": "ตรงกับเว็บทางการของ ธนาคารกสิกรไทย (ยังควรพิมพ์เข้าเว็บเองดีกว่ากดลิงก์)",
+      "real_site": null
+    },
+    {
+      "raw": "http://192.168.10.5/scb",
+      "scheme": "http",
+      "host": "192.168.10.5",
+      "registered_domain": "192.168.10.5",
+      "tld": "",
+      "host_tokens": [
+        "192",
+        "168",
+        "10",
+        "5"
+      ],
+      "claimed_brands": [],
+      "official_match": [],
+      "flags": [
+        "no_https",
+        "ip_link"
+      ],
+      "verdict": "suspicious",
+      "verdict_th": "มีจุดน่าสงสัย อย่ากรอกข้อมูล",
+      "real_site": null
+    },
+    {
+      "raw": "https://xn--krngthai-ke9a.com/otp",
+      "scheme": "https",
+      "host": "xn--krngthai-ke9a.com",
+      "registered_domain": "xn--krngthai-ke9a.com",
+      "tld": "com",
+      "host_tokens": [
+        "xn",
+        "krngthai",
+        "ke9a",
+        "com"
+      ],
+      "claimed_brands": [],
+      "official_match": [],
+      "flags": [
+        "punycode"
+      ],
+      "verdict": "suspicious",
+      "verdict_th": "มีจุดน่าสงสัย อย่ากรอกข้อมูล",
+      "real_site": null
+    }
+  ],
+  "family_cards": [
+    {
+      "kind": "family_alert",
+      "size": "1080x1350",
+      "to_th": "แม่",
+      "from_th": "มิ้นท์",
+      "title_th": "แม่ ระวังข้อความนี้นะ",
+      "lines_th": [
+        "🚨 เข้าข่ายมิจฉาสูงมาก · 90/100",
+        "\"แจ้งเตือน: บัญชี K PLUS ของท่านถูกระงับ กรุณายืนยันตัวตนภายใ…\"",
+        "• เร่งให้รีบ",
+        "• ขอรหัส/OTP/ข้อมูลส่วนตัว",
+        "• มีลิงก์ให้กด",
+        "อย่ากดลิงก์ อย่าโอน อย่าบอก OTP"
+      ],
+      "accent": "#DC2626",
+      "bg": "#0B1220",
+      "footer": "เช็กด้วย ScamScan · AI วันละแอป",
+      "line_text_th": "แม่ 🙏 ข้อความที่ได้มา ScamScan บอกว่า เข้าข่ายมิจฉาสูงมาก (90/100) — อย่ากดลิงก์ อย่าโอน อย่าบอก OTP"
+    },
+    {
+      "kind": "family_alert",
+      "size": "1080x1350",
+      "to_th": "แม่",
+      "from_th": "มิ้นท์",
+      "title_th": "แม่ ระวังข้อความนี้นะ",
+      "lines_th": [
+        "⚠️ เสี่ยงสูง อย่าเพิ่งกด · 55/100",
+        "\"ยินดีด้วยค่ะ คุณได้รับเงินคืนภาษี 4,280 บาท กดรับที่ bit.ly/…\"",
+        "• ดีเกินจริง",
+        "• ให้แอดไลน์/ลงแอปนอกสโตร์",
+        "• มีลิงก์ให้กด",
+        "อย่ากดลิงก์ อย่าโอน อย่าบอก OTP"
+      ],
+      "accent": "#F97316",
+      "bg": "#0B1220",
+      "footer": "เช็กด้วย ScamScan · AI วันละแอป",
+      "line_text_th": "แม่ 🙏 ข้อความที่ได้มา ScamScan บอกว่า เสี่ยงสูง อย่าเพิ่งกด (55/100) — อย่ากดลิงก์ อย่าโอน อย่าบอก OTP"
+    }
+  ],
+  "quiz": {
+    "deck": [
+      {
+        "id": "q01",
+        "truth": "scam",
+        "channel": "sms",
+        "sender": "PEA",
+        "text": "การไฟฟ้า: ค้างชำระค่าไฟ จะถูกตัดไฟภายในวันนี้ ชำระที่ pea-bill.xyz"
+      },
+      {
+        "id": "q02",
+        "truth": "real",
+        "channel": "sms",
+        "sender": "SCB",
+        "text": "SCB: เงินเข้าบัญชี x1234 จำนวน 1,500.00 บ. คงเหลือ 8,240.15 บ."
+      },
+      {
+        "id": "q03",
+        "truth": "scam",
+        "channel": "line",
+        "sender": "งานออนไลน์",
+        "text": "รับสมัครงานกดไลก์ รายได้วันละ 1,500 บาท แอดไลน์ @job-easy ด่วน รับจำนวนจำกัด"
+      },
+      {
+        "id": "q04",
+        "truth": "real",
+        "channel": "line",
+        "sender": "หลานต้น",
+        "text": "ยาย พรุ่งนี้ต้นไปรับไปหาหมอ 9 โมงนะ"
+      },
+      {
+        "id": "q05",
+        "truth": "scam",
+        "channel": "sms",
+        "sender": "Krungsri",
+        "text": "กรุงศรี: มีการเข้าสู่ระบบผิดปกติ ยืนยันตัวตนทันที krungsri-secure.icu"
+      },
+      {
+        "id": "q06",
+        "truth": "scam",
+        "channel": "messenger",
+        "sender": "ร้านกระเป๋าแบรนด์",
+        "text": "ลดล้างสต็อก 90% โอนมัดจำก่อน 500 บาท ของหมดไว"
+      },
+      {
+        "id": "q07",
+        "truth": "real",
+        "channel": "sms",
+        "sender": "7-Eleven",
+        "text": "สมาชิกALL: แต้มของคุณจะหมดอายุสิ้นเดือนนี้ ตรวจได้ในแอป ALL member"
+      },
+      {
+        "id": "q08",
+        "truth": "scam",
+        "channel": "line",
+        "sender": "เจ้าหน้าที่ DSI",
+        "text": "บัญชีของท่านพัวพันคดีฟอกเงิน ติดต่อกลับด่วน ห้ามบอกผู้อื่น ติดตั้งแอปตรวจสอบ dsi-check.apk"
+      },
+      {
+        "id": "q09",
+        "truth": "real",
+        "channel": "line",
+        "sender": "กลุ่มบ้าน",
+        "text": "วันอาทิตย์ทำบุญบ้านนะ 7 โมงเช้า ใครว่างมาช่วยจัดของหน่อย"
+      },
+      {
+        "id": "q10",
+        "truth": "scam",
+        "channel": "sms",
+        "sender": "Lucky",
+        "text": "ยินดีด้วย! คุณถูกรางวัล iPhone ชำระค่าธรรมเนียมจัดส่ง 99 บาท tinyurl.com/get-ip"
+      }
+    ],
+    "seed": 20261016,
+    "round": [
+      "q08",
+      "q06",
+      "q01",
+      "q02",
+      "q04"
+    ],
+    "answers": [
+      "scam",
+      "real",
+      "scam",
+      "real",
+      "real"
+    ],
+    "grade": {
+      "results": [
+        {
+          "id": "q08",
+          "answer": "scam",
+          "correct": true
+        },
+        {
+          "id": "q06",
+          "answer": "real",
+          "correct": false
+        },
+        {
+          "id": "q01",
+          "answer": "scam",
+          "correct": true
+        },
+        {
+          "id": "q02",
+          "answer": "real",
+          "correct": true
+        },
+        {
+          "id": "q04",
+          "answer": "real",
+          "correct": true
+        }
+      ],
+      "right": 4,
+      "of": 5,
+      "badge_th": "👀 เกือบแล้ว"
+    },
+    "engine_scores": {
+      "q01": 85,
+      "q02": 0,
+      "q03": 50,
+      "q04": 0,
+      "q05": 90,
+      "q06": 45,
+      "q07": 15,
+      "q08": 50,
+      "q09": 0,
+      "q10": 60
+    }
+  },
+  "call_shield": {
+    "ticked": [
+      "cs_authority",
+      "cs_your_case",
+      "cs_secret",
+      "cs_transfer_check"
+    ],
+    "score": 80,
+    "level": "scam",
+    "label_th": "เข้าข่ายมิจฉาสูงมาก",
+    "color": "#DC2626",
+    "emoji": "🚨",
+    "say_th": "ขอวางสายก่อนนะคะ เดี๋ยวโทรกลับสถานี/ธนาคารด้วยเบอร์ทางการเอง",
+    "rule_th": "หน่วยงานจริงไม่ให้โอนเงินไปตรวจสอบ และไม่ห้ามวางสาย"
+  },
+  "history": [
+    {
+      "on": "2026-10-03",
+      "score": 85,
+      "level": "scam",
+      "top_rule": "credential",
+      "brands": [
+        "kbank"
+      ],
+      "preview_th": "บัญชีถูกระงับ ยืนยันตัวตน…"
+    },
+    {
+      "on": "2026-10-05",
+      "score": 10,
+      "level": "low",
+      "top_rule": null,
+      "brands": [],
+      "preview_th": "แม่ ส่งรูปหลานให้ดู"
+    },
+    {
+      "on": "2026-10-08",
+      "score": 70,
+      "level": "risky",
+      "top_rule": "money",
+      "brands": [
+        "thaipost"
+      ],
+      "preview_th": "พัสดุค้างส่ง ชำระค่าส่ง…"
+    },
+    {
+      "on": "2026-10-11",
+      "score": 90,
+      "level": "scam",
+      "top_rule": "credential",
+      "brands": [
+        "scb"
+      ],
+      "preview_th": "SCB แจ้งเปลี่ยนเบอร์ กรอก OTP…"
+    },
+    {
+      "on": "2026-10-16",
+      "score": 90,
+      "level": "scam",
+      "top_rule": "urgency",
+      "brands": [
+        "kbank"
+      ],
+      "preview_th": "แจ้งเตือน: บัญชี K PLUS ของท่านถูกระงับ "
+    },
+    {
+      "on": "2026-10-16",
+      "score": 85,
+      "level": "scam",
+      "top_rule": "urgency",
+      "brands": [
+        "thaipost"
+      ],
+      "preview_th": "ไปรษณีย์: พัสดุของคุณค้างส่งเนื่องจากที่"
+    },
+    {
+      "on": "2026-10-16",
+      "score": 55,
+      "level": "risky",
+      "top_rule": "too_good",
+      "brands": [
+        "revenue"
+      ],
+      "preview_th": "ยินดีด้วยค่ะ คุณได้รับเงินคืนภาษี 4,280 "
+    },
+    {
+      "on": "2026-10-16",
+      "score": 0,
+      "level": "low",
+      "top_rule": null,
+      "brands": [],
+      "preview_th": "แม่ เย็นนี้มิ้นท์กลับไปกินข้าวบ้านนะ ซื้"
+    }
+  ],
+  "wrapped": {
+    "month": "2026-10",
+    "checked": 8,
+    "flagged": 6,
+    "low": 2,
+    "top_rule_id": "credential",
+    "top_rule_th": "ขอรหัส/OTP/ข้อมูลส่วนตัว",
+    "most_faked_brand": "kbank",
+    "most_faked_brand_th": "ธนาคารกสิกรไทย",
+    "quiz_streak_days": 5
+  },
+  "local_store": {
+    "version": 1,
+    "settings": {
+      "big_text": true,
+      "read_aloud": true,
+      "family": [
+        {
+          "name_th": "มิ้นท์",
+          "relation_th": "ลูกสาว"
+        }
+      ],
+      "share_history_with_family": false,
+      "ai_explain": false
+    },
+    "history": [
+      {
+        "on": "2026-10-03",
+        "score": 85,
+        "level": "scam",
+        "top_rule": "credential",
+        "brands": [
+          "kbank"
+        ],
+        "preview_th": "บัญชีถูกระงับ ยืนยันตัวตน…"
+      },
+      {
+        "on": "2026-10-05",
+        "score": 10,
+        "level": "low",
+        "top_rule": null,
+        "brands": [],
+        "preview_th": "แม่ ส่งรูปหลานให้ดู"
+      },
+      {
+        "on": "2026-10-08",
+        "score": 70,
+        "level": "risky",
+        "top_rule": "money",
+        "brands": [
+          "thaipost"
+        ],
+        "preview_th": "พัสดุค้างส่ง ชำระค่าส่ง…"
+      },
+      {
+        "on": "2026-10-11",
+        "score": 90,
+        "level": "scam",
+        "top_rule": "credential",
+        "brands": [
+          "scb"
+        ],
+        "preview_th": "SCB แจ้งเปลี่ยนเบอร์ กรอก OTP…"
+      },
+      {
+        "on": "2026-10-16",
+        "score": 90,
+        "level": "scam",
+        "top_rule": "urgency",
+        "brands": [
+          "kbank"
+        ],
+        "preview_th": "แจ้งเตือน: บัญชี K PLUS ของท่านถูกระงับ "
+      },
+      {
+        "on": "2026-10-16",
+        "score": 85,
+        "level": "scam",
+        "top_rule": "urgency",
+        "brands": [
+          "thaipost"
+        ],
+        "preview_th": "ไปรษณีย์: พัสดุของคุณค้างส่งเนื่องจากที่"
+      },
+      {
+        "on": "2026-10-16",
+        "score": 55,
+        "level": "risky",
+        "top_rule": "too_good",
+        "brands": [
+          "revenue"
+        ],
+        "preview_th": "ยินดีด้วยค่ะ คุณได้รับเงินคืนภาษี 4,280 "
+      },
+      {
+        "on": "2026-10-16",
+        "score": 0,
+        "level": "low",
+        "top_rule": null,
+        "brands": [],
+        "preview_th": "แม่ เย็นนี้มิ้นท์กลับไปกินข้าวบ้านนะ ซื้"
+      }
+    ],
+    "quiz_days": [
+      "2026-10-12",
+      "2026-10-13",
+      "2026-10-14",
+      "2026-10-15",
+      "2026-10-16"
+    ],
+    "custom_brands": [],
+    "blocked_senders": [
+      "KBank-TH"
+    ]
+  },
+  "ai_examples": {
+    "explain_request": {
+      "text": "แจ้งเตือน: บัญชี K PLUS ของท่านถูกระงับ กรุณายืนยันตัวตนภายใน 24 ชม. ที่ https://kbank-verify-th.top/login แล้วกรอก OTP",
+      "flags": [
+        "urgency",
+        "credential",
+        "link",
+        "brand_mismatch",
+        "bad_tld"
+      ],
+      "level": "scam",
+      "audience": "elder"
+    },
+    "explain_response": {
+      "summary_th": "ข้อความนี้ทำทีเป็นธนาคาร แต่ลิงก์ไม่ใช่เว็บธนาคารจริง และขอ OTP ซึ่งธนาคารไม่ขอแบบนี้",
+      "why_th": [
+        "ขู่ว่าบัญชีถูกระงับให้รีบ",
+        "ลิงก์ .top ไม่ใช่ kasikornbank.com",
+        "ขอ OTP"
+      ],
+      "never_change_score": true
+    },
+    "ocr_response": {
+      "text": "ไปรษณีย์: พัสดุของคุณค้างส่งเนื่องจากที่อยู่ไม่ครบ ชำระค่าส่งเพิ่ม 18 บาท ที่ thaipost-delivery.cc/pay ด่วน",
+      "sender_guess": "ThaiPost",
+      "channel_guess": "sms",
+      "confidence": 0.93
+    }
+  },
+  "ui_copy_th": {
+    "home_title": "ข้อความนี้ หลอกรึเปล่า?",
+    "paste_cta": "📋 วางข้อความ / แชร์มาจาก SMS-LINE",
+    "shot_cta": "🖼️ ส่งรูปแคปหน้าจอ",
+    "demo_cta": "ลองกล่องข้อความป้าแดง (ตัวอย่าง)",
+    "scanning": "กำลังส่องหาสัญญาณมิจฉา…",
+    "meter_title": "ระดับความเสี่ยง",
+    "flags_title": "เจอ {n} จุดอันตราย",
+    "xray_title": "Link X-Ray",
+    "xray_real_site": "เว็บจริงคือ {site}",
+    "actions_title": "ทำแบบนี้เลย",
+    "copy_reply": "คัดลอกคำตอบปลอดภัย",
+    "family_cta": "ส่งเตือนแม่/พ่อทาง LINE",
+    "quiz_title": "จริงหรือหลอก? วันละ 5 ข้อ",
+    "quiz_scam": "หลอก 🚨",
+    "quiz_real": "จริง ✅",
+    "call_title": "กำลังคุยสายอยู่? ติ๊กสิ่งที่ได้ยิน",
+    "wrapped_title": "เดือนนี้ฉันรอดมิจฉา",
+    "big_text": "ตัวหนังสือใหญ่",
+    "read_aloud": "อ่านออกเสียง",
+    "disclaimer": "ผลนี้เป็นสัญญาณเตือน ไม่ใช่คำตัดสิน · ไม่แน่ใจให้โทรถามเบอร์ทางการที่หาเอง",
+    "levels": {
+      "scam": "เข้าข่ายมิจฉาสูงมาก",
+      "risky": "เสี่ยงสูง อย่าเพิ่งกด",
+      "caution": "น่าสงสัย ตรวจก่อน",
+      "low": "ยังไม่เจอสัญญาณอันตราย"
+    }
+  },
+  "reel_script": [
+    {
+      "t": "0-3s",
+      "shot": "มือถือแม่เด้ง SMS 'บัญชีถูกระงับ' ซูมลิงก์",
+      "vo_th": "แม่ส่ง SMS นี้มาถามว่าต้องกดไหม…",
+      "overlay_th": "แม่เกือบกดแล้ว 😱"
+    },
+    {
+      "t": "3-8s",
+      "shot": "จอคอม: วาง Prompt A → โค้ดวิ่ง → แอปขึ้น (ตัดเร็ว x8)",
+      "vo_th": "งั้นให้ AI สร้างแอปจับมิจฉาให้แม่เลย",
+      "overlay_th": "สร้างแอปใน 1 ชั่วโมง"
+    },
+    {
+      "t": "8-14s",
+      "shot": "วางข้อความ → มิเตอร์วิ่ง 0→90 แดง ไซเรนกระพริบ คำอันตรายถูกไฮไลต์ทีละคำ",
+      "vo_th": "90 เต็ม 100 ไฮไลต์ให้เลยว่าตรงไหนหลอก",
+      "overlay_th": "🚨 90/100"
+    },
+    {
+      "t": "14-19s",
+      "shot": "Link X-Ray แตกโดเมน kbank-verify-th.top เทียบ kasikornbank.com",
+      "vo_th": "ลิงก์นี้ไม่ใช่ธนาคารจริง",
+      "overlay_th": "ปลอม ❌ จริง ✅"
+    },
+    {
+      "t": "19-24s",
+      "shot": "สลับ 3 ฟีเจอร์: Family Card ส่ง LINE · Call Shield ติ๊ก 4 ข้อ = 80 · Quiz ปัดซ้ายขวา",
+      "vo_th": "ส่งเตือนแม่ได้ คุยสายอยู่ก็เช็กได้ มีเกมฝึกด้วย",
+      "overlay_th": "5 ฟีเจอร์ในแอปเดียว"
+    },
+    {
+      "t": "24-30s",
+      "shot": "แม่ยิ้มถือมือถือ ตัวหนังสือใหญ่ + การ์ด Wrapped",
+      "vo_th": "คอมเมนต์ 'กันโกง' เดี๋ยวส่งลิงก์ให้ ไปลงเครื่องพ่อแม่กัน",
+      "overlay_th": "คอมเมนต์ 'กันโกง' รับแอปฟรี"
+    }
+  ],
+  "expect_locked": {
+    "today": "2026-10-16",
+    "inbox_scores": {
+      "m1": 90,
+      "m2": 85,
+      "m3": 55,
+      "m4": 0
+    },
+    "inbox_levels": {
+      "m1": "scam",
+      "m2": "scam",
+      "m3": "risky",
+      "m4": "low"
+    },
+    "m1_flags": [
+      "urgency",
+      "credential",
+      "link",
+      "brand_mismatch",
+      "bad_tld"
+    ],
+    "m1_real_site": "kasikornbank.com",
+    "m1_raw_plus_combo": [
+      80,
+      10
+    ],
+    "xray_verdicts": [
+      "fake_lookalike",
+      "official",
+      "suspicious",
+      "suspicious"
+    ],
+    "quiz_round": [
+      "q08",
+      "q06",
+      "q01",
+      "q02",
+      "q04"
+    ],
+    "quiz_right": 4,
+    "quiz_badge": "👀 เกือบแล้ว",
+    "call_shield_score": 80,
+    "call_shield_level": "scam",
+    "wrapped": {
+      "checked": 8,
+      "flagged": 6,
+      "low": 2,
+      "top_rule_id": "credential",
+      "most_faked_brand": "kbank",
+      "quiz_streak_days": 5
+    }
+  }
+}

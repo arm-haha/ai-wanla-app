@@ -1,0 +1,2653 @@
+{
+  "meta": {
+    "app": "FridgeChef",
+    "app_th": "ตู้เย็นเชฟ",
+    "date": "2026-10-14",
+    "channel": "AI วันละแอป",
+    "version": 1,
+    "note": "ทุกตัวเลขมาจาก reference/fridge.py (deterministic) · persona สมมติ"
+  },
+  "colors": {
+    "bg": "#F7FAFC",
+    "ink": "#0F172A",
+    "ice": "#38BDF8",
+    "tomato": "#EF4444",
+    "basil": "#22C55E",
+    "yolk": "#FBBF24",
+    "card": "#FFFFFF"
+  },
+  "persona": {
+    "name": "ปุ๊ก",
+    "age": 21,
+    "context": "นักศึกษาอยู่หอ มีตู้เย็นเล็ก เตาไฟฟ้า 1 หัว + ไมโครเวฟ งบกินวันละ ~150"
+  },
+  "staples": [
+    "fish_sauce",
+    "soy_sauce",
+    "oyster_sauce",
+    "sugar",
+    "oil",
+    "salt",
+    "pepper"
+  ],
+  "catalog": [
+    {
+      "key": "egg",
+      "name_th": "ไข่ไก่",
+      "emoji": "🥚",
+      "category": "protein",
+      "shelf_life_days": 21,
+      "unit_th": "ฟอง",
+      "price_thb": 5,
+      "store": "7-Eleven"
+    },
+    {
+      "key": "pork_minced",
+      "name_th": "หมูสับ",
+      "emoji": "🥩",
+      "category": "protein",
+      "shelf_life_days": 3,
+      "unit_th": "กรัม",
+      "price_thb": 40,
+      "store": "ตลาด"
+    },
+    {
+      "key": "chicken",
+      "name_th": "อกไก่",
+      "emoji": "🍗",
+      "category": "protein",
+      "shelf_life_days": 2,
+      "unit_th": "กรัม",
+      "price_thb": 45,
+      "store": "ตลาด"
+    },
+    {
+      "key": "sausage",
+      "name_th": "ไส้กรอก",
+      "emoji": "🌭",
+      "category": "protein",
+      "shelf_life_days": 14,
+      "unit_th": "ชิ้น",
+      "price_thb": 39,
+      "store": "7-Eleven"
+    },
+    {
+      "key": "egg_tofu",
+      "name_th": "เต้าหู้ไข่",
+      "emoji": "🧈",
+      "category": "protein",
+      "shelf_life_days": 10,
+      "unit_th": "หลอด",
+      "price_thb": 12,
+      "store": "7-Eleven"
+    },
+    {
+      "key": "holy_basil",
+      "name_th": "ใบกะเพรา",
+      "emoji": "🌿",
+      "category": "herb",
+      "shelf_life_days": 4,
+      "unit_th": "กำ",
+      "price_thb": 10,
+      "store": "ตลาด"
+    },
+    {
+      "key": "spring_onion",
+      "name_th": "ต้นหอม",
+      "emoji": "🧅",
+      "category": "herb",
+      "shelf_life_days": 5,
+      "unit_th": "ต้น",
+      "price_thb": 10,
+      "store": "ตลาด"
+    },
+    {
+      "key": "chili",
+      "name_th": "พริกขี้หนู",
+      "emoji": "🌶️",
+      "category": "herb",
+      "shelf_life_days": 7,
+      "unit_th": "กำ",
+      "price_thb": 5,
+      "store": "ตลาด"
+    },
+    {
+      "key": "garlic",
+      "name_th": "กระเทียม",
+      "emoji": "🧄",
+      "category": "herb",
+      "shelf_life_days": 30,
+      "unit_th": "หัว",
+      "price_thb": 10,
+      "store": "ตลาด"
+    },
+    {
+      "key": "lime",
+      "name_th": "มะนาว",
+      "emoji": "🍋",
+      "category": "herb",
+      "shelf_life_days": 14,
+      "unit_th": "ลูก",
+      "price_thb": 5,
+      "store": "ตลาด"
+    },
+    {
+      "key": "tomato",
+      "name_th": "มะเขือเทศ",
+      "emoji": "🍅",
+      "category": "veg",
+      "shelf_life_days": 7,
+      "unit_th": "ลูก",
+      "price_thb": 10,
+      "store": "ตลาด"
+    },
+    {
+      "key": "carrot",
+      "name_th": "แครอท",
+      "emoji": "🥕",
+      "category": "veg",
+      "shelf_life_days": 14,
+      "unit_th": "หัว",
+      "price_thb": 8,
+      "store": "ตลาด"
+    },
+    {
+      "key": "cabbage",
+      "name_th": "กะหล่ำปลี",
+      "emoji": "🥬",
+      "category": "veg",
+      "shelf_life_days": 10,
+      "unit_th": "หัว",
+      "price_thb": 25,
+      "store": "ตลาด"
+    },
+    {
+      "key": "onion",
+      "name_th": "หอมใหญ่",
+      "emoji": "🧅",
+      "category": "veg",
+      "shelf_life_days": 30,
+      "unit_th": "หัว",
+      "price_thb": 10,
+      "store": "ตลาด"
+    },
+    {
+      "key": "cooked_rice",
+      "name_th": "ข้าวสวย",
+      "emoji": "🍚",
+      "category": "carb",
+      "shelf_life_days": 2,
+      "unit_th": "ถ้วย",
+      "price_thb": 10,
+      "store": "7-Eleven"
+    },
+    {
+      "key": "glass_noodle",
+      "name_th": "วุ้นเส้น",
+      "emoji": "🍜",
+      "category": "carb",
+      "shelf_life_days": 180,
+      "unit_th": "ห่อ",
+      "price_thb": 12,
+      "store": "7-Eleven"
+    },
+    {
+      "key": "milk",
+      "name_th": "นมจืด",
+      "emoji": "🥛",
+      "category": "dairy",
+      "shelf_life_days": 7,
+      "unit_th": "กล่อง",
+      "price_thb": 25,
+      "store": "7-Eleven"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "kaprao_moo_kai_dao",
+      "name_th": "กะเพราหมูสับไข่ดาว",
+      "emoji": "🍳",
+      "time_min": 12,
+      "tags": [
+        "spicy",
+        "pork"
+      ],
+      "required": [
+        "pork_minced",
+        "holy_basil",
+        "chili",
+        "garlic",
+        "cooked_rice"
+      ],
+      "optional": [
+        "egg"
+      ],
+      "steps": [
+        [
+          "ทอดไข่ดาวให้ขอบกรอบ",
+          180
+        ],
+        [
+          "โขลกพริก+กระเทียมหยาบ ๆ",
+          0
+        ],
+        [
+          "ผัดพริกกระเทียมให้หอม ใส่หมูสับผัดจนสุก",
+          240
+        ],
+        [
+          "ปรุงซอสหอยฯ ซีอิ๊ว น้ำปลา น้ำตาลนิด",
+          0
+        ],
+        [
+          "ปิดไฟ ใส่ใบกะเพรา คลุกเร็ว ๆ",
+          30
+        ],
+        [
+          "ตักราดข้าว วางไข่ดาว",
+          0
+        ]
+      ]
+    },
+    {
+      "id": "khao_pad_sausage",
+      "name_th": "ข้าวผัดไส้กรอก",
+      "emoji": "🍛",
+      "time_min": 10,
+      "tags": [
+        "pork",
+        "kid_friendly"
+      ],
+      "required": [
+        "cooked_rice",
+        "sausage",
+        "egg",
+        "garlic"
+      ],
+      "optional": [
+        "tomato",
+        "spring_onion",
+        "carrot",
+        "onion"
+      ],
+      "steps": [
+        [
+          "หั่นไส้กรอก แครอท มะเขือเทศ",
+          0
+        ],
+        [
+          "เจียวกระเทียม ใส่ไส้กรอกผัด",
+          120
+        ],
+        [
+          "ตอกไข่ ยีให้สุก",
+          60
+        ],
+        [
+          "ใส่ข้าว ผัดให้ร่วน ปรุงซีอิ๊ว",
+          180
+        ],
+        [
+          "โรยต้นหอม",
+          0
+        ]
+      ]
+    },
+    {
+      "id": "tom_jued_tofu_moo",
+      "name_th": "ต้มจืดเต้าหู้หมูสับ",
+      "emoji": "🍲",
+      "time_min": 15,
+      "tags": [
+        "pork",
+        "not_spicy",
+        "kid_friendly"
+      ],
+      "required": [
+        "egg_tofu",
+        "pork_minced",
+        "garlic"
+      ],
+      "optional": [
+        "spring_onion",
+        "carrot",
+        "cabbage",
+        "glass_noodle"
+      ],
+      "steps": [
+        [
+          "ต้มน้ำให้เดือด ใส่กระเทียมทุบ",
+          240
+        ],
+        [
+          "ปั้นหมูสับเป็นก้อน ใส่ลงหม้อ",
+          180
+        ],
+        [
+          "ใส่แครอท เต้าหู้ไข่หั่นแว่น",
+          180
+        ],
+        [
+          "ปรุงซีอิ๊ว+น้ำปลา โรยต้นหอม",
+          0
+        ]
+      ]
+    },
+    {
+      "id": "khai_jiao_moo_sap",
+      "name_th": "ไข่เจียวหมูสับฟู ๆ",
+      "emoji": "🥚",
+      "time_min": 8,
+      "tags": [
+        "pork",
+        "not_spicy",
+        "kid_friendly"
+      ],
+      "required": [
+        "egg",
+        "pork_minced"
+      ],
+      "optional": [
+        "spring_onion",
+        "tomato",
+        "onion"
+      ],
+      "steps": [
+        [
+          "ตีไข่+หมูสับ+น้ำปลา ให้ขึ้นฟอง",
+          60
+        ],
+        [
+          "น้ำมันร้อนจัด เทไข่สูง ๆ",
+          90
+        ],
+        [
+          "กลับด้าน ทอดอีกนิด",
+          60
+        ],
+        [
+          "ตักพักสะเด็ดน้ำมัน",
+          0
+        ]
+      ]
+    },
+    {
+      "id": "khai_tun_nom",
+      "name_th": "ไข่ตุ๋นนมสด (ไมโครเวฟ)",
+      "emoji": "🍮",
+      "time_min": 10,
+      "tags": [
+        "not_spicy",
+        "vegetarian",
+        "microwave_ok",
+        "kid_friendly"
+      ],
+      "required": [
+        "egg",
+        "milk"
+      ],
+      "optional": [
+        "spring_onion",
+        "carrot"
+      ],
+      "steps": [
+        [
+          "ตีไข่ 2 ฟอง + นม ครึ่งแก้ว + ซีอิ๊วนิด",
+          0
+        ],
+        [
+          "กรองใส่ถ้วย ปิดฟิล์มเจาะรู",
+          0
+        ],
+        [
+          "ไมโครเวฟไฟกลาง",
+          240
+        ],
+        [
+          "พัก 1 นาทีให้เซ็ตตัว",
+          60
+        ]
+      ]
+    },
+    {
+      "id": "khai_pad_makheua_thet",
+      "name_th": "ไข่ผัดมะเขือเทศ",
+      "emoji": "🍅",
+      "time_min": 8,
+      "tags": [
+        "not_spicy",
+        "vegetarian"
+      ],
+      "required": [
+        "egg",
+        "tomato",
+        "garlic"
+      ],
+      "optional": [
+        "spring_onion",
+        "onion"
+      ],
+      "steps": [
+        [
+          "ผัดไข่ให้สุกครึ่ง ๆ ตักพัก",
+          60
+        ],
+        [
+          "ผัดกระเทียม+มะเขือเทศให้นุ่ม",
+          120
+        ],
+        [
+          "ใส่ไข่กลับ ปรุงซอสหอยฯ+น้ำตาลนิด",
+          30
+        ],
+        [
+          "โรยต้นหอม",
+          0
+        ]
+      ]
+    },
+    {
+      "id": "khao_tom_moo",
+      "name_th": "ข้าวต้มหมูสับ",
+      "emoji": "🥣",
+      "time_min": 12,
+      "tags": [
+        "pork",
+        "not_spicy"
+      ],
+      "required": [
+        "cooked_rice",
+        "pork_minced",
+        "garlic"
+      ],
+      "optional": [
+        "spring_onion",
+        "egg"
+      ],
+      "steps": [
+        [
+          "เจียวกระเทียมพักไว้",
+          60
+        ],
+        [
+          "ต้มน้ำ ใส่หมูสับปั้นก้อน",
+          180
+        ],
+        [
+          "ใส่ข้าวสวย ต้มต่อ",
+          240
+        ],
+        [
+          "ปรุง ตอกไข่ โรยต้นหอม+กระเทียมเจียว",
+          60
+        ]
+      ]
+    },
+    {
+      "id": "yum_woon_sen",
+      "name_th": "ยำวุ้นเส้นหมูสับ",
+      "emoji": "🥗",
+      "time_min": 15,
+      "tags": [
+        "spicy",
+        "pork"
+      ],
+      "required": [
+        "glass_noodle",
+        "pork_minced",
+        "tomato",
+        "chili",
+        "lime"
+      ],
+      "optional": [
+        "onion",
+        "spring_onion"
+      ],
+      "steps": [
+        [
+          "แช่วุ้นเส้นให้นิ่ม ลวกพัก",
+          120
+        ],
+        [
+          "ลวกหมูสับให้สุก",
+          90
+        ],
+        [
+          "ผสมน้ำยำ มะนาว น้ำปลา น้ำตาล พริก",
+          0
+        ],
+        [
+          "คลุกทุกอย่าง ชิมรสจัด ๆ",
+          0
+        ]
+      ]
+    },
+    {
+      "id": "yum_sai_krok",
+      "name_th": "ยำไส้กรอกแซ่บ",
+      "emoji": "🌭",
+      "time_min": 10,
+      "tags": [
+        "spicy",
+        "pork"
+      ],
+      "required": [
+        "sausage",
+        "tomato",
+        "chili",
+        "lime",
+        "onion"
+      ],
+      "optional": [
+        "spring_onion"
+      ],
+      "steps": [
+        [
+          "ทอด/ลวกไส้กรอก หั่นเฉียง",
+          120
+        ],
+        [
+          "หั่นหอมใหญ่ มะเขือเทศ",
+          0
+        ],
+        [
+          "ผสมน้ำยำ",
+          0
+        ],
+        [
+          "คลุกให้เข้ากัน",
+          0
+        ]
+      ]
+    },
+    {
+      "id": "pad_kalam_pli",
+      "name_th": "กะหล่ำปลีผัดน้ำปลา",
+      "emoji": "🥬",
+      "time_min": 8,
+      "tags": [
+        "not_spicy",
+        "vegetarian"
+      ],
+      "required": [
+        "cabbage",
+        "garlic"
+      ],
+      "optional": [
+        "carrot"
+      ],
+      "steps": [
+        [
+          "ฉีกกะหล่ำเป็นชิ้น",
+          0
+        ],
+        [
+          "เจียวกระเทียมจนเหลือง",
+          60
+        ],
+        [
+          "ไฟแรง ใส่กะหล่ำ+แครอท ผัด",
+          120
+        ],
+        [
+          "ปรุงน้ำปลา+น้ำตาล",
+          0
+        ]
+      ]
+    },
+    {
+      "id": "kai_pad_kaprao",
+      "name_th": "กะเพราไก่",
+      "emoji": "🍗",
+      "time_min": 12,
+      "tags": [
+        "spicy"
+      ],
+      "required": [
+        "chicken",
+        "holy_basil",
+        "chili",
+        "garlic",
+        "cooked_rice"
+      ],
+      "optional": [
+        "egg"
+      ],
+      "steps": [
+        [
+          "สับไก่",
+          0
+        ],
+        [
+          "ผัดพริกกระเทียม ใส่ไก่",
+          240
+        ],
+        [
+          "ปรุง ใส่กะเพรา",
+          30
+        ]
+      ]
+    },
+    {
+      "id": "sausage_omelet_roll",
+      "name_th": "ไข่ม้วนไส้กรอก",
+      "emoji": "🌯",
+      "time_min": 10,
+      "tags": [
+        "pork",
+        "not_spicy",
+        "kid_friendly"
+      ],
+      "required": [
+        "egg",
+        "sausage"
+      ],
+      "optional": [
+        "spring_onion",
+        "carrot"
+      ],
+      "steps": [
+        [
+          "ตีไข่ ใส่ต้นหอม+แครอทซอย",
+          0
+        ],
+        [
+          "เทไข่บาง ๆ วางไส้กรอก ม้วน",
+          120
+        ],
+        [
+          "เทไข่ชั้นสองม้วนต่อ",
+          120
+        ],
+        [
+          "หั่นเฉียงจัดจาน",
+          0
+        ]
+      ]
+    }
+  ],
+  "demo_input": {
+    "today": "2026-10-14",
+    "detections": [
+      {
+        "key": "egg",
+        "qty": 4,
+        "added_on": "2026-10-08",
+        "confidence": 0.97,
+        "bbox": [
+          0.08,
+          0.62,
+          0.3,
+          0.78
+        ]
+      },
+      {
+        "key": "pork_minced",
+        "qty": 200,
+        "added_on": "2026-10-12",
+        "confidence": 0.91,
+        "bbox": [
+          0.36,
+          0.4,
+          0.62,
+          0.55
+        ]
+      },
+      {
+        "key": "holy_basil",
+        "qty": 1,
+        "added_on": "2026-10-11",
+        "confidence": 0.88,
+        "bbox": [
+          0.66,
+          0.4,
+          0.92,
+          0.56
+        ]
+      },
+      {
+        "key": "chili",
+        "qty": 1,
+        "added_on": "2026-10-10",
+        "confidence": 0.84,
+        "bbox": [
+          0.7,
+          0.8,
+          0.86,
+          0.9
+        ]
+      },
+      {
+        "key": "garlic",
+        "qty": 1,
+        "added_on": "2026-10-01",
+        "confidence": 0.93,
+        "bbox": [
+          0.52,
+          0.8,
+          0.66,
+          0.92
+        ]
+      },
+      {
+        "key": "tomato",
+        "qty": 2,
+        "added_on": "2026-10-09",
+        "confidence": 0.95,
+        "bbox": [
+          0.1,
+          0.8,
+          0.3,
+          0.94
+        ]
+      },
+      {
+        "key": "spring_onion",
+        "qty": 3,
+        "added_on": "2026-10-10",
+        "confidence": 0.79,
+        "bbox": [
+          0.3,
+          0.6,
+          0.7,
+          0.66
+        ]
+      },
+      {
+        "key": "cooked_rice",
+        "qty": 1,
+        "added_on": "2026-10-13",
+        "confidence": 0.86,
+        "bbox": [
+          0.08,
+          0.2,
+          0.34,
+          0.36
+        ]
+      },
+      {
+        "key": "egg_tofu",
+        "qty": 1,
+        "added_on": "2026-10-07",
+        "confidence": 0.9,
+        "bbox": [
+          0.4,
+          0.2,
+          0.7,
+          0.3
+        ]
+      },
+      {
+        "key": "milk",
+        "qty": 1,
+        "added_on": "2026-10-10",
+        "confidence": 0.98,
+        "bbox": [
+          0.76,
+          0.06,
+          0.94,
+          0.36
+        ]
+      },
+      {
+        "key": "sausage",
+        "qty": 3,
+        "added_on": "2026-10-05",
+        "confidence": 0.92,
+        "bbox": [
+          0.38,
+          0.62,
+          0.62,
+          0.74
+        ]
+      },
+      {
+        "key": "carrot",
+        "qty": 1,
+        "added_on": "2026-10-03",
+        "confidence": 0.81,
+        "bbox": [
+          0.72,
+          0.62,
+          0.94,
+          0.76
+        ]
+      },
+      {
+        "key": "lime",
+        "qty": 1,
+        "added_on": "2026-10-09",
+        "confidence": 0.41,
+        "bbox": [
+          0.88,
+          0.82,
+          0.96,
+          0.9
+        ]
+      }
+    ],
+    "dice_seed": 20261014
+  },
+  "expect_locked": {
+    "today": "2026-10-14",
+    "detections": 13,
+    "confirmed_chips": 12,
+    "unconfirmed": [
+      "lime"
+    ],
+    "radar_today": [
+      "cooked_rice",
+      "holy_basil",
+      "pork_minced",
+      "spring_onion"
+    ],
+    "radar_at_risk_count": 9,
+    "radar_at_risk_value_thb": 130,
+    "top3": [
+      "kaprao_moo_kai_dao",
+      "khao_pad_sausage",
+      "khao_tom_moo"
+    ],
+    "top3_scores": [
+      138,
+      137,
+      134
+    ],
+    "top1_rescues": [
+      "pork_minced",
+      "holy_basil",
+      "cooked_rice"
+    ],
+    "top1_rescue_value_thb": 60,
+    "cook_steps": 6,
+    "cook_total_timer_s": 450,
+    "after_confirm_lime_new_menus": [
+      "yum_sai_krok",
+      "yum_woon_sen"
+    ],
+    "shopping_total_thb": 80,
+    "dice_pick": "khai_jiao_moo_sap",
+    "wrapped_meals": 9,
+    "wrapped_items": 12,
+    "wrapped_value_thb": 225,
+    "wrapped_top": "khai_jiao_moo_sap",
+    "wrapped_streak": 3
+  },
+  "inventory": [
+    {
+      "key": "cooked_rice",
+      "name_th": "ข้าวสวย",
+      "emoji": "🍚",
+      "category": "carb",
+      "qty": 1,
+      "unit_th": "ถ้วย",
+      "added_on": "2026-10-13",
+      "shelf_life_days": 2,
+      "days_left": 1,
+      "status": "today",
+      "confidence": 0.86,
+      "confirmed": true,
+      "price_thb": 10
+    },
+    {
+      "key": "holy_basil",
+      "name_th": "ใบกะเพรา",
+      "emoji": "🌿",
+      "category": "herb",
+      "qty": 1,
+      "unit_th": "กำ",
+      "added_on": "2026-10-11",
+      "shelf_life_days": 4,
+      "days_left": 1,
+      "status": "today",
+      "confidence": 0.88,
+      "confirmed": true,
+      "price_thb": 10
+    },
+    {
+      "key": "pork_minced",
+      "name_th": "หมูสับ",
+      "emoji": "🥩",
+      "category": "protein",
+      "qty": 200,
+      "unit_th": "กรัม",
+      "added_on": "2026-10-12",
+      "shelf_life_days": 3,
+      "days_left": 1,
+      "status": "today",
+      "confidence": 0.91,
+      "confirmed": true,
+      "price_thb": 40
+    },
+    {
+      "key": "spring_onion",
+      "name_th": "ต้นหอม",
+      "emoji": "🧅",
+      "category": "herb",
+      "qty": 3,
+      "unit_th": "ต้น",
+      "added_on": "2026-10-10",
+      "shelf_life_days": 5,
+      "days_left": 1,
+      "status": "today",
+      "confidence": 0.79,
+      "confirmed": true,
+      "price_thb": 10
+    },
+    {
+      "key": "tomato",
+      "name_th": "มะเขือเทศ",
+      "emoji": "🍅",
+      "category": "veg",
+      "qty": 2,
+      "unit_th": "ลูก",
+      "added_on": "2026-10-09",
+      "shelf_life_days": 7,
+      "days_left": 2,
+      "status": "soon",
+      "confidence": 0.95,
+      "confirmed": true,
+      "price_thb": 10
+    },
+    {
+      "key": "carrot",
+      "name_th": "แครอท",
+      "emoji": "🥕",
+      "category": "veg",
+      "qty": 1,
+      "unit_th": "หัว",
+      "added_on": "2026-10-03",
+      "shelf_life_days": 14,
+      "days_left": 3,
+      "status": "soon",
+      "confidence": 0.81,
+      "confirmed": true,
+      "price_thb": 8
+    },
+    {
+      "key": "chili",
+      "name_th": "พริกขี้หนู",
+      "emoji": "🌶️",
+      "category": "herb",
+      "qty": 1,
+      "unit_th": "กำ",
+      "added_on": "2026-10-10",
+      "shelf_life_days": 7,
+      "days_left": 3,
+      "status": "soon",
+      "confidence": 0.84,
+      "confirmed": true,
+      "price_thb": 5
+    },
+    {
+      "key": "egg_tofu",
+      "name_th": "เต้าหู้ไข่",
+      "emoji": "🧈",
+      "category": "protein",
+      "qty": 1,
+      "unit_th": "หลอด",
+      "added_on": "2026-10-07",
+      "shelf_life_days": 10,
+      "days_left": 3,
+      "status": "soon",
+      "confidence": 0.9,
+      "confirmed": true,
+      "price_thb": 12
+    },
+    {
+      "key": "milk",
+      "name_th": "นมจืด",
+      "emoji": "🥛",
+      "category": "dairy",
+      "qty": 1,
+      "unit_th": "กล่อง",
+      "added_on": "2026-10-10",
+      "shelf_life_days": 7,
+      "days_left": 3,
+      "status": "soon",
+      "confidence": 0.98,
+      "confirmed": true,
+      "price_thb": 25
+    },
+    {
+      "key": "sausage",
+      "name_th": "ไส้กรอก",
+      "emoji": "🌭",
+      "category": "protein",
+      "qty": 3,
+      "unit_th": "ชิ้น",
+      "added_on": "2026-10-05",
+      "shelf_life_days": 14,
+      "days_left": 5,
+      "status": "ok",
+      "confidence": 0.92,
+      "confirmed": true,
+      "price_thb": 39
+    },
+    {
+      "key": "lime",
+      "name_th": "มะนาว",
+      "emoji": "🍋",
+      "category": "herb",
+      "qty": 1,
+      "unit_th": "ลูก",
+      "added_on": "2026-10-09",
+      "shelf_life_days": 14,
+      "days_left": 9,
+      "status": "ok",
+      "confidence": 0.41,
+      "confirmed": false,
+      "price_thb": 5
+    },
+    {
+      "key": "egg",
+      "name_th": "ไข่ไก่",
+      "emoji": "🥚",
+      "category": "protein",
+      "qty": 4,
+      "unit_th": "ฟอง",
+      "added_on": "2026-10-08",
+      "shelf_life_days": 21,
+      "days_left": 15,
+      "status": "ok",
+      "confidence": 0.97,
+      "confirmed": true,
+      "price_thb": 5
+    },
+    {
+      "key": "garlic",
+      "name_th": "กระเทียม",
+      "emoji": "🧄",
+      "category": "herb",
+      "qty": 1,
+      "unit_th": "หัว",
+      "added_on": "2026-10-01",
+      "shelf_life_days": 30,
+      "days_left": 17,
+      "status": "ok",
+      "confidence": 0.93,
+      "confirmed": true,
+      "price_thb": 10
+    }
+  ],
+  "radar": {
+    "groups": {
+      "today": [
+        "cooked_rice",
+        "holy_basil",
+        "pork_minced",
+        "spring_onion"
+      ],
+      "soon": [
+        "tomato",
+        "carrot",
+        "chili",
+        "egg_tofu",
+        "milk"
+      ],
+      "ok": [
+        "sausage",
+        "egg",
+        "garlic"
+      ],
+      "check": []
+    },
+    "at_risk_count": 9,
+    "at_risk_value_thb": 130,
+    "headline_th": "ของใกล้เสีย 4 อย่างต้องใช้วันนี้"
+  },
+  "menu_top3": [
+    {
+      "recipe_id": "kaprao_moo_kai_dao",
+      "name_th": "กะเพราหมูสับไข่ดาว",
+      "emoji": "🍳",
+      "time_min": 12,
+      "tags": [
+        "spicy",
+        "pork"
+      ],
+      "match_pct": 100,
+      "uses": [
+        "pork_minced",
+        "holy_basil",
+        "chili",
+        "garlic",
+        "cooked_rice",
+        "egg"
+      ],
+      "missing_required": [],
+      "missing_optional": [],
+      "rescues": [
+        "pork_minced",
+        "holy_basil",
+        "cooked_rice"
+      ],
+      "rescue_value_thb": 60,
+      "score": 138,
+      "badge_th": "ทำได้เลย ✅"
+    },
+    {
+      "recipe_id": "khao_pad_sausage",
+      "name_th": "ข้าวผัดไส้กรอก",
+      "emoji": "🍛",
+      "time_min": 10,
+      "tags": [
+        "pork",
+        "kid_friendly"
+      ],
+      "match_pct": 100,
+      "uses": [
+        "cooked_rice",
+        "sausage",
+        "egg",
+        "garlic",
+        "tomato",
+        "spring_onion",
+        "carrot"
+      ],
+      "missing_required": [],
+      "missing_optional": [
+        "onion"
+      ],
+      "rescues": [
+        "cooked_rice",
+        "tomato",
+        "spring_onion"
+      ],
+      "rescue_value_thb": 30,
+      "score": 137,
+      "badge_th": "ทำได้เลย ✅"
+    },
+    {
+      "recipe_id": "khao_tom_moo",
+      "name_th": "ข้าวต้มหมูสับ",
+      "emoji": "🥣",
+      "time_min": 12,
+      "tags": [
+        "pork",
+        "not_spicy"
+      ],
+      "match_pct": 100,
+      "uses": [
+        "cooked_rice",
+        "pork_minced",
+        "garlic",
+        "spring_onion",
+        "egg"
+      ],
+      "missing_required": [],
+      "missing_optional": [],
+      "rescues": [
+        "cooked_rice",
+        "pork_minced",
+        "spring_onion"
+      ],
+      "rescue_value_thb": 60,
+      "score": 134,
+      "badge_th": "ทำได้เลย ✅"
+    }
+  ],
+  "menu_all": [
+    {
+      "recipe_id": "kaprao_moo_kai_dao",
+      "name_th": "กะเพราหมูสับไข่ดาว",
+      "emoji": "🍳",
+      "time_min": 12,
+      "tags": [
+        "spicy",
+        "pork"
+      ],
+      "match_pct": 100,
+      "uses": [
+        "pork_minced",
+        "holy_basil",
+        "chili",
+        "garlic",
+        "cooked_rice",
+        "egg"
+      ],
+      "missing_required": [],
+      "missing_optional": [],
+      "rescues": [
+        "pork_minced",
+        "holy_basil",
+        "cooked_rice"
+      ],
+      "rescue_value_thb": 60,
+      "score": 138,
+      "badge_th": "ทำได้เลย ✅"
+    },
+    {
+      "recipe_id": "khao_pad_sausage",
+      "name_th": "ข้าวผัดไส้กรอก",
+      "emoji": "🍛",
+      "time_min": 10,
+      "tags": [
+        "pork",
+        "kid_friendly"
+      ],
+      "match_pct": 100,
+      "uses": [
+        "cooked_rice",
+        "sausage",
+        "egg",
+        "garlic",
+        "tomato",
+        "spring_onion",
+        "carrot"
+      ],
+      "missing_required": [],
+      "missing_optional": [
+        "onion"
+      ],
+      "rescues": [
+        "cooked_rice",
+        "tomato",
+        "spring_onion"
+      ],
+      "rescue_value_thb": 30,
+      "score": 137,
+      "badge_th": "ทำได้เลย ✅"
+    },
+    {
+      "recipe_id": "khao_tom_moo",
+      "name_th": "ข้าวต้มหมูสับ",
+      "emoji": "🥣",
+      "time_min": 12,
+      "tags": [
+        "pork",
+        "not_spicy"
+      ],
+      "match_pct": 100,
+      "uses": [
+        "cooked_rice",
+        "pork_minced",
+        "garlic",
+        "spring_onion",
+        "egg"
+      ],
+      "missing_required": [],
+      "missing_optional": [],
+      "rescues": [
+        "cooked_rice",
+        "pork_minced",
+        "spring_onion"
+      ],
+      "rescue_value_thb": 60,
+      "score": 134,
+      "badge_th": "ทำได้เลย ✅"
+    },
+    {
+      "recipe_id": "tom_jued_tofu_moo",
+      "name_th": "ต้มจืดเต้าหู้หมูสับ",
+      "emoji": "🍲",
+      "time_min": 15,
+      "tags": [
+        "pork",
+        "not_spicy",
+        "kid_friendly"
+      ],
+      "match_pct": 100,
+      "uses": [
+        "egg_tofu",
+        "pork_minced",
+        "garlic",
+        "spring_onion",
+        "carrot"
+      ],
+      "missing_required": [],
+      "missing_optional": [
+        "cabbage",
+        "glass_noodle"
+      ],
+      "rescues": [
+        "pork_minced",
+        "spring_onion"
+      ],
+      "rescue_value_thb": 50,
+      "score": 132,
+      "badge_th": "ทำได้เลย ✅"
+    },
+    {
+      "recipe_id": "khai_jiao_moo_sap",
+      "name_th": "ไข่เจียวหมูสับฟู ๆ",
+      "emoji": "🥚",
+      "time_min": 8,
+      "tags": [
+        "pork",
+        "not_spicy",
+        "kid_friendly"
+      ],
+      "match_pct": 100,
+      "uses": [
+        "egg",
+        "pork_minced",
+        "spring_onion",
+        "tomato"
+      ],
+      "missing_required": [],
+      "missing_optional": [
+        "onion"
+      ],
+      "rescues": [
+        "pork_minced",
+        "spring_onion",
+        "tomato"
+      ],
+      "rescue_value_thb": 60,
+      "score": 130,
+      "badge_th": "ทำได้เลย ✅"
+    },
+    {
+      "recipe_id": "khai_tun_nom",
+      "name_th": "ไข่ตุ๋นนมสด (ไมโครเวฟ)",
+      "emoji": "🍮",
+      "time_min": 10,
+      "tags": [
+        "not_spicy",
+        "vegetarian",
+        "microwave_ok",
+        "kid_friendly"
+      ],
+      "match_pct": 100,
+      "uses": [
+        "egg",
+        "milk",
+        "spring_onion",
+        "carrot"
+      ],
+      "missing_required": [],
+      "missing_optional": [],
+      "rescues": [
+        "spring_onion"
+      ],
+      "rescue_value_thb": 10,
+      "score": 123,
+      "badge_th": "ทำได้เลย ✅"
+    },
+    {
+      "recipe_id": "sausage_omelet_roll",
+      "name_th": "ไข่ม้วนไส้กรอก",
+      "emoji": "🌯",
+      "time_min": 10,
+      "tags": [
+        "pork",
+        "not_spicy",
+        "kid_friendly"
+      ],
+      "match_pct": 100,
+      "uses": [
+        "egg",
+        "sausage",
+        "spring_onion",
+        "carrot"
+      ],
+      "missing_required": [],
+      "missing_optional": [],
+      "rescues": [
+        "spring_onion"
+      ],
+      "rescue_value_thb": 10,
+      "score": 117,
+      "badge_th": "ทำได้เลย ✅"
+    },
+    {
+      "recipe_id": "khai_pad_makheua_thet",
+      "name_th": "ไข่ผัดมะเขือเทศ",
+      "emoji": "🍅",
+      "time_min": 8,
+      "tags": [
+        "not_spicy",
+        "vegetarian"
+      ],
+      "match_pct": 100,
+      "uses": [
+        "egg",
+        "tomato",
+        "garlic",
+        "spring_onion"
+      ],
+      "missing_required": [],
+      "missing_optional": [
+        "onion"
+      ],
+      "rescues": [
+        "tomato",
+        "spring_onion"
+      ],
+      "rescue_value_thb": 20,
+      "score": 116,
+      "badge_th": "ทำได้เลย ✅"
+    },
+    {
+      "recipe_id": "kai_pad_kaprao",
+      "name_th": "กะเพราไก่",
+      "emoji": "🍗",
+      "time_min": 12,
+      "tags": [
+        "spicy"
+      ],
+      "match_pct": 80,
+      "uses": [
+        "holy_basil",
+        "chili",
+        "garlic",
+        "cooked_rice",
+        "egg"
+      ],
+      "missing_required": [
+        "chicken"
+      ],
+      "missing_optional": [],
+      "rescues": [
+        "holy_basil",
+        "cooked_rice"
+      ],
+      "rescue_value_thb": 20,
+      "score": 81,
+      "badge_th": "ขาดอีก 1 อย่าง"
+    },
+    {
+      "recipe_id": "yum_woon_sen",
+      "name_th": "ยำวุ้นเส้นหมูสับ",
+      "emoji": "🥗",
+      "time_min": 15,
+      "tags": [
+        "spicy",
+        "pork"
+      ],
+      "match_pct": 60,
+      "uses": [
+        "pork_minced",
+        "tomato",
+        "chili",
+        "spring_onion"
+      ],
+      "missing_required": [
+        "glass_noodle",
+        "lime"
+      ],
+      "missing_optional": [
+        "onion"
+      ],
+      "rescues": [
+        "pork_minced",
+        "tomato",
+        "spring_onion"
+      ],
+      "rescue_value_thb": 60,
+      "score": 40,
+      "badge_th": "ขาดอีก 2 อย่าง"
+    },
+    {
+      "recipe_id": "yum_sai_krok",
+      "name_th": "ยำไส้กรอกแซ่บ",
+      "emoji": "🌭",
+      "time_min": 10,
+      "tags": [
+        "spicy",
+        "pork"
+      ],
+      "match_pct": 60,
+      "uses": [
+        "sausage",
+        "tomato",
+        "chili",
+        "spring_onion"
+      ],
+      "missing_required": [
+        "lime",
+        "onion"
+      ],
+      "missing_optional": [],
+      "rescues": [
+        "tomato",
+        "spring_onion"
+      ],
+      "rescue_value_thb": 20,
+      "score": 31,
+      "badge_th": "ขาดอีก 2 อย่าง"
+    },
+    {
+      "recipe_id": "pad_kalam_pli",
+      "name_th": "กะหล่ำปลีผัดน้ำปลา",
+      "emoji": "🥬",
+      "time_min": 8,
+      "tags": [
+        "not_spicy",
+        "vegetarian"
+      ],
+      "match_pct": 50,
+      "uses": [
+        "garlic",
+        "carrot"
+      ],
+      "missing_required": [
+        "cabbage"
+      ],
+      "missing_optional": [],
+      "rescues": [],
+      "rescue_value_thb": 0,
+      "score": 29,
+      "badge_th": "ขาดอีก 1 อย่าง"
+    }
+  ],
+  "confirm_lime_rerun": {
+    "confirmed_keys": [
+      "lime"
+    ],
+    "menus": [
+      {
+        "recipe_id": "kaprao_moo_kai_dao",
+        "name_th": "กะเพราหมูสับไข่ดาว",
+        "emoji": "🍳",
+        "time_min": 12,
+        "tags": [
+          "spicy",
+          "pork"
+        ],
+        "match_pct": 100,
+        "uses": [
+          "pork_minced",
+          "holy_basil",
+          "chili",
+          "garlic",
+          "cooked_rice",
+          "egg"
+        ],
+        "missing_required": [],
+        "missing_optional": [],
+        "rescues": [
+          "pork_minced",
+          "holy_basil",
+          "cooked_rice"
+        ],
+        "rescue_value_thb": 60,
+        "score": 138,
+        "badge_th": "ทำได้เลย ✅"
+      },
+      {
+        "recipe_id": "khao_pad_sausage",
+        "name_th": "ข้าวผัดไส้กรอก",
+        "emoji": "🍛",
+        "time_min": 10,
+        "tags": [
+          "pork",
+          "kid_friendly"
+        ],
+        "match_pct": 100,
+        "uses": [
+          "cooked_rice",
+          "sausage",
+          "egg",
+          "garlic",
+          "tomato",
+          "spring_onion",
+          "carrot"
+        ],
+        "missing_required": [],
+        "missing_optional": [
+          "onion"
+        ],
+        "rescues": [
+          "cooked_rice",
+          "tomato",
+          "spring_onion"
+        ],
+        "rescue_value_thb": 30,
+        "score": 137,
+        "badge_th": "ทำได้เลย ✅"
+      },
+      {
+        "recipe_id": "khao_tom_moo",
+        "name_th": "ข้าวต้มหมูสับ",
+        "emoji": "🥣",
+        "time_min": 12,
+        "tags": [
+          "pork",
+          "not_spicy"
+        ],
+        "match_pct": 100,
+        "uses": [
+          "cooked_rice",
+          "pork_minced",
+          "garlic",
+          "spring_onion",
+          "egg"
+        ],
+        "missing_required": [],
+        "missing_optional": [],
+        "rescues": [
+          "cooked_rice",
+          "pork_minced",
+          "spring_onion"
+        ],
+        "rescue_value_thb": 60,
+        "score": 134,
+        "badge_th": "ทำได้เลย ✅"
+      },
+      {
+        "recipe_id": "tom_jued_tofu_moo",
+        "name_th": "ต้มจืดเต้าหู้หมูสับ",
+        "emoji": "🍲",
+        "time_min": 15,
+        "tags": [
+          "pork",
+          "not_spicy",
+          "kid_friendly"
+        ],
+        "match_pct": 100,
+        "uses": [
+          "egg_tofu",
+          "pork_minced",
+          "garlic",
+          "spring_onion",
+          "carrot"
+        ],
+        "missing_required": [],
+        "missing_optional": [
+          "cabbage",
+          "glass_noodle"
+        ],
+        "rescues": [
+          "pork_minced",
+          "spring_onion"
+        ],
+        "rescue_value_thb": 50,
+        "score": 132,
+        "badge_th": "ทำได้เลย ✅"
+      },
+      {
+        "recipe_id": "khai_jiao_moo_sap",
+        "name_th": "ไข่เจียวหมูสับฟู ๆ",
+        "emoji": "🥚",
+        "time_min": 8,
+        "tags": [
+          "pork",
+          "not_spicy",
+          "kid_friendly"
+        ],
+        "match_pct": 100,
+        "uses": [
+          "egg",
+          "pork_minced",
+          "spring_onion",
+          "tomato"
+        ],
+        "missing_required": [],
+        "missing_optional": [
+          "onion"
+        ],
+        "rescues": [
+          "pork_minced",
+          "spring_onion",
+          "tomato"
+        ],
+        "rescue_value_thb": 60,
+        "score": 130,
+        "badge_th": "ทำได้เลย ✅"
+      },
+      {
+        "recipe_id": "khai_tun_nom",
+        "name_th": "ไข่ตุ๋นนมสด (ไมโครเวฟ)",
+        "emoji": "🍮",
+        "time_min": 10,
+        "tags": [
+          "not_spicy",
+          "vegetarian",
+          "microwave_ok",
+          "kid_friendly"
+        ],
+        "match_pct": 100,
+        "uses": [
+          "egg",
+          "milk",
+          "spring_onion",
+          "carrot"
+        ],
+        "missing_required": [],
+        "missing_optional": [],
+        "rescues": [
+          "spring_onion"
+        ],
+        "rescue_value_thb": 10,
+        "score": 123,
+        "badge_th": "ทำได้เลย ✅"
+      },
+      {
+        "recipe_id": "sausage_omelet_roll",
+        "name_th": "ไข่ม้วนไส้กรอก",
+        "emoji": "🌯",
+        "time_min": 10,
+        "tags": [
+          "pork",
+          "not_spicy",
+          "kid_friendly"
+        ],
+        "match_pct": 100,
+        "uses": [
+          "egg",
+          "sausage",
+          "spring_onion",
+          "carrot"
+        ],
+        "missing_required": [],
+        "missing_optional": [],
+        "rescues": [
+          "spring_onion"
+        ],
+        "rescue_value_thb": 10,
+        "score": 117,
+        "badge_th": "ทำได้เลย ✅"
+      },
+      {
+        "recipe_id": "khai_pad_makheua_thet",
+        "name_th": "ไข่ผัดมะเขือเทศ",
+        "emoji": "🍅",
+        "time_min": 8,
+        "tags": [
+          "not_spicy",
+          "vegetarian"
+        ],
+        "match_pct": 100,
+        "uses": [
+          "egg",
+          "tomato",
+          "garlic",
+          "spring_onion"
+        ],
+        "missing_required": [],
+        "missing_optional": [
+          "onion"
+        ],
+        "rescues": [
+          "tomato",
+          "spring_onion"
+        ],
+        "rescue_value_thb": 20,
+        "score": 116,
+        "badge_th": "ทำได้เลย ✅"
+      },
+      {
+        "recipe_id": "yum_woon_sen",
+        "name_th": "ยำวุ้นเส้นหมูสับ",
+        "emoji": "🥗",
+        "time_min": 15,
+        "tags": [
+          "spicy",
+          "pork"
+        ],
+        "match_pct": 80,
+        "uses": [
+          "pork_minced",
+          "tomato",
+          "chili",
+          "lime",
+          "spring_onion"
+        ],
+        "missing_required": [
+          "glass_noodle"
+        ],
+        "missing_optional": [
+          "onion"
+        ],
+        "rescues": [
+          "pork_minced",
+          "tomato",
+          "spring_onion"
+        ],
+        "rescue_value_thb": 60,
+        "score": 85,
+        "badge_th": "ขาดอีก 1 อย่าง"
+      },
+      {
+        "recipe_id": "kai_pad_kaprao",
+        "name_th": "กะเพราไก่",
+        "emoji": "🍗",
+        "time_min": 12,
+        "tags": [
+          "spicy"
+        ],
+        "match_pct": 80,
+        "uses": [
+          "holy_basil",
+          "chili",
+          "garlic",
+          "cooked_rice",
+          "egg"
+        ],
+        "missing_required": [
+          "chicken"
+        ],
+        "missing_optional": [],
+        "rescues": [
+          "holy_basil",
+          "cooked_rice"
+        ],
+        "rescue_value_thb": 20,
+        "score": 81,
+        "badge_th": "ขาดอีก 1 อย่าง"
+      },
+      {
+        "recipe_id": "yum_sai_krok",
+        "name_th": "ยำไส้กรอกแซ่บ",
+        "emoji": "🌭",
+        "time_min": 10,
+        "tags": [
+          "spicy",
+          "pork"
+        ],
+        "match_pct": 80,
+        "uses": [
+          "sausage",
+          "tomato",
+          "chili",
+          "lime",
+          "spring_onion"
+        ],
+        "missing_required": [
+          "onion"
+        ],
+        "missing_optional": [],
+        "rescues": [
+          "tomato",
+          "spring_onion"
+        ],
+        "rescue_value_thb": 20,
+        "score": 76,
+        "badge_th": "ขาดอีก 1 อย่าง"
+      },
+      {
+        "recipe_id": "pad_kalam_pli",
+        "name_th": "กะหล่ำปลีผัดน้ำปลา",
+        "emoji": "🥬",
+        "time_min": 8,
+        "tags": [
+          "not_spicy",
+          "vegetarian"
+        ],
+        "match_pct": 50,
+        "uses": [
+          "garlic",
+          "carrot"
+        ],
+        "missing_required": [
+          "cabbage"
+        ],
+        "missing_optional": [],
+        "rescues": [],
+        "rescue_value_thb": 0,
+        "score": 29,
+        "badge_th": "ขาดอีก 1 อย่าง"
+      }
+    ]
+  },
+  "filters_examples": [
+    {
+      "filters": {
+        "diet": [
+          "not_spicy"
+        ]
+      },
+      "top3": [
+        "khao_pad_sausage",
+        "khao_tom_moo",
+        "tom_jued_tofu_moo"
+      ]
+    },
+    {
+      "filters": {
+        "time_max": 8
+      },
+      "top3": [
+        "khai_jiao_moo_sap",
+        "khai_pad_makheua_thet",
+        "pad_kalam_pli"
+      ]
+    },
+    {
+      "filters": {
+        "diet": [
+          "vegetarian"
+        ]
+      },
+      "top3": [
+        "khai_tun_nom",
+        "khai_pad_makheua_thet",
+        "pad_kalam_pli"
+      ]
+    },
+    {
+      "filters": {
+        "diet": [
+          "no_pork"
+        ],
+        "max_missing": 1
+      },
+      "top3": [
+        "khai_tun_nom",
+        "khai_pad_makheua_thet",
+        "kai_pad_kaprao"
+      ]
+    }
+  ],
+  "cook_mode": {
+    "recipe_id": "kaprao_moo_kai_dao",
+    "name_th": "กะเพราหมูสับไข่ดาว",
+    "steps": [
+      {
+        "n": 1,
+        "text_th": "ทอดไข่ดาวให้ขอบกรอบ",
+        "timer_s": 180
+      },
+      {
+        "n": 2,
+        "text_th": "โขลกพริก+กระเทียมหยาบ ๆ",
+        "timer_s": 0
+      },
+      {
+        "n": 3,
+        "text_th": "ผัดพริกกระเทียมให้หอม ใส่หมูสับผัดจนสุก",
+        "timer_s": 240
+      },
+      {
+        "n": 4,
+        "text_th": "ปรุงซอสหอยฯ ซีอิ๊ว น้ำปลา น้ำตาลนิด",
+        "timer_s": 0
+      },
+      {
+        "n": 5,
+        "text_th": "ปิดไฟ ใส่ใบกะเพรา คลุกเร็ว ๆ",
+        "timer_s": 30
+      },
+      {
+        "n": 6,
+        "text_th": "ตักราดข้าว วางไข่ดาว",
+        "timer_s": 0
+      }
+    ],
+    "total_timer_s": 450,
+    "timer_steps": 3
+  },
+  "cook_progress": [
+    {
+      "recipe_id": "kaprao_moo_kai_dao",
+      "step_n": 1,
+      "of": 6,
+      "remaining_s": 180,
+      "timer_done": false,
+      "next_hint_th": "รอจับเวลา ⏱️"
+    },
+    {
+      "recipe_id": "kaprao_moo_kai_dao",
+      "step_n": 1,
+      "of": 6,
+      "remaining_s": 60,
+      "timer_done": false,
+      "next_hint_th": "รอจับเวลา ⏱️"
+    },
+    {
+      "recipe_id": "kaprao_moo_kai_dao",
+      "step_n": 1,
+      "of": 6,
+      "remaining_s": 0,
+      "timer_done": true,
+      "next_hint_th": "ไปขั้นต่อไปได้เลย 👉"
+    },
+    {
+      "recipe_id": "kaprao_moo_kai_dao",
+      "step_n": 2,
+      "of": 6,
+      "remaining_s": 0,
+      "timer_done": false,
+      "next_hint_th": "ไปขั้นต่อไปได้เลย 👉"
+    }
+  ],
+  "shopping_plan_ids": [
+    "kai_pad_kaprao",
+    "pad_kalam_pli",
+    "yum_sai_krok"
+  ],
+  "shopping_list": {
+    "stores": [
+      {
+        "store": "ตลาด",
+        "items": [
+          {
+            "key": "chicken",
+            "name_th": "อกไก่",
+            "emoji": "🍗",
+            "price_thb": 45
+          },
+          {
+            "key": "onion",
+            "name_th": "หอมใหญ่",
+            "emoji": "🧅",
+            "price_thb": 10
+          },
+          {
+            "key": "cabbage",
+            "name_th": "กะหล่ำปลี",
+            "emoji": "🥬",
+            "price_thb": 25
+          }
+        ],
+        "subtotal_thb": 80
+      }
+    ],
+    "total_thb": 80,
+    "line_text": "🛒 ของที่ต้องซื้อเพิ่ม (FridgeChef)\n[ตลาด]\n- 🍗 อกไก่ ~฿45\n- 🧅 หอมใหญ่ ~฿10\n- 🥬 กะหล่ำปลี ~฿25\nรวมประมาณ ฿80"
+  },
+  "dice_pool": [
+    "kaprao_moo_kai_dao",
+    "khao_pad_sausage",
+    "khao_tom_moo",
+    "tom_jued_tofu_moo",
+    "khai_jiao_moo_sap",
+    "khai_tun_nom",
+    "sausage_omelet_roll",
+    "khai_pad_makheua_thet"
+  ],
+  "dice": {
+    "seed": 20261014,
+    "frames": [
+      "khai_tun_nom",
+      "kaprao_moo_kai_dao",
+      "khai_pad_makheua_thet",
+      "khao_tom_moo",
+      "khao_pad_sausage",
+      "khai_jiao_moo_sap"
+    ],
+    "pick": "khai_jiao_moo_sap"
+  },
+  "history": [
+    {
+      "date": "2026-10-03",
+      "recipe_id": "khai_jiao_moo_sap",
+      "rescued": [
+        "pork_minced"
+      ],
+      "rescued_value_thb": 40
+    },
+    {
+      "date": "2026-10-04",
+      "recipe_id": "khao_pad_sausage",
+      "rescued": [
+        "cooked_rice"
+      ],
+      "rescued_value_thb": 10
+    },
+    {
+      "date": "2026-10-05",
+      "recipe_id": "khai_tun_nom",
+      "rescued": [
+        "milk"
+      ],
+      "rescued_value_thb": 25
+    },
+    {
+      "date": "2026-10-08",
+      "recipe_id": "khai_pad_makheua_thet",
+      "rescued": [
+        "tomato",
+        "spring_onion"
+      ],
+      "rescued_value_thb": 20
+    },
+    {
+      "date": "2026-10-09",
+      "recipe_id": "tom_jued_tofu_moo",
+      "rescued": [
+        "pork_minced",
+        "spring_onion"
+      ],
+      "rescued_value_thb": 50
+    },
+    {
+      "date": "2026-10-10",
+      "recipe_id": "khao_tom_moo",
+      "rescued": [
+        "cooked_rice"
+      ],
+      "rescued_value_thb": 10
+    },
+    {
+      "date": "2026-10-12",
+      "recipe_id": "khai_jiao_moo_sap",
+      "rescued": [],
+      "rescued_value_thb": 0
+    },
+    {
+      "date": "2026-10-13",
+      "recipe_id": "khao_pad_sausage",
+      "rescued": [
+        "cooked_rice"
+      ],
+      "rescued_value_thb": 10
+    },
+    {
+      "date": "2026-10-14",
+      "recipe_id": "kaprao_moo_kai_dao",
+      "rescued": [
+        "pork_minced",
+        "holy_basil",
+        "cooked_rice"
+      ],
+      "rescued_value_thb": 60
+    }
+  ],
+  "wrapped": {
+    "month": "2026-10",
+    "meals_cooked": 9,
+    "items_rescued": 12,
+    "value_saved_thb": 225,
+    "top_recipe_id": "khai_jiao_moo_sap",
+    "top_recipe_name_th": "ไข่เจียวหมูสับฟู ๆ",
+    "best_streak_days": 3,
+    "headline_th": "เดือนนี้ช่วยของในตู้เย็นรอด 12 อย่าง ประหยัด ฿225"
+  },
+  "share_cards": [
+    {
+      "kind": "rescue",
+      "size": "1080x1920",
+      "title_th": "ตู้เย็นรอดแล้ว! 🧊",
+      "lines_th": [
+        "🍳 กะเพราหมูสับไข่ดาว",
+        "ช่วยของใกล้เสีย 3 อย่าง",
+        "ประหยัด ฿60",
+        "เวลาทำ 12 นาที"
+      ],
+      "bg": "#F7FAFC",
+      "accent": "#EF4444",
+      "footer": "ทำด้วย FridgeChef · AI วันละแอป"
+    },
+    {
+      "kind": "wrapped",
+      "size": "1080x1920",
+      "title_th": "ตุลาคมของปุ๊ก 🍳",
+      "lines_th": [
+        "ทำกินเอง 9 มื้อ",
+        "ช่วยของรอด 12 อย่าง",
+        "ประหยัด ฿225",
+        "เมนูประจำ: ไข่เจียวหมูสับฟู ๆ",
+        "ทำติดกันสูงสุด 3 วัน"
+      ],
+      "bg": "#0F172A",
+      "accent": "#FBBF24",
+      "footer": "ทำด้วย FridgeChef · AI วันละแอป"
+    },
+    {
+      "kind": "menu",
+      "size": "1080x1080",
+      "title_th": "ตู้เย็นฉันทำได้ 3 เมนู",
+      "lines_th": [
+        "🍳 กะเพราหมูสับไข่ดาว · 100%",
+        "🍛 ข้าวผัดไส้กรอก · 100%",
+        "🥣 ข้าวต้มหมูสับ · 100%"
+      ],
+      "bg": "#F7FAFC",
+      "accent": "#38BDF8",
+      "footer": "FridgeChef"
+    }
+  ],
+  "local_store_example": {
+    "version": 1,
+    "inventory": [
+      {
+        "key": "cooked_rice",
+        "name_th": "ข้าวสวย",
+        "emoji": "🍚",
+        "category": "carb",
+        "qty": 1,
+        "unit_th": "ถ้วย",
+        "added_on": "2026-10-13",
+        "shelf_life_days": 2,
+        "days_left": 1,
+        "status": "today",
+        "confidence": 0.86,
+        "confirmed": true,
+        "price_thb": 10
+      },
+      {
+        "key": "holy_basil",
+        "name_th": "ใบกะเพรา",
+        "emoji": "🌿",
+        "category": "herb",
+        "qty": 1,
+        "unit_th": "กำ",
+        "added_on": "2026-10-11",
+        "shelf_life_days": 4,
+        "days_left": 1,
+        "status": "today",
+        "confidence": 0.88,
+        "confirmed": true,
+        "price_thb": 10
+      },
+      {
+        "key": "pork_minced",
+        "name_th": "หมูสับ",
+        "emoji": "🥩",
+        "category": "protein",
+        "qty": 200,
+        "unit_th": "กรัม",
+        "added_on": "2026-10-12",
+        "shelf_life_days": 3,
+        "days_left": 1,
+        "status": "today",
+        "confidence": 0.91,
+        "confirmed": true,
+        "price_thb": 40
+      }
+    ],
+    "history": [
+      {
+        "date": "2026-10-13",
+        "recipe_id": "khao_pad_sausage",
+        "rescued": [
+          "cooked_rice"
+        ],
+        "rescued_value_thb": 10
+      },
+      {
+        "date": "2026-10-14",
+        "recipe_id": "kaprao_moo_kai_dao",
+        "rescued": [
+          "pork_minced",
+          "holy_basil",
+          "cooked_rice"
+        ],
+        "rescued_value_thb": 60
+      }
+    ],
+    "shopping": {
+      "stores": [
+        {
+          "store": "ตลาด",
+          "items": [
+            {
+              "key": "chicken",
+              "name_th": "อกไก่",
+              "emoji": "🍗",
+              "price_thb": 45
+            },
+            {
+              "key": "onion",
+              "name_th": "หอมใหญ่",
+              "emoji": "🧅",
+              "price_thb": 10
+            },
+            {
+              "key": "cabbage",
+              "name_th": "กะหล่ำปลี",
+              "emoji": "🥬",
+              "price_thb": 25
+            }
+          ],
+          "subtotal_thb": 80
+        }
+      ],
+      "total_thb": 80,
+      "line_text": "🛒 ของที่ต้องซื้อเพิ่ม (FridgeChef)\n[ตลาด]\n- 🍗 อกไก่ ~฿45\n- 🧅 หอมใหญ่ ~฿10\n- 🥬 กะหล่ำปลี ~฿25\nรวมประมาณ ฿80"
+    },
+    "settings": {
+      "staples": [
+        "fish_sauce",
+        "soy_sauce",
+        "oyster_sauce",
+        "sugar",
+        "oil",
+        "salt",
+        "pepper"
+      ],
+      "diet": [],
+      "household": 1,
+      "stove": "electric_1",
+      "ai_vision": false
+    },
+    "last_scan_at": "2026-10-14T18:05:00+07:00"
+  },
+  "ai_examples": {
+    "vision_request": {
+      "image_base64": "<base64 jpeg ≤1MB>",
+      "allowed_keys": [
+        "egg",
+        "pork_minced",
+        "chicken",
+        "sausage",
+        "egg_tofu",
+        "holy_basil",
+        "spring_onion",
+        "chili",
+        "garlic",
+        "lime",
+        "tomato",
+        "carrot",
+        "cabbage",
+        "onion",
+        "cooked_rice",
+        "glass_noodle",
+        "milk"
+      ],
+      "locale": "th-TH"
+    },
+    "vision_response": {
+      "detections": [
+        {
+          "key": "egg",
+          "qty": 4,
+          "confidence": 0.97,
+          "bbox": [
+            0.08,
+            0.62,
+            0.3,
+            0.78
+          ]
+        },
+        {
+          "key": "pork_minced",
+          "qty": 200,
+          "confidence": 0.91,
+          "bbox": [
+            0.36,
+            0.4,
+            0.62,
+            0.55
+          ]
+        },
+        {
+          "key": "holy_basil",
+          "qty": 1,
+          "confidence": 0.88,
+          "bbox": [
+            0.66,
+            0.4,
+            0.92,
+            0.56
+          ]
+        }
+      ],
+      "unknown_items_th": [
+        "ซอสในขวดสีแดง (อ่านฉลากไม่ออก)"
+      ]
+    },
+    "recipe_request": {
+      "have": [
+        "carrot",
+        "chili",
+        "cooked_rice",
+        "egg",
+        "egg_tofu",
+        "garlic",
+        "holy_basil",
+        "milk",
+        "pork_minced",
+        "sausage",
+        "spring_onion",
+        "tomato"
+      ],
+      "staples": [
+        "fish_sauce",
+        "soy_sauce",
+        "oyster_sauce",
+        "sugar",
+        "oil",
+        "salt",
+        "pepper"
+      ],
+      "diet": [],
+      "time_max": 15
+    },
+    "recipe_response": {
+      "recipes": [
+        {
+          "id": "khai_jiao_moo_sap",
+          "name_th": "ไข่เจียวหมูสับฟู ๆ",
+          "emoji": "🥚",
+          "time_min": 8,
+          "tags": [
+            "pork",
+            "not_spicy",
+            "kid_friendly"
+          ],
+          "required": [
+            "egg",
+            "pork_minced"
+          ],
+          "optional": [
+            "spring_onion",
+            "tomato",
+            "onion"
+          ],
+          "steps": [
+            [
+              "ตีไข่+หมูสับ+น้ำปลา ให้ขึ้นฟอง",
+              60
+            ],
+            [
+              "น้ำมันร้อนจัด เทไข่สูง ๆ",
+              90
+            ],
+            [
+              "กลับด้าน ทอดอีกนิด",
+              60
+            ],
+            [
+              "ตักพักสะเด็ดน้ำมัน",
+              0
+            ]
+          ]
+        }
+      ],
+      "disclaimer_th": "สูตรจาก AI ตรวจความสุกของเนื้อสัตว์ก่อนกิน"
+    }
+  },
+  "ui_copy_th": {
+    "home_title": "วันนี้ตู้เย็นทำอะไรได้บ้าง?",
+    "scan_cta": "📸 ถ่ายตู้เย็น",
+    "demo_cta": "ลองข้อมูลตัวอย่าง (ตู้เย็นปุ๊ก)",
+    "scanning": "กำลังส่องตู้เย็น…",
+    "chips_title": "เจอ {n} อย่าง แตะเพื่อแก้",
+    "chip_unsure": "{name} ใช่ไหม?",
+    "radar_today": "ใช้วันนี้",
+    "radar_soon": "ใช้เร็ว",
+    "radar_ok": "สบาย",
+    "radar_check": "เช็กก่อนกิน",
+    "menu_title": "ทำได้เลย {n} เมนู",
+    "badge_ready": "ทำได้เลย ✅",
+    "badge_missing": "ขาดอีก {n} อย่าง",
+    "rescue_pill": "ช่วยของใกล้เสีย ฿{v}",
+    "cook_start": "เริ่มทำเลย 👩‍🍳",
+    "timer_done": "ครบเวลา! ไปขั้นต่อไป",
+    "list_title": "ของที่ต้องซื้อเพิ่ม",
+    "list_share": "ส่งเข้า LINE",
+    "dice_cta": "🎲 กินอะไรดี สุ่มเลย",
+    "wrapped_cta": "ดูสรุปเดือนนี้",
+    "share_cta": "แชร์การ์ด",
+    "empty_fridge": "ตู้เย็นว่างจัง… ลองพิมพ์ของที่มีแทนได้นะ",
+    "safety_note": "วันหมดอายุเป็นค่าประมาณ ดม/ดูก่อนกินเสมอ",
+    "allergy_note": "เช็กส่วนผสมถ้าแพ้อาหาร"
+  },
+  "reel_script": [
+    {
+      "t": "0–3s",
+      "shot": "เปิดตู้เย็นรก ๆ กล้องมือถือ POV",
+      "text": "ตู้เย็นแบบนี้… ทำอะไรกินได้?"
+    },
+    {
+      "t": "3–7s",
+      "shot": "กดถ่าย → กรอบสแกนวิ่งบนรูป → chips 12 อย่างเด้งเข้าถาด",
+      "text": "ถ่ายรูปเดียว AI นับให้ 12 อย่าง"
+    },
+    {
+      "t": "7–11s",
+      "shot": "Use-First Radar วงแดง 4 อย่าง ‘ใช้วันนี้’",
+      "text": "หมูสับ กะเพรา ข้าว ต้นหอม ต้องใช้วันนี้!"
+    },
+    {
+      "t": "11–16s",
+      "shot": "การ์ด 3 เมนูสไลด์ขึ้น ‘กะเพราหมูสับไข่ดาว 100%’ + pill ‘ช่วยของ ฿60’",
+      "text": "ได้ 3 เมนู ไม่ต้องออกไปซื้อ"
+    },
+    {
+      "t": "16–23s",
+      "shot": "Cook Mode จับเวลาไข่ดาว 3:00 → ตัดเสียงฉ่า ผัดกะเพรา",
+      "text": "มีจับเวลาทุกขั้น"
+    },
+    {
+      "t": "23–27s",
+      "shot": "แตะ ‘มะนาว ใช่ไหม?’ → เมนูยำโผล่ / ลิสต์ซื้อของส่ง LINE / ลูกเต๋าสุ่ม",
+      "text": "+ลิสต์ซื้อของ +สุ่มเมนู"
+    },
+    {
+      "t": "27–30s",
+      "shot": "จานกะเพราจริง + การ์ด Wrapped ‘ประหยัด ฿225’",
+      "text": "คอมเมนต์ ‘ตู้เย็น’ รับลิงก์ฟรี"
+    }
+  ],
+  "test_vectors": [
+    {
+      "id": "tv01",
+      "fn": "expiry_status",
+      "input": [
+        1
+      ],
+      "expect": "today"
+    },
+    {
+      "id": "tv02",
+      "fn": "expiry_status",
+      "input": [
+        3
+      ],
+      "expect": "soon"
+    },
+    {
+      "id": "tv03",
+      "fn": "expiry_status",
+      "input": [
+        -1
+      ],
+      "expect": "check"
+    },
+    {
+      "id": "tv04",
+      "fn": "build_inventory.days_left[pork_minced]",
+      "input": {
+        "added_on": "2026-10-12",
+        "today": "2026-10-14"
+      },
+      "expect": 1
+    },
+    {
+      "id": "tv05",
+      "fn": "build_inventory.confirmed[lime]",
+      "input": {
+        "confidence": 0.41
+      },
+      "expect": false
+    },
+    {
+      "id": "tv06",
+      "fn": "menu_match.top3",
+      "input": "demo",
+      "expect": [
+        "kaprao_moo_kai_dao",
+        "khao_pad_sausage",
+        "khao_tom_moo"
+      ]
+    },
+    {
+      "id": "tv07",
+      "fn": "menu_match.top3.scores",
+      "input": "demo",
+      "expect": [
+        138,
+        137,
+        134
+      ]
+    },
+    {
+      "id": "tv08",
+      "fn": "match_recipe[kai_pad_kaprao].missing_required",
+      "input": "demo",
+      "expect": [
+        "chicken"
+      ]
+    },
+    {
+      "id": "tv09",
+      "fn": "use_first_radar.at_risk_value_thb",
+      "input": "demo",
+      "expect": 130
+    },
+    {
+      "id": "tv10",
+      "fn": "cook_mode.total_timer_s",
+      "input": "kaprao_moo_kai_dao",
+      "expect": 450
+    },
+    {
+      "id": "tv11",
+      "fn": "cook_progress",
+      "input": [
+        "kaprao_moo_kai_dao",
+        0,
+        120
+      ],
+      "expect": {
+        "remaining_s": 60,
+        "timer_done": false
+      }
+    },
+    {
+      "id": "tv12",
+      "fn": "confirm lime → new menus",
+      "input": "demo",
+      "expect": [
+        "yum_sai_krok",
+        "yum_woon_sen"
+      ]
+    },
+    {
+      "id": "tv13",
+      "fn": "shopping_list.total_thb",
+      "input": [
+        "kai_pad_kaprao",
+        "pad_kalam_pli",
+        "yum_sai_krok"
+      ],
+      "expect": 80
+    },
+    {
+      "id": "tv14",
+      "fn": "menu_dice.pick",
+      "input": 20261014,
+      "expect": "khai_jiao_moo_sap"
+    },
+    {
+      "id": "tv15",
+      "fn": "waste_wrapped",
+      "input": "2026-10",
+      "expect": {
+        "meals_cooked": 9,
+        "items_rescued": 12,
+        "value_saved_thb": 225,
+        "best_streak_days": 3
+      }
+    },
+    {
+      "id": "tv16",
+      "fn": "menu_match filter not_spicy excludes spicy",
+      "input": {
+        "diet": [
+          "not_spicy"
+        ]
+      },
+      "expect": [
+        "khao_pad_sausage",
+        "khao_tom_moo",
+        "tom_jued_tofu_moo"
+      ]
+    }
+  ]
+}

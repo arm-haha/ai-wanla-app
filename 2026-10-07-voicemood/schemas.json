@@ -1,0 +1,1523 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-wanla-app.example/voicemood/schemas.json",
+  "title": "VoiceMood data contracts",
+  "description": "VoiceMood (AI วันละแอป Day 8/10, 2026-10-07). Types for lib/mood.ts, comfort, garden, triggers, wrapped, share, safety, storage.",
+  "$defs": {
+    "Lang": {
+      "type": "string",
+      "enum": [
+        "th",
+        "en"
+      ]
+    },
+    "Quadrant": {
+      "type": "string",
+      "enum": [
+        "bright",
+        "calm",
+        "tense",
+        "low",
+        "neutral"
+      ],
+      "description": "Valence × energy quadrant"
+    },
+    "WeatherKey": {
+      "type": "string",
+      "enum": [
+        "sunny",
+        "clear",
+        "cloudy",
+        "drizzle",
+        "storm"
+      ]
+    },
+    "ThemeKey": {
+      "type": "string",
+      "enum": [
+        "work",
+        "sleep",
+        "body",
+        "pet",
+        "friends",
+        "family",
+        "money",
+        "commute",
+        "exercise",
+        "food",
+        "love",
+        "self",
+        "feeling"
+      ]
+    },
+    "HexColor": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "DateLocal": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "DateTime": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "\\+07:00$|Z$"
+    },
+    "AiEngine": {
+      "type": "string",
+      "enum": [
+        "lexicon_v1",
+        "llm_api",
+        "template_v1"
+      ]
+    },
+    "SttEngine": {
+      "type": "string",
+      "enum": [
+        "web_speech",
+        "server_whisper",
+        "typed"
+      ]
+    },
+    "LexiconTerm": {
+      "type": "object",
+      "properties": {
+        "term": {
+          "type": "string",
+          "minLength": 1
+        },
+        "valence": {
+          "type": "integer",
+          "minimum": -3,
+          "maximum": 3
+        },
+        "energy": {
+          "type": "integer",
+          "minimum": -3,
+          "maximum": 3
+        },
+        "theme": {
+          "$ref": "#/$defs/ThemeKey"
+        }
+      },
+      "required": [
+        "term",
+        "valence",
+        "energy",
+        "theme"
+      ],
+      "additionalProperties": false
+    },
+    "VoiceInput": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "source": {
+          "enum": [
+            "mic",
+            "upload",
+            "typed"
+          ]
+        },
+        "lang": {
+          "enum": [
+            "th-TH",
+            "en-US"
+          ]
+        },
+        "started_at": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "duration_sec": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 180
+        },
+        "transcript_raw": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "transcript_edited": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 2000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "interim_chunks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "audio_kept": {
+          "type": "boolean"
+        },
+        "stt_engine": {
+          "$ref": "#/$defs/SttEngine"
+        }
+      },
+      "required": [
+        "id",
+        "source",
+        "lang",
+        "started_at",
+        "duration_sec",
+        "transcript_raw",
+        "transcript_edited",
+        "interim_chunks",
+        "audio_kept",
+        "stt_engine"
+      ],
+      "additionalProperties": false,
+      "description": "One recording/typing session. Audio blob is NOT stored unless audio_kept=true (IndexedDB)."
+    },
+    "MatchedTerm": {
+      "type": "object",
+      "properties": {
+        "term": {
+          "type": "string"
+        },
+        "index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "valence": {
+          "type": "integer",
+          "minimum": -3,
+          "maximum": 3
+        },
+        "energy": {
+          "type": "integer",
+          "minimum": -3,
+          "maximum": 3
+        },
+        "theme": {
+          "$ref": "#/$defs/ThemeKey"
+        },
+        "negated": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "term",
+        "index",
+        "valence",
+        "energy",
+        "theme",
+        "negated"
+      ],
+      "additionalProperties": false
+    },
+    "Weather": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/WeatherKey"
+        },
+        "label_th": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "label_th",
+        "emoji"
+      ],
+      "additionalProperties": false
+    },
+    "Aura": {
+      "type": "object",
+      "properties": {
+        "primary": {
+          "$ref": "#/$defs/HexColor"
+        },
+        "secondary": {
+          "$ref": "#/$defs/HexColor"
+        },
+        "glow_intensity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "motion": {
+          "enum": [
+            "pulse_slow",
+            "swirl_fast"
+          ]
+        }
+      },
+      "required": [
+        "primary",
+        "secondary",
+        "glow_intensity",
+        "motion"
+      ],
+      "additionalProperties": false
+    },
+    "ThemeChip": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/ThemeKey"
+        },
+        "label_th": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "label_th",
+        "emoji"
+      ],
+      "additionalProperties": false
+    },
+    "SafetyFlag": {
+      "type": "object",
+      "properties": {
+        "risk_level": {
+          "enum": [
+            "none",
+            "elevated",
+            "urgent"
+          ]
+        },
+        "matched": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "risk_level",
+        "matched"
+      ],
+      "additionalProperties": false
+    },
+    "MoodAnalysis": {
+      "type": "object",
+      "properties": {
+        "entry_id": {
+          "type": "string"
+        },
+        "engine": {
+          "$ref": "#/$defs/AiEngine"
+        },
+        "lexicon_version": {
+          "type": "string"
+        },
+        "valence_sum": {
+          "type": "integer"
+        },
+        "energy_sum": {
+          "type": "integer"
+        },
+        "valence": {
+          "type": "integer",
+          "minimum": -8,
+          "maximum": 8
+        },
+        "energy": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "quadrant": {
+          "$ref": "#/$defs/Quadrant"
+        },
+        "label_th": {
+          "type": "string"
+        },
+        "weather": {
+          "$ref": "#/$defs/Weather"
+        },
+        "aura": {
+          "$ref": "#/$defs/Aura"
+        },
+        "themes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ThemeChip"
+          }
+        },
+        "matched_terms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/MatchedTerm"
+          }
+        },
+        "summary_th": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "safety": {
+          "$ref": "#/$defs/SafetyFlag"
+        }
+      },
+      "required": [
+        "entry_id",
+        "engine",
+        "lexicon_version",
+        "valence_sum",
+        "energy_sum",
+        "valence",
+        "energy",
+        "score",
+        "quadrant",
+        "label_th",
+        "weather",
+        "aura",
+        "themes",
+        "matched_terms",
+        "summary_th",
+        "safety"
+      ],
+      "additionalProperties": false,
+      "description": "Output of lib/mood.ts (lexicon_v1) or LLM (llm_api, re-scored with same formulas)."
+    },
+    "TinyAction": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "breathe",
+            "gratitude",
+            "rest",
+            "walk",
+            "message_friend",
+            "water",
+            "journal"
+          ]
+        },
+        "text_th": {
+          "type": "string"
+        },
+        "minutes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "cta_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "text_th",
+        "minutes",
+        "cta_th"
+      ],
+      "additionalProperties": false
+    },
+    "ComfortCard": {
+      "type": "object",
+      "properties": {
+        "entry_id": {
+          "type": "string"
+        },
+        "engine": {
+          "$ref": "#/$defs/AiEngine"
+        },
+        "quadrant": {
+          "$ref": "#/$defs/Quadrant"
+        },
+        "validate_th": {
+          "type": "string",
+          "maxLength": 140
+        },
+        "reframe_th": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "tiny_action": {
+          "$ref": "#/$defs/TinyAction"
+        },
+        "alt_actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/TinyAction"
+          },
+          "maxItems": 3
+        },
+        "disclaimer_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "entry_id",
+        "engine",
+        "quadrant",
+        "validate_th",
+        "reframe_th",
+        "tiny_action",
+        "alt_actions",
+        "disclaimer_th"
+      ],
+      "additionalProperties": false
+    },
+    "BreathSession": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "entry_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pattern": {
+          "enum": [
+            "4-4-6",
+            "4-7-8",
+            "box_4"
+          ]
+        },
+        "cycles": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "duration_sec": {
+          "type": "integer"
+        },
+        "started_at": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "completed": {
+          "type": "boolean"
+        },
+        "orb_from": {
+          "$ref": "#/$defs/HexColor"
+        },
+        "orb_to": {
+          "$ref": "#/$defs/HexColor"
+        },
+        "haptics": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "entry_id",
+        "pattern",
+        "cycles",
+        "duration_sec",
+        "started_at",
+        "completed",
+        "orb_from",
+        "orb_to",
+        "haptics"
+      ],
+      "additionalProperties": false
+    },
+    "Recheck": {
+      "type": "object",
+      "properties": {
+        "before_entry_id": {
+          "type": "string"
+        },
+        "after_entry_id": {
+          "type": "string"
+        },
+        "input_after": {
+          "$ref": "#/$defs/VoiceInput"
+        },
+        "analysis_after": {
+          "$ref": "#/$defs/MoodAnalysis"
+        },
+        "before_score": {
+          "type": "integer"
+        },
+        "after_score": {
+          "type": "integer"
+        },
+        "delta": {
+          "type": "integer"
+        },
+        "caption_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "before_entry_id",
+        "after_entry_id",
+        "input_after",
+        "analysis_after",
+        "before_score",
+        "after_score",
+        "delta",
+        "caption_th"
+      ],
+      "additionalProperties": false,
+      "description": "Second short check-in after Comfort/Breathe. Self-report only."
+    },
+    "HistoryEntry": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "date": {
+          "$ref": "#/$defs/DateLocal"
+        },
+        "created_at": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "transcript": {
+          "type": "string"
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "energy": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "quadrant": {
+          "$ref": "#/$defs/Quadrant"
+        },
+        "weather_emoji": {
+          "type": "string"
+        },
+        "themes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ThemeKey"
+          }
+        },
+        "color": {
+          "$ref": "#/$defs/HexColor"
+        }
+      },
+      "required": [
+        "id",
+        "date",
+        "created_at",
+        "transcript",
+        "score",
+        "energy",
+        "quadrant",
+        "weather_emoji",
+        "themes",
+        "color"
+      ],
+      "additionalProperties": false,
+      "description": "Flattened MoodEntry for lists/garden. Full entry = VoiceInput + MoodAnalysis + ComfortCard."
+    },
+    "MoodEntry": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "date": {
+          "$ref": "#/$defs/DateLocal"
+        },
+        "created_at": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "input": {
+          "$ref": "#/$defs/VoiceInput"
+        },
+        "analysis": {
+          "$ref": "#/$defs/MoodAnalysis"
+        },
+        "comfort": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ComfortCard"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "breath_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "recheck_of": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "date",
+        "created_at",
+        "input",
+        "analysis"
+      ],
+      "additionalProperties": false
+    },
+    "GardenDay": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "$ref": "#/$defs/DateLocal"
+        },
+        "entry_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "score": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "quadrant": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Quadrant"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "color": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/HexColor"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "weather_emoji": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "date",
+        "entry_ids",
+        "score",
+        "quadrant",
+        "color",
+        "weather_emoji"
+      ],
+      "additionalProperties": false
+    },
+    "MoodGarden": {
+      "type": "object",
+      "properties": {
+        "month": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}$"
+        },
+        "style": {
+          "enum": [
+            "orbs",
+            "flowers",
+            "pixels"
+          ]
+        },
+        "first_weekday": {
+          "enum": [
+            "mon",
+            "sun"
+          ]
+        },
+        "days": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GardenDay"
+          },
+          "minItems": 28,
+          "maxItems": 31
+        },
+        "filled_days": {
+          "type": "integer"
+        },
+        "streak_days": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "month",
+        "style",
+        "first_weekday",
+        "days",
+        "filled_days",
+        "streak_days"
+      ],
+      "additionalProperties": false
+    },
+    "TriggerInsight": {
+      "type": "object",
+      "properties": {
+        "theme": {
+          "$ref": "#/$defs/ThemeKey"
+        },
+        "label_th": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "entries_with": {
+          "type": "integer",
+          "minimum": 3
+        },
+        "entries_without": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "avg_score_with": {
+          "type": "number"
+        },
+        "avg_score_without": {
+          "type": "number"
+        },
+        "delta": {
+          "type": "number"
+        },
+        "direction": {
+          "enum": [
+            "lifts",
+            "drains",
+            "neutral"
+          ]
+        },
+        "text_th": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "theme",
+        "label_th",
+        "emoji",
+        "entries_with",
+        "entries_without",
+        "avg_score_with",
+        "avg_score_without",
+        "delta",
+        "direction",
+        "text_th"
+      ],
+      "additionalProperties": false
+    },
+    "TriggerReport": {
+      "type": "object",
+      "properties": {
+        "window": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "$ref": "#/$defs/DateLocal"
+            },
+            "to": {
+              "$ref": "#/$defs/DateLocal"
+            }
+          },
+          "required": [
+            "from",
+            "to"
+          ],
+          "additionalProperties": false
+        },
+        "entry_count": {
+          "type": "integer"
+        },
+        "min_entries_with": {
+          "type": "integer"
+        },
+        "insights": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/TriggerInsight"
+          }
+        }
+      },
+      "required": [
+        "window",
+        "entry_count",
+        "min_entries_with",
+        "insights"
+      ],
+      "additionalProperties": false
+    },
+    "MoodWrapped": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "period": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "$ref": "#/$defs/DateLocal"
+            },
+            "to": {
+              "$ref": "#/$defs/DateLocal"
+            }
+          },
+          "required": [
+            "from",
+            "to"
+          ],
+          "additionalProperties": false
+        },
+        "entries": {
+          "type": "integer"
+        },
+        "avg_score": {
+          "type": "number"
+        },
+        "top_quadrant": {
+          "$ref": "#/$defs/Quadrant"
+        },
+        "quadrant_counts": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/Quadrant"
+          },
+          "additionalProperties": {
+            "type": "integer"
+          }
+        },
+        "best_day": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "$ref": "#/$defs/DateLocal"
+            },
+            "score": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "date",
+            "score"
+          ],
+          "additionalProperties": false
+        },
+        "hardest_day": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "$ref": "#/$defs/DateLocal"
+            },
+            "score": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "date",
+            "score"
+          ],
+          "additionalProperties": false
+        },
+        "top_lift": {
+          "$ref": "#/$defs/TriggerInsight"
+        },
+        "top_drain": {
+          "$ref": "#/$defs/TriggerInsight"
+        },
+        "minutes_spoken": {
+          "type": "number"
+        },
+        "streak_days": {
+          "type": "integer"
+        },
+        "slides_th": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 3,
+          "maxItems": 8
+        }
+      },
+      "required": [
+        "id",
+        "period",
+        "entries",
+        "avg_score",
+        "top_quadrant",
+        "quadrant_counts",
+        "best_day",
+        "hardest_day",
+        "top_lift",
+        "top_drain",
+        "minutes_spoken",
+        "streak_days",
+        "slides_th"
+      ],
+      "additionalProperties": false
+    },
+    "Gratitude": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "date": {
+          "$ref": "#/$defs/DateLocal"
+        },
+        "items_th": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "minItems": 1,
+          "maxItems": 3
+        },
+        "created_at": {
+          "$ref": "#/$defs/DateTime"
+        }
+      },
+      "required": [
+        "id",
+        "date",
+        "items_th",
+        "created_at"
+      ],
+      "additionalProperties": false
+    },
+    "TimeCapsule": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "created_at": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "open_at": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "text_th": {
+          "type": "string"
+        },
+        "audio_kept": {
+          "type": "boolean"
+        },
+        "opened": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "created_at",
+        "open_at",
+        "text_th",
+        "audio_kept",
+        "opened"
+      ],
+      "additionalProperties": false
+    },
+    "Reminder": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "time_local": {
+          "type": "string",
+          "pattern": "^\\d{2}:\\d{2}$"
+        },
+        "days": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "mon",
+              "tue",
+              "wed",
+              "thu",
+              "fri",
+              "sat",
+              "sun"
+            ]
+          }
+        },
+        "text_th": {
+          "type": "string"
+        },
+        "channel": {
+          "enum": [
+            "web_push",
+            "local_notification"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "enabled",
+        "time_local",
+        "days",
+        "text_th",
+        "channel"
+      ],
+      "additionalProperties": false
+    },
+    "ShareCard": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "entry_id": {
+          "type": "string"
+        },
+        "variant": {
+          "enum": [
+            "aura_story",
+            "garden_square",
+            "wrapped_story",
+            "duo_compare"
+          ]
+        },
+        "size": {
+          "type": "object",
+          "properties": {
+            "w": {
+              "type": "integer"
+            },
+            "h": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "w",
+            "h"
+          ],
+          "additionalProperties": false
+        },
+        "show_transcript": {
+          "type": "boolean"
+        },
+        "show_score": {
+          "type": "boolean"
+        },
+        "show_themes": {
+          "type": "boolean"
+        },
+        "headline_th": {
+          "type": "string"
+        },
+        "sub_th": {
+          "type": "string"
+        },
+        "after_badge_th": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "watermark_th": {
+          "type": "string"
+        },
+        "colors": {
+          "type": "object",
+          "properties": {
+            "bg": {
+              "$ref": "#/$defs/HexColor"
+            },
+            "aura_1": {
+              "$ref": "#/$defs/HexColor"
+            },
+            "aura_2": {
+              "$ref": "#/$defs/HexColor"
+            }
+          },
+          "required": [
+            "bg",
+            "aura_1",
+            "aura_2"
+          ],
+          "additionalProperties": false
+        },
+        "file_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "entry_id",
+        "variant",
+        "size",
+        "show_transcript",
+        "show_score",
+        "show_themes",
+        "headline_th",
+        "sub_th",
+        "after_badge_th",
+        "watermark_th",
+        "colors",
+        "file_name"
+      ],
+      "additionalProperties": false
+    },
+    "SupportResource": {
+      "type": "object",
+      "properties": {
+        "name_th": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "hours_th": {
+          "type": "string"
+        },
+        "verify_before_launch": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name_th",
+        "phone",
+        "hours_th",
+        "verify_before_launch"
+      ],
+      "additionalProperties": false
+    },
+    "SafetyCheck": {
+      "type": "object",
+      "properties": {
+        "input_text": {
+          "type": "string"
+        },
+        "risk_level": {
+          "enum": [
+            "none",
+            "elevated",
+            "urgent"
+          ]
+        },
+        "matched": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "action": {
+          "enum": [
+            "continue",
+            "soft_check_in",
+            "show_support_sheet"
+          ]
+        },
+        "message_th": {
+          "type": "string"
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SupportResource"
+          }
+        }
+      },
+      "required": [
+        "input_text",
+        "risk_level",
+        "matched",
+        "action",
+        "resources"
+      ],
+      "additionalProperties": false
+    },
+    "Settings": {
+      "type": "object",
+      "properties": {
+        "lang": {
+          "$ref": "#/$defs/Lang"
+        },
+        "stt_engine": {
+          "$ref": "#/$defs/SttEngine"
+        },
+        "ai_engine": {
+          "enum": [
+            "lexicon_v1",
+            "llm_api"
+          ]
+        },
+        "keep_audio": {
+          "type": "boolean"
+        },
+        "pin_lock": {
+          "type": "boolean"
+        },
+        "reminder_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sound": {
+          "type": "boolean"
+        },
+        "haptics": {
+          "type": "boolean"
+        },
+        "theme": {
+          "enum": [
+            "night",
+            "dawn"
+          ]
+        },
+        "share_defaults": {
+          "type": "object",
+          "properties": {
+            "show_transcript": {
+              "type": "boolean"
+            },
+            "show_score": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "show_transcript",
+            "show_score"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "lang",
+        "stt_engine",
+        "ai_engine",
+        "keep_audio",
+        "pin_lock",
+        "reminder_id",
+        "sound",
+        "haptics",
+        "theme",
+        "share_defaults"
+      ],
+      "additionalProperties": false
+    },
+    "LocalStore": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "key": {
+          "const": "voicemood:v1"
+        },
+        "settings": {
+          "$ref": "#/$defs/Settings"
+        },
+        "entry_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "last_opened": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "streak": {
+          "type": "object",
+          "properties": {
+            "current": {
+              "type": "integer"
+            },
+            "best": {
+              "type": "integer"
+            },
+            "last_date": {
+              "$ref": "#/$defs/DateLocal"
+            }
+          },
+          "required": [
+            "current",
+            "best",
+            "last_date"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "key",
+        "settings",
+        "entry_ids",
+        "last_opened",
+        "streak"
+      ],
+      "additionalProperties": false,
+      "description": "localStorage index. Entries themselves live in IndexedDB store 'entries'."
+    },
+    "AnalyticsEvent": {
+      "type": "object",
+      "properties": {
+        "event": {
+          "enum": [
+            "app_open",
+            "demo_load",
+            "record_start",
+            "record_stop",
+            "analysis_done",
+            "comfort_view",
+            "breath_done",
+            "recheck_done",
+            "garden_view",
+            "triggers_view",
+            "wrapped_view",
+            "share_card_export",
+            "safety_sheet_shown",
+            "settings_change"
+          ]
+        },
+        "ts": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "props": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "event",
+        "ts",
+        "props"
+      ],
+      "additionalProperties": false
+    },
+    "FeatureItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name_th": {
+          "type": "string"
+        },
+        "done": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name_th",
+        "done"
+      ],
+      "additionalProperties": false
+    },
+    "FeatureChecklist": {
+      "type": "object",
+      "properties": {
+        "must_have": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FeatureItem"
+          },
+          "minItems": 5
+        },
+        "nice_to_have": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FeatureItem"
+          }
+        },
+        "min_features_rule": {
+          "const": 5
+        },
+        "must_count": {
+          "type": "integer",
+          "minimum": 5
+        }
+      },
+      "required": [
+        "must_have",
+        "nice_to_have",
+        "min_features_rule",
+        "must_count"
+      ],
+      "additionalProperties": false
+    },
+    "ExamplesFile": {
+      "type": "object",
+      "description": "Shape of examples.json",
+      "required": [
+        "_meta",
+        "lexicon_th",
+        "analysis_example",
+        "history_entries",
+        "garden_example",
+        "trigger_insights_example"
+      ]
+    }
+  }
+}

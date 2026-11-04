@@ -1,0 +1,898 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/cleanquest/schemas.json",
+  "title": "CleanQuest (ห้องรกหาย) data contracts",
+  "$defs": {
+    "HotspotId": {
+      "enum": [
+        "clothes_pile",
+        "trash_floor",
+        "dishes_cups",
+        "snack_wrappers",
+        "desk_clutter",
+        "boxes_parcels",
+        "laundry_full",
+        "bed_unmade",
+        "floor_dust",
+        "shoes_scattered",
+        "books_papers",
+        "cosmetics",
+        "cables_mess"
+      ]
+    },
+    "Zone": {
+      "enum": [
+        "bed",
+        "desk",
+        "floor"
+      ]
+    },
+    "Severity": {
+      "enum": [
+        1,
+        2,
+        3
+      ]
+    },
+    "Mode": {
+      "enum": [
+        "lazy",
+        "normal",
+        "fire"
+      ]
+    },
+    "Decision": {
+      "enum": [
+        "keep",
+        "sell",
+        "donate",
+        "trash"
+      ]
+    },
+    "Condition": {
+      "enum": [
+        "good",
+        "worn",
+        "broken"
+      ]
+    },
+    "HotspotInput": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/HotspotId"
+        },
+        "severity": {
+          "$ref": "#/$defs/Severity"
+        }
+      },
+      "required": [
+        "id",
+        "severity"
+      ],
+      "additionalProperties": false
+    },
+    "ScanInput": {
+      "type": "object",
+      "properties": {
+        "room_id": {
+          "type": "string"
+        },
+        "at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "hotspots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/HotspotInput"
+          },
+          "maxItems": 13
+        },
+        "source": {
+          "enum": [
+            "ai_suggested",
+            "user_picked",
+            "demo"
+          ]
+        },
+        "photo_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "room_id",
+        "hotspots",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "HotspotPin": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/HotspotId"
+        },
+        "severity": {
+          "$ref": "#/$defs/Severity"
+        },
+        "label_th": {
+          "type": "string"
+        },
+        "severity_th": {
+          "type": "string"
+        },
+        "points": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "box": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "id",
+        "severity",
+        "label_th",
+        "severity_th",
+        "points",
+        "emoji"
+      ],
+      "additionalProperties": false
+    },
+    "MessScore": {
+      "type": "object",
+      "properties": {
+        "clean_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "mess_points": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "label_th": {
+          "enum": [
+            "ห้องโชว์ ✨",
+            "อยู่ได้สบาย",
+            "เริ่มรก",
+            "ห้องวิกฤต 🚨"
+          ]
+        },
+        "worst_zone": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Zone"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "zone_points": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/Zone"
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "hotspots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/HotspotPin"
+          }
+        },
+        "est_minutes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "clean_score",
+        "mess_points",
+        "label_th",
+        "worst_zone",
+        "zone_points",
+        "hotspots",
+        "est_minutes"
+      ],
+      "additionalProperties": false
+    },
+    "Quest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^q\\d+$"
+        },
+        "hotspot": {
+          "$ref": "#/$defs/HotspotId"
+        },
+        "title_th": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "minutes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "xp": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "quick_win": {
+          "type": "boolean"
+        },
+        "score_after": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "required": [
+        "id",
+        "hotspot",
+        "title_th",
+        "emoji",
+        "minutes",
+        "xp",
+        "quick_win",
+        "score_after"
+      ],
+      "additionalProperties": false
+    },
+    "Sprint": {
+      "type": "object",
+      "properties": {
+        "n": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "quest_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "minutes": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "n",
+        "quest_ids",
+        "minutes"
+      ],
+      "additionalProperties": false
+    },
+    "QuestPlan": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "$ref": "#/$defs/Mode"
+        },
+        "mode_th": {
+          "type": "string"
+        },
+        "quests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Quest"
+          }
+        },
+        "sprints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Sprint"
+          }
+        },
+        "total_minutes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "score_before": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "score_after": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "required": [
+        "mode",
+        "mode_th",
+        "quests",
+        "sprints",
+        "total_minutes",
+        "score_before",
+        "score_after"
+      ],
+      "additionalProperties": false
+    },
+    "TimerState": {
+      "type": "object",
+      "properties": {
+        "live_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "xp_gained": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "done": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "left": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "next_quest": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sprint": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "remaining_sec": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "finished": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "live_score",
+        "xp_gained",
+        "done",
+        "left",
+        "next_quest",
+        "sprint",
+        "remaining_sec",
+        "finished"
+      ],
+      "additionalProperties": false
+    },
+    "GlowUpCard": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "before": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "after": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "delta": {
+          "type": "integer",
+          "minimum": -100,
+          "maximum": 100
+        },
+        "minutes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quests_done": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "title_th": {
+          "type": "string"
+        },
+        "headline_th": {
+          "type": "string"
+        },
+        "size_px": {
+          "const": [
+            1080,
+            1920
+          ]
+        },
+        "layout": {
+          "enum": [
+            "split_before_after",
+            "slider"
+          ]
+        },
+        "watermark": {
+          "const": "CleanQuest · AI วันละแอป"
+        }
+      },
+      "required": [
+        "name",
+        "before",
+        "after",
+        "delta",
+        "minutes",
+        "quests_done",
+        "title_th",
+        "headline_th",
+        "size_px",
+        "layout",
+        "watermark"
+      ],
+      "additionalProperties": false
+    },
+    "DeclutterItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name_th": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "condition": {
+          "$ref": "#/$defs/Condition"
+        },
+        "last_used_months": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 240
+        },
+        "paid_thb": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sentimental": {
+          "type": "boolean"
+        },
+        "duplicate": {
+          "type": "boolean"
+        },
+        "photo_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name_th",
+        "condition",
+        "last_used_months"
+      ],
+      "additionalProperties": false
+    },
+    "DeclutterResult": {
+      "type": "object",
+      "properties": {
+        "item_id": {
+          "type": "string"
+        },
+        "name_th": {
+          "type": "string"
+        },
+        "decision": {
+          "$ref": "#/$defs/Decision"
+        },
+        "reason_th": {
+          "type": "string"
+        },
+        "resale_thb": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "listing_th": {
+          "type": "string",
+          "maxLength": 140
+        }
+      },
+      "required": [
+        "item_id",
+        "name_th",
+        "decision",
+        "reason_th",
+        "resale_thb"
+      ],
+      "additionalProperties": false
+    },
+    "ChoreShare": {
+      "type": "object",
+      "properties": {
+        "person": {
+          "type": "string"
+        },
+        "quest_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "minutes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "person",
+        "quest_ids",
+        "minutes"
+      ],
+      "additionalProperties": false
+    },
+    "LogEntry": {
+      "type": "object",
+      "properties": {
+        "on": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "kind": {
+          "enum": [
+            "scan",
+            "quest",
+            "session",
+            "declutter"
+          ]
+        },
+        "xp": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "on",
+        "kind"
+      ],
+      "additionalProperties": false
+    },
+    "Progress": {
+      "type": "object",
+      "properties": {
+        "xp": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "level": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "streak_days": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "xp",
+        "level",
+        "streak_days"
+      ],
+      "additionalProperties": false
+    },
+    "Session": {
+      "type": "object",
+      "properties": {
+        "on": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "before": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "after": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "minutes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "hotspots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/HotspotId"
+          }
+        }
+      },
+      "required": [
+        "on",
+        "before",
+        "after",
+        "minutes",
+        "hotspots"
+      ],
+      "additionalProperties": false
+    },
+    "WeeklyReset": {
+      "type": "object",
+      "properties": {
+        "next_reset": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "days_left": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 6
+        },
+        "done_this_week": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "next_reset",
+        "days_left",
+        "done_this_week"
+      ],
+      "additionalProperties": false
+    },
+    "Wrapped": {
+      "type": "object",
+      "properties": {
+        "month": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}$"
+        },
+        "sessions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minutes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "avg_delta": {
+          "type": "integer"
+        },
+        "best_delta": {
+          "type": "integer"
+        },
+        "top_hotspot": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/HotspotId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "hotspot_counts": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/HotspotId"
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      },
+      "required": [
+        "month",
+        "sessions",
+        "minutes",
+        "avg_delta",
+        "best_delta",
+        "top_hotspot",
+        "hotspot_counts"
+      ],
+      "additionalProperties": false
+    },
+    "LocalStore": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "name": {
+          "type": "string"
+        },
+        "roommates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 6
+        },
+        "sessions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Session"
+          }
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DeclutterItem"
+          }
+        },
+        "log": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LogEntry"
+          }
+        },
+        "settings": {
+          "type": "object",
+          "properties": {
+            "reset_weekday": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            },
+            "notify": {
+              "type": "boolean"
+            },
+            "sound": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "reset_weekday",
+            "notify",
+            "sound"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "name",
+        "roommates",
+        "sessions",
+        "items",
+        "log",
+        "settings"
+      ],
+      "additionalProperties": false
+    },
+    "AiScanRequest": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "string",
+          "description": "base64 JPEG ≤ 1280px"
+        },
+        "allowed_hotspots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/HotspotId"
+          }
+        }
+      },
+      "required": [
+        "image",
+        "allowed_hotspots"
+      ],
+      "additionalProperties": false
+    },
+    "AiScanResponse": {
+      "type": "object",
+      "properties": {
+        "is_room_photo": {
+          "type": "boolean"
+        },
+        "hotspots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/HotspotId"
+              },
+              "severity": {
+                "$ref": "#/$defs/Severity"
+              },
+              "confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "box": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "minItems": 4,
+                "maxItems": 4
+              }
+            },
+            "required": [
+              "id",
+              "severity",
+              "confidence",
+              "box"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 13
+        },
+        "note_th": {
+          "type": "string",
+          "maxLength": 120
+        }
+      },
+      "required": [
+        "is_room_photo",
+        "hotspots",
+        "note_th"
+      ],
+      "additionalProperties": false
+    },
+    "AiPepTalkRequest": {
+      "type": "object",
+      "properties": {
+        "quest": {
+          "$ref": "#/$defs/Quest"
+        },
+        "live_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "style": {
+          "enum": [
+            "coach",
+            "bestie",
+            "army"
+          ]
+        }
+      },
+      "required": [
+        "quest",
+        "live_score",
+        "style"
+      ],
+      "additionalProperties": false
+    },
+    "AiPepTalkResponse": {
+      "type": "object",
+      "properties": {
+        "text_th": {
+          "type": "string",
+          "maxLength": 60
+        }
+      },
+      "required": [
+        "text_th"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,1454 @@
+{
+  "meta": {
+    "app": "ReelForge",
+    "pack_date": "2026-10-12",
+    "day_in_queue": "10/10",
+    "channel": "AI วันละแอป",
+    "persona_note": "เจี๊ยบ เป็นตัวละครสมมติ ชื่อร้านและตัวเลขในแพ็กนี้แต่งขึ้นเพื่อเดโม",
+    "timezone": "Asia/Bangkok",
+    "today": "2026-10-12",
+    "hook_line_th": "ไอเดียในหัวแต่ไม่รู้จะเปิดคลิปยังไง? โยนเข้าแอปนี้ 10 วิ… ได้ชุดถ่ายพร้อมจับเวลาเลย 🎬",
+    "colors": {
+      "bg": "#0F0A1A",
+      "magenta": "#E11D48",
+      "violet": "#8B5CF6",
+      "cream": "#FDF4FF",
+      "gold": "#FBBF24"
+    }
+  },
+  "persona": {
+    "name": "เจี๊ยบ",
+    "role_th": "แม่ค้าออนไลน์ขายขนมบ้าน / คนทำคอนเทนต์มือใหม่",
+    "note_th": "เจี๊ยบ เป็นตัวละครสมมติ ชื่อร้านและตัวเลขในแพ็กนี้แต่งขึ้นเพื่อเดโม"
+  },
+  "demo_input": {
+    "raw_idea": "ขายคุกกี้เนยสด ส่ง LINE ทั้งกรุงเทพ ชิ้นละ 45 บาท เซ็ต 6 ชิ้น 240",
+    "style": "soft_sell_before_after",
+    "duration_target_s": 30,
+    "source": "demo_fixture"
+  },
+  "idea_parsed": {
+    "raw": "ขายคุกกี้เนยสด ส่ง LINE ทั้งกรุงเทพ ชิ้นละ 45 บาท เซ็ต 6 ชิ้น 240",
+    "normalized": "ขายคุกกี้เนยสด ส่ง LINE ทั้งกรุงเทพ ชิ้นละ 45 บาท เซ็ต 6 ชิ้น 240",
+    "product": "คุกกี้เนยสด",
+    "category": "snacks",
+    "category_label_th": "ขนม/เบเกอรี่",
+    "emoji": "🍪",
+    "matched_keyword": "คุกกี้",
+    "price_unit": 45.0,
+    "price_set": 240.0,
+    "set_qty": 6,
+    "channel": "LINE",
+    "area": "กรุงเทพ",
+    "cta_keyword": "คุกกี้",
+    "lang": "th"
+  },
+  "style_library": [
+    {
+      "id": "soft_sell_before_after",
+      "label_th": "ก่อน/หลัง · Soft sell",
+      "emoji": "✨",
+      "bgm_mood": "warm_upbeat",
+      "bgm_mood_th": "อบอุ่น มีจังหวะเบา",
+      "beat_count": 5,
+      "beat_roles": [
+        "hook",
+        "problem",
+        "product_reveal",
+        "howto",
+        "cta"
+      ],
+      "default_weights": [
+        3,
+        6,
+        8,
+        8,
+        5
+      ]
+    },
+    {
+      "id": "teach_3_steps",
+      "label_th": "สอน 3 ขั้น",
+      "emoji": "📚",
+      "bgm_mood": "focus_soft",
+      "bgm_mood_th": "โฟกัส นุ่ม",
+      "beat_count": 5,
+      "beat_roles": [
+        "hook",
+        "step",
+        "step",
+        "step",
+        "cta"
+      ],
+      "default_weights": [
+        3,
+        7,
+        8,
+        7,
+        5
+      ]
+    },
+    {
+      "id": "storytime",
+      "label_th": "Storytime",
+      "emoji": "📖",
+      "bgm_mood": "story_soft",
+      "bgm_mood_th": "เล่าเรื่อง นุ่มลึก",
+      "beat_count": 5,
+      "beat_roles": [
+        "hook",
+        "setup",
+        "twist",
+        "lesson",
+        "cta"
+      ],
+      "default_weights": [
+        4,
+        6,
+        10,
+        6,
+        4
+      ]
+    },
+    {
+      "id": "unboxing",
+      "label_th": "Unboxing",
+      "emoji": "📦",
+      "bgm_mood": "curious_pop",
+      "bgm_mood_th": "อยากรู้ มีป๊อป",
+      "beat_count": 5,
+      "beat_roles": [
+        "hook",
+        "box",
+        "product_reveal",
+        "details",
+        "cta"
+      ],
+      "default_weights": [
+        3,
+        5,
+        10,
+        7,
+        5
+      ]
+    },
+    {
+      "id": "soft_sell",
+      "label_th": "Soft sell",
+      "emoji": "🍪",
+      "bgm_mood": "cozy_sell",
+      "bgm_mood_th": "อบอุ่น ชวนซื้อ",
+      "beat_count": 5,
+      "beat_roles": [
+        "hook",
+        "product_reveal",
+        "benefit",
+        "proof",
+        "cta"
+      ],
+      "default_weights": [
+        3,
+        10,
+        7,
+        5,
+        5
+      ]
+    }
+  ],
+  "category_rules": [
+    {
+      "keywords": [
+        "คุกกี้",
+        "cookie",
+        "ขนม",
+        "เค้ก",
+        "บราวนี่",
+        "มาการอง",
+        "ขนมปัง",
+        "เบเกอรี่",
+        "butter"
+      ],
+      "category": "snacks",
+      "label_th": "ขนม/เบเกอรี่",
+      "emoji": "🍪",
+      "cta_keyword_default": "คุกกี้"
+    },
+    {
+      "keywords": [
+        "สกินแคร์",
+        "ครีม",
+        "เซรั่ม",
+        "lipstick",
+        "ลิป",
+        "เครื่องสำอาง",
+        "beauty",
+        "สกิน"
+      ],
+      "category": "beauty",
+      "label_th": "ความงาม",
+      "emoji": "💄",
+      "cta_keyword_default": "สวย"
+    },
+    {
+      "keywords": [
+        "อ่านหนังสือ",
+        "ติว",
+        "สอบ",
+        "เรียน",
+        "study",
+        "notebook",
+        "สรุป"
+      ],
+      "category": "study",
+      "label_th": "เรียน/ติว",
+      "emoji": "📚",
+      "cta_keyword_default": "ติว"
+    },
+    {
+      "keywords": [
+        "เสื้อ",
+        "กางเกง",
+        "แฟชั่น",
+        "รองเท้า",
+        "กระเป๋า",
+        "ootd"
+      ],
+      "category": "fashion",
+      "label_th": "แฟชั่น",
+      "emoji": "👗",
+      "cta_keyword_default": "ใส่"
+    },
+    {
+      "keywords": [
+        "กาแฟ",
+        "ชา",
+        "เครื่องดื่ม",
+        "cafe",
+        "คาเฟ่",
+        "ชานม"
+      ],
+      "category": "drink",
+      "label_th": "เครื่องดื่ม",
+      "emoji": "☕",
+      "cta_keyword_default": "กาแฟ"
+    },
+    {
+      "keywords": [
+        "ฟิตเนส",
+        "ออกกำลัง",
+        "โยคะ",
+        "วิ่ง",
+        "workout"
+      ],
+      "category": "fitness",
+      "label_th": "ฟิตเนส",
+      "emoji": "💪",
+      "cta_keyword_default": "ฟิต"
+    },
+    {
+      "keywords": [
+        "มือถือ",
+        "gadget",
+        "หูฟัง",
+        "โน้ตบุ๊ก",
+        "tech"
+      ],
+      "category": "tech",
+      "label_th": "แกดเจ็ต",
+      "emoji": "📱",
+      "cta_keyword_default": "แกดเจ็ต"
+    },
+    {
+      "keywords": [
+        "ดอกไม้",
+        "ของขวัญ",
+        "gift",
+        "ช่อ"
+      ],
+      "category": "gift",
+      "label_th": "ของขวัญ",
+      "emoji": "🎁",
+      "cta_keyword_default": "ของขวัญ"
+    }
+  ],
+  "blueprint_example": {
+    "blueprint_id": "bp_soft_sell_before_after_30_snacks",
+    "idea": {
+      "raw": "ขายคุกกี้เนยสด ส่ง LINE ทั้งกรุงเทพ ชิ้นละ 45 บาท เซ็ต 6 ชิ้น 240",
+      "normalized": "ขายคุกกี้เนยสด ส่ง LINE ทั้งกรุงเทพ ชิ้นละ 45 บาท เซ็ต 6 ชิ้น 240",
+      "product": "คุกกี้เนยสด",
+      "category": "snacks",
+      "category_label_th": "ขนม/เบเกอรี่",
+      "emoji": "🍪",
+      "matched_keyword": "คุกกี้",
+      "price_unit": 45.0,
+      "price_set": 240.0,
+      "set_qty": 6,
+      "channel": "LINE",
+      "area": "กรุงเทพ",
+      "cta_keyword": "คุกกี้",
+      "lang": "th"
+    },
+    "style": "soft_sell_before_after",
+    "style_label_th": "ก่อน/หลัง · Soft sell",
+    "style_emoji": "✨",
+    "duration_target_s": 30,
+    "duration_total_s": 30,
+    "bgm_mood": "warm_upbeat",
+    "bgm_mood_th": "อบอุ่น มีจังหวะเบา",
+    "hook": {
+      "id": "hook_a",
+      "text_th": "โพสต์ข้อความอย่างเดียว vs คลิป 30 วิ — อันไหนขายได้มากกว่า?",
+      "angle": "contrast",
+      "scores": {
+        "curiosity": 100,
+        "clarity": 94,
+        "emotion": 78,
+        "total": 272
+      },
+      "rank": 1
+    },
+    "hooks_ranked": [
+      {
+        "id": "hook_a",
+        "text_th": "โพสต์ข้อความอย่างเดียว vs คลิป 30 วิ — อันไหนขายได้มากกว่า?",
+        "angle": "contrast",
+        "scores": {
+          "curiosity": 100,
+          "clarity": 94,
+          "emotion": 78,
+          "total": 272
+        },
+        "rank": 1,
+        "is_winner": true
+      },
+      {
+        "id": "hook_b",
+        "text_th": "แม่ค้าขนมบ้านหยุดโพสต์ข้อความ เปิดกล้อง 30 วิ แล้วยอดทักพุ่ง",
+        "angle": "transformation",
+        "scores": {
+          "curiosity": 48,
+          "clarity": 74,
+          "emotion": 100,
+          "total": 222
+        },
+        "rank": 2,
+        "is_winner": false
+      },
+      {
+        "id": "hook_c",
+        "text_th": "คุกกี้เนยสด ชิ้นละ 45 บาท แต่คนไม่เห็น เพราะโพสต์นิ่งๆ",
+        "angle": "product_pain",
+        "scores": {
+          "curiosity": 48,
+          "clarity": 76,
+          "emotion": 46,
+          "total": 170
+        },
+        "rank": 3,
+        "is_winner": false
+      }
+    ],
+    "shots": [
+      {
+        "n": 1,
+        "shot_id": "shot_01_hook",
+        "beat_id": "hook",
+        "role": "hook",
+        "start_s": 0,
+        "duration_s": 3,
+        "end_s": 3,
+        "title_th": "ฮุค 0–3 วิ",
+        "overlay_th": "โพสต์ข้อความอย่างเดียว vs คลิป 30 วิ — อ…",
+        "vo_th": "โพสต์ข้อความอย่างเดียว vs คลิป 30 วิ — อันไหนขายได้มากกว่า?",
+        "prompt_th": "มองกล้อง · พูดฮุคช้าๆ ชัดๆ · ยิ้มนิด",
+        "camera_th": "แนวตั้ง 9:16 · มือถือระดับอก"
+      },
+      {
+        "n": 2,
+        "shot_id": "shot_02_problem",
+        "beat_id": "problem",
+        "role": "problem",
+        "start_s": 3,
+        "duration_s": 6,
+        "end_s": 9,
+        "title_th": "ปัญหา",
+        "overlay_th": "ก่อน: โพสต์ข้อความอย่างเดียว",
+        "vo_th": "ก่อนหน้านี้ฉันโพสต์ข้อความกับรูปนิ่ง รอคนทักเอง — คุกกี้เนยสด ก็เงียบ",
+        "prompt_th": "โชว์มือถือหน้าโพสต์ข้อความ · ส่ายหัวเบาๆ",
+        "camera_th": "แนวตั้ง 9:16 · มือถือระดับอก"
+      },
+      {
+        "n": 3,
+        "shot_id": "shot_03_reveal",
+        "beat_id": "reveal",
+        "role": "product_reveal",
+        "start_s": 9,
+        "duration_s": 8,
+        "end_s": 17,
+        "title_th": "โชว์สินค้า",
+        "overlay_th": "คุกกี้เนยสด · ชิ้นละ 45 บาท",
+        "vo_th": "นี่เลย คุกกี้เนยสด ชิ้นละ 45 บาท หรือ เซ็ต 6 ชิ้น 240 บาท อบใหม่ทุกวัน",
+        "prompt_th": "ยกสินค้าเข้ากล้อง · หมุนช้าๆ ให้เห็นเนื้อ",
+        "camera_th": "แนวตั้ง 9:16 · มือถือระดับอก"
+      },
+      {
+        "n": 4,
+        "shot_id": "shot_04_howto",
+        "beat_id": "howto",
+        "role": "howto",
+        "start_s": 17,
+        "duration_s": 8,
+        "end_s": 25,
+        "title_th": "วิธีสั่ง",
+        "overlay_th": "สั่ง LINE · ส่งกรุงเทพ",
+        "vo_th": "อยากได้ทัก LINE ได้เลย ส่งถึงกรุงเทพ — เซ็ต 6 ชิ้น 240 บาท ก็มี",
+        "prompt_th": "ชี้ไปที่ไอคอน LINE หรือพิมพ์ตัวอย่างข้อความ",
+        "camera_th": "แนวตั้ง 9:16 · มือถือระดับอก"
+      },
+      {
+        "n": 5,
+        "shot_id": "shot_05_cta",
+        "beat_id": "cta",
+        "role": "cta",
+        "start_s": 25,
+        "duration_s": 5,
+        "end_s": 30,
+        "title_th": "CTA",
+        "overlay_th": "คอมเมนต์ 「คุกกี้」 รับเมนู",
+        "vo_th": "คอมเมนต์คำว่า คุกกี้ เดี๋ยวส่งรายละเอียดให้ — รีบก่อนหมดเตา",
+        "prompt_th": "ชี้คอมเมนต์ · ยิ้ม · พูด CTA ชัด",
+        "camera_th": "แนวตั้ง 9:16 · มือถือระดับอก"
+      }
+    ],
+    "shot_count": 5,
+    "cta_keyword": "คุกกี้",
+    "created_from": "deterministic_v1"
+  },
+  "caption_pack_example": {
+    "caption_short_th": "โพสต์ข้อความอย่างเดียว vs คลิป 30 วิ — อันไหนขายได้มากกว่า? คุกกี้เนยสด ชิ้นละ 45 บาท สั่ง LINE ได้เลย คอมเมนต์ 「คุกกี้」",
+    "caption_long_th": "โพสต์ข้อความอย่างเดียว vs คลิป 30 วิ — อันไหนขายได้มากกว่า?\n\nวันนี้ขอเปิดกล้องขายคุกกี้เนยสด สั้นๆ 30 วิ ชิ้นละ 45 บาท เซ็ต 6 ชิ้น 240 บาท\nส่งกรุงเทพ ทาง LINE\n\nถ้าอยากได้รายละเอียด คอมเมนต์คำว่า 「คุกกี้」 ไว้เลย เดี๋ยวส่งเมนู/ลิงก์ให้ในคอมเมนต์ 🍪\n\n(ตัวอย่างจากช่อง AI วันละแอป · ReelForge)",
+    "hashtags": [
+      "#คุกกี้",
+      "#ขนมบ้าน",
+      "#ของกินอร่อย",
+      "#แม่ค้าออนไลน์",
+      "#เบเกอรี่",
+      "#รีลขายของ",
+      "#สายกิน",
+      "#อบเอง",
+      "#รีลไทย",
+      "#คอนเทนต์มือใหม่",
+      "#AIวันละแอป",
+      "#ReelForge"
+    ],
+    "comment_cta_keyword": "คุกกี้",
+    "comment_cta_line_th": "คอมเมนต์ 「คุกกี้」 รับรายละเอียด",
+    "lang": "th",
+    "char_count_short": 120,
+    "char_count_long": 288
+  },
+  "overlays_example": {
+    "per_shot": [
+      {
+        "shot_id": "shot_01_hook",
+        "n": 1,
+        "overlay_th": "โพสต์ข้อความอย่างเดียว vs คลิป 30 วิ — อ…",
+        "font_hint": "bold_sans",
+        "safe_zone": "center_upper",
+        "max_chars": 42
+      },
+      {
+        "shot_id": "shot_02_problem",
+        "n": 2,
+        "overlay_th": "ก่อน: โพสต์ข้อความอย่างเดียว",
+        "font_hint": "bold_sans",
+        "safe_zone": "center_upper",
+        "max_chars": 42
+      },
+      {
+        "shot_id": "shot_03_reveal",
+        "n": 3,
+        "overlay_th": "คุกกี้เนยสด · ชิ้นละ 45 บาท",
+        "font_hint": "bold_sans",
+        "safe_zone": "center_upper",
+        "max_chars": 42
+      },
+      {
+        "shot_id": "shot_04_howto",
+        "n": 4,
+        "overlay_th": "สั่ง LINE · ส่งกรุงเทพ",
+        "font_hint": "bold_sans",
+        "safe_zone": "center_upper",
+        "max_chars": 42
+      },
+      {
+        "shot_id": "shot_05_cta",
+        "n": 5,
+        "overlay_th": "คอมเมนต์ 「คุกกี้」 รับเมนู",
+        "font_hint": "bold_sans",
+        "safe_zone": "center_upper",
+        "max_chars": 42
+      }
+    ],
+    "covers": [
+      {
+        "id": "cover_a",
+        "variant": "contrast",
+        "size": [
+          1080,
+          1920
+        ],
+        "title_th": "ข้อความ vs คลิป 30 วิ",
+        "subtitle_th": "คุกกี้เนยสด ขายได้ต่างกันยังไง",
+        "badge_th": "ก่อน/หลัง",
+        "bg": "#0F0A1A",
+        "accent": "#E11D48"
+      },
+      {
+        "id": "cover_b",
+        "variant": "product",
+        "size": [
+          1080,
+          1920
+        ],
+        "title_th": "คุกกี้เนยสด",
+        "subtitle_th": "ชิ้นละ 45฿ · ส่งถึงบ้าน",
+        "badge_th": "Soft sell",
+        "bg": "#0F0A1A",
+        "accent": "#8B5CF6"
+      },
+      {
+        "id": "cover_c",
+        "variant": "cta",
+        "size": [
+          1080,
+          1920
+        ],
+        "title_th": "คอมเมนต์ 「คุกกี้」",
+        "subtitle_th": "รับเมนู · พร้อมถ่ายตาม",
+        "badge_th": "CTA",
+        "bg": "#0F0A1A",
+        "accent": "#FBBF24"
+      }
+    ],
+    "hook_line_th": "โพสต์ข้อความอย่างเดียว vs คลิป 30 วิ — อันไหนข…",
+    "export_format": "png",
+    "export_size": [
+      1080,
+      1920
+    ]
+  },
+  "hook_lab_example": {
+    "hooks": [
+      {
+        "id": "hook_a",
+        "text_th": "โพสต์ข้อความอย่างเดียว vs คลิป 30 วิ — อันไหนขายได้มากกว่า?",
+        "angle": "contrast",
+        "scores": {
+          "curiosity": 100,
+          "clarity": 94,
+          "emotion": 78,
+          "total": 272
+        },
+        "rank": 1,
+        "is_winner": true
+      },
+      {
+        "id": "hook_b",
+        "text_th": "แม่ค้าขนมบ้านหยุดโพสต์ข้อความ เปิดกล้อง 30 วิ แล้วยอดทักพุ่ง",
+        "angle": "transformation",
+        "scores": {
+          "curiosity": 48,
+          "clarity": 74,
+          "emotion": 100,
+          "total": 222
+        },
+        "rank": 2,
+        "is_winner": false
+      },
+      {
+        "id": "hook_c",
+        "text_th": "คุกกี้เนยสด ชิ้นละ 45 บาท แต่คนไม่เห็น เพราะโพสต์นิ่งๆ",
+        "angle": "product_pain",
+        "scores": {
+          "curiosity": 48,
+          "clarity": 76,
+          "emotion": 46,
+          "total": 170
+        },
+        "rank": 3,
+        "is_winner": false
+      }
+    ],
+    "winner_id": "hook_a",
+    "swap_example": {
+      "selected": "hook_b",
+      "after_hook_id": "hook_b",
+      "after_shot1_overlay": "แม่ค้าขนมบ้านหยุดโพสต์ข้อความ เปิดกล้อง …",
+      "duration_still_s": 30
+    }
+  },
+  "film_mode_examples": {
+    "at_0s": {
+      "total_s": 30,
+      "elapsed_s": 0,
+      "remaining_s": 30,
+      "done": false,
+      "shot_index": 0,
+      "shot_n": 1,
+      "shot_id": "shot_01_hook",
+      "shot_elapsed_s": 0.0,
+      "shot_remaining_s": 3.0,
+      "shot_progress": 0.0,
+      "overall_progress": 0.0,
+      "prompt_th": "มองกล้อง · พูดฮุคช้าๆ ชัดๆ · ยิ้มนิด",
+      "overlay_th": "โพสต์ข้อความอย่างเดียว vs คลิป 30 วิ — อ…"
+    },
+    "at_3s": {
+      "total_s": 30,
+      "elapsed_s": 3.0,
+      "remaining_s": 27.0,
+      "done": false,
+      "shot_index": 1,
+      "shot_n": 2,
+      "shot_id": "shot_02_problem",
+      "shot_elapsed_s": 0.0,
+      "shot_remaining_s": 6.0,
+      "shot_progress": 0.0,
+      "overall_progress": 0.1,
+      "prompt_th": "โชว์มือถือหน้าโพสต์ข้อความ · ส่ายหัวเบาๆ",
+      "overlay_th": "ก่อน: โพสต์ข้อความอย่างเดียว"
+    },
+    "at_10s": {
+      "total_s": 30,
+      "elapsed_s": 10.0,
+      "remaining_s": 20.0,
+      "done": false,
+      "shot_index": 2,
+      "shot_n": 3,
+      "shot_id": "shot_03_reveal",
+      "shot_elapsed_s": 1.0,
+      "shot_remaining_s": 7.0,
+      "shot_progress": 0.125,
+      "overall_progress": 0.3333,
+      "prompt_th": "ยกสินค้าเข้ากล้อง · หมุนช้าๆ ให้เห็นเนื้อ",
+      "overlay_th": "คุกกี้เนยสด · ชิ้นละ 45 บาท"
+    },
+    "at_29s": {
+      "total_s": 30,
+      "elapsed_s": 29.0,
+      "remaining_s": 1.0,
+      "done": false,
+      "shot_index": 4,
+      "shot_n": 5,
+      "shot_id": "shot_05_cta",
+      "shot_elapsed_s": 4.0,
+      "shot_remaining_s": 1.0,
+      "shot_progress": 0.8,
+      "overall_progress": 0.9667,
+      "prompt_th": "ชี้คอมเมนต์ · ยิ้ม · พูด CTA ชัด",
+      "overlay_th": "คอมเมนต์ 「คุกกี้」 รับเมนู"
+    },
+    "at_30s_done": {
+      "total_s": 30,
+      "elapsed_s": 30,
+      "remaining_s": 0,
+      "done": true,
+      "shot_index": 4,
+      "shot_n": 5,
+      "shot_id": "shot_05_cta",
+      "shot_elapsed_s": 5,
+      "shot_remaining_s": 0,
+      "shot_progress": 1.0,
+      "overall_progress": 1.0,
+      "prompt_th": "ชี้คอมเมนต์ · ยิ้ม · พูด CTA ชัด",
+      "overlay_th": "คอมเมนต์ 「คุกกี้」 รับเมนู"
+    },
+    "rewind_to_shot3": {
+      "total_s": 30,
+      "elapsed_s": 9.0,
+      "remaining_s": 21.0,
+      "done": false,
+      "shot_index": 2,
+      "shot_n": 3,
+      "shot_id": "shot_03_reveal",
+      "shot_elapsed_s": 0.0,
+      "shot_remaining_s": 8.0,
+      "shot_progress": 0.0,
+      "overall_progress": 0.3,
+      "prompt_th": "ยกสินค้าเข้ากล้อง · หมุนช้าๆ ให้เห็นเนื้อ",
+      "overlay_th": "คุกกี้เนยสด · ชิ้นละ 45 บาท"
+    }
+  },
+  "trend_angles_example": [
+    {
+      "id": "angle_before_after",
+      "title_th": "ก่อน/หลังชัดๆ",
+      "desc_th": "โชว์โพสต์ข้อความ vs คลิป คุกกี้เนยสด",
+      "style": "soft_sell_before_after"
+    },
+    {
+      "id": "angle_soft",
+      "title_th": "Soft sell อบอุ่น",
+      "desc_th": "ไม่แข็งขาย โชว์ของ + CTA",
+      "style": "soft_sell"
+    },
+    {
+      "id": "angle_unbox",
+      "title_th": "Unboxing / แกะดู",
+      "desc_th": "เปิดใกล้ๆ ให้เห็น คุกกี้เนยสด",
+      "style": "unboxing"
+    },
+    {
+      "id": "angle_3steps",
+      "title_th": "สอน 3 ขั้น",
+      "desc_th": "มือใหม่ทำตามได้ในคลิปเดียว",
+      "style": "teach_3_steps"
+    },
+    {
+      "id": "angle_story",
+      "title_th": "Storytime สั้น",
+      "desc_th": "เล่าว่าทำไมถึงเริ่มขาย",
+      "style": "storytime"
+    }
+  ],
+  "extra_ideas": [
+    {
+      "id": "idea_beauty",
+      "idea": {
+        "raw": "รีวิวเซรั่มวิตามินซี ทาเช้าเย็น ขวดละ 390 บาท สั่ง Shopee",
+        "normalized": "รีวิวเซรั่มวิตามินซี ทาเช้าเย็น ขวดละ 390 บาท สั่ง Shopee",
+        "product": "เซรั่มวิตามินซี",
+        "category": "beauty",
+        "category_label_th": "ความงาม",
+        "emoji": "💄",
+        "matched_keyword": "เซรั่ม",
+        "price_unit": 390.0,
+        "price_set": null,
+        "set_qty": null,
+        "channel": "Shopee",
+        "area": null,
+        "cta_keyword": "สวย",
+        "lang": "th"
+      },
+      "blueprint_summary": {
+        "blueprint_id": "bp_unboxing_30_beauty",
+        "style": "unboxing",
+        "duration_total_s": 30,
+        "shot_count": 5,
+        "hook_th": "เปิดกล่อง เซรั่มวิตามินซี กับตา — ทำไมคนถึงสั่งซ้ำ?",
+        "cta_keyword": "สวย",
+        "durations": [
+          3,
+          5,
+          10,
+          7,
+          5
+        ]
+      }
+    },
+    {
+      "id": "idea_study",
+      "idea": {
+        "raw": "สรุปชีวะระบบหายใจ ติวสอบเข้า ม.ปลาย 3 ขั้น",
+        "normalized": "สรุปชีวะระบบหายใจ ติวสอบเข้า ม.ปลาย 3 ขั้น",
+        "product": "สรุปชีวะระบบหายใจ ติวสอบเข้า…",
+        "category": "study",
+        "category_label_th": "เรียน/ติว",
+        "emoji": "📚",
+        "matched_keyword": "ติว",
+        "price_unit": null,
+        "price_set": null,
+        "set_qty": null,
+        "channel": null,
+        "area": null,
+        "cta_keyword": "ติว",
+        "lang": "th"
+      },
+      "blueprint_summary": {
+        "blueprint_id": "bp_teach_3_steps_30_study",
+        "style": "teach_3_steps",
+        "duration_total_s": 30,
+        "shot_count": 5,
+        "hook_th": "ทำ สรุปชีวะระบบหายใจ ติวสอบเข้า… ให้คนทักใน 3 ขั้น (จับเวลา 30 วิ)",
+        "cta_keyword": "ติว",
+        "durations": [
+          3,
+          7,
+          8,
+          7,
+          5
+        ]
+      }
+    },
+    {
+      "id": "idea_story",
+      "idea": {
+        "raw": "จากแม่บ้านสู่แม่ค้าคุกกี้ เริ่มขายใน LINE",
+        "normalized": "จากแม่บ้านสู่แม่ค้าคุกกี้ เริ่มขายใน LINE",
+        "product": "คุกกี้",
+        "category": "snacks",
+        "category_label_th": "ขนม/เบเกอรี่",
+        "emoji": "🍪",
+        "matched_keyword": "คุกกี้",
+        "price_unit": null,
+        "price_set": null,
+        "set_qty": null,
+        "channel": "LINE",
+        "area": null,
+        "cta_keyword": "คุกกี้",
+        "lang": "th"
+      },
+      "blueprint_summary": {
+        "blueprint_id": "bp_storytime_30_snacks",
+        "style": "storytime",
+        "duration_total_s": 30,
+        "shot_count": 5,
+        "hook_th": "เรื่องจริง: โพสต์ข้อความทั้งอาทิตย์ ไม่มีใครทัก แล้วฉันลองถ่ายคลิป…",
+        "cta_keyword": "คุกกี้",
+        "durations": [
+          4,
+          6,
+          10,
+          6,
+          4
+        ]
+      }
+    }
+  ],
+  "history_example": [
+    {
+      "blueprint_id": "bp_soft_sell_before_after_30_snacks",
+      "title_th": "คุกกี้เนยสด · ก่อน/หลัง",
+      "created_at": "2026-10-12T07:58:00+07:00",
+      "duration_s": 30
+    },
+    {
+      "blueprint_id": "bp_teach_3_steps_30_study",
+      "title_th": "ติวชีวะ 3 ขั้น",
+      "created_at": "2026-10-11T20:10:00+07:00",
+      "duration_s": 30
+    },
+    {
+      "blueprint_id": "bp_unboxing_30_beauty",
+      "title_th": "Unbox เซรั่ม",
+      "created_at": "2026-10-10T18:40:00+07:00",
+      "duration_s": 30
+    }
+  ],
+  "streak_example": {
+    "days": 3,
+    "last_date": "2026-10-12",
+    "label_th": "สตรีค 3 วัน · เก่งมาก 🔥"
+  },
+  "share_card_example": {
+    "id": "share_bp_cookie",
+    "variant": "blueprint_story",
+    "size": [
+      1080,
+      1920
+    ],
+    "title_th": "ชุดถ่าย 30 วิ พร้อมแล้ว",
+    "subtitle_th": "คุกกี้เนยสด · ก่อน/หลัง · Soft sell",
+    "lines_th": [
+      "ฮุค: โพสต์ข้อความอย่างเดียว vs คลิป 30 วิ…",
+      "5 ช็อต · 30 วิ",
+      "BGM: อบอุ่น มีจังหวะเบา",
+      "CTA: 「คุกกี้」"
+    ],
+    "footer_th": "ReelForge · AI วันละแอป",
+    "theme": "cinema_neon",
+    "show_product": true,
+    "bg": "#0F0A1A",
+    "accent": "#E11D48"
+  },
+  "export_pack_example": {
+    "zip_name": "reelforge-cookie-30s.zip",
+    "files": [
+      {
+        "name": "blueprint.json",
+        "desc_th": "โครงสร้างช็อต + เวลา + VO"
+      },
+      {
+        "name": "captions.txt",
+        "desc_th": "แคปชันสั้น/ยาว + แฮชแท็ก"
+      },
+      {
+        "name": "overlays/",
+        "desc_th": "PNG overlay รายช็อต + 3 ปก"
+      },
+      {
+        "name": "README_th.txt",
+        "desc_th": "วิธีถ่ายตาม Film Mode"
+      }
+    ],
+    "includes_ai": false
+  },
+  "settings_example": {
+    "lang": "th",
+    "default_style": "soft_sell_before_after",
+    "default_duration_s": 30,
+    "ai_assist": "off",
+    "haptics": true,
+    "keep_history": true,
+    "auto_advance_film": true,
+    "countdown_beep": true,
+    "export_includes_json": true,
+    "theme": "cinema_neon"
+  },
+  "local_store_example": {
+    "key": "reelforge:v1",
+    "version": 1,
+    "settings": {
+      "lang": "th",
+      "default_style": "soft_sell_before_after",
+      "default_duration_s": 30,
+      "ai_assist": "off",
+      "haptics": true,
+      "keep_history": true,
+      "auto_advance_film": true,
+      "countdown_beep": true,
+      "export_includes_json": true,
+      "theme": "cinema_neon"
+    },
+    "blueprint_count": 3,
+    "streak": {
+      "days": 3,
+      "last_date": "2026-10-12",
+      "label_th": "สตรีค 3 วัน · เก่งมาก 🔥"
+    },
+    "last_blueprint_id": "bp_soft_sell_before_after_30_snacks",
+    "note": "local-first · IndexedDB blueprints + localStorage settings"
+  },
+  "ui_copy_th": {
+    "home_title": "ReelForge",
+    "home_sub": "โยนไอเดีย → ได้ชุดถ่ายพร้อมจับเวลา",
+    "idea_placeholder": "เช่น ขายคุกกี้เนยสด ส่ง LINE ชิ้นละ 45…",
+    "idea_cta": "สร้าง Blueprint",
+    "demo_cta": "ลองข้อมูลตัวอย่าง · เจี๊ยบ",
+    "voice_cta": "วางข้อความจาก voice note",
+    "style_picker_title": "สไตล์คลิป",
+    "duration_label": "ความยาวเป้าหมาย",
+    "blueprint_ready": "ชุดถ่ายพร้อมแล้ว 🎬",
+    "film_mode_cta": "เข้า Film Mode",
+    "film_next": "ช็อตถัดไป",
+    "film_rewind": "ถ่ายช็อตนี้อีกครั้ง",
+    "film_done": "ครบทุกช็อต · เก่งมาก!",
+    "caption_tab": "แคปชัน",
+    "overlay_tab": "Overlay & ปก",
+    "hooks_tab": "Hook A/B Lab",
+    "swap_hook": "ใช้ฮุคนี้",
+    "winner_badge": "ชนะ · แนะนำ",
+    "export_cta": "ส่งออกแพ็ก ZIP",
+    "share_cta": "แชร์การ์ด Blueprint",
+    "cover_export": "บันทึกปก PNG",
+    "privacy_badge": "ทำงานในเครื่อง · ไม่บังคับล็อกอิน",
+    "streak_label": "สตรีคสร้างคลิป",
+    "history_title": "Blueprint ล่าสุด",
+    "trend_title": "มุมคลิปแนะนำ",
+    "bgm_label": "มู้ด BGM",
+    "cta_hint": "คำคอมเมนต์ CTA",
+    "empty_idea": "วางไอเดียก่อนนะ จะได้สร้างชุดถ่ายให้",
+    "toast_copied": "คัดลอกแล้ว",
+    "toast_hook_swapped": "สลับฮุคแล้ว · ช็อต 1 อัปเดต",
+    "disclaimer": "ตัวอย่างสมมติจากช่อง AI วันละแอป · ไม่ใช่คำแนะนำการตลาด",
+    "film_countdown": "เตรียมตัว",
+    "film_recording": "กำลังถ่าย…",
+    "hook_curiosity": "ความอยากรู้",
+    "hook_clarity": "ความชัด",
+    "hook_emotion": "อารมณ์",
+    "duration_15": "15 วิ",
+    "duration_30": "30 วิ",
+    "duration_45": "45 วิ",
+    "duration_60": "60 วิ",
+    "template_soft_sell_ba": "ก่อน/หลัง · Soft sell",
+    "template_teach": "สอน 3 ขั้น",
+    "template_story": "Storytime",
+    "template_unbox": "Unboxing",
+    "template_soft": "Soft sell",
+    "onboarding_1": "วางไอเดียหรือเลือกเทมเพลต",
+    "onboarding_2": "ได้ Blueprint + ฮุค + ช็อต",
+    "onboarding_3": "เข้า Film Mode แล้วถ่ายตามจับเวลา",
+    "safe_zone_hint": "ตัวอักษรอยู่โซนกลางบน ปลอดภัยจาก UI IG",
+    "export_done": "แพ็กพร้อมดาวน์โหลด",
+    "history_empty": "ยังไม่มี Blueprint — ลองข้อมูลตัวอย่างได้เลย"
+  },
+  "reel_script_th": [
+    {
+      "t": "0–3s",
+      "shot": "มือถือเปิดหน้าโฮม ReelForge พื้นมืด + นีออน",
+      "overlay": "ไอเดียในหัว แต่ไม่รู้จะเปิดคลิปยังไง?",
+      "vo": "ไอเดียในหัวแต่ไม่รู้จะเปิดคลิปยังไง?"
+    },
+    {
+      "t": "3–7s",
+      "shot": "พิมพ์ไอเดียคุกกี้ / กดลองข้อมูลตัวอย่าง",
+      "overlay": "โยนไอเดียเข้าไป 10 วิ",
+      "vo": "โยนเข้าแอปนี้สิบวิ"
+    },
+    {
+      "t": "7–12s",
+      "shot": "Blueprint โผล่ 5 ช็อตพร้อมเวลา",
+      "overlay": "ได้ชุดถ่าย · ฮุค · CTA",
+      "vo": "ได้ชุดถ่ายพร้อมจับเวลาเลย"
+    },
+    {
+      "t": "12–18s",
+      "shot": "Film Mode นับถอยหลัง + การ์ดพรอมป์",
+      "overlay": "Film Mode · ช็อต 1/5",
+      "vo": "เข้าโหมดถ่าย มีตัวจับเวลาและข้อความบนจอ"
+    },
+    {
+      "t": "18–22s",
+      "shot": "Caption Pack + hashtags โผล่",
+      "overlay": "แคปชันไทย · คอมเมนต์ คุกกี้",
+      "vo": "แคปชันไทยพร้อมคำคอมเมนต์"
+    },
+    {
+      "t": "22–26s",
+      "shot": "Hook A/B Lab สลับฮุค / ปก 3 แบบ",
+      "overlay": "ฮุค A/B + ปก 3 แบบ",
+      "vo": "ทดลองฮุคสามแบบ เลือกอันที่แรงสุด"
+    },
+    {
+      "t": "26–30s",
+      "shot": "การ์ดแชร์ Blueprint + โลโก้ช่อง",
+      "overlay": "คอมเมนต์ 「รีล」 รับลิงก์",
+      "vo": "คอมเมนต์คำว่ารีล รับลิงก์ฟรี"
+    }
+  ],
+  "test_vectors": [
+    {
+      "name": "parse_demo_cookie",
+      "fn": "parse_idea",
+      "input": {
+        "raw": "ขายคุกกี้เนยสด ส่ง LINE ทั้งกรุงเทพ ชิ้นละ 45 บาท เซ็ต 6 ชิ้น 240"
+      },
+      "expect": {
+        "product": "คุกกี้เนยสด",
+        "category": "snacks",
+        "price_unit": 45.0,
+        "price_set": 240.0,
+        "set_qty": 6,
+        "channel": "LINE",
+        "area": "กรุงเทพ",
+        "cta_keyword": "คุกกี้"
+      }
+    },
+    {
+      "name": "blueprint_30s_five_shots",
+      "fn": "build_blueprint",
+      "input": {
+        "raw": "ขายคุกกี้เนยสด ส่ง LINE ทั้งกรุงเทพ ชิ้นละ 45 บาท เซ็ต 6 ชิ้น 240",
+        "style": "soft_sell_before_after",
+        "duration_target": 30
+      },
+      "expect": {
+        "shot_count": 5,
+        "duration_total_s": 30,
+        "durations": [
+          3,
+          6,
+          8,
+          8,
+          5
+        ],
+        "hook_id": "hook_a",
+        "cta_keyword": "คุกกี้",
+        "bgm_mood": "warm_upbeat"
+      }
+    },
+    {
+      "name": "hook_a_is_rank1",
+      "fn": "rank_hooks",
+      "input": {
+        "raw": "ขายคุกกี้เนยสด ส่ง LINE ทั้งกรุงเทพ ชิ้นละ 45 บาท เซ็ต 6 ชิ้น 240",
+        "style": "soft_sell_before_after"
+      },
+      "expect": {
+        "winner_id": "hook_a",
+        "hooks_count": 3,
+        "winner_rank": 1
+      }
+    },
+    {
+      "name": "caption_has_cta_cookie",
+      "fn": "build_caption_pack",
+      "input": {
+        "raw": "ขายคุกกี้เนยสด ส่ง LINE ทั้งกรุงเทพ ชิ้นละ 45 บาท เซ็ต 6 ชิ้น 240",
+        "style": "soft_sell_before_after",
+        "duration_target": 30
+      },
+      "expect": {
+        "comment_cta_keyword": "คุกกี้",
+        "hashtag_min": 8,
+        "short_contains": "คุกกี้"
+      }
+    },
+    {
+      "name": "overlays_three_covers",
+      "fn": "build_overlays",
+      "input": {
+        "raw": "ขายคุกกี้เนยสด ส่ง LINE ทั้งกรุงเทพ ชิ้นละ 45 บาท เซ็ต 6 ชิ้น 240",
+        "style": "soft_sell_before_after",
+        "duration_target": 30
+      },
+      "expect": {
+        "cover_count": 3,
+        "per_shot_count": 5,
+        "cover_ids": [
+          "cover_a",
+          "cover_b",
+          "cover_c"
+        ]
+      }
+    },
+    {
+      "name": "film_progress_at_0",
+      "fn": "film_progress",
+      "input": {
+        "elapsed_s": 0
+      },
+      "expect": {
+        "shot_n": 1,
+        "done": false,
+        "overall_progress": 0.0
+      }
+    },
+    {
+      "name": "film_progress_at_10",
+      "fn": "film_progress",
+      "input": {
+        "elapsed_s": 10
+      },
+      "expect": {
+        "shot_n": 3,
+        "done": false
+      }
+    },
+    {
+      "name": "film_progress_done",
+      "fn": "film_progress",
+      "input": {
+        "elapsed_s": 30
+      },
+      "expect": {
+        "done": true,
+        "remaining_s": 0
+      }
+    },
+    {
+      "name": "allocate_30_soft_sell",
+      "fn": "allocate_durations",
+      "input": {
+        "weights": [
+          3,
+          6,
+          8,
+          8,
+          5
+        ],
+        "target": 30
+      },
+      "expect": {
+        "durations": [
+          3,
+          6,
+          8,
+          8,
+          5
+        ],
+        "sum": 30
+      }
+    },
+    {
+      "name": "allocate_15_equalish",
+      "fn": "allocate_durations",
+      "input": {
+        "weights": [
+          3,
+          6,
+          8,
+          8,
+          5
+        ],
+        "target": 15
+      },
+      "expect": {
+        "sum": 15,
+        "min_each": 1
+      }
+    },
+    {
+      "name": "swap_to_hook_b",
+      "fn": "swap_hook",
+      "input": {
+        "hook_id": "hook_b"
+      },
+      "expect": {
+        "hook_id": "hook_b",
+        "duration_total_s": 30,
+        "shot_count": 5
+      }
+    },
+    {
+      "name": "parse_beauty_serum",
+      "fn": "parse_idea",
+      "input": {
+        "raw": "รีวิวเซรั่มวิตามินซี ทาเช้าเย็น ขวดละ 390 บาท สั่ง Shopee"
+      },
+      "expect": {
+        "category": "beauty",
+        "channel": "Shopee",
+        "price_unit": 390.0
+      }
+    },
+    {
+      "name": "parse_study_bio",
+      "fn": "parse_idea",
+      "input": {
+        "raw": "สรุปชีวะระบบหายใจ ติวสอบเข้า ม.ปลาย 3 ขั้น"
+      },
+      "expect": {
+        "category": "study"
+      }
+    },
+    {
+      "name": "trend_angles_snacks_first",
+      "fn": "suggest_trend_angles",
+      "input": {
+        "raw": "ขายคุกกี้เนยสด ส่ง LINE ทั้งกรุงเทพ ชิ้นละ 45 บาท เซ็ต 6 ชิ้น 240"
+      },
+      "expect": {
+        "first_id": "angle_before_after",
+        "count": 5
+      }
+    }
+  ],
+  "feature_checklist_example": {
+    "must_have": [
+      {
+        "key": "idea_drop_blueprint",
+        "label": "Idea Drop → Reel Blueprint",
+        "done": true
+      },
+      {
+        "key": "shot_list_film_mode",
+        "label": "Shot List + Film Mode Timer",
+        "done": true
+      },
+      {
+        "key": "caption_pack",
+        "label": "Caption Pack (Thai)",
+        "done": true
+      },
+      {
+        "key": "overlay_cover_forge",
+        "label": "Overlay & Cover Forge",
+        "done": true
+      },
+      {
+        "key": "hook_ab_lab",
+        "label": "Hook A/B Lab",
+        "done": true
+      }
+    ],
+    "nice_to_have": [
+      {
+        "key": "style_templates",
+        "label": "Style Templates library",
+        "done": true
+      },
+      {
+        "key": "voice_to_idea",
+        "label": "Voice → Idea (transcript paste)",
+        "done": true
+      },
+      {
+        "key": "trend_angles",
+        "label": "Trend Angle Suggest",
+        "done": true
+      },
+      {
+        "key": "export_zip",
+        "label": "Export Pack ZIP",
+        "done": true
+      },
+      {
+        "key": "streak_history",
+        "label": "Streak / History",
+        "done": true
+      },
+      {
+        "key": "share_card",
+        "label": "Share Blueprint Card",
+        "done": true
+      }
+    ]
+  },
+  "analytics_events_example": [
+    {
+      "name": "idea_submitted",
+      "at": "2026-10-12T08:00:00+07:00",
+      "props": {
+        "source": "demo",
+        "category": "snacks"
+      }
+    },
+    {
+      "name": "blueprint_built",
+      "at": "2026-10-12T08:00:02+07:00",
+      "props": {
+        "style": "soft_sell_before_after",
+        "duration_s": 30,
+        "shots": 5
+      }
+    },
+    {
+      "name": "film_mode_started",
+      "at": "2026-10-12T08:00:20+07:00",
+      "props": {
+        "blueprint_id": "bp_soft_sell_before_after_30_snacks"
+      }
+    },
+    {
+      "name": "hook_swapped",
+      "at": "2026-10-12T08:01:00+07:00",
+      "props": {
+        "from": "hook_a",
+        "to": "hook_b"
+      }
+    },
+    {
+      "name": "cover_exported",
+      "at": "2026-10-12T08:01:30+07:00",
+      "props": {
+        "cover_id": "cover_a"
+      }
+    },
+    {
+      "name": "share_card_exported",
+      "at": "2026-10-12T08:02:00+07:00",
+      "props": {
+        "variant": "blueprint_story"
+      }
+    },
+    {
+      "name": "demo_loaded",
+      "at": "2026-10-12T07:58:00+07:00",
+      "props": {
+        "persona": "เจี๊ยบ"
+      }
+    }
+  ],
+  "expect_locked": {
+    "product": "คุกกี้เนยสด",
+    "category": "snacks",
+    "price_unit": 45.0,
+    "price_set": 240.0,
+    "set_qty": 6,
+    "channel": "LINE",
+    "area": "กรุงเทพ",
+    "cta_keyword": "คุกกี้",
+    "shot_count": 5,
+    "durations": [
+      3,
+      6,
+      8,
+      8,
+      5
+    ],
+    "hook_winner_id": "hook_a",
+    "hook_winner_contains": [
+      "vs",
+      "30 วิ"
+    ],
+    "cover_count": 3,
+    "hooks_count": 3
+  },
+  "voice_transcript_example": {
+    "source": "paste",
+    "transcript_th": "เอ่อ วันนี้อยากลองขายคุกกี้เนยสดในไลน์ ส่งทั่วกรุงเทพ ชิ้นละสี่สิบห้าบาท ถ้าเซ็ตหกชิ้นสองร้อยสี่สิบ ช่วยทำคลิปรีลให้หน่อย",
+    "normalized_idea": "ขายคุกกี้เนยสด ส่ง LINE ทั้งกรุงเทพ ชิ้นละ 45 บาท เซ็ต 6 ชิ้น 240",
+    "note_th": "ผู้ใช้วางข้อความจาก voice note / speech-to-text แล้วแอป parse_idea ต่อ"
+  },
+  "before_after_demo": {
+    "persona": "เจี๊ยบ",
+    "before_th": "โพสต์ข้อความอย่างเดียวใน LINE / IG สตอรี่ — มียอดดู แต่คนทักน้อย",
+    "after_th": "Reel 30 วิ ตาม Blueprint: ฮุค contrast → โชว์คุกกี้ → สั่ง LINE → CTA 「คุกกี้」",
+    "metric_story_th": "ก่อน: ข้อความนิ่ง / หลัง: คลิปพร้อมถ่าย 5 ช็อต จับเวลา 30 วิ",
+    "shot_durations": [
+      3,
+      6,
+      8,
+      8,
+      5
+    ]
+  },
+  "shot_storyboard": [
+    {
+      "n": 1,
+      "duration_s": 3,
+      "visual_th": "เจี๊ยบมองกล้อง ยิ้ม พูดฮุค",
+      "prop_th": "มือถือตั้งฝั่งตรงข้าม"
+    },
+    {
+      "n": 2,
+      "duration_s": 6,
+      "visual_th": "โชว์หน้าจอโพสต์ข้อความเก่า (เบลอชื่อลูกค้า)",
+      "prop_th": "มือถือเครื่องที่สอง"
+    },
+    {
+      "n": 3,
+      "duration_s": 8,
+      "visual_th": "ยกกล่องคุกกี้เนยสด หมุนให้เห็นเนื้อ",
+      "prop_th": "คุกกี้บนจานไม้"
+    },
+    {
+      "n": 4,
+      "duration_s": 8,
+      "visual_th": "ชี้ไอคอน LINE / พิมพ์ตัวอย่างข้อความสั่ง",
+      "prop_th": "หน้าจอแชทตัวอย่าง"
+    },
+    {
+      "n": 5,
+      "duration_s": 5,
+      "visual_th": "ชี้คอมเมนต์ ยิ้ม พูดคำว่าคุกกี้",
+      "prop_th": "—"
+    }
+  ],
+  "caption_variants_extra": {
+    "alt_short_th": "คุกกี้เนยสดชิ้นละ 45฿ ส่ง LINE ทั้งกรุงเทพ — เปิดคลิป 30 วิ แล้วทักได้เลย คอมเมนต์ 「คุกกี้」",
+    "alt_long_th": "เคยโพสต์ข้อความอย่างเดียวแล้วเงียบไหม?\nลองถ่ายคลิปสั้น 30 วิ โชว์ของจริง บอกทางสั่ง ปิดด้วยคำคอมเมนต์\nคุกกี้เนยสดอบใหม่ · ชิ้นละ 45 · เซ็ต 6 ชิ้น 240\nส่งทั่วกรุงเทพทาง LINE\n\nคอมเมนต์ 「คุกกี้」 รับเมนูวันนี้"
+  },
+  "ai_runtime_examples": {
+    "hooks_request": {
+      "idea_normalized": "ขายคุกกี้เนยสด ส่ง LINE ทั้งกรุงเทพ ชิ้นละ 45 บาท เซ็ต 6 ชิ้น 240",
+      "product": "คุกกี้เนยสด",
+      "category": "snacks",
+      "style": "soft_sell_before_after",
+      "existing_hooks": [
+        "โพสต์ข้อความอย่างเดียว vs คลิป 30 วิ — อันไหนขายได้มากกว่า?",
+        "แม่ค้าขนมบ้านหยุดโพสต์ข้อความ เปิดกล้อง 30 วิ แล้วยอดทักพุ่ง",
+        "คุกกี้เนยสด ชิ้นละ 45 บาท แต่คนไม่เห็น เพราะโพสต์นิ่งๆ"
+      ]
+    },
+    "hooks_response_sample": {
+      "hooks": [
+        {
+          "text_th": "หยุดโพสต์นิ่งๆ — เปิดกล้อง 30 วิ แล้วดูยอดทัก",
+          "angle": "transformation"
+        }
+      ],
+      "note_th": "ทางเลือกเสริม — คะแนนยังต้องผ่าน rank_hooks ในเครื่อง"
+    },
+    "caption_request": {
+      "blueprint_id": "bp_soft_sell_before_after_30_snacks",
+      "product": "คุกกี้เนยสด",
+      "hook_th": "โพสต์ข้อความอย่างเดียว vs คลิป 30 วิ — อันไหนขายได้มากกว่า?",
+      "cta_keyword": "คุกกี้",
+      "tone": "friendly_seller"
+    }
+  }
+}

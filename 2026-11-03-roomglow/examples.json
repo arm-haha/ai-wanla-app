@@ -1,0 +1,727 @@
+{
+ "Room": [
+  {
+   "name": "ฝน",
+   "room_type": "bedroom",
+   "width_m": 3.2,
+   "length_m": 4.0,
+   "height_m": 2.6,
+   "doors": 1,
+   "windows": 1,
+   "renter": true,
+   "budget_thb": 3000,
+   "existing_lm": 800
+  },
+  {
+   "name": "โอ๊ต",
+   "room_type": "studio",
+   "width_m": 4.5,
+   "length_m": 6.0,
+   "height_m": 2.7,
+   "doors": 1,
+   "windows": 2,
+   "renter": false,
+   "budget_thb": 10000,
+   "existing_lm": 1500
+  }
+ ],
+ "RoomScanExtract": [
+  {
+   "room_found": true,
+   "room_type": "bedroom",
+   "scores": {
+    "light": 0.3,
+    "clutter": 0.7,
+    "harmony": 0.4,
+    "cohesion": 0.3
+   },
+   "items_seen": [
+    {
+     "label_th": "เตียง 5 ฟุต",
+     "kind": "furniture",
+     "bbox": [
+      0.1,
+      0.45,
+      0.7,
+      0.95
+     ]
+    },
+    {
+     "label_th": "กองเสื้อบนเก้าอี้",
+     "kind": "clutter",
+     "bbox": [
+      0.72,
+      0.4,
+      0.9,
+      0.8
+     ]
+    },
+    {
+     "label_th": "หลอดไฟเพดานขาวดวงเดียว",
+     "kind": "light"
+    }
+   ],
+   "wall_color_hex": "#E8E4DA",
+   "est_size_m": {
+    "width": 3.2,
+    "length": 4.0
+   },
+   "confidence": 0.86,
+   "retake_reason_th": null
+  },
+  {
+   "room_found": true,
+   "room_type": null,
+   "scores": {
+    "light": 0.1,
+    "clutter": 0.5,
+    "harmony": 0.5,
+    "cohesion": 0.5
+   },
+   "items_seen": [],
+   "wall_color_hex": null,
+   "est_size_m": {
+    "width": null,
+    "length": null
+   },
+   "confidence": 0.31,
+   "retake_reason_th": "มืดเกินไป เปิดไฟแล้วถ่ายจากมุมห้องให้เห็นผนัง 2 ด้าน"
+  },
+  {
+   "room_found": false,
+   "room_type": null,
+   "scores": {
+    "light": 0,
+    "clutter": 0,
+    "harmony": 0,
+    "cohesion": 0
+   },
+   "items_seen": [],
+   "wall_color_hex": null,
+   "est_size_m": {},
+   "confidence": 0.0,
+   "retake_reason_th": "ไม่เจอห้อง ถ่ายจากมุมห้องแนวนอน"
+  }
+ ],
+ "GlowScore": [
+  {
+   "before": 32,
+   "after": 78,
+   "delta": 46
+  }
+ ],
+ "CatalogItem": [
+  {
+   "id": "led_strip",
+   "name_th": "ไฟเส้น LED หลังหัวเตียง 3 ม.",
+   "category": "light",
+   "price_thb": 290,
+   "impact": 9,
+   "renter_safe": true,
+   "styles": [
+    "any"
+   ],
+   "minutes": 20,
+   "boost": {
+    "light": 0.25,
+    "cohesion": 0.05
+   }
+  },
+  {
+   "id": "floor_lamp",
+   "name_th": "โคมตั้งพื้นผ้าลินิน",
+   "category": "light",
+   "price_thb": 690,
+   "impact": 8,
+   "renter_safe": true,
+   "styles": [
+    "muji",
+    "japandi",
+    "cozy",
+    "korean"
+   ],
+   "minutes": 10,
+   "boost": {
+    "light": 0.2,
+    "cohesion": 0.1
+   }
+  },
+  {
+   "id": "bedding_set",
+   "name_th": "ชุดผ้าปูสีครีม/เบจ",
+   "category": "textile",
+   "price_thb": 890,
+   "impact": 10,
+   "renter_safe": true,
+   "styles": [
+    "muji",
+    "korean",
+    "japandi",
+    "cozy"
+   ],
+   "minutes": 15,
+   "boost": {
+    "harmony": 0.25,
+    "cohesion": 0.15
+   }
+  },
+  {
+   "id": "rug_round",
+   "name_th": "พรมกลม 120 ซม.",
+   "category": "textile",
+   "price_thb": 590,
+   "impact": 6,
+   "renter_safe": true,
+   "styles": [
+    "korean",
+    "cozy",
+    "boho"
+   ],
+   "minutes": 5,
+   "boost": {
+    "harmony": 0.1,
+    "cohesion": 0.1
+   }
+  },
+  {
+   "id": "curtain_linen",
+   "name_th": "ม่านลินินสีขาวนวล (ราวเดิม)",
+   "category": "textile",
+   "price_thb": 650,
+   "impact": 7,
+   "renter_safe": true,
+   "styles": [
+    "muji",
+    "japandi",
+    "korean"
+   ],
+   "minutes": 15,
+   "boost": {
+    "harmony": 0.15,
+    "light": 0.05
+   }
+  },
+  {
+   "id": "storage_box",
+   "name_th": "กล่องเก็บของผ้า 4 ใบ",
+   "category": "declutter",
+   "price_thb": 390,
+   "impact": 8,
+   "renter_safe": true,
+   "styles": [
+    "any"
+   ],
+   "minutes": 60,
+   "boost": {
+    "clutter": 0.35
+   }
+  },
+  {
+   "id": "wall_sticker",
+   "name_th": "วอลเปเปอร์ลอกออกได้ (ผนังหัวเตียง)",
+   "category": "wall",
+   "price_thb": 870,
+   "impact": 7,
+   "renter_safe": true,
+   "styles": [
+    "japandi",
+    "cozy",
+    "boho",
+    "industrial"
+   ],
+   "minutes": 90,
+   "boost": {
+    "harmony": 0.15,
+    "cohesion": 0.1
+   }
+  },
+  {
+   "id": "paint_wall",
+   "name_th": "ทาสีผนังทั้งห้อง",
+   "category": "wall",
+   "price_thb": 1950,
+   "impact": 10,
+   "renter_safe": false,
+   "styles": [
+    "any"
+   ],
+   "minutes": 360,
+   "boost": {
+    "harmony": 0.3
+   }
+  },
+  {
+   "id": "shelf_drill",
+   "name_th": "ชั้นลอยเจาะผนัง",
+   "category": "furniture",
+   "price_thb": 450,
+   "impact": 5,
+   "renter_safe": false,
+   "styles": [
+    "any"
+   ],
+   "minutes": 45,
+   "boost": {
+    "clutter": 0.15
+   }
+  },
+  {
+   "id": "plant_fake",
+   "name_th": "ต้นไม้ปลอมกระถางดินเผา",
+   "category": "plant",
+   "price_thb": 250,
+   "impact": 4,
+   "renter_safe": true,
+   "styles": [
+    "any"
+   ],
+   "minutes": 2,
+   "boost": {
+    "harmony": 0.05,
+    "cohesion": 0.05
+   }
+  },
+  {
+   "id": "poster_set",
+   "name_th": "โปสเตอร์+เทปกาวไม่ทิ้งรอย 3 ใบ",
+   "category": "decor",
+   "price_thb": 190,
+   "impact": 4,
+   "renter_safe": true,
+   "styles": [
+    "korean",
+    "boho",
+    "industrial",
+    "cozy"
+   ],
+   "minutes": 10,
+   "boost": {
+    "cohesion": 0.1
+   }
+  },
+  {
+   "id": "mirror_lean",
+   "name_th": "กระจกยาวพิงผนัง",
+   "category": "furniture",
+   "price_thb": 790,
+   "impact": 6,
+   "renter_safe": true,
+   "styles": [
+    "korean",
+    "muji",
+    "japandi"
+   ],
+   "minutes": 5,
+   "boost": {
+    "light": 0.1,
+    "cohesion": 0.05
+   }
+  }
+ ],
+ "RestyleRequest": [
+  {
+   "style": "korean",
+   "source_photo": "local://room-001.jpg",
+   "prompt": "แต่งห้องนี้สไตล์เกาหลีคลีน คงผนัง หน้าต่าง ประตู เตียง ตำแหน่งเดิม ...",
+   "keep_layout": true,
+   "item_ids": [
+    "led_strip",
+    "poster_set",
+    "storage_box",
+    "bedding_set",
+    "curtain_linen",
+    "rug_round"
+   ],
+   "seed": 7
+  }
+ ],
+ "RestyleResult": [
+  {
+   "style": "korean",
+   "image_url": "local://restyle-korean.jpg",
+   "layout_ok": true,
+   "status": "ok",
+   "note_th": null
+  },
+  {
+   "style": "boho",
+   "image_url": null,
+   "layout_ok": false,
+   "status": "retry",
+   "note_th": "หน้าต่างย้ายที่ กำลังสร้างใหม่"
+  }
+ ],
+ "ShoppingPlan": [
+  {
+   "style": "korean",
+   "budget_thb": 3000,
+   "spent_thb": 3000,
+   "left_thb": 0,
+   "impact": 44,
+   "items": [
+    "led_strip",
+    "poster_set",
+    "storage_box",
+    "bedding_set",
+    "curtain_linen",
+    "rug_round"
+   ],
+   "excluded_not_renter_safe": [
+    "paint_wall",
+    "shelf_drill"
+   ],
+   "budget_used_pct": 100.0
+  },
+  {
+   "style": "muji",
+   "budget_thb": 3000,
+   "spent_thb": 2910,
+   "left_thb": 90,
+   "impact": 42,
+   "items": [
+    "led_strip",
+    "storage_box",
+    "floor_lamp",
+    "bedding_set",
+    "curtain_linen"
+   ],
+   "excluded_not_renter_safe": [
+    "paint_wall",
+    "shelf_drill"
+   ],
+   "budget_used_pct": 97.0
+  },
+  {
+   "style": "cozy",
+   "budget_thb": 3000,
+   "spent_thb": 2700,
+   "left_thb": 300,
+   "impact": 43,
+   "items": [
+    "led_strip",
+    "poster_set",
+    "storage_box",
+    "plant_fake",
+    "floor_lamp",
+    "bedding_set"
+   ],
+   "excluded_not_renter_safe": [
+    "paint_wall",
+    "shelf_drill"
+   ],
+   "budget_used_pct": 90.0
+  },
+  {
+   "style": "korean",
+   "budget_thb": 1000,
+   "spent_thb": 930,
+   "left_thb": 70,
+   "impact": 21,
+   "items": [
+    "led_strip",
+    "storage_box",
+    "plant_fake"
+   ],
+   "excluded_not_renter_safe": [
+    "paint_wall",
+    "shelf_drill"
+   ],
+   "budget_used_pct": 93.0
+  },
+  {
+   "style": "korean",
+   "budget_thb": 3000,
+   "spent_thb": 2910,
+   "left_thb": 90,
+   "impact": 45,
+   "items": [
+    "led_strip",
+    "poster_set",
+    "storage_box",
+    "plant_fake",
+    "floor_lamp",
+    "shelf_drill",
+    "curtain_linen"
+   ],
+   "excluded_not_renter_safe": [],
+   "budget_used_pct": 97.0
+  }
+ ],
+ "PaintEstimate": [
+  {
+   "liters": 6.83,
+   "cans": 3,
+   "cost_thb": 1950
+  }
+ ],
+ "WallpaperEstimate": [
+  {
+   "rolls": 2,
+   "cost_thb": 580
+  }
+ ],
+ "LightPlan": [
+  {
+   "lumens_needed": 1920,
+   "existing_lm": 800,
+   "gap_lm": 1120,
+   "bulbs_800lm": 2,
+   "kelvin": 4000,
+   "tip_th": "เพิ่มโคมตั้งพื้น/ไฟเส้นหลังหัวเตียง"
+  },
+  {
+   "lumens_needed": 1920,
+   "existing_lm": 800,
+   "gap_lm": 1120,
+   "bulbs_800lm": 2,
+   "kelvin": 2700,
+   "tip_th": "เพิ่มโคมตั้งพื้น/ไฟเส้นหลังหัวเตียง"
+  },
+  {
+   "lumens_needed": 1920,
+   "existing_lm": 2500,
+   "gap_lm": 0,
+   "bulbs_800lm": 0,
+   "kelvin": 4000,
+   "tip_th": "แสงพอแล้ว เปลี่ยนสีไฟให้เข้าธีมพอ"
+  }
+ ],
+ "Palette": [
+  {
+   "style": "korean",
+   "colors": [
+    {
+     "hex": "#F7F4EE",
+     "role": "base",
+     "name_th": "ขาวนม"
+    },
+    {
+     "hex": "#E6DCCB",
+     "role": "secondary",
+     "name_th": "เบจ"
+    },
+    {
+     "hex": "#C8B6A6",
+     "role": "accent",
+     "name_th": "โกโก้นม"
+    },
+    {
+     "hex": "#D9C3A5",
+     "role": "wood",
+     "name_th": "ไม้โอ๊คอ่อน"
+    }
+   ]
+  },
+  {
+   "style": "industrial",
+   "colors": [
+    {
+     "hex": "#3A3A3A",
+     "role": "base",
+     "name_th": "ปูนเปลือย"
+    },
+    {
+     "hex": "#8C8C8C",
+     "role": "secondary"
+    },
+    {
+     "hex": "#B5651D",
+     "role": "accent",
+     "name_th": "สนิมทองแดง"
+    },
+    {
+     "hex": "#222222",
+     "role": "metal"
+    }
+   ]
+  }
+ ],
+ "DeclutterItem": [
+  {
+   "name": "เสื้อไม่ได้ใส่ 1 ปี 14 ตัว",
+   "action": "donate"
+  },
+  {
+   "name": "หูฟังเก่า",
+   "action": "sell",
+   "resale_thb": 450
+  },
+  {
+   "name": "เก้าอี้พับ",
+   "action": "sell",
+   "resale_thb": 300
+  },
+  {
+   "name": "กล่องพัสดุเปล่า",
+   "action": "toss"
+  },
+  {
+   "name": "โคมหัวเตียงเดิม",
+   "action": "keep"
+  }
+ ],
+ "DeclutterResult": [
+  {
+   "counts": {
+    "keep": 1,
+    "sell": 2,
+    "donate": 1,
+    "toss": 1
+   },
+   "resale_thb": 750,
+   "removed": 4
+  }
+ ],
+ "WeekendPlan": [
+  {
+   "steps": [
+    {
+     "item": "storage_box",
+     "name_th": "กล่องเก็บของผ้า 4 ใบ",
+     "minutes": 60,
+     "cum_minutes": 60
+    },
+    {
+     "item": "bedding_set",
+     "name_th": "ชุดผ้าปูสีครีม/เบจ",
+     "minutes": 15,
+     "cum_minutes": 75
+    },
+    {
+     "item": "curtain_linen",
+     "name_th": "ม่านลินินสีขาวนวล (ราวเดิม)",
+     "minutes": 15,
+     "cum_minutes": 90
+    },
+    {
+     "item": "rug_round",
+     "name_th": "พรมกลม 120 ซม.",
+     "minutes": 5,
+     "cum_minutes": 95
+    },
+    {
+     "item": "led_strip",
+     "name_th": "ไฟเส้น LED หลังหัวเตียง 3 ม.",
+     "minutes": 20,
+     "cum_minutes": 115
+    },
+    {
+     "item": "poster_set",
+     "name_th": "โปสเตอร์+เทปกาวไม่ทิ้งรอย 3 ใบ",
+     "minutes": 10,
+     "cum_minutes": 125
+    }
+   ],
+   "total_minutes": 125,
+   "total_hours": 2.08
+  }
+ ],
+ "Vote": [
+  {
+   "voter": "เมย์",
+   "option": "korean"
+  },
+  {
+   "voter": "บีม",
+   "option": "korean"
+  },
+  {
+   "voter": "แม่",
+   "option": "muji"
+  },
+  {
+   "voter": "ต้น",
+   "option": "korean"
+  },
+  {
+   "voter": "จูน",
+   "option": "japandi"
+  },
+  {
+   "voter": "ปาล์ม",
+   "option": "korean"
+  },
+  {
+   "voter": "เมย์",
+   "option": "korean"
+  }
+ ],
+ "PollResult": [
+  {
+   "total_votes": 6,
+   "rows": [
+    {
+     "option": "korean",
+     "votes": 4,
+     "pct": 66.67
+    },
+    {
+     "option": "muji",
+     "votes": 1,
+     "pct": 16.67
+    },
+    {
+     "option": "japandi",
+     "votes": 1,
+     "pct": 16.67
+    }
+   ],
+   "winner": "korean",
+   "tie": false
+  },
+  {
+   "total_votes": 2,
+   "rows": [
+    {
+     "option": "a",
+     "votes": 1,
+     "pct": 50.0
+    },
+    {
+     "option": "b",
+     "votes": 1,
+     "pct": 50.0
+    }
+   ],
+   "winner": null,
+   "tie": true
+  }
+ ],
+ "ShareCard": [
+  {
+   "kind": "style_grid",
+   "title_th": "ห้องเดียว 6 ลุค",
+   "big_stat": "6 สไตล์",
+   "sub_th": "ห้องนอนคอนโด 12.8 ตร.ม.",
+   "disclaimer_th": "ภาพแต่งห้องสร้างด้วย AI ราคาเป็นตัวอย่าง เช็กราคาจริงก่อนซื้อ"
+  },
+  {
+   "kind": "before_after",
+   "title_th": "ก่อน/หลัง เกาหลีคลีน",
+   "big_stat": "32 → 78",
+   "sub_th": "Glow Score เพิ่ม 46 คะแนน ไม่เจาะผนัง",
+   "disclaimer_th": "ภาพแต่งห้องสร้างด้วย AI ราคาเป็นตัวอย่าง เช็กราคาจริงก่อนซื้อ"
+  },
+  {
+   "kind": "budget_receipt",
+   "title_th": "ใบเสร็จแต่งห้อง",
+   "big_stat": "฿3,000",
+   "sub_th": "6 ชิ้น · ทำเสร็จ ~2 ชม.",
+   "disclaimer_th": "ภาพแต่งห้องสร้างด้วย AI ราคาเป็นตัวอย่าง เช็กราคาจริงก่อนซื้อ"
+  },
+  {
+   "kind": "poll",
+   "title_th": "เพื่อนเลือกลุคให้",
+   "big_stat": "67%",
+   "sub_th": "4 จาก 6 โหวตเกาหลีคลีน",
+   "disclaimer_th": "ภาพแต่งห้องสร้างด้วย AI ราคาเป็นตัวอย่าง เช็กราคาจริงก่อนซื้อ"
+  },
+  {
+   "kind": "glow_score",
+   "title_th": "ห้องฉันได้กี่คะแนน",
+   "big_stat": "32/100",
+   "sub_th": "แสงน้อย ของรก สีไม่เข้ากัน",
+   "disclaimer_th": "ภาพแต่งห้องสร้างด้วย AI ราคาเป็นตัวอย่าง เช็กราคาจริงก่อนซื้อ"
+  }
+ ]
+}

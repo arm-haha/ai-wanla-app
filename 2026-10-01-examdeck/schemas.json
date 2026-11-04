@@ -1,0 +1,900 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-wanla-app.local/examdeck/schemas.json",
+  "title": "ExamDeck Schemas",
+  "description": "ชุด JSON Schema ละเอียดสำหรับ ExamDeck (AI วันละแอป 2026-10-01) — ใช้ validate state, fixtures, share payload และ feature checklist ก่อนถ่าย Reel; คีย์ภาษาอังกฤษ คำอธิบายรองรับภาษาไทยใน description",
+  "definitions": {
+    "IsoDate": {
+      "type": "string",
+      "description": "วันที่แบบ YYYY-MM-DD ตามปฏิทินที่ผู้ใช้เห็น (Asia/Bangkok สำหรับช่องนี้)",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "IsoDateTime": {
+      "type": "string",
+      "description": "เวลา ISO-8601 พร้อม offset หรือ Z — ตอนแสดงผลให้แปลงเป็น Asia/Bangkok",
+      "format": "date-time"
+    },
+    "Uuid": {
+      "type": "string",
+      "description": "ตัวระบุไม่ซ้ำ ใช้ uuid v4 หรือ nanoid ก็ได้ใน MVP",
+      "minLength": 8
+    },
+    "Percent0to100": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "เปอร์เซ็นต์ 0–100 เช่น mastery_pct"
+    },
+    "Confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "ความมั่นใจของ extract 0–1"
+    }
+  },
+  "ExtractEngine": {
+    "type": "string",
+    "description": "เอนจินแตกโน้ตเป็นการ์ด — ค่าเริ่มต้น mock_demo สำหรับเดโม/Reel",
+    "enum": [
+      "mock_demo",
+      "vision_api",
+      "paste_text",
+      "manual"
+    ]
+  },
+  "SubjectId": {
+    "type": "string",
+    "description": "รหัสวิชาใน Deck Library",
+    "enum": [
+      "math",
+      "english",
+      "biology",
+      "history",
+      "physics",
+      "chemistry",
+      "other"
+    ]
+  },
+  "CardStatus": {
+    "type": "string",
+    "description": "สถานะการ์ดในระบบ mastery ง่ายของ MVP",
+    "enum": [
+      "new",
+      "learning",
+      "mastered",
+      "due"
+    ]
+  },
+  "AnswerVerdict": {
+    "type": "string",
+    "description": "ผลการตอบในการ์ดหนึ่งใบของ Swipe Quiz",
+    "enum": [
+      "known",
+      "unsure"
+    ]
+  },
+  "AppStatus": {
+    "type": "string",
+    "description": "สถานะโฟลว์ extract/ทวนหลักบน client",
+    "enum": [
+      "idle",
+      "extracting",
+      "confirming",
+      "saved",
+      "quizzing",
+      "sharing",
+      "error"
+    ]
+  },
+  "ShareKind": {
+    "type": "string",
+    "description": "ชนิดการ์ดแชร์",
+    "enum": [
+      "streak",
+      "deck_progress",
+      "session_summary"
+    ]
+  },
+  "Flashcard": {
+    "type": "object",
+    "description": "แฟลชการ์ด Q&A หนึ่งใบ — ข้อความหลักเป็นภาษาไทย",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "deck_id",
+      "question_th",
+      "answer_th",
+      "status",
+      "created_at"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "deck_id": {
+        "$ref": "#/definitions/Uuid",
+        "description": "เด็คที่การ์ดนี้อยู่"
+      },
+      "question_th": {
+        "type": "string",
+        "minLength": 1,
+        "description": "คำถามภาษาไทยด้านหน้าการ์ด"
+      },
+      "answer_th": {
+        "type": "string",
+        "minLength": 1,
+        "description": "คำตอบภาษาไทยด้านหลังการ์ด"
+      },
+      "question_en": {
+        "type": "string",
+        "description": "คำถามภาษาอังกฤษ (ออปชัน)"
+      },
+      "answer_en": {
+        "type": "string",
+        "description": "คำตอบภาษาอังกฤษ (ออปชัน)"
+      },
+      "hint_th": {
+        "type": "string",
+        "description": "คำใบ้สั้นๆ (ออปชัน)"
+      },
+      "status": {
+        "$ref": "#/CardStatus"
+      },
+      "known_streak": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "จำนวนครั้งที่ตอบ known ติดกันล่าสุด"
+      },
+      "times_seen": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "จำนวนครั้งที่ทวนการ์ดนี้"
+      },
+      "times_known": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "times_unsure": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "last_reviewed_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "next_due_at": {
+        "$ref": "#/definitions/IsoDate",
+        "description": "วัน due ถัดไป (nice/MVP เบา)"
+      },
+      "source": {
+        "type": "string",
+        "enum": [
+          "photo_extract",
+          "paste_text",
+          "manual"
+        ],
+        "description": "แหล่งที่มาของการ์ด"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "แท็กย่อย เช่น บท1, สูตร"
+      },
+      "created_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "Deck": {
+    "type": "object",
+    "description": "เด็คหนึ่งชุดรวมการ์ดหลายใบ จัดในโฟลเดอร์วิชา",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "title_th",
+      "subject_id",
+      "card_ids",
+      "created_at"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "title_th": {
+        "type": "string",
+        "minLength": 1,
+        "description": "ชื่อเด็คภาษาไทย เช่น ชีวะ · ระบบหายใจ"
+      },
+      "title_en": {
+        "type": "string"
+      },
+      "subject_id": {
+        "$ref": "#/SubjectId"
+      },
+      "description_th": {
+        "type": "string"
+      },
+      "card_ids": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Uuid"
+        },
+        "description": "รายการ id การ์ดในเด็ค"
+      },
+      "cover_emoji": {
+        "type": "string",
+        "description": "อีโมจิปกเด็ค"
+      },
+      "exam_date": {
+        "$ref": "#/definitions/IsoDate",
+        "description": "วันสอบเป้าหมาย (nice countdown)"
+      },
+      "mastery_pct": {
+        "$ref": "#/definitions/Percent0to100"
+      },
+      "card_count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "created_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "SubjectFolder": {
+    "type": "object",
+    "description": "โฟลเดอร์วิชาใน Deck Library",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "name_th",
+      "name_en"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "#/SubjectId"
+      },
+      "name_th": {
+        "type": "string"
+      },
+      "name_en": {
+        "type": "string"
+      },
+      "emoji": {
+        "type": "string"
+      },
+      "color_hex": {
+        "type": "string",
+        "pattern": "^#([0-9A-Fa-f]{6})$"
+      },
+      "deck_count": {
+        "type": "integer",
+        "minimum": 0
+      }
+    }
+  },
+  "QuizAnswer": {
+    "type": "object",
+    "description": "คำตอบหนึ่งใบในเซสชัน Swipe Quiz",
+    "additionalProperties": false,
+    "required": [
+      "card_id",
+      "verdict",
+      "answered_at"
+    ],
+    "properties": {
+      "card_id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "verdict": {
+        "$ref": "#/AnswerVerdict"
+      },
+      "flipped": {
+        "type": "boolean",
+        "description": "ผู้ใช้พลิกดูคำตอบก่อนกด verdict หรือไม่"
+      },
+      "latency_ms": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "เวลาตั้งแต่โชว์การ์ดถึงกดตอบ"
+      },
+      "answered_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "StudySession": {
+    "type": "object",
+    "description": "เซสชันทวนหนึ่งรอบ (Swipe Quiz)",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "deck_id",
+      "started_at",
+      "answers"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "deck_id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "started_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "ended_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "answers": {
+        "type": "array",
+        "items": {
+          "$ref": "#/QuizAnswer"
+        }
+      },
+      "known_count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "unsure_count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "max_streak": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "สตรีค known สูงสุดในเซสชัน"
+      },
+      "mode": {
+        "type": "string",
+        "enum": [
+          "swipe",
+          "multi_choice"
+        ],
+        "description": "โหมดทวน — MVP ใช้ swipe"
+      }
+    }
+  },
+  "MasteryStats": {
+    "type": "object",
+    "description": "สรุปความชำนาญสำหรับ Mastery Dashboard — ทั้งแอปหรือกรองต่อเด็ค",
+    "additionalProperties": false,
+    "required": [
+      "as_of_date",
+      "total_cards",
+      "mastered_count",
+      "mastery_pct",
+      "due_today",
+      "streak_days"
+    ],
+    "properties": {
+      "as_of_date": {
+        "$ref": "#/definitions/IsoDate"
+      },
+      "scope": {
+        "type": "string",
+        "enum": [
+          "all",
+          "deck"
+        ],
+        "description": "ขอบเขตสถิติ"
+      },
+      "deck_id": {
+        "$ref": "#/definitions/Uuid"
+      },
+      "total_cards": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "mastered_count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "learning_count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "new_count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "mastery_pct": {
+        "$ref": "#/definitions/Percent0to100"
+      },
+      "due_today": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "จำนวนการ์ดที่ควรทวนวันนี้"
+      },
+      "streak_days": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "วันติดต่อกันที่มีเซสชัน ≥1"
+      },
+      "cards_reviewed_today": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "sessions_today": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "best_session_streak": {
+        "type": "integer",
+        "minimum": 0
+      }
+    }
+  },
+  "ExtractedCardDraft": {
+    "type": "object",
+    "description": "ร่างการ์ดจาก photo extract ก่อนบันทึกลงเด็ค",
+    "additionalProperties": false,
+    "required": [
+      "question_th",
+      "answer_th"
+    ],
+    "properties": {
+      "temp_id": {
+        "type": "string"
+      },
+      "question_th": {
+        "type": "string"
+      },
+      "answer_th": {
+        "type": "string"
+      },
+      "question_en": {
+        "type": "string"
+      },
+      "answer_en": {
+        "type": "string"
+      },
+      "hint_th": {
+        "type": "string"
+      },
+      "confidence": {
+        "$ref": "#/definitions/Confidence"
+      }
+    }
+  },
+  "PhotoExtractResult": {
+    "type": "object",
+    "description": "ผลลัพธ์ Photo → Cards จาก mock_demo หรือ vision API",
+    "additionalProperties": false,
+    "required": [
+      "engine",
+      "extract_ms",
+      "confidence",
+      "cards",
+      "suggested_deck_title_th",
+      "subject_id"
+    ],
+    "properties": {
+      "engine": {
+        "$ref": "#/ExtractEngine"
+      },
+      "extract_ms": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "เวลาประมวลผลมิลลิวินาที"
+      },
+      "confidence": {
+        "$ref": "#/definitions/Confidence"
+      },
+      "source_image_name": {
+        "type": "string",
+        "description": "ชื่อไฟล์รูปหรือ fixture"
+      },
+      "raw_note": {
+        "type": "string",
+        "description": "บันทึกผู้สร้าง fixture / OCR raw (ออปชัน)"
+      },
+      "subject_id": {
+        "$ref": "#/SubjectId"
+      },
+      "suggested_deck_title_th": {
+        "type": "string"
+      },
+      "suggested_deck_title_en": {
+        "type": "string"
+      },
+      "cards": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "#/ExtractedCardDraft"
+        },
+        "description": "ร่างการ์ดที่ extract ได้ — เดโมหลัก 6–8 ใบ"
+      },
+      "warnings_th": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "คำเตือนภาษาไทย เช่น ลายมือบางบรรทัดไม่ชัด"
+      },
+      "extracted_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "ShareCard": {
+    "type": "object",
+    "description": "ข้อมูลสำหรับเรนเดอร์รูปแชร์ Study Card",
+    "additionalProperties": false,
+    "required": [
+      "kind",
+      "title_th",
+      "subtitle_th",
+      "stats_lines",
+      "accent"
+    ],
+    "properties": {
+      "kind": {
+        "$ref": "#/ShareKind"
+      },
+      "title_th": {
+        "type": "string"
+      },
+      "subtitle_th": {
+        "type": "string"
+      },
+      "deck_title_th": {
+        "type": "string"
+      },
+      "mastery_pct": {
+        "$ref": "#/definitions/Percent0to100"
+      },
+      "streak_days": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "cards_reviewed_today": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "stats_lines": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "บรรทัดตัวเลขบนการ์ด"
+      },
+      "footer_th": {
+        "type": "string"
+      },
+      "accent": {
+        "type": "object",
+        "required": [
+          "primary",
+          "accent",
+          "bg"
+        ],
+        "properties": {
+          "primary": {
+            "type": "string"
+          },
+          "accent": {
+            "type": "string"
+          },
+          "bg": {
+            "type": "string"
+          }
+        }
+      },
+      "width": {
+        "type": "integer",
+        "default": 1080
+      },
+      "height": {
+        "type": "integer",
+        "default": 1350
+      }
+    }
+  },
+  "SharePayload": {
+    "type": "object",
+    "description": "แพ็กเกจแชร์รูป + แคปชัน",
+    "additionalProperties": false,
+    "required": [
+      "card",
+      "caption_th",
+      "filename"
+    ],
+    "properties": {
+      "card": {
+        "$ref": "#/ShareCard"
+      },
+      "caption_th": {
+        "type": "string",
+        "description": "แคปชันสำหรับ IG/LINE"
+      },
+      "filename": {
+        "type": "string"
+      },
+      "hashtags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "AppSettings": {
+    "type": "object",
+    "description": "ตั้งค่าเบาๆ ใน localStorage",
+    "additionalProperties": false,
+    "properties": {
+      "locale": {
+        "type": "string",
+        "default": "th-TH"
+      },
+      "extract_engine": {
+        "$ref": "#/ExtractEngine"
+      },
+      "mastered_known_streak_threshold": {
+        "type": "integer",
+        "minimum": 1,
+        "default": 2,
+        "description": "จำนวน known ติดกันถึงจะเป็น mastered"
+      },
+      "dark_study_mode": {
+        "type": "boolean",
+        "default": false
+      },
+      "voice_read_enabled": {
+        "type": "boolean",
+        "default": false
+      },
+      "user_display_name": {
+        "type": "string"
+      }
+    }
+  },
+  "LocalStore": {
+    "type": "object",
+    "description": "รูปทรงข้อมูลหลักใน localStorage key examdeck.v1",
+    "additionalProperties": false,
+    "required": [
+      "version",
+      "decks",
+      "cards",
+      "sessions",
+      "settings"
+    ],
+    "properties": {
+      "version": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "เวอร์ชันสคีมาสโตร์ — MVP = 1"
+      },
+      "decks": {
+        "type": "array",
+        "items": {
+          "$ref": "#/Deck"
+        }
+      },
+      "cards": {
+        "type": "array",
+        "items": {
+          "$ref": "#/Flashcard"
+        }
+      },
+      "sessions": {
+        "type": "array",
+        "items": {
+          "$ref": "#/StudySession"
+        }
+      },
+      "subjects": {
+        "type": "array",
+        "items": {
+          "$ref": "#/SubjectFolder"
+        }
+      },
+      "settings": {
+        "$ref": "#/AppSettings"
+      },
+      "last_open_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      }
+    }
+  },
+  "AnalyticsEventName": {
+    "type": "string",
+    "description": "ชื่ออีเวนต์ฝั่ง client สำหรับวัดช่อง/ผลิตภัณฑ์",
+    "enum": [
+      "app_open",
+      "demo_photo_loaded",
+      "extract_start",
+      "extract_success",
+      "extract_fail",
+      "deck_saved",
+      "quiz_start",
+      "quiz_card_answered",
+      "quiz_session_completed",
+      "mastery_view",
+      "share_open",
+      "share_success",
+      "share_fail",
+      "library_create_deck",
+      "library_rename_deck"
+    ]
+  },
+  "AnalyticsEvent": {
+    "type": "object",
+    "description": "อีเวนต์ analytics เบาๆ",
+    "additionalProperties": false,
+    "required": [
+      "name",
+      "ts"
+    ],
+    "properties": {
+      "name": {
+        "$ref": "#/AnalyticsEventName"
+      },
+      "ts": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "props": {
+        "type": "object",
+        "additionalProperties": true,
+        "description": "พร็อพเพิ่ม เช่น deck_id, extract_ms"
+      }
+    }
+  },
+  "FeatureTier": {
+    "type": "string",
+    "enum": [
+      "must",
+      "nice"
+    ]
+  },
+  "FeatureChecklistItem": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "name_th",
+      "name_en",
+      "tier",
+      "implemented"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name_th": {
+        "type": "string"
+      },
+      "name_en": {
+        "type": "string"
+      },
+      "tier": {
+        "$ref": "#/FeatureTier"
+      },
+      "implemented": {
+        "type": "boolean"
+      },
+      "demo_in_reel": {
+        "type": "boolean"
+      },
+      "notes": {
+        "type": "string"
+      }
+    }
+  },
+  "FeatureChecklist": {
+    "type": "object",
+    "description": "เช็คลิสต์ฟีเจอร์ก่อนถ่าย Reel — ต้องมี must ≥5 และ implemented ครบ must",
+    "additionalProperties": false,
+    "required": [
+      "app",
+      "date",
+      "must_implemented_count",
+      "ready_to_film",
+      "features"
+    ],
+    "properties": {
+      "app": {
+        "type": "string"
+      },
+      "date": {
+        "$ref": "#/definitions/IsoDate"
+      },
+      "must_implemented_count": {
+        "type": "integer",
+        "minimum": 5
+      },
+      "ready_to_film": {
+        "type": "boolean"
+      },
+      "features": {
+        "type": "array",
+        "items": {
+          "$ref": "#/FeatureChecklistItem"
+        },
+        "minItems": 5
+      }
+    }
+  },
+  "UiCopyTh": {
+    "type": "object",
+    "description": "ชุดข้อความ UI ภาษาไทยหลัก — ใช้ในคอมโพเนนต์และ examples",
+    "additionalProperties": {
+      "type": "string"
+    }
+  },
+  "ReelShot": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "t",
+      "visual",
+      "on_screen_th",
+      "voice_th"
+    ],
+    "properties": {
+      "t": {
+        "type": "string",
+        "description": "ช่วงเวลา เช่น 0-3s"
+      },
+      "visual": {
+        "type": "string"
+      },
+      "on_screen_th": {
+        "type": "string"
+      },
+      "voice_th": {
+        "type": "string"
+      }
+    }
+  },
+  "ReelScript": {
+    "type": "object",
+    "description": "สคริปต์ Reel ภาษาไทยพร้อมช็อต",
+    "additionalProperties": false,
+    "required": [
+      "title_th",
+      "duration_s",
+      "cta_comment_th",
+      "shots"
+    ],
+    "properties": {
+      "title_th": {
+        "type": "string"
+      },
+      "duration_s": {
+        "type": "integer",
+        "minimum": 15,
+        "maximum": 60
+      },
+      "hook_th": {
+        "type": "string"
+      },
+      "cta_comment_th": {
+        "type": "string"
+      },
+      "props_needed_th": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "shots": {
+        "type": "array",
+        "items": {
+          "$ref": "#/ReelShot"
+        },
+        "minItems": 4
+      }
+    }
+  }
+}

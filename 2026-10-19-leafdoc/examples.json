@@ -1,0 +1,1646 @@
+{
+  "meta": {
+    "app": "LeafDoc (หมอใบไม้)",
+    "date": "2026-10-19",
+    "engine": "leafdoc-engine/1.0.0",
+    "fictional_note_th": "บุคคล ต้นไม้ ค่าแสง และประวัติทั้งหมดเป็นตัวอย่างสมมติ",
+    "colors": {
+      "cream": "#F7F5EE",
+      "forest": "#14532D",
+      "leaf": "#22C55E",
+      "lime": "#A3E635",
+      "sun": "#FBBF24",
+      "clay": "#C2410C",
+      "water": "#0EA5E9",
+      "ink": "#1C1917"
+    }
+  },
+  "species": [
+    {
+      "id": "monstera",
+      "name_th": "มอนสเตอร่า",
+      "name_en": "Monstera deliciosa",
+      "base_water_days": 7,
+      "light_need": "bright_indirect",
+      "pet_toxic": true,
+      "humidity_lover": true,
+      "emoji": "🌿",
+      "verified": false
+    },
+    {
+      "id": "pothos",
+      "name_th": "พลูด่าง",
+      "name_en": "Golden pothos",
+      "base_water_days": 7,
+      "light_need": "medium",
+      "pet_toxic": true,
+      "humidity_lover": false,
+      "emoji": "🍃",
+      "verified": false
+    },
+    {
+      "id": "snake",
+      "name_th": "ลิ้นมังกร",
+      "name_en": "Snake plant",
+      "base_water_days": 14,
+      "light_need": "low",
+      "pet_toxic": true,
+      "humidity_lover": false,
+      "emoji": "🗡️",
+      "verified": false
+    },
+    {
+      "id": "zz",
+      "name_th": "กวักมรกต",
+      "name_en": "ZZ plant",
+      "base_water_days": 14,
+      "light_need": "low",
+      "pet_toxic": true,
+      "humidity_lover": false,
+      "emoji": "💎",
+      "verified": false
+    },
+    {
+      "id": "rubber",
+      "name_th": "ยางอินเดีย",
+      "name_en": "Rubber plant",
+      "base_water_days": 8,
+      "light_need": "bright_indirect",
+      "pet_toxic": true,
+      "humidity_lover": false,
+      "emoji": "🌳",
+      "verified": false
+    },
+    {
+      "id": "fiddle",
+      "name_th": "ไทรใบสัก",
+      "name_en": "Fiddle-leaf fig",
+      "base_water_days": 7,
+      "light_need": "bright_indirect",
+      "pet_toxic": true,
+      "humidity_lover": false,
+      "emoji": "🎻",
+      "verified": false
+    },
+    {
+      "id": "fern",
+      "name_th": "เฟิร์นบอสตัน",
+      "name_en": "Boston fern",
+      "base_water_days": 3,
+      "light_need": "medium",
+      "pet_toxic": false,
+      "humidity_lover": true,
+      "emoji": "🌱",
+      "verified": false
+    },
+    {
+      "id": "cactus",
+      "name_th": "แคคตัส",
+      "name_en": "Cactus",
+      "base_water_days": 21,
+      "light_need": "direct",
+      "pet_toxic": false,
+      "humidity_lover": false,
+      "emoji": "🌵",
+      "verified": false
+    },
+    {
+      "id": "spider",
+      "name_th": "เศรษฐีเรือนใน",
+      "name_en": "Spider plant",
+      "base_water_days": 6,
+      "light_need": "medium",
+      "pet_toxic": false,
+      "humidity_lover": false,
+      "emoji": "🌾",
+      "verified": false
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "yellow_lower",
+      "label_th": "ใบล่างเหลือง",
+      "severity": 10
+    },
+    {
+      "id": "yellow_all",
+      "label_th": "เหลืองทั้งต้น",
+      "severity": 18
+    },
+    {
+      "id": "brown_tips",
+      "label_th": "ปลายใบไหม้น้ำตาล",
+      "severity": 6
+    },
+    {
+      "id": "crispy_edges",
+      "label_th": "ขอบใบกรอบแห้ง",
+      "severity": 10
+    },
+    {
+      "id": "black_stem",
+      "label_th": "โคนต้นดำนิ่ม",
+      "severity": 25
+    },
+    {
+      "id": "drooping",
+      "label_th": "ใบตก ห้อย",
+      "severity": 12
+    },
+    {
+      "id": "leaf_drop",
+      "label_th": "ใบร่วง",
+      "severity": 12
+    },
+    {
+      "id": "leggy",
+      "label_th": "ยืดยาว ใบซีด",
+      "severity": 10
+    },
+    {
+      "id": "spots_halo",
+      "label_th": "จุดน้ำตาลขอบเหลือง",
+      "severity": 12
+    },
+    {
+      "id": "webbing",
+      "label_th": "ใยขาวใต้ใบ",
+      "severity": 18
+    },
+    {
+      "id": "sticky_bugs",
+      "label_th": "เหนียว มีแมลงเกาะ",
+      "severity": 14
+    },
+    {
+      "id": "curling",
+      "label_th": "ใบม้วน",
+      "severity": 8
+    },
+    {
+      "id": "mushy_base",
+      "label_th": "โคนเน่าเละ มีกลิ่น",
+      "severity": 28
+    },
+    {
+      "id": "no_growth",
+      "label_th": "ไม่แตกใบใหม่",
+      "severity": 6
+    },
+    {
+      "id": "sun_patches",
+      "label_th": "รอยไหม้ขาวซีด",
+      "severity": 10
+    }
+  ],
+  "causes": [
+    {
+      "id": "overwater",
+      "label_th": "รดน้ำมากไป",
+      "emoji": "💧",
+      "weights": {
+        "yellow_lower": 3,
+        "drooping": 2,
+        "mushy_base": 3,
+        "black_stem": 2,
+        "leaf_drop": 1
+      },
+      "explain_th": "ดินแฉะนาน รากหายใจไม่ออก ใบล่างเลยเหลืองก่อน",
+      "plan_th": [
+        "หยุดรดน้ำ ยกกระถางเช็กว่ารูระบายน้ำไม่ตัน",
+        "ย้ายไปที่แสงรำไร ลมผ่าน ให้ดินแห้งเร็วขึ้น",
+        "ตัดใบเหลืองที่โคนออก (กรรไกรสะอาด)",
+        "จิ้มนิ้วเช็กดิน 2 ข้อ ยังแฉะ = ยังไม่รด",
+        "ถ้าดินยังแฉะ เปลี่ยนเป็นดินโปร่ง (ดิน+เพอร์ไลต์+เปลือกสน)",
+        "รดครั้งแรกเมื่อดินแห้ง 2 ข้อ รดจนไหลออกรู แล้วเทน้ำในจานรองทิ้ง",
+        "ถ่ายรูปมุมเดิมเทียบวันแรก 📸"
+      ]
+    },
+    {
+      "id": "root_rot",
+      "label_th": "รากเน่า",
+      "emoji": "🦠",
+      "weights": {
+        "mushy_base": 4,
+        "black_stem": 4,
+        "drooping": 2,
+        "yellow_all": 1
+      },
+      "explain_th": "น้ำขังจนเชื้อราเข้าราก ต้องรีบผ่าตัดราก",
+      "plan_th": [
+        "ถอดกระถาง ล้างดินออกดูราก",
+        "ตัดรากดำนิ่มทิ้งให้หมด (เหลือแต่รากขาวแน่น)",
+        "ผึ่งรากให้แห้ง 1 วันในที่ร่ม",
+        "ลงดินใหม่โปร่ง ๆ ในกระถางมีรูระบาย",
+        "ยังไม่รดน้ำ ให้รากสมานแผล",
+        "รดน้ำน้อย ๆ ครั้งแรก",
+        "ถ่ายรูปมุมเดิมเทียบวันแรก 📸"
+      ]
+    },
+    {
+      "id": "underwater",
+      "label_th": "ขาดน้ำ",
+      "emoji": "🏜️",
+      "weights": {
+        "drooping": 3,
+        "crispy_edges": 3,
+        "curling": 2,
+        "leaf_drop": 1
+      },
+      "explain_th": "ดินแห้งนานเกิน ใบเลยกรอบและม้วนเก็บน้ำ",
+      "plan_th": [
+        "รดแบบแช่ก้น: วางกระถางในกะละมังน้ำ 20 นาที",
+        "ปลิดใบกรอบที่แห้งตายออก",
+        "ตั้งเตือนรดน้ำตามรอบในแอป",
+        "คลุมหน้าดินด้วยกาบมะพร้าวสับช่วยเก็บความชื้น",
+        "เช็กดิน ถ้าแห้ง 2 ข้อให้รดจนไหลออกรู",
+        "ดูว่าใบเริ่มตั้งขึ้นไหม",
+        "ถ่ายรูปมุมเดิมเทียบวันแรก 📸"
+      ]
+    },
+    {
+      "id": "low_light",
+      "label_th": "แสงไม่พอ",
+      "emoji": "🌑",
+      "weights": {
+        "leggy": 4,
+        "no_growth": 2,
+        "yellow_lower": 1,
+        "leaf_drop": 1
+      },
+      "explain_th": "ต้นยืดหาแสง ใบใหม่เล็กและซีด",
+      "plan_th": [
+        "ย้ายใกล้หน้าต่าง (ห่าง 1 เมตร ไม่โดนแดดตรง)",
+        "ใช้ Light Meter ในแอปวัดมุมใหม่",
+        "หมุนกระถาง 1/4 รอบให้โดนแสงทั่ว",
+        "ลดน้ำลงนิดเพราะแสงน้อยดินแห้งช้า",
+        "ถ้าไม่มีหน้าต่าง ลองไฟปลูกต้นไม้ 12 ชม./วัน",
+        "เช็ดฝุ่นบนใบให้รับแสงเต็มที่",
+        "ถ่ายรูปมุมเดิมเทียบวันแรก 📸"
+      ]
+    },
+    {
+      "id": "sunburn",
+      "label_th": "โดนแดดแรงไป",
+      "emoji": "🔥",
+      "weights": {
+        "sun_patches": 4,
+        "crispy_edges": 1,
+        "curling": 1
+      },
+      "explain_th": "แดดตรงเผาใบเป็นรอยขาวซีด",
+      "plan_th": [
+        "ถอยออกจากแดดตรง หรือกั้นม่านบาง",
+        "ใบที่ไหม้แล้วไม่กลับมาเขียว ตัดได้ถ้าเสียเกินครึ่ง",
+        "รดน้ำตามรอบ อย่าให้ดินแห้งสนิท",
+        "วัดแสงมุมใหม่ด้วย Light Meter",
+        "ดูใบใหม่ว่าไม่มีรอยซีด",
+        "ค่อย ๆ ปรับแสงทีละน้อยถ้าจะย้ายกลับ",
+        "ถ่ายรูปมุมเดิมเทียบวันแรก 📸"
+      ]
+    },
+    {
+      "id": "low_humidity",
+      "label_th": "อากาศแห้ง/แอร์",
+      "emoji": "🌬️",
+      "weights": {
+        "brown_tips": 4,
+        "curling": 1,
+        "crispy_edges": 1
+      },
+      "explain_th": "ห้องแอร์ความชื้นต่ำ ปลายใบเลยไหม้",
+      "plan_th": [
+        "ย้ายให้ห่างช่องลมแอร์",
+        "จับกลุ่มต้นไม้ไว้ใกล้กันเพิ่มความชื้น",
+        "วางถาดกรวด+น้ำใต้กระถาง",
+        "เล็มปลายใบไหม้ตามรูปทรงใบ",
+        "พ่นละอองน้ำตอนเช้า (ไม่พ่นตอนเย็น)",
+        "เช็กใต้ใบหาไรแดง",
+        "ถ่ายรูปมุมเดิมเทียบวันแรก 📸"
+      ]
+    },
+    {
+      "id": "spider_mites",
+      "label_th": "ไรแดง",
+      "emoji": "🕷️",
+      "weights": {
+        "webbing": 5,
+        "curling": 1,
+        "yellow_all": 1
+      },
+      "explain_th": "แมลงตัวจิ๋วดูดน้ำเลี้ยงใต้ใบ ชอบอากาศแห้ง",
+      "plan_th": [
+        "แยกต้นออกห่างต้นอื่นทันที",
+        "ล้างใต้ใบด้วยฝักบัวแรงพอดี",
+        "เช็ดใต้ใบด้วยน้ำสบู่อ่อน ๆ",
+        "ทำซ้ำ: ล้างใต้ใบอีกรอบ",
+        "เพิ่มความชื้นรอบต้น",
+        "ทำซ้ำ: เช็ดน้ำสบู่อีกรอบ",
+        "ถ่ายรูปใต้ใบเทียบวันแรก 📸"
+      ]
+    },
+    {
+      "id": "sap_bugs",
+      "label_th": "เพลี้ย",
+      "emoji": "🐛",
+      "weights": {
+        "sticky_bugs": 5,
+        "curling": 1,
+        "yellow_lower": 1
+      },
+      "explain_th": "เพลี้ยดูดน้ำเลี้ยง ทิ้งคราบเหนียว",
+      "plan_th": [
+        "แยกต้นออกห่างต้นอื่นทันที",
+        "ใช้สำลีชุบแอลกอฮอล์เช็ดตัวเพลี้ยออก",
+        "ล้างคราบเหนียวด้วยน้ำสบู่อ่อน ๆ",
+        "เช็กซอกใบและใต้ใบอีกรอบ",
+        "ทำซ้ำ: เช็ดแอลกอฮอล์",
+        "ดูมดเดินขึ้นต้นไหม (มดพาเพลี้ยมา)",
+        "ถ่ายรูปเทียบวันแรก 📸"
+      ]
+    },
+    {
+      "id": "leaf_spot",
+      "label_th": "โรคใบจุด",
+      "emoji": "🍂",
+      "weights": {
+        "spots_halo": 5
+      },
+      "explain_th": "เชื้อราที่ใบ ชอบใบเปียกและลมไม่ถ่ายเท",
+      "plan_th": [
+        "ตัดใบที่เป็นจุดทิ้ง (ไม่ทิ้งในกระถาง)",
+        "หยุดพ่นน้ำโดนใบ รดที่โคนแทน",
+        "ย้ายไปที่ลมถ่ายเท",
+        "เช็กว่ามีใบใหม่เป็นจุดไหม",
+        "เว้นระยะห่างจากต้นอื่น",
+        "รดน้ำตอนเช้าเท่านั้น",
+        "ถ่ายรูปเทียบวันแรก 📸"
+      ]
+    },
+    {
+      "id": "hungry",
+      "label_th": "ขาดปุ๋ย",
+      "emoji": "🍽️",
+      "weights": {
+        "yellow_all": 3,
+        "no_growth": 2,
+        "leggy": 1
+      },
+      "explain_th": "ดินเดิมนานจนธาตุอาหารหมด",
+      "plan_th": [
+        "ให้ปุ๋ยละลายช้าตามฉลาก (ครึ่งอัตราก่อน)",
+        "รดน้ำให้ทั่วหลังให้ปุ๋ย",
+        "ดูว่ารากล้นกระถางไหม",
+        "ถ้ารากแน่น เตรียมเปลี่ยนกระถางใหญ่ขึ้น 1 ไซซ์",
+        "อย่าให้ปุ๋ยซ้ำเกินฉลาก",
+        "เช็ดใบให้สะอาด",
+        "ถ่ายรูปเทียบวันแรก 📸"
+      ]
+    }
+  ],
+  "healthy_plan_th": [
+    "รดน้ำตามรอบในแอป",
+    "หมุนกระถาง 1/4 รอบ",
+    "เช็ดฝุ่นบนใบ",
+    "เช็กใต้ใบหาแมลง",
+    "ดูว่ามีใบใหม่ไหม",
+    "พักผ่อน ไม่ต้องทำอะไร 😌",
+    "ถ่ายรูปบันทึกการเติบโต 📸"
+  ],
+  "grades": [
+    {
+      "min": 80,
+      "grade": "thriving",
+      "label_th": "แข็งแรงดี",
+      "emoji": "🌿",
+      "color": "#22C55E"
+    },
+    {
+      "min": 60,
+      "grade": "fussy",
+      "label_th": "เริ่มงอแง",
+      "emoji": "🌤️",
+      "color": "#A3E635"
+    },
+    {
+      "min": 40,
+      "grade": "sick",
+      "label_th": "ป่วยอยู่",
+      "emoji": "🤒",
+      "color": "#FBBF24"
+    },
+    {
+      "min": 0,
+      "grade": "critical",
+      "label_th": "วิกฤต รีบช่วย",
+      "emoji": "🚑",
+      "color": "#C2410C"
+    }
+  ],
+  "factors": {
+    "light": {
+      "low": 1.4,
+      "medium": 1.0,
+      "bright_indirect": 0.85,
+      "direct": 0.7
+    },
+    "pot": {
+      "plastic": 1.0,
+      "ceramic_glazed": 1.0,
+      "terracotta": 0.8,
+      "self_watering": 1.5
+    },
+    "season": {
+      "hot": 0.8,
+      "rainy": 1.2,
+      "cool": 1.1
+    },
+    "season_months": {
+      "hot": [
+        3,
+        4,
+        5
+      ],
+      "rainy": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cool": [
+        11,
+        12,
+        1,
+        2
+      ]
+    }
+  },
+  "demo": {
+    "persona": {
+      "name_th": "บีม",
+      "age": 27,
+      "home_th": "คอนโด 1 ห้องนอน ห้องแอร์ หน้าต่างทิศเหนือ",
+      "pets": true,
+      "pet_th": "แมวชื่อถั่วแระ"
+    },
+    "plants": [
+      {
+        "id": "p1",
+        "nickname_th": "มอนมอน",
+        "species": "monstera",
+        "light": "low",
+        "pot": "ceramic_glazed",
+        "last_watered": "2026-10-17",
+        "added_on": "2026-08-02",
+        "spot_th": "มุมทีวี"
+      },
+      {
+        "id": "p2",
+        "nickname_th": "พลูพลู",
+        "species": "pothos",
+        "light": "medium",
+        "pot": "plastic",
+        "last_watered": "2026-10-07",
+        "added_on": "2026-07-15",
+        "spot_th": "ชั้นหนังสือ"
+      },
+      {
+        "id": "p3",
+        "nickname_th": "ลิ้นลิ้น",
+        "species": "snake",
+        "light": "medium",
+        "pot": "terracotta",
+        "last_watered": "2026-10-10",
+        "added_on": "2026-06-20",
+        "spot_th": "ข้างประตูระเบียง"
+      }
+    ],
+    "checkup_inputs": [
+      {
+        "plant_id": "p1",
+        "on": "2026-10-19",
+        "symptoms": [
+          "drooping",
+          "yellow_lower",
+          "leaf_drop",
+          "brown_tips"
+        ],
+        "ctx": {
+          "soil": "wet",
+          "light": "low",
+          "days_since_water": 2,
+          "ac_room": true,
+          "months_since_feed": 3
+        },
+        "source": "demo"
+      },
+      {
+        "plant_id": "p2",
+        "on": "2026-10-19",
+        "symptoms": [
+          "curling",
+          "crispy_edges",
+          "drooping"
+        ],
+        "ctx": {
+          "soil": "dry",
+          "light": "medium",
+          "days_since_water": 12,
+          "ac_room": true,
+          "months_since_feed": 2
+        },
+        "source": "demo"
+      },
+      {
+        "plant_id": "p3",
+        "on": "2026-10-19",
+        "symptoms": [],
+        "ctx": {
+          "soil": "dry",
+          "light": "medium",
+          "days_since_water": 9,
+          "ac_room": false,
+          "months_since_feed": 4
+        },
+        "source": "demo"
+      }
+    ]
+  },
+  "water_status": {
+    "p1": {
+      "interval_days": 12,
+      "days_since": 2,
+      "due_on": "2026-10-29",
+      "days_left": 10,
+      "status": "ok",
+      "status_th": "อีก 10 วัน",
+      "season": "rainy",
+      "next_dates": [
+        "2026-10-29",
+        "2026-11-10",
+        "2026-11-22",
+        "2026-12-04"
+      ],
+      "finger_test_th": "จิ้มนิ้วลงดิน 2 ข้อ ถ้ายังชื้นให้เลื่อนไป 2 วัน"
+    },
+    "p2": {
+      "interval_days": 8,
+      "days_since": 12,
+      "due_on": "2026-10-15",
+      "days_left": -4,
+      "status": "overdue",
+      "status_th": "เลยกำหนด 4 วัน",
+      "season": "rainy",
+      "next_dates": [
+        "2026-10-19",
+        "2026-10-27",
+        "2026-11-04",
+        "2026-11-12"
+      ],
+      "finger_test_th": "จิ้มนิ้วลงดิน 2 ข้อ ถ้ายังชื้นให้เลื่อนไป 2 วัน"
+    },
+    "p3": {
+      "interval_days": 13,
+      "days_since": 9,
+      "due_on": "2026-10-23",
+      "days_left": 4,
+      "status": "ok",
+      "status_th": "อีก 4 วัน",
+      "season": "rainy",
+      "next_dates": [
+        "2026-10-23",
+        "2026-11-05",
+        "2026-11-18",
+        "2026-12-01"
+      ],
+      "finger_test_th": "จิ้มนิ้วลงดิน 2 ข้อ ถ้ายังชื้นให้เลื่อนไป 2 วัน"
+    }
+  },
+  "diagnoses": {
+    "p1": {
+      "engine": "leafdoc-engine/1.0.0",
+      "plant_id": "p1",
+      "species": "monstera",
+      "on": "2026-10-19",
+      "symptoms": [
+        "yellow_lower",
+        "brown_tips",
+        "drooping",
+        "leaf_drop"
+      ],
+      "symptoms_th": [
+        "ใบล่างเหลือง",
+        "ปลายใบไหม้น้ำตาล",
+        "ใบตก ห้อย",
+        "ใบร่วง"
+      ],
+      "health_score": 55,
+      "grade": "sick",
+      "grade_th": "ป่วยอยู่",
+      "emoji": "🤒",
+      "color": "#FBBF24",
+      "causes": [
+        {
+          "cause_id": "overwater",
+          "label_th": "รดน้ำมากไป",
+          "emoji": "💧",
+          "points": 11,
+          "confidence_pct": 50,
+          "evidence": [
+            "yellow_lower",
+            "drooping",
+            "leaf_drop"
+          ],
+          "explain_th": "ดินแฉะนาน รากหายใจไม่ออก ใบล่างเลยเหลืองก่อน"
+        },
+        {
+          "cause_id": "low_humidity",
+          "label_th": "อากาศแห้ง/แอร์",
+          "emoji": "🌬️",
+          "points": 6,
+          "confidence_pct": 27,
+          "evidence": [
+            "brown_tips"
+          ],
+          "explain_th": "ห้องแอร์ความชื้นต่ำ ปลายใบเลยไหม้"
+        },
+        {
+          "cause_id": "root_rot",
+          "label_th": "รากเน่า",
+          "emoji": "🦠",
+          "points": 5,
+          "confidence_pct": 23,
+          "evidence": [
+            "drooping"
+          ],
+          "explain_th": "น้ำขังจนเชื้อราเข้าราก ต้องรีบผ่าตัดราก"
+        }
+      ],
+      "top_cause": "overwater",
+      "disclaimer_th": "ผลนี้เป็นการคาดเดาจากอาการ ไม่ใช่การตรวจในแล็บ ต้นมีค่ามากให้ปรึกษาร้านต้นไม้"
+    },
+    "p2": {
+      "engine": "leafdoc-engine/1.0.0",
+      "plant_id": "p2",
+      "species": "pothos",
+      "on": "2026-10-19",
+      "symptoms": [
+        "crispy_edges",
+        "drooping",
+        "curling"
+      ],
+      "symptoms_th": [
+        "ขอบใบกรอบแห้ง",
+        "ใบตก ห้อย",
+        "ใบม้วน"
+      ],
+      "health_score": 70,
+      "grade": "fussy",
+      "grade_th": "เริ่มงอแง",
+      "emoji": "🌤️",
+      "color": "#A3E635",
+      "causes": [
+        {
+          "cause_id": "underwater",
+          "label_th": "ขาดน้ำ",
+          "emoji": "🏜️",
+          "points": 11,
+          "confidence_pct": 61,
+          "evidence": [
+            "crispy_edges",
+            "drooping",
+            "curling"
+          ],
+          "explain_th": "ดินแห้งนานเกิน ใบเลยกรอบและม้วนเก็บน้ำ"
+        },
+        {
+          "cause_id": "low_humidity",
+          "label_th": "อากาศแห้ง/แอร์",
+          "emoji": "🌬️",
+          "points": 4,
+          "confidence_pct": 22,
+          "evidence": [
+            "crispy_edges",
+            "curling"
+          ],
+          "explain_th": "ห้องแอร์ความชื้นต่ำ ปลายใบเลยไหม้"
+        },
+        {
+          "cause_id": "spider_mites",
+          "label_th": "ไรแดง",
+          "emoji": "🕷️",
+          "points": 3,
+          "confidence_pct": 17,
+          "evidence": [
+            "curling"
+          ],
+          "explain_th": "แมลงตัวจิ๋วดูดน้ำเลี้ยงใต้ใบ ชอบอากาศแห้ง"
+        }
+      ],
+      "top_cause": "underwater",
+      "disclaimer_th": "ผลนี้เป็นการคาดเดาจากอาการ ไม่ใช่การตรวจในแล็บ ต้นมีค่ามากให้ปรึกษาร้านต้นไม้"
+    },
+    "p3": {
+      "engine": "leafdoc-engine/1.0.0",
+      "plant_id": "p3",
+      "species": "snake",
+      "on": "2026-10-19",
+      "symptoms": [],
+      "symptoms_th": [],
+      "health_score": 100,
+      "grade": "thriving",
+      "grade_th": "แข็งแรงดี",
+      "emoji": "🌿",
+      "color": "#22C55E",
+      "causes": [],
+      "top_cause": null,
+      "disclaimer_th": "ผลนี้เป็นการคาดเดาจากอาการ ไม่ใช่การตรวจในแล็บ ต้นมีค่ามากให้ปรึกษาร้านต้นไม้"
+    }
+  },
+  "rescue_plans": [
+    {
+      "plant_id": "p1",
+      "cause_id": "overwater",
+      "title_th": "แผนชุบชีวิต 7 วัน: รดน้ำมากไป",
+      "start_on": "2026-10-19",
+      "days": [
+        {
+          "day": 1,
+          "on": "2026-10-19",
+          "task_th": "หยุดรดน้ำ ยกกระถางเช็กว่ารูระบายน้ำไม่ตัน",
+          "done": false
+        },
+        {
+          "day": 2,
+          "on": "2026-10-20",
+          "task_th": "ย้ายไปที่แสงรำไร ลมผ่าน ให้ดินแห้งเร็วขึ้น",
+          "done": false
+        },
+        {
+          "day": 3,
+          "on": "2026-10-21",
+          "task_th": "ตัดใบเหลืองที่โคนออก (กรรไกรสะอาด)",
+          "done": false,
+          "extra_th": "เผื่อไว้ (อากาศแห้ง/แอร์): ย้ายให้ห่างช่องลมแอร์"
+        },
+        {
+          "day": 4,
+          "on": "2026-10-22",
+          "task_th": "จิ้มนิ้วเช็กดิน 2 ข้อ ยังแฉะ = ยังไม่รด",
+          "done": false
+        },
+        {
+          "day": 5,
+          "on": "2026-10-23",
+          "task_th": "ถ้าดินยังแฉะ เปลี่ยนเป็นดินโปร่ง (ดิน+เพอร์ไลต์+เปลือกสน)",
+          "done": false
+        },
+        {
+          "day": 6,
+          "on": "2026-10-24",
+          "task_th": "รดครั้งแรกเมื่อดินแห้ง 2 ข้อ รดจนไหลออกรู แล้วเทน้ำในจานรองทิ้ง",
+          "done": false
+        },
+        {
+          "day": 7,
+          "on": "2026-10-25",
+          "task_th": "ถ่ายรูปมุมเดิมเทียบวันแรก 📸",
+          "done": false
+        }
+      ],
+      "recheck_on": "2026-10-26"
+    },
+    {
+      "plant_id": "p2",
+      "cause_id": "underwater",
+      "title_th": "แผนชุบชีวิต 7 วัน: ขาดน้ำ",
+      "start_on": "2026-10-19",
+      "days": [
+        {
+          "day": 1,
+          "on": "2026-10-19",
+          "task_th": "รดแบบแช่ก้น: วางกระถางในกะละมังน้ำ 20 นาที",
+          "done": false
+        },
+        {
+          "day": 2,
+          "on": "2026-10-20",
+          "task_th": "ปลิดใบกรอบที่แห้งตายออก",
+          "done": false
+        },
+        {
+          "day": 3,
+          "on": "2026-10-21",
+          "task_th": "ตั้งเตือนรดน้ำตามรอบในแอป",
+          "done": false,
+          "extra_th": "เผื่อไว้ (อากาศแห้ง/แอร์): ย้ายให้ห่างช่องลมแอร์"
+        },
+        {
+          "day": 4,
+          "on": "2026-10-22",
+          "task_th": "คลุมหน้าดินด้วยกาบมะพร้าวสับช่วยเก็บความชื้น",
+          "done": false
+        },
+        {
+          "day": 5,
+          "on": "2026-10-23",
+          "task_th": "เช็กดิน ถ้าแห้ง 2 ข้อให้รดจนไหลออกรู",
+          "done": false
+        },
+        {
+          "day": 6,
+          "on": "2026-10-24",
+          "task_th": "ดูว่าใบเริ่มตั้งขึ้นไหม",
+          "done": false
+        },
+        {
+          "day": 7,
+          "on": "2026-10-25",
+          "task_th": "ถ่ายรูปมุมเดิมเทียบวันแรก 📸",
+          "done": false
+        }
+      ],
+      "recheck_on": "2026-10-26"
+    }
+  ],
+  "plan_done_days": [
+    1,
+    2,
+    3
+  ],
+  "plan_progress": {
+    "done": 3,
+    "of": 7,
+    "pct": 43
+  },
+  "recheck": {
+    "input": {
+      "plant_id": "p1",
+      "on": "2026-11-02",
+      "symptoms": [
+        "brown_tips"
+      ],
+      "ctx": {
+        "soil": "moist",
+        "light": "bright_indirect",
+        "days_since_water": 5,
+        "ac_room": true,
+        "months_since_feed": 3
+      },
+      "source": "demo"
+    },
+    "diagnosis": {
+      "engine": "leafdoc-engine/1.0.0",
+      "plant_id": "p1",
+      "species": "monstera",
+      "on": "2026-11-02",
+      "symptoms": [
+        "brown_tips"
+      ],
+      "symptoms_th": [
+        "ปลายใบไหม้น้ำตาล"
+      ],
+      "health_score": 94,
+      "grade": "thriving",
+      "grade_th": "แข็งแรงดี",
+      "emoji": "🌿",
+      "color": "#22C55E",
+      "causes": [
+        {
+          "cause_id": "low_humidity",
+          "label_th": "อากาศแห้ง/แอร์",
+          "emoji": "🌬️",
+          "points": 6,
+          "confidence_pct": 100,
+          "evidence": [
+            "brown_tips"
+          ],
+          "explain_th": "ห้องแอร์ความชื้นต่ำ ปลายใบเลยไหม้"
+        }
+      ],
+      "top_cause": "low_humidity",
+      "disclaimer_th": "ผลนี้เป็นการคาดเดาจากอาการ ไม่ใช่การตรวจในแล็บ ต้นมีค่ามากให้ปรึกษาร้านต้นไม้"
+    },
+    "new_leaves": 2
+  },
+  "glow_up": {
+    "kind": "glow_up",
+    "size": "1080x1920",
+    "plant_id": "p1",
+    "before_on": "2026-10-19",
+    "after_on": "2026-11-02",
+    "days": 14,
+    "before_score": 55,
+    "after_score": 94,
+    "delta": 39,
+    "new_leaves": 2,
+    "headline_th": "14 วัน จาก 55 → 94 🌿",
+    "sub_th": "ใบใหม่ 2 ใบ · รอดแล้ว!",
+    "bg": "#14532D",
+    "accent": "#A3E635",
+    "footer": "ทำด้วย LeafDoc · AI วันละแอป"
+  },
+  "light_readings": [
+    {
+      "lux_est": 640,
+      "band": "medium",
+      "band_th": "แสงปานกลาง",
+      "fits": [
+        "monstera",
+        "pothos",
+        "snake",
+        "zz",
+        "rubber",
+        "fiddle",
+        "fern",
+        "spider"
+      ],
+      "note_th": "ค่าประมาณจากกล้องมือถือ ใช้เทียบมุมในบ้าน ไม่ใช่เครื่องวัดจริง",
+      "spot_th": "มุมทีวี",
+      "mean_luma": 120
+    },
+    {
+      "lux_est": 2560,
+      "band": "bright_indirect",
+      "band_th": "แสงสว่างรำไร",
+      "fits": [
+        "monstera",
+        "pothos",
+        "rubber",
+        "fiddle",
+        "fern",
+        "spider"
+      ],
+      "note_th": "ค่าประมาณจากกล้องมือถือ ใช้เทียบมุมในบ้าน ไม่ใช่เครื่องวัดจริง",
+      "spot_th": "ข้างหน้าต่าง 1 ม.",
+      "mean_luma": 160
+    },
+    {
+      "lux_est": 20480,
+      "band": "direct",
+      "band_th": "แดดตรง",
+      "fits": [
+        "cactus"
+      ],
+      "note_th": "ค่าประมาณจากกล้องมือถือ ใช้เทียบมุมในบ้าน ไม่ใช่เครื่องวัดจริง",
+      "spot_th": "ระเบียงเที่ยง",
+      "mean_luma": 220
+    }
+  ],
+  "pet_checks": [
+    {
+      "species": "monstera",
+      "pet_toxic": true,
+      "badge_th": "⚠️ อันตรายต่อแมว/หมา ถ้ากัดกิน",
+      "verified": false,
+      "source_note": "ตรวจกับรายชื่อพืชของ ASPCA ก่อนปล่อยแอป"
+    },
+    {
+      "species": "pothos",
+      "pet_toxic": true,
+      "badge_th": "⚠️ อันตรายต่อแมว/หมา ถ้ากัดกิน",
+      "verified": false,
+      "source_note": "ตรวจกับรายชื่อพืชของ ASPCA ก่อนปล่อยแอป"
+    },
+    {
+      "species": "snake",
+      "pet_toxic": true,
+      "badge_th": "⚠️ อันตรายต่อแมว/หมา ถ้ากัดกิน",
+      "verified": false,
+      "source_note": "ตรวจกับรายชื่อพืชของ ASPCA ก่อนปล่อยแอป"
+    }
+  ],
+  "room_quiz": {
+    "light": "medium",
+    "ac_room": true,
+    "pets": true,
+    "forgetful": true
+  },
+  "room_match": [
+    {
+      "species": "spider",
+      "name_th": "เศรษฐีเรือนใน",
+      "emoji": "🌾",
+      "fit": 100
+    },
+    {
+      "species": "fern",
+      "name_th": "เฟิร์นบอสตัน",
+      "emoji": "🌱",
+      "fit": 50
+    },
+    {
+      "species": "pothos",
+      "name_th": "พลูด่าง",
+      "emoji": "🍃",
+      "fit": 40
+    }
+  ],
+  "log": [
+    {
+      "on": "2026-10-03",
+      "kind": "water",
+      "plant_id": "p1",
+      "on_time": false
+    },
+    {
+      "on": "2026-10-07",
+      "kind": "water",
+      "plant_id": "p2",
+      "on_time": true
+    },
+    {
+      "on": "2026-10-10",
+      "kind": "water",
+      "plant_id": "p3",
+      "on_time": true
+    },
+    {
+      "on": "2026-10-10",
+      "kind": "water",
+      "plant_id": "p1",
+      "on_time": false
+    },
+    {
+      "on": "2026-10-17",
+      "kind": "water",
+      "plant_id": "p1",
+      "on_time": false
+    },
+    {
+      "on": "2026-10-19",
+      "kind": "water",
+      "plant_id": "p2",
+      "on_time": true
+    },
+    {
+      "on": "2026-10-19",
+      "kind": "checkup",
+      "plant_id": "p1",
+      "top_cause": "overwater",
+      "delta": 0,
+      "score": 55
+    },
+    {
+      "on": "2026-10-19",
+      "kind": "checkup",
+      "plant_id": "p2",
+      "top_cause": "underwater",
+      "delta": 0,
+      "score": 70
+    },
+    {
+      "on": "2026-10-19",
+      "kind": "checkup",
+      "plant_id": "p3",
+      "top_cause": null,
+      "delta": 0,
+      "score": 100
+    }
+  ],
+  "wrapped": {
+    "month": "2026-10",
+    "waterings": 6,
+    "on_time_pct": 50,
+    "checkups": 3,
+    "top_cause": "overwater",
+    "top_cause_th": "รดน้ำมากไป",
+    "best_glow_plant": null,
+    "best_delta": 0
+  },
+  "care_days": [
+    "2026-10-15",
+    "2026-10-16",
+    "2026-10-17",
+    "2026-10-18",
+    "2026-10-19"
+  ],
+  "care_streak": 5,
+  "jungle_level": {
+    "xp": 105,
+    "level": 2,
+    "title_th": "สายเขียวฝึกหัด",
+    "next_at": 250
+  },
+  "local_store": {
+    "version": 1,
+    "settings": {
+      "reminder_time": "08:00",
+      "has_pets": true,
+      "ac_room": true,
+      "ai_vision": false
+    },
+    "plants": [
+      {
+        "id": "p1",
+        "nickname_th": "มอนมอน",
+        "species": "monstera",
+        "light": "low",
+        "pot": "ceramic_glazed",
+        "last_watered": "2026-10-17",
+        "added_on": "2026-08-02",
+        "spot_th": "มุมทีวี"
+      },
+      {
+        "id": "p2",
+        "nickname_th": "พลูพลู",
+        "species": "pothos",
+        "light": "medium",
+        "pot": "plastic",
+        "last_watered": "2026-10-07",
+        "added_on": "2026-07-15",
+        "spot_th": "ชั้นหนังสือ"
+      },
+      {
+        "id": "p3",
+        "nickname_th": "ลิ้นลิ้น",
+        "species": "snake",
+        "light": "medium",
+        "pot": "terracotta",
+        "last_watered": "2026-10-10",
+        "added_on": "2026-06-20",
+        "spot_th": "ข้างประตูระเบียง"
+      }
+    ],
+    "diagnoses": [
+      {
+        "engine": "leafdoc-engine/1.0.0",
+        "plant_id": "p1",
+        "species": "monstera",
+        "on": "2026-10-19",
+        "symptoms": [
+          "yellow_lower",
+          "brown_tips",
+          "drooping",
+          "leaf_drop"
+        ],
+        "symptoms_th": [
+          "ใบล่างเหลือง",
+          "ปลายใบไหม้น้ำตาล",
+          "ใบตก ห้อย",
+          "ใบร่วง"
+        ],
+        "health_score": 55,
+        "grade": "sick",
+        "grade_th": "ป่วยอยู่",
+        "emoji": "🤒",
+        "color": "#FBBF24",
+        "causes": [
+          {
+            "cause_id": "overwater",
+            "label_th": "รดน้ำมากไป",
+            "emoji": "💧",
+            "points": 11,
+            "confidence_pct": 50,
+            "evidence": [
+              "yellow_lower",
+              "drooping",
+              "leaf_drop"
+            ],
+            "explain_th": "ดินแฉะนาน รากหายใจไม่ออก ใบล่างเลยเหลืองก่อน"
+          },
+          {
+            "cause_id": "low_humidity",
+            "label_th": "อากาศแห้ง/แอร์",
+            "emoji": "🌬️",
+            "points": 6,
+            "confidence_pct": 27,
+            "evidence": [
+              "brown_tips"
+            ],
+            "explain_th": "ห้องแอร์ความชื้นต่ำ ปลายใบเลยไหม้"
+          },
+          {
+            "cause_id": "root_rot",
+            "label_th": "รากเน่า",
+            "emoji": "🦠",
+            "points": 5,
+            "confidence_pct": 23,
+            "evidence": [
+              "drooping"
+            ],
+            "explain_th": "น้ำขังจนเชื้อราเข้าราก ต้องรีบผ่าตัดราก"
+          }
+        ],
+        "top_cause": "overwater",
+        "disclaimer_th": "ผลนี้เป็นการคาดเดาจากอาการ ไม่ใช่การตรวจในแล็บ ต้นมีค่ามากให้ปรึกษาร้านต้นไม้"
+      },
+      {
+        "engine": "leafdoc-engine/1.0.0",
+        "plant_id": "p2",
+        "species": "pothos",
+        "on": "2026-10-19",
+        "symptoms": [
+          "crispy_edges",
+          "drooping",
+          "curling"
+        ],
+        "symptoms_th": [
+          "ขอบใบกรอบแห้ง",
+          "ใบตก ห้อย",
+          "ใบม้วน"
+        ],
+        "health_score": 70,
+        "grade": "fussy",
+        "grade_th": "เริ่มงอแง",
+        "emoji": "🌤️",
+        "color": "#A3E635",
+        "causes": [
+          {
+            "cause_id": "underwater",
+            "label_th": "ขาดน้ำ",
+            "emoji": "🏜️",
+            "points": 11,
+            "confidence_pct": 61,
+            "evidence": [
+              "crispy_edges",
+              "drooping",
+              "curling"
+            ],
+            "explain_th": "ดินแห้งนานเกิน ใบเลยกรอบและม้วนเก็บน้ำ"
+          },
+          {
+            "cause_id": "low_humidity",
+            "label_th": "อากาศแห้ง/แอร์",
+            "emoji": "🌬️",
+            "points": 4,
+            "confidence_pct": 22,
+            "evidence": [
+              "crispy_edges",
+              "curling"
+            ],
+            "explain_th": "ห้องแอร์ความชื้นต่ำ ปลายใบเลยไหม้"
+          },
+          {
+            "cause_id": "spider_mites",
+            "label_th": "ไรแดง",
+            "emoji": "🕷️",
+            "points": 3,
+            "confidence_pct": 17,
+            "evidence": [
+              "curling"
+            ],
+            "explain_th": "แมลงตัวจิ๋วดูดน้ำเลี้ยงใต้ใบ ชอบอากาศแห้ง"
+          }
+        ],
+        "top_cause": "underwater",
+        "disclaimer_th": "ผลนี้เป็นการคาดเดาจากอาการ ไม่ใช่การตรวจในแล็บ ต้นมีค่ามากให้ปรึกษาร้านต้นไม้"
+      },
+      {
+        "engine": "leafdoc-engine/1.0.0",
+        "plant_id": "p3",
+        "species": "snake",
+        "on": "2026-10-19",
+        "symptoms": [],
+        "symptoms_th": [],
+        "health_score": 100,
+        "grade": "thriving",
+        "grade_th": "แข็งแรงดี",
+        "emoji": "🌿",
+        "color": "#22C55E",
+        "causes": [],
+        "top_cause": null,
+        "disclaimer_th": "ผลนี้เป็นการคาดเดาจากอาการ ไม่ใช่การตรวจในแล็บ ต้นมีค่ามากให้ปรึกษาร้านต้นไม้"
+      }
+    ],
+    "plans": [
+      {
+        "plant_id": "p1",
+        "cause_id": "overwater",
+        "title_th": "แผนชุบชีวิต 7 วัน: รดน้ำมากไป",
+        "start_on": "2026-10-19",
+        "days": [
+          {
+            "day": 1,
+            "on": "2026-10-19",
+            "task_th": "หยุดรดน้ำ ยกกระถางเช็กว่ารูระบายน้ำไม่ตัน",
+            "done": false
+          },
+          {
+            "day": 2,
+            "on": "2026-10-20",
+            "task_th": "ย้ายไปที่แสงรำไร ลมผ่าน ให้ดินแห้งเร็วขึ้น",
+            "done": false
+          },
+          {
+            "day": 3,
+            "on": "2026-10-21",
+            "task_th": "ตัดใบเหลืองที่โคนออก (กรรไกรสะอาด)",
+            "done": false,
+            "extra_th": "เผื่อไว้ (อากาศแห้ง/แอร์): ย้ายให้ห่างช่องลมแอร์"
+          },
+          {
+            "day": 4,
+            "on": "2026-10-22",
+            "task_th": "จิ้มนิ้วเช็กดิน 2 ข้อ ยังแฉะ = ยังไม่รด",
+            "done": false
+          },
+          {
+            "day": 5,
+            "on": "2026-10-23",
+            "task_th": "ถ้าดินยังแฉะ เปลี่ยนเป็นดินโปร่ง (ดิน+เพอร์ไลต์+เปลือกสน)",
+            "done": false
+          },
+          {
+            "day": 6,
+            "on": "2026-10-24",
+            "task_th": "รดครั้งแรกเมื่อดินแห้ง 2 ข้อ รดจนไหลออกรู แล้วเทน้ำในจานรองทิ้ง",
+            "done": false
+          },
+          {
+            "day": 7,
+            "on": "2026-10-25",
+            "task_th": "ถ่ายรูปมุมเดิมเทียบวันแรก 📸",
+            "done": false
+          }
+        ],
+        "recheck_on": "2026-10-26"
+      }
+    ],
+    "log": [
+      {
+        "on": "2026-10-03",
+        "kind": "water",
+        "plant_id": "p1",
+        "on_time": false
+      },
+      {
+        "on": "2026-10-07",
+        "kind": "water",
+        "plant_id": "p2",
+        "on_time": true
+      },
+      {
+        "on": "2026-10-10",
+        "kind": "water",
+        "plant_id": "p3",
+        "on_time": true
+      },
+      {
+        "on": "2026-10-10",
+        "kind": "water",
+        "plant_id": "p1",
+        "on_time": false
+      },
+      {
+        "on": "2026-10-17",
+        "kind": "water",
+        "plant_id": "p1",
+        "on_time": false
+      },
+      {
+        "on": "2026-10-19",
+        "kind": "water",
+        "plant_id": "p2",
+        "on_time": true
+      },
+      {
+        "on": "2026-10-19",
+        "kind": "checkup",
+        "plant_id": "p1",
+        "top_cause": "overwater",
+        "delta": 0,
+        "score": 55
+      },
+      {
+        "on": "2026-10-19",
+        "kind": "checkup",
+        "plant_id": "p2",
+        "top_cause": "underwater",
+        "delta": 0,
+        "score": 70
+      },
+      {
+        "on": "2026-10-19",
+        "kind": "checkup",
+        "plant_id": "p3",
+        "top_cause": null,
+        "delta": 0,
+        "score": 100
+      }
+    ],
+    "care_days": [
+      "2026-10-15",
+      "2026-10-16",
+      "2026-10-17",
+      "2026-10-18",
+      "2026-10-19"
+    ]
+  },
+  "ai_examples": {
+    "vision_request": {
+      "image_b64_jpeg": "<base64 jpeg ตัดทิ้งในตัวอย่าง>",
+      "known_species": null
+    },
+    "vision_response": {
+      "species_guess": "monstera",
+      "species_confidence": 0.86,
+      "symptoms": [
+        "yellow_lower",
+        "drooping",
+        "brown_tips"
+      ],
+      "leaf_boxes": [
+        {
+          "x": 0.12,
+          "y": 0.58,
+          "w": 0.3,
+          "h": 0.25,
+          "symptom": "yellow_lower"
+        },
+        {
+          "x": 0.55,
+          "y": 0.2,
+          "w": 0.18,
+          "h": 0.15,
+          "symptom": "brown_tips"
+        }
+      ],
+      "note_th": "ใบล่างเหลือง 2 ใบ ปลายใบบนมีรอยไหม้เล็กน้อย"
+    },
+    "care_chat_response": {
+      "answer_th": "มอนมอนยังไม่ต้องรดนะ ดินยังแฉะอยู่ รออีกสัก 3–4 วันแล้วจิ้มนิ้วเช็กอีกที",
+      "never_change_score": true
+    }
+  },
+  "ui_copy_th": {
+    "home_title": "ต้นไม้ของฉัน",
+    "snap_cta": "📸 ส่องใบ ตรวจสุขภาพ",
+    "demo_cta": "ลองป่าคอนโดของบีม (ตัวอย่าง)",
+    "scanning": "หมอใบไม้กำลังตรวจ…",
+    "chips_title": "เห็นอาการไหนบ้าง? (แตะเลือก)",
+    "soil_q": "จิ้มนิ้วลงดิน 2 ข้อ รู้สึกยังไง?",
+    "soil": {
+      "wet": "แฉะ",
+      "moist": "ชื้น ๆ",
+      "dry": "แห้ง"
+    },
+    "score_title": "คะแนนสุขภาพ",
+    "causes_title": "น่าจะเป็นเพราะ…",
+    "plan_cta": "เริ่มแผนชุบชีวิต 7 วัน",
+    "water_title": "ตารางรดน้ำ",
+    "light_title": "วัดแสงมุมนี้",
+    "pet_title": "ปลอดภัยกับน้องแมว/หมาไหม",
+    "match_title": "ห้องฉันควรปลูกอะไร",
+    "glow_title": "Glow-up ต้นไม้",
+    "wrapped_title": "เดือนนี้ป่าฉันเป็นยังไง",
+    "remind_push": "{name} หิวน้ำแล้ว 💧",
+    "grades": {
+      "thriving": "แข็งแรงดี",
+      "fussy": "เริ่มงอแง",
+      "sick": "ป่วยอยู่",
+      "critical": "วิกฤต รีบช่วย"
+    },
+    "disclaimer": "ผลนี้คาดเดาจากอาการ ไม่ใช่การตรวจในแล็บ · ข้อมูลพืชมีพิษต่อสัตว์ต้องตรวจกับแหล่งทางการก่อนเชื่อ"
+  },
+  "reel_script": [
+    {
+      "t": "0-3s",
+      "shot": "ซูมใบมอนสเตอร่าเหลือง ห้อย มือจับใบร่วง",
+      "vo_th": "ต้นไม้ซื้อมาตายทุกต้น… ต้นนี้ก็กำลังจะไป",
+      "overlay_th": "ต้นที่ 4 แล้ว 😭"
+    },
+    {
+      "t": "3-8s",
+      "shot": "จอคอม: วาง Prompt A → โค้ดวิ่ง → แอปเขียว ๆ ขึ้น (ตัดเร็ว x8)",
+      "vo_th": "เลยให้ AI สร้างหมอต้นไม้ให้ซะเลย",
+      "overlay_th": "สร้างแอปใน 1 ชม."
+    },
+    {
+      "t": "8-14s",
+      "shot": "ถ่ายใบ → เส้นสแกนวิ่ง → กรอบรอบใบเหลือง → วงแหวนคะแนน 0→55 🤒 → ชิป 'รดน้ำมากไป 50%'",
+      "vo_th": "ถ่ายใบเดียว รู้เลย รดน้ำเยอะไป!",
+      "overlay_th": "สุขภาพ 55/100 🤒"
+    },
+    {
+      "t": "14-19s",
+      "shot": "แผนชุบชีวิต 7 วัน เลื่อนลง + ตารางรดน้ำ 'ทุก 12 วัน ไม่ใช่ทุก 7'",
+      "vo_th": "ให้แผน 7 วัน และบอกว่าควรรดทุกกี่วัน",
+      "overlay_th": "ฉันรดถี่ไปเกือบเท่าตัว 💧"
+    },
+    {
+      "t": "19-24s",
+      "shot": "สลับเร็ว: Light Meter มุมทีวี 640 → ข้างหน้าต่าง 2,560 · ป้าย ⚠️ แมว · ห้องฉันควรปลูกอะไร → เศรษฐีเรือนใน 100",
+      "vo_th": "วัดแสงได้ เช็กพิษกับแมวได้ แนะนำต้นที่เหมาะกับห้องได้",
+      "overlay_th": "7 ฟีเจอร์ในแอปเดียว"
+    },
+    {
+      "t": "24-30s",
+      "shot": "Glow-up card สไลด์ before/after 55 → 94 ใบใหม่ 2 ใบ",
+      "vo_th": "14 วันผ่านไป รอดแล้ว! คอมเมนต์ 'ต้นไม้' เดี๋ยวส่งแอปให้",
+      "overlay_th": "คอมเมนต์ 'ต้นไม้' รับแอปฟรี 🌿"
+    }
+  ],
+  "expect_locked": {
+    "today": "2026-10-19",
+    "season": "rainy",
+    "health_scores": {
+      "p1": 55,
+      "p2": 70,
+      "p3": 100
+    },
+    "grades": {
+      "p1": "sick",
+      "p2": "fussy",
+      "p3": "thriving"
+    },
+    "p1_causes": [
+      [
+        "overwater",
+        11,
+        50
+      ],
+      [
+        "low_humidity",
+        6,
+        27
+      ],
+      [
+        "root_rot",
+        5,
+        23
+      ]
+    ],
+    "p2_top": [
+      "underwater",
+      61
+    ],
+    "water": {
+      "p1": [
+        12,
+        "ok",
+        "2026-10-29"
+      ],
+      "p2": [
+        8,
+        "overdue",
+        "2026-10-15"
+      ],
+      "p3": [
+        13,
+        "ok",
+        "2026-10-23"
+      ]
+    },
+    "plan_title": "แผนชุบชีวิต 7 วัน: รดน้ำมากไป",
+    "plan_progress": {
+      "done": 3,
+      "of": 7,
+      "pct": 43
+    },
+    "recheck_on": "2026-10-26",
+    "glow": [
+      55,
+      94,
+      39,
+      14,
+      "14 วัน จาก 55 → 94 🌿"
+    ],
+    "light": [
+      [
+        640,
+        "medium"
+      ],
+      [
+        2560,
+        "bright_indirect"
+      ],
+      [
+        20480,
+        "direct"
+      ]
+    ],
+    "room_match": [
+      [
+        "spider",
+        100
+      ],
+      [
+        "fern",
+        50
+      ],
+      [
+        "pothos",
+        40
+      ]
+    ],
+    "pet_toxic": {
+      "monstera": true,
+      "pothos": true,
+      "snake": true
+    },
+    "wrapped": {
+      "waterings": 6,
+      "on_time_pct": 50,
+      "checkups": 3,
+      "top_cause": "overwater"
+    },
+    "care_streak": 5,
+    "jungle": [
+      105,
+      2,
+      "สายเขียวฝึกหัด"
+    ]
+  }
+}

@@ -1,0 +1,775 @@
+{
+  "meta": {
+    "app": "SplitBill Pro",
+    "channel": "AI วันละแอป",
+    "queue_day": 2,
+    "queue_total": 10,
+    "pack_date": "2026-09-29",
+    "timezone": "Asia/Bangkok",
+    "min_must_features": 5,
+    "hook_th": "สแกนสลิป → หารบิลตามเมนูจริง ใน 15 วินาที",
+    "tagline_th": "ถ่ายสลิป ลากเมนูให้เพื่อน แชร์ยอด LINE ได้เลย",
+    "sample_note": "ตัวเลขด้านล่างเป็นข้อมูลตัวอย่างสำหรับ fixture/codegen เท่านั้น ไม่ใช่เมตริกการใช้งานจริง"
+  },
+  "feature_checklist_example": {
+    "app": "SplitBill Pro",
+    "date": "2026-09-29",
+    "must_implemented_count": 5,
+    "features": [
+      {
+        "id": "receipt_scan_ocr",
+        "name_th": "Receipt Scan / OCR",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "ฮุคหลัก — โชว์สลิปเดโมแล้วรายการขึ้นครบ"
+      },
+      {
+        "id": "item_assign",
+        "name_th": "Item Assign",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "ลากเมนูให้ 3 คน + แชร์จานกลางคลิป"
+      },
+      {
+        "id": "tip_service_charge",
+        "name_th": "Tip & Service Charge",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "โชว์สไลเดอร์ทิป + เซอร์วิส 10%"
+      },
+      {
+        "id": "split_modes",
+        "name_th": "Split Modes",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": false,
+        "notes": "ต้องใช้ได้ในแอป — คลิปแรกโฟกัส by_item ก็พอ"
+      },
+      {
+        "id": "share_pack",
+        "name_th": "Share Pack",
+        "tier": "must",
+        "implemented": true,
+        "demo_in_reel": true,
+        "notes": "โชว์การ์ดสรุป + คัดลอกข้อความ LINE"
+      },
+      {
+        "id": "friends_presets",
+        "name_th": "Friends presets",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": "เสริมหลัง happy path"
+      },
+      {
+        "id": "bill_history",
+        "name_th": "Bill History",
+        "tier": "nice",
+        "implemented": true,
+        "demo_in_reel": false,
+        "notes": "มีในแอปแต่ไม่จำเป็นต้องโชว์ในคลิปแรก"
+      },
+      {
+        "id": "settle_tracker",
+        "name_th": "Settle tracker",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": null
+      },
+      {
+        "id": "multi_currency",
+        "name_th": "Multi-currency display",
+        "tier": "nice",
+        "implemented": false,
+        "demo_in_reel": false,
+        "notes": "THB primary พอสำหรับ MVP"
+      }
+    ]
+  },
+  "ui_copy_th": {
+    "home_headline": "หารบิลตามเมนูจริง ใน 15 วินาที",
+    "home_sub": "ถ่ายสลิป ลากเมนูให้เพื่อน คิดทิปและเซอร์วิส แล้วแชร์ยอด LINE ได้เลย",
+    "home_cta": "เริ่มหารบิล",
+    "home_cta_demo": "ใช้สลิปเดโม",
+    "feature_1": "สแกนสลิป",
+    "feature_2": "ลากเมนู",
+    "feature_3": "ทิป/เซอร์วิส",
+    "feature_4": "โหมดหาร",
+    "feature_5": "แชร์สรุป",
+    "scan_loading": "กำลังอ่านสลิป…",
+    "scan_done": "ได้รายการแล้ว — เพิ่มเพื่อนได้เลย",
+    "scan_fail": "อ่านสลิปไม่สำเร็จ ลองถ่ายใหม่หรือพิมพ์รายการเอง",
+    "demo_loaded": "โหลดสลิปเดโมแล้ว",
+    "add_person": "เพิ่มเพื่อน",
+    "assign_hint": "แตะเมนูแล้วเลือกคน หรือลากใส่การ์ดเพื่อน",
+    "assign_done": "จัดเมนูให้แล้ว",
+    "shared_dish": "แชร์จาน",
+    "tip_panel_title": "ทิปและเซอร์วิส",
+    "service_label": "เซอร์วิสชาร์จ",
+    "vat_label": "VAT 7%",
+    "split_mode_equal": "หารเท่ากัน",
+    "split_mode_by_item": "ตามเมนู",
+    "split_mode_custom": "ปรับเอง",
+    "summary_title": "สรุปยอดต่อคน",
+    "share_title": "แชร์บิล",
+    "share_copy_line": "คัดลอกข้อความ LINE",
+    "share_copied": "คัดลอกข้อความ LINE แล้ว",
+    "share_image": "บันทึกรูปการ์ด",
+    "share_native": "แชร์ต่อ",
+    "share_fail": "แชร์ไม่สำเร็จ ลองคัดลอกข้อความแทน",
+    "history_empty": "ยังไม่มีประวัติบิล — ลองหารมื้อแรกเลย",
+    "friends_empty": "ยังไม่มีเพื่อนโปรด เพิ่มชื่อตอนเปิดบิลได้",
+    "settle_paid": "จ่ายแล้ว",
+    "settle_unpaid": "ยังไม่จ่าย",
+    "footer_channel": "สร้างสำหรับช่อง AI วันละแอป",
+    "no_payment_note": "แอปนี้แชร์สรุปอย่างเดียว ไม่ใช่แอปโอนเงิน"
+  },
+  "ocr_result_example": {
+    "engine": "mock_demo",
+    "raw_text": "ครัวบ้านนา\n2026-09-28 19:42\nข้าวผัดปู 180\nสเต็กไก่ 220\nผัดไทยกุ้ง 120\nข้าวแซลมอน 160\nส้มตำไทย 80\nต้มยำทะเล 240\nน้ำมะพร้าวสมูทตี้ 80\nลาเต้เย็น 75\nชาเขียวเย็น 65\nโกโก้เย็น 70\nโรตีกล้วย 100\nSubtotal 1390\nService 10% 139\nVAT 7% 107.03\n",
+    "confidence": 0.96,
+    "ocr_ms": 820,
+    "merchant_name_th": "ครัวบ้านนา",
+    "receipt_at": "2026-09-28T19:42:00+07:00",
+    "items": [
+      {
+        "id": "i01",
+        "name_th": "ข้าวผัดปู",
+        "name_en": "Crab Fried Rice",
+        "unit_price": 180,
+        "qty": 1,
+        "line_total": 180,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i02",
+        "name_th": "สเต็กไก่",
+        "name_en": "Chicken Steak",
+        "unit_price": 220,
+        "qty": 1,
+        "line_total": 220,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i03",
+        "name_th": "ผัดไทยกุ้ง",
+        "name_en": "Pad Thai Prawn",
+        "unit_price": 120,
+        "qty": 1,
+        "line_total": 120,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i04",
+        "name_th": "ข้าวแซลมอน",
+        "name_en": "Salmon Rice Bowl",
+        "unit_price": 160,
+        "qty": 1,
+        "line_total": 160,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i05",
+        "name_th": "ส้มตำไทย",
+        "name_en": "Som Tum Thai",
+        "unit_price": 80,
+        "qty": 1,
+        "line_total": 80,
+        "note": "แชร์โต๊ะ",
+        "source": "demo"
+      },
+      {
+        "id": "i06",
+        "name_th": "ต้มยำทะเล",
+        "name_en": "Seafood Tom Yum",
+        "unit_price": 240,
+        "qty": 1,
+        "line_total": 240,
+        "note": "แชร์โต๊ะ",
+        "source": "demo"
+      },
+      {
+        "id": "i07",
+        "name_th": "น้ำมะพร้าวสมูทตี้",
+        "name_en": "Coconut Smoothie",
+        "unit_price": 80,
+        "qty": 1,
+        "line_total": 80,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i08",
+        "name_th": "ลาเต้เย็น",
+        "name_en": "Iced Latte",
+        "unit_price": 75,
+        "qty": 1,
+        "line_total": 75,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i09",
+        "name_th": "ชาเขียวเย็น",
+        "name_en": "Iced Green Tea",
+        "unit_price": 65,
+        "qty": 1,
+        "line_total": 65,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i10",
+        "name_th": "โกโก้เย็น",
+        "name_en": "Iced Cocoa",
+        "unit_price": 70,
+        "qty": 1,
+        "line_total": 70,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i11",
+        "name_th": "โรตีกล้วย",
+        "name_en": "Banana Roti",
+        "unit_price": 100,
+        "qty": 1,
+        "line_total": 100,
+        "note": "แชร์ของหวาน",
+        "source": "demo"
+      }
+    ],
+    "detected_service_percent": 10,
+    "detected_vat_percent": 7,
+    "detected_subtotal": 1390
+  },
+  "bill_state_example": {
+    "bill_id": "b7e2c4a1-9d3f-4e8b-a1c0-5f6d7e8a9b01",
+    "created_at": "2026-09-29T08:05:12+07:00",
+    "updated_at": "2026-09-29T08:07:40+07:00",
+    "status": "splitting",
+    "merchant_name_th": "ครัวบ้านนา",
+    "receipt_at": "2026-09-28T19:42:00+07:00",
+    "currency": "THB",
+    "people": [
+      {
+        "id": "p_muk",
+        "name": "มุก",
+        "color": "#F97316",
+        "avatar_emoji": "🍊",
+        "paid": false,
+        "custom_amount": null,
+        "is_preset": true
+      },
+      {
+        "id": "p_tel",
+        "name": "เติ้ล",
+        "color": "#0EA5E9",
+        "avatar_emoji": "🌊",
+        "paid": false,
+        "custom_amount": null,
+        "is_preset": true
+      },
+      {
+        "id": "p_non",
+        "name": "นนท์",
+        "color": "#8B5CF6",
+        "avatar_emoji": "💜",
+        "paid": true,
+        "custom_amount": null,
+        "is_preset": false
+      },
+      {
+        "id": "p_fon",
+        "name": "ฝน",
+        "color": "#F59E0B",
+        "avatar_emoji": "🌻",
+        "paid": false,
+        "custom_amount": null,
+        "is_preset": false
+      }
+    ],
+    "items": [
+      {
+        "id": "i01",
+        "name_th": "ข้าวผัดปู",
+        "name_en": "Crab Fried Rice",
+        "unit_price": 180,
+        "qty": 1,
+        "line_total": 180,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i02",
+        "name_th": "สเต็กไก่",
+        "name_en": "Chicken Steak",
+        "unit_price": 220,
+        "qty": 1,
+        "line_total": 220,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i03",
+        "name_th": "ผัดไทยกุ้ง",
+        "name_en": "Pad Thai Prawn",
+        "unit_price": 120,
+        "qty": 1,
+        "line_total": 120,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i04",
+        "name_th": "ข้าวแซลมอน",
+        "name_en": "Salmon Rice Bowl",
+        "unit_price": 160,
+        "qty": 1,
+        "line_total": 160,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i05",
+        "name_th": "ส้มตำไทย",
+        "name_en": "Som Tum Thai",
+        "unit_price": 80,
+        "qty": 1,
+        "line_total": 80,
+        "note": "แชร์โต๊ะ",
+        "source": "demo"
+      },
+      {
+        "id": "i06",
+        "name_th": "ต้มยำทะเล",
+        "name_en": "Seafood Tom Yum",
+        "unit_price": 240,
+        "qty": 1,
+        "line_total": 240,
+        "note": "แชร์โต๊ะ",
+        "source": "demo"
+      },
+      {
+        "id": "i07",
+        "name_th": "น้ำมะพร้าวสมูทตี้",
+        "name_en": "Coconut Smoothie",
+        "unit_price": 80,
+        "qty": 1,
+        "line_total": 80,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i08",
+        "name_th": "ลาเต้เย็น",
+        "name_en": "Iced Latte",
+        "unit_price": 75,
+        "qty": 1,
+        "line_total": 75,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i09",
+        "name_th": "ชาเขียวเย็น",
+        "name_en": "Iced Green Tea",
+        "unit_price": 65,
+        "qty": 1,
+        "line_total": 65,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i10",
+        "name_th": "โกโก้เย็น",
+        "name_en": "Iced Cocoa",
+        "unit_price": 70,
+        "qty": 1,
+        "line_total": 70,
+        "note": null,
+        "source": "demo"
+      },
+      {
+        "id": "i11",
+        "name_th": "โรตีกล้วย",
+        "name_en": "Banana Roti",
+        "unit_price": 100,
+        "qty": 1,
+        "line_total": 100,
+        "note": "แชร์ของหวาน",
+        "source": "demo"
+      }
+    ],
+    "assignments": [
+      { "item_id": "i01", "person_id": "p_muk", "share_weight": 1 },
+      { "item_id": "i02", "person_id": "p_tel", "share_weight": 1 },
+      { "item_id": "i03", "person_id": "p_non", "share_weight": 1 },
+      { "item_id": "i04", "person_id": "p_fon", "share_weight": 1 },
+      { "item_id": "i05", "person_id": "p_muk", "share_weight": 1 },
+      { "item_id": "i05", "person_id": "p_tel", "share_weight": 1 },
+      { "item_id": "i05", "person_id": "p_non", "share_weight": 1 },
+      { "item_id": "i05", "person_id": "p_fon", "share_weight": 1 },
+      { "item_id": "i06", "person_id": "p_muk", "share_weight": 1 },
+      { "item_id": "i06", "person_id": "p_tel", "share_weight": 1 },
+      { "item_id": "i06", "person_id": "p_non", "share_weight": 1 },
+      { "item_id": "i06", "person_id": "p_fon", "share_weight": 1 },
+      { "item_id": "i07", "person_id": "p_muk", "share_weight": 1 },
+      { "item_id": "i08", "person_id": "p_tel", "share_weight": 1 },
+      { "item_id": "i09", "person_id": "p_non", "share_weight": 1 },
+      { "item_id": "i10", "person_id": "p_fon", "share_weight": 1 },
+      { "item_id": "i11", "person_id": "p_muk", "share_weight": 1 },
+      { "item_id": "i11", "person_id": "p_fon", "share_weight": 1 }
+    ],
+    "tip": {
+      "mode": "percent",
+      "percent": 10,
+      "fixed_amount": null
+    },
+    "service_charge": {
+      "enabled": true,
+      "percent": 10,
+      "label_th": "เซอร์วิสชาร์จ"
+    },
+    "tax": {
+      "enabled": true,
+      "percent": 7,
+      "base": "food_plus_service",
+      "label_th": "VAT"
+    },
+    "split_mode": "by_item",
+    "ocr": null,
+    "error": null
+  },
+  "split_result_example": {
+    "bill_id": "b7e2c4a1-9d3f-4e8b-a1c0-5f6d7e8a9b01",
+    "mode": "by_item",
+    "per_person": [
+      {
+        "person_id": "p_muk",
+        "name": "มุก",
+        "color": "#F97316",
+        "food": 390,
+        "service": 39,
+        "vat": 30.03,
+        "tip": 39,
+        "total": 498.03,
+        "item_ids": ["i01", "i05", "i06", "i07", "i11"],
+        "paid": false
+      },
+      {
+        "person_id": "p_tel",
+        "name": "เติ้ล",
+        "color": "#0EA5E9",
+        "food": 375,
+        "service": 37.5,
+        "vat": 28.87,
+        "tip": 37.5,
+        "total": 478.87,
+        "item_ids": ["i02", "i05", "i06", "i08"],
+        "paid": false
+      },
+      {
+        "person_id": "p_non",
+        "name": "นนท์",
+        "color": "#8B5CF6",
+        "food": 265,
+        "service": 26.5,
+        "vat": 20.41,
+        "tip": 26.5,
+        "total": 338.41,
+        "item_ids": ["i03", "i05", "i06", "i09"],
+        "paid": true
+      },
+      {
+        "person_id": "p_fon",
+        "name": "ฝน",
+        "color": "#F59E0B",
+        "food": 360,
+        "service": 36,
+        "vat": 27.72,
+        "tip": 36,
+        "total": 459.72,
+        "item_ids": ["i04", "i05", "i06", "i10", "i11"],
+        "paid": false
+      }
+    ],
+    "totals": {
+      "food_subtotal": 1390,
+      "service": 139,
+      "vat": 107.03,
+      "tip": 139,
+      "grand_total": 1775.03,
+      "currency": "THB"
+    },
+    "rounding_note_th": "ปัดทศนิยม 2 ตำแหน่งแบบ half-up — ตัวอย่าง fixture สำหรับ codegen"
+  },
+  "assignment_legend_th": [
+    {
+      "item": "ข้าวผัดปู ฿180",
+      "who": "มุก"
+    },
+    {
+      "item": "สเต็กไก่ ฿220",
+      "who": "เติ้ล"
+    },
+    {
+      "item": "ผัดไทยกุ้ง ฿120",
+      "who": "นนท์"
+    },
+    {
+      "item": "ข้าวแซลมอน ฿160",
+      "who": "ฝน"
+    },
+    {
+      "item": "ส้มตำไทย ฿80",
+      "who": "แชร์ 4 คน (คนละ ฿20)"
+    },
+    {
+      "item": "ต้มยำทะเล ฿240",
+      "who": "แชร์ 4 คน (คนละ ฿60)"
+    },
+    {
+      "item": "น้ำมะพร้าวสมูทตี้ ฿80",
+      "who": "มุก"
+    },
+    {
+      "item": "ลาเต้เย็น ฿75",
+      "who": "เติ้ล"
+    },
+    {
+      "item": "ชาเขียวเย็น ฿65",
+      "who": "นนท์"
+    },
+    {
+      "item": "โกโก้เย็น ฿70",
+      "who": "ฝน"
+    },
+    {
+      "item": "โรตีกล้วย ฿100",
+      "who": "แชร์ มุก+ฝน (คนละ ฿50)"
+    }
+  ],
+  "share_payload_example": {
+    "bill_id": "b7e2c4a1-9d3f-4e8b-a1c0-5f6d7e8a9b01",
+    "title_th": "ครัวบ้านนา — สรุปหารบิล",
+    "line_text_th": "🧾 ครัวบ้านนา\nหารบิลด้วย SplitBill Pro\n\n🍊 มุก — ฿498.03\n🌊 เติ้ล — ฿478.87\n💜 นนท์ — ฿338.41 (จ่ายแล้ว)\n🌻 ฝน — ฿459.72\n\nอาหาร ฿1,390.00\nเซอร์วิส 10% ฿139.00\nVAT 7% ฿107.03\nทิป 10% ฿139.00\nรวม ฿1,775.03\n\nลิงก์สรุป: https://splitbill.pro/b/b7e2c4a1\n(แชร์สรุปอย่างเดียว ไม่ใช่ลิงก์โอนเงิน)",
+    "mock_link": "https://splitbill.pro/b/b7e2c4a1-9d3f-4e8b-a1c0-5f6d7e8a9b01",
+    "card_filename": "splitbill-b7e2c4a1-20260929-080740.png",
+    "include_qr": true,
+    "qr_value": "https://splitbill.pro/b/b7e2c4a1-9d3f-4e8b-a1c0-5f6d7e8a9b01"
+  },
+  "share_text_line_th": "🧾 ครัวบ้านนา\nหารบิลด้วย SplitBill Pro\n\n🍊 มุก — ฿498.03\n🌊 เติ้ล — ฿478.87\n💜 นนท์ — ฿338.41 (จ่ายแล้ว)\n🌻 ฝน — ฿459.72\n\nอาหาร ฿1,390.00\nเซอร์วิส 10% ฿139.00\nVAT 7% ฿107.03\nทิป 10% ฿139.00\nรวม ฿1,775.03\n\nลิงก์สรุป: https://splitbill.pro/b/b7e2c4a1\n(แชร์สรุปอย่างเดียว ไม่ใช่ลิงก์โอนเงิน)",
+  "local_store_example": {
+    "friends": [
+      {
+        "id": "f_muk",
+        "name": "มุก",
+        "color": "#F97316",
+        "avatar_emoji": "🍊"
+      },
+      {
+        "id": "f_tel",
+        "name": "เติ้ล",
+        "color": "#0EA5E9",
+        "avatar_emoji": "🌊"
+      },
+      {
+        "id": "f_non",
+        "name": "นนท์",
+        "color": "#8B5CF6",
+        "avatar_emoji": "💜"
+      },
+      {
+        "id": "f_fon",
+        "name": "ฝน",
+        "color": "#F59E0B",
+        "avatar_emoji": "🌻"
+      }
+    ],
+    "history": [
+      {
+        "id": "hist_01",
+        "created_at": "2026-09-29T08:07:40+07:00",
+        "merchant_name_th": "ครัวบ้านนา",
+        "grand_total": 1775.03,
+        "people_count": 4,
+        "thumb_emoji": "🍜",
+        "settled": false
+      },
+      {
+        "id": "hist_02",
+        "created_at": "2026-09-27T13:20:00+07:00",
+        "merchant_name_th": "คาเฟ่ริมน้ำ",
+        "grand_total": 642.5,
+        "people_count": 3,
+        "thumb_emoji": "☕",
+        "settled": true
+      }
+    ],
+    "settings": {
+      "locale": "th-TH",
+      "default_service_percent": 10,
+      "default_vat_percent": 7,
+      "default_tip_percent": 10,
+      "prefer_ocr_engine": "mock_demo"
+    }
+  },
+  "analytics_events_sample": [
+    {
+      "name": "app_open",
+      "ts": "2026-09-29T08:04:55+07:00",
+      "props": { "ref": "ig_bio" }
+    },
+    {
+      "name": "demo_receipt_load",
+      "ts": "2026-09-29T08:05:10+07:00",
+      "props": { "fixture": "demo-receipt" }
+    },
+    {
+      "name": "ocr_start",
+      "ts": "2026-09-29T08:05:11+07:00",
+      "props": { "engine": "mock_demo" }
+    },
+    {
+      "name": "ocr_success",
+      "ts": "2026-09-29T08:05:12+07:00",
+      "props": { "ms": 820, "engine": "mock_demo", "item_count": 11 }
+    },
+    {
+      "name": "person_add",
+      "ts": "2026-09-29T08:05:30+07:00",
+      "props": { "count": 4 }
+    },
+    {
+      "name": "item_assign",
+      "ts": "2026-09-29T08:06:05+07:00",
+      "props": { "item_id": "i05", "person_ids": ["p_muk", "p_tel", "p_non", "p_fon"] }
+    },
+    {
+      "name": "tip_adjust",
+      "ts": "2026-09-29T08:06:40+07:00",
+      "props": { "mode": "percent", "percent": 10 }
+    },
+    {
+      "name": "service_toggle",
+      "ts": "2026-09-29T08:06:42+07:00",
+      "props": { "enabled": true, "percent": 10 }
+    },
+    {
+      "name": "split_mode_change",
+      "ts": "2026-09-29T08:06:50+07:00",
+      "props": { "mode": "by_item" }
+    },
+    {
+      "name": "share_click",
+      "ts": "2026-09-29T08:07:30+07:00",
+      "props": { "bill_id": "b7e2c4a1-9d3f-4e8b-a1c0-5f6d7e8a9b01" }
+    },
+    {
+      "name": "copy_line_text",
+      "ts": "2026-09-29T08:07:35+07:00",
+      "props": { "channel": "line" }
+    },
+    {
+      "name": "share_success",
+      "ts": "2026-09-29T08:07:40+07:00",
+      "props": { "method": "native_or_copy" }
+    }
+  ],
+  "qa_test_matrix_example": [
+    {
+      "case": "โหลดสลิปเดโม",
+      "result": "pass",
+      "notes": "รายการ 11 บรรทัด ราคาตรง fixture"
+    },
+    {
+      "case": "ลากเมนู + แชร์ส้มตำ",
+      "result": "pass",
+      "notes": "ยอดต่อคนอัปเดตทันที"
+    },
+    {
+      "case": "service 10% + VAT 7% + tip 10%",
+      "result": "pass",
+      "notes": "grand_total = 1775.03 ตาม examples"
+    },
+    {
+      "case": "สลับ equal / by_item / custom",
+      "result": "pass",
+      "notes": "state ไม่พัง"
+    },
+    {
+      "case": "อัปโหลดสลิปยับ (ถ้าเปิด OCR จริง)",
+      "result": "major_risk",
+      "notes": "ต้องมีทางแก้รายการมือ — อย่าใช้เป็นฮุค Reel หลัก"
+    },
+    {
+      "case": "แชร์รูป+ข้อความ LINE บน iPhone",
+      "result": "pass",
+      "notes": "fallback คัดลอกถ้า share sheet ไม่ขึ้น"
+    }
+  ],
+  "reel_script_th": {
+    "duration_sec": 32,
+    "hook_th": "สแกนสลิป → หารบิลตามเมนูจริง ใน 15 วินาที",
+    "cta_th": "ลองฟรีที่ลิงก์ในไบโอ แล้วคอมเมนต์「หาร」",
+    "shots": [
+      {
+        "t": "0-3",
+        "on_screen": "สลิป → ได้เมนู",
+        "voice": "กินด้วยกันแล้วเลิกบวกเลขในแชท",
+        "visual": "สลิปรกในมือ → ตัดไปรายการเมนูขึ้นบนแอปเร็วๆ"
+      },
+      {
+        "t": "3-8",
+        "on_screen": "สร้างด้วย AI วันนี้",
+        "voice": "วันนี้ทำแอป SplitBill Pro สดๆ",
+        "visual": "มอนทาจสั้นหน้าจอ codegen หรือโลโก้แอปโทนครีม+teal"
+      },
+      {
+        "t": "8-14",
+        "on_screen": "สแกนสลิป",
+        "voice": "ถ่ายสลิป รายการขึ้นเอง",
+        "visual": "นิ้วกดใช้สลิปเดโม → progress → รายการเมนูครบ"
+      },
+      {
+        "t": "14-22",
+        "on_screen": "ลากเมนูให้เพื่อน",
+        "voice": "ลากเมนูให้เพื่อน คิดทิปให้ด้วย",
+        "visual": "ลากเมนูใส่การ์ดมุก เติ้ล นนท์ + เปิดทิป/เซอร์วิส ยอดกระโดด"
+      },
+      {
+        "t": "22-28",
+        "on_screen": "แชร์ยอด LINE",
+        "voice": "กดแชร์ได้ทั้งรูปและข้อความ",
+        "visual": "เปิด Share sheet โชว์การ์ดสีสวย + ปุ่มคัดลอก LINE"
+      },
+      {
+        "t": "28-32",
+        "on_screen": "ลิงก์ในไบโอ",
+        "voice": "ลองฟรีที่ลิงก์ในไบโอ แล้วคอมเมนต์ว่าหาร",
+        "visual": "การ์ดสรุปเต็มจอ + ข้อความ CTA「หาร」"
+      }
+    ]
+  },
+  "chat_post_one_liner_th": "สแกนสลิป → หารบิลตามเมนูจริง ใน 15 วินาที — ลากเมนูให้เพื่อน แชร์ยอด LINE ได้เลย",
+  "codegen_smoke_checklist": [
+    "npm run dev ขึ้นที่ localhost โดยไม่มี error แดง",
+    "ปุ่มใช้สลิปเดโมโหลดรายการครบ status → editing",
+    "เพิ่มคน 4 คนแล้วลาก/ติ๊กเมนูได้อย่างน้อย 3 รายการ",
+    "แชร์จาน (ส้มตำหรือต้มยำ) แล้วราคาหารเท่าในกลุ่ม",
+    "ทิป 10% + service 10% + VAT 7% ได้ grand_total ตาม examples (±0.01)",
+    "สลับ split mode ได้ 3 แบบ",
+    "export/share การ์ด PNG หรืออย่างน้อย canvas พรีวิว + คัดลอกข้อความ LINE",
+    "หน้าจอ 390px ไม่เลื่อนแนวนอนพัง",
+    "ไม่มีปุ่มโอนเงินหรือ PromptPay จริง"
+  ]
+}

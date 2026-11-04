@@ -1,0 +1,397 @@
+{
+ "Home": [
+  {
+   "name": "คอนโดแนน",
+   "rate_thb_per_kwh": 4.2,
+   "provider": "MEA",
+   "goal_thb": 1500,
+   "household_size": 2
+  }
+ ],
+ "Appliance": [
+  {
+   "id": "ac",
+   "name_th": "แอร์ห้องนอน",
+   "watt": 1000,
+   "hours_per_day": 8,
+   "category": "cooling"
+  },
+  {
+   "id": "fridge",
+   "name_th": "ตู้เย็น",
+   "kwh_per_day": 1.2,
+   "category": "kitchen"
+  },
+  {
+   "id": "heater",
+   "name_th": "เครื่องทำน้ำอุ่น",
+   "watt": 3500,
+   "hours_per_day": 0.25,
+   "category": "bath"
+  },
+  {
+   "id": "pc",
+   "name_th": "คอมเล่นเกม",
+   "watt": 200,
+   "hours_per_day": 5,
+   "category": "work"
+  },
+  {
+   "id": "tv",
+   "name_th": "ทีวี",
+   "watt": 100,
+   "hours_per_day": 4,
+   "category": "entertain"
+  },
+  {
+   "id": "rice",
+   "name_th": "หม้อหุงข้าว",
+   "watt": 600,
+   "hours_per_day": 0.5,
+   "category": "kitchen"
+  }
+ ],
+ "LabelExtract": [
+  {
+   "name_th": "แอร์ 12,000 BTU",
+   "watt": 1000,
+   "btu": 12000,
+   "energy_label_stars": 5,
+   "kwh_per_year": null,
+   "confidence": 0.88,
+   "needs_confirm": false
+  },
+  {
+   "name_th": "ตู้เย็น 2 ประตู",
+   "watt": null,
+   "btu": null,
+   "energy_label_stars": 5,
+   "kwh_per_year": 438,
+   "confidence": 0.81,
+   "needs_confirm": false
+  },
+  {
+   "name_th": "ไม่แน่ใจ",
+   "watt": null,
+   "btu": null,
+   "energy_label_stars": null,
+   "kwh_per_year": null,
+   "confidence": 0.22,
+   "needs_confirm": true
+  }
+ ],
+ "ApplianceCost": [
+  {
+   "appliance_id": "ac",
+   "kwh_month": 240.0,
+   "cost_month_thb": 1008.0,
+   "cost_year_thb": 12096.0,
+   "cost_per_hour_thb": 4.2,
+   "tier": "red"
+  },
+  {
+   "appliance_id": "fridge",
+   "kwh_month": 36.0,
+   "cost_month_thb": 151.2,
+   "cost_year_thb": 1814.4,
+   "cost_per_hour_thb": null,
+   "tier": "amber"
+  },
+  {
+   "appliance_id": "heater",
+   "kwh_month": 26.25,
+   "cost_month_thb": 110.25,
+   "cost_year_thb": 1323.0,
+   "cost_per_hour_thb": 14.7,
+   "tier": "amber"
+  },
+  {
+   "appliance_id": "pc",
+   "kwh_month": 30.0,
+   "cost_month_thb": 126.0,
+   "cost_year_thb": 1512.0,
+   "cost_per_hour_thb": 0.84,
+   "tier": "amber"
+  },
+  {
+   "appliance_id": "tv",
+   "kwh_month": 12.0,
+   "cost_month_thb": 50.4,
+   "cost_year_thb": 604.8,
+   "cost_per_hour_thb": 0.42,
+   "tier": "green"
+  },
+  {
+   "appliance_id": "rice",
+   "kwh_month": 9.0,
+   "cost_month_thb": 37.8,
+   "cost_year_thb": 453.6,
+   "cost_per_hour_thb": 2.52,
+   "tier": "green"
+  }
+ ],
+ "Bill": [
+  {
+   "month": "2026-10",
+   "units_kwh": 440,
+   "total_thb": 1848.0
+  },
+  {
+   "month": "2026-09",
+   "units_kwh": 512,
+   "total_thb": 2150.4
+  }
+ ],
+ "BillExtract": [
+  {
+   "units_kwh": 440,
+   "total_thb": 1848.0,
+   "period_th": "ต.ค. 2569",
+   "meter_prev": 9790,
+   "meter_now": 10230,
+   "confidence": 0.9,
+   "needs_confirm": false
+  },
+  {
+   "units_kwh": null,
+   "total_thb": 1848.0,
+   "period_th": null,
+   "meter_prev": null,
+   "meter_now": null,
+   "confidence": 0.45,
+   "needs_confirm": true
+  }
+ ],
+ "Breakdown": [
+  {
+   "bill_units": 440,
+   "bill_thb": 1848.0,
+   "effective_rate": 4.2,
+   "estimated_kwh": 353.25,
+   "unexplained_kwh": 86.75,
+   "unexplained_pct": 19.72,
+   "over_estimated": false,
+   "top_appliance_id": "ac",
+   "slices": [
+    {
+     "appliance_id": "ac",
+     "kwh": 240.0,
+     "pct": 54.55,
+     "thb": 1008.0
+    },
+    {
+     "appliance_id": "fridge",
+     "kwh": 36.0,
+     "pct": 8.18,
+     "thb": 151.2
+    },
+    {
+     "appliance_id": "pc",
+     "kwh": 30.0,
+     "pct": 6.82,
+     "thb": 126.0
+    },
+    {
+     "appliance_id": "heater",
+     "kwh": 26.25,
+     "pct": 5.97,
+     "thb": 110.25
+    },
+    {
+     "appliance_id": "tv",
+     "kwh": 12.0,
+     "pct": 2.73,
+     "thb": 50.4
+    },
+    {
+     "appliance_id": "rice",
+     "kwh": 9.0,
+     "pct": 2.05,
+     "thb": 37.8
+    }
+   ]
+  }
+ ],
+ "AcSim": [
+  {
+   "from_c": 25,
+   "to_c": 27,
+   "pct_per_deg": 0.1,
+   "base_cost_thb": 1008,
+   "new_cost_thb": 816.48,
+   "save_month_thb": 191.52,
+   "save_year_thb": 2298.24,
+   "assumption_th": "สมมติฐาน: ปรับ 1°C ประหยัด ~10% (ตั้งค่าได้)"
+  },
+  {
+   "from_c": 24,
+   "to_c": 26,
+   "pct_per_deg": 0.1,
+   "base_cost_thb": 1008,
+   "new_cost_thb": 816.48,
+   "save_month_thb": 191.52,
+   "save_year_thb": 2298.24,
+   "assumption_th": "สมมติฐาน: ปรับ 1°C ประหยัด ~10% (ตั้งค่าได้)"
+  }
+ ],
+ "StandbyItem": [
+  {
+   "id": "tv_sb",
+   "name_th": "ทีวีสแตนด์บาย",
+   "standby_watt": 5
+  },
+  {
+   "id": "pc_sb",
+   "name_th": "คอม+จอ ปิดไม่สุด",
+   "standby_watt": 6
+  },
+  {
+   "id": "charger",
+   "name_th": "ที่ชาร์จเสียบทิ้ง",
+   "standby_watt": 1
+  },
+  {
+   "id": "router",
+   "name_th": "เราเตอร์",
+   "standby_watt": 8
+  }
+ ],
+ "StandbyLeak": [
+  {
+   "total_standby_watt": 20,
+   "kwh_month": 14.4,
+   "cost_month_thb": 60.48,
+   "cost_year_thb": 725.76,
+   "worst_id": "router"
+  },
+  {
+   "total_standby_watt": 0,
+   "kwh_month": 0.0,
+   "cost_month_thb": 0.0,
+   "cost_year_thb": 0.0,
+   "worst_id": null
+  }
+ ],
+ "MeterReading": [
+  {
+   "date": "2026-10-01",
+   "meter_kwh": 10230.0
+  },
+  {
+   "date": "2026-10-08",
+   "meter_kwh": 10318.2
+  },
+  {
+   "date": "2026-10-15",
+   "meter_kwh": 10412.7
+  }
+ ],
+ "GoalTrack": [
+  {
+   "used_kwh": 182.7,
+   "days": 14,
+   "per_day_kwh": 13.05,
+   "projected_kwh": 404.55,
+   "projected_thb": 1699.11,
+   "goal_thb": 1500,
+   "budget_per_day_kwh": 11.52,
+   "on_track": false,
+   "gap_thb": 199.11
+  },
+  {
+   "used_kwh": 182.7,
+   "days": 14,
+   "per_day_kwh": 13.05,
+   "projected_kwh": 404.55,
+   "projected_thb": 1699.11,
+   "goal_thb": 1800,
+   "budget_per_day_kwh": 13.82,
+   "on_track": true,
+   "gap_thb": -100.89
+  }
+ ],
+ "RoomShare": [
+  {
+   "name": "แนน",
+   "kwh": 260,
+   "pct": 59.09,
+   "thb": 1092.0
+  },
+  {
+   "name": "ฟ้า",
+   "kwh": 180,
+   "pct": 40.91,
+   "thb": 756.0
+  }
+ ],
+ "SwapPayback": [
+  {
+   "save_month_thb": 302.4,
+   "payback_months": 52.58
+  },
+  {
+   "save_month_thb": 0.0,
+   "payback_months": null
+  }
+ ],
+ "Tip": [
+  {
+   "id": "t1",
+   "title_th": "แอร์ 25 → 27°C + พัดลมช่วย",
+   "save_month_thb": 191.52,
+   "effort": "easy",
+   "source": "ac_sim"
+  },
+  {
+   "id": "t2",
+   "title_th": "ถอดปลั๊ก/ปิดสวิตช์ปลั๊กพ่วงก่อนนอน",
+   "save_month_thb": 60.48,
+   "effort": "easy",
+   "source": "standby"
+  },
+  {
+   "id": "t3",
+   "title_th": "อาบน้ำอุ่นสั้นลง 15 → 10 นาที",
+   "save_month_thb": 36.75,
+   "effort": "medium",
+   "source": "habit"
+  }
+ ],
+ "ShareCard": [
+  {
+   "kind": "bill_pie",
+   "title_th": "ค่าไฟ ฿1,848 ไปไหน?",
+   "big_stat": "แอร์ 55%",
+   "sub_th": "฿1,008 จากแอร์ตัวเดียว",
+   "disclaimer_th": "ค่าประมาณจากวัตต์×ชั่วโมง×เรทที่ผู้ใช้ตั้งเอง ไม่ใช่บิลทางการ"
+  },
+  {
+   "kind": "ac_save",
+   "title_th": "แอร์ 25 → 27°C",
+   "big_stat": "−฿192/เดือน",
+   "sub_th": "≈ ฿2,298/ปี",
+   "disclaimer_th": "ค่าประมาณจากวัตต์×ชั่วโมง×เรทที่ผู้ใช้ตั้งเอง ไม่ใช่บิลทางการ"
+  },
+  {
+   "kind": "standby",
+   "title_th": "ไฟรั่วตอนปิดเครื่อง",
+   "big_stat": "฿726/ปี",
+   "sub_th": "เราเตอร์กินสุด 8W",
+   "disclaimer_th": "ค่าประมาณจากวัตต์×ชั่วโมง×เรทที่ผู้ใช้ตั้งเอง ไม่ใช่บิลทางการ"
+  },
+  {
+   "kind": "goal",
+   "title_th": "เป้า ฿1,500",
+   "big_stat": "เกิน ฿199",
+   "sub_th": "ต้องลดเหลือ 11.5 หน่วย/วัน",
+   "disclaimer_th": "ค่าประมาณจากวัตต์×ชั่วโมง×เรทที่ผู้ใช้ตั้งเอง ไม่ใช่บิลทางการ"
+  },
+  {
+   "kind": "split",
+   "title_th": "หารค่าไฟตามจริง",
+   "big_stat": "แนน ฿1,092 · ฟ้า ฿756",
+   "sub_th": "แทนหารครึ่ง ฿924",
+   "disclaimer_th": "ค่าประมาณจากวัตต์×ชั่วโมง×เรทที่ผู้ใช้ตั้งเอง ไม่ใช่บิลทางการ"
+  }
+ ]
+}

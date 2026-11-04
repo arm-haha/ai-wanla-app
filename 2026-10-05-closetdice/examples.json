@@ -1,0 +1,1606 @@
+{
+  "_meta": {
+    "app": "ClosetDice",
+    "date": "2026-10-05",
+    "timezone": "Asia/Bangkok",
+    "queue_day": "6/10",
+    "channel": "AI วันละแอป",
+    "note": "demo_closet ใช้ใน /public/demo/closet.json; dice_roll_example = ผลที่ต้องได้จาก seed 20261005 + rain/office"
+  },
+  "color_labels_th": {
+    "white": "ขาว",
+    "cream": "ครีม",
+    "beige": "เบจ",
+    "brown": "น้ำตาล",
+    "black": "ดำ",
+    "grey": "เทา",
+    "navy": "กรม",
+    "denim": "ยีนส์",
+    "blue": "น้ำเงิน",
+    "sky": "ฟ้า",
+    "green": "เขียว",
+    "sage": "เขียวเสจ",
+    "olive": "เขียวขี้ม้า",
+    "yellow": "เหลือง",
+    "butter": "เหลืองเนย",
+    "orange": "ส้ม",
+    "red": "แดง",
+    "pink": "ชมพู",
+    "lavender": "ลาเวนเดอร์",
+    "purple": "ม่วง",
+    "multi": "หลายสี"
+  },
+  "neutral_colors": [
+    "white",
+    "cream",
+    "beige",
+    "brown",
+    "black",
+    "grey",
+    "navy",
+    "denim"
+  ],
+  "occasion_formality": {
+    "office": [
+      2,
+      4
+    ],
+    "campus": [
+      0,
+      3
+    ],
+    "cafe": [
+      1,
+      3
+    ],
+    "date": [
+      2,
+      4
+    ],
+    "wedding": [
+      3,
+      5
+    ],
+    "gym": [
+      0,
+      1
+    ]
+  },
+  "demo_closet": [
+    {
+      "id": "top_01",
+      "name_th": "เชิ้ตครีมแขนยาว",
+      "category": "top",
+      "subcategory_th": "เสื้อเชิ้ต",
+      "colors": [
+        "cream"
+      ],
+      "pattern": "solid",
+      "warmth": 1,
+      "formality": 3,
+      "vibes": [
+        "minimal",
+        "smart"
+      ],
+      "rain_ok": true,
+      "image_key": "/demo/items/top_01.png",
+      "image_source": "demo",
+      "cutout_engine": "mock_demo",
+      "tag_source": "mock_demo",
+      "in_laundry": false,
+      "favorite": false,
+      "wear_count": 14,
+      "last_worn_at": "2026-09-29",
+      "price_thb": 590,
+      "created_at": "2026-09-20T21:10:00+07:00"
+    },
+    {
+      "id": "top_02",
+      "name_th": "ยืดขาวพื้น",
+      "category": "top",
+      "subcategory_th": "เสื้อยืด",
+      "colors": [
+        "white"
+      ],
+      "pattern": "solid",
+      "warmth": 0,
+      "formality": 1,
+      "vibes": [
+        "minimal"
+      ],
+      "rain_ok": true,
+      "image_key": "/demo/items/top_02.png",
+      "image_source": "demo",
+      "cutout_engine": "mock_demo",
+      "tag_source": "mock_demo",
+      "in_laundry": false,
+      "favorite": false,
+      "wear_count": 31,
+      "last_worn_at": "2026-10-03",
+      "price_thb": 199,
+      "created_at": "2026-09-20T21:10:00+07:00"
+    },
+    {
+      "id": "top_03",
+      "name_th": "ไหมพรมลาเวนเดอร์",
+      "category": "top",
+      "subcategory_th": "เสื้อไหมพรมแขนสั้น",
+      "colors": [
+        "lavender"
+      ],
+      "pattern": "solid",
+      "warmth": 1,
+      "formality": 2,
+      "vibes": [
+        "sweet"
+      ],
+      "rain_ok": false,
+      "image_key": "/demo/items/top_03.png",
+      "image_source": "demo",
+      "cutout_engine": "mock_demo",
+      "tag_source": "mock_demo",
+      "in_laundry": false,
+      "favorite": false,
+      "wear_count": 4,
+      "last_worn_at": "2026-08-21",
+      "price_thb": 450,
+      "created_at": "2026-09-20T21:10:00+07:00"
+    },
+    {
+      "id": "top_04",
+      "name_th": "โปโลกรม",
+      "category": "top",
+      "subcategory_th": "เสื้อโปโล",
+      "colors": [
+        "navy"
+      ],
+      "pattern": "solid",
+      "warmth": 1,
+      "formality": 2,
+      "vibes": [
+        "smart"
+      ],
+      "rain_ok": true,
+      "image_key": "/demo/items/top_04.png",
+      "image_source": "demo",
+      "cutout_engine": "mock_demo",
+      "tag_source": "mock_demo",
+      "in_laundry": false,
+      "favorite": false,
+      "wear_count": 9,
+      "last_worn_at": "2026-10-01",
+      "price_thb": 390,
+      "created_at": "2026-09-20T21:10:00+07:00"
+    },
+    {
+      "id": "bottom_01",
+      "name_th": "สแล็กกรม",
+      "category": "bottom",
+      "subcategory_th": "กางเกงสแล็ก",
+      "colors": [
+        "navy"
+      ],
+      "pattern": "solid",
+      "warmth": 1,
+      "formality": 3,
+      "vibes": [
+        "smart",
+        "minimal"
+      ],
+      "rain_ok": true,
+      "image_key": "/demo/items/bottom_01.png",
+      "image_source": "demo",
+      "cutout_engine": "mock_demo",
+      "tag_source": "mock_demo",
+      "in_laundry": false,
+      "favorite": false,
+      "wear_count": 18,
+      "last_worn_at": "2026-09-30",
+      "price_thb": 790,
+      "created_at": "2026-09-20T21:10:00+07:00"
+    },
+    {
+      "id": "bottom_02",
+      "name_th": "ยีนส์ทรงกระบอก",
+      "category": "bottom",
+      "subcategory_th": "กางเกงยีนส์",
+      "colors": [
+        "denim"
+      ],
+      "pattern": "solid",
+      "warmth": 2,
+      "formality": 1,
+      "vibes": [
+        "street",
+        "minimal"
+      ],
+      "rain_ok": true,
+      "image_key": "/demo/items/bottom_02.png",
+      "image_source": "demo",
+      "cutout_engine": "mock_demo",
+      "tag_source": "mock_demo",
+      "in_laundry": false,
+      "favorite": false,
+      "wear_count": 22,
+      "last_worn_at": "2026-10-03",
+      "price_thb": 990,
+      "created_at": "2026-09-20T21:10:00+07:00"
+    },
+    {
+      "id": "bottom_03",
+      "name_th": "พลีทเบจยาว",
+      "category": "bottom",
+      "subcategory_th": "กระโปรงพลีท",
+      "colors": [
+        "beige"
+      ],
+      "pattern": "solid",
+      "warmth": 1,
+      "formality": 2,
+      "vibes": [
+        "sweet",
+        "minimal"
+      ],
+      "rain_ok": true,
+      "image_key": "/demo/items/bottom_03.png",
+      "image_source": "demo",
+      "cutout_engine": "mock_demo",
+      "tag_source": "mock_demo",
+      "in_laundry": false,
+      "favorite": false,
+      "wear_count": 7,
+      "last_worn_at": "2026-09-25",
+      "price_thb": 520,
+      "created_at": "2026-09-20T21:10:00+07:00"
+    },
+    {
+      "id": "dress_01",
+      "name_th": "เดรสเชิ้ตเขียวเสจ",
+      "category": "dress",
+      "subcategory_th": "เดรสเชิ้ต",
+      "colors": [
+        "sage"
+      ],
+      "pattern": "solid",
+      "warmth": 1,
+      "formality": 3,
+      "vibes": [
+        "minimal"
+      ],
+      "rain_ok": true,
+      "image_key": "/demo/items/dress_01.png",
+      "image_source": "demo",
+      "cutout_engine": "mock_demo",
+      "tag_source": "mock_demo",
+      "in_laundry": false,
+      "favorite": false,
+      "wear_count": 5,
+      "last_worn_at": "2026-09-12",
+      "price_thb": 890,
+      "created_at": "2026-09-20T21:10:00+07:00"
+    },
+    {
+      "id": "outer_01",
+      "name_th": "เบลเซอร์ดำบาง",
+      "category": "outer",
+      "subcategory_th": "เบลเซอร์",
+      "colors": [
+        "black"
+      ],
+      "pattern": "solid",
+      "warmth": 2,
+      "formality": 4,
+      "vibes": [
+        "smart"
+      ],
+      "rain_ok": false,
+      "image_key": "/demo/items/outer_01.png",
+      "image_source": "demo",
+      "cutout_engine": "mock_demo",
+      "tag_source": "mock_demo",
+      "in_laundry": false,
+      "favorite": false,
+      "wear_count": 6,
+      "last_worn_at": "2026-09-18",
+      "price_thb": 1290,
+      "created_at": "2026-09-20T21:10:00+07:00"
+    },
+    {
+      "id": "outer_02",
+      "name_th": "แจ็กเก็ตกันฝนสีเนย",
+      "category": "outer",
+      "subcategory_th": "แจ็กเก็ตกันฝนทรงเชิ้ต",
+      "colors": [
+        "butter"
+      ],
+      "pattern": "solid",
+      "warmth": 1,
+      "formality": 2,
+      "vibes": [
+        "street",
+        "minimal"
+      ],
+      "rain_ok": true,
+      "image_key": "/demo/items/outer_02.png",
+      "image_source": "demo",
+      "cutout_engine": "mock_demo",
+      "tag_source": "mock_demo",
+      "in_laundry": false,
+      "favorite": false,
+      "wear_count": 3,
+      "last_worn_at": "2026-08-26",
+      "price_thb": 690,
+      "created_at": "2026-09-20T21:10:00+07:00"
+    },
+    {
+      "id": "shoes_01",
+      "name_th": "โลฟเฟอร์น้ำตาล",
+      "category": "shoes",
+      "subcategory_th": "โลฟเฟอร์หนัง",
+      "colors": [
+        "brown"
+      ],
+      "pattern": "solid",
+      "warmth": 1,
+      "formality": 3,
+      "vibes": [
+        "smart",
+        "vintage"
+      ],
+      "rain_ok": false,
+      "image_key": "/demo/items/shoes_01.png",
+      "image_source": "demo",
+      "cutout_engine": "mock_demo",
+      "tag_source": "mock_demo",
+      "in_laundry": false,
+      "favorite": false,
+      "wear_count": 20,
+      "last_worn_at": "2026-10-01",
+      "price_thb": 1490,
+      "created_at": "2026-09-20T21:10:00+07:00"
+    },
+    {
+      "id": "shoes_02",
+      "name_th": "ผ้าใบขาว",
+      "category": "shoes",
+      "subcategory_th": "รองเท้าผ้าใบ",
+      "colors": [
+        "white"
+      ],
+      "pattern": "solid",
+      "warmth": 1,
+      "formality": 1,
+      "vibes": [
+        "minimal",
+        "street"
+      ],
+      "rain_ok": false,
+      "image_key": "/demo/items/shoes_02.png",
+      "image_source": "demo",
+      "cutout_engine": "mock_demo",
+      "tag_source": "mock_demo",
+      "in_laundry": false,
+      "favorite": false,
+      "wear_count": 35,
+      "last_worn_at": "2026-10-03",
+      "price_thb": 1290,
+      "created_at": "2026-09-20T21:10:00+07:00"
+    },
+    {
+      "id": "shoes_03",
+      "name_th": "รัดส้นยางดำ",
+      "category": "shoes",
+      "subcategory_th": "รองเท้ารัดส้นยาง",
+      "colors": [
+        "black"
+      ],
+      "pattern": "solid",
+      "warmth": 0,
+      "formality": 2,
+      "vibes": [
+        "minimal"
+      ],
+      "rain_ok": true,
+      "image_key": "/demo/items/shoes_03.png",
+      "image_source": "demo",
+      "cutout_engine": "mock_demo",
+      "tag_source": "mock_demo",
+      "in_laundry": false,
+      "favorite": false,
+      "wear_count": 11,
+      "last_worn_at": "2026-09-27",
+      "price_thb": 590,
+      "created_at": "2026-09-20T21:10:00+07:00"
+    },
+    {
+      "id": "acc_01",
+      "name_th": "กระเป๋าผ้าครีม",
+      "category": "accessory",
+      "subcategory_th": "กระเป๋าผ้า",
+      "colors": [
+        "cream"
+      ],
+      "pattern": "solid",
+      "warmth": 0,
+      "formality": 2,
+      "vibes": [
+        "minimal"
+      ],
+      "rain_ok": true,
+      "image_key": "/demo/items/acc_01.png",
+      "image_source": "demo",
+      "cutout_engine": "mock_demo",
+      "tag_source": "mock_demo",
+      "in_laundry": false,
+      "favorite": false,
+      "wear_count": 25,
+      "last_worn_at": "2026-10-02",
+      "price_thb": 250,
+      "created_at": "2026-09-20T21:10:00+07:00"
+    }
+  ],
+  "tag_result_example": {
+    "category": "top",
+    "subcategory_th": "เสื้อเชิ้ต",
+    "name_th": "เชิ้ตครีมแขนยาว",
+    "colors": [
+      "cream",
+      "white"
+    ],
+    "pattern": "solid",
+    "warmth": 1,
+    "formality": 3,
+    "vibes": [
+      "minimal",
+      "smart"
+    ],
+    "rain_ok": true,
+    "confidence": 0.86,
+    "dominant_rgb": [
+      [
+        238,
+        228,
+        208
+      ],
+      [
+        250,
+        248,
+        243
+      ],
+      [
+        120,
+        110,
+        96
+      ]
+    ],
+    "engine": "mock_demo",
+    "latency_ms": 820
+  },
+  "dice_roll_example": {
+    "roll_id": "roll_20261005_075812_a1",
+    "rolled_at": "2026-10-05T07:58:12+07:00",
+    "filters": {
+      "weather": "rain",
+      "occasion": "office",
+      "vibe": null,
+      "force_forgotten": false,
+      "seed": 20261005,
+      "temp_c": 31
+    },
+    "locks": {},
+    "status": "ok",
+    "candidates_considered": 1680,
+    "candidates_valid": 96,
+    "suggestion_th": null,
+    "reroll_index": 0,
+    "outfit": {
+      "signature": "acc_01+bottom_01+outer_02+shoes_03+top_01",
+      "pieces": [
+        {
+          "slot": "top",
+          "item_id": "top_01",
+          "locked": false,
+          "layout": {
+            "x": 90,
+            "y": 80,
+            "w": 520,
+            "rotate_deg": -4,
+            "z": 2
+          }
+        },
+        {
+          "slot": "outer",
+          "item_id": "outer_02",
+          "locked": false,
+          "layout": {
+            "x": 520,
+            "y": 60,
+            "w": 420,
+            "rotate_deg": 5,
+            "z": 1
+          }
+        },
+        {
+          "slot": "bottom",
+          "item_id": "bottom_01",
+          "locked": false,
+          "layout": {
+            "x": 300,
+            "y": 520,
+            "w": 420,
+            "rotate_deg": 3,
+            "z": 3
+          }
+        },
+        {
+          "slot": "shoes",
+          "item_id": "shoes_03",
+          "locked": false,
+          "layout": {
+            "x": 640,
+            "y": 980,
+            "w": 300,
+            "rotate_deg": -6,
+            "z": 4
+          }
+        },
+        {
+          "slot": "accessory",
+          "item_id": "acc_01",
+          "locked": false,
+          "layout": {
+            "x": 60,
+            "y": 900,
+            "w": 260,
+            "rotate_deg": 6,
+            "z": 4
+          }
+        }
+      ],
+      "score": 86,
+      "reasons_th": [
+        "ครีม + กรม = คู่ปลอดภัยสายออฟฟิศ",
+        "แจ็กเก็ตสีเนยเป็นจุดเด่นจุดเดียว ไม่แย่งกัน",
+        "รองเท้ายางกันฝน ไม่ต้องห่วงน้ำขัง"
+      ],
+      "look_name_th": "Minimal ครีม-กรม วันฝนพรำ ☔",
+      "warning_th": null
+    }
+  },
+  "reroll_with_lock_example": {
+    "roll_id": "roll_20261005_075820_a2",
+    "rolled_at": "2026-10-05T07:58:20+07:00",
+    "filters": {
+      "weather": "rain",
+      "occasion": "office",
+      "vibe": null,
+      "force_forgotten": false,
+      "seed": 20261006,
+      "temp_c": 31
+    },
+    "locks": {
+      "top": "top_01"
+    },
+    "status": "ok",
+    "candidates_considered": 120,
+    "candidates_valid": 14,
+    "suggestion_th": null,
+    "reroll_index": 1,
+    "outfit": {
+      "signature": "bottom_03+shoes_03+top_01",
+      "pieces": [
+        {
+          "slot": "top",
+          "item_id": "top_01",
+          "locked": true,
+          "layout": {
+            "x": 120,
+            "y": 90,
+            "w": 540,
+            "rotate_deg": -4,
+            "z": 2
+          }
+        },
+        {
+          "slot": "bottom",
+          "item_id": "bottom_03",
+          "locked": false,
+          "layout": {
+            "x": 280,
+            "y": 520,
+            "w": 440,
+            "rotate_deg": 2,
+            "z": 3
+          }
+        },
+        {
+          "slot": "shoes",
+          "item_id": "shoes_03",
+          "locked": false,
+          "layout": {
+            "x": 640,
+            "y": 990,
+            "w": 300,
+            "rotate_deg": -5,
+            "z": 4
+          }
+        }
+      ],
+      "score": 80,
+      "reasons_th": [
+        "ครีม + เบจ + ดำ โทนเอิร์ธนุ่มๆ",
+        "สาย minimal ทั้งชุด"
+      ],
+      "look_name_th": "Soft ครีม-เบจ ☁️",
+      "warning_th": null
+    }
+  },
+  "no_valid_outfit_example": {
+    "roll_id": "roll_20261005_080102_b1",
+    "rolled_at": "2026-10-05T08:01:02+07:00",
+    "filters": {
+      "weather": "rain",
+      "occasion": "wedding",
+      "vibe": null,
+      "force_forgotten": false,
+      "seed": 42,
+      "temp_c": 31
+    },
+    "locks": {},
+    "status": "no_valid_outfit",
+    "candidates_considered": 1680,
+    "candidates_valid": 0,
+    "suggestion_th": "ตู้ยังไม่มีรองเท้าทางการที่กันฝนได้ ลองเพิ่ม 1 คู่ หรือกด「ผ่อนกฎฝน」",
+    "reroll_index": 0
+  },
+  "wear_log_example": [
+    {
+      "date": "2026-09-29",
+      "outfit_signature": "bottom_01+shoes_01+top_01",
+      "piece_ids": [
+        "top_01",
+        "bottom_01",
+        "shoes_01"
+      ],
+      "look_name_th": "Smart ครีม-กรม 💼",
+      "weather": "hot",
+      "occasion": "office",
+      "score": 84,
+      "from_roll_id": null
+    },
+    {
+      "date": "2026-09-30",
+      "outfit_signature": "bottom_01+outer_01+shoes_01+top_02",
+      "piece_ids": [
+        "top_02",
+        "bottom_01",
+        "outer_01",
+        "shoes_01"
+      ],
+      "look_name_th": "ขาว-ดำ-กรม ห้องแอร์ ❄️",
+      "weather": "ac_cold",
+      "occasion": "office",
+      "score": 82,
+      "from_roll_id": null
+    },
+    {
+      "date": "2026-10-01",
+      "outfit_signature": "bottom_02+shoes_01+top_04",
+      "piece_ids": [
+        "top_04",
+        "bottom_02",
+        "shoes_01"
+      ],
+      "look_name_th": "Smart casual กรม-ยีนส์",
+      "weather": "hot",
+      "occasion": "office",
+      "score": 78,
+      "from_roll_id": null
+    },
+    {
+      "date": "2026-10-02",
+      "outfit_signature": "acc_01+bottom_03+shoes_02+top_02",
+      "piece_ids": [
+        "top_02",
+        "bottom_03",
+        "shoes_02",
+        "acc_01"
+      ],
+      "look_name_th": "Minimal ขาว-เบจ ☀️",
+      "weather": "hot",
+      "occasion": "office",
+      "score": 81,
+      "from_roll_id": null
+    },
+    {
+      "date": "2026-10-03",
+      "outfit_signature": "bottom_02+shoes_02+top_02",
+      "piece_ids": [
+        "top_02",
+        "bottom_02",
+        "shoes_02"
+      ],
+      "look_name_th": "เสาร์ชิล ขาว-ยีนส์",
+      "weather": "hot_extreme",
+      "occasion": "cafe",
+      "score": 79,
+      "from_roll_id": null
+    }
+  ],
+  "share_card_example": {
+    "card": {
+      "format": "story_1080x1920",
+      "background": "lavender_gradient",
+      "date_label_th": "จันทร์ 5 ต.ค. 2569",
+      "weather_label_th": "🌧 ฝนพรำ 31°",
+      "occasion_label_th": "💼 ออฟฟิศ",
+      "look_name_th": "Minimal ครีม-กรม วันฝนพรำ ☔",
+      "score": 86,
+      "piece_ids": [
+        "top_01",
+        "outer_02",
+        "bottom_01",
+        "shoes_03",
+        "acc_01"
+      ],
+      "footer": "ทอยด้วย ClosetDice · AI วันละแอป",
+      "show_disclaimer": true
+    },
+    "caption_th": "วันนี้ให้ลูกเต๋าเลือกชุดให้ 🎲 ได้ลุค「Minimal ครีม-กรม วันฝนพรำ ☔」คะแนนเข้ากัน 86/100 ใครยืนหน้าตู้ทุกเช้าลองทอยดู ลิงก์ในไบโอ",
+    "hashtags": [
+      "#ClosetDice",
+      "#AIวันละแอป",
+      "#OOTD",
+      "#แต่งตัวไปทำงาน",
+      "#ไม่มีอะไรใส่"
+    ],
+    "filename": "closetdice-20261005-075830.png",
+    "result": "shared",
+    "caption_template": "วันนี้ให้ลูกเต๋าเลือกชุดให้ 🎲 ได้ลุค「{look_name_th}」คะแนนเข้ากัน {score}/100 ใครยืนหน้าตู้ทุกเช้าลองทอยดู ลิงก์ในไบโอ"
+  },
+  "local_store_example": {
+    "version": 1,
+    "owner_name": "ฟ้า",
+    "items": [
+      {
+        "id": "top_01",
+        "name_th": "เชิ้ตครีมแขนยาว",
+        "category": "top",
+        "subcategory_th": "เสื้อเชิ้ต",
+        "colors": [
+          "cream"
+        ],
+        "pattern": "solid",
+        "warmth": 1,
+        "formality": 3,
+        "vibes": [
+          "minimal",
+          "smart"
+        ],
+        "rain_ok": true,
+        "image_key": "/demo/items/top_01.png",
+        "image_source": "demo",
+        "cutout_engine": "mock_demo",
+        "tag_source": "mock_demo",
+        "in_laundry": false,
+        "favorite": false,
+        "wear_count": 14,
+        "last_worn_at": "2026-09-29",
+        "price_thb": 590,
+        "created_at": "2026-09-20T21:10:00+07:00"
+      },
+      {
+        "id": "top_02",
+        "name_th": "ยืดขาวพื้น",
+        "category": "top",
+        "subcategory_th": "เสื้อยืด",
+        "colors": [
+          "white"
+        ],
+        "pattern": "solid",
+        "warmth": 0,
+        "formality": 1,
+        "vibes": [
+          "minimal"
+        ],
+        "rain_ok": true,
+        "image_key": "/demo/items/top_02.png",
+        "image_source": "demo",
+        "cutout_engine": "mock_demo",
+        "tag_source": "mock_demo",
+        "in_laundry": false,
+        "favorite": false,
+        "wear_count": 31,
+        "last_worn_at": "2026-10-03",
+        "price_thb": 199,
+        "created_at": "2026-09-20T21:10:00+07:00"
+      },
+      {
+        "id": "top_03",
+        "name_th": "ไหมพรมลาเวนเดอร์",
+        "category": "top",
+        "subcategory_th": "เสื้อไหมพรมแขนสั้น",
+        "colors": [
+          "lavender"
+        ],
+        "pattern": "solid",
+        "warmth": 1,
+        "formality": 2,
+        "vibes": [
+          "sweet"
+        ],
+        "rain_ok": false,
+        "image_key": "/demo/items/top_03.png",
+        "image_source": "demo",
+        "cutout_engine": "mock_demo",
+        "tag_source": "mock_demo",
+        "in_laundry": false,
+        "favorite": false,
+        "wear_count": 4,
+        "last_worn_at": "2026-08-21",
+        "price_thb": 450,
+        "created_at": "2026-09-20T21:10:00+07:00"
+      },
+      {
+        "id": "top_04",
+        "name_th": "โปโลกรม",
+        "category": "top",
+        "subcategory_th": "เสื้อโปโล",
+        "colors": [
+          "navy"
+        ],
+        "pattern": "solid",
+        "warmth": 1,
+        "formality": 2,
+        "vibes": [
+          "smart"
+        ],
+        "rain_ok": true,
+        "image_key": "/demo/items/top_04.png",
+        "image_source": "demo",
+        "cutout_engine": "mock_demo",
+        "tag_source": "mock_demo",
+        "in_laundry": false,
+        "favorite": false,
+        "wear_count": 9,
+        "last_worn_at": "2026-10-01",
+        "price_thb": 390,
+        "created_at": "2026-09-20T21:10:00+07:00"
+      },
+      {
+        "id": "bottom_01",
+        "name_th": "สแล็กกรม",
+        "category": "bottom",
+        "subcategory_th": "กางเกงสแล็ก",
+        "colors": [
+          "navy"
+        ],
+        "pattern": "solid",
+        "warmth": 1,
+        "formality": 3,
+        "vibes": [
+          "smart",
+          "minimal"
+        ],
+        "rain_ok": true,
+        "image_key": "/demo/items/bottom_01.png",
+        "image_source": "demo",
+        "cutout_engine": "mock_demo",
+        "tag_source": "mock_demo",
+        "in_laundry": false,
+        "favorite": false,
+        "wear_count": 18,
+        "last_worn_at": "2026-09-30",
+        "price_thb": 790,
+        "created_at": "2026-09-20T21:10:00+07:00"
+      },
+      {
+        "id": "bottom_02",
+        "name_th": "ยีนส์ทรงกระบอก",
+        "category": "bottom",
+        "subcategory_th": "กางเกงยีนส์",
+        "colors": [
+          "denim"
+        ],
+        "pattern": "solid",
+        "warmth": 2,
+        "formality": 1,
+        "vibes": [
+          "street",
+          "minimal"
+        ],
+        "rain_ok": true,
+        "image_key": "/demo/items/bottom_02.png",
+        "image_source": "demo",
+        "cutout_engine": "mock_demo",
+        "tag_source": "mock_demo",
+        "in_laundry": false,
+        "favorite": false,
+        "wear_count": 22,
+        "last_worn_at": "2026-10-03",
+        "price_thb": 990,
+        "created_at": "2026-09-20T21:10:00+07:00"
+      },
+      {
+        "id": "bottom_03",
+        "name_th": "พลีทเบจยาว",
+        "category": "bottom",
+        "subcategory_th": "กระโปรงพลีท",
+        "colors": [
+          "beige"
+        ],
+        "pattern": "solid",
+        "warmth": 1,
+        "formality": 2,
+        "vibes": [
+          "sweet",
+          "minimal"
+        ],
+        "rain_ok": true,
+        "image_key": "/demo/items/bottom_03.png",
+        "image_source": "demo",
+        "cutout_engine": "mock_demo",
+        "tag_source": "mock_demo",
+        "in_laundry": false,
+        "favorite": false,
+        "wear_count": 7,
+        "last_worn_at": "2026-09-25",
+        "price_thb": 520,
+        "created_at": "2026-09-20T21:10:00+07:00"
+      },
+      {
+        "id": "dress_01",
+        "name_th": "เดรสเชิ้ตเขียวเสจ",
+        "category": "dress",
+        "subcategory_th": "เดรสเชิ้ต",
+        "colors": [
+          "sage"
+        ],
+        "pattern": "solid",
+        "warmth": 1,
+        "formality": 3,
+        "vibes": [
+          "minimal"
+        ],
+        "rain_ok": true,
+        "image_key": "/demo/items/dress_01.png",
+        "image_source": "demo",
+        "cutout_engine": "mock_demo",
+        "tag_source": "mock_demo",
+        "in_laundry": false,
+        "favorite": false,
+        "wear_count": 5,
+        "last_worn_at": "2026-09-12",
+        "price_thb": 890,
+        "created_at": "2026-09-20T21:10:00+07:00"
+      },
+      {
+        "id": "outer_01",
+        "name_th": "เบลเซอร์ดำบาง",
+        "category": "outer",
+        "subcategory_th": "เบลเซอร์",
+        "colors": [
+          "black"
+        ],
+        "pattern": "solid",
+        "warmth": 2,
+        "formality": 4,
+        "vibes": [
+          "smart"
+        ],
+        "rain_ok": false,
+        "image_key": "/demo/items/outer_01.png",
+        "image_source": "demo",
+        "cutout_engine": "mock_demo",
+        "tag_source": "mock_demo",
+        "in_laundry": false,
+        "favorite": false,
+        "wear_count": 6,
+        "last_worn_at": "2026-09-18",
+        "price_thb": 1290,
+        "created_at": "2026-09-20T21:10:00+07:00"
+      },
+      {
+        "id": "outer_02",
+        "name_th": "แจ็กเก็ตกันฝนสีเนย",
+        "category": "outer",
+        "subcategory_th": "แจ็กเก็ตกันฝนทรงเชิ้ต",
+        "colors": [
+          "butter"
+        ],
+        "pattern": "solid",
+        "warmth": 1,
+        "formality": 2,
+        "vibes": [
+          "street",
+          "minimal"
+        ],
+        "rain_ok": true,
+        "image_key": "/demo/items/outer_02.png",
+        "image_source": "demo",
+        "cutout_engine": "mock_demo",
+        "tag_source": "mock_demo",
+        "in_laundry": false,
+        "favorite": false,
+        "wear_count": 3,
+        "last_worn_at": "2026-08-26",
+        "price_thb": 690,
+        "created_at": "2026-09-20T21:10:00+07:00"
+      },
+      {
+        "id": "shoes_01",
+        "name_th": "โลฟเฟอร์น้ำตาล",
+        "category": "shoes",
+        "subcategory_th": "โลฟเฟอร์หนัง",
+        "colors": [
+          "brown"
+        ],
+        "pattern": "solid",
+        "warmth": 1,
+        "formality": 3,
+        "vibes": [
+          "smart",
+          "vintage"
+        ],
+        "rain_ok": false,
+        "image_key": "/demo/items/shoes_01.png",
+        "image_source": "demo",
+        "cutout_engine": "mock_demo",
+        "tag_source": "mock_demo",
+        "in_laundry": false,
+        "favorite": false,
+        "wear_count": 20,
+        "last_worn_at": "2026-10-01",
+        "price_thb": 1490,
+        "created_at": "2026-09-20T21:10:00+07:00"
+      },
+      {
+        "id": "shoes_02",
+        "name_th": "ผ้าใบขาว",
+        "category": "shoes",
+        "subcategory_th": "รองเท้าผ้าใบ",
+        "colors": [
+          "white"
+        ],
+        "pattern": "solid",
+        "warmth": 1,
+        "formality": 1,
+        "vibes": [
+          "minimal",
+          "street"
+        ],
+        "rain_ok": false,
+        "image_key": "/demo/items/shoes_02.png",
+        "image_source": "demo",
+        "cutout_engine": "mock_demo",
+        "tag_source": "mock_demo",
+        "in_laundry": false,
+        "favorite": false,
+        "wear_count": 35,
+        "last_worn_at": "2026-10-03",
+        "price_thb": 1290,
+        "created_at": "2026-09-20T21:10:00+07:00"
+      },
+      {
+        "id": "shoes_03",
+        "name_th": "รัดส้นยางดำ",
+        "category": "shoes",
+        "subcategory_th": "รองเท้ารัดส้นยาง",
+        "colors": [
+          "black"
+        ],
+        "pattern": "solid",
+        "warmth": 0,
+        "formality": 2,
+        "vibes": [
+          "minimal"
+        ],
+        "rain_ok": true,
+        "image_key": "/demo/items/shoes_03.png",
+        "image_source": "demo",
+        "cutout_engine": "mock_demo",
+        "tag_source": "mock_demo",
+        "in_laundry": false,
+        "favorite": false,
+        "wear_count": 11,
+        "last_worn_at": "2026-09-27",
+        "price_thb": 590,
+        "created_at": "2026-09-20T21:10:00+07:00"
+      },
+      {
+        "id": "acc_01",
+        "name_th": "กระเป๋าผ้าครีม",
+        "category": "accessory",
+        "subcategory_th": "กระเป๋าผ้า",
+        "colors": [
+          "cream"
+        ],
+        "pattern": "solid",
+        "warmth": 0,
+        "formality": 2,
+        "vibes": [
+          "minimal"
+        ],
+        "rain_ok": true,
+        "image_key": "/demo/items/acc_01.png",
+        "image_source": "demo",
+        "cutout_engine": "mock_demo",
+        "tag_source": "mock_demo",
+        "in_laundry": false,
+        "favorite": false,
+        "wear_count": 25,
+        "last_worn_at": "2026-10-02",
+        "price_thb": 250,
+        "created_at": "2026-09-20T21:10:00+07:00"
+      }
+    ],
+    "wear_log": [
+      {
+        "date": "2026-09-29",
+        "outfit_signature": "bottom_01+shoes_01+top_01",
+        "piece_ids": [
+          "top_01",
+          "bottom_01",
+          "shoes_01"
+        ],
+        "look_name_th": "Smart ครีม-กรม 💼",
+        "weather": "hot",
+        "occasion": "office",
+        "score": 84,
+        "from_roll_id": null
+      },
+      {
+        "date": "2026-09-30",
+        "outfit_signature": "bottom_01+outer_01+shoes_01+top_02",
+        "piece_ids": [
+          "top_02",
+          "bottom_01",
+          "outer_01",
+          "shoes_01"
+        ],
+        "look_name_th": "ขาว-ดำ-กรม ห้องแอร์ ❄️",
+        "weather": "ac_cold",
+        "occasion": "office",
+        "score": 82,
+        "from_roll_id": null
+      },
+      {
+        "date": "2026-10-01",
+        "outfit_signature": "bottom_02+shoes_01+top_04",
+        "piece_ids": [
+          "top_04",
+          "bottom_02",
+          "shoes_01"
+        ],
+        "look_name_th": "Smart casual กรม-ยีนส์",
+        "weather": "hot",
+        "occasion": "office",
+        "score": 78,
+        "from_roll_id": null
+      },
+      {
+        "date": "2026-10-02",
+        "outfit_signature": "acc_01+bottom_03+shoes_02+top_02",
+        "piece_ids": [
+          "top_02",
+          "bottom_03",
+          "shoes_02",
+          "acc_01"
+        ],
+        "look_name_th": "Minimal ขาว-เบจ ☀️",
+        "weather": "hot",
+        "occasion": "office",
+        "score": 81,
+        "from_roll_id": null
+      },
+      {
+        "date": "2026-10-03",
+        "outfit_signature": "bottom_02+shoes_02+top_02",
+        "piece_ids": [
+          "top_02",
+          "bottom_02",
+          "shoes_02"
+        ],
+        "look_name_th": "เสาร์ชิล ขาว-ยีนส์",
+        "weather": "hot_extreme",
+        "occasion": "cafe",
+        "score": 79,
+        "from_roll_id": null
+      }
+    ],
+    "recent_rolls": [
+      {
+        "roll_id": "roll_20261005_075812_a1",
+        "rolled_at": "2026-10-05T07:58:12+07:00",
+        "filters": {
+          "weather": "rain",
+          "occasion": "office",
+          "vibe": null,
+          "force_forgotten": false,
+          "seed": 20261005,
+          "temp_c": 31
+        },
+        "locks": {},
+        "status": "ok",
+        "candidates_considered": 1680,
+        "candidates_valid": 96,
+        "suggestion_th": null,
+        "reroll_index": 0,
+        "outfit": {
+          "signature": "acc_01+bottom_01+outer_02+shoes_03+top_01",
+          "pieces": [
+            {
+              "slot": "top",
+              "item_id": "top_01",
+              "locked": false,
+              "layout": {
+                "x": 90,
+                "y": 80,
+                "w": 520,
+                "rotate_deg": -4,
+                "z": 2
+              }
+            },
+            {
+              "slot": "outer",
+              "item_id": "outer_02",
+              "locked": false,
+              "layout": {
+                "x": 520,
+                "y": 60,
+                "w": 420,
+                "rotate_deg": 5,
+                "z": 1
+              }
+            },
+            {
+              "slot": "bottom",
+              "item_id": "bottom_01",
+              "locked": false,
+              "layout": {
+                "x": 300,
+                "y": 520,
+                "w": 420,
+                "rotate_deg": 3,
+                "z": 3
+              }
+            },
+            {
+              "slot": "shoes",
+              "item_id": "shoes_03",
+              "locked": false,
+              "layout": {
+                "x": 640,
+                "y": 980,
+                "w": 300,
+                "rotate_deg": -6,
+                "z": 4
+              }
+            },
+            {
+              "slot": "accessory",
+              "item_id": "acc_01",
+              "locked": false,
+              "layout": {
+                "x": 60,
+                "y": 900,
+                "w": 260,
+                "rotate_deg": 6,
+                "z": 4
+              }
+            }
+          ],
+          "score": 86,
+          "reasons_th": [
+            "ครีม + กรม = คู่ปลอดภัยสายออฟฟิศ",
+            "แจ็กเก็ตสีเนยเป็นจุดเด่นจุดเดียว ไม่แย่งกัน",
+            "รองเท้ายางกันฝน ไม่ต้องห่วงน้ำขัง"
+          ],
+          "look_name_th": "Minimal ครีม-กรม วันฝนพรำ ☔",
+          "warning_th": null
+        }
+      },
+      {
+        "roll_id": "roll_20261005_075820_a2",
+        "rolled_at": "2026-10-05T07:58:20+07:00",
+        "filters": {
+          "weather": "rain",
+          "occasion": "office",
+          "vibe": null,
+          "force_forgotten": false,
+          "seed": 20261006,
+          "temp_c": 31
+        },
+        "locks": {
+          "top": "top_01"
+        },
+        "status": "ok",
+        "candidates_considered": 120,
+        "candidates_valid": 14,
+        "suggestion_th": null,
+        "reroll_index": 1,
+        "outfit": {
+          "signature": "bottom_03+shoes_03+top_01",
+          "pieces": [
+            {
+              "slot": "top",
+              "item_id": "top_01",
+              "locked": true,
+              "layout": {
+                "x": 120,
+                "y": 90,
+                "w": 540,
+                "rotate_deg": -4,
+                "z": 2
+              }
+            },
+            {
+              "slot": "bottom",
+              "item_id": "bottom_03",
+              "locked": false,
+              "layout": {
+                "x": 280,
+                "y": 520,
+                "w": 440,
+                "rotate_deg": 2,
+                "z": 3
+              }
+            },
+            {
+              "slot": "shoes",
+              "item_id": "shoes_03",
+              "locked": false,
+              "layout": {
+                "x": 640,
+                "y": 990,
+                "w": 300,
+                "rotate_deg": -5,
+                "z": 4
+              }
+            }
+          ],
+          "score": 80,
+          "reasons_th": [
+            "ครีม + เบจ + ดำ โทนเอิร์ธนุ่มๆ",
+            "สาย minimal ทั้งชุด"
+          ],
+          "look_name_th": "Soft ครีม-เบจ ☁️",
+          "warning_th": null
+        }
+      }
+    ],
+    "settings": {
+      "no_repeat_days": 7,
+      "default_weather": "rain",
+      "default_occasion": "office",
+      "auto_weather": false,
+      "accessory_probability": 0.5,
+      "dress_probability": 0.3,
+      "tag_engine": "mock_demo",
+      "cutout_engine": "mock_demo",
+      "sound": true,
+      "haptics": true,
+      "theme": "light"
+    },
+    "demo_loaded": true,
+    "streak_days": 5
+  },
+  "analytics_examples": [
+    {
+      "name": "demo_closet_loaded",
+      "at": "2026-10-05T07:57:58+07:00",
+      "props": {
+        "items": 14
+      }
+    },
+    {
+      "name": "dice_rolled",
+      "at": "2026-10-05T07:58:12+07:00",
+      "props": {
+        "weather": "rain",
+        "occasion": "office",
+        "score": 86,
+        "reroll_index": 0
+      }
+    },
+    {
+      "name": "item_locked",
+      "at": "2026-10-05T07:58:17+07:00",
+      "props": {
+        "slot": "top",
+        "item_id": "top_01"
+      }
+    },
+    {
+      "name": "outfit_worn",
+      "at": "2026-10-05T07:58:25+07:00",
+      "props": {
+        "signature": "bottom_03+shoes_03+top_01"
+      }
+    },
+    {
+      "name": "share_card_created",
+      "at": "2026-10-05T07:58:30+07:00",
+      "props": {
+        "format": "story_1080x1920"
+      }
+    }
+  ],
+  "feature_checklist_example": {
+    "must_have": [
+      {
+        "id": "snap_closet",
+        "name": "Snap → Closet",
+        "done": false,
+        "files": [
+          "app/closet/add/page.tsx",
+          "lib/cutout.ts",
+          "lib/tagger.ts",
+          "lib/colors.ts"
+        ],
+        "shown_in_reel": true
+      },
+      {
+        "id": "outfit_dice",
+        "name": "Outfit Dice",
+        "done": false,
+        "files": [
+          "lib/dice.ts",
+          "components/Dice3D.tsx",
+          "components/FlatLay.tsx"
+        ],
+        "shown_in_reel": true
+      },
+      {
+        "id": "weather_occasion_lock",
+        "name": "Weather & Occasion Lock",
+        "done": false,
+        "files": [
+          "components/FilterChips.tsx",
+          "components/FlatLay.tsx"
+        ],
+        "shown_in_reel": true
+      },
+      {
+        "id": "ootd_calendar",
+        "name": "OOTD Calendar",
+        "done": false,
+        "files": [
+          "app/calendar/page.tsx",
+          "hooks/useWearLog.ts"
+        ],
+        "shown_in_reel": true
+      },
+      {
+        "id": "share_card",
+        "name": "Share Outfit Card",
+        "done": false,
+        "files": [
+          "lib/share.ts",
+          "components/ShareOutfitCard.tsx"
+        ],
+        "shown_in_reel": true
+      }
+    ],
+    "nice_to_have": [
+      {
+        "id": "stats",
+        "name": "Forgotten Items / Closet Stats",
+        "done": false
+      },
+      {
+        "id": "challenge7",
+        "name": "7-Day Dice Challenge",
+        "done": false
+      },
+      {
+        "id": "packing",
+        "name": "Trip Packing Dice",
+        "done": false
+      },
+      {
+        "id": "vote",
+        "name": "Friend Vote card",
+        "done": false
+      },
+      {
+        "id": "harmony",
+        "name": "Color Harmony hint",
+        "done": false
+      },
+      {
+        "id": "dark_sound",
+        "name": "Dark mode + dice sound/haptic",
+        "done": false
+      }
+    ]
+  },
+  "ui_copy_th": {
+    "app_tagline": "เสื้อผ้าเต็มตู้แต่ไม่มีอะไรใส่? ทอยทีเดียว ได้ชุดเลย",
+    "home_title": "วันนี้ใส่อะไรดี?",
+    "dice_hint": "แตะลูกเต๋าเพื่อทอย",
+    "rolling": "กำลังทอย…",
+    "btn_reroll": "🎲 ทอยใหม่",
+    "btn_wear": "✅ ใส่ชุดนี้วันนี้",
+    "btn_share": "↗ แชร์ลุค",
+    "btn_demo": "ลองตู้เดโม",
+    "btn_add_first": "ถ่ายเสื้อชิ้นแรก",
+    "lock_hint": "แตะ 🔒 เพื่อล็อกชิ้นที่ชอบ แล้วทอยที่เหลือ",
+    "weather_chips": {
+      "hot_extreme": "☀️ ร้อนจัด",
+      "hot": "🌤 ร้อน",
+      "rain": "🌧 ฝน",
+      "ac_cold": "❄️ ห้องแอร์"
+    },
+    "occasion_chips": {
+      "office": "💼 ออฟฟิศ",
+      "campus": "🎒 เรียน",
+      "cafe": "☕ คาเฟ่",
+      "date": "💕 เดต",
+      "wedding": "💍 งานแต่ง",
+      "gym": "🏃 ออกกำลัง"
+    },
+    "tabs": [
+      "วันนี้",
+      "ตู้",
+      "ปฏิทิน",
+      "ตั้งค่า"
+    ],
+    "cutting_out": "กำลังตัดพื้นหลัง…",
+    "tag_ready": "AI เดาแท็กให้แล้ว แก้ได้นะ",
+    "saved": "บันทึกเข้าตู้แล้ว ✨",
+    "next_item": "ถ่ายชิ้นต่อไป",
+    "privacy": "รูปประมวลผลในเครื่อง ไม่ถูกอัปโหลดไปไหน",
+    "worn_toast": "บันทึกลงปฏิทินแล้ว สัปดาห์นี้จะไม่สุ่มชุดนี้ซ้ำ",
+    "streak": "ทอยต่อเนื่อง {n} วัน 🔥",
+    "forgotten": "ชิ้นถูกลืม — ไม่ได้ใส่ {d} วันแล้ว",
+    "no_outfit": "ตู้ยังไม่พอสำหรับโอกาสนี้",
+    "relax_rule": "ผ่อนกฎ",
+    "disclaimer": "AI ช่วยแนะนำ — สไตล์สุดท้ายเป็นของคุณ",
+    "footer": "สร้างสำหรับช่อง AI วันละแอป"
+  },
+  "reel_script_th": [
+    {
+      "t": "0–3s",
+      "shot": "เปิดตู้เสื้อผ้าเต็มตู้ หน้าเบื่อ แล้วตัดไปนิ้วจิ้มลูกเต๋าบนจอ",
+      "overlay": "เสื้อผ้าเต็มตู้ แต่ไม่มีอะไรใส่?",
+      "vo": "ทุกเช้าเป็นแบบนี้ไหม"
+    },
+    {
+      "t": "3–8s",
+      "shot": "อัดจอพิมพ์ prompt ใน AI → โค้ดวิ่ง → แอปขึ้น (speed ramp)",
+      "overlay": "ให้ AI สร้างแอปให้ 1 วัน",
+      "vo": "วันนี้เลยให้ AI สร้างแอปแก้ปัญหานี้"
+    },
+    {
+      "t": "8–13s",
+      "shot": "ถ่ายเสื้อเชิ้ตยับบนเตียง → ตัดพื้นหลังกลายเป็นสติกเกอร์ + แท็กเด้ง",
+      "overlay": "ถ่ายปุ๊บ ตัดพื้นหลัง + แท็กเอง",
+      "vo": "ถ่ายเสื้อทีเดียว มันตัดพื้นหลังแล้วรู้เลยว่าเป็นเชิ้ตครีมใส่ทำงาน"
+    },
+    {
+      "t": "13–20s",
+      "shot": "เลือก 🌧 ฝน + 💼 ออฟฟิศ → ทอย → ลุคร่วงเป็น flat-lay → ล็อกเสื้อ → ทอยอีก กางเกงเปลี่ยน",
+      "overlay": "ฝนตก ไปทำงาน → ทอย! 🎲",
+      "vo": "บอกว่าฝนตกไปทำงาน กดทอย ได้ชุดเลย ชอบเสื้อก็ล็อกไว้ ทอยใหม่แค่ที่เหลือ"
+    },
+    {
+      "t": "20–25s",
+      "shot": "ปัดปฏิทิน OOTD เต็มเดือน → การ์ดแชร์สตอรี่สวย",
+      "overlay": "จำให้ว่าใส่อะไรไปแล้ว ไม่ซ้ำ",
+      "vo": "กดใส่ชุดนี้ มันจำให้ อาทิตย์นี้ไม่สุ่มซ้ำ แถมแชร์ลงสตอรี่ได้"
+    },
+    {
+      "t": "25–30s",
+      "shot": "ใส่ชุดจริงเดินออกประตู หันมาชี้กล้อง",
+      "overlay": "คอมเมนต์ 'ทอย' รับลิงก์ฟรี",
+      "vo": "อยากได้คอมเมนต์คำว่าทอย เดี๋ยวส่งลิงก์ให้"
+    }
+  ],
+  "alt_reel_ideas_th": [
+    "ซีรีส์: ให้ลูกเต๋าแต่งตัวผม 7 วัน (Day 1–7)",
+    "POV: ตื่นสาย 7:50 มีเวลาแต่งตัว 30 วิ",
+    "ทอยชุดให้แฟน/เพื่อนแบบไม่บอกล่วงหน้า",
+    "ทอยหาชุดไปงานแต่งจากตู้นักศึกษา"
+  ]
+}

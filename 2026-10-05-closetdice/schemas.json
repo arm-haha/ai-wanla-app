@@ -1,0 +1,293 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-wanla-app.local/closetdice/schemas.json",
+  "title": "ClosetDice data schemas",
+  "description": "All data shapes for ClosetDice (AI วันละแอป Day 6, 2026-10-05). Times are ISO 8601 with +07:00 (Asia/Bangkok). Local-first: metadata in localStorage, images in IndexedDB.",
+  "$defs": {
+    "Category": {
+      "type": "string",
+      "enum": ["top", "bottom", "dress", "outer", "shoes", "accessory"],
+      "description": "Garment category. dress replaces top+bottom in a look."
+    },
+    "Slot": {
+      "type": "string",
+      "enum": ["top", "bottom", "dress", "outer", "shoes", "accessory"],
+      "description": "Position in an outfit / flat-lay layout. Same values as Category."
+    },
+    "ColorName": {
+      "type": "string",
+      "enum": ["white", "cream", "beige", "brown", "black", "grey", "navy", "denim", "blue", "sky", "green", "sage", "olive", "yellow", "butter", "orange", "red", "pink", "lavender", "purple", "multi"],
+      "description": "Normalized color names. Neutrals = white, cream, beige, brown, black, grey, navy, denim. Thai labels in examples.json color_labels_th."
+    },
+    "Pattern": {
+      "type": "string",
+      "enum": ["solid", "stripe", "check", "floral", "graphic", "other"]
+    },
+    "Vibe": {
+      "type": "string",
+      "enum": ["minimal", "street", "sweet", "smart", "sporty", "vintage"],
+      "description": "Style family used for soft matching."
+    },
+    "Weather": {
+      "type": "string",
+      "enum": ["hot_extreme", "hot", "rain", "ac_cold"],
+      "description": "hot_extreme ≥35°C, hot 29–34°C, rain = rain likely today, ac_cold = long hours in air-conditioning."
+    },
+    "Occasion": {
+      "type": "string",
+      "enum": ["office", "campus", "cafe", "date", "wedding", "gym"],
+      "description": "Formality ranges: office 2–4, campus 0–3, cafe 1–3, date 2–4, wedding 3–5, gym 0–1."
+    },
+    "ClothingItem": {
+      "type": "object",
+      "description": "One garment in the closet.",
+      "required": ["id", "name_th", "category", "colors", "warmth", "formality", "vibes", "rain_ok", "image_key", "created_at"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z]+_[0-9a-z]+$", "description": "Stable id, e.g. top_01 or top_k3f9." },
+        "name_th": { "type": "string", "maxLength": 40, "description": "Short Thai name, e.g. เชิ้ตครีมแขนยาว." },
+        "category": { "$ref": "#/$defs/Category" },
+        "subcategory_th": { "type": "string", "description": "e.g. เสื้อเชิ้ต, ยีนส์, รองเท้าผ้าใบ." },
+        "colors": { "type": "array", "items": { "$ref": "#/$defs/ColorName" }, "minItems": 1, "maxItems": 3, "description": "Dominant colors by area, largest first." },
+        "pattern": { "$ref": "#/$defs/Pattern", "default": "solid" },
+        "warmth": { "type": "integer", "minimum": 0, "maximum": 3, "description": "0 very light … 3 heavy." },
+        "formality": { "type": "integer", "minimum": 0, "maximum": 5, "description": "0 gym/home … 5 ceremony." },
+        "vibes": { "type": "array", "items": { "$ref": "#/$defs/Vibe" }, "minItems": 1, "maxItems": 2 },
+        "rain_ok": { "type": "boolean", "description": "False if rain ruins it (suede, white canvas sneakers)." },
+        "image_key": { "type": "string", "description": "IndexedDB key or /demo/items/{id}.png for demo items." },
+        "image_source": { "type": "string", "enum": ["demo", "camera", "upload"], "default": "camera" },
+        "cutout_engine": { "type": "string", "enum": ["mock_demo", "client_bg_removal", "none"] },
+        "tag_source": { "type": "string", "enum": ["mock_demo", "vision_api", "user"], "description": "Who set the final tags; becomes user once edited." },
+        "in_laundry": { "type": "boolean", "default": false, "description": "Excluded from rolls while true." },
+        "favorite": { "type": "boolean", "default": false },
+        "wear_count": { "type": "integer", "minimum": 0, "default": 0 },
+        "last_worn_at": { "type": ["string", "null"], "format": "date", "description": "YYYY-MM-DD, Asia/Bangkok." },
+        "price_thb": { "type": ["number", "null"], "minimum": 0, "description": "Optional, for cost-per-wear stats." },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "ClothingTagResult": {
+      "type": "object",
+      "description": "Output of TagEngine (mock or vision LLM) before user edits.",
+      "required": ["category", "confidence"],
+      "properties": {
+        "category": { "oneOf": [{ "$ref": "#/$defs/Category" }, { "type": "null" }] },
+        "subcategory_th": { "type": "string" },
+        "name_th": { "type": "string", "maxLength": 40 },
+        "colors": { "type": "array", "items": { "$ref": "#/$defs/ColorName" }, "maxItems": 3 },
+        "pattern": { "$ref": "#/$defs/Pattern" },
+        "warmth": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "formality": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "vibes": { "type": "array", "items": { "$ref": "#/$defs/Vibe" }, "maxItems": 2 },
+        "rain_ok": { "type": "boolean" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "dominant_rgb": { "type": "array", "items": { "type": "array", "items": { "type": "integer", "minimum": 0, "maximum": 255 }, "minItems": 3, "maxItems": 3 }, "maxItems": 3, "description": "From canvas k-means, before mapping to ColorName." },
+        "engine": { "type": "string", "enum": ["mock_demo", "vision_api"] },
+        "latency_ms": { "type": "integer", "minimum": 0 },
+        "error": { "type": "string", "enum": ["not_clothing", "too_dark", "multiple_items", "timeout"] }
+      },
+      "additionalProperties": false
+    },
+    "OutfitFilters": {
+      "type": "object",
+      "required": ["weather", "occasion"],
+      "properties": {
+        "weather": { "$ref": "#/$defs/Weather" },
+        "occasion": { "$ref": "#/$defs/Occasion" },
+        "vibe": { "oneOf": [{ "$ref": "#/$defs/Vibe" }, { "type": "null" }], "description": "Optional preferred vibe (soft boost)." },
+        "force_forgotten": { "type": "boolean", "default": false, "description": "Nice-to-have: require ≥1 item unworn ≥30 days." },
+        "seed": { "type": "integer", "description": "Seed for reproducible rolls (Reel replays)." },
+        "temp_c": { "type": ["number", "null"], "description": "Optional from Open-Meteo." }
+      },
+      "additionalProperties": false
+    },
+    "LockState": {
+      "type": "object",
+      "description": "Map of slot → locked item id.",
+      "propertyNames": { "$ref": "#/$defs/Slot" },
+      "additionalProperties": { "type": "string" }
+    },
+    "OutfitPiece": {
+      "type": "object",
+      "required": ["slot", "item_id"],
+      "properties": {
+        "slot": { "$ref": "#/$defs/Slot" },
+        "item_id": { "type": "string" },
+        "locked": { "type": "boolean", "default": false },
+        "layout": {
+          "type": "object",
+          "description": "Flat-lay placement in a 1000x1250 virtual canvas.",
+          "properties": {
+            "x": { "type": "number" }, "y": { "type": "number" },
+            "w": { "type": "number" }, "rotate_deg": { "type": "number", "minimum": -8, "maximum": 8 },
+            "z": { "type": "integer" }
+          },
+          "required": ["x", "y", "w", "rotate_deg", "z"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Outfit": {
+      "type": "object",
+      "required": ["signature", "pieces", "score", "look_name_th"],
+      "properties": {
+        "signature": { "type": "string", "description": "Sorted piece ids joined by '+', used for no-repeat." },
+        "pieces": { "type": "array", "items": { "$ref": "#/$defs/OutfitPiece" }, "minItems": 2, "maxItems": 6 },
+        "score": { "type": "integer", "minimum": 0, "maximum": 100, "description": "Color/vibe harmony only. Never about the wearer's body." },
+        "reasons_th": { "type": "array", "items": { "type": "string" }, "maxItems": 3 },
+        "look_name_th": { "type": "string", "maxLength": 40 },
+        "warning_th": { "type": ["string", "null"], "description": "Set when a locked item breaks a hard rule." }
+      },
+      "additionalProperties": false
+    },
+    "DiceRoll": {
+      "type": "object",
+      "required": ["roll_id", "rolled_at", "filters", "status"],
+      "properties": {
+        "roll_id": { "type": "string" },
+        "rolled_at": { "type": "string", "format": "date-time" },
+        "filters": { "$ref": "#/$defs/OutfitFilters" },
+        "locks": { "$ref": "#/$defs/LockState" },
+        "status": { "type": "string", "enum": ["ok", "no_valid_outfit"] },
+        "outfit": { "$ref": "#/$defs/Outfit" },
+        "candidates_considered": { "type": "integer", "minimum": 0 },
+        "candidates_valid": { "type": "integer", "minimum": 0 },
+        "suggestion_th": { "type": ["string", "null"], "description": "When no_valid_outfit, what to add/relax." },
+        "reroll_index": { "type": "integer", "minimum": 0, "description": "0 for first roll in a session, +1 per reroll." }
+      },
+      "if": { "properties": { "status": { "const": "ok" } } },
+      "then": { "required": ["outfit"] },
+      "additionalProperties": false
+    },
+    "WearLogEntry": {
+      "type": "object",
+      "required": ["date", "outfit_signature", "piece_ids"],
+      "properties": {
+        "date": { "type": "string", "format": "date", "description": "YYYY-MM-DD Asia/Bangkok. One entry per day." },
+        "outfit_signature": { "type": "string" },
+        "piece_ids": { "type": "array", "items": { "type": "string" }, "minItems": 2 },
+        "look_name_th": { "type": "string" },
+        "weather": { "$ref": "#/$defs/Weather" },
+        "occasion": { "$ref": "#/$defs/Occasion" },
+        "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "from_roll_id": { "type": ["string", "null"] },
+        "note_th": { "type": "string", "maxLength": 120 }
+      },
+      "additionalProperties": false
+    },
+    "ShareCard": {
+      "type": "object",
+      "required": ["format", "background", "date_label_th", "look_name_th", "piece_ids"],
+      "properties": {
+        "format": { "type": "string", "enum": ["story_1080x1920", "feed_1080x1350", "vote_1080x1350", "week_1080x1920"] },
+        "background": { "type": "string", "enum": ["cream", "lavender_gradient", "grid", "butter_dots"] },
+        "date_label_th": { "type": "string", "description": "e.g. จันทร์ 5 ต.ค. 2569" },
+        "weather_label_th": { "type": "string" },
+        "occasion_label_th": { "type": "string" },
+        "look_name_th": { "type": "string" },
+        "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "piece_ids": { "type": "array", "items": { "type": "string" } },
+        "footer": { "type": "string", "default": "ทอยด้วย ClosetDice · AI วันละแอป" },
+        "show_disclaimer": { "type": "boolean", "default": true }
+      },
+      "additionalProperties": false
+    },
+    "SharePayload": {
+      "type": "object",
+      "required": ["card", "caption_th", "filename"],
+      "properties": {
+        "card": { "$ref": "#/$defs/ShareCard" },
+        "caption_th": { "type": "string", "maxLength": 500 },
+        "hashtags": { "type": "array", "items": { "type": "string", "pattern": "^#" } },
+        "filename": { "type": "string", "pattern": "^closetdice-[0-9]{8}-[0-9]{6}\\.png$" },
+        "result": { "type": "string", "enum": ["shared", "downloaded", "cancelled", "error"] }
+      },
+      "additionalProperties": false
+    },
+    "Settings": {
+      "type": "object",
+      "properties": {
+        "no_repeat_days": { "type": "integer", "minimum": 0, "maximum": 30, "default": 7 },
+        "default_weather": { "$ref": "#/$defs/Weather" },
+        "default_occasion": { "$ref": "#/$defs/Occasion" },
+        "auto_weather": { "type": "boolean", "default": false, "description": "Fetch Open-Meteo for Bangkok (13.75, 100.50) on open." },
+        "accessory_probability": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.5 },
+        "dress_probability": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.3 },
+        "tag_engine": { "type": "string", "enum": ["mock_demo", "vision_api"], "default": "mock_demo" },
+        "cutout_engine": { "type": "string", "enum": ["mock_demo", "client_bg_removal", "none"], "default": "mock_demo" },
+        "sound": { "type": "boolean", "default": true },
+        "haptics": { "type": "boolean", "default": true },
+        "theme": { "type": "string", "enum": ["light", "dark", "system"], "default": "light" }
+      },
+      "additionalProperties": false
+    },
+    "LocalStore": {
+      "type": "object",
+      "description": "localStorage key closetdice:v1 (images live in IndexedDB).",
+      "required": ["version", "items", "wear_log", "settings"],
+      "properties": {
+        "version": { "const": 1 },
+        "owner_name": { "type": "string" },
+        "items": { "type": "array", "items": { "$ref": "#/$defs/ClothingItem" } },
+        "wear_log": { "type": "array", "items": { "$ref": "#/$defs/WearLogEntry" } },
+        "recent_rolls": { "type": "array", "items": { "$ref": "#/$defs/DiceRoll" }, "maxItems": 20 },
+        "settings": { "$ref": "#/$defs/Settings" },
+        "demo_loaded": { "type": "boolean" },
+        "streak_days": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "AnalyticsEvent": {
+      "type": "object",
+      "required": ["name", "at"],
+      "properties": {
+        "name": { "type": "string", "enum": ["demo_closet_loaded", "item_added", "tag_edited", "dice_rolled", "item_locked", "outfit_worn", "share_card_created", "share_native_success", "calendar_opened", "no_valid_outfit", "stats_opened", "challenge_created", "packing_created", "vote_card_created"] },
+        "at": { "type": "string", "format": "date-time" },
+        "props": { "type": "object", "additionalProperties": { "type": ["string", "number", "boolean", "null"] } }
+      },
+      "additionalProperties": false
+    },
+    "FeatureChecklist": {
+      "type": "object",
+      "required": ["must_have", "nice_to_have"],
+      "properties": {
+        "must_have": {
+          "type": "array", "minItems": 5,
+          "items": {
+            "type": "object", "required": ["id", "name", "done"],
+            "properties": {
+              "id": { "type": "string" }, "name": { "type": "string" },
+              "done": { "type": "boolean" }, "files": { "type": "array", "items": { "type": "string" } },
+              "shown_in_reel": { "type": "boolean" }
+            }
+          }
+        },
+        "nice_to_have": {
+          "type": "array",
+          "items": { "type": "object", "required": ["id", "name", "done"], "properties": { "id": { "type": "string" }, "name": { "type": "string" }, "done": { "type": "boolean" } } }
+        }
+      }
+    },
+    "TagEngine": {
+      "type": "object",
+      "description": "Interface contract (documentation only).",
+      "properties": {
+        "id": { "enum": ["mock_demo", "vision_api"] },
+        "tag": { "description": "(image: Blob, hints?: {source: 'demo'|'camera'|'upload'}) => Promise<ClothingTagResult>" }
+      }
+    },
+    "CutoutEngine": {
+      "type": "object",
+      "description": "Interface contract (documentation only).",
+      "properties": {
+        "id": { "enum": ["mock_demo", "client_bg_removal", "none"] },
+        "cutout": { "description": "(image: Blob, onProgress?: (pct:number)=>void) => Promise<{png: Blob, engine: string, ms: number}>; timeout 25s then fall back to none" }
+      }
+    },
+    "AppStatus": {
+      "type": "string",
+      "enum": ["idle", "rolling", "result", "cutting_out", "tagging", "editing_tags", "saving", "sharing", "error"]
+    }
+  }
+}

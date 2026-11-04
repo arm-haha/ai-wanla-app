@@ -1,0 +1,1168 @@
+{
+  "_note": "ข้อมูลทั้งหมดเป็นตัวอย่างสมมติ (ห้องหอฟ้า) สร้างโดย reference/build.py",
+  "today": "2026-10-21",
+  "colors": {
+    "mist": "#F5F7FF",
+    "ink": "#1E1B4B",
+    "lilac": "#A78BFA",
+    "sparkle": "#22D3EE",
+    "lemon": "#FDE047",
+    "mess": "#F43F5E",
+    "clean": "#10B981"
+  },
+  "hotspot_catalog": [
+    {
+      "id": "clothes_pile",
+      "label_th": "เสื้อผ้ากองบนเก้าอี้/เตียง",
+      "zone": "bed",
+      "weight": 12,
+      "base_min": 6,
+      "quest_th": "พับ/แขวนเสื้อผ้าที่กองอยู่",
+      "emoji": "👕"
+    },
+    {
+      "id": "trash_floor",
+      "label_th": "ขยะ/ถุงบนพื้น",
+      "zone": "floor",
+      "weight": 10,
+      "base_min": 3,
+      "quest_th": "เก็บขยะใส่ถุงเดียว มัดปากถุง",
+      "emoji": "🗑️"
+    },
+    {
+      "id": "dishes_cups",
+      "label_th": "แก้ว/จานค้าง",
+      "zone": "desk",
+      "weight": 10,
+      "base_min": 4,
+      "quest_th": "รวมแก้ว/จานไปล้าง",
+      "emoji": "🥤"
+    },
+    {
+      "id": "snack_wrappers",
+      "label_th": "ซองขนม/กล่องเดลิเวอรี",
+      "zone": "desk",
+      "weight": 8,
+      "base_min": 2,
+      "quest_th": "ทิ้งซองขนมและกล่องข้าว",
+      "emoji": "🍟"
+    },
+    {
+      "id": "desk_clutter",
+      "label_th": "โต๊ะรก ของวางเกลื่อน",
+      "zone": "desk",
+      "weight": 8,
+      "base_min": 5,
+      "quest_th": "เคลียร์โต๊ะ เหลือแค่ของใช้วันนี้",
+      "emoji": "🗂️"
+    },
+    {
+      "id": "boxes_parcels",
+      "label_th": "กล่องพัสดุยังไม่แกะ/ไม่ทิ้ง",
+      "zone": "floor",
+      "weight": 8,
+      "base_min": 4,
+      "quest_th": "แกะของ พับกล่องรวมไว้ทิ้ง",
+      "emoji": "📦"
+    },
+    {
+      "id": "laundry_full",
+      "label_th": "ตะกร้าผ้าล้น",
+      "zone": "floor",
+      "weight": 7,
+      "base_min": 3,
+      "quest_th": "แยกผ้า ยัดถุงพร้อมส่งซัก",
+      "emoji": "🧺"
+    },
+    {
+      "id": "bed_unmade",
+      "label_th": "เตียงไม่ได้เก็บ",
+      "zone": "bed",
+      "weight": 6,
+      "base_min": 2,
+      "quest_th": "ปูเตียง ตบหมอน พับผ้าห่ม",
+      "emoji": "🛏️"
+    },
+    {
+      "id": "floor_dust",
+      "label_th": "พื้นมีฝุ่น/เส้นผม",
+      "zone": "floor",
+      "weight": 6,
+      "base_min": 5,
+      "quest_th": "กวาด/ถูพื้นรอบห้อง",
+      "emoji": "🧹"
+    },
+    {
+      "id": "shoes_scattered",
+      "label_th": "รองเท้ากระจาย",
+      "zone": "floor",
+      "weight": 5,
+      "base_min": 2,
+      "quest_th": "จับคู่รองเท้า เข้าชั้น",
+      "emoji": "👟"
+    },
+    {
+      "id": "books_papers",
+      "label_th": "หนังสือ/กระดาษกอง",
+      "zone": "desk",
+      "weight": 5,
+      "base_min": 4,
+      "quest_th": "จัดหนังสือ ทิ้งกระดาษไม่ใช้",
+      "emoji": "📚"
+    },
+    {
+      "id": "cosmetics",
+      "label_th": "เครื่องสำอาง/ของใช้กระจาย",
+      "zone": "desk",
+      "weight": 5,
+      "base_min": 3,
+      "quest_th": "รวมของใช้เข้าตะกร้า/ลิ้นชัก",
+      "emoji": "💄"
+    },
+    {
+      "id": "cables_mess",
+      "label_th": "สายชาร์จพันกัน",
+      "zone": "desk",
+      "weight": 4,
+      "base_min": 3,
+      "quest_th": "ม้วนสาย รัดเก็บ",
+      "emoji": "🔌"
+    }
+  ],
+  "severity_th": {
+    "1": "นิดหน่อย",
+    "2": "พอสมควร",
+    "3": "เยอะมาก"
+  },
+  "modes": {
+    "lazy": "ขี้เกียจมาก 5 นาที",
+    "normal": "ปกติ 15 นาที",
+    "fire": "ไฟลุก เคลียร์หมด"
+  },
+  "score_labels": [
+    [
+      90,
+      "ห้องโชว์ ✨"
+    ],
+    [
+      70,
+      "อยู่ได้สบาย"
+    ],
+    [
+      40,
+      "เริ่มรก"
+    ],
+    [
+      0,
+      "ห้องวิกฤต 🚨"
+    ]
+  ],
+  "scan_input": {
+    "room_id": "room1",
+    "at": "2026-10-21T20:30:00+07:00",
+    "hotspots": [
+      {
+        "id": "clothes_pile",
+        "severity": 2
+      },
+      {
+        "id": "trash_floor",
+        "severity": 2
+      },
+      {
+        "id": "dishes_cups",
+        "severity": 1
+      },
+      {
+        "id": "snack_wrappers",
+        "severity": 1
+      },
+      {
+        "id": "desk_clutter",
+        "severity": 1
+      },
+      {
+        "id": "boxes_parcels",
+        "severity": 1
+      },
+      {
+        "id": "bed_unmade",
+        "severity": 1
+      },
+      {
+        "id": "cables_mess",
+        "severity": 1
+      }
+    ],
+    "source": "demo"
+  },
+  "mess_before": {
+    "clean_score": 12,
+    "mess_points": 88,
+    "label_th": "ห้องวิกฤต 🚨",
+    "worst_zone": "bed",
+    "zone_points": {
+      "bed": 30,
+      "floor": 28,
+      "desk": 30
+    },
+    "hotspots": [
+      {
+        "id": "clothes_pile",
+        "severity": 2,
+        "label_th": "เสื้อผ้ากองบนเก้าอี้/เตียง",
+        "severity_th": "พอสมควร",
+        "points": 24,
+        "emoji": "👕"
+      },
+      {
+        "id": "trash_floor",
+        "severity": 2,
+        "label_th": "ขยะ/ถุงบนพื้น",
+        "severity_th": "พอสมควร",
+        "points": 20,
+        "emoji": "🗑️"
+      },
+      {
+        "id": "dishes_cups",
+        "severity": 1,
+        "label_th": "แก้ว/จานค้าง",
+        "severity_th": "นิดหน่อย",
+        "points": 10,
+        "emoji": "🥤"
+      },
+      {
+        "id": "snack_wrappers",
+        "severity": 1,
+        "label_th": "ซองขนม/กล่องเดลิเวอรี",
+        "severity_th": "นิดหน่อย",
+        "points": 8,
+        "emoji": "🍟"
+      },
+      {
+        "id": "desk_clutter",
+        "severity": 1,
+        "label_th": "โต๊ะรก ของวางเกลื่อน",
+        "severity_th": "นิดหน่อย",
+        "points": 8,
+        "emoji": "🗂️"
+      },
+      {
+        "id": "boxes_parcels",
+        "severity": 1,
+        "label_th": "กล่องพัสดุยังไม่แกะ/ไม่ทิ้ง",
+        "severity_th": "นิดหน่อย",
+        "points": 8,
+        "emoji": "📦"
+      },
+      {
+        "id": "bed_unmade",
+        "severity": 1,
+        "label_th": "เตียงไม่ได้เก็บ",
+        "severity_th": "นิดหน่อย",
+        "points": 6,
+        "emoji": "🛏️"
+      },
+      {
+        "id": "cables_mess",
+        "severity": 1,
+        "label_th": "สายชาร์จพันกัน",
+        "severity_th": "นิดหน่อย",
+        "points": 4,
+        "emoji": "🔌"
+      }
+    ],
+    "est_minutes": 38
+  },
+  "mess_after": {
+    "clean_score": 94,
+    "mess_points": 6,
+    "label_th": "ห้องโชว์ ✨",
+    "worst_zone": "floor",
+    "zone_points": {
+      "floor": 6
+    },
+    "hotspots": [
+      {
+        "id": "floor_dust",
+        "severity": 1,
+        "label_th": "พื้นมีฝุ่น/เส้นผม",
+        "severity_th": "นิดหน่อย",
+        "points": 6,
+        "emoji": "🧹"
+      }
+    ],
+    "est_minutes": 5
+  },
+  "quest_plans": {
+    "lazy": {
+      "mode": "lazy",
+      "mode_th": "ขี้เกียจมาก 5 นาที",
+      "quests": [
+        {
+          "id": "q1",
+          "hotspot": "snack_wrappers",
+          "title_th": "ทิ้งซองขนมและกล่องข้าว",
+          "emoji": "🍟",
+          "minutes": 2,
+          "xp": 8,
+          "quick_win": true,
+          "score_after": 20
+        },
+        {
+          "id": "q2",
+          "hotspot": "bed_unmade",
+          "title_th": "ปูเตียง ตบหมอน พับผ้าห่ม",
+          "emoji": "🛏️",
+          "minutes": 2,
+          "xp": 6,
+          "quick_win": true,
+          "score_after": 26
+        }
+      ],
+      "sprints": [
+        {
+          "n": 1,
+          "quest_ids": [
+            "q1",
+            "q2"
+          ],
+          "minutes": 4
+        }
+      ],
+      "total_minutes": 4,
+      "score_before": 12,
+      "score_after": 26
+    },
+    "normal": {
+      "mode": "normal",
+      "mode_th": "ปกติ 15 นาที",
+      "quests": [
+        {
+          "id": "q1",
+          "hotspot": "snack_wrappers",
+          "title_th": "ทิ้งซองขนมและกล่องข้าว",
+          "emoji": "🍟",
+          "minutes": 2,
+          "xp": 8,
+          "quick_win": true,
+          "score_after": 20
+        },
+        {
+          "id": "q2",
+          "hotspot": "trash_floor",
+          "title_th": "เก็บขยะใส่ถุงเดียว มัดปากถุง",
+          "emoji": "🗑️",
+          "minutes": 6,
+          "xp": 20,
+          "quick_win": false,
+          "score_after": 40
+        },
+        {
+          "id": "q3",
+          "hotspot": "bed_unmade",
+          "title_th": "ปูเตียง ตบหมอน พับผ้าห่ม",
+          "emoji": "🛏️",
+          "minutes": 2,
+          "xp": 6,
+          "quick_win": true,
+          "score_after": 46
+        },
+        {
+          "id": "q4",
+          "hotspot": "dishes_cups",
+          "title_th": "รวมแก้ว/จานไปล้าง",
+          "emoji": "🥤",
+          "minutes": 4,
+          "xp": 10,
+          "quick_win": false,
+          "score_after": 56
+        }
+      ],
+      "sprints": [
+        {
+          "n": 1,
+          "quest_ids": [
+            "q1",
+            "q2",
+            "q3",
+            "q4"
+          ],
+          "minutes": 14
+        }
+      ],
+      "total_minutes": 14,
+      "score_before": 12,
+      "score_after": 56
+    },
+    "fire": {
+      "mode": "fire",
+      "mode_th": "ไฟลุก เคลียร์หมด",
+      "quests": [
+        {
+          "id": "q1",
+          "hotspot": "snack_wrappers",
+          "title_th": "ทิ้งซองขนมและกล่องข้าว",
+          "emoji": "🍟",
+          "minutes": 2,
+          "xp": 8,
+          "quick_win": true,
+          "score_after": 20
+        },
+        {
+          "id": "q2",
+          "hotspot": "trash_floor",
+          "title_th": "เก็บขยะใส่ถุงเดียว มัดปากถุง",
+          "emoji": "🗑️",
+          "minutes": 6,
+          "xp": 20,
+          "quick_win": false,
+          "score_after": 40
+        },
+        {
+          "id": "q3",
+          "hotspot": "bed_unmade",
+          "title_th": "ปูเตียง ตบหมอน พับผ้าห่ม",
+          "emoji": "🛏️",
+          "minutes": 2,
+          "xp": 6,
+          "quick_win": true,
+          "score_after": 46
+        },
+        {
+          "id": "q4",
+          "hotspot": "dishes_cups",
+          "title_th": "รวมแก้ว/จานไปล้าง",
+          "emoji": "🥤",
+          "minutes": 4,
+          "xp": 10,
+          "quick_win": false,
+          "score_after": 56
+        },
+        {
+          "id": "q5",
+          "hotspot": "clothes_pile",
+          "title_th": "พับ/แขวนเสื้อผ้าที่กองอยู่",
+          "emoji": "👕",
+          "minutes": 12,
+          "xp": 24,
+          "quick_win": false,
+          "score_after": 80
+        },
+        {
+          "id": "q6",
+          "hotspot": "boxes_parcels",
+          "title_th": "แกะของ พับกล่องรวมไว้ทิ้ง",
+          "emoji": "📦",
+          "minutes": 4,
+          "xp": 8,
+          "quick_win": false,
+          "score_after": 88
+        },
+        {
+          "id": "q7",
+          "hotspot": "desk_clutter",
+          "title_th": "เคลียร์โต๊ะ เหลือแค่ของใช้วันนี้",
+          "emoji": "🗂️",
+          "minutes": 5,
+          "xp": 8,
+          "quick_win": false,
+          "score_after": 96
+        },
+        {
+          "id": "q8",
+          "hotspot": "cables_mess",
+          "title_th": "ม้วนสาย รัดเก็บ",
+          "emoji": "🔌",
+          "minutes": 3,
+          "xp": 4,
+          "quick_win": true,
+          "score_after": 100
+        }
+      ],
+      "sprints": [
+        {
+          "n": 1,
+          "quest_ids": [
+            "q1",
+            "q2",
+            "q3",
+            "q4"
+          ],
+          "minutes": 14
+        },
+        {
+          "n": 2,
+          "quest_ids": [
+            "q5"
+          ],
+          "minutes": 12
+        },
+        {
+          "n": 3,
+          "quest_ids": [
+            "q6",
+            "q7",
+            "q8"
+          ],
+          "minutes": 12
+        }
+      ],
+      "total_minutes": 38,
+      "score_before": 12,
+      "score_after": 100
+    }
+  },
+  "timer_states": [
+    {
+      "live_score": 12,
+      "xp_gained": 0,
+      "done": 0,
+      "left": 8,
+      "next_quest": "q1",
+      "sprint": 1,
+      "remaining_sec": 2280,
+      "finished": false
+    },
+    {
+      "live_score": 46,
+      "xp_gained": 34,
+      "done": 3,
+      "left": 5,
+      "next_quest": "q4",
+      "sprint": 1,
+      "remaining_sec": 1680,
+      "finished": false
+    },
+    {
+      "live_score": 100,
+      "xp_gained": 88,
+      "done": 8,
+      "left": 0,
+      "next_quest": null,
+      "sprint": null,
+      "remaining_sec": 0,
+      "finished": true
+    }
+  ],
+  "glow_up_card": {
+    "name": "ฟ้า",
+    "before": 12,
+    "after": 94,
+    "delta": 82,
+    "minutes": 38,
+    "quests_done": 8,
+    "title_th": "ห้องเกิดใหม่ 🦋",
+    "headline_th": "ห้องฟ้า 12 → 94 ใน 38 นาที",
+    "size_px": [
+      1080,
+      1920
+    ],
+    "layout": "split_before_after",
+    "watermark": "CleanQuest · AI วันละแอป"
+  },
+  "declutter_items": [
+    {
+      "id": "i1",
+      "name_th": "หูฟังบลูทูธตัวเก่า",
+      "condition": "good",
+      "last_used_months": 14,
+      "paid_thb": 1290,
+      "duplicate": true
+    },
+    {
+      "id": "i2",
+      "name_th": "เสื้อยืดคอนเสิร์ต 2019",
+      "condition": "worn",
+      "last_used_months": 30,
+      "paid_thb": 450,
+      "sentimental": true
+    },
+    {
+      "id": "i3",
+      "name_th": "ไดร์เป่าผมพัง",
+      "condition": "broken",
+      "last_used_months": 8,
+      "paid_thb": 690
+    },
+    {
+      "id": "i4",
+      "name_th": "กางเกงยีนส์ไซซ์เดิม",
+      "condition": "worn",
+      "last_used_months": 20,
+      "paid_thb": 250
+    },
+    {
+      "id": "i5",
+      "name_th": "กระติกน้ำ",
+      "condition": "good",
+      "last_used_months": 1,
+      "paid_thb": 390
+    }
+  ],
+  "declutter_results": [
+    {
+      "item_id": "i1",
+      "name_th": "หูฟังบลูทูธตัวเก่า",
+      "decision": "sell",
+      "reason_th": "ไม่ได้ใช้ 14 เดือน ขายได้ราว ฿770",
+      "resale_thb": 770,
+      "listing_th": "ขาย หูฟังบลูทูธตัวเก่า สภาพดี ใช้น้อย ฿770 นัดรับได้/ส่งได้ ทักแชทเลย"
+    },
+    {
+      "item_id": "i2",
+      "name_th": "เสื้อยืดคอนเสิร์ต 2019",
+      "decision": "keep",
+      "reason_th": "มีความทรงจำ เก็บไว้ในกล่องความทรงจำ 1 กล่อง",
+      "resale_thb": 0
+    },
+    {
+      "item_id": "i3",
+      "name_th": "ไดร์เป่าผมพัง",
+      "decision": "trash",
+      "reason_th": "ชำรุดแล้ว ทิ้งหรือแยกขยะอิเล็กทรอนิกส์",
+      "resale_thb": 0
+    },
+    {
+      "item_id": "i4",
+      "name_th": "กางเกงยีนส์ไซซ์เดิม",
+      "decision": "donate",
+      "reason_th": "ไม่ได้ใช้แล้ว ราคาขายต่ำ บริจาคดีกว่า",
+      "resale_thb": 0
+    },
+    {
+      "item_id": "i5",
+      "name_th": "กระติกน้ำ",
+      "decision": "keep",
+      "reason_th": "ยังใช้อยู่ เก็บให้มีที่ประจำ",
+      "resale_thb": 0
+    }
+  ],
+  "chore_split": [
+    {
+      "person": "ฟ้า",
+      "quest_ids": [
+        "q5",
+        "q6",
+        "q1",
+        "q3"
+      ],
+      "minutes": 20
+    },
+    {
+      "person": "มุก",
+      "quest_ids": [
+        "q2",
+        "q7",
+        "q4",
+        "q8"
+      ],
+      "minutes": 18
+    }
+  ],
+  "sessions": [
+    {
+      "on": "2026-10-04",
+      "before": 48,
+      "after": 82,
+      "minutes": 20,
+      "hotspots": [
+        "clothes_pile",
+        "dishes_cups",
+        "bed_unmade"
+      ]
+    },
+    {
+      "on": "2026-10-11",
+      "before": 55,
+      "after": 88,
+      "minutes": 15,
+      "hotspots": [
+        "clothes_pile",
+        "trash_floor"
+      ]
+    },
+    {
+      "on": "2026-10-18",
+      "before": 61,
+      "after": 90,
+      "minutes": 12,
+      "hotspots": [
+        "dishes_cups",
+        "snack_wrappers",
+        "clothes_pile"
+      ]
+    },
+    {
+      "on": "2026-10-21",
+      "before": 12,
+      "after": 94,
+      "minutes": 38,
+      "hotspots": [
+        "clothes_pile",
+        "trash_floor",
+        "dishes_cups",
+        "snack_wrappers",
+        "desk_clutter",
+        "boxes_parcels",
+        "bed_unmade",
+        "cables_mess"
+      ]
+    }
+  ],
+  "progress_before_session": {
+    "xp": 150,
+    "level": 2,
+    "streak_days": 7
+  },
+  "progress": {
+    "xp": 283,
+    "level": 3,
+    "streak_days": 7
+  },
+  "weekly_reset": {
+    "next_reset": "2026-10-25",
+    "days_left": 4,
+    "done_this_week": true
+  },
+  "wrapped_oct": {
+    "month": "2026-10",
+    "sessions": 4,
+    "minutes": 85,
+    "avg_delta": 44,
+    "best_delta": 82,
+    "top_hotspot": "clothes_pile",
+    "hotspot_counts": {
+      "clothes_pile": 4,
+      "dishes_cups": 3,
+      "bed_unmade": 2,
+      "trash_floor": 2,
+      "snack_wrappers": 2,
+      "desk_clutter": 1,
+      "boxes_parcels": 1,
+      "cables_mess": 1
+    }
+  },
+  "local_store": {
+    "version": 1,
+    "name": "ฟ้า",
+    "roommates": [
+      "ฟ้า",
+      "มุก"
+    ],
+    "sessions": [
+      {
+        "on": "2026-10-04",
+        "before": 48,
+        "after": 82,
+        "minutes": 20,
+        "hotspots": [
+          "clothes_pile",
+          "dishes_cups",
+          "bed_unmade"
+        ]
+      },
+      {
+        "on": "2026-10-11",
+        "before": 55,
+        "after": 88,
+        "minutes": 15,
+        "hotspots": [
+          "clothes_pile",
+          "trash_floor"
+        ]
+      },
+      {
+        "on": "2026-10-18",
+        "before": 61,
+        "after": 90,
+        "minutes": 12,
+        "hotspots": [
+          "dishes_cups",
+          "snack_wrappers",
+          "clothes_pile"
+        ]
+      },
+      {
+        "on": "2026-10-21",
+        "before": 12,
+        "after": 94,
+        "minutes": 38,
+        "hotspots": [
+          "clothes_pile",
+          "trash_floor",
+          "dishes_cups",
+          "snack_wrappers",
+          "desk_clutter",
+          "boxes_parcels",
+          "bed_unmade",
+          "cables_mess"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "id": "i1",
+        "name_th": "หูฟังบลูทูธตัวเก่า",
+        "condition": "good",
+        "last_used_months": 14,
+        "paid_thb": 1290,
+        "duplicate": true
+      },
+      {
+        "id": "i2",
+        "name_th": "เสื้อยืดคอนเสิร์ต 2019",
+        "condition": "worn",
+        "last_used_months": 30,
+        "paid_thb": 450,
+        "sentimental": true
+      },
+      {
+        "id": "i3",
+        "name_th": "ไดร์เป่าผมพัง",
+        "condition": "broken",
+        "last_used_months": 8,
+        "paid_thb": 690
+      },
+      {
+        "id": "i4",
+        "name_th": "กางเกงยีนส์ไซซ์เดิม",
+        "condition": "worn",
+        "last_used_months": 20,
+        "paid_thb": 250
+      },
+      {
+        "id": "i5",
+        "name_th": "กระติกน้ำ",
+        "condition": "good",
+        "last_used_months": 1,
+        "paid_thb": 390
+      }
+    ],
+    "log": [
+      {
+        "on": "2026-10-15",
+        "kind": "scan"
+      },
+      {
+        "on": "2026-10-16",
+        "kind": "scan"
+      },
+      {
+        "on": "2026-10-17",
+        "kind": "scan"
+      },
+      {
+        "on": "2026-10-18",
+        "kind": "scan"
+      },
+      {
+        "on": "2026-10-19",
+        "kind": "scan"
+      },
+      {
+        "on": "2026-10-20",
+        "kind": "scan"
+      },
+      {
+        "on": "2026-10-18",
+        "kind": "session"
+      },
+      {
+        "on": "2026-10-18",
+        "kind": "quest",
+        "xp": 40
+      },
+      {
+        "on": "2026-10-11",
+        "kind": "session"
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "scan"
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "session"
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "quest",
+        "xp": 8
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "quest",
+        "xp": 20
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "quest",
+        "xp": 6
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "quest",
+        "xp": 10
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "quest",
+        "xp": 24
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "quest",
+        "xp": 8
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "quest",
+        "xp": 8
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "quest",
+        "xp": 4
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "declutter"
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "declutter"
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "declutter"
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "declutter"
+      },
+      {
+        "on": "2026-10-21",
+        "kind": "declutter"
+      }
+    ],
+    "settings": {
+      "reset_weekday": 6,
+      "notify": true,
+      "sound": true
+    }
+  },
+  "ai_scan_response_example": {
+    "is_room_photo": true,
+    "hotspots": [
+      {
+        "id": "clothes_pile",
+        "severity": 2,
+        "confidence": 0.91,
+        "box": [
+          0.05,
+          0.3,
+          0.35,
+          0.4
+        ]
+      },
+      {
+        "id": "trash_floor",
+        "severity": 2,
+        "confidence": 0.84,
+        "box": [
+          0.55,
+          0.7,
+          0.3,
+          0.25
+        ]
+      },
+      {
+        "id": "dishes_cups",
+        "severity": 1,
+        "confidence": 0.77,
+        "box": [
+          0.62,
+          0.35,
+          0.15,
+          0.12
+        ]
+      },
+      {
+        "id": "boxes_parcels",
+        "severity": 1,
+        "confidence": 0.66,
+        "box": [
+          0.4,
+          0.72,
+          0.15,
+          0.2
+        ]
+      },
+      {
+        "id": "cables_mess",
+        "severity": 1,
+        "confidence": 0.42,
+        "box": [
+          0.7,
+          0.48,
+          0.12,
+          0.08
+        ]
+      }
+    ],
+    "note_th": "เห็นเสื้อผ้ากองบนเก้าอี้ ถุงขยะ 2 ใบข้างโต๊ะ แก้วชานมบนโต๊ะ"
+  },
+  "pep_talk_examples": {
+    "coach": "อีก 1 เควส ห้องขึ้น 56 แล้ว ลุย!",
+    "bestie": "แกกก เก็บขยะเสร็จแล้ว เก่งมากกก",
+    "army": "พลทหาร! เสื้อผ้ากองนั้น 12 นาที เริ่ม!"
+  },
+  "ui_copy_th": {
+    "home_title": "ห้องรกแค่ไหน ให้ AI ตัดสิน",
+    "scan_cta": "📸 สแกนห้อง",
+    "confirm": "AI เจอจุดรกพวกนี้ ถูกไหม? แตะเพื่อแก้ระดับ",
+    "add_hotspot": "+ เพิ่มจุดที่ AI ไม่เห็น",
+    "score_title": "คะแนนห้อง",
+    "mode_pick": "วันนี้ไหวแค่ไหน? 😴 5 นาที · 🙂 15 นาที · 🔥 เคลียร์หมด",
+    "start": "เริ่มเควส ⏱️",
+    "quest_done": "เสร็จ! +{xp} XP",
+    "sprint_break": "พัก 1 นาที ดื่มน้ำก่อน 💧",
+    "rescan": "ถ่ายหลังเก็บ เทียบ Before/After",
+    "glow_share": "แชร์ Glow-up",
+    "declutter_title": "เก็บ ขาย บริจาค หรือทิ้ง?",
+    "copy_listing": "คัดลอกข้อความขาย",
+    "split_title": "แบ่งงานกับรูมเมท",
+    "split_share": "ส่งเข้า LINE รูมเมท",
+    "streak": "สแกนติดกัน {n} วัน 🔥",
+    "reset_title": "Weekly Reset อีก {n} วัน",
+    "not_room": "ไม่เห็นห้องในรูป ลองถ่ายกว้างๆ ให้เห็นพื้นกับโต๊ะ",
+    "privacy": "รูปอยู่ในเครื่องคุณ ส่งให้ AI เฉพาะตอนสแกน และไม่เก็บบนเซิร์ฟเวอร์"
+  },
+  "reel_script": [
+    {
+      "t": "0–3s",
+      "shot": "แพนกล้องห้องรก เสื้อผ้ากอง ถุงขยะ",
+      "overlay_th": "ห้องกูได้คะแนนเท่าไหร่วะ…"
+    },
+    {
+      "t": "3–7s",
+      "shot": "speed-ramp gen แอปด้วย AI",
+      "overlay_th": "เลยให้ AI สร้างแอปตัดสินห้องรก"
+    },
+    {
+      "t": "7–11s",
+      "shot": "สแกน → pin จุดรกเด้ง → สกอร์ 12 สีแดงสั่น",
+      "overlay_th": "12/100 ห้องวิกฤต 🚨"
+    },
+    {
+      "t": "11–15s",
+      "shot": "เลือก 🔥 → เควส 8 อัน 3 สปรินต์ 38 นาที",
+      "overlay_th": "แปลงเป็นเกม 38 นาที"
+    },
+    {
+      "t": "15–22s",
+      "shot": "timelapse เก็บห้อง + ติ๊กเควส สกอร์วิ่ง 12→46→80",
+      "overlay_th": "ทุกเควสสกอร์ขึ้นสด"
+    },
+    {
+      "t": "22–26s",
+      "shot": "Before/After slider 12 → 94 + การ์ด ห้องเกิดใหม่",
+      "overlay_th": "12 → 94 ใน 38 นาที 🦋"
+    },
+    {
+      "t": "26–30s",
+      "shot": "แวบ Declutter หูฟังขายได้ ฿770 + แบ่งงานรูมเมท",
+      "overlay_th": "คอมเมนต์ 'ห้อง' เดี๋ยวส่งลิงก์ให้ฟรี"
+    }
+  ],
+  "expect_locked": {
+    "before": [
+      12,
+      88,
+      "ห้องวิกฤต 🚨",
+      38
+    ],
+    "after": [
+      94,
+      "ห้องโชว์ ✨"
+    ],
+    "fire_order": [
+      "snack_wrappers",
+      "trash_floor",
+      "bed_unmade",
+      "dishes_cups",
+      "clothes_pile",
+      "boxes_parcels",
+      "desk_clutter",
+      "cables_mess"
+    ],
+    "fire_sprints": [
+      14,
+      12,
+      12
+    ],
+    "fire_scores": [
+      20,
+      40,
+      46,
+      56,
+      80,
+      88,
+      96,
+      100
+    ],
+    "lazy": [
+      [
+        "snack_wrappers",
+        "bed_unmade"
+      ],
+      26
+    ],
+    "normal": [
+      14,
+      56
+    ],
+    "timer_mid": 46,
+    "glow": [
+      12,
+      94,
+      82,
+      "ห้องเกิดใหม่ 🦋"
+    ],
+    "declutter": [
+      "sell",
+      "keep",
+      "trash",
+      "donate",
+      "keep"
+    ],
+    "resale_i1": 770,
+    "split": [
+      [
+        "ฟ้า",
+        20
+      ],
+      [
+        "มุก",
+        18
+      ]
+    ],
+    "progress": {
+      "xp": 283,
+      "level": 3,
+      "streak_days": 7
+    },
+    "reset": {
+      "next_reset": "2026-10-25",
+      "days_left": 4,
+      "done_this_week": true
+    },
+    "wrapped": [
+      4,
+      85,
+      44,
+      "clothes_pile"
+    ]
+  }
+}

@@ -1,0 +1,468 @@
+{
+ "UserProfile": [
+  {
+   "name": "มิว",
+   "allergies": [
+    "shrimp",
+    "milk"
+   ],
+   "goal": "cut_sugar"
+  },
+  {
+   "name": "แม่ต้น",
+   "allergies": [
+    "peanut"
+   ],
+   "goal": "kid_mode",
+   "daily_limits": {
+    "sugar_g": 16
+   }
+  }
+ ],
+ "Nutrients": [
+  {
+   "kcal": 90,
+   "sugar_g": 20,
+   "fat_g": 0,
+   "sodium_mg": 40
+  },
+  {
+   "kcal": 0,
+   "sugar_g": 0,
+   "fat_g": 0,
+   "sodium_mg": 20
+  },
+  {
+   "kcal": 45,
+   "sugar_g": 10,
+   "fat_g": 0,
+   "sodium_mg": 30
+  },
+  {
+   "kcal": 130,
+   "sugar_g": 1,
+   "fat_g": 8,
+   "sodium_mg": 190
+  },
+  {
+   "kcal": 280,
+   "sugar_g": 4,
+   "fat_g": 12,
+   "sodium_mg": 1300
+  },
+  {
+   "kcal": 130,
+   "sugar_g": 17,
+   "fat_g": 4,
+   "sodium_mg": 110
+  }
+ ],
+ "Label": [
+  {
+   "id": "greentea_sweet",
+   "name_th": "ชาเขียวขวด (หวาน) 420 ml",
+   "category": "tea",
+   "form": "drink",
+   "serving_size": 210,
+   "servings_per_pack": 2,
+   "per_serving": {
+    "kcal": 90,
+    "sugar_g": 20,
+    "fat_g": 0,
+    "sodium_mg": 40
+   },
+   "price_thb": 20,
+   "ingredients_th": "น้ำ, น้ำตาล, ใบชาเขียว 0.3%, วิตามินซี, กลิ่นธรรมชาติ, E330",
+   "additives": [
+    "E330"
+   ]
+  },
+  {
+   "id": "greentea_zero",
+   "name_th": "ชาเขียวขวด (ไม่หวาน) 420 ml",
+   "category": "tea",
+   "form": "drink",
+   "serving_size": 210,
+   "servings_per_pack": 2,
+   "per_serving": {
+    "kcal": 0,
+    "sugar_g": 0,
+    "fat_g": 0,
+    "sodium_mg": 20
+   },
+   "price_thb": 20,
+   "ingredients_th": "น้ำ, ใบชาเขียว 0.5%, วิตามินซี",
+   "additives": []
+  },
+  {
+   "id": "greentea_lite",
+   "name_th": "ชาเขียวขวด (หวานน้อย) 420 ml",
+   "category": "tea",
+   "form": "drink",
+   "serving_size": 210,
+   "servings_per_pack": 2,
+   "per_serving": {
+    "kcal": 45,
+    "sugar_g": 10,
+    "fat_g": 0,
+    "sodium_mg": 30
+   },
+   "price_thb": 20,
+   "ingredients_th": "น้ำ, น้ำตาล, ใบชาเขียว, ซูคราโลส",
+   "additives": [
+    "E955"
+   ]
+  },
+  {
+   "id": "chips_seaweed",
+   "name_th": "มันฝรั่งทอดรสสาหร่าย 75 g",
+   "category": "snack",
+   "form": "solid",
+   "serving_size": 25,
+   "servings_per_pack": 3,
+   "per_serving": {
+    "kcal": 130,
+    "sugar_g": 1,
+    "fat_g": 8,
+    "sodium_mg": 190
+   },
+   "price_thb": 35,
+   "ingredients_th": "มันฝรั่ง, น้ำมันปาล์ม, ผงปรุงรสสาหร่าย (เกลือ, น้ำตาล, ผงชูรส E621, นมผง, ถั่วเหลือง)",
+   "additives": [
+    "E621"
+   ]
+  },
+  {
+   "id": "noodle_tomyum",
+   "name_th": "บะหมี่กึ่งสำเร็จรูปต้มยำ 60 g",
+   "category": "noodle",
+   "form": "solid",
+   "serving_size": 60,
+   "servings_per_pack": 1,
+   "per_serving": {
+    "kcal": 280,
+    "sugar_g": 4,
+    "fat_g": 12,
+    "sodium_mg": 1300
+   },
+   "price_thb": 7,
+   "ingredients_th": "แป้งสาลี, น้ำมันปาล์ม, เกลือ, กุ้งแห้ง, ผงชูรส E621",
+   "additives": [
+    "E621"
+   ]
+  },
+  {
+   "id": "milk_choc",
+   "name_th": "นมช็อกโกแลต UHT 180 ml",
+   "category": "milk",
+   "form": "drink",
+   "serving_size": 180,
+   "servings_per_pack": 1,
+   "per_serving": {
+    "kcal": 130,
+    "sugar_g": 17,
+    "fat_g": 4,
+    "sodium_mg": 110
+   },
+   "price_thb": 14,
+   "ingredients_th": "นมโคสด, น้ำตาล, ผงโกโก้, E471",
+   "additives": [
+    "E471"
+   ]
+  }
+ ],
+ "PackTotals": [
+  {
+   "kcal": 180,
+   "sugar_g": 40,
+   "fat_g": 0,
+   "sodium_mg": 80
+  },
+  {
+   "kcal": 0,
+   "sugar_g": 0,
+   "fat_g": 0,
+   "sodium_mg": 40
+  },
+  {
+   "kcal": 90,
+   "sugar_g": 20,
+   "fat_g": 0,
+   "sodium_mg": 60
+  },
+  {
+   "kcal": 390,
+   "sugar_g": 3,
+   "fat_g": 24,
+   "sodium_mg": 570
+  },
+  {
+   "kcal": 280,
+   "sugar_g": 4,
+   "fat_g": 12,
+   "sodium_mg": 1300
+  },
+  {
+   "kcal": 130,
+   "sugar_g": 17,
+   "fat_g": 4,
+   "sodium_mg": 110
+  }
+ ],
+ "SugarSpoons": [
+  {
+   "sugar_g": 40,
+   "tsp": 10.0
+  },
+  {
+   "sugar_g": 0,
+   "tsp": 0.0
+  },
+  {
+   "sugar_g": 20,
+   "tsp": 5.0
+  },
+  {
+   "sugar_g": 3,
+   "tsp": 0.8
+  },
+  {
+   "sugar_g": 4,
+   "tsp": 1.0
+  },
+  {
+   "sugar_g": 17,
+   "tsp": 4.2
+  }
+ ],
+ "Grade": [
+  {
+   "score": 50,
+   "grade": "C",
+   "lights": {
+    "sugar_g": "amber",
+    "fat_g": "green",
+    "sodium_mg": "green"
+   }
+  },
+  {
+   "score": 100,
+   "grade": "A",
+   "lights": {
+    "sugar_g": "green",
+    "fat_g": "green",
+    "sodium_mg": "green"
+   }
+  },
+  {
+   "score": 70,
+   "grade": "B",
+   "lights": {
+    "sugar_g": "amber",
+    "fat_g": "green",
+    "sodium_mg": "green"
+   }
+  },
+  {
+   "score": 40,
+   "grade": "D",
+   "lights": {
+    "sugar_g": "green",
+    "fat_g": "red",
+    "sodium_mg": "red"
+   }
+  },
+  {
+   "score": 10,
+   "grade": "E",
+   "lights": {
+    "sugar_g": "amber",
+    "fat_g": "red",
+    "sodium_mg": "red"
+   }
+  },
+  {
+   "score": 55,
+   "grade": "C",
+   "lights": {
+    "sugar_g": "amber",
+    "fat_g": "amber",
+    "sodium_mg": "green"
+   }
+  }
+ ],
+ "AllergenCheck": [
+  {
+   "safe": false,
+   "hits": [
+    {
+     "allergen": "milk",
+     "matched": "นม"
+    }
+   ]
+  },
+  {
+   "safe": false,
+   "hits": [
+    {
+     "allergen": "shrimp",
+     "matched": "กุ้ง"
+    }
+   ]
+  },
+  {
+   "safe": true,
+   "hits": []
+  }
+ ],
+ "Additive": [
+  {
+   "code": "E621",
+   "name_th": "ผงชูรส (MSG)",
+   "level": "info"
+  },
+  {
+   "code": "E951",
+   "name_th": "แอสปาร์แตม สารให้ความหวาน",
+   "level": "caution"
+  },
+  {
+   "code": "E102",
+   "name_th": "ทาร์ทราซีน สีเหลือง",
+   "level": "caution"
+  },
+  {
+   "code": "E999",
+   "name_th": "ไม่รู้จักในฐานข้อมูล",
+   "level": "unknown"
+  },
+  {
+   "code": "E955",
+   "name_th": "ซูคราโลส สารให้ความหวาน",
+   "level": "info"
+  }
+ ],
+ "Battle": [
+  {
+   "a": "greentea_sweet",
+   "b": "greentea_zero",
+   "score_a": 50,
+   "score_b": 100,
+   "winner": "greentea_zero",
+   "sugar_diff_tsp": 10.0,
+   "price_diff_thb": 0
+  },
+  {
+   "a": "chips_seaweed",
+   "b": "noodle_tomyum",
+   "score_a": 40,
+   "score_b": 10,
+   "winner": "chips_seaweed",
+   "sugar_diff_tsp": 0.2,
+   "price_diff_thb": 28
+  },
+  {
+   "a": "greentea_lite",
+   "b": "greentea_lite",
+   "score_a": 70,
+   "score_b": 70,
+   "winner": "tie",
+   "sugar_diff_tsp": 0.0,
+   "price_diff_thb": 0
+  }
+ ],
+ "Swap": [
+  {
+   "from": "greentea_sweet",
+   "to": "greentea_zero",
+   "score_gain": 50,
+   "sugar_saved_tsp": 10.0
+  },
+  null
+ ],
+ "BudgetDay": [
+  {
+   "totals": {
+    "sugar_g": 60.0,
+    "sodium_mg": 760.0,
+    "fat_g": 28.0,
+    "kcal": 700.0
+   },
+   "pct": {
+    "sugar_g": 250,
+    "sodium_mg": 38,
+    "fat_g": 43,
+    "kcal": 35
+   },
+   "over": [
+    "sugar_g"
+   ],
+   "sugar_tsp": 15.0,
+   "items": 3
+  },
+  {
+   "totals": {
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "fat_g": 0.0,
+    "kcal": 0.0
+   },
+   "pct": {
+    "sugar_g": 0,
+    "sodium_mg": 0,
+    "fat_g": 0,
+    "kcal": 0
+   },
+   "over": [],
+   "sugar_tsp": 0.0,
+   "items": 0
+  }
+ ],
+ "Streak": [
+  {
+   "streak": 6,
+   "badge": "หวานน้อย 3 วัน"
+  },
+  {
+   "streak": 0,
+   "badge": null
+  }
+ ],
+ "ReelCard": [
+  {
+   "kind": "sugar_spoons",
+   "title_th": "ชาเขียว 1 ขวด = น้ำตาล 10 ช้อนชา",
+   "big_stat": "10 ช้อน",
+   "sub_th": "เกินโควตาทั้งวัน 167%",
+   "disclaimer_th": "ข้อมูลสมมติ ประมาณการจากฉลาก ไม่ใช่คำแนะนำทางการแพทย์"
+  },
+  {
+   "kind": "battle",
+   "title_th": "หวาน vs ไม่หวาน ราคาเท่ากัน",
+   "big_stat": "50 vs 100",
+   "sub_th": "ต่างกัน 10 ช้อนชา จ่ายเท่าเดิม",
+   "disclaimer_th": "ข้อมูลสมมติ ประมาณการจากฉลาก ไม่ใช่คำแนะนำทางการแพทย์"
+  },
+  {
+   "kind": "day_total",
+   "title_th": "ของว่างวันนี้ 3 อย่าง",
+   "big_stat": "15 ช้อน",
+   "sub_th": "น้ำตาล 250% ของทั้งวัน",
+   "disclaimer_th": "ข้อมูลสมมติ ประมาณการจากฉลาก ไม่ใช่คำแนะนำทางการแพทย์"
+  },
+  {
+   "kind": "swap",
+   "title_th": "สลับขวดเดียว",
+   "big_stat": "-10 ช้อน",
+   "sub_th": "คะแนน +50",
+   "disclaimer_th": "ข้อมูลสมมติ ประมาณการจากฉลาก ไม่ใช่คำแนะนำทางการแพทย์"
+  },
+  {
+   "kind": "streak",
+   "title_th": "หวานน้อยติดกัน",
+   "big_stat": "6 วัน",
+   "sub_th": "อีก 1 วันได้ badge 7 วัน",
+   "disclaimer_th": "ข้อมูลสมมติ ประมาณการจากฉลาก ไม่ใช่คำแนะนำทางการแพทย์"
+  }
+ ]
+}

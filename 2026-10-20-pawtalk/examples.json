@@ -1,0 +1,1346 @@
+{
+  "_note": "ข้อมูลทั้งหมดเป็นตัวอย่างสมมติ (บ้านแพรว) สร้างโดย reference/build.py",
+  "today": "2026-10-20",
+  "colors": {
+    "cream": "#FFF8F0",
+    "cocoa": "#3B2A20",
+    "orange": "#F97316",
+    "peach": "#FDBA74",
+    "mint": "#34D399",
+    "sky": "#60A5FA",
+    "berry": "#EC4899",
+    "alert": "#DC2626"
+  },
+  "cue_catalog": {
+    "cat": [
+      {
+        "id": "ears_forward",
+        "label_th": "หูตั้งไปข้างหน้า",
+        "weights": {
+          "happy": 1,
+          "playful": 2,
+          "chill": 1
+        }
+      },
+      {
+        "id": "ears_flat",
+        "label_th": "หูแบนลู่",
+        "weights": {
+          "scared": 3,
+          "annoyed": 2
+        }
+      },
+      {
+        "id": "ears_sideways",
+        "label_th": "หูกางข้าง",
+        "weights": {
+          "annoyed": 2
+        }
+      },
+      {
+        "id": "slow_blink",
+        "label_th": "กะพริบตาช้า",
+        "weights": {
+          "chill": 3,
+          "happy": 2
+        }
+      },
+      {
+        "id": "pupils_wide",
+        "label_th": "รูม่านตาขยาย",
+        "weights": {
+          "scared": 2,
+          "playful": 2
+        }
+      },
+      {
+        "id": "tail_up",
+        "label_th": "หางชี้ตรง",
+        "weights": {
+          "happy": 3,
+          "needy": 1
+        }
+      },
+      {
+        "id": "tail_puffed",
+        "label_th": "หางพอง",
+        "weights": {
+          "scared": 3
+        }
+      },
+      {
+        "id": "tail_flick",
+        "label_th": "หางสะบัด",
+        "weights": {
+          "annoyed": 3
+        }
+      },
+      {
+        "id": "belly_up",
+        "label_th": "นอนหงายโชว์พุง",
+        "weights": {
+          "chill": 2,
+          "happy": 1
+        }
+      },
+      {
+        "id": "loaf",
+        "label_th": "นั่งท่าขนมปัง",
+        "weights": {
+          "chill": 3
+        }
+      },
+      {
+        "id": "staring_at_bowl",
+        "label_th": "จ้องชามข้าว",
+        "weights": {
+          "hungry": 4
+        }
+      },
+      {
+        "id": "meow_loud",
+        "label_th": "ร้องเสียงดัง",
+        "weights": {
+          "hungry": 2,
+          "needy": 2
+        }
+      },
+      {
+        "id": "purr",
+        "label_th": "ครางครืดๆ",
+        "weights": {
+          "happy": 2,
+          "chill": 2,
+          "needy": 1
+        }
+      },
+      {
+        "id": "hiss",
+        "label_th": "ขู่ฟ่อ",
+        "weights": {
+          "scared": 2,
+          "annoyed": 3
+        }
+      },
+      {
+        "id": "kneading",
+        "label_th": "นวดแป้ง",
+        "weights": {
+          "happy": 2,
+          "needy": 2
+        }
+      },
+      {
+        "id": "crouch_wiggle",
+        "label_th": "หมอบส่ายก้น",
+        "weights": {
+          "playful": 4
+        }
+      }
+    ],
+    "dog": [
+      {
+        "id": "tail_wag_loose",
+        "label_th": "ส่ายหางหลวมๆ",
+        "weights": {
+          "happy": 3,
+          "playful": 1
+        }
+      },
+      {
+        "id": "tail_tucked",
+        "label_th": "หางซุกขา",
+        "weights": {
+          "scared": 4
+        }
+      },
+      {
+        "id": "play_bow",
+        "label_th": "ก้มหน้ายกก้น",
+        "weights": {
+          "playful": 4
+        }
+      },
+      {
+        "id": "ears_back",
+        "label_th": "หูพับหลัง",
+        "weights": {
+          "scared": 2,
+          "needy": 1
+        }
+      },
+      {
+        "id": "whale_eye",
+        "label_th": "เหลือบตาเห็นตาขาว",
+        "weights": {
+          "scared": 2,
+          "annoyed": 2
+        }
+      },
+      {
+        "id": "yawn_lip_lick",
+        "label_th": "หาว/เลียปาก",
+        "weights": {
+          "scared": 1,
+          "annoyed": 1
+        }
+      },
+      {
+        "id": "belly_up",
+        "label_th": "นอนหงายโชว์พุง",
+        "weights": {
+          "chill": 2,
+          "needy": 2
+        }
+      },
+      {
+        "id": "staring_at_food",
+        "label_th": "จ้องอาหาร",
+        "weights": {
+          "hungry": 4
+        }
+      },
+      {
+        "id": "whine",
+        "label_th": "ครางหงิงๆ",
+        "weights": {
+          "needy": 3,
+          "hungry": 1
+        }
+      },
+      {
+        "id": "growl",
+        "label_th": "คำราม",
+        "weights": {
+          "annoyed": 4
+        }
+      },
+      {
+        "id": "zoomies",
+        "label_th": "วิ่งรอบบ้าน",
+        "weights": {
+          "playful": 3,
+          "happy": 2
+        }
+      },
+      {
+        "id": "lying_relaxed",
+        "label_th": "นอนสบาย",
+        "weights": {
+          "chill": 4
+        }
+      },
+      {
+        "id": "bringing_toy",
+        "label_th": "คาบของเล่นมาให้",
+        "weights": {
+          "playful": 3,
+          "needy": 2
+        }
+      },
+      {
+        "id": "bark_at_door",
+        "label_th": "เห่าที่ประตู",
+        "weights": {
+          "needy": 2,
+          "annoyed": 1
+        }
+      }
+    ]
+  },
+  "symptom_catalog": [
+    {
+      "id": "straining_no_urine",
+      "level": "emergency",
+      "species": "cat",
+      "label_th": "เบ่งฉี่แต่ไม่ออก/ออกน้อย"
+    },
+    {
+      "id": "open_mouth_breathing",
+      "level": "emergency",
+      "species": "cat",
+      "label_th": "หายใจอ้าปาก"
+    },
+    {
+      "id": "hard_breathing",
+      "level": "emergency",
+      "species": null,
+      "label_th": "หายใจลำบาก/หอบผิดปกติ"
+    },
+    {
+      "id": "seizure",
+      "level": "emergency",
+      "species": null,
+      "label_th": "ชัก"
+    },
+    {
+      "id": "ate_toxic",
+      "level": "emergency",
+      "species": null,
+      "label_th": "กินของมีพิษ (เช่น ลิลลี่, ช็อกโกแลต, องุ่น, ยาคน)"
+    },
+    {
+      "id": "collapse",
+      "level": "emergency",
+      "species": null,
+      "label_th": "ทรุด/ลุกไม่ขึ้น"
+    },
+    {
+      "id": "bloated_belly_retching",
+      "level": "emergency",
+      "species": "dog",
+      "label_th": "ท้องอืดแน่น + พยายามอาเจียนแต่ไม่ออก"
+    },
+    {
+      "id": "blood_vomit_stool",
+      "level": "soon",
+      "species": null,
+      "label_th": "มีเลือดในอาเจียน/อุจจาระ"
+    },
+    {
+      "id": "not_eating_24h",
+      "level": "soon",
+      "species": null,
+      "label_th": "ไม่กินข้าวเกิน 24 ชม."
+    },
+    {
+      "id": "vomit_3plus",
+      "level": "soon",
+      "species": null,
+      "label_th": "อาเจียน 3 ครั้งขึ้นไปใน 24 ชม."
+    },
+    {
+      "id": "limping",
+      "level": "soon",
+      "species": null,
+      "label_th": "เดินกะเผลก"
+    },
+    {
+      "id": "eye_discharge_squint",
+      "level": "soon",
+      "species": null,
+      "label_th": "ตาแฉะ/หรี่ตาข้างเดียว"
+    },
+    {
+      "id": "lethargic_24h",
+      "level": "soon",
+      "species": null,
+      "label_th": "ซึมผิดปกติเกิน 24 ชม."
+    },
+    {
+      "id": "vomit_once",
+      "level": "watch",
+      "species": null,
+      "label_th": "อาเจียน 1 ครั้งแล้วปกติ"
+    },
+    {
+      "id": "hairball",
+      "level": "watch",
+      "species": "cat",
+      "label_th": "ขย้อนก้อนขน"
+    },
+    {
+      "id": "sneeze_mild",
+      "level": "watch",
+      "species": null,
+      "label_th": "จามเล็กน้อย กินได้ปกติ"
+    },
+    {
+      "id": "scratching_more",
+      "level": "watch",
+      "species": null,
+      "label_th": "เกาบ่อยขึ้น"
+    },
+    {
+      "id": "soft_stool_once",
+      "level": "watch",
+      "species": null,
+      "label_th": "ถ่ายเหลว 1 ครั้ง"
+    }
+  ],
+  "bubble_templates": {
+    "hungry": {
+      "boss": [
+        "ทาสสส อีก {soon} นาทีข้าวต้องมา ช้า 1 วิหักเงินเดือน",
+        "ชามว่างคือการดูหมิ่นข้า",
+        "เติมข้าวเดี๋ยวนี้ แล้วจะยกโทษให้ครึ่งนึง"
+      ],
+      "drama": [
+        "ไม่ได้กินมา 300 ปีแล้ว…จะเป็นลมแล้วนะ{owner}",
+        "ชามว่าง…เหมือนหัวใจข้าตอนนี้",
+        "ถ้าข้าหิวตาย ให้สลักป้ายว่า 'เพราะทาสลืม'"
+      ],
+      "sweet": [
+        "{owner}ขา หนูหิวนิดนึงงง",
+        "ข้าวมาเมื่อไหร่ หนูจะหอมแก้มให้",
+        "หนูนั่งรอตรงนี้นะ ไม่ไปไหนเลย"
+      ]
+    },
+    "annoyed": {
+      "boss": [
+        "อย่าแตะ ข้ากำลังประชุม",
+        "อีกครั้งเดียว ข่วนนะ",
+        "ใครอนุญาตให้ย้ายที่นอนข้า"
+      ],
+      "drama": [
+        "ทำไมโลกนี้ไม่มีใครเข้าใจข้า",
+        "พอเถอะ ข้าเหนื่อยกับมนุษย์",
+        "นี่คือวันที่แย่ที่สุดในชีวิตแมว"
+      ],
+      "sweet": [
+        "ขอเวลาส่วนตัวแป๊บนะ เดี๋ยวกลับมารัก",
+        "ตอนนี้งอนอยู่ ง้อด้วยขนมได้",
+        "อย่าเพิ่งจับนะ ใจยังไม่พร้อม"
+      ]
+    },
+    "scared": {
+      "boss": [
+        "เสียงอะไร ทาสไปตรวจดูซิ",
+        "ข้าไม่ได้กลัว แค่ถอยไปวางแผน",
+        "ปกป้องข้าด้วย นี่คือคำสั่ง"
+      ],
+      "drama": [
+        "นี่คือจุดจบแล้วใช่ไหม",
+        "ข้าเห็นผี…ไม่ใช่ เห็นเครื่องดูดฝุ่น",
+        "อย่าทิ้งข้าไว้คนเดียวนะ"
+      ],
+      "sweet": [
+        "หนูกลัวว อยู่ใกล้ๆ หนูหน่อย",
+        "ขอซุกตรงนี้ได้ไหม",
+        "{owner}อย่าไปไหนนะ"
+      ]
+    },
+    "needy": {
+      "boss": [
+        "วางโทรศัพท์ แล้วมองข้า",
+        "ถึงเวลาลูบหัวข้าแล้ว",
+        "ข้าอนุญาตให้เจ้ากอดได้ 3 วินาที"
+      ],
+      "drama": [
+        "ไม่มีใครรักข้าเลยใช่ไหม",
+        "เจ้าเล่นมือถือมากกว่าเล่นกับข้า",
+        "ข้าจะนั่งทับคีย์บอร์ดจนกว่าเจ้าจะสนใจ"
+      ],
+      "sweet": [
+        "รักนะ รักที่สุดเลย",
+        "กอดหน่อยสิ",
+        "อยู่กับหนูทั้งวันได้ไหม"
+      ]
+    },
+    "playful": {
+      "boss": [
+        "ไม้ตกแมวอยู่ไหน ข้าสั่งให้เล่น",
+        "วันนี้ข้าจะล่า…ถุงเท้าเจ้า",
+        "พร้อมแล้ว โยนมาเลย"
+      ],
+      "drama": [
+        "ถ้าไม่เล่นกับข้า ข้าจะพังแจกัน",
+        "ชีวิตนี้ขาดการเล่นไม่ได้",
+        "ข้าคือนักล่าผู้ยิ่งใหญ่…ของจุดเลเซอร์"
+      ],
+      "sweet": [
+        "เล่นกันน้าา",
+        "หนูเอาของเล่นมาให้แล้ว",
+        "วิ่งไล่หนูหน่อย ฮิ้ววว"
+      ]
+    },
+    "happy": {
+      "boss": [
+        "วันนี้เจ้าทำงานดี ข้าพอใจ",
+        "บ้านนี้ผ่านการประเมิน",
+        "ข้าจะขึ้นเงินเดือนให้ เป็นขนม"
+      ],
+      "drama": [
+        "นี่คือวันที่ดีที่สุดในชีวิต!",
+        "ข้ารักโลกใบนี้ (แค่วันนี้)",
+        "ความสุขล้นจนต้องกลิ้งพื้น"
+      ],
+      "sweet": [
+        "มีความสุขจังเลย",
+        "อยู่กับ{owner}แล้วอุ่นใจ",
+        "วันนี้ดีมากๆ เลยน้า"
+      ]
+    },
+    "chill": {
+      "boss": [
+        "อย่ารบกวน ข้ากำลังพักผ่อนระดับ CEO",
+        "งีบที่ 7 ของวัน",
+        "ห้องนี้อุณหภูมิผ่าน"
+      ],
+      "drama": [
+        "ปล่อยวางแล้ว…ทุกอย่าง",
+        "ขอนอนต่อ 12 ชั่วโมง",
+        "โลกจะแตกก็ช่าง ขอนอนก่อน"
+      ],
+      "sweet": [
+        "ง่วงจัง นอนด้วยกันไหม",
+        "สบายจังเลยตรงนี้",
+        "อุ่นๆ หลับปุ๋ย"
+      ]
+    }
+  },
+  "pets": [
+    {
+      "id": "cat1",
+      "name": "ส้มฉุน",
+      "species": "cat",
+      "breed_th": "แมวส้มไทย",
+      "sex": "male",
+      "age_years": 3,
+      "weight_kg": 4.5,
+      "neutered": true,
+      "persona": "boss",
+      "meal_times": [
+        "07:30",
+        "19:00"
+      ]
+    },
+    {
+      "id": "dog1",
+      "name": "ข้าวปั้น",
+      "species": "dog",
+      "breed_th": "ชิบะอินุ",
+      "sex": "female",
+      "age_years": 2,
+      "weight_kg": 9.0,
+      "neutered": true,
+      "size": "medium",
+      "persona": "sweet",
+      "meal_times": [
+        "08:00",
+        "18:00"
+      ]
+    }
+  ],
+  "snap_inputs": {
+    "cat1": {
+      "pet_id": "cat1",
+      "at": "07:05",
+      "cues": [
+        "staring_at_bowl",
+        "meow_loud",
+        "tail_flick"
+      ],
+      "source": "demo"
+    },
+    "dog1": {
+      "pet_id": "dog1",
+      "at": "07:05",
+      "cues": [
+        "tail_wag_loose",
+        "play_bow",
+        "bringing_toy"
+      ],
+      "source": "demo"
+    }
+  },
+  "mood_results": {
+    "cat1": {
+      "species": "cat",
+      "cues": [
+        "tail_flick",
+        "staring_at_bowl",
+        "meow_loud"
+      ],
+      "meal_bonus": true,
+      "minutes_to_meal": 25,
+      "moods": [
+        {
+          "mood": "hungry",
+          "points": 8,
+          "pct": 62,
+          "label_th": "หิว",
+          "emoji": "🍗"
+        },
+        {
+          "mood": "annoyed",
+          "points": 3,
+          "pct": 23,
+          "label_th": "หงุดหงิด",
+          "emoji": "😾"
+        },
+        {
+          "mood": "needy",
+          "points": 2,
+          "pct": 15,
+          "label_th": "อยากให้สนใจ",
+          "emoji": "🥺"
+        }
+      ],
+      "top_mood": "hungry",
+      "vibe_score": 38,
+      "vibe_label": "ระวังนะ",
+      "safety_hint": null
+    },
+    "dog1": {
+      "species": "dog",
+      "cues": [
+        "tail_wag_loose",
+        "play_bow",
+        "bringing_toy"
+      ],
+      "meal_bonus": true,
+      "minutes_to_meal": 55,
+      "moods": [
+        {
+          "mood": "playful",
+          "points": 8,
+          "pct": 54,
+          "label_th": "อยากเล่น",
+          "emoji": "🧶"
+        },
+        {
+          "mood": "happy",
+          "points": 3,
+          "pct": 20,
+          "label_th": "แฮปปี้",
+          "emoji": "😸"
+        },
+        {
+          "mood": "hungry",
+          "points": 2,
+          "pct": 13,
+          "label_th": "หิว",
+          "emoji": "🍗"
+        },
+        {
+          "mood": "needy",
+          "points": 2,
+          "pct": 13,
+          "label_th": "อยากให้สนใจ",
+          "emoji": "🥺"
+        }
+      ],
+      "top_mood": "playful",
+      "vibe_score": 87,
+      "vibe_label": "ฟินมาก",
+      "safety_hint": null
+    }
+  },
+  "cat_after_breakfast": {
+    "species": "cat",
+    "cues": [
+      "slow_blink",
+      "loaf",
+      "purr"
+    ],
+    "meal_bonus": false,
+    "minutes_to_meal": 650,
+    "moods": [
+      {
+        "mood": "chill",
+        "points": 8,
+        "pct": 61,
+        "label_th": "ชิลล์",
+        "emoji": "😌"
+      },
+      {
+        "mood": "happy",
+        "points": 4,
+        "pct": 31,
+        "label_th": "แฮปปี้",
+        "emoji": "😸"
+      },
+      {
+        "mood": "needy",
+        "points": 1,
+        "pct": 8,
+        "label_th": "อยากให้สนใจ",
+        "emoji": "🥺"
+      }
+    ],
+    "top_mood": "chill",
+    "vibe_score": 96,
+    "vibe_label": "ฟินมาก",
+    "safety_hint": null
+  },
+  "thought_bubbles": {
+    "cat1": {
+      "pet_id": "cat1",
+      "mood": "hungry",
+      "persona": "boss",
+      "persona_th": "เจ้านาย",
+      "template_index": 0,
+      "text_th": "ทาสสส อีก 25 นาทีข้าวต้องมา ช้า 1 วิหักเงินเดือน",
+      "emoji": "🍗",
+      "badge_th": "🍗 หิว 62%",
+      "disclaimer_th": "แปลเพื่อความบันเทิงจากภาษากาย ไม่ใช่การอ่านใจจริง"
+    },
+    "dog1": {
+      "pet_id": "dog1",
+      "mood": "playful",
+      "persona": "sweet",
+      "persona_th": "ขี้อ้อน",
+      "template_index": 1,
+      "text_th": "หนูเอาของเล่นมาให้แล้ว",
+      "emoji": "🧶",
+      "badge_th": "🧶 อยากเล่น 54%",
+      "disclaimer_th": "แปลเพื่อความบันเทิงจากภาษากาย ไม่ใช่การอ่านใจจริง"
+    }
+  },
+  "persona_flip_cat1": {
+    "boss": {
+      "pet_id": "cat1",
+      "mood": "hungry",
+      "persona": "boss",
+      "persona_th": "เจ้านาย",
+      "template_index": 0,
+      "text_th": "ทาสสส อีก 25 นาทีข้าวต้องมา ช้า 1 วิหักเงินเดือน",
+      "emoji": "🍗",
+      "badge_th": "🍗 หิว 62%",
+      "disclaimer_th": "แปลเพื่อความบันเทิงจากภาษากาย ไม่ใช่การอ่านใจจริง"
+    },
+    "drama": {
+      "pet_id": "cat1",
+      "mood": "hungry",
+      "persona": "drama",
+      "persona_th": "ดราม่าควีน",
+      "template_index": 0,
+      "text_th": "ไม่ได้กินมา 300 ปีแล้ว…จะเป็นลมแล้วนะแพรว",
+      "emoji": "🍗",
+      "badge_th": "🍗 หิว 62%",
+      "disclaimer_th": "แปลเพื่อความบันเทิงจากภาษากาย ไม่ใช่การอ่านใจจริง"
+    },
+    "sweet": {
+      "pet_id": "cat1",
+      "mood": "hungry",
+      "persona": "sweet",
+      "persona_th": "ขี้อ้อน",
+      "template_index": 2,
+      "text_th": "หนูนั่งรอตรงนี้นะ ไม่ไปไหนเลย",
+      "emoji": "🍗",
+      "badge_th": "🍗 หิว 62%",
+      "disclaimer_th": "แปลเพื่อความบันเทิงจากภาษากาย ไม่ใช่การอ่านใจจริง"
+    }
+  },
+  "duet": [
+    {
+      "pet_id": "cat1",
+      "text_th": "ทาสสส อีก 25 นาทีข้าวต้องมา ช้า 1 วิหักเงินเดือน"
+    },
+    {
+      "pet_id": "dog1",
+      "text_th": "หนูเอาของเล่นมาให้แล้ว"
+    },
+    {
+      "pet_id": "cat1",
+      "text_th": "ชามว่างคือการดูหมิ่นข้า"
+    }
+  ],
+  "care_items": [
+    {
+      "id": "t1",
+      "pet_id": "cat1",
+      "kind": "deworm",
+      "label_th": "ถ่ายพยาธิ",
+      "last_done": "2026-07-15",
+      "interval_days": 90
+    },
+    {
+      "id": "t2",
+      "pet_id": "cat1",
+      "kind": "flea",
+      "label_th": "หยดเห็บหมัด",
+      "last_done": "2026-09-22",
+      "interval_days": 30
+    },
+    {
+      "id": "t3",
+      "pet_id": "cat1",
+      "kind": "vaccine",
+      "label_th": "วัคซีนรวมประจำปี",
+      "last_done": "2025-11-02",
+      "interval_days": 365
+    },
+    {
+      "id": "t4",
+      "pet_id": "dog1",
+      "kind": "nail",
+      "label_th": "ตัดเล็บ",
+      "last_done": "2026-10-10",
+      "interval_days": 14
+    },
+    {
+      "id": "t5",
+      "pet_id": "dog1",
+      "kind": "bath",
+      "label_th": "อาบน้ำ",
+      "last_done": "2026-10-04",
+      "interval_days": 14
+    },
+    {
+      "id": "t6",
+      "pet_id": "dog1",
+      "kind": "heartworm",
+      "label_th": "ยาป้องกันพยาธิหนอนหัวใจ",
+      "last_done": "2026-09-21",
+      "interval_days": 30
+    }
+  ],
+  "care_board": [
+    {
+      "task_id": "t1",
+      "pet_id": "cat1",
+      "kind": "deworm",
+      "label_th": "ถ่ายพยาธิ",
+      "due_on": "2026-10-13",
+      "days_left": -7,
+      "status": "overdue"
+    },
+    {
+      "task_id": "t5",
+      "pet_id": "dog1",
+      "kind": "bath",
+      "label_th": "อาบน้ำ",
+      "due_on": "2026-10-18",
+      "days_left": -2,
+      "status": "overdue"
+    },
+    {
+      "task_id": "t6",
+      "pet_id": "dog1",
+      "kind": "heartworm",
+      "label_th": "ยาป้องกันพยาธิหนอนหัวใจ",
+      "due_on": "2026-10-21",
+      "days_left": 1,
+      "status": "due_soon"
+    },
+    {
+      "task_id": "t2",
+      "pet_id": "cat1",
+      "kind": "flea",
+      "label_th": "หยดเห็บหมัด",
+      "due_on": "2026-10-22",
+      "days_left": 2,
+      "status": "due_soon"
+    },
+    {
+      "task_id": "t4",
+      "pet_id": "dog1",
+      "kind": "nail",
+      "label_th": "ตัดเล็บ",
+      "due_on": "2026-10-24",
+      "days_left": 4,
+      "status": "ok"
+    },
+    {
+      "task_id": "t3",
+      "pet_id": "cat1",
+      "kind": "vaccine",
+      "label_th": "วัคซีนรวมประจำปี",
+      "due_on": "2026-11-02",
+      "days_left": 13,
+      "status": "ok"
+    }
+  ],
+  "next_meal_cat1": {
+    "at": "07:30",
+    "in_min": 25
+  },
+  "health": {
+    "cat1": {
+      "pet_id": "cat1",
+      "symptoms": [
+        {
+          "id": "vomit_once",
+          "level": "watch",
+          "label_th": "อาเจียน 1 ครั้งแล้วปกติ"
+        },
+        {
+          "id": "hairball",
+          "level": "watch",
+          "label_th": "ขย้อนก้อนขน"
+        }
+      ],
+      "level": "watch",
+      "level_th": "🟢 เฝ้าดูที่บ้าน 24–48 ชม.",
+      "escalated": false,
+      "show_vet_finder": false,
+      "disclaimer_th": "นี่คือการคัดกรองเบื้องต้น ไม่ใช่การวินิจฉัย หากไม่แน่ใจให้ปรึกษาสัตวแพทย์"
+    },
+    "dog1": {
+      "pet_id": "dog1",
+      "symptoms": [
+        {
+          "id": "scratching_more",
+          "level": "watch",
+          "label_th": "เกาบ่อยขึ้น"
+        }
+      ],
+      "level": "watch",
+      "level_th": "🟢 เฝ้าดูที่บ้าน 24–48 ชม.",
+      "escalated": false,
+      "show_vet_finder": false,
+      "disclaimer_th": "นี่คือการคัดกรองเบื้องต้น ไม่ใช่การวินิจฉัย หากไม่แน่ใจให้ปรึกษาสัตวแพทย์"
+    }
+  },
+  "health_red_example": {
+    "pet_id": "cat1",
+    "symptoms": [
+      {
+        "id": "straining_no_urine",
+        "level": "emergency",
+        "label_th": "เบ่งฉี่แต่ไม่ออก/ออกน้อย"
+      },
+      {
+        "id": "hairball",
+        "level": "watch",
+        "label_th": "ขย้อนก้อนขน"
+      }
+    ],
+    "level": "emergency",
+    "level_th": "🚨 ไปโรงพยาบาลสัตว์ทันที",
+    "escalated": false,
+    "show_vet_finder": true,
+    "disclaimer_th": "นี่คือการคัดกรองเบื้องต้น ไม่ใช่การวินิจฉัย หากไม่แน่ใจให้ปรึกษาสัตวแพทย์"
+  },
+  "food": {
+    "cat1": {
+      "pet_id": "cat1",
+      "stage": "neutered",
+      "rer_kcal": 216,
+      "factor": 1.2,
+      "kcal_per_day": 260,
+      "grams_per_day": 68,
+      "meals_per_day": 2,
+      "grams_per_meal": 34,
+      "note_th": "ค่าประมาณจากสูตร RER = 70 × น้ำหนัก^0.75 ตรวจกับฉลากอาหารและสัตวแพทย์"
+    },
+    "dog1": {
+      "pet_id": "dog1",
+      "stage": "neutered",
+      "rer_kcal": 364,
+      "factor": 1.6,
+      "kcal_per_day": 582,
+      "grams_per_day": 166,
+      "meals_per_day": 2,
+      "grams_per_meal": 83,
+      "note_th": "ค่าประมาณจากสูตร RER = 70 × น้ำหนัก^0.75 ตรวจกับฉลากอาหารและสัตวแพทย์"
+    }
+  },
+  "human_age": {
+    "cat1": {
+      "pet_id": "cat1",
+      "pet_years": 3,
+      "human_years": 28,
+      "note_th": "ค่าประมาณแบบตารางทั่วไป ไม่ใช่ค่าทางการแพทย์"
+    },
+    "dog1": {
+      "pet_id": "dog1",
+      "pet_years": 2,
+      "human_years": 24,
+      "note_th": "ค่าประมาณแบบตารางทั่วไป ไม่ใช่ค่าทางการแพทย์"
+    }
+  },
+  "pet_id_card": {
+    "pet_id": "cat1",
+    "title_th": "บัตรประจำตัวเจ้านาย: ส้มฉุน 👑",
+    "lines_th": [
+      "แมวส้มไทย · ชาย · 3 ปี (≈ 28 ปีคน)",
+      "บุคลิก: เจ้านาย",
+      "อารมณ์ประจำเดือน: 🍗 หิว (6/13 ครั้ง)",
+      "วันที่หงุดหงิดที่สุด: วันพุธ"
+    ],
+    "human_age": 28,
+    "persona_th": "เจ้านาย",
+    "top_mood_emoji": "🍗",
+    "size_px": [
+      1080,
+      1350
+    ],
+    "watermark": "PawTalk · AI วันละแอป"
+  },
+  "meme_card": {
+    "pet_id": "cat1",
+    "bubble": {
+      "pet_id": "cat1",
+      "mood": "hungry",
+      "persona": "boss",
+      "persona_th": "เจ้านาย",
+      "template_index": 0,
+      "text_th": "ทาสสส อีก 25 นาทีข้าวต้องมา ช้า 1 วิหักเงินเดือน",
+      "emoji": "🍗",
+      "badge_th": "🍗 หิว 62%",
+      "disclaimer_th": "แปลเพื่อความบันเทิงจากภาษากาย ไม่ใช่การอ่านใจจริง"
+    },
+    "size_px": [
+      1080,
+      1920
+    ],
+    "layout": "bubble_top",
+    "watermark": "PawTalk · AI วันละแอป"
+  },
+  "progress": {
+    "xp": 205,
+    "level": 3,
+    "streak_days": 7
+  },
+  "wrapped_cat1": {
+    "pet_id": "cat1",
+    "month": "2026-10",
+    "snaps": 13,
+    "mood_counts": {
+      "hungry": 6,
+      "annoyed": 3,
+      "chill": 2,
+      "happy": 1,
+      "needy": 1
+    },
+    "top_mood": "hungry",
+    "happy_pct": 23,
+    "grumpiest_weekday": "Wed",
+    "care_done": 0
+  },
+  "local_store": {
+    "version": 1,
+    "owner_name": "แพรว",
+    "pets": [
+      {
+        "id": "cat1",
+        "name": "ส้มฉุน",
+        "species": "cat",
+        "breed_th": "แมวส้มไทย",
+        "sex": "male",
+        "age_years": 3,
+        "weight_kg": 4.5,
+        "neutered": true,
+        "persona": "boss",
+        "meal_times": [
+          "07:30",
+          "19:00"
+        ]
+      },
+      {
+        "id": "dog1",
+        "name": "ข้าวปั้น",
+        "species": "dog",
+        "breed_th": "ชิบะอินุ",
+        "sex": "female",
+        "age_years": 2,
+        "weight_kg": 9.0,
+        "neutered": true,
+        "size": "medium",
+        "persona": "sweet",
+        "meal_times": [
+          "08:00",
+          "18:00"
+        ]
+      }
+    ],
+    "care": [
+      {
+        "id": "t1",
+        "pet_id": "cat1",
+        "kind": "deworm",
+        "label_th": "ถ่ายพยาธิ",
+        "last_done": "2026-07-15",
+        "interval_days": 90
+      },
+      {
+        "id": "t2",
+        "pet_id": "cat1",
+        "kind": "flea",
+        "label_th": "หยดเห็บหมัด",
+        "last_done": "2026-09-22",
+        "interval_days": 30
+      },
+      {
+        "id": "t3",
+        "pet_id": "cat1",
+        "kind": "vaccine",
+        "label_th": "วัคซีนรวมประจำปี",
+        "last_done": "2025-11-02",
+        "interval_days": 365
+      },
+      {
+        "id": "t4",
+        "pet_id": "dog1",
+        "kind": "nail",
+        "label_th": "ตัดเล็บ",
+        "last_done": "2026-10-10",
+        "interval_days": 14
+      },
+      {
+        "id": "t5",
+        "pet_id": "dog1",
+        "kind": "bath",
+        "label_th": "อาบน้ำ",
+        "last_done": "2026-10-04",
+        "interval_days": 14
+      },
+      {
+        "id": "t6",
+        "pet_id": "dog1",
+        "kind": "heartworm",
+        "label_th": "ยาป้องกันพยาธิหนอนหัวใจ",
+        "last_done": "2026-09-21",
+        "interval_days": 30
+      }
+    ],
+    "log": [
+      {
+        "on": "2026-10-01",
+        "kind": "snap",
+        "pet_id": "cat1",
+        "mood": "hungry"
+      },
+      {
+        "on": "2026-10-03",
+        "kind": "snap",
+        "pet_id": "cat1",
+        "mood": "annoyed"
+      },
+      {
+        "on": "2026-10-07",
+        "kind": "snap",
+        "pet_id": "cat1",
+        "mood": "annoyed"
+      },
+      {
+        "on": "2026-10-08",
+        "kind": "snap",
+        "pet_id": "cat1",
+        "mood": "chill"
+      },
+      {
+        "on": "2026-10-10",
+        "kind": "snap",
+        "pet_id": "cat1",
+        "mood": "hungry"
+      },
+      {
+        "on": "2026-10-12",
+        "kind": "snap",
+        "pet_id": "cat1",
+        "mood": "chill"
+      },
+      {
+        "on": "2026-10-14",
+        "kind": "snap",
+        "pet_id": "cat1",
+        "mood": "annoyed"
+      },
+      {
+        "on": "2026-10-15",
+        "kind": "snap",
+        "pet_id": "cat1",
+        "mood": "hungry"
+      },
+      {
+        "on": "2026-10-16",
+        "kind": "snap",
+        "pet_id": "cat1",
+        "mood": "happy"
+      },
+      {
+        "on": "2026-10-17",
+        "kind": "snap",
+        "pet_id": "cat1",
+        "mood": "hungry"
+      },
+      {
+        "on": "2026-10-18",
+        "kind": "snap",
+        "pet_id": "cat1",
+        "mood": "needy"
+      },
+      {
+        "on": "2026-10-19",
+        "kind": "snap",
+        "pet_id": "cat1",
+        "mood": "hungry"
+      },
+      {
+        "on": "2026-10-17",
+        "kind": "snap",
+        "pet_id": "dog1",
+        "mood": "playful"
+      },
+      {
+        "on": "2026-10-18",
+        "kind": "snap",
+        "pet_id": "dog1",
+        "mood": "happy"
+      },
+      {
+        "on": "2026-10-19",
+        "kind": "snap",
+        "pet_id": "dog1",
+        "mood": "playful"
+      },
+      {
+        "on": "2026-10-04",
+        "kind": "care_done",
+        "pet_id": "dog1"
+      },
+      {
+        "on": "2026-10-10",
+        "kind": "care_done",
+        "pet_id": "dog1"
+      },
+      {
+        "on": "2026-10-19",
+        "kind": "health_check",
+        "pet_id": "cat1"
+      },
+      {
+        "on": "2026-10-20",
+        "kind": "snap",
+        "pet_id": "cat1",
+        "mood": "hungry"
+      },
+      {
+        "on": "2026-10-20",
+        "kind": "snap",
+        "pet_id": "dog1",
+        "mood": "playful"
+      }
+    ],
+    "settings": {
+      "notify": true,
+      "lang": "th"
+    }
+  },
+  "ai_cue_response_example": {
+    "species_seen": "cat",
+    "cues": [
+      {
+        "cue": "staring_at_bowl",
+        "confidence": 0.86
+      },
+      {
+        "cue": "tail_flick",
+        "confidence": 0.58
+      },
+      {
+        "cue": "ears_forward",
+        "confidence": 0.31
+      }
+    ],
+    "is_pet_photo": true,
+    "note_th": "เห็นแมวนั่งหน้าชามว่าง หางกำลังขยับ"
+  },
+  "ui_copy_th": {
+    "home_title": "วันนี้น้องคิดอะไรอยู่?",
+    "snap_cta": "📸 ถ่ายน้อง แปลใจเลย",
+    "cue_confirm": "AI เห็นแบบนี้ ถูกไหม? แตะเพื่อแก้",
+    "cue_add": "+ เพิ่มท่าทางที่เห็น",
+    "persona_pick": "เลือกเสียงน้อง: 👑 เจ้านาย · 🎭 ดราม่าควีน · 🥺 ขี้อ้อน",
+    "share_cta": "แชร์มีม",
+    "duet_cta": "ให้น้องคุยกัน 💬",
+    "care_title": "งานทาสวันนี้",
+    "overdue": "เลยกำหนด {n} วัน",
+    "due_soon": "อีก {n} วัน",
+    "health_title": "เช็กอาการเบื้องต้น",
+    "health_disclaimer": "ไม่ใช่การวินิจฉัย ฉุกเฉินให้ไปโรงพยาบาลสัตว์ทันที",
+    "food_title": "ควรกินวันละเท่าไหร่",
+    "age_title": "ถ้าเป็นคนจะอายุ",
+    "wrapped_title": "{pet} ประจำเดือน",
+    "streak": "แปลใจติดกัน {n} วัน 🔥",
+    "empty_pet": "เพิ่มน้องตัวแรกก่อนนะ",
+    "not_pet_photo": "ไม่เจอน้องในรูป ลองถ่ายใหม่ให้เห็นทั้งตัว"
+  },
+  "reel_script": [
+    {
+      "t": "0–3s",
+      "shot": "ส้มฉุนจ้องชามว่าง ร้องลั่น",
+      "overlay_th": "แมวกูด่าอะไรกูอยู่ทุกเช้า??"
+    },
+    {
+      "t": "3–8s",
+      "shot": "speed-ramp แคปจอ gen แอปด้วย AI",
+      "overlay_th": "เลยให้ AI สร้างแอปแปลภาษาแมวให้"
+    },
+    {
+      "t": "8–13s",
+      "shot": "ถ่ายรูป → ชิปท่าทาง → Mood Meter หิว 62%",
+      "overlay_th": "หิว 62% · หงุดหงิด 23%"
+    },
+    {
+      "t": "13–17s",
+      "shot": "บับเบิลเด้ง",
+      "overlay_th": "ทาสสส อีก 25 นาทีข้าวต้องมา ช้า 1 วิหักเงินเดือน"
+    },
+    {
+      "t": "17–21s",
+      "shot": "สลับ persona 3 แบบ",
+      "overlay_th": "เปลี่ยนนิสัยได้ด้วย 😂"
+    },
+    {
+      "t": "21–25s",
+      "shot": "Duet แมวคุยกับหมา + Care board แดง",
+      "overlay_th": "แถมเตือนถ่ายพยาธิเลย 7 วัน 😱"
+    },
+    {
+      "t": "25–30s",
+      "shot": "Meme card + บัตรประจำตัว",
+      "overlay_th": "คอมเมนต์ 'แมว' เดี๋ยวส่งลิงก์ให้ฟรี"
+    }
+  ],
+  "expect_locked": {
+    "cat1_moods": [
+      [
+        "hungry",
+        8,
+        62
+      ],
+      [
+        "annoyed",
+        3,
+        23
+      ],
+      [
+        "needy",
+        2,
+        15
+      ]
+    ],
+    "cat1_vibe": 38,
+    "cat_after_vibe": 96,
+    "dog1_top": [
+      "playful",
+      54
+    ],
+    "dog1_vibe": 87,
+    "cat1_bubble": "ทาสสส อีก 25 นาทีข้าวต้องมา ช้า 1 วิหักเงินเดือน",
+    "care_order": [
+      "t1",
+      "t5",
+      "t6",
+      "t2",
+      "t4",
+      "t3"
+    ],
+    "health": {
+      "cat1": "watch",
+      "dog1": "watch"
+    },
+    "health_red": "emergency",
+    "food": {
+      "cat1": [
+        260,
+        68,
+        34
+      ],
+      "dog1": [
+        582,
+        166,
+        83
+      ]
+    },
+    "human_age": {
+      "cat1": 28,
+      "dog1": 24
+    },
+    "progress": {
+      "xp": 205,
+      "level": 3,
+      "streak_days": 7
+    },
+    "wrapped_top": [
+      "hungry",
+      6,
+      13
+    ]
+  }
+}

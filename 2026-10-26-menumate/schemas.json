@@ -1,0 +1,535 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "menumate.schemas.json",
+  "title": "MenuMate schemas",
+  "$defs": {
+    "UserPrefs": {
+      "type": "object",
+      "required": [
+        "allergies",
+        "diets",
+        "spice_tolerance",
+        "home_currency"
+      ],
+      "properties": {
+        "allergies": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "shrimp",
+              "crab",
+              "shellfish",
+              "peanut",
+              "tree_nut",
+              "egg",
+              "milk",
+              "soy",
+              "wheat",
+              "fish",
+              "sesame"
+            ]
+          }
+        },
+        "diets": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "no_pork",
+              "no_beef",
+              "halal",
+              "vegetarian"
+            ]
+          }
+        },
+        "spice_tolerance": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "home_currency": {
+          "const": "THB"
+        },
+        "ui_lang": {
+          "enum": [
+            "th",
+            "en"
+          ]
+        }
+      }
+    },
+    "ExchangeRate": {
+      "type": "object",
+      "required": [
+        "currency",
+        "thb_per_unit",
+        "source",
+        "updated_at"
+      ],
+      "properties": {
+        "currency": {
+          "enum": [
+            "JPY",
+            "KRW",
+            "CNY",
+            "TWD",
+            "HKD",
+            "SGD",
+            "VND",
+            "USD",
+            "EUR"
+          ]
+        },
+        "thb_per_unit": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "source": {
+          "enum": [
+            "user_set",
+            "api"
+          ]
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "MenuItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "original_name",
+        "thai_name",
+        "price",
+        "category",
+        "spice_level",
+        "ingredients",
+        "allergens",
+        "must_try",
+        "confidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "original_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "romanized": {
+          "type": "string"
+        },
+        "thai_name": {
+          "type": "string"
+        },
+        "thai_desc": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number",
+          "minimum": 0
+        },
+        "category": {
+          "enum": [
+            "main",
+            "side",
+            "drink",
+            "dessert",
+            "set"
+          ]
+        },
+        "spice_level": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "ingredients": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allergens": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "must_try": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "bbox": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      }
+    },
+    "MenuScan": {
+      "type": "object",
+      "required": [
+        "scan_id",
+        "lang",
+        "currency",
+        "items"
+      ],
+      "properties": {
+        "scan_id": {
+          "type": "string"
+        },
+        "lang": {
+          "enum": [
+            "ja",
+            "ko",
+            "zh",
+            "en",
+            "vi"
+          ]
+        },
+        "currency": {
+          "$ref": "#/$defs/ExchangeRate/properties/currency"
+        },
+        "shop_name_local": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/MenuItem"
+          }
+        },
+        "unreadable_regions": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "ItemFlag": {
+      "type": "object",
+      "required": [
+        "level",
+        "reasons"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "safe",
+            "warn",
+            "avoid"
+          ]
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "OrderPlan": {
+      "type": "object",
+      "required": [
+        "budget_local",
+        "party_size",
+        "pick_ids",
+        "total_local",
+        "left_local",
+        "per_person_local",
+        "mains_covered"
+      ],
+      "properties": {
+        "budget_local": {
+          "type": "number",
+          "minimum": 0
+        },
+        "party_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "pick_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "total_local": {
+          "type": "number"
+        },
+        "left_local": {
+          "type": "number",
+          "minimum": 0
+        },
+        "per_person_local": {
+          "type": "number"
+        },
+        "mains_covered": {
+          "type": "boolean"
+        }
+      }
+    },
+    "PointCard": {
+      "type": "object",
+      "required": [
+        "lang",
+        "header",
+        "lines",
+        "footer"
+      ],
+      "properties": {
+        "lang": {
+          "type": "string"
+        },
+        "header": {
+          "type": "string"
+        },
+        "note_local": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "footer": {
+          "type": "string"
+        },
+        "lines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "original_name",
+              "qty",
+              "line"
+            ],
+            "properties": {
+              "original_name": {
+                "type": "string"
+              },
+              "qty": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "line": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "AllergyCard": {
+      "type": "object",
+      "required": [
+        "lang",
+        "text_local",
+        "text_th",
+        "allergens"
+      ],
+      "properties": {
+        "lang": {
+          "type": "string"
+        },
+        "text_local": {
+          "type": "string"
+        },
+        "text_th": {
+          "type": "string"
+        },
+        "allergens": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ReceiptLine": {
+      "type": "object",
+      "required": [
+        "name",
+        "amount"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "number"
+        }
+      }
+    },
+    "BillCheck": {
+      "type": "object",
+      "required": [
+        "expected_total",
+        "receipt_total",
+        "gap",
+        "extra_lines",
+        "missing_lines",
+        "price_mismatch",
+        "ok"
+      ],
+      "properties": {
+        "expected_total": {
+          "type": "number"
+        },
+        "receipt_total": {
+          "type": "number"
+        },
+        "gap": {
+          "type": "number"
+        },
+        "extra_lines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_lines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "price_mismatch": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ok": {
+          "type": "boolean"
+        }
+      }
+    },
+    "SplitResult": {
+      "type": "object",
+      "required": [
+        "per_person_local",
+        "per_person_thb"
+      ],
+      "properties": {
+        "per_person_local": {
+          "type": "number"
+        },
+        "per_person_thb": {
+          "type": "integer"
+        }
+      }
+    },
+    "Phrase": {
+      "type": "object",
+      "required": [
+        "id",
+        "situation_th",
+        "text_local",
+        "romanized"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "situation_th": {
+          "type": "string"
+        },
+        "text_local": {
+          "type": "string"
+        },
+        "romanized": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string"
+        }
+      }
+    },
+    "TripWrapped": {
+      "type": "object",
+      "required": [
+        "meals",
+        "dishes_tried",
+        "allergy_dodged",
+        "spent_local",
+        "spent_thb",
+        "biggest_meal_city"
+      ],
+      "properties": {
+        "meals": {
+          "type": "integer"
+        },
+        "dishes_tried": {
+          "type": "integer"
+        },
+        "allergy_dodged": {
+          "type": "integer"
+        },
+        "spent_local": {
+          "type": "number"
+        },
+        "spent_thb": {
+          "type": "integer"
+        },
+        "biggest_meal_city": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "ReelCard": {
+      "type": "object",
+      "required": [
+        "kind",
+        "title_th",
+        "before",
+        "after"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "menu_flip",
+            "order_win",
+            "bill_catch",
+            "wrapped"
+          ]
+        },
+        "title_th": {
+          "type": "string"
+        },
+        "before": {
+          "type": "string"
+        },
+        "after": {
+          "type": "string"
+        },
+        "stat": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

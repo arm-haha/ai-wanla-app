@@ -1,0 +1,630 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://splitbill.pro/schemas/v1.json",
+  "title": "SplitBill Pro Schemas",
+  "description": "ชุด JSON Schema ละเอียดสำหรับ SplitBill Pro (AI วันละแอป 2026-09-29) — ใช้ validate bill state, OCR, tip/tax, split result, share, history และ feature checklist",
+  "definitions": {
+    "IsoDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 รวม offset เช่น 2026-09-29T08:05:12+07:00"
+    },
+    "Uuid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "MoneyAmount": {
+      "type": "object",
+      "description": "จำนวนเงินที่แสดง/คำนวณ — เก็บบาททศนิยม 2 ตำแหน่งหลังปัด; currency หลักของ MVP คือ THB",
+      "additionalProperties": false,
+      "required": ["currency", "amount"],
+      "properties": {
+        "currency": {
+          "type": "string",
+          "enum": ["THB", "USD", "EUR", "JPY"],
+          "default": "THB",
+          "description": "สกุลเงินแสดงผล — คำนวณหลักเป็น THB"
+        },
+        "amount": {
+          "type": "number",
+          "description": "จำนวนในหน่วยหลักของสกุล (บาท) ทศนิยมสูงสุด 2 ตำแหน่งหลังปัด half-up",
+          "multipleOf": 0.01
+        }
+      }
+    }
+  },
+  "OcrEngine": {
+    "type": "string",
+    "description": "เอ็นจิน OCR ที่ใช้ในเซสชันนั้น — mock_demo เป็นค่าเริ่มสำหรับเดโม/Reel",
+    "enum": ["mock_demo", "tesseract_client", "ocr_api", "manual"]
+  },
+  "SplitMode": {
+    "type": "string",
+    "description": "โหมดหารบิล",
+    "enum": ["equal", "by_item", "custom"]
+  },
+  "BillStatus": {
+    "type": "string",
+    "description": "สถานะวงจรชีวิตของบิล",
+    "enum": ["idle", "scanning", "editing", "splitting", "sharing", "error"]
+  },
+  "TipMode": {
+    "type": "string",
+    "enum": ["percent", "fixed", "none"]
+  },
+  "Person": {
+    "type": "object",
+    "description": "คนในบิลหนึ่งคน พร้อมสีอวตาร์สำหรับ UI/การ์ดแชร์",
+    "additionalProperties": false,
+    "required": ["id", "name", "color"],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "รหัสคนในบิล เช่น p_muk"
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 40,
+        "description": "ชื่อแสดงภาษาไทยหรือเล่น"
+      },
+      "color": {
+        "type": "string",
+        "description": "สีอวตาร์ hex เช่น #F97316",
+        "pattern": "^#[0-9A-Fa-f]{6}$"
+      },
+      "avatar_emoji": {
+        "type": ["string", "null"],
+        "description": "อีโมจิอวตาร์ออปชัน"
+      },
+      "paid": {
+        "type": "boolean",
+        "default": false,
+        "description": "settle tracker — จ่ายแล้วหรือยัง (nice-to-have)"
+      },
+      "custom_amount": {
+        "type": ["number", "null"],
+        "description": "ยอดที่ล็อกเองเมื่อ split_mode=custom (บาท)",
+        "multipleOf": 0.01
+      },
+      "is_preset": {
+        "type": "boolean",
+        "default": false,
+        "description": "true ถ้ามาจาก Friends presets"
+      }
+    }
+  },
+  "Assignment": {
+    "type": "object",
+    "description": "การผูกเมนูกับคนหนึ่งคน — ถ้าหลายคนบนจานเดียวกัน ให้มีหลาย Assignment ของ item_id เดียวกัน",
+    "additionalProperties": false,
+    "required": ["item_id", "person_id"],
+    "properties": {
+      "item_id": { "type": "string" },
+      "person_id": { "type": "string" },
+      "share_weight": {
+        "type": "number",
+        "minimum": 0,
+        "default": 1,
+        "description": "น้ำหนักส่วนแบ่งจาน ค่าเริ่ม 1 = หารเท่าในกลุ่มที่ถูก assign"
+      }
+    }
+  },
+  "LineItem": {
+    "type": "object",
+    "description": "รายการเมนูหนึ่งบรรทัดจากสลิปหรือที่ผู้ใช้พิมพ์เอง",
+    "additionalProperties": false,
+    "required": ["id", "name_th", "unit_price", "qty"],
+    "properties": {
+      "id": { "type": "string" },
+      "name_th": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80,
+        "description": "ชื่อเมนูภาษาไทย"
+      },
+      "name_en": {
+        "type": ["string", "null"]
+      },
+      "unit_price": {
+        "type": "number",
+        "minimum": 0,
+        "multipleOf": 0.01,
+        "description": "ราคาต่อหน่วย (บาท)"
+      },
+      "qty": {
+        "type": "number",
+        "minimum": 0.01,
+        "default": 1,
+        "description": "จำนวน เช่น 1 หรือ 1.5"
+      },
+      "line_total": {
+        "type": "number",
+        "minimum": 0,
+        "multipleOf": 0.01,
+        "description": "unit_price * qty หลังปัด — engine คำนวณให้ได้"
+      },
+      "note": {
+        "type": ["string", "null"],
+        "description": "เช่น ไม่เผ็ด / แยกน้ำ"
+      },
+      "source": {
+        "type": "string",
+        "enum": ["ocr", "manual", "demo"],
+        "default": "ocr"
+      }
+    }
+  },
+  "TipSettings": {
+    "type": "object",
+    "description": "ตั้งค่าทิป — percent ของ food_subtotal หรือจำนวนเงินคงที่",
+    "additionalProperties": false,
+    "required": ["mode"],
+    "properties": {
+      "mode": { "$ref": "#/TipMode" },
+      "percent": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "maximum": 100,
+        "description": "ใช้เมื่อ mode=percent"
+      },
+      "fixed_amount": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "multipleOf": 0.01,
+        "description": "ใช้เมื่อ mode=fixed (บาท)"
+      }
+    }
+  },
+  "ServiceCharge": {
+    "type": "object",
+    "description": "เซอร์วิสชาร์จตามสลิปไทย มัก 10%",
+    "additionalProperties": false,
+    "required": ["enabled", "percent"],
+    "properties": {
+      "enabled": { "type": "boolean", "default": true },
+      "percent": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 30,
+        "default": 10
+      },
+      "label_th": {
+        "type": "string",
+        "default": "เซอร์วิสชาร์จ"
+      }
+    }
+  },
+  "TaxSettings": {
+    "type": "object",
+    "description": "VAT / ภาษีมูลค่าเพิ่ม — ค่าเริ่ม 7% แบบไทย",
+    "additionalProperties": false,
+    "required": ["enabled", "percent"],
+    "properties": {
+      "enabled": { "type": "boolean", "default": true },
+      "percent": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 20,
+        "default": 7
+      },
+      "base": {
+        "type": "string",
+        "enum": ["food_plus_service", "food_only"],
+        "default": "food_plus_service",
+        "description": "ฐานคำนวณ VAT ค่าเริ่มรวมเซอร์วิส"
+      },
+      "label_th": {
+        "type": "string",
+        "default": "VAT"
+      }
+    }
+  },
+  "OcrResult": {
+    "type": "object",
+    "description": "ผลลัพธ์จาก OCR หรือ mock_demo fixture",
+    "additionalProperties": false,
+    "required": ["engine", "items", "raw_text"],
+    "properties": {
+      "engine": { "$ref": "#/OcrEngine" },
+      "raw_text": {
+        "type": "string",
+        "description": "ข้อความดิบจาก OCR หรือข้อความจำลอง"
+      },
+      "confidence": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "maximum": 1,
+        "description": "ความมั่นใจรวม 0–1"
+      },
+      "ocr_ms": {
+        "type": ["integer", "null"],
+        "minimum": 0
+      },
+      "merchant_name_th": {
+        "type": ["string", "null"]
+      },
+      "receipt_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": { "$ref": "#/LineItem" }
+      },
+      "detected_service_percent": {
+        "type": ["number", "null"]
+      },
+      "detected_vat_percent": {
+        "type": ["number", "null"]
+      },
+      "detected_subtotal": {
+        "type": ["number", "null"]
+      }
+    }
+  },
+  "BillTotals": {
+    "type": "object",
+    "description": "ยอดรวมระดับบิลหลังคำนวณ",
+    "additionalProperties": false,
+    "required": ["food_subtotal", "service", "vat", "tip", "grand_total"],
+    "properties": {
+      "food_subtotal": { "type": "number", "multipleOf": 0.01 },
+      "service": { "type": "number", "multipleOf": 0.01 },
+      "vat": { "type": "number", "multipleOf": 0.01 },
+      "tip": { "type": "number", "multipleOf": 0.01 },
+      "grand_total": { "type": "number", "multipleOf": 0.01 },
+      "currency": {
+        "type": "string",
+        "default": "THB"
+      }
+    }
+  },
+  "PersonShare": {
+    "type": "object",
+    "description": "ยอดสุทธิของคนหนึ่งคนหลังกระจาย",
+    "additionalProperties": false,
+    "required": ["person_id", "name", "food", "service", "vat", "tip", "total"],
+    "properties": {
+      "person_id": { "type": "string" },
+      "name": { "type": "string" },
+      "color": { "type": "string" },
+      "food": { "type": "number", "multipleOf": 0.01 },
+      "service": { "type": "number", "multipleOf": 0.01 },
+      "vat": { "type": "number", "multipleOf": 0.01 },
+      "tip": { "type": "number", "multipleOf": 0.01 },
+      "total": { "type": "number", "multipleOf": 0.01 },
+      "item_ids": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "รายการที่คนนี้มีส่วน jointly หรือคนเดียว"
+      },
+      "paid": { "type": "boolean", "default": false }
+    }
+  },
+  "SplitResult": {
+    "type": "object",
+    "description": "ผลลัพธ์การหารทั้งบิล ใช้โชว์ Summary + Share",
+    "additionalProperties": false,
+    "required": ["bill_id", "mode", "per_person", "totals"],
+    "properties": {
+      "bill_id": { "type": "string" },
+      "mode": { "$ref": "#/SplitMode" },
+      "per_person": {
+        "type": "array",
+        "minItems": 1,
+        "items": { "$ref": "#/PersonShare" }
+      },
+      "totals": { "$ref": "#/BillTotals" },
+      "rounding_note_th": {
+        "type": ["string", "null"],
+        "description": "คำอธิบายเศษปัดถ้ามี"
+      }
+    }
+  },
+  "SharePayload": {
+    "type": "object",
+    "description": "เพย์โหลดสำหรับแผงแชร์ — รูป + ข้อความ + ลิงก์ mock",
+    "additionalProperties": false,
+    "required": ["bill_id", "line_text_th", "mock_link"],
+    "properties": {
+      "bill_id": { "type": "string" },
+      "title_th": { "type": "string" },
+      "line_text_th": {
+        "type": "string",
+        "description": "ข้อความพร้อมคัดลอกไป LINE"
+      },
+      "mock_link": {
+        "type": "string",
+        "description": "ลิงก์สรุป mock เช่น https://splitbill.pro/b/{id} — ไม่บังคับมี backend จริงใน MVP"
+      },
+      "card_filename": { "type": "string" },
+      "include_qr": {
+        "type": "boolean",
+        "default": false
+      },
+      "qr_value": {
+        "type": ["string", "null"],
+        "description": "ค่าที่ encode ใน QR — ลิงก์ mock หรือข้อความสรุป"
+      }
+    }
+  },
+  "BillState": {
+    "type": "object",
+    "description": "สถานะบิลทั้งหมดในหน่วยความจำ/เซสชัน",
+    "additionalProperties": false,
+    "required": [
+      "bill_id",
+      "created_at",
+      "updated_at",
+      "status",
+      "merchant_name_th",
+      "people",
+      "items",
+      "assignments",
+      "tip",
+      "service_charge",
+      "tax",
+      "split_mode"
+    ],
+    "properties": {
+      "bill_id": { "$ref": "#/definitions/Uuid" },
+      "created_at": { "$ref": "#/definitions/IsoDateTime" },
+      "updated_at": { "$ref": "#/definitions/IsoDateTime" },
+      "status": { "$ref": "#/BillStatus" },
+      "merchant_name_th": {
+        "type": "string",
+        "description": "ชื่อร้านภาษาไทย"
+      },
+      "receipt_at": {
+        "$ref": "#/definitions/IsoDateTime"
+      },
+      "currency": {
+        "type": "string",
+        "default": "THB"
+      },
+      "people": {
+        "type": "array",
+        "minItems": 1,
+        "items": { "$ref": "#/Person" }
+      },
+      "items": {
+        "type": "array",
+        "items": { "$ref": "#/LineItem" }
+      },
+      "assignments": {
+        "type": "array",
+        "items": { "$ref": "#/Assignment" }
+      },
+      "tip": { "$ref": "#/TipSettings" },
+      "service_charge": { "$ref": "#/ServiceCharge" },
+      "tax": { "$ref": "#/TaxSettings" },
+      "split_mode": { "$ref": "#/SplitMode" },
+      "ocr": {
+        "anyOf": [
+          { "$ref": "#/OcrResult" },
+          { "type": "null" }
+        ]
+      },
+      "error": {
+        "type": ["string", "null"],
+        "description": "ข้อความผิดพลาดภาษาไทยสั้นๆ เมื่อ status=error"
+      }
+    }
+  },
+  "HistoryItem": {
+    "type": "object",
+    "description": "รายการประวัติบิลใน localStorage",
+    "additionalProperties": false,
+    "required": ["id", "created_at", "merchant_name_th", "grand_total", "people_count"],
+    "properties": {
+      "id": { "type": "string" },
+      "created_at": { "$ref": "#/definitions/IsoDateTime" },
+      "merchant_name_th": { "type": "string" },
+      "grand_total": { "type": "number", "multipleOf": 0.01 },
+      "people_count": { "type": "integer", "minimum": 1 },
+      "thumb_emoji": {
+        "type": ["string", "null"],
+        "description": "อีโมจิร้านสำหรับกริดประวัติ เช่น 🍜"
+      },
+      "settled": {
+        "type": "boolean",
+        "default": false
+      }
+    }
+  },
+  "FriendPreset": {
+    "type": "object",
+    "description": "เพื่อนถาวรใน Friends presets",
+    "additionalProperties": false,
+    "required": ["id", "name", "color"],
+    "properties": {
+      "id": { "type": "string" },
+      "name": { "type": "string" },
+      "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+      "avatar_emoji": { "type": ["string", "null"] }
+    }
+  },
+  "LocalStore": {
+    "type": "object",
+    "description": "โครงข้อมูลทั้งก้อนใน localStorage key เช่น splitbill.v1",
+    "additionalProperties": false,
+    "properties": {
+      "friends": {
+        "type": "array",
+        "items": { "$ref": "#/FriendPreset" },
+        "maxItems": 50
+      },
+      "history": {
+        "type": "array",
+        "items": { "$ref": "#/HistoryItem" },
+        "maxItems": 20,
+        "description": "บิลล่าสุด สูงสุด 20 (ใหม่สุดไว้หน้า)"
+      },
+      "settings": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "locale": {
+            "type": "string",
+            "enum": ["th-TH", "en-US"],
+            "default": "th-TH"
+          },
+          "default_service_percent": {
+            "type": "number",
+            "default": 10
+          },
+          "default_vat_percent": {
+            "type": "number",
+            "default": 7
+          },
+          "default_tip_percent": {
+            "type": "number",
+            "default": 10
+          },
+          "prefer_ocr_engine": {
+            "$ref": "#/OcrEngine"
+          }
+        }
+      }
+    }
+  },
+  "AnalyticsEvent": {
+    "type": "object",
+    "description": "อีเวนต์วัดพฤติกรรมฝั่ง client สำหรับช่องและผลิตภัณฑ์",
+    "additionalProperties": false,
+    "required": ["name", "ts"],
+    "properties": {
+      "name": {
+        "type": "string",
+        "enum": [
+          "app_open",
+          "ocr_start",
+          "ocr_success",
+          "ocr_fail",
+          "demo_receipt_load",
+          "person_add",
+          "item_assign",
+          "tip_adjust",
+          "service_toggle",
+          "split_mode_change",
+          "share_click",
+          "share_success",
+          "copy_line_text",
+          "history_open",
+          "settle_toggle"
+        ]
+      },
+      "ts": { "$ref": "#/definitions/IsoDateTime" },
+      "props": {
+        "type": "object",
+        "additionalProperties": true,
+        "description": "เพย์โหลดเพิ่ม เช่น bill_id, ms, mode, engine"
+      }
+    }
+  },
+  "FeatureChecklistItem": {
+    "type": "object",
+    "description": "รายการยืนยันทีละฟีเจอร์ก่อนปล่อยคลิป",
+    "additionalProperties": false,
+    "required": ["id", "name_th", "tier", "implemented", "demo_in_reel"],
+    "properties": {
+      "id": { "type": "string" },
+      "name_th": { "type": "string" },
+      "tier": {
+        "type": "string",
+        "enum": ["must", "nice"],
+        "description": "must = บังคับครบก่อนลงคลิป"
+      },
+      "implemented": { "type": "boolean" },
+      "demo_in_reel": {
+        "type": "boolean",
+        "description": "โชว์ในคลิป Reel นี้หรือไม่"
+      },
+      "notes": { "type": ["string", "null"] }
+    }
+  },
+  "FeatureChecklist": {
+    "type": "object",
+    "description": "ใช้ยืนยันกฎขั้นต่ำ ≥5 ฟีเจอร์ must ก่อนปล่อยคลิป AI วันละแอป",
+    "additionalProperties": false,
+    "required": ["app", "date", "features"],
+    "properties": {
+      "app": {
+        "type": "string",
+        "const": "SplitBill Pro"
+      },
+      "date": {
+        "type": "string",
+        "format": "date",
+        "description": "วันคลิป Asia/Bangkok"
+      },
+      "features": {
+        "type": "array",
+        "minItems": 5,
+        "items": { "$ref": "#/FeatureChecklistItem" }
+      },
+      "must_implemented_count": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "จำนวนฟีเจอร์ tier=must ที่ implemented=true ต้อง ≥5"
+      }
+    }
+  },
+  "UiCopyTh": {
+    "type": "object",
+    "description": "ชุดข้อความ UI ภาษาไทยมาตรฐาน กันสะกดไม่ตรงกันตอน codegen",
+    "additionalProperties": { "type": "string" },
+    "properties": {
+      "home_headline": { "type": "string" },
+      "home_cta": { "type": "string" },
+      "scan_loading": { "type": "string" },
+      "scan_done": { "type": "string" },
+      "scan_fail": { "type": "string" },
+      "assign_done": { "type": "string" },
+      "share_copied": { "type": "string" },
+      "share_fail": { "type": "string" }
+    }
+  },
+  "ReelScript": {
+    "type": "object",
+    "description": "สคริปต์ถ่าย Reel หนึ่งคลิป",
+    "additionalProperties": false,
+    "required": ["duration_sec", "hook_th", "shots"],
+    "properties": {
+      "duration_sec": {
+        "type": "integer",
+        "minimum": 15,
+        "maximum": 60
+      },
+      "hook_th": {
+        "type": "string",
+        "description": "ประโยคฮุคโพสต์/เปิดคลิป"
+      },
+      "cta_th": { "type": "string" },
+      "shots": {
+        "type": "array",
+        "minItems": 4,
+        "items": {
+          "type": "object",
+          "required": ["t", "on_screen", "voice"],
+          "properties": {
+            "t": {
+              "type": "string",
+              "description": "ช่วงเวลา เช่น 0-3"
+            },
+            "on_screen": {
+              "type": "string",
+              "maxLength": 40
+            },
+            "voice": { "type": "string" },
+            "visual": {
+              "type": ["string", "null"],
+              "description": "คำอธิบายภาพที่จะถ่าย"
+            }
+          }
+        }
+      }
+    }
+  }
+}
