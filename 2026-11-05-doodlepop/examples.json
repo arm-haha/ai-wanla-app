@@ -1,0 +1,1120 @@
+{
+ "examples": [
+  {
+   "def": "Kid",
+   "note": "",
+   "value": {
+    "id": "k01",
+    "name_th": "น้องใบเตย",
+    "birth": "2021-06-15",
+    "avatar": "dino"
+   }
+  },
+  {
+   "def": "Kid",
+   "note": "",
+   "value": {
+    "id": "k02",
+    "name_th": "พี่ภูผา",
+    "birth": "2018-03-02",
+    "avatar": "robot"
+   }
+  },
+  {
+   "def": "Drawing",
+   "note": "แมวส้มของหนู",
+   "value": {
+    "id": "d01",
+    "kid_id": "k01",
+    "title_th": "แมวส้มของหนู",
+    "subject": "animal",
+    "drawn_on": "2025-07-10",
+    "px_w": 2480,
+    "px_h": 1860,
+    "colors": 3,
+    "strokes": 60,
+    "parts": {
+     "head": 1,
+     "body": 1,
+     "arms": 0,
+     "legs": 4,
+     "tail": 1,
+     "wings": 0
+    },
+    "scan": {
+     "shadow": 0.5,
+     "blur": 0.2,
+     "tilt": 0.3,
+     "crop_cut": 0.0
+    }
+   }
+  },
+  {
+   "def": "Drawing",
+   "note": "ซานต้าใจดี",
+   "value": {
+    "id": "d02",
+    "kid_id": "k01",
+    "title_th": "ซานต้าใจดี",
+    "subject": "person",
+    "drawn_on": "2025-12-25",
+    "px_w": 1860,
+    "px_h": 2480,
+    "colors": 4,
+    "strokes": 110,
+    "parts": {
+     "head": 1,
+     "body": 1,
+     "arms": 2,
+     "legs": 2,
+     "tail": 0,
+     "wings": 0
+    },
+    "scan": {
+     "shadow": 0.2,
+     "blur": 0.1,
+     "tilt": 0.1,
+     "crop_cut": 0.0
+    }
+   }
+  },
+  {
+   "def": "Drawing",
+   "note": "ช้างเล่นสงกรานต์",
+   "value": {
+    "id": "d03",
+    "kid_id": "k01",
+    "title_th": "ช้างเล่นสงกรานต์",
+    "subject": "animal",
+    "drawn_on": "2026-04-13",
+    "px_w": 2480,
+    "px_h": 1860,
+    "colors": 5,
+    "strokes": 150,
+    "parts": {
+     "head": 1,
+     "body": 1,
+     "arms": 0,
+     "legs": 4,
+     "tail": 1,
+     "wings": 0
+    },
+    "scan": {
+     "shadow": 0.3,
+     "blur": 0.1,
+     "tilt": 0.0,
+     "crop_cut": 0.1
+    }
+   }
+  },
+  {
+   "def": "Drawing",
+   "note": "หุ่นยนต์ไฟฟ้า",
+   "value": {
+    "id": "d04",
+    "kid_id": "k02",
+    "title_th": "หุ่นยนต์ไฟฟ้า",
+    "subject": "robot",
+    "drawn_on": "2026-08-20",
+    "px_w": 2480,
+    "px_h": 3300,
+    "colors": 6,
+    "strokes": 260,
+    "parts": {
+     "head": 1,
+     "body": 1,
+     "arms": 2,
+     "legs": 2,
+     "tail": 0,
+     "wings": 0
+    },
+    "scan": {
+     "shadow": 0.1,
+     "blur": 0.0,
+     "tilt": 0.0,
+     "crop_cut": 0.0
+    }
+   }
+  },
+  {
+   "def": "Drawing",
+   "note": "ปลาวาฬบินได้",
+   "value": {
+    "id": "d05",
+    "kid_id": "k01",
+    "title_th": "ปลาวาฬบินได้",
+    "subject": "animal",
+    "drawn_on": "2026-10-01",
+    "px_w": 2480,
+    "px_h": 1860,
+    "colors": 4,
+    "strokes": 120,
+    "parts": {
+     "head": 1,
+     "body": 1,
+     "arms": 0,
+     "legs": 0,
+     "tail": 1,
+     "wings": 0
+    },
+    "scan": {
+     "shadow": 0.9,
+     "blur": 0.7,
+     "tilt": 0.2,
+     "crop_cut": 0.4
+    }
+   }
+  },
+  {
+   "def": "Drawing",
+   "note": "ไดโนชมพูใส่มงกุฎ",
+   "value": {
+    "id": "d06",
+    "kid_id": "k01",
+    "title_th": "ไดโนชมพูใส่มงกุฎ",
+    "subject": "animal",
+    "drawn_on": "2026-11-04",
+    "px_w": 2480,
+    "px_h": 3300,
+    "colors": 6,
+    "strokes": 210,
+    "parts": {
+     "head": 1,
+     "body": 1,
+     "arms": 2,
+     "legs": 2,
+     "tail": 1,
+     "wings": 0
+    },
+    "scan": {
+     "shadow": 0.4,
+     "blur": 0.1,
+     "tilt": 0.2,
+     "crop_cut": 0.0
+    }
+   }
+  },
+  {
+   "def": "ScanExtract",
+   "note": "d06 demo",
+   "value": {
+    "drawing_found": true,
+    "corners": [
+     [
+      0.08,
+      0.06
+     ],
+     [
+      0.93,
+      0.05
+     ],
+     [
+      0.95,
+      0.94
+     ],
+     [
+      0.06,
+      0.95
+     ]
+    ],
+    "scan": {
+     "shadow": 0.4,
+     "blur": 0.1,
+     "tilt": 0.2,
+     "crop_cut": 0.0
+    },
+    "subject": "animal",
+    "title_guess_th": "ไดโนเสาร์สีชมพูใส่มงกุฎ",
+    "parts": {
+     "head": 1,
+     "body": 1,
+     "arms": 2,
+     "legs": 2,
+     "tail": 1,
+     "wings": 0
+    },
+    "colors": 6,
+    "has_child_face": false,
+    "has_text": true,
+    "retake_reason_th": null
+   }
+  },
+  {
+   "def": "ScanExtract",
+   "note": "cut off -> retake",
+   "value": {
+    "drawing_found": true,
+    "corners": null,
+    "scan": {
+     "shadow": 0.9,
+     "blur": 0.7,
+     "tilt": 0.2,
+     "crop_cut": 0.4
+    },
+    "subject": "animal",
+    "title_guess_th": "ปลาวาฬ",
+    "parts": {
+     "head": 1,
+     "body": 1,
+     "arms": 0,
+     "legs": 0,
+     "tail": 1,
+     "wings": 0
+    },
+    "colors": 4,
+    "has_child_face": false,
+    "has_text": false,
+    "retake_reason_th": "รูปวาดโดนตัดขอบ ถอยกล้องออกนิดนึง"
+   }
+  },
+  {
+   "def": "ScanExtract",
+   "note": "child face, no drawing",
+   "value": {
+    "drawing_found": false,
+    "corners": null,
+    "scan": {
+     "shadow": 0,
+     "blur": 0,
+     "tilt": 0,
+     "crop_cut": 0
+    },
+    "subject": "other",
+    "title_guess_th": "",
+    "parts": {
+     "head": 0,
+     "body": 0,
+     "arms": 0,
+     "legs": 0,
+     "tail": 0,
+     "wings": 0
+    },
+    "colors": 0,
+    "has_child_face": true,
+    "has_text": false,
+    "retake_reason_th": "ไม่เจอรูปวาดในภาพ ถ่ายเฉพาะกระดาษนะ (ภาพนี้มีหน้าเด็ก ระบบไม่เก็บ)"
+   }
+  },
+  {
+   "def": "ScanReport",
+   "note": "",
+   "value": {
+    "drawing_id": "d01",
+    "score": 74,
+    "level": "ok",
+    "level_th": "ใช้ได้",
+    "steps": [
+     "perspective",
+     "deshadow",
+     "remove_paper",
+     "fill_gaps",
+     "cutout"
+    ],
+    "retake_reason_th": null
+   }
+  },
+  {
+   "def": "ScanReport",
+   "note": "",
+   "value": {
+    "drawing_id": "d02",
+    "score": 89,
+    "level": "great",
+    "level_th": "ชัดมาก",
+    "steps": [
+     "perspective",
+     "deshadow",
+     "remove_paper",
+     "fill_gaps",
+     "cutout"
+    ],
+    "retake_reason_th": null
+   }
+  },
+  {
+   "def": "ScanReport",
+   "note": "",
+   "value": {
+    "drawing_id": "d03",
+    "score": 86,
+    "level": "great",
+    "level_th": "ชัดมาก",
+    "steps": [
+     "deshadow",
+     "remove_paper",
+     "fill_gaps",
+     "cutout"
+    ],
+    "retake_reason_th": null
+   }
+  },
+  {
+   "def": "ScanReport",
+   "note": "",
+   "value": {
+    "drawing_id": "d04",
+    "score": 97,
+    "level": "great",
+    "level_th": "ชัดมาก",
+    "steps": [
+     "remove_paper",
+     "fill_gaps",
+     "cutout"
+    ],
+    "retake_reason_th": null
+   }
+  },
+  {
+   "def": "ScanReport",
+   "note": "",
+   "value": {
+    "drawing_id": "d05",
+    "score": 38,
+    "level": "retake",
+    "level_th": "ถ่ายใหม่ดีกว่า",
+    "steps": [
+     "perspective",
+     "deshadow",
+     "remove_paper",
+     "sharpen_lines",
+     "fill_gaps",
+     "cutout"
+    ],
+    "retake_reason_th": "รูปวาดโดนตัดขอบ ถอยกล้องออกนิดนึง"
+   }
+  },
+  {
+   "def": "ScanReport",
+   "note": "",
+   "value": {
+    "drawing_id": "d06",
+    "score": 82,
+    "level": "great",
+    "level_th": "ชัดมาก",
+    "steps": [
+     "perspective",
+     "deshadow",
+     "remove_paper",
+     "fill_gaps",
+     "cutout"
+    ],
+    "retake_reason_th": null
+   }
+  },
+  {
+   "def": "Rig",
+   "note": "",
+   "value": {
+    "drawing_id": "d01",
+    "bones": 12,
+    "presets": [
+     "wiggle",
+     "jump",
+     "dance",
+     "walk",
+     "spin",
+     "sleep"
+    ],
+    "fallbacks": {
+     "wave": "wiggle"
+    },
+    "needs_manual_pins": false
+   }
+  },
+  {
+   "def": "Rig",
+   "note": "",
+   "value": {
+    "drawing_id": "d02",
+    "bones": 10,
+    "presets": [
+     "wave",
+     "jump",
+     "dance",
+     "walk",
+     "spin",
+     "sleep"
+    ],
+    "fallbacks": {},
+    "needs_manual_pins": false
+   }
+  },
+  {
+   "def": "Rig",
+   "note": "",
+   "value": {
+    "drawing_id": "d03",
+    "bones": 12,
+    "presets": [
+     "wiggle",
+     "jump",
+     "dance",
+     "walk",
+     "spin",
+     "sleep"
+    ],
+    "fallbacks": {
+     "wave": "wiggle"
+    },
+    "needs_manual_pins": false
+   }
+  },
+  {
+   "def": "Rig",
+   "note": "",
+   "value": {
+    "drawing_id": "d04",
+    "bones": 10,
+    "presets": [
+     "wave",
+     "jump",
+     "dance",
+     "walk",
+     "spin",
+     "sleep"
+    ],
+    "fallbacks": {},
+    "needs_manual_pins": false
+   }
+  },
+  {
+   "def": "Rig",
+   "note": "",
+   "value": {
+    "drawing_id": "d05",
+    "bones": 4,
+    "presets": [
+     "wiggle",
+     "jump",
+     "dance",
+     "hop",
+     "spin",
+     "sleep"
+    ],
+    "fallbacks": {
+     "wave": "wiggle",
+     "walk": "hop"
+    },
+    "needs_manual_pins": false
+   }
+  },
+  {
+   "def": "Rig",
+   "note": "",
+   "value": {
+    "drawing_id": "d06",
+    "bones": 12,
+    "presets": [
+     "wave",
+     "jump",
+     "dance",
+     "walk",
+     "spin",
+     "sleep"
+    ],
+    "fallbacks": {},
+    "needs_manual_pins": false
+   }
+  },
+  {
+   "def": "AnimationClip",
+   "note": "",
+   "value": {
+    "preset": "wave",
+    "label_th": "โบกมือ",
+    "duration_s": 2.0,
+    "fps": 24,
+    "frames": 48,
+    "loop": true
+   }
+  },
+  {
+   "def": "AnimationClip",
+   "note": "",
+   "value": {
+    "preset": "jump",
+    "label_th": "กระโดด",
+    "duration_s": 1.5,
+    "fps": 24,
+    "frames": 36,
+    "loop": true
+   }
+  },
+  {
+   "def": "AnimationClip",
+   "note": "",
+   "value": {
+    "preset": "dance",
+    "label_th": "เต้น",
+    "duration_s": 4.0,
+    "fps": 24,
+    "frames": 96,
+    "loop": true
+   }
+  },
+  {
+   "def": "AnimationClip",
+   "note": "",
+   "value": {
+    "preset": "walk",
+    "label_th": "เดิน",
+    "duration_s": 2.0,
+    "fps": 24,
+    "frames": 48,
+    "loop": true
+   }
+  },
+  {
+   "def": "AnimationClip",
+   "note": "",
+   "value": {
+    "preset": "spin",
+    "label_th": "หมุนตัว",
+    "duration_s": 2.0,
+    "fps": 24,
+    "frames": 48,
+    "loop": true
+   }
+  },
+  {
+   "def": "AnimationClip",
+   "note": "",
+   "value": {
+    "preset": "sleep",
+    "label_th": "นอนหลับ",
+    "duration_s": 3.0,
+    "fps": 24,
+    "frames": 72,
+    "loop": true
+   }
+  },
+  {
+   "def": "AnimationClip",
+   "note": "",
+   "value": {
+    "preset": "hop",
+    "label_th": "กระดึ๊บ",
+    "duration_s": 1.5,
+    "fps": 24,
+    "frames": 36,
+    "loop": true
+   }
+  },
+  {
+   "def": "AnimationClip",
+   "note": "",
+   "value": {
+    "preset": "wiggle",
+    "label_th": "ส่ายตัว",
+    "duration_s": 2.0,
+    "fps": 24,
+    "frames": 48,
+    "loop": true
+   }
+  },
+  {
+   "def": "AnimationClip",
+   "note": "reel loop",
+   "value": {
+    "preset": "dance",
+    "label_th": "เต้น",
+    "duration_s": 8.0,
+    "fps": 30,
+    "frames": 240,
+    "loop": true
+   }
+  },
+  {
+   "def": "ExportSpec",
+   "note": "dance reel",
+   "value": {
+    "format": "reel_mp4",
+    "w": 1080,
+    "h": 1920,
+    "fps": 30,
+    "duration_s": 15,
+    "loops": 4,
+    "frames": 450,
+    "music": true,
+    "watermark": "Made with DoodlePop"
+   }
+  },
+  {
+   "def": "ExportSpec",
+   "note": "",
+   "value": {
+    "format": "square_mp4",
+    "w": 1080,
+    "h": 1080,
+    "fps": 30,
+    "duration_s": 8,
+    "loops": 4,
+    "frames": 240,
+    "music": true,
+    "watermark": "Made with DoodlePop"
+   }
+  },
+  {
+   "def": "ExportSpec",
+   "note": "gif capped 6s",
+   "value": {
+    "format": "gif",
+    "w": 480,
+    "h": 480,
+    "fps": 12,
+    "duration_s": 6,
+    "loops": 2,
+    "frames": 72,
+    "music": false,
+    "watermark": "Made with DoodlePop"
+   }
+  },
+  {
+   "def": "Story",
+   "note": "demo bedtime story (text shortened)",
+   "value": {
+    "kid_id": "k01",
+    "characters": [
+     "d06",
+     "d01",
+     "d03"
+    ],
+    "title_th": "ไดโนชมพูกับเพื่อนรัก",
+    "age": 5,
+    "plan": {
+     "pages": 5,
+     "words_per_page": 40,
+     "total_words": 200,
+     "narration_s": 125
+    },
+    "pages": [
+     {
+      "n": 1,
+      "text_th": "กาลครั้งหนึ่ง ไดโนชมพูใส่มงกุฎตื่นเช้ามา อยากหาเพื่อนเล่นที่สวนหลังบ้าน",
+      "drawing_ids": [
+       "d06"
+      ],
+      "pose": "wave"
+     },
+     {
+      "n": 2,
+      "text_th": "ไดโนเจอแมวส้มนอนอาบแดด แมวส้มบอกว่า ไปด้วยกันสิ เดี๋ยวพาไปหาช้าง",
+      "drawing_ids": [
+       "d06",
+       "d01"
+      ],
+      "pose": "walk"
+     },
+     {
+      "n": 3,
+      "text_th": "ช้างกำลังพ่นน้ำเล่นสงกรานต์ ทั้งสามหัวเราะคิกคัก เปียกกันไปหมดเลย",
+      "drawing_ids": [
+       "d06",
+       "d01",
+       "d03"
+      ],
+      "pose": "dance"
+     },
+     {
+      "n": 4,
+      "text_th": "พระอาทิตย์เริ่มตก ทั้งสามช่วยกันเก็บดอกไม้ไปให้คุณแม่ของไดโน",
+      "drawing_ids": [
+       "d06",
+       "d01",
+       "d03"
+      ],
+      "pose": "jump"
+     },
+     {
+      "n": 5,
+      "text_th": "คืนนั้นไดโนชมพูนอนหลับฝันดี กอดมงกุฎไว้แน่น พรุ่งนี้จะเล่นกับเพื่อนอีก ราตรีสวัสดิ์",
+      "drawing_ids": [
+       "d06"
+      ],
+      "pose": "sleep"
+     }
+    ],
+    "tts_voice": "th_female_warm",
+    "safety": {
+     "no_scary": true,
+     "no_brands": true,
+     "ends_calm": true
+    }
+   }
+  },
+  {
+   "def": "Story",
+   "note": "age 8, 6 pages",
+   "value": {
+    "kid_id": "k02",
+    "characters": [
+     "d04"
+    ],
+    "title_th": "หุ่นยนต์ไฟฟ้าช่วยเมือง",
+    "age": 8,
+    "plan": {
+     "pages": 6,
+     "words_per_page": 60,
+     "total_words": 360,
+     "narration_s": 180
+    },
+    "pages": [
+     {
+      "n": 1,
+      "text_th": "(ตัวอย่างหน้า 1)",
+      "drawing_ids": [
+       "d04"
+      ],
+      "pose": "wave"
+     },
+     {
+      "n": 2,
+      "text_th": "(ตัวอย่างหน้า 2)",
+      "drawing_ids": [
+       "d04"
+      ],
+      "pose": "walk"
+     },
+     {
+      "n": 3,
+      "text_th": "(ตัวอย่างหน้า 3)",
+      "drawing_ids": [
+       "d04"
+      ],
+      "pose": "jump"
+     },
+     {
+      "n": 4,
+      "text_th": "(ตัวอย่างหน้า 4)",
+      "drawing_ids": [
+       "d04"
+      ],
+      "pose": "spin"
+     },
+     {
+      "n": 5,
+      "text_th": "(ตัวอย่างหน้า 5)",
+      "drawing_ids": [
+       "d04"
+      ],
+      "pose": "dance"
+     },
+     {
+      "n": 6,
+      "text_th": "(ตัวอย่างหน้า 6)",
+      "drawing_ids": [
+       "d04"
+      ],
+      "pose": "sleep"
+     }
+    ],
+    "tts_voice": "parent_recorded",
+    "safety": {
+     "no_scary": true,
+     "no_brands": true,
+     "ends_calm": true
+    }
+   }
+  },
+  {
+   "def": "YearRecap",
+   "note": "",
+   "value": {
+    "kid_id": "k01",
+    "year": 2025,
+    "count": 2,
+    "top_subject": "animal",
+    "avg_colors": 3.5,
+    "first_detail": 44,
+    "last_detail": 60,
+    "growth_pct": 36,
+    "headline_th": "ปี 2568 น้องใบเตย วาด 2 รูป รายละเอียดเพิ่มขึ้น 36%"
+   }
+  },
+  {
+   "def": "YearRecap",
+   "note": "",
+   "value": {
+    "kid_id": "k01",
+    "year": 2026,
+    "count": 3,
+    "top_subject": "animal",
+    "avg_colors": 5.0,
+    "first_detail": 76,
+    "last_detail": 96,
+    "growth_pct": 26,
+    "headline_th": "ปี 2569 น้องใบเตย วาด 3 รูป รายละเอียดเพิ่มขึ้น 26%"
+   }
+  },
+  {
+   "def": "YearRecap",
+   "note": "single drawing",
+   "value": {
+    "kid_id": "k02",
+    "year": 2026,
+    "count": 1,
+    "top_subject": "robot",
+    "avg_colors": 6.0,
+    "first_detail": 100,
+    "last_detail": 100,
+    "growth_pct": 0,
+    "headline_th": "ปี 2569 พี่ภูผา วาด 1 รูป รายละเอียดเพิ่มขึ้น 0%"
+   }
+  },
+  {
+   "def": "StickerPack",
+   "note": "",
+   "value": {
+    "title_th": "ไดโนชมพูของใบเตย",
+    "count": 8,
+    "size": [
+     240,
+     320
+    ],
+    "stickers": [
+     {
+      "drawing_id": "d06",
+      "preset": "wave",
+      "text_th": "โบกมือ"
+     },
+     {
+      "drawing_id": "d02",
+      "preset": "wave",
+      "text_th": "โบกมือ"
+     },
+     {
+      "drawing_id": "d06",
+      "preset": "jump",
+      "text_th": "กระโดด"
+     },
+     {
+      "drawing_id": "d02",
+      "preset": "jump",
+      "text_th": "กระโดด"
+     },
+     {
+      "drawing_id": "d06",
+      "preset": "dance",
+      "text_th": "เต้น"
+     },
+     {
+      "drawing_id": "d02",
+      "preset": "dance",
+      "text_th": "เต้น"
+     },
+     {
+      "drawing_id": "d06",
+      "preset": "walk",
+      "text_th": "เดิน"
+     },
+     {
+      "drawing_id": "d02",
+      "preset": "walk",
+      "text_th": "เดิน"
+     }
+    ]
+   }
+  },
+  {
+   "def": "ColoringPage",
+   "note": "",
+   "value": {
+    "drawing_id": "d06",
+    "age": 3,
+    "line_px": 8,
+    "paper": "A4",
+    "regions": 14
+   }
+  },
+  {
+   "def": "ColoringPage",
+   "note": "",
+   "value": {
+    "drawing_id": "d06",
+    "age": 5,
+    "line_px": 6,
+    "paper": "A4",
+    "regions": 14
+   }
+  },
+  {
+   "def": "ColoringPage",
+   "note": "",
+   "value": {
+    "drawing_id": "d06",
+    "age": 8,
+    "line_px": 4,
+    "paper": "A4",
+    "regions": 14
+   }
+  },
+  {
+   "def": "DrawPrompt",
+   "note": "",
+   "value": {
+    "date": "2026-11-05",
+    "prompt_th": "เพื่อนจากดาวอังคาร",
+    "repeat_window_days": 30
+   }
+  },
+  {
+   "def": "ShareLink",
+   "note": "grandparents 7 days",
+   "value": {
+    "expires_on": "2026-11-12",
+    "view_only": true,
+    "allow_download": false,
+    "strip_location": true,
+    "indexable": false
+   }
+  },
+  {
+   "def": "ShareLink",
+   "note": "30 days + download",
+   "value": {
+    "expires_on": "2026-12-05",
+    "view_only": false,
+    "allow_download": true,
+    "strip_location": true,
+    "indexable": false
+   }
+  },
+  {
+   "def": "PrintCheck",
+   "note": "",
+   "value": {
+    "product": "mug",
+    "dpi": 419,
+    "need_dpi": 200,
+    "ok": true
+   }
+  },
+  {
+   "def": "PrintCheck",
+   "note": "",
+   "value": {
+    "product": "tshirt",
+    "dpi": 251,
+    "need_dpi": 150,
+    "ok": true
+   }
+  },
+  {
+   "def": "PrintCheck",
+   "note": "",
+   "value": {
+    "product": "poster_a4",
+    "dpi": 282,
+    "need_dpi": 200,
+    "ok": true
+   }
+  },
+  {
+   "def": "PrintCheck",
+   "note": "",
+   "value": {
+    "product": "sticker_7cm",
+    "dpi": 899,
+    "need_dpi": 300,
+    "ok": true
+   }
+  },
+  {
+   "def": "PrintCheck",
+   "note": "low-res photo",
+   "value": {
+    "product": "tshirt",
+    "dpi": 125,
+    "need_dpi": 150,
+    "ok": false
+   }
+  },
+  {
+   "def": "ParentGate",
+   "note": "",
+   "value": {
+    "action": "animate",
+    "needs_parent": false,
+    "allowed": true
+   }
+  },
+  {
+   "def": "ParentGate",
+   "note": "",
+   "value": {
+    "action": "export_video",
+    "needs_parent": true,
+    "allowed": false
+   }
+  },
+  {
+   "def": "ParentGate",
+   "note": "",
+   "value": {
+    "action": "export_video",
+    "needs_parent": true,
+    "allowed": true
+   }
+  },
+  {
+   "def": "ParentGate",
+   "note": "",
+   "value": {
+    "action": "grandparent_link",
+    "needs_parent": true,
+    "allowed": true
+   }
+  },
+  {
+   "def": "ParentGate",
+   "note": "",
+   "value": {
+    "action": "print_order",
+    "needs_parent": true,
+    "allowed": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free, 2 used",
+   "value": {
+    "kind": "animate",
+    "allowed": 1,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "",
+   "value": {
+    "kind": "story",
+    "allowed": 1,
+    "left_after": 0,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "kind": "animate",
+    "allowed": 4,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "",
+   "value": {
+    "title_th": "ไดโนชมพูใส่มงกุฎ",
+    "headline_th": "รูปวาดของน้องใบเตย (5 ขวบ 4 เดือน) เต้นได้แล้ว!",
+    "preset": "dance",
+    "watermark": "Made with DoodlePop",
+    "cta_th": "ลองปลุกรูปวาดลูกคุณ ลิงก์ในคอมเมนต์",
+    "shows_child_face": false
+   }
+  }
+ ]
+}

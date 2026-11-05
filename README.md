@@ -33,5 +33,6 @@ One free AI app idea a day, with a PRD, prompts, JSON schemas, examples and refe
 | 2026-11-02 | [HairMirror](2026-11-02-hairmirror/) | เซลฟี่หาทรงหน้า ลอง 9 ทรงผม คะแนนความเหมาะ การ์ดยื่นช่าง / Selfie to find face shape, try 9 hairstyles, match scores and a barber card | [hairmirror.zip](https://github.com/arm-haha/ai-wanla-app/releases/download/hairmirror-2026-11-02/hairmirror.zip) |
 | 2026-11-03 | [RoomGlow](2026-11-03-roomglow/) | ถ่ายห้อง ดู 6 ลุค ลิสต์ของตามงบ โหมดห้องเช่าไม่เจาะผนัง / Snap your room, see 6 looks, get a budget shopping list in renter-safe mode | [roomglow.zip](https://github.com/arm-haha/ai-wanla-app/releases/download/roomglow-2026-11-03/roomglow.zip) |
 | 2026-11-04 | [MemoryFix](2026-11-04-memoryfix/) | ซ่อมรูปเก่าพ่อแม่ ลงสี เช็กขนาดพิมพ์ / Restore, colorize and print old family photos | [memoryfix.zip](https://github.com/arm-haha/ai-wanla-app/releases/download/memoryfix-2026-11-04/memoryfix.zip) |
+| 2026-11-05 | [DoodlePop](2026-11-05-doodlepop/) | ถ่ายรูปวาดลูก ให้ตัวละครขยับ 6 ท่า แต่งนิทานก่อนนอน แชร์เป็น Reel / Snap a kid's drawing, animate it in 6 moves, make a bedtime story, share as a Reel | [doodlepop.zip](https://github.com/arm-haha/ai-wanla-app/releases/download/doodlepop-2026-11-05/doodlepop.zip) |
 
 ข้อมูลตัวอย่างในแต่ละแพ็กเป็นข้อมูลสมมติ / All example data is fictional.
