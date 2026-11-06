@@ -1,0 +1,837 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/cardready.schema.json",
+ "title": "CardReady",
+ "$defs": {
+  "Selfie": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age",
+    "doc_type",
+    "px_w",
+    "px_h",
+    "face",
+    "mess",
+    "target_size",
+    "target_bg"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^s[0-9]{2,}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "purpose_th": {
+     "type": "string"
+    },
+    "doc_type": {
+     "enum": [
+      "national_id",
+      "passport",
+      "visa",
+      "job_th",
+      "student"
+     ]
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "face": {
+     "$ref": "#/$defs/FaceBox"
+    },
+    "mess": {
+     "type": "object",
+     "required": [
+      "yellow_cast",
+      "shadow",
+      "clutter_bg",
+      "blur",
+      "tilt",
+      "crop_tight"
+     ],
+     "properties": {
+      "yellow_cast": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "shadow": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "clutter_bg": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "blur": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "tilt": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "crop_tight": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     },
+     "additionalProperties": false
+    },
+    "target_size": {
+     "enum": [
+      "1_inch",
+      "2_inch",
+      "passport",
+      "visa",
+      "job_th"
+     ]
+    },
+    "target_bg": {
+     "type": "string"
+    },
+    "soft_light": {
+     "type": "boolean"
+    },
+    "print_copies": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "FaceBox": {
+   "type": "object",
+   "required": [
+    "cx",
+    "cy",
+    "h",
+    "eyes_open",
+    "neutral",
+    "front"
+   ],
+   "properties": {
+    "cx": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "cy": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "h": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "eyes_open": {
+     "type": "boolean"
+    },
+    "neutral": {
+     "type": "boolean"
+    },
+    "front": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SizeSpec": {
+   "type": "object",
+   "required": [
+    "key",
+    "label_th",
+    "mm_w",
+    "mm_h",
+    "dpi",
+    "px_w",
+    "px_h",
+    "docs"
+   ],
+   "properties": {
+    "key": {
+     "enum": [
+      "1_inch",
+      "2_inch",
+      "passport",
+      "visa",
+      "job_th"
+     ]
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "mm_w": {
+     "type": "number",
+     "minimum": 0
+    },
+    "mm_h": {
+     "type": "number",
+     "minimum": 0
+    },
+    "dpi": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "docs": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "national_id",
+       "passport",
+       "visa",
+       "job_th",
+       "student"
+      ]
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "BgChoice": {
+   "type": "object",
+   "required": [
+    "preset",
+    "hex",
+    "label_th",
+    "custom"
+   ],
+   "properties": {
+    "preset": {
+     "enum": [
+      "white",
+      "gov_blue",
+      "red",
+      "custom"
+     ]
+    },
+    "hex": {
+     "type": "string",
+     "pattern": "^#[0-9A-F]{6}$"
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "custom": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "CropBox": {
+   "type": "object",
+   "required": [
+    "x0",
+    "y0",
+    "x1",
+    "y1",
+    "out_px_w",
+    "out_px_h",
+    "size_key",
+    "aspect"
+   ],
+   "properties": {
+    "x0": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "y0": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "x1": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "y1": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "out_px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "out_px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "size_key": {
+     "enum": [
+      "1_inch",
+      "2_inch",
+      "passport",
+      "visa",
+      "job_th"
+     ]
+    },
+    "aspect": {
+     "type": "number",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "PassReport": {
+   "type": "object",
+   "required": [
+    "selfie_id",
+    "score",
+    "level",
+    "level_th"
+   ],
+   "properties": {
+    "selfie_id": {
+     "type": "string"
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "level": {
+     "enum": [
+      "fail",
+      "warn",
+      "pass"
+     ]
+    },
+    "level_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SoftLightPlan": {
+   "type": "object",
+   "required": [
+    "strength",
+    "blemish_calm",
+    "even_lighting",
+    "reshape",
+    "plastic_beauty",
+    "whitelist",
+    "blocked"
+   ],
+   "properties": {
+    "strength": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blemish_calm": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "even_lighting": {
+     "type": "boolean"
+    },
+    "reshape": {
+     "const": false
+    },
+    "plastic_beauty": {
+     "const": false
+    },
+    "whitelist": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "blocked": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "DpiCheck": {
+   "type": "object",
+   "required": [
+    "dpi",
+    "ok",
+    "min_dpi"
+   ],
+   "properties": {
+    "dpi": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "min_dpi": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "PrintSheet": {
+   "type": "object",
+   "required": [
+    "size_key",
+    "copies_requested",
+    "copies_placed",
+    "capacity",
+    "rows",
+    "cols",
+    "margin_mm",
+    "gap_mm",
+    "a4_px_w",
+    "a4_px_h",
+    "cut_guides",
+    "dpi_check",
+    "positions"
+   ],
+   "properties": {
+    "size_key": {
+     "enum": [
+      "1_inch",
+      "2_inch",
+      "passport",
+      "visa",
+      "job_th"
+     ]
+    },
+    "copies_requested": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "copies_placed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "capacity": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "rows": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "cols": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "margin_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "gap_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "a4_px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "a4_px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "cut_guides": {
+     "type": "boolean"
+    },
+    "dpi_check": {
+     "$ref": "#/$defs/DpiCheck"
+    },
+    "positions": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "index",
+       "x_mm",
+       "y_mm",
+       "w_mm",
+       "h_mm"
+      ],
+      "properties": {
+       "index": {
+        "type": "integer",
+        "minimum": 1
+       },
+       "x_mm": {
+        "type": "number",
+        "minimum": 0
+       },
+       "y_mm": {
+        "type": "number",
+        "minimum": 0
+       },
+       "w_mm": {
+        "type": "number",
+        "minimum": 0
+       },
+       "h_mm": {
+        "type": "number",
+        "minimum": 0
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "CheckItem": {
+   "type": "object",
+   "required": [
+    "id",
+    "label_th",
+    "pass"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "pass": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DocChecklist": {
+   "type": "object",
+   "required": [
+    "doc_type",
+    "label_th",
+    "preferred_size",
+    "preferred_bg",
+    "items",
+    "passed",
+    "total",
+    "meter",
+    "level",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "doc_type": {
+     "enum": [
+      "national_id",
+      "passport",
+      "visa",
+      "job_th",
+      "student"
+     ]
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "preferred_size": {
+     "enum": [
+      "1_inch",
+      "2_inch",
+      "passport",
+      "visa",
+      "job_th"
+     ]
+    },
+    "preferred_bg": {
+     "type": "string"
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/CheckItem"
+     }
+    },
+    "passed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "meter": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "level": {
+     "enum": [
+      "pass",
+      "warn",
+      "fail"
+     ]
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ExportPack": {
+   "type": "object",
+   "required": [
+    "files",
+    "watermark",
+    "count"
+   ],
+   "properties": {
+    "files": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "format",
+       "filename",
+       "px_w",
+       "px_h",
+       "dpi",
+       "bg_alpha"
+      ],
+      "properties": {
+       "format": {
+        "enum": [
+         "jpg",
+         "png",
+         "pdf"
+        ]
+       },
+       "filename": {
+        "type": "string"
+       },
+       "px_w": {
+        "type": "integer",
+        "minimum": 1
+       },
+       "px_h": {
+        "type": "integer",
+        "minimum": 1
+       },
+       "dpi": {
+        "type": "integer",
+        "minimum": 1
+       },
+       "bg_alpha": {
+        "type": "boolean"
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "badges",
+    "watermark",
+    "cta_th",
+    "size_label_th",
+    "pass_score"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "badges": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    },
+    "size_label_th": {
+     "type": "string"
+    },
+    "pass_score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    }
+   },
+   "additionalProperties": false
+  },
+  "HistoryEntry": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "size_key",
+    "bg",
+    "pass_score",
+    "created_at",
+    "on_device"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "size_key": {
+     "enum": [
+      "1_inch",
+      "2_inch",
+      "passport",
+      "visa",
+      "job_th"
+     ]
+    },
+    "bg": {
+     "$ref": "#/$defs/BgChoice"
+    },
+    "pass_score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "created_at": {
+     "type": "string"
+    },
+    "on_device": {
+     "const": true
+    }
+   },
+   "additionalProperties": false
+  },
+  "BatchProfiles": {
+   "type": "object",
+   "required": [
+    "count",
+    "members",
+    "note_th"
+   ],
+   "properties": {
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "members": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "id",
+       "name_th",
+       "relation_th"
+      ],
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "name_th": {
+        "type": "string"
+       },
+       "relation_th": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "note_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Pipeline": {
+   "type": "object",
+   "required": [
+    "selfie_id",
+    "steps"
+   ],
+   "properties": {
+    "selfie_id": {
+     "type": "string"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}

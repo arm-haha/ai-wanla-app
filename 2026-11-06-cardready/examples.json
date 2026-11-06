@@ -1,0 +1,1330 @@
+{
+ "examples": [
+  {
+   "def": "Selfie",
+   "note": "น้องมิ้นท์",
+   "value": {
+    "id": "s01",
+    "name_th": "น้องมิ้นท์",
+    "name_en": "Mint",
+    "age": 24,
+    "city_th": "กรุงเทพฯ",
+    "purpose_th": "สมัครงานบริษัทในกทม.",
+    "doc_type": "job_th",
+    "px_w": 3024,
+    "px_h": 4032,
+    "face": {
+     "cx": 0.52,
+     "cy": 0.42,
+     "h": 0.28,
+     "eyes_open": true,
+     "neutral": true,
+     "front": true
+    },
+    "mess": {
+     "yellow_cast": 0.65,
+     "shadow": 0.55,
+     "clutter_bg": 0.8,
+     "blur": 0.25,
+     "tilt": 0.2,
+     "crop_tight": 0.1
+    },
+    "target_size": "1_inch",
+    "target_bg": "white",
+    "soft_light": true,
+    "print_copies": 8
+   }
+  },
+  {
+   "def": "FaceBox",
+   "note": "s01",
+   "value": {
+    "cx": 0.52,
+    "cy": 0.42,
+    "h": 0.28,
+    "eyes_open": true,
+    "neutral": true,
+    "front": true
+   }
+  },
+  {
+   "def": "PassReport",
+   "note": "s01 after",
+   "value": {
+    "selfie_id": "s01",
+    "score": 92,
+    "level": "pass",
+    "level_th": "ผ่าน"
+   }
+  },
+  {
+   "def": "PassReport",
+   "note": "s01 raw",
+   "value": {
+    "selfie_id": "s01",
+    "score": 49,
+    "level": "fail",
+    "level_th": "ยังไม่ผ่าน"
+   }
+  },
+  {
+   "def": "CropBox",
+   "note": "s01",
+   "value": {
+    "x0": 996,
+    "y0": 806,
+    "x1": 2148,
+    "y1": 2419,
+    "out_px_w": 295,
+    "out_px_h": 413,
+    "size_key": "1_inch",
+    "aspect": 0.7143
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s01",
+   "value": {
+    "selfie_id": "s01",
+    "steps": [
+     "face_detect",
+     "deskew",
+     "auto_crop",
+     "bg_remove",
+     "soft_light",
+     "color_cast_fix",
+     "size_fit",
+     "dpi_tag"
+    ]
+   }
+  },
+  {
+   "def": "Selfie",
+   "note": "คุณก้อง",
+   "value": {
+    "id": "s02",
+    "name_th": "คุณก้อง",
+    "name_en": "Kong",
+    "age": 31,
+    "city_th": "เชียงใหม่",
+    "purpose_th": "ต่อพาสปอร์ต",
+    "doc_type": "passport",
+    "px_w": 2400,
+    "px_h": 3200,
+    "face": {
+     "cx": 0.5,
+     "cy": 0.4,
+     "h": 0.32,
+     "eyes_open": true,
+     "neutral": true,
+     "front": true
+    },
+    "mess": {
+     "yellow_cast": 0.2,
+     "shadow": 0.3,
+     "clutter_bg": 0.4,
+     "blur": 0.1,
+     "tilt": 0.05,
+     "crop_tight": 0.0
+    },
+    "target_size": "passport",
+    "target_bg": "white",
+    "soft_light": true,
+    "print_copies": 4
+   }
+  },
+  {
+   "def": "FaceBox",
+   "note": "s02",
+   "value": {
+    "cx": 0.5,
+    "cy": 0.4,
+    "h": 0.32,
+    "eyes_open": true,
+    "neutral": true,
+    "front": true
+   }
+  },
+  {
+   "def": "PassReport",
+   "note": "s02 after",
+   "value": {
+    "selfie_id": "s02",
+    "score": 100,
+    "level": "pass",
+    "level_th": "ผ่าน"
+   }
+  },
+  {
+   "def": "PassReport",
+   "note": "s02 raw",
+   "value": {
+    "selfie_id": "s02",
+    "score": 78,
+    "level": "pass",
+    "level_th": "ผ่าน"
+   }
+  },
+  {
+   "def": "CropBox",
+   "note": "s02",
+   "value": {
+    "x0": 631,
+    "y0": 475,
+    "x1": 1769,
+    "y1": 1938,
+    "out_px_w": 413,
+    "out_px_h": 531,
+    "size_key": "passport",
+    "aspect": 0.7778
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s02",
+   "value": {
+    "selfie_id": "s02",
+    "steps": [
+     "face_detect",
+     "auto_crop",
+     "bg_remove",
+     "soft_light",
+     "size_fit",
+     "dpi_tag"
+    ]
+   }
+  },
+  {
+   "def": "Selfie",
+   "note": "น้องฝ้าย",
+   "value": {
+    "id": "s03",
+    "name_th": "น้องฝ้าย",
+    "name_en": "Fai",
+    "age": 17,
+    "city_th": "ขอนแก่น",
+    "purpose_th": "ทำบัตรนักเรียน",
+    "doc_type": "student",
+    "px_w": 2000,
+    "px_h": 2000,
+    "face": {
+     "cx": 0.48,
+     "cy": 0.45,
+     "h": 0.35,
+     "eyes_open": true,
+     "neutral": false,
+     "front": true
+    },
+    "mess": {
+     "yellow_cast": 0.1,
+     "shadow": 0.2,
+     "clutter_bg": 0.5,
+     "blur": 0.4,
+     "tilt": 0.3,
+     "crop_tight": 0.2
+    },
+    "target_size": "1_inch",
+    "target_bg": "gov_blue",
+    "soft_light": true,
+    "print_copies": 6
+   }
+  },
+  {
+   "def": "FaceBox",
+   "note": "s03",
+   "value": {
+    "cx": 0.48,
+    "cy": 0.45,
+    "h": 0.35,
+    "eyes_open": true,
+    "neutral": false,
+    "front": true
+   }
+  },
+  {
+   "def": "PassReport",
+   "note": "s03 after",
+   "value": {
+    "selfie_id": "s03",
+    "score": 92,
+    "level": "pass",
+    "level_th": "ผ่าน"
+   }
+  },
+  {
+   "def": "PassReport",
+   "note": "s03 raw",
+   "value": {
+    "selfie_id": "s03",
+    "score": 70,
+    "level": "warn",
+    "level_th": "เกือบผ่าน"
+   }
+  },
+  {
+   "def": "CropBox",
+   "note": "s03",
+   "value": {
+    "x0": 603,
+    "y0": 350,
+    "x1": 1317,
+    "y1": 1350,
+    "out_px_w": 295,
+    "out_px_h": 413,
+    "size_key": "1_inch",
+    "aspect": 0.7143
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s03",
+   "value": {
+    "selfie_id": "s03",
+    "steps": [
+     "face_detect",
+     "deskew",
+     "auto_crop",
+     "bg_remove",
+     "soft_light",
+     "size_fit",
+     "dpi_tag"
+    ]
+   }
+  },
+  {
+   "def": "Selfie",
+   "note": "พี่แนน",
+   "value": {
+    "id": "s04",
+    "name_th": "พี่แนน",
+    "name_en": "Nan",
+    "age": 28,
+    "city_th": "ภูเก็ต",
+    "purpose_th": "ยื่นวีซ่าท่องเที่ยว",
+    "doc_type": "visa",
+    "px_w": 2800,
+    "px_h": 3600,
+    "face": {
+     "cx": 0.51,
+     "cy": 0.38,
+     "h": 0.3,
+     "eyes_open": true,
+     "neutral": true,
+     "front": true
+    },
+    "mess": {
+     "yellow_cast": 0.0,
+     "shadow": 0.15,
+     "clutter_bg": 0.25,
+     "blur": 0.05,
+     "tilt": 0.0,
+     "crop_tight": 0.0
+    },
+    "target_size": "visa",
+    "target_bg": "white",
+    "soft_light": false,
+    "print_copies": 2
+   }
+  },
+  {
+   "def": "FaceBox",
+   "note": "s04",
+   "value": {
+    "cx": 0.51,
+    "cy": 0.38,
+    "h": 0.3,
+    "eyes_open": true,
+    "neutral": true,
+    "front": true
+   }
+  },
+  {
+   "def": "PassReport",
+   "note": "s04 after",
+   "value": {
+    "selfie_id": "s04",
+    "score": 100,
+    "level": "pass",
+    "level_th": "ผ่าน"
+   }
+  },
+  {
+   "def": "PassReport",
+   "note": "s04 raw",
+   "value": {
+    "selfie_id": "s04",
+    "score": 90,
+    "level": "pass",
+    "level_th": "ผ่าน"
+   }
+  },
+  {
+   "def": "CropBox",
+   "note": "s04",
+   "value": {
+    "x0": 828,
+    "y0": 519,
+    "x1": 2028,
+    "y1": 2062,
+    "out_px_w": 413,
+    "out_px_h": 531,
+    "size_key": "visa",
+    "aspect": 0.7778
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s04",
+   "value": {
+    "selfie_id": "s04",
+    "steps": [
+     "face_detect",
+     "auto_crop",
+     "bg_remove",
+     "size_fit",
+     "dpi_tag"
+    ]
+   }
+  },
+  {
+   "def": "Selfie",
+   "note": "ลุงชัย",
+   "value": {
+    "id": "s05",
+    "name_th": "ลุงชัย",
+    "name_en": "Chai",
+    "age": 55,
+    "city_th": "นนทบุรี",
+    "purpose_th": "ต่อบัตรประชาชน",
+    "doc_type": "national_id",
+    "px_w": 1600,
+    "px_h": 2200,
+    "face": {
+     "cx": 0.5,
+     "cy": 0.44,
+     "h": 0.33,
+     "eyes_open": true,
+     "neutral": true,
+     "front": true
+    },
+    "mess": {
+     "yellow_cast": 0.4,
+     "shadow": 0.6,
+     "clutter_bg": 0.7,
+     "blur": 0.35,
+     "tilt": 0.25,
+     "crop_tight": 0.15
+    },
+    "target_size": "1_inch",
+    "target_bg": "white",
+    "soft_light": true,
+    "print_copies": 8
+   }
+  },
+  {
+   "def": "FaceBox",
+   "note": "s05",
+   "value": {
+    "cx": 0.5,
+    "cy": 0.44,
+    "h": 0.33,
+    "eyes_open": true,
+    "neutral": true,
+    "front": true
+   }
+  },
+  {
+   "def": "PassReport",
+   "note": "s05 after",
+   "value": {
+    "selfie_id": "s05",
+    "score": 90,
+    "level": "pass",
+    "level_th": "ผ่าน"
+   }
+  },
+  {
+   "def": "PassReport",
+   "note": "s05 raw",
+   "value": {
+    "selfie_id": "s05",
+    "score": 53,
+    "level": "warn",
+    "level_th": "เกือบผ่าน"
+   }
+  },
+  {
+   "def": "CropBox",
+   "note": "s05",
+   "value": {
+    "x0": 430,
+    "y0": 398,
+    "x1": 1170,
+    "y1": 1435,
+    "out_px_w": 295,
+    "out_px_h": 413,
+    "size_key": "1_inch",
+    "aspect": 0.7143
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s05",
+   "value": {
+    "selfie_id": "s05",
+    "steps": [
+     "face_detect",
+     "deskew",
+     "auto_crop",
+     "bg_remove",
+     "soft_light",
+     "color_cast_fix",
+     "size_fit",
+     "dpi_tag"
+    ]
+   }
+  },
+  {
+   "def": "SizeSpec",
+   "note": "1_inch",
+   "value": {
+    "key": "1_inch",
+    "label_th": "1 นิ้ว",
+    "mm_w": 25.0,
+    "mm_h": 35.0,
+    "dpi": 300,
+    "px_w": 295,
+    "px_h": 413,
+    "docs": [
+     "national_id",
+     "job_th",
+     "student"
+    ]
+   }
+  },
+  {
+   "def": "SizeSpec",
+   "note": "2_inch",
+   "value": {
+    "key": "2_inch",
+    "label_th": "2 นิ้ว",
+    "mm_w": 40.0,
+    "mm_h": 60.0,
+    "dpi": 300,
+    "px_w": 472,
+    "px_h": 709,
+    "docs": [
+     "job_th",
+     "student"
+    ]
+   }
+  },
+  {
+   "def": "SizeSpec",
+   "note": "passport",
+   "value": {
+    "key": "passport",
+    "label_th": "พาสปอร์ต",
+    "mm_w": 35.0,
+    "mm_h": 45.0,
+    "dpi": 300,
+    "px_w": 413,
+    "px_h": 531,
+    "docs": [
+     "passport",
+     "visa"
+    ]
+   }
+  },
+  {
+   "def": "SizeSpec",
+   "note": "visa",
+   "value": {
+    "key": "visa",
+    "label_th": "วีซ่า",
+    "mm_w": 35.0,
+    "mm_h": 45.0,
+    "dpi": 300,
+    "px_w": 413,
+    "px_h": 531,
+    "docs": [
+     "visa"
+    ]
+   }
+  },
+  {
+   "def": "SizeSpec",
+   "note": "job_th",
+   "value": {
+    "key": "job_th",
+    "label_th": "ใบสมัครงานไทย",
+    "mm_w": 25.0,
+    "mm_h": 35.0,
+    "dpi": 300,
+    "px_w": 295,
+    "px_h": 413,
+    "docs": [
+     "job_th"
+    ]
+   }
+  },
+  {
+   "def": "BgChoice",
+   "note": "white",
+   "value": {
+    "preset": "white",
+    "hex": "#FFFFFF",
+    "label_th": "ขาว",
+    "custom": false
+   }
+  },
+  {
+   "def": "BgChoice",
+   "note": "gov_blue",
+   "value": {
+    "preset": "gov_blue",
+    "hex": "#1E4D8C",
+    "label_th": "ฟ้ากรมการ",
+    "custom": false
+   }
+  },
+  {
+   "def": "BgChoice",
+   "note": "red",
+   "value": {
+    "preset": "red",
+    "hex": "#C8102E",
+    "label_th": "แดง",
+    "custom": false
+   }
+  },
+  {
+   "def": "BgChoice",
+   "note": "custom sky",
+   "value": {
+    "preset": "custom",
+    "hex": "#E8F3FF",
+    "label_th": "กำหนดเอง",
+    "custom": true
+   }
+  },
+  {
+   "def": "SoftLightPlan",
+   "note": "mint default",
+   "value": {
+    "strength": 0.3,
+    "blemish_calm": 0.15,
+    "even_lighting": true,
+    "reshape": false,
+    "plastic_beauty": false,
+    "whitelist": [
+     "even_light",
+     "mild_blemish",
+     "color_cast_fix"
+    ],
+    "blocked": [
+     "face_reshape",
+     "skin_plastic",
+     "eye_enlarge",
+     "slim_face",
+     "heavy_makeup"
+    ]
+   }
+  },
+  {
+   "def": "SoftLightPlan",
+   "note": "clamped",
+   "value": {
+    "strength": 0.35,
+    "blemish_calm": 0.25,
+    "even_lighting": true,
+    "reshape": false,
+    "plastic_beauty": false,
+    "whitelist": [
+     "even_light",
+     "mild_blemish",
+     "color_cast_fix"
+    ],
+    "blocked": [
+     "face_reshape",
+     "skin_plastic",
+     "eye_enlarge",
+     "slim_face",
+     "heavy_makeup"
+    ]
+   }
+  },
+  {
+   "def": "DpiCheck",
+   "note": "1 inch @300",
+   "value": {
+    "dpi": 300,
+    "ok": true,
+    "min_dpi": 300
+   }
+  },
+  {
+   "def": "DpiCheck",
+   "note": "too low",
+   "value": {
+    "dpi": 152,
+    "ok": false,
+    "min_dpi": 300
+   }
+  },
+  {
+   "def": "PrintSheet",
+   "note": "mint 8 copies",
+   "value": {
+    "size_key": "1_inch",
+    "copies_requested": 8,
+    "copies_placed": 8,
+    "capacity": 42,
+    "rows": 7,
+    "cols": 6,
+    "margin_mm": 8.0,
+    "gap_mm": 4.0,
+    "a4_px_w": 2480,
+    "a4_px_h": 3508,
+    "cut_guides": true,
+    "dpi_check": {
+     "dpi": 300,
+     "ok": true,
+     "min_dpi": 300
+    },
+    "positions": [
+     {
+      "index": 1,
+      "x_mm": 8.0,
+      "y_mm": 8.0,
+      "w_mm": 25.0,
+      "h_mm": 35.0
+     },
+     {
+      "index": 2,
+      "x_mm": 37.0,
+      "y_mm": 8.0,
+      "w_mm": 25.0,
+      "h_mm": 35.0
+     },
+     {
+      "index": 3,
+      "x_mm": 66.0,
+      "y_mm": 8.0,
+      "w_mm": 25.0,
+      "h_mm": 35.0
+     },
+     {
+      "index": 4,
+      "x_mm": 95.0,
+      "y_mm": 8.0,
+      "w_mm": 25.0,
+      "h_mm": 35.0
+     },
+     {
+      "index": 5,
+      "x_mm": 124.0,
+      "y_mm": 8.0,
+      "w_mm": 25.0,
+      "h_mm": 35.0
+     },
+     {
+      "index": 6,
+      "x_mm": 153.0,
+      "y_mm": 8.0,
+      "w_mm": 25.0,
+      "h_mm": 35.0
+     },
+     {
+      "index": 7,
+      "x_mm": 8.0,
+      "y_mm": 47.0,
+      "w_mm": 25.0,
+      "h_mm": 35.0
+     },
+     {
+      "index": 8,
+      "x_mm": 37.0,
+      "y_mm": 47.0,
+      "w_mm": 25.0,
+      "h_mm": 35.0
+     }
+    ]
+   }
+  },
+  {
+   "def": "PrintSheet",
+   "note": "passport 4",
+   "value": {
+    "size_key": "passport",
+    "copies_requested": 4,
+    "copies_placed": 4,
+    "capacity": 25,
+    "rows": 5,
+    "cols": 5,
+    "margin_mm": 8.0,
+    "gap_mm": 4.0,
+    "a4_px_w": 2480,
+    "a4_px_h": 3508,
+    "cut_guides": true,
+    "dpi_check": {
+     "dpi": 300,
+     "ok": true,
+     "min_dpi": 300
+    },
+    "positions": [
+     {
+      "index": 1,
+      "x_mm": 8.0,
+      "y_mm": 8.0,
+      "w_mm": 35.0,
+      "h_mm": 45.0
+     },
+     {
+      "index": 2,
+      "x_mm": 47.0,
+      "y_mm": 8.0,
+      "w_mm": 35.0,
+      "h_mm": 45.0
+     },
+     {
+      "index": 3,
+      "x_mm": 86.0,
+      "y_mm": 8.0,
+      "w_mm": 35.0,
+      "h_mm": 45.0
+     },
+     {
+      "index": 4,
+      "x_mm": 125.0,
+      "y_mm": 8.0,
+      "w_mm": 35.0,
+      "h_mm": 45.0
+     }
+    ]
+   }
+  },
+  {
+   "def": "PrintSheet",
+   "note": "2 inch 6",
+   "value": {
+    "size_key": "2_inch",
+    "copies_requested": 6,
+    "copies_placed": 6,
+    "capacity": 16,
+    "rows": 4,
+    "cols": 4,
+    "margin_mm": 8.0,
+    "gap_mm": 4.0,
+    "a4_px_w": 2480,
+    "a4_px_h": 3508,
+    "cut_guides": true,
+    "dpi_check": {
+     "dpi": 300,
+     "ok": true,
+     "min_dpi": 300
+    },
+    "positions": [
+     {
+      "index": 1,
+      "x_mm": 8.0,
+      "y_mm": 8.0,
+      "w_mm": 40.0,
+      "h_mm": 60.0
+     },
+     {
+      "index": 2,
+      "x_mm": 52.0,
+      "y_mm": 8.0,
+      "w_mm": 40.0,
+      "h_mm": 60.0
+     },
+     {
+      "index": 3,
+      "x_mm": 96.0,
+      "y_mm": 8.0,
+      "w_mm": 40.0,
+      "h_mm": 60.0
+     },
+     {
+      "index": 4,
+      "x_mm": 140.0,
+      "y_mm": 8.0,
+      "w_mm": 40.0,
+      "h_mm": 60.0
+     },
+     {
+      "index": 5,
+      "x_mm": 8.0,
+      "y_mm": 72.0,
+      "w_mm": 40.0,
+      "h_mm": 60.0
+     },
+     {
+      "index": 6,
+      "x_mm": 52.0,
+      "y_mm": 72.0,
+      "w_mm": 40.0,
+      "h_mm": 60.0
+     }
+    ]
+   }
+  },
+  {
+   "def": "DocChecklist",
+   "note": "mint job pass",
+   "value": {
+    "doc_type": "job_th",
+    "label_th": "สมัครงาน",
+    "preferred_size": "1_inch",
+    "preferred_bg": "white",
+    "items": [
+     {
+      "id": "face_front",
+      "label_th": "หันหน้าตรง",
+      "pass": true
+     },
+     {
+      "id": "eyes_open",
+      "label_th": "ลืมตาชัด",
+      "pass": true
+     },
+     {
+      "id": "neutral",
+      "label_th": "สีหน้าปกติ ไม่ยิ้มกว้าง",
+      "pass": true
+     },
+     {
+      "id": "even_light",
+      "label_th": "แสงสม่ำเสมอ ไม่มีเงาบนหน้า",
+      "pass": true
+     },
+     {
+      "id": "bg_plain",
+      "label_th": "พื้นหลังเรียบตามที่กำหนด",
+      "pass": true
+     },
+     {
+      "id": "formal_wear",
+      "label_th": "ชุดสุภาพ (ปกเสื้อมองเห็น)",
+      "pass": true
+     }
+    ],
+    "passed": 6,
+    "total": 6,
+    "meter": 100,
+    "level": "pass",
+    "disclaimer_th": "เป็นแนวทางทั่วไป ไม่ใช่การรับรองจากหน่วยงานราชการ"
+   }
+  },
+  {
+   "def": "DocChecklist",
+   "note": "passport warn ears",
+   "value": {
+    "doc_type": "passport",
+    "label_th": "พาสปอร์ต",
+    "preferred_size": "passport",
+    "preferred_bg": "white",
+    "items": [
+     {
+      "id": "face_front",
+      "label_th": "หันหน้าตรง",
+      "pass": true
+     },
+     {
+      "id": "eyes_open",
+      "label_th": "ลืมตาชัด",
+      "pass": true
+     },
+     {
+      "id": "neutral",
+      "label_th": "สีหน้าปกติ ไม่ยิ้มกว้าง",
+      "pass": true
+     },
+     {
+      "id": "even_light",
+      "label_th": "แสงสม่ำเสมอ ไม่มีเงาบนหน้า",
+      "pass": true
+     },
+     {
+      "id": "bg_plain",
+      "label_th": "พื้นหลังเรียบตามที่กำหนด",
+      "pass": true
+     },
+     {
+      "id": "no_hat",
+      "label_th": "ไม่สวมหมวก/ผ้าคลุมที่บังหน้า",
+      "pass": true
+     },
+     {
+      "id": "no_glasses_tint",
+      "label_th": "แว่นไม่มีเลนส์สี / ไม่สะท้อน",
+      "pass": true
+     },
+     {
+      "id": "head_ratio",
+      "label_th": "สัดส่วนศีรษะอยู่ในกรอบ",
+      "pass": true
+     },
+     {
+      "id": "ears_visible",
+      "label_th": "เห็นใบหูทั้งสองข้าง",
+      "pass": false
+     }
+    ],
+    "passed": 8,
+    "total": 9,
+    "meter": 89,
+    "level": "pass",
+    "disclaimer_th": "เป็นแนวทางทั่วไป ไม่ใช่การรับรองจากหน่วยงานราชการ"
+   }
+  },
+  {
+   "def": "DocChecklist",
+   "note": "national_id partial",
+   "value": {
+    "doc_type": "national_id",
+    "label_th": "บัตรประชาชน",
+    "preferred_size": "1_inch",
+    "preferred_bg": "white",
+    "items": [
+     {
+      "id": "face_front",
+      "label_th": "หันหน้าตรง",
+      "pass": true
+     },
+     {
+      "id": "eyes_open",
+      "label_th": "ลืมตาชัด",
+      "pass": true
+     },
+     {
+      "id": "neutral",
+      "label_th": "สีหน้าปกติ ไม่ยิ้มกว้าง",
+      "pass": true
+     },
+     {
+      "id": "even_light",
+      "label_th": "แสงสม่ำเสมอ ไม่มีเงาบนหน้า",
+      "pass": false
+     },
+     {
+      "id": "bg_plain",
+      "label_th": "พื้นหลังเรียบตามที่กำหนด",
+      "pass": false
+     },
+     {
+      "id": "no_hat",
+      "label_th": "ไม่สวมหมวก/ผ้าคลุมที่บังหน้า",
+      "pass": true
+     },
+     {
+      "id": "no_glasses_tint",
+      "label_th": "แว่นไม่มีเลนส์สี / ไม่สะท้อน",
+      "pass": true
+     },
+     {
+      "id": "head_ratio",
+      "label_th": "สัดส่วนศีรษะอยู่ในกรอบ",
+      "pass": true
+     }
+    ],
+    "passed": 6,
+    "total": 8,
+    "meter": 75,
+    "level": "warn",
+    "disclaimer_th": "เป็นแนวทางทั่วไป ไม่ใช่การรับรองจากหน่วยงานราชการ"
+   }
+  },
+  {
+   "def": "DocChecklist",
+   "note": "student smile",
+   "value": {
+    "doc_type": "student",
+    "label_th": "นักเรียน/นักศึกษา",
+    "preferred_size": "1_inch",
+    "preferred_bg": "gov_blue",
+    "items": [
+     {
+      "id": "face_front",
+      "label_th": "หันหน้าตรง",
+      "pass": true
+     },
+     {
+      "id": "eyes_open",
+      "label_th": "ลืมตาชัด",
+      "pass": true
+     },
+     {
+      "id": "neutral",
+      "label_th": "สีหน้าปกติ ไม่ยิ้มกว้าง",
+      "pass": false
+     },
+     {
+      "id": "even_light",
+      "label_th": "แสงสม่ำเสมอ ไม่มีเงาบนหน้า",
+      "pass": true
+     },
+     {
+      "id": "bg_plain",
+      "label_th": "พื้นหลังเรียบตามที่กำหนด",
+      "pass": true
+     },
+     {
+      "id": "no_hat",
+      "label_th": "ไม่สวมหมวก/ผ้าคลุมที่บังหน้า",
+      "pass": true
+     }
+    ],
+    "passed": 5,
+    "total": 6,
+    "meter": 83,
+    "level": "pass",
+    "disclaimer_th": "เป็นแนวทางทั่วไป ไม่ใช่การรับรองจากหน่วยงานราชการ"
+   }
+  },
+  {
+   "def": "DocChecklist",
+   "note": "visa empty fail",
+   "value": {
+    "doc_type": "visa",
+    "label_th": "วีซ่า",
+    "preferred_size": "visa",
+    "preferred_bg": "white",
+    "items": [
+     {
+      "id": "face_front",
+      "label_th": "หันหน้าตรง",
+      "pass": false
+     },
+     {
+      "id": "eyes_open",
+      "label_th": "ลืมตาชัด",
+      "pass": false
+     },
+     {
+      "id": "neutral",
+      "label_th": "สีหน้าปกติ ไม่ยิ้มกว้าง",
+      "pass": false
+     },
+     {
+      "id": "even_light",
+      "label_th": "แสงสม่ำเสมอ ไม่มีเงาบนหน้า",
+      "pass": false
+     },
+     {
+      "id": "bg_plain",
+      "label_th": "พื้นหลังเรียบตามที่กำหนด",
+      "pass": false
+     },
+     {
+      "id": "no_hat",
+      "label_th": "ไม่สวมหมวก/ผ้าคลุมที่บังหน้า",
+      "pass": false
+     },
+     {
+      "id": "head_ratio",
+      "label_th": "สัดส่วนศีรษะอยู่ในกรอบ",
+      "pass": false
+     }
+    ],
+    "passed": 0,
+    "total": 7,
+    "meter": 0,
+    "level": "fail",
+    "disclaimer_th": "เป็นแนวทางทั่วไป ไม่ใช่การรับรองจากหน่วยงานราชการ"
+   }
+  },
+  {
+   "def": "ExportPack",
+   "note": "mint export",
+   "value": {
+    "files": [
+     {
+      "format": "jpg",
+      "filename": "cardready_1_inch.jpg",
+      "px_w": 295,
+      "px_h": 413,
+      "dpi": 300,
+      "bg_alpha": false
+     },
+     {
+      "format": "png",
+      "filename": "cardready_1_inch.png",
+      "px_w": 295,
+      "px_h": 413,
+      "dpi": 300,
+      "bg_alpha": true
+     },
+     {
+      "format": "pdf",
+      "filename": "cardready_1_inch_a4.pdf",
+      "px_w": 2480,
+      "px_h": 3508,
+      "dpi": 300,
+      "bg_alpha": false
+     }
+    ],
+    "watermark": "Made with CardReady · not a government certificate",
+    "count": 3
+   }
+  },
+  {
+   "def": "ExportPack",
+   "note": "passport jpg only",
+   "value": {
+    "files": [
+     {
+      "format": "jpg",
+      "filename": "cardready_passport.jpg",
+      "px_w": 413,
+      "px_h": 531,
+      "dpi": 300,
+      "bg_alpha": false
+     }
+    ],
+    "watermark": "Made with CardReady · not a government certificate",
+    "count": 1
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "mint share",
+   "value": {
+    "title_th": "CardReady",
+    "headline_th": "น้องมิ้นท์ · 1 นิ้ว พื้นขาว · Pass 92",
+    "hook_th": "เซลฟี่มั่ว ๆ → รูปติดบัตรพื้นขาวคมชัดใน 3 วินาที",
+    "badges": [
+     "bg_remove",
+     "soft_light",
+     "size_ok"
+    ],
+    "watermark": "Made with CardReady · not a government certificate",
+    "cta_th": "ลองทำรูปติดบัตรของคุณ ลิงก์ในไบโอ",
+    "size_label_th": "1 นิ้ว",
+    "pass_score": 92
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "kong share",
+   "value": {
+    "title_th": "CardReady",
+    "headline_th": "คุณก้อง · พาสปอร์ต พื้นขาว · Pass 88",
+    "hook_th": "เซลฟี่มั่ว ๆ → รูปติดบัตรพื้นขาวคมชัดใน 3 วินาที",
+    "badges": [
+     "bg_remove",
+     "soft_light",
+     "size_ok"
+    ],
+    "watermark": "Made with CardReady · not a government certificate",
+    "cta_th": "ลองทำรูปติดบัตรของคุณ ลิงก์ในไบโอ",
+    "size_label_th": "พาสปอร์ต",
+    "pass_score": 88
+   }
+  },
+  {
+   "def": "HistoryEntry",
+   "note": "mint vault",
+   "value": {
+    "photo_id": "s01",
+    "size_key": "1_inch",
+    "bg": {
+     "preset": "white",
+     "hex": "#FFFFFF",
+     "label_th": "ขาว",
+     "custom": false
+    },
+    "pass_score": 92,
+    "created_at": "2026-11-06T08:00:00+07:00",
+    "on_device": true
+   }
+  },
+  {
+   "def": "HistoryEntry",
+   "note": "kong vault",
+   "value": {
+    "photo_id": "s02",
+    "size_key": "passport",
+    "bg": {
+     "preset": "white",
+     "hex": "#FFFFFF",
+     "label_th": "ขาว",
+     "custom": false
+    },
+    "pass_score": 88,
+    "created_at": "2026-11-06T08:00:00+07:00",
+    "on_device": true
+   }
+  },
+  {
+   "def": "HistoryEntry",
+   "note": "fai vault",
+   "value": {
+    "photo_id": "s03",
+    "size_key": "1_inch",
+    "bg": {
+     "preset": "gov_blue",
+     "hex": "#1E4D8C",
+     "label_th": "ฟ้ากรมการ",
+     "custom": false
+    },
+    "pass_score": 70,
+    "created_at": "2026-11-06T08:00:00+07:00",
+    "on_device": true
+   }
+  },
+  {
+   "def": "BatchProfiles",
+   "note": "mint family",
+   "value": {
+    "count": 3,
+    "members": [
+     {
+      "id": "m01",
+      "name_th": "น้องมิ้นท์",
+      "relation_th": "ตัวเอง"
+     },
+     {
+      "id": "m02",
+      "name_th": "แม่มิ้นท์",
+      "relation_th": "แม่"
+     },
+     {
+      "id": "m03",
+      "name_th": "พ่อมิ้นท์",
+      "relation_th": "พ่อ"
+     }
+    ],
+    "note_th": "โปรไฟล์สมมติ เก็บในเครื่อง"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free day",
+   "value": {
+    "allowed": 3,
+    "left_after": 0,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  }
+ ]
+}
