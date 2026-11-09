@@ -1,0 +1,2310 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "มายด์",
+   "value": {
+    "id": "u01",
+    "name_th": "มายด์",
+    "name_en": "Mind",
+    "age": 26,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "ไปงานแต่งเพื่อนวันเสาร์ แต่จันทร์ต้องเข้าออฟฟิศ",
+    "occasion": "wedding",
+    "budget_thb": 900,
+    "region": "bkk",
+    "quiz": {
+     "vein": "green",
+     "jewelry": "gold",
+     "sun": "tan"
+    },
+    "skin_rgb": [
+     224,
+     182,
+     140
+    ]
+   }
+  },
+  {
+   "def": "UndertoneResult",
+   "note": "u01",
+   "value": {
+    "undertone": "warm",
+    "undertone_th": "โทนอุ่น",
+    "depth": "medium",
+    "points": {
+     "warm": 3,
+     "cool": 0
+    },
+    "rgb_hint": "neutral",
+    "confidence": 0.875
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องเฟิร์น",
+   "value": {
+    "id": "u02",
+    "name_th": "น้องเฟิร์น",
+    "name_en": "Fern",
+    "age": 22,
+    "city_th": "เชียงใหม่",
+    "goal_th": "เล็บสั้นไปฝึกงาน",
+    "occasion": "office",
+    "budget_thb": 500,
+    "region": "province",
+    "quiz": {
+     "vein": "blue",
+     "jewelry": "silver",
+     "sun": "burn"
+    },
+    "skin_rgb": [
+     240,
+     205,
+     200
+    ]
+   }
+  },
+  {
+   "def": "UndertoneResult",
+   "note": "u02",
+   "value": {
+    "undertone": "cool",
+    "undertone_th": "โทนเย็น",
+    "depth": "light",
+    "points": {
+     "warm": 0,
+     "cool": 3
+    },
+    "rgb_hint": "neutral",
+    "confidence": 0.875
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่ปอ",
+   "value": {
+    "id": "u03",
+    "name_th": "พี่ปอ",
+    "name_en": "Por",
+    "age": 30,
+    "city_th": "พัทยา",
+    "goal_th": "เล็บสดใสเล่นสงกรานต์",
+    "occasion": "songkran",
+    "budget_thb": 1200,
+    "region": "tourist",
+    "quiz": {
+     "vein": "mixed",
+     "jewelry": "both",
+     "sun": "both"
+    },
+    "skin_rgb": [
+     205,
+     165,
+     140
+    ]
+   }
+  },
+  {
+   "def": "UndertoneResult",
+   "note": "u03",
+   "value": {
+    "undertone": "neutral",
+    "undertone_th": "โทนกลาง",
+    "depth": "medium",
+    "points": {
+     "warm": 0,
+     "cool": 0
+    },
+    "rgb_hint": "neutral",
+    "confidence": 0.5
+   }
+  },
+  {
+   "def": "Person",
+   "note": "คุณจอย",
+   "value": {
+    "id": "u04",
+    "name_th": "คุณจอย",
+    "name_en": "Joy",
+    "age": 35,
+    "city_th": "อุดรธานี",
+    "goal_th": "ต่อเล็บไปงานลอยกระทง",
+    "occasion": "loy_krathong",
+    "budget_thb": 2000,
+    "region": "province",
+    "quiz": {
+     "vein": "green",
+     "jewelry": "gold",
+     "sun": "tan"
+    },
+    "skin_rgb": [
+     150,
+     110,
+     75
+    ]
+   }
+  },
+  {
+   "def": "UndertoneResult",
+   "note": "u04",
+   "value": {
+    "undertone": "warm",
+    "undertone_th": "โทนอุ่น",
+    "depth": "deep",
+    "points": {
+     "warm": 3,
+     "cool": 0
+    },
+    "rgb_hint": "neutral",
+    "confidence": 0.875
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องแพร",
+   "value": {
+    "id": "u05",
+    "name_th": "น้องแพร",
+    "name_en": "Prae",
+    "age": 17,
+    "city_th": "ขอนแก่น",
+    "goal_th": "ทำเองที่บ้าน งบน้อย",
+    "occasion": "date",
+    "budget_thb": 300,
+    "region": "province",
+    "quiz": {
+     "vein": "blue",
+     "jewelry": "silver",
+     "sun": "both"
+    },
+    "skin_rgb": [
+     230,
+     190,
+     175
+    ]
+   }
+  },
+  {
+   "def": "UndertoneResult",
+   "note": "u05",
+   "value": {
+    "undertone": "cool",
+    "undertone_th": "โทนเย็น",
+    "depth": "light",
+    "points": {
+     "warm": 0,
+     "cool": 2
+    },
+    "rgb_hint": "neutral",
+    "confidence": 0.75
+   }
+  },
+  {
+   "def": "HandPhoto",
+   "note": "h01",
+   "value": {
+    "id": "h01",
+    "hand": "left",
+    "px_w": 3024,
+    "px_h": 4032,
+    "lighting": 0.8,
+    "blur": 0.15,
+    "tilt": 0.1,
+    "nails": [
+     {
+      "finger": "thumb",
+      "width_mm": 14.0,
+      "bed_len_mm": 13.0,
+      "free_edge_mm": 2.5,
+      "taper": 0.1,
+      "corner_round": 0.45
+     },
+     {
+      "finger": "index",
+      "width_mm": 11.0,
+      "bed_len_mm": 12.0,
+      "free_edge_mm": 2.2,
+      "taper": 0.15,
+      "corner_round": 0.4
+     },
+     {
+      "finger": "middle",
+      "width_mm": 11.5,
+      "bed_len_mm": 12.5,
+      "free_edge_mm": 2.4,
+      "taper": 0.12,
+      "corner_round": 0.42
+     },
+     {
+      "finger": "ring",
+      "width_mm": 11.0,
+      "bed_len_mm": 12.0,
+      "free_edge_mm": 2.0,
+      "taper": 0.2,
+      "corner_round": 0.55
+     },
+     {
+      "finger": "pinky",
+      "width_mm": 8.5,
+      "bed_len_mm": 9.0,
+      "free_edge_mm": 1.8,
+      "taper": 0.15,
+      "corner_round": 0.65
+     }
+    ]
+   }
+  },
+  {
+   "def": "HandScan",
+   "note": "h01",
+   "value": {
+    "photo_id": "h01",
+    "hand": "left",
+    "nail_count": 5,
+    "nails": [
+     {
+      "finger": "thumb",
+      "shape": "squoval",
+      "shape_th": "เหลี่ยมมน",
+      "length": "medium",
+      "length_th": "กลาง",
+      "width_mm": 14.0,
+      "total_len_mm": 15.5
+     },
+     {
+      "finger": "index",
+      "shape": "squoval",
+      "shape_th": "เหลี่ยมมน",
+      "length": "medium",
+      "length_th": "กลาง",
+      "width_mm": 11.0,
+      "total_len_mm": 14.2
+     },
+     {
+      "finger": "middle",
+      "shape": "squoval",
+      "shape_th": "เหลี่ยมมน",
+      "length": "medium",
+      "length_th": "กลาง",
+      "width_mm": 11.5,
+      "total_len_mm": 14.9
+     },
+     {
+      "finger": "ring",
+      "shape": "squoval",
+      "shape_th": "เหลี่ยมมน",
+      "length": "medium",
+      "length_th": "กลาง",
+      "width_mm": 11.0,
+      "total_len_mm": 14.0
+     },
+     {
+      "finger": "pinky",
+      "shape": "round",
+      "shape_th": "กลม",
+      "length": "medium",
+      "length_th": "กลาง",
+      "width_mm": 8.5,
+      "total_len_mm": 10.8
+     }
+    ],
+    "shape": "squoval",
+    "shape_th": "เหลี่ยมมน",
+    "length": "medium",
+    "length_th": "กลาง",
+    "quality": {
+     "score": 84,
+     "ok": true,
+     "tips_th": []
+    }
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "h01",
+   "value": {
+    "photo_id": "h01",
+    "steps": [
+     "hand_detect",
+     "nail_segment",
+     "shape_measure",
+     "undertone_sample",
+     "tryon_render_x9",
+     "fit_rank"
+    ]
+   }
+  },
+  {
+   "def": "HandPhoto",
+   "note": "h02",
+   "value": {
+    "id": "h02",
+    "hand": "right",
+    "px_w": 3024,
+    "px_h": 4032,
+    "lighting": 0.9,
+    "blur": 0.1,
+    "tilt": 0.05,
+    "nails": [
+     {
+      "finger": "thumb",
+      "width_mm": 10.5,
+      "bed_len_mm": 11.0,
+      "free_edge_mm": 0.8,
+      "taper": 0.05,
+      "corner_round": 0.8
+     },
+     {
+      "finger": "index",
+      "width_mm": 10.5,
+      "bed_len_mm": 11.0,
+      "free_edge_mm": 0.8,
+      "taper": 0.05,
+      "corner_round": 0.8
+     },
+     {
+      "finger": "middle",
+      "width_mm": 10.5,
+      "bed_len_mm": 11.0,
+      "free_edge_mm": 0.8,
+      "taper": 0.05,
+      "corner_round": 0.8
+     },
+     {
+      "finger": "ring",
+      "width_mm": 10.5,
+      "bed_len_mm": 11.0,
+      "free_edge_mm": 0.8,
+      "taper": 0.05,
+      "corner_round": 0.8
+     },
+     {
+      "finger": "pinky",
+      "width_mm": 10.5,
+      "bed_len_mm": 11.0,
+      "free_edge_mm": 0.8,
+      "taper": 0.05,
+      "corner_round": 0.8
+     }
+    ]
+   }
+  },
+  {
+   "def": "HandScan",
+   "note": "h02",
+   "value": {
+    "photo_id": "h02",
+    "hand": "right",
+    "nail_count": 5,
+    "nails": [
+     {
+      "finger": "thumb",
+      "shape": "round",
+      "shape_th": "กลม",
+      "length": "short",
+      "length_th": "สั้น",
+      "width_mm": 10.5,
+      "total_len_mm": 11.8
+     },
+     {
+      "finger": "index",
+      "shape": "round",
+      "shape_th": "กลม",
+      "length": "short",
+      "length_th": "สั้น",
+      "width_mm": 10.5,
+      "total_len_mm": 11.8
+     },
+     {
+      "finger": "middle",
+      "shape": "round",
+      "shape_th": "กลม",
+      "length": "short",
+      "length_th": "สั้น",
+      "width_mm": 10.5,
+      "total_len_mm": 11.8
+     },
+     {
+      "finger": "ring",
+      "shape": "round",
+      "shape_th": "กลม",
+      "length": "short",
+      "length_th": "สั้น",
+      "width_mm": 10.5,
+      "total_len_mm": 11.8
+     },
+     {
+      "finger": "pinky",
+      "shape": "round",
+      "shape_th": "กลม",
+      "length": "short",
+      "length_th": "สั้น",
+      "width_mm": 10.5,
+      "total_len_mm": 11.8
+     }
+    ],
+    "shape": "round",
+    "shape_th": "กลม",
+    "length": "short",
+    "length_th": "สั้น",
+    "quality": {
+     "score": 91,
+     "ok": true,
+     "tips_th": []
+    }
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "h02",
+   "value": {
+    "photo_id": "h02",
+    "steps": [
+     "hand_detect",
+     "nail_segment",
+     "shape_measure",
+     "undertone_sample",
+     "tryon_render_x9",
+     "fit_rank"
+    ]
+   }
+  },
+  {
+   "def": "HandPhoto",
+   "note": "h03",
+   "value": {
+    "id": "h03",
+    "hand": "left",
+    "px_w": 3024,
+    "px_h": 4032,
+    "lighting": 0.4,
+    "blur": 0.3,
+    "tilt": 0.3,
+    "nails": [
+     {
+      "finger": "thumb",
+      "width_mm": 10.0,
+      "bed_len_mm": 11.5,
+      "free_edge_mm": 4.5,
+      "taper": 0.55,
+      "corner_round": 0.7
+     },
+     {
+      "finger": "index",
+      "width_mm": 10.0,
+      "bed_len_mm": 11.5,
+      "free_edge_mm": 4.5,
+      "taper": 0.55,
+      "corner_round": 0.7
+     },
+     {
+      "finger": "middle",
+      "width_mm": 10.0,
+      "bed_len_mm": 11.5,
+      "free_edge_mm": 4.5,
+      "taper": 0.55,
+      "corner_round": 0.7
+     },
+     {
+      "finger": "ring",
+      "width_mm": 10.0,
+      "bed_len_mm": 11.5,
+      "free_edge_mm": 4.5,
+      "taper": 0.55,
+      "corner_round": 0.7
+     },
+     {
+      "finger": "pinky",
+      "width_mm": 10.0,
+      "bed_len_mm": 11.5,
+      "free_edge_mm": 4.5,
+      "taper": 0.55,
+      "corner_round": 0.7
+     }
+    ]
+   }
+  },
+  {
+   "def": "HandScan",
+   "note": "h03",
+   "value": {
+    "photo_id": "h03",
+    "hand": "left",
+    "nail_count": 5,
+    "nails": [
+     {
+      "finger": "thumb",
+      "shape": "almond",
+      "shape_th": "อัลมอนด์",
+      "length": "long",
+      "length_th": "ยาว",
+      "width_mm": 10.0,
+      "total_len_mm": 16.0
+     },
+     {
+      "finger": "index",
+      "shape": "almond",
+      "shape_th": "อัลมอนด์",
+      "length": "long",
+      "length_th": "ยาว",
+      "width_mm": 10.0,
+      "total_len_mm": 16.0
+     },
+     {
+      "finger": "middle",
+      "shape": "almond",
+      "shape_th": "อัลมอนด์",
+      "length": "long",
+      "length_th": "ยาว",
+      "width_mm": 10.0,
+      "total_len_mm": 16.0
+     },
+     {
+      "finger": "ring",
+      "shape": "almond",
+      "shape_th": "อัลมอนด์",
+      "length": "long",
+      "length_th": "ยาว",
+      "width_mm": 10.0,
+      "total_len_mm": 16.0
+     },
+     {
+      "finger": "pinky",
+      "shape": "almond",
+      "shape_th": "อัลมอนด์",
+      "length": "long",
+      "length_th": "ยาว",
+      "width_mm": 10.0,
+      "total_len_mm": 16.0
+     }
+    ],
+    "shape": "almond",
+    "shape_th": "อัลมอนด์",
+    "length": "long",
+    "length_th": "ยาว",
+    "quality": {
+     "score": 56,
+     "ok": false,
+     "tips_th": [
+      "ไปถ่ายใกล้หน้าต่าง แสงกลางวัน"
+     ]
+    }
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "h03",
+   "value": {
+    "photo_id": "h03",
+    "steps": [
+     "hand_detect",
+     "relight",
+     "deskew",
+     "nail_segment",
+     "shape_measure",
+     "undertone_sample",
+     "tryon_render_x9",
+     "fit_rank"
+    ]
+   }
+  },
+  {
+   "def": "HandPhoto",
+   "note": "h04",
+   "value": {
+    "id": "h04",
+    "hand": "right",
+    "px_w": 3024,
+    "px_h": 4032,
+    "lighting": 0.7,
+    "blur": 0.5,
+    "tilt": 0.45,
+    "nails": [
+     {
+      "finger": "thumb",
+      "width_mm": 11.0,
+      "bed_len_mm": 12.0,
+      "free_edge_mm": 6.0,
+      "taper": 0.5,
+      "corner_round": 0.2
+     },
+     {
+      "finger": "index",
+      "width_mm": 11.0,
+      "bed_len_mm": 12.0,
+      "free_edge_mm": 6.0,
+      "taper": 0.5,
+      "corner_round": 0.2
+     },
+     {
+      "finger": "middle",
+      "width_mm": 11.0,
+      "bed_len_mm": 12.0,
+      "free_edge_mm": 6.0,
+      "taper": 0.5,
+      "corner_round": 0.2
+     },
+     {
+      "finger": "ring",
+      "width_mm": 11.0,
+      "bed_len_mm": 12.0,
+      "free_edge_mm": 6.0,
+      "taper": 0.5,
+      "corner_round": 0.2
+     }
+    ]
+   }
+  },
+  {
+   "def": "HandScan",
+   "note": "h04",
+   "value": {
+    "photo_id": "h04",
+    "hand": "right",
+    "nail_count": 4,
+    "nails": [
+     {
+      "finger": "thumb",
+      "shape": "coffin",
+      "shape_th": "บัลเลต์ (คอฟฟิน)",
+      "length": "long",
+      "length_th": "ยาว",
+      "width_mm": 11.0,
+      "total_len_mm": 18.0
+     },
+     {
+      "finger": "index",
+      "shape": "coffin",
+      "shape_th": "บัลเลต์ (คอฟฟิน)",
+      "length": "long",
+      "length_th": "ยาว",
+      "width_mm": 11.0,
+      "total_len_mm": 18.0
+     },
+     {
+      "finger": "middle",
+      "shape": "coffin",
+      "shape_th": "บัลเลต์ (คอฟฟิน)",
+      "length": "long",
+      "length_th": "ยาว",
+      "width_mm": 11.0,
+      "total_len_mm": 18.0
+     },
+     {
+      "finger": "ring",
+      "shape": "coffin",
+      "shape_th": "บัลเลต์ (คอฟฟิน)",
+      "length": "long",
+      "length_th": "ยาว",
+      "width_mm": 11.0,
+      "total_len_mm": 18.0
+     }
+    ],
+    "shape": "coffin",
+    "shape_th": "บัลเลต์ (คอฟฟิน)",
+    "length": "long",
+    "length_th": "ยาว",
+    "quality": {
+     "score": 48,
+     "ok": false,
+     "tips_th": [
+      "วางมือนิ่ง ๆ บนโต๊ะ แล้วแตะโฟกัสที่เล็บ",
+      "ถ่ายจากด้านบนตรง ๆ กางนิ้วเล็กน้อย",
+      "ให้เห็นเล็บครบ 5 นิ้ว"
+     ]
+    }
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "h04",
+   "value": {
+    "photo_id": "h04",
+    "steps": [
+     "hand_detect",
+     "deskew",
+     "nail_segment",
+     "shape_measure",
+     "undertone_sample",
+     "tryon_render_x9",
+     "fit_rank"
+    ]
+   }
+  },
+  {
+   "def": "HandPhoto",
+   "note": "h05",
+   "value": {
+    "id": "h05",
+    "hand": "left",
+    "px_w": 3024,
+    "px_h": 4032,
+    "lighting": 0.6,
+    "blur": 0.2,
+    "tilt": 0.15,
+    "nails": [
+     {
+      "finger": "thumb",
+      "width_mm": 9.5,
+      "bed_len_mm": 10.0,
+      "free_edge_mm": 1.0,
+      "taper": 0.0,
+      "corner_round": 0.1
+     },
+     {
+      "finger": "index",
+      "width_mm": 9.5,
+      "bed_len_mm": 10.0,
+      "free_edge_mm": 1.0,
+      "taper": 0.0,
+      "corner_round": 0.1
+     },
+     {
+      "finger": "middle",
+      "width_mm": 9.5,
+      "bed_len_mm": 10.0,
+      "free_edge_mm": 1.0,
+      "taper": 0.0,
+      "corner_round": 0.1
+     },
+     {
+      "finger": "ring",
+      "width_mm": 9.5,
+      "bed_len_mm": 10.0,
+      "free_edge_mm": 1.0,
+      "taper": 0.0,
+      "corner_round": 0.1
+     },
+     {
+      "finger": "pinky",
+      "width_mm": 9.5,
+      "bed_len_mm": 10.0,
+      "free_edge_mm": 1.0,
+      "taper": 0.0,
+      "corner_round": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "def": "HandScan",
+   "note": "h05",
+   "value": {
+    "photo_id": "h05",
+    "hand": "left",
+    "nail_count": 5,
+    "nails": [
+     {
+      "finger": "thumb",
+      "shape": "square",
+      "shape_th": "เหลี่ยม",
+      "length": "short",
+      "length_th": "สั้น",
+      "width_mm": 9.5,
+      "total_len_mm": 11.0
+     },
+     {
+      "finger": "index",
+      "shape": "square",
+      "shape_th": "เหลี่ยม",
+      "length": "short",
+      "length_th": "สั้น",
+      "width_mm": 9.5,
+      "total_len_mm": 11.0
+     },
+     {
+      "finger": "middle",
+      "shape": "square",
+      "shape_th": "เหลี่ยม",
+      "length": "short",
+      "length_th": "สั้น",
+      "width_mm": 9.5,
+      "total_len_mm": 11.0
+     },
+     {
+      "finger": "ring",
+      "shape": "square",
+      "shape_th": "เหลี่ยม",
+      "length": "short",
+      "length_th": "สั้น",
+      "width_mm": 9.5,
+      "total_len_mm": 11.0
+     },
+     {
+      "finger": "pinky",
+      "shape": "square",
+      "shape_th": "เหลี่ยม",
+      "length": "short",
+      "length_th": "สั้น",
+      "width_mm": 9.5,
+      "total_len_mm": 11.0
+     }
+    ],
+    "shape": "square",
+    "shape_th": "เหลี่ยม",
+    "length": "short",
+    "length_th": "สั้น",
+    "quality": {
+     "score": 72,
+     "ok": true,
+     "tips_th": []
+    }
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "h05",
+   "value": {
+    "photo_id": "h05",
+    "steps": [
+     "hand_detect",
+     "nail_segment",
+     "shape_measure",
+     "undertone_sample",
+     "tryon_render_x9",
+     "fit_rank"
+    ]
+   }
+  },
+  {
+   "def": "NailMeasure",
+   "note": "mind thumb",
+   "value": {
+    "finger": "thumb",
+    "width_mm": 14.0,
+    "bed_len_mm": 13.0,
+    "free_edge_mm": 2.5,
+    "taper": 0.1,
+    "corner_round": 0.45
+   }
+  },
+  {
+   "def": "NailDetect",
+   "note": "mind thumb",
+   "value": {
+    "finger": "thumb",
+    "shape": "squoval",
+    "shape_th": "เหลี่ยมมน",
+    "length": "medium",
+    "length_th": "กลาง",
+    "width_mm": 14.0,
+    "total_len_mm": 15.5
+   }
+  },
+  {
+   "def": "NailDetect",
+   "note": "almond long",
+   "value": {
+    "finger": "thumb",
+    "shape": "almond",
+    "shape_th": "อัลมอนด์",
+    "length": "long",
+    "length_th": "ยาว",
+    "width_mm": 10.0,
+    "total_len_mm": 16.0
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "bad photo",
+   "value": {
+    "score": 22,
+    "ok": false,
+    "tips_th": [
+     "ไปถ่ายใกล้หน้าต่าง แสงกลางวัน",
+     "วางมือนิ่ง ๆ บนโต๊ะ แล้วแตะโฟกัสที่เล็บ",
+     "ถ่ายจากด้านบนตรง ๆ กางนิ้วเล็กน้อย",
+     "ให้เห็นเล็บครบ 5 นิ้ว"
+    ]
+   }
+  },
+  {
+   "def": "ShadeRec",
+   "note": "warm",
+   "value": {
+    "undertone": "warm",
+    "depth": "medium",
+    "best": [
+     {
+      "name_th": "นู้ดพีช",
+      "hex": "#E8B79A"
+     },
+     {
+      "name_th": "ส้มอิฐ",
+      "hex": "#C0603F"
+     },
+     {
+      "name_th": "ทองแชมเปญ",
+      "hex": "#E9D3A6"
+     },
+     {
+      "name_th": "แดงอิฐ",
+      "hex": "#9E2B25"
+     },
+     {
+      "name_th": "เขียวมะกอก",
+      "hex": "#6B7B4B"
+     }
+    ],
+    "avoid": [
+     {
+      "name_th": "ฟ้าน้ำแข็ง",
+      "hex": "#BFE3F2"
+     },
+     {
+      "name_th": "เงินเย็น",
+      "hex": "#C8CDD3"
+     }
+    ],
+    "note_th": "แนะนำตามโทนผิวแบบคร่าว ๆ เลือกที่ชอบได้เสมอ"
+   }
+  },
+  {
+   "def": "ShadeRec",
+   "note": "cool",
+   "value": {
+    "undertone": "cool",
+    "depth": "medium",
+    "best": [
+     {
+      "name_th": "ชมพูนม",
+      "hex": "#F9D5DC"
+     },
+     {
+      "name_th": "ลาเวนเดอร์",
+      "hex": "#C9B6E4"
+     },
+     {
+      "name_th": "แดงเชอร์รี่",
+      "hex": "#B3122E"
+     },
+     {
+      "name_th": "เงินโครม",
+      "hex": "#C8CDD3"
+     },
+     {
+      "name_th": "กรมท่า",
+      "hex": "#1F2A55"
+     }
+    ],
+    "avoid": [
+     {
+      "name_th": "ส้มอิฐ",
+      "hex": "#C0603F"
+     },
+     {
+      "name_th": "เหลืองมัสตาร์ด",
+      "hex": "#D4A017"
+     }
+    ],
+    "note_th": "แนะนำตามโทนผิวแบบคร่าว ๆ เลือกที่ชอบได้เสมอ"
+   }
+  },
+  {
+   "def": "ShadeRec",
+   "note": "neutral",
+   "value": {
+    "undertone": "neutral",
+    "depth": "medium",
+    "best": [
+     {
+      "name_th": "นู้ดมิลค์กี้",
+      "hex": "#F3DCCB"
+     },
+     {
+      "name_th": "โรสดัสตี้",
+      "hex": "#D99AA5"
+     },
+     {
+      "name_th": "แดงคลาสสิก",
+      "hex": "#B3122E"
+     },
+     {
+      "name_th": "กรมท่า",
+      "hex": "#1F2A55"
+     },
+     {
+      "name_th": "เบจ",
+      "hex": "#D9BFA6"
+     }
+    ],
+    "avoid": [
+     {
+      "name_th": "นีออนเขียว",
+      "hex": "#39FF14"
+     }
+    ],
+    "note_th": "แนะนำตามโทนผิวแบบคร่าว ๆ เลือกที่ชอบได้เสมอ"
+   }
+  },
+  {
+   "def": "ShadeRec",
+   "note": "joy deep",
+   "value": {
+    "undertone": "warm",
+    "depth": "deep",
+    "best": [
+     {
+      "name_th": "แดงอิฐ",
+      "hex": "#9E2B25"
+     },
+     {
+      "name_th": "เขียวมะกอก",
+      "hex": "#6B7B4B"
+     },
+     {
+      "name_th": "ส้มอิฐ",
+      "hex": "#C0603F"
+     },
+     {
+      "name_th": "นู้ดพีช",
+      "hex": "#E8B79A"
+     },
+     {
+      "name_th": "ทองแชมเปญ",
+      "hex": "#E9D3A6"
+     }
+    ],
+    "avoid": [
+     {
+      "name_th": "ฟ้าน้ำแข็ง",
+      "hex": "#BFE3F2"
+     },
+     {
+      "name_th": "เงินเย็น",
+      "hex": "#C8CDD3"
+     }
+    ],
+    "note_th": "แนะนำตามโทนผิวแบบคร่าว ๆ เลือกที่ชอบได้เสมอ"
+   }
+  },
+  {
+   "def": "Design",
+   "note": "Milky Nude Pearl",
+   "value": {
+    "id": "d01",
+    "name_th": "นู้ดมิลค์กี้มุก",
+    "name_en": "Milky Nude Pearl",
+    "technique": "gel",
+    "finish": "pearl",
+    "art": 1,
+    "colors": [
+     "#F3DCCB",
+     "#FFF6EE"
+    ],
+    "tones": [
+     "warm",
+     "neutral"
+    ],
+    "occasions": [
+     "wedding",
+     "office"
+    ],
+    "len_min": "short",
+    "shapes": [
+     "squoval",
+     "oval",
+     "almond"
+    ]
+   }
+  },
+  {
+   "def": "Design",
+   "note": "Classic French Tip",
+   "value": {
+    "id": "d02",
+    "name_th": "เฟรนช์ทิปคลาสสิก",
+    "name_en": "Classic French Tip",
+    "technique": "gel",
+    "finish": "glossy",
+    "art": 1,
+    "colors": [
+     "#F7E1D7",
+     "#FFFFFF"
+    ],
+    "tones": [
+     "warm",
+     "cool",
+     "neutral"
+    ],
+    "occasions": [
+     "wedding",
+     "office"
+    ],
+    "len_min": "medium",
+    "shapes": [
+     "squoval",
+     "almond",
+     "square"
+    ]
+   }
+  },
+  {
+   "def": "Design",
+   "note": "Cherry Red Gloss",
+   "value": {
+    "id": "d03",
+    "name_th": "แดงเชอร์รี่เงา",
+    "name_en": "Cherry Red Gloss",
+    "technique": "gel",
+    "finish": "glossy",
+    "art": 0,
+    "colors": [
+     "#B3122E"
+    ],
+    "tones": [
+     "cool",
+     "neutral"
+    ],
+    "occasions": [
+     "date",
+     "new_year"
+    ],
+    "len_min": "short",
+    "shapes": [
+     "round",
+     "oval",
+     "almond"
+    ]
+   }
+  },
+  {
+   "def": "Design",
+   "note": "Terracotta Brick",
+   "value": {
+    "id": "d04",
+    "name_th": "อิฐส้มเทอร์ราคอตตา",
+    "name_en": "Terracotta Brick",
+    "technique": "gel",
+    "finish": "matte",
+    "art": 0,
+    "colors": [
+     "#C0603F"
+    ],
+    "tones": [
+     "warm"
+    ],
+    "occasions": [
+     "office",
+     "loy_krathong"
+    ],
+    "len_min": "short",
+    "shapes": [
+     "squoval",
+     "round"
+    ]
+   }
+  },
+  {
+   "def": "Design",
+   "note": "Bridal Gold Chrome",
+   "value": {
+    "id": "d05",
+    "name_th": "ทองโครมเจ้าสาว",
+    "name_en": "Bridal Gold Chrome",
+    "technique": "gel",
+    "finish": "chrome",
+    "art": 2,
+    "colors": [
+     "#E9D3A6",
+     "#C9A24D"
+    ],
+    "tones": [
+     "warm"
+    ],
+    "occasions": [
+     "wedding",
+     "loy_krathong",
+     "new_year"
+    ],
+    "len_min": "medium",
+    "shapes": [
+     "almond",
+     "oval"
+    ]
+   }
+  },
+  {
+   "def": "Design",
+   "note": "Silver Mirror Chrome",
+   "value": {
+    "id": "d13",
+    "name_th": "ซิลเวอร์โครมมิเรอร์",
+    "name_en": "Silver Mirror Chrome",
+    "technique": "extension",
+    "finish": "chrome",
+    "art": 3,
+    "colors": [
+     "#C8CDD3",
+     "#8C939B"
+    ],
+    "tones": [
+     "cool"
+    ],
+    "occasions": [
+     "new_year",
+     "date"
+    ],
+    "len_min": "long",
+    "shapes": [
+     "coffin",
+     "stiletto",
+     "almond"
+    ]
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "mind d01",
+   "value": {
+    "technique": "gel",
+    "art_level": 1,
+    "length": "medium",
+    "region": "bkk",
+    "removal": false,
+    "min_thb": 450,
+    "max_thb": 850,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการ ไม่ใช่ราคาจริงของร้าน ขึ้นกับร้านและพื้นที่"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "long+removal province",
+   "value": {
+    "technique": "gel",
+    "art_level": 0,
+    "length": "long",
+    "region": "province",
+    "removal": true,
+    "min_thb": 470,
+    "max_thb": 810,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการ ไม่ใช่ราคาจริงของร้าน ขึ้นกับร้านและพื้นที่"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "chrome extension tourist",
+   "value": {
+    "technique": "extension",
+    "art_level": 3,
+    "length": "long",
+    "region": "tourist",
+    "removal": false,
+    "min_thb": 1490,
+    "max_thb": 2760,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการ ไม่ใช่ราคาจริงของร้าน ขึ้นกับร้านและพื้นที่"
+   }
+  },
+  {
+   "def": "TryOnGrid",
+   "note": "mind wedding 9",
+   "value": {
+    "photo_id": "h01",
+    "undertone": "warm",
+    "occasion": "wedding",
+    "budget_thb": 900,
+    "count": 9,
+    "tiles": [
+     {
+      "rank": 1,
+      "slot": "r1c1",
+      "design_id": "d01",
+      "name_th": "นู้ดมิลค์กี้มุก",
+      "colors": [
+       "#F3DCCB",
+       "#FFF6EE"
+      ],
+      "finish": "pearl",
+      "technique": "gel",
+      "fit_score": 100,
+      "price_min_thb": 450,
+      "price_max_thb": 850,
+      "why_th": "เข้ากับผิวโทนอุ่น · เหมาะกับงานแต่ง · สวยกับทรงเหลี่ยมมน",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 2,
+      "slot": "r1c2",
+      "design_id": "d02",
+      "name_th": "เฟรนช์ทิปคลาสสิก",
+      "colors": [
+       "#F7E1D7",
+       "#FFFFFF"
+      ],
+      "finish": "glossy",
+      "technique": "gel",
+      "fit_score": 100,
+      "price_min_thb": 450,
+      "price_max_thb": 850,
+      "why_th": "เข้ากับผิวโทนอุ่น · เหมาะกับงานแต่ง · สวยกับทรงเหลี่ยมมน",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 3,
+      "slot": "r1c3",
+      "design_id": "d05",
+      "name_th": "ทองโครมเจ้าสาว",
+      "colors": [
+       "#E9D3A6",
+       "#C9A24D"
+      ],
+      "finish": "chrome",
+      "technique": "gel",
+      "fit_score": 87,
+      "price_min_thb": 600,
+      "price_max_thb": 1100,
+      "why_th": "เข้ากับผิวโทนอุ่น · เหมาะกับงานแต่ง",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 4,
+      "slot": "r2c1",
+      "design_id": "d04",
+      "name_th": "อิฐส้มเทอร์ราคอตตา",
+      "colors": [
+       "#C0603F"
+      ],
+      "finish": "matte",
+      "technique": "gel",
+      "fit_score": 80,
+      "price_min_thb": 350,
+      "price_max_thb": 600,
+      "why_th": "เข้ากับผิวโทนอุ่น · สวยกับทรงเหลี่ยมมน",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 5,
+      "slot": "r2c2",
+      "design_id": "d10",
+      "name_th": "เบจออฟฟิศมินิมอล",
+      "colors": [
+       "#D9BFA6"
+      ],
+      "finish": "glossy",
+      "technique": "regular",
+      "fit_score": 80,
+      "price_min_thb": 150,
+      "price_max_thb": 300,
+      "why_th": "เข้ากับผิวโทนอุ่น · สวยกับทรงเหลี่ยมมน",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 6,
+      "slot": "r2c3",
+      "design_id": "d12",
+      "name_th": "มะกอกด้านเท่ ๆ",
+      "colors": [
+       "#6B7B4B"
+      ],
+      "finish": "matte",
+      "technique": "gel",
+      "fit_score": 80,
+      "price_min_thb": 350,
+      "price_max_thb": 600,
+      "why_th": "เข้ากับผิวโทนอุ่น · สวยกับทรงเหลี่ยมมน",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 7,
+      "slot": "r3c1",
+      "design_id": "d14",
+      "name_th": "พีชคอรัลซัมเมอร์",
+      "colors": [
+       "#F59A7E",
+       "#FFE1D2"
+      ],
+      "finish": "glossy",
+      "technique": "regular",
+      "fit_score": 80,
+      "price_min_thb": 250,
+      "price_max_thb": 550,
+      "why_th": "เข้ากับผิวโทนอุ่น · สวยกับทรงเหลี่ยมมน",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 8,
+      "slot": "r3c2",
+      "design_id": "d11",
+      "name_th": "ออมเบรชมพูนม",
+      "colors": [
+       "#F9D5DC",
+       "#FFFFFF"
+      ],
+      "finish": "glossy",
+      "technique": "gel",
+      "fit_score": 75,
+      "price_min_thb": 450,
+      "price_max_thb": 850,
+      "why_th": "เหมาะกับงานแต่ง · สวยกับทรงเหลี่ยมมน",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 9,
+      "slot": "r3c3",
+      "design_id": "d08",
+      "name_th": "ดอกไม้สงกรานต์",
+      "colors": [
+       "#7FD3E6",
+       "#FFFFFF",
+       "#F6A6C1"
+      ],
+      "finish": "glossy",
+      "technique": "gel",
+      "fit_score": 73,
+      "price_min_thb": 600,
+      "price_max_thb": 1100,
+      "why_th": "เข้ากับผิวโทนอุ่น · สวยกับทรงเหลี่ยมมน",
+      "render": "overlay_on_real_nails"
+     }
+    ],
+    "watermark": "Made with NailPop · AI preview, real result depends on your nail tech"
+   }
+  },
+  {
+   "def": "TryOnTile",
+   "note": "mind top pick",
+   "value": {
+    "rank": 1,
+    "slot": "r1c1",
+    "design_id": "d01",
+    "name_th": "นู้ดมิลค์กี้มุก",
+    "colors": [
+     "#F3DCCB",
+     "#FFF6EE"
+    ],
+    "finish": "pearl",
+    "technique": "gel",
+    "fit_score": 100,
+    "price_min_thb": 450,
+    "price_max_thb": 850,
+    "why_th": "เข้ากับผิวโทนอุ่น · เหมาะกับงานแต่ง · สวยกับทรงเหลี่ยมมน",
+    "render": "overlay_on_real_nails"
+   }
+  },
+  {
+   "def": "TryOnGrid",
+   "note": "fern office",
+   "value": {
+    "photo_id": "h02",
+    "undertone": "cool",
+    "occasion": "office",
+    "budget_thb": 500,
+    "count": 9,
+    "tiles": [
+     {
+      "rank": 1,
+      "slot": "r1c1",
+      "design_id": "d06",
+      "name_th": "ลาเวนเดอร์ละมุน",
+      "colors": [
+       "#C9B6E4"
+      ],
+      "finish": "glossy",
+      "technique": "gel",
+      "fit_score": 93,
+      "price_min_thb": 300,
+      "price_max_thb": 510,
+      "why_th": "เข้ากับผิวโทนเย็น · เหมาะกับไปทำงาน · สวยกับทรงกลม",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 2,
+      "slot": "r1c2",
+      "design_id": "d11",
+      "name_th": "ออมเบรชมพูนม",
+      "colors": [
+       "#F9D5DC",
+       "#FFFFFF"
+      ],
+      "finish": "glossy",
+      "technique": "gel",
+      "fit_score": 87,
+      "price_min_thb": 380,
+      "price_max_thb": 720,
+      "why_th": "เข้ากับผิวโทนเย็น · เหมาะกับไปทำงาน",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 3,
+      "slot": "r1c3",
+      "design_id": "d02",
+      "name_th": "เฟรนช์ทิปคลาสสิก",
+      "colors": [
+       "#F7E1D7",
+       "#FFFFFF"
+      ],
+      "finish": "glossy",
+      "technique": "gel",
+      "fit_score": 76,
+      "price_min_thb": 380,
+      "price_max_thb": 720,
+      "why_th": "เข้ากับผิวโทนเย็น · เหมาะกับไปทำงาน",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 4,
+      "slot": "r2c1",
+      "design_id": "d10",
+      "name_th": "เบจออฟฟิศมินิมอล",
+      "colors": [
+       "#D9BFA6"
+      ],
+      "finish": "glossy",
+      "technique": "regular",
+      "fit_score": 75,
+      "price_min_thb": 130,
+      "price_max_thb": 260,
+      "why_th": "เหมาะกับไปทำงาน · สวยกับทรงกลม",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 5,
+      "slot": "r2c2",
+      "design_id": "d03",
+      "name_th": "แดงเชอร์รี่เงา",
+      "colors": [
+       "#B3122E"
+      ],
+      "finish": "glossy",
+      "technique": "gel",
+      "fit_score": 73,
+      "price_min_thb": 300,
+      "price_max_thb": 510,
+      "why_th": "เข้ากับผิวโทนเย็น · สวยกับทรงกลม",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 6,
+      "slot": "r2c3",
+      "design_id": "d04",
+      "name_th": "อิฐส้มเทอร์ราคอตตา",
+      "colors": [
+       "#C0603F"
+      ],
+      "finish": "matte",
+      "technique": "gel",
+      "fit_score": 68,
+      "price_min_thb": 300,
+      "price_max_thb": 510,
+      "why_th": "เหมาะกับไปทำงาน · สวยกับทรงกลม",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 7,
+      "slot": "r3c1",
+      "design_id": "d08",
+      "name_th": "ดอกไม้สงกรานต์",
+      "colors": [
+       "#7FD3E6",
+       "#FFFFFF",
+       "#F6A6C1"
+      ],
+      "finish": "glossy",
+      "technique": "gel",
+      "fit_score": 65,
+      "price_min_thb": 510,
+      "price_max_thb": 940,
+      "why_th": "เข้ากับผิวโทนเย็น · สวยกับทรงกลม",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 8,
+      "slot": "r3c2",
+      "design_id": "d01",
+      "name_th": "นู้ดมิลค์กี้มุก",
+      "colors": [
+       "#F3DCCB",
+       "#FFF6EE"
+      ],
+      "finish": "pearl",
+      "technique": "gel",
+      "fit_score": 62,
+      "price_min_thb": 380,
+      "price_max_thb": 720,
+      "why_th": "เหมาะกับไปทำงาน",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 9,
+      "slot": "r3c3",
+      "design_id": "d12",
+      "name_th": "มะกอกด้านเท่ ๆ",
+      "colors": [
+       "#6B7B4B"
+      ],
+      "finish": "matte",
+      "technique": "gel",
+      "fit_score": 62,
+      "price_min_thb": 300,
+      "price_max_thb": 510,
+      "why_th": "เหมาะกับไปทำงาน",
+      "render": "overlay_on_real_nails"
+     }
+    ],
+    "watermark": "Made with NailPop · AI preview, real result depends on your nail tech"
+   }
+  },
+  {
+   "def": "TryOnGrid",
+   "note": "por no occasion 4",
+   "value": {
+    "photo_id": "h03",
+    "undertone": "neutral",
+    "occasion": null,
+    "budget_thb": null,
+    "count": 4,
+    "tiles": [
+     {
+      "rank": 1,
+      "slot": "r1c1",
+      "design_id": "d01",
+      "name_th": "นู้ดมิลค์กี้มุก",
+      "colors": [
+       "#F3DCCB",
+       "#FFF6EE"
+      ],
+      "finish": "pearl",
+      "technique": "gel",
+      "fit_score": 90,
+      "price_min_thb": 550,
+      "price_max_thb": 1050,
+      "why_th": "เข้ากับผิวโทนกลาง · สวยกับทรงอัลมอนด์",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 2,
+      "slot": "r1c2",
+      "design_id": "d02",
+      "name_th": "เฟรนช์ทิปคลาสสิก",
+      "colors": [
+       "#F7E1D7",
+       "#FFFFFF"
+      ],
+      "finish": "glossy",
+      "technique": "gel",
+      "fit_score": 90,
+      "price_min_thb": 550,
+      "price_max_thb": 1050,
+      "why_th": "เข้ากับผิวโทนกลาง · สวยกับทรงอัลมอนด์",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 3,
+      "slot": "r1c3",
+      "design_id": "d03",
+      "name_th": "แดงเชอร์รี่เงา",
+      "colors": [
+       "#B3122E"
+      ],
+      "finish": "glossy",
+      "technique": "gel",
+      "fit_score": 90,
+      "price_min_thb": 450,
+      "price_max_thb": 800,
+      "why_th": "เข้ากับผิวโทนกลาง · สวยกับทรงอัลมอนด์",
+      "render": "overlay_on_real_nails"
+     },
+     {
+      "rank": 4,
+      "slot": "r2c1",
+      "design_id": "d07",
+      "name_th": "แคทอายสีกุหลาบ",
+      "colors": [
+       "#D99AA5",
+       "#8E4A5C"
+      ],
+      "finish": "cat_eye",
+      "technique": "gel",
+      "fit_score": 90,
+      "price_min_thb": 700,
+      "price_max_thb": 1300,
+      "why_th": "เข้ากับผิวโทนกลาง · สวยกับทรงอัลมอนด์",
+      "render": "overlay_on_real_nails"
+     }
+    ],
+    "watermark": "Made with NailPop · AI preview, real result depends on your nail tech"
+   }
+  },
+  {
+   "def": "SalonCard",
+   "note": "mind",
+   "value": {
+    "title_th": "Salon Card",
+    "name_th": "มายด์",
+    "design_id": "d01",
+    "design_name_th": "นู้ดมิลค์กี้มุก",
+    "shape": "squoval",
+    "shape_th": "เหลี่ยมมน",
+    "length": "medium",
+    "length_th": "กลาง",
+    "technique": "gel",
+    "technique_th": "สีเจล",
+    "colors": [
+     "#F3DCCB",
+     "#FFF6EE"
+    ],
+    "price_min_thb": 450,
+    "price_max_thb": 850,
+    "note_th": "ขอทรงเหลี่ยมมน ยาวกลาง · สีเจล · ลาย นู้ดมิลค์กี้มุก (#F3DCCB, #FFF6EE) · ขอโทนไม่ฉูดฉาด จันทร์ต้องเข้าออฟฟิศ",
+    "share_text_th": "สวัสดีค่ะ ชื่อมายด์นะคะ อยากทำเล็บแบบนี้ค่ะ 💅\nขอทรงเหลี่ยมมน ยาวกลาง · สีเจล · ลาย นู้ดมิลค์กี้มุก (#F3DCCB, #FFF6EE) · ขอโทนไม่ฉูดฉาด จันทร์ต้องเข้าออฟฟิศ\nงบประมาณ ~฿450–850\n(ภาพจาก NailPop เป็นภาพจำลอง)",
+    "line_share_url": "https://line.me/R/share?text=%E0%B8%AA%E0%B8%A7%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B5%E0%B8%84%E0%B9%88%E0%B8%B0%20%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B8%94%E0%B9%8C%E0%B8%99%E0%B8%B0%E0%B8%84%E0%B8%B0%20%E0%B8%AD%E0%B8%A2%E0%B8%B2%E0%B8%81%E0%B8%97%E0%B8%B3%E0%B9%80%E0%B8%A5%E0%B9%87%E0%B8%9A%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%99%E0%B8%B5%E0%B9%89%E0%B8%84%E0%B9%88%E0%B8%B0%20%F0%9F%92%85%0A%E0%B8%82%E0%B8%AD%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A1%E0%B8%A1%E0%B8%99%20%E0%B8%A2%E0%B8%B2%E0%B8%A7%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%87%20%C2%B7%20%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%88%E0%B8%A5%20%C2%B7%20%E0%B8%A5%E0%B8%B2%E0%B8%A2%20%E0%B8%99%E0%B8%B9%E0%B9%89%E0%B8%94%E0%B8%A1%E0%B8%B4%E0%B8%A5%E0%B8%84%E0%B9%8C%E0%B8%81%E0%B8%B5%E0%B9%89%E0%B8%A1%E0%B8%B8%E0%B8%81%20%28%23F3DCCB%2C%20%23FFF6EE%29%20%C2%B7%20%E0%B8%82%E0%B8%AD%E0%B9%82%E0%B8%97%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%89%E0%B8%B9%E0%B8%94%E0%B8%89%E0%B8%B2%E0%B8%94%20%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AD%E0%B8%AD%E0%B8%9F%E0%B8%9F%E0%B8%B4%E0%B8%A8%0A%E0%B8%87%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%20~%E0%B8%BF450%E2%80%93850%0A%28%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%88%E0%B8%B2%E0%B8%81%20NailPop%20%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%88%E0%B8%B3%E0%B8%A5%E0%B8%AD%E0%B8%87%29",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการ ไม่ใช่ราคาจริงของร้าน ขึ้นกับร้านและพื้นที่"
+   }
+  },
+  {
+   "def": "SalonCard",
+   "note": "joy krathong",
+   "value": {
+    "title_th": "Salon Card",
+    "name_th": "คุณจอย",
+    "design_id": "d09",
+    "design_name_th": "กระทงทองกลิตเตอร์",
+    "shape": "almond",
+    "shape_th": "อัลมอนด์",
+    "length": "long",
+    "length_th": "ยาว",
+    "technique": "gel",
+    "technique_th": "สีเจล",
+    "colors": [
+     "#1F2A55",
+     "#D8B35A"
+    ],
+    "price_min_thb": 680,
+    "price_max_thb": 1230,
+    "note_th": "ขอทรงอัลมอนด์ ยาวยาว · สีเจล · ลาย กระทงทองกลิตเตอร์ (#1F2A55, #D8B35A)",
+    "share_text_th": "สวัสดีค่ะ ชื่อคุณจอยนะคะ อยากทำเล็บแบบนี้ค่ะ 💅\nขอทรงอัลมอนด์ ยาวยาว · สีเจล · ลาย กระทงทองกลิตเตอร์ (#1F2A55, #D8B35A)\nงบประมาณ ~฿680–1,230\n(ภาพจาก NailPop เป็นภาพจำลอง)",
+    "line_share_url": "https://line.me/R/share?text=%E0%B8%AA%E0%B8%A7%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B5%E0%B8%84%E0%B9%88%E0%B8%B0%20%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%88%E0%B8%AD%E0%B8%A2%E0%B8%99%E0%B8%B0%E0%B8%84%E0%B8%B0%20%E0%B8%AD%E0%B8%A2%E0%B8%B2%E0%B8%81%E0%B8%97%E0%B8%B3%E0%B9%80%E0%B8%A5%E0%B9%87%E0%B8%9A%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%99%E0%B8%B5%E0%B9%89%E0%B8%84%E0%B9%88%E0%B8%B0%20%F0%9F%92%85%0A%E0%B8%82%E0%B8%AD%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%AD%E0%B8%B1%E0%B8%A5%E0%B8%A1%E0%B8%AD%E0%B8%99%E0%B8%94%E0%B9%8C%20%E0%B8%A2%E0%B8%B2%E0%B8%A7%E0%B8%A2%E0%B8%B2%E0%B8%A7%20%C2%B7%20%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%88%E0%B8%A5%20%C2%B7%20%E0%B8%A5%E0%B8%B2%E0%B8%A2%20%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%97%E0%B8%87%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C%20%28%231F2A55%2C%20%23D8B35A%29%0A%E0%B8%87%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%20~%E0%B8%BF680%E2%80%931%2C230%0A%28%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%88%E0%B8%B2%E0%B8%81%20NailPop%20%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%88%E0%B8%B3%E0%B8%A5%E0%B8%AD%E0%B8%87%29",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการ ไม่ใช่ราคาจริงของร้าน ขึ้นกับร้านและพื้นที่"
+   }
+  },
+  {
+   "def": "VoteLink",
+   "note": "mind vote",
+   "value": {
+    "grid_id": "g01",
+    "options": [
+     "d01",
+     "d02",
+     "d05"
+    ],
+    "url": "https://nailpop.app/v/g01?o=d01,d02,d05",
+    "expires_hours": 48,
+    "anonymous": true
+   }
+  },
+  {
+   "def": "VoteResult",
+   "note": "mind 10 friends",
+   "value": {
+    "total": 10,
+    "invalid": 0,
+    "winner": "d01",
+    "winner_pct": 60,
+    "results": [
+     {
+      "design_id": "d01",
+      "votes": 6,
+      "pct": 60
+     },
+     {
+      "design_id": "d02",
+      "votes": 2,
+      "pct": 20
+     },
+     {
+      "design_id": "d05",
+      "votes": 1,
+      "pct": 10
+     },
+     {
+      "design_id": "d11",
+      "votes": 1,
+      "pct": 10
+     }
+    ]
+   }
+  },
+  {
+   "def": "VoteResult",
+   "note": "no votes yet",
+   "value": {
+    "total": 0,
+    "invalid": 0,
+    "winner": null,
+    "winner_pct": 0,
+    "results": []
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "e01",
+   "value": {
+    "id": "e01",
+    "date": "2026-09-20",
+    "design_id": "d10",
+    "technique": "regular",
+    "price_thb": 250,
+    "rating": 4,
+    "salon_th": "ร้านใกล้ออฟฟิศ",
+    "on_device": true,
+    "reminder": {
+     "technique": "regular",
+     "done_date": "2026-09-20",
+     "check_date": "2026-09-25",
+     "due_date": "2026-09-27",
+     "remove_by": "2026-09-30",
+     "message_th": "สีเริ่มลอก ล้างด้วยน้ำยาแล้วทาใหม่ได้"
+    }
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "e02",
+   "value": {
+    "id": "e02",
+    "date": "2026-10-11",
+    "design_id": "d04",
+    "technique": "gel",
+    "price_thb": 550,
+    "rating": 5,
+    "salon_th": "ร้านใกล้ออฟฟิศ",
+    "on_device": true,
+    "reminder": {
+     "technique": "gel",
+     "done_date": "2026-10-11",
+     "check_date": "2026-10-25",
+     "due_date": "2026-11-01",
+     "remove_by": "2026-11-08",
+     "message_th": "เล็บยาวขึ้นจนเห็นโคน ควรถอดเจล/ทำใหม่ที่ร้าน อย่าแกะเอง"
+    }
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "e03",
+   "value": {
+    "id": "e03",
+    "date": "2026-11-09",
+    "design_id": "d01",
+    "technique": "gel",
+    "price_thb": 690,
+    "rating": 5,
+    "salon_th": "ร้านในห้าง",
+    "on_device": true,
+    "reminder": {
+     "technique": "gel",
+     "done_date": "2026-11-09",
+     "check_date": "2026-11-23",
+     "due_date": "2026-11-30",
+     "remove_by": "2026-12-07",
+     "message_th": "เล็บยาวขึ้นจนเห็นโคน ควรถอดเจล/ทำใหม่ที่ร้าน อย่าแกะเอง"
+    }
+   }
+  },
+  {
+   "def": "DiaryStats",
+   "note": "mind diary",
+   "value": {
+    "count": 3,
+    "total_thb": 1490,
+    "avg_thb": 497,
+    "avg_rating": 4.67,
+    "favorite_design": "d01"
+   }
+  },
+  {
+   "def": "CareReminder",
+   "note": "mind gel",
+   "value": {
+    "technique": "gel",
+    "done_date": "2026-11-09",
+    "check_date": "2026-11-23",
+    "due_date": "2026-11-30",
+    "remove_by": "2026-12-07",
+    "message_th": "เล็บยาวขึ้นจนเห็นโคน ควรถอดเจล/ทำใหม่ที่ร้าน อย่าแกะเอง"
+   }
+  },
+  {
+   "def": "CareReminder",
+   "note": "regular",
+   "value": {
+    "technique": "regular",
+    "done_date": "2026-11-09",
+    "check_date": "2026-11-14",
+    "due_date": "2026-11-16",
+    "remove_by": "2026-11-19",
+    "message_th": "สีเริ่มลอก ล้างด้วยน้ำยาแล้วทาใหม่ได้"
+   }
+  },
+  {
+   "def": "CareReminder",
+   "note": "extension",
+   "value": {
+    "technique": "extension",
+    "done_date": "2026-11-09",
+    "check_date": "2026-11-23",
+    "due_date": "2026-11-30",
+    "remove_by": "2026-12-14",
+    "message_th": "ควรเติมโคน (refill) หรือถอดอย่างถูกวิธีที่ร้าน"
+   }
+  },
+  {
+   "def": "ReminderStatus",
+   "note": "check",
+   "value": {
+    "status": "check",
+    "days_since": 16,
+    "days_to_due": 5
+   }
+  },
+  {
+   "def": "ReminderStatus",
+   "note": "overdue",
+   "value": {
+    "status": "overdue",
+    "days_since": 31,
+    "days_to_due": -10
+   }
+  },
+  {
+   "def": "OccasionPreset",
+   "note": "office",
+   "value": {
+    "key": "office",
+    "label_th": "ไปทำงาน",
+    "tip_th": "สั้น-กลาง สีนู้ด/เบจ ดูสุภาพ ไม่ติดคีย์บอร์ด",
+    "palette": [
+     "#D9BFA6",
+     "#F3DCCB",
+     "#C9B6E4"
+    ],
+    "max_length": "medium",
+    "design_ids": [
+     "d01",
+     "d02",
+     "d04",
+     "d06",
+     "d10",
+     "d11",
+     "d12"
+    ]
+   }
+  },
+  {
+   "def": "OccasionPreset",
+   "note": "wedding",
+   "value": {
+    "key": "wedding",
+    "label_th": "งานแต่ง",
+    "tip_th": "นู้ดมุก เฟรนช์ หรือทองอ่อน ถ่ายรูปคู่ช่อดอกไม้สวย",
+    "palette": [
+     "#F3DCCB",
+     "#FFFFFF",
+     "#E9D3A6"
+    ],
+    "max_length": "long",
+    "design_ids": [
+     "d01",
+     "d02",
+     "d05",
+     "d07",
+     "d11"
+    ]
+   }
+  },
+  {
+   "def": "OccasionPreset",
+   "note": "songkran",
+   "value": {
+    "key": "songkran",
+    "label_th": "สงกรานต์",
+    "tip_th": "สีสดใส ฟ้า/ชมพู/ลายดอกไม้ เลือกเจลทนน้ำ",
+    "palette": [
+     "#7FD3E6",
+     "#F6A6C1",
+     "#FFFFFF"
+    ],
+    "max_length": "medium",
+    "design_ids": [
+     "d08",
+     "d14"
+    ]
+   }
+  },
+  {
+   "def": "OccasionPreset",
+   "note": "loy_krathong",
+   "value": {
+    "key": "loy_krathong",
+    "label_th": "ลอยกระทง",
+    "tip_th": "กรมท่า + ทองกลิตเตอร์ เข้าชุดไทย ใต้แสงเทียน",
+    "palette": [
+     "#1F2A55",
+     "#D8B35A",
+     "#E9D3A6"
+    ],
+    "max_length": "long",
+    "design_ids": [
+     "d04",
+     "d05",
+     "d09"
+    ]
+   }
+  },
+  {
+   "def": "OccasionPreset",
+   "note": "date",
+   "value": {
+    "key": "date",
+    "label_th": "เดต/วาเลนไทน์",
+    "tip_th": "แดงเชอร์รี่ แคทอายกุหลาบ ดูมีเสน่ห์",
+    "palette": [
+     "#B3122E",
+     "#D99AA5"
+    ],
+    "max_length": "long",
+    "design_ids": [
+     "d03",
+     "d06",
+     "d07",
+     "d11",
+     "d13",
+     "d14"
+    ]
+   }
+  },
+  {
+   "def": "OccasionPreset",
+   "note": "new_year",
+   "value": {
+    "key": "new_year",
+    "label_th": "ปีใหม่",
+    "tip_th": "โครม กลิตเตอร์ เงา ๆ รับแสงปาร์ตี้",
+    "palette": [
+     "#C8CDD3",
+     "#D8B35A",
+     "#B3122E"
+    ],
+    "max_length": "long",
+    "design_ids": [
+     "d03",
+     "d05",
+     "d09",
+     "d13"
+    ]
+   }
+  },
+  {
+   "def": "DiyGuide",
+   "note": "mind diy",
+   "value": {
+    "design_id": "d01",
+    "diy_ok": true,
+    "steps": [
+     {
+      "n": 1,
+      "key": "prep",
+      "text_th": "ล้างมือ ตะไบทรง ดันหนัง (ไม่ตัดหนังลึก)",
+      "minutes": 8
+     },
+     {
+      "n": 2,
+      "key": "base",
+      "text_th": "ทาเบสโค้ทบาง ๆ",
+      "minutes": 3
+     },
+     {
+      "n": 3,
+      "key": "color",
+      "text_th": "ทาสี 2 ชั้นบาง ๆ รอแห้งทีละชั้น",
+      "minutes": 10
+     },
+     {
+      "n": 4,
+      "key": "gel_cure",
+      "text_th": "อบเครื่อง UV/LED ชั้นละ 30–60 วิ",
+      "minutes": 6
+     },
+     {
+      "n": 5,
+      "key": "art",
+      "text_th": "ลงลาย/ทิป ด้วยพู่กันเล็กหรือสติกเกอร์",
+      "minutes": 15
+     },
+     {
+      "n": 6,
+      "key": "top",
+      "text_th": "ทาท็อปโค้ท ปิดปลายเล็บ",
+      "minutes": 3
+     },
+     {
+      "n": 7,
+      "key": "cleanup",
+      "text_th": "เก็บขอบด้วยสำลีพันไม้ชุบน้ำยา",
+      "minutes": 3
+     }
+    ],
+    "total_min": 48,
+    "tools_th": [
+     "ตะไบ",
+     "เบส/ท็อปโค้ท",
+     "สีตามลาย",
+     "เครื่องอบ UV/LED",
+     "พู่กันเพ้นท์"
+    ],
+    "note_th": "มือใหม่ใช้เวลานานกว่านี้ได้ ไม่ต้องรีบ"
+   }
+  },
+  {
+   "def": "DiyGuide",
+   "note": "songkran art2",
+   "value": {
+    "design_id": "d08",
+    "diy_ok": true,
+    "steps": [
+     {
+      "n": 1,
+      "key": "prep",
+      "text_th": "ล้างมือ ตะไบทรง ดันหนัง (ไม่ตัดหนังลึก)",
+      "minutes": 8
+     },
+     {
+      "n": 2,
+      "key": "base",
+      "text_th": "ทาเบสโค้ทบาง ๆ",
+      "minutes": 3
+     },
+     {
+      "n": 3,
+      "key": "color",
+      "text_th": "ทาสี 2 ชั้นบาง ๆ รอแห้งทีละชั้น",
+      "minutes": 10
+     },
+     {
+      "n": 4,
+      "key": "gel_cure",
+      "text_th": "อบเครื่อง UV/LED ชั้นละ 30–60 วิ",
+      "minutes": 6
+     },
+     {
+      "n": 5,
+      "key": "art",
+      "text_th": "ลงลาย/ทิป ด้วยพู่กันเล็กหรือสติกเกอร์",
+      "minutes": 22
+     },
+     {
+      "n": 6,
+      "key": "top",
+      "text_th": "ทาท็อปโค้ท ปิดปลายเล็บ",
+      "minutes": 3
+     },
+     {
+      "n": 7,
+      "key": "cleanup",
+      "text_th": "เก็บขอบด้วยสำลีพันไม้ชุบน้ำยา",
+      "minutes": 3
+     }
+    ],
+    "total_min": 55,
+    "tools_th": [
+     "ตะไบ",
+     "เบส/ท็อปโค้ท",
+     "สีตามลาย",
+     "เครื่องอบ UV/LED",
+     "พู่กันเพ้นท์"
+    ],
+    "note_th": "มือใหม่ใช้เวลานานกว่านี้ได้ ไม่ต้องรีบ"
+   }
+  },
+  {
+   "def": "DiyGuide",
+   "note": "blocked",
+   "value": {
+    "design_id": "d13",
+    "diy_ok": false,
+    "steps": [],
+    "total_min": 0,
+    "tools_th": [],
+    "note_th": "ลายนี้ต้องใช้ช่างและอุปกรณ์เฉพาะ แนะนำทำที่ร้าน"
+   }
+  },
+  {
+   "def": "HealthGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "flags": [],
+    "message_th": "พร้อมทำเล็บ"
+   }
+  },
+  {
+   "def": "HealthGuard",
+   "note": "warn",
+   "value": {
+    "level": "warn",
+    "flags": [
+     "lifting"
+    ],
+    "message_th": "แจ้งช่างก่อนทำ ให้ถอดของเดิมอย่างถูกวิธี อย่าแกะเอง"
+   }
+  },
+  {
+   "def": "HealthGuard",
+   "note": "stop",
+   "value": {
+    "level": "stop",
+    "flags": [
+     "redness",
+     "lifting"
+    ],
+    "message_th": "พักทำเล็บก่อน และปรึกษาแพทย์/เภสัชกร แอปนี้ไม่ใช่การวินิจฉัย"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "mind share",
+   "value": {
+    "title_th": "NailPop",
+    "headline_th": "มายด์ เลือก นู้ดมิลค์กี้มุก · Fit 100 · เพื่อนโหวต 60%",
+    "hook_th": "ถ่ายมือ 1 รูป → ลองเล็บ 9 แบบบนเล็บจริงในไม่กี่วินาที",
+    "design_id": "d01",
+    "fit_score": 100,
+    "layout": "before_after_grid",
+    "sizes": [
+     "1080x1350",
+     "1080x1920"
+    ],
+    "watermark": "Made with NailPop · AI preview, real result depends on your nail tech",
+    "cta_th": "ลองสีเล็บก่อนทำ ลิงก์ในไบโอ"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  }
+ ]
+}
