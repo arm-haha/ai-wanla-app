@@ -1,0 +1,1229 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "น้องกันต์",
+   "value": {
+    "id": "u01",
+    "name_th": "น้องกันต์",
+    "name_en": "Gun",
+    "age": 24,
+    "city_th": "กรุงเทพฯ",
+    "role": "marketing",
+    "job_th": "Marketing Coordinator",
+    "company_th": "Ficto Media",
+    "duration_sec": 35,
+    "question_index": 0
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องปิน",
+   "value": {
+    "id": "u02",
+    "name_th": "น้องปิน",
+    "name_en": "Pin",
+    "age": 22,
+    "city_th": "ขอนแก่น",
+    "role": "fresh_grad",
+    "job_th": "นักพัฒนาฝึกงาน",
+    "company_th": "Ficto Labs",
+    "duration_sec": 75,
+    "question_index": 0
+   }
+  },
+  {
+   "def": "RoleInfo",
+   "note": "marketing",
+   "value": {
+    "id": "r01",
+    "role": "marketing",
+    "name_th": "งานการตลาด",
+    "name_en": "Marketing",
+    "seniority": "junior",
+    "questions": [
+     "เล่าตอนที่ต้องทำงานเป็นทีมแล้วมีปัญหา",
+     "เคยทำแคมเปญแล้ววัดผลอย่างไร",
+     "ถ้างบน้อย แต่ต้องเห็นผลใน 2 สัปดาห์ จะเริ่มตรงไหน",
+     "เล่าครั้งที่รับฟีดแบ็กแล้วปรับงาน"
+    ],
+    "count": 4
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "marketing-0",
+   "value": {
+    "role": "marketing",
+    "index": 0,
+    "prompt_th": "เล่าตอนที่ต้องทำงานเป็นทีมแล้วมีปัญหา",
+    "role_th": "งานการตลาด",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "marketing-1",
+   "value": {
+    "role": "marketing",
+    "index": 1,
+    "prompt_th": "เคยทำแคมเปญแล้ววัดผลอย่างไร",
+    "role_th": "งานการตลาด",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "marketing-2",
+   "value": {
+    "role": "marketing",
+    "index": 2,
+    "prompt_th": "ถ้างบน้อย แต่ต้องเห็นผลใน 2 สัปดาห์ จะเริ่มตรงไหน",
+    "role_th": "งานการตลาด",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "marketing-3",
+   "value": {
+    "role": "marketing",
+    "index": 3,
+    "prompt_th": "เล่าครั้งที่รับฟีดแบ็กแล้วปรับงาน",
+    "role_th": "งานการตลาด",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "RoleInfo",
+   "note": "engineer",
+   "value": {
+    "id": "r02",
+    "role": "engineer",
+    "name_th": "งานวิศวกร / นักพัฒนา",
+    "name_en": "Engineer",
+    "seniority": "mid",
+    "questions": [
+     "เล่าบั๊กที่ยากที่สุดที่เคยแก้",
+     "เคยไม่เห็นด้วยกับแนวทางในทีม แล้วทำอย่างไร",
+     "อธิบายโปรเจกต์ที่ภูมิใจแบบคนไม่ใช่สายเทคนิคฟังรู้เรื่อง",
+     "ถ้าเดดไลน์ใกล้แต่คุณภาพยังไม่พร้อม จะตัดสินใจอย่างไร"
+    ],
+    "count": 4
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "engineer-0",
+   "value": {
+    "role": "engineer",
+    "index": 0,
+    "prompt_th": "เล่าบั๊กที่ยากที่สุดที่เคยแก้",
+    "role_th": "งานวิศวกร / นักพัฒนา",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "engineer-1",
+   "value": {
+    "role": "engineer",
+    "index": 1,
+    "prompt_th": "เคยไม่เห็นด้วยกับแนวทางในทีม แล้วทำอย่างไร",
+    "role_th": "งานวิศวกร / นักพัฒนา",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "engineer-2",
+   "value": {
+    "role": "engineer",
+    "index": 2,
+    "prompt_th": "อธิบายโปรเจกต์ที่ภูมิใจแบบคนไม่ใช่สายเทคนิคฟังรู้เรื่อง",
+    "role_th": "งานวิศวกร / นักพัฒนา",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "engineer-3",
+   "value": {
+    "role": "engineer",
+    "index": 3,
+    "prompt_th": "ถ้าเดดไลน์ใกล้แต่คุณภาพยังไม่พร้อม จะตัดสินใจอย่างไร",
+    "role_th": "งานวิศวกร / นักพัฒนา",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "RoleInfo",
+   "note": "nurse",
+   "value": {
+    "id": "r03",
+    "role": "nurse",
+    "name_th": "งานพยาบาล",
+    "name_en": "Nurse",
+    "seniority": "junior",
+    "questions": [
+     "เล่าตอนที่ต้องสื่อสารกับญาติคนไข้ในสถานการณ์ตึงเครียด",
+     "เคยเจอเหตุไม่คาดคิดระหว่างเวร แล้วจัดการอย่างไร",
+     "ทำงานเป็นทีมกับแพทย์และเพื่อนร่วมเวรอย่างไร",
+     "ดูแลตัวเองอย่างไรหลังเวรหนัก"
+    ],
+    "count": 4
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "nurse-0",
+   "value": {
+    "role": "nurse",
+    "index": 0,
+    "prompt_th": "เล่าตอนที่ต้องสื่อสารกับญาติคนไข้ในสถานการณ์ตึงเครียด",
+    "role_th": "งานพยาบาล",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "nurse-1",
+   "value": {
+    "role": "nurse",
+    "index": 1,
+    "prompt_th": "เคยเจอเหตุไม่คาดคิดระหว่างเวร แล้วจัดการอย่างไร",
+    "role_th": "งานพยาบาล",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "nurse-2",
+   "value": {
+    "role": "nurse",
+    "index": 2,
+    "prompt_th": "ทำงานเป็นทีมกับแพทย์และเพื่อนร่วมเวรอย่างไร",
+    "role_th": "งานพยาบาล",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "nurse-3",
+   "value": {
+    "role": "nurse",
+    "index": 3,
+    "prompt_th": "ดูแลตัวเองอย่างไรหลังเวรหนัก",
+    "role_th": "งานพยาบาล",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "RoleInfo",
+   "note": "teacher",
+   "value": {
+    "id": "r04",
+    "role": "teacher",
+    "name_th": "งานครู / ติวเตอร์",
+    "name_en": "Teacher",
+    "seniority": "junior",
+    "questions": [
+     "เล่าตอนที่สอนแล้วเด็กไม่เข้าใจ แล้วปรับอย่างไร",
+     "เคยจัดการห้องที่สมาธิหลุด แล้วทำอะไร",
+     "ออกแบบคาบเรียนใหม่ให้ใน 3 ประโยค",
+     "รับฟีดแบ็กจากผู้ปกครองอย่างไร"
+    ],
+    "count": 4
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "teacher-0",
+   "value": {
+    "role": "teacher",
+    "index": 0,
+    "prompt_th": "เล่าตอนที่สอนแล้วเด็กไม่เข้าใจ แล้วปรับอย่างไร",
+    "role_th": "งานครู / ติวเตอร์",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "teacher-1",
+   "value": {
+    "role": "teacher",
+    "index": 1,
+    "prompt_th": "เคยจัดการห้องที่สมาธิหลุด แล้วทำอะไร",
+    "role_th": "งานครู / ติวเตอร์",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "teacher-2",
+   "value": {
+    "role": "teacher",
+    "index": 2,
+    "prompt_th": "ออกแบบคาบเรียนใหม่ให้ใน 3 ประโยค",
+    "role_th": "งานครู / ติวเตอร์",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "teacher-3",
+   "value": {
+    "role": "teacher",
+    "index": 3,
+    "prompt_th": "รับฟีดแบ็กจากผู้ปกครองอย่างไร",
+    "role_th": "งานครู / ติวเตอร์",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "RoleInfo",
+   "note": "sales",
+   "value": {
+    "id": "r05",
+    "role": "sales",
+    "name_th": "งานขาย",
+    "name_en": "Sales",
+    "seniority": "mid",
+    "questions": [
+     "เล่าตอนที่เกือบเสียดีล แล้วพลิกกลับมาได้อย่างไร",
+     "ทำความรู้จักลูกค้าใหม่ใน 5 นาทีแรกอย่างไร",
+     "เคยถูกปฏิเสธซ้ำ ๆ แล้วยังเดินต่อได้เพราะอะไร",
+     "ตั้งเป้าและติดตามผลของตัวเองอย่างไร"
+    ],
+    "count": 4
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "sales-0",
+   "value": {
+    "role": "sales",
+    "index": 0,
+    "prompt_th": "เล่าตอนที่เกือบเสียดีล แล้วพลิกกลับมาได้อย่างไร",
+    "role_th": "งานขาย",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "sales-1",
+   "value": {
+    "role": "sales",
+    "index": 1,
+    "prompt_th": "ทำความรู้จักลูกค้าใหม่ใน 5 นาทีแรกอย่างไร",
+    "role_th": "งานขาย",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "sales-2",
+   "value": {
+    "role": "sales",
+    "index": 2,
+    "prompt_th": "เคยถูกปฏิเสธซ้ำ ๆ แล้วยังเดินต่อได้เพราะอะไร",
+    "role_th": "งานขาย",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "sales-3",
+   "value": {
+    "role": "sales",
+    "index": 3,
+    "prompt_th": "ตั้งเป้าและติดตามผลของตัวเองอย่างไร",
+    "role_th": "งานขาย",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "RoleInfo",
+   "note": "fresh_grad",
+   "value": {
+    "id": "r06",
+    "role": "fresh_grad",
+    "name_th": "จบใหม่ / ยังไม่มีประสบการณ์งาน",
+    "name_en": "Fresh graduate",
+    "seniority": "entry",
+    "questions": [
+     "เล่าโครงงานหรือกิจกรรมที่เคยทำเป็นทีม",
+     "ทำไมสนใจตำแหน่งนี้",
+     "เคยล้มเหลวในงานกลุ่ม แล้วเรียนรู้อะไร",
+     "ใน 90 วันแรก จะเรียนรู้งานอย่างไร"
+    ],
+    "count": 4
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "fresh_grad-0",
+   "value": {
+    "role": "fresh_grad",
+    "index": 0,
+    "prompt_th": "เล่าโครงงานหรือกิจกรรมที่เคยทำเป็นทีม",
+    "role_th": "จบใหม่ / ยังไม่มีประสบการณ์งาน",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "fresh_grad-1",
+   "value": {
+    "role": "fresh_grad",
+    "index": 1,
+    "prompt_th": "ทำไมสนใจตำแหน่งนี้",
+    "role_th": "จบใหม่ / ยังไม่มีประสบการณ์งาน",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "fresh_grad-2",
+   "value": {
+    "role": "fresh_grad",
+    "index": 2,
+    "prompt_th": "เคยล้มเหลวในงานกลุ่ม แล้วเรียนรู้อะไร",
+    "role_th": "จบใหม่ / ยังไม่มีประสบการณ์งาน",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "fresh_grad-3",
+   "value": {
+    "role": "fresh_grad",
+    "index": 3,
+    "prompt_th": "ใน 90 วันแรก จะเรียนรู้งานอย่างไร",
+    "role_th": "จบใหม่ / ยังไม่มีประสบการณ์งาน",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "FillerCount",
+   "note": "gun",
+   "value": {
+    "counts": {
+     "อ่า": 3,
+     "เอ่อ": 2,
+     "คือ": 0,
+     "ก็": 0,
+     "แบบ": 4
+    },
+    "total": 9,
+    "word_count": 95,
+    "ratio": 0.0947,
+    "label_th": "คำเติม 9 จาก 95 คำ"
+   }
+  },
+  {
+   "def": "FillerCount",
+   "note": "pin",
+   "value": {
+    "counts": {
+     "อ่า": 0,
+     "เอ่อ": 0,
+     "คือ": 1,
+     "ก็": 0,
+     "แบบ": 0
+    },
+    "total": 1,
+    "word_count": 22,
+    "ratio": 0.0455,
+    "label_th": "คำเติม 1 จาก 22 คำ"
+   }
+  },
+  {
+   "def": "FillerCount",
+   "note": "all fillers",
+   "value": {
+    "counts": {
+     "อ่า": 1,
+     "เอ่อ": 1,
+     "คือ": 1,
+     "ก็": 1,
+     "แบบ": 1
+    },
+    "total": 5,
+    "word_count": 6,
+    "ratio": 0.8333,
+    "label_th": "คำเติม 5 จาก 6 คำ"
+   }
+  },
+  {
+   "def": "StarFlags",
+   "note": "gun missing R",
+   "value": {
+    "S": true,
+    "T": true,
+    "A": true,
+    "R": false
+   }
+  },
+  {
+   "def": "StarFlags",
+   "note": "pin full",
+   "value": {
+    "S": true,
+    "T": true,
+    "A": true,
+    "R": true
+   }
+  },
+  {
+   "def": "StarFlags",
+   "note": "none",
+   "value": {
+    "S": false,
+    "T": false,
+    "A": false,
+    "R": false
+   }
+  },
+  {
+   "def": "AnswerScore",
+   "note": "gun 72",
+   "value": {
+    "overall": 72,
+    "structure": 80,
+    "clarity": 62,
+    "length": 72,
+    "star": 75,
+    "band_th": "พร้อมปานกลาง",
+    "word_count": 95,
+    "filler_total": 9,
+    "filler_ratio": 0.0947,
+    "star_flags": {
+     "S": true,
+     "T": true,
+     "A": true,
+     "R": false
+    },
+    "duration_sec": 35,
+    "headline_th": "คะแนนรวม 72 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "AnswerScore",
+   "note": "pin",
+   "value": {
+    "overall": 82,
+    "structure": 91,
+    "clarity": 82,
+    "length": 42,
+    "star": 100,
+    "band_th": "พร้อมปานกลาง",
+    "word_count": 22,
+    "filler_total": 1,
+    "filler_ratio": 0.0455,
+    "star_flags": {
+     "S": true,
+     "T": true,
+     "A": true,
+     "R": true
+    },
+    "duration_sec": 75,
+    "headline_th": "คะแนนรวม 82 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "AnswerScore",
+   "note": "gun no duration",
+   "value": {
+    "overall": 76,
+    "structure": 80,
+    "clarity": 62,
+    "length": 92,
+    "star": 75,
+    "band_th": "พร้อมปานกลาง",
+    "word_count": 95,
+    "filler_total": 9,
+    "filler_ratio": 0.0947,
+    "star_flags": {
+     "S": true,
+     "T": true,
+     "A": true,
+     "R": false
+    },
+    "duration_sec": null,
+    "headline_th": "คะแนนรวม 76 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "AnswerScore",
+   "note": "short",
+   "value": {
+    "overall": 26,
+    "structure": 2,
+    "clarity": 100,
+    "length": 0,
+    "star": 0,
+    "band_th": "ต้องซ้อมอีก",
+    "word_count": 5,
+    "filler_total": 0,
+    "filler_ratio": 0.0,
+    "star_flags": {
+     "S": false,
+     "T": false,
+     "A": false,
+     "R": false
+    },
+    "duration_sec": 10,
+    "headline_th": "คะแนนรวม 26 · ต้องซ้อมอีก",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "StarRewrite",
+   "note": "gun",
+   "value": {
+    "situation_th": "ทีมการตลาดต้องส่งแคมเปญในห้าวัน แต่ดีไซน์ยังมาไม่ครบ",
+    "task_th": "ได้รับมอบให้ประสานทุกคนให้ทันเส้นตาย",
+    "action_th": "นัดประชุมสั้นทุกเช้า แบ่งงานใหม่ และทำชีตติดตามทุกเย็น",
+    "result_th": "ส่งไฟล์ครบก่อนเส้นตายสองชั่วโมง และไม่มีงานตกหล่นในสัปดาห์นั้น",
+    "text_th": "สถานการณ์: ทีมการตลาดต้องส่งแคมเปญในห้าวัน แต่ดีไซน์ยังมาไม่ครบ งานที่ได้รับ: ได้รับมอบให้ประสานทุกคนให้ทันเส้นตาย สิ่งที่ทำ: นัดประชุมสั้นทุกเช้า แบ่งงานใหม่ และทำชีตติดตามทุกเย็น ผลลัพธ์: ส่งไฟล์ครบก่อนเส้นตายสองชั่วโมง และไม่มีงานตกหล่นในสัปดาห์นั้น",
+    "char_count": 252,
+    "tip_th": "จบด้วยผลที่วัดได้ จะจำง่ายขึ้นตอนสัมภาษณ์"
+   }
+  },
+  {
+   "def": "StarRewrite",
+   "note": "pin style",
+   "value": {
+    "situation_th": "เคยทำโครงงานกลุ่ม",
+    "task_th": "แบ่งงานและนัดประชุม",
+    "action_th": "จัดตารางส่งงาน",
+    "result_th": "ส่งได้ตามกำหนดและได้เกรด A",
+    "text_th": "สถานการณ์: เคยทำโครงงานกลุ่ม งานที่ได้รับ: แบ่งงานและนัดประชุม สิ่งที่ทำ: จัดตารางส่งงาน ผลลัพธ์: ส่งได้ตามกำหนดและได้เกรด A",
+    "char_count": 124,
+    "tip_th": "จบด้วยผลที่วัดได้ จะจำง่ายขึ้นตอนสัมภาษณ์"
+   }
+  },
+  {
+   "def": "ConfidenceReport",
+   "note": "gun",
+   "value": {
+    "name_th": "น้องกันต์",
+    "role_th": "งานการตลาด",
+    "overall": 72,
+    "band_th": "พร้อมปานกลาง",
+    "structure": 80,
+    "clarity": 62,
+    "length": 72,
+    "star": 75,
+    "tips_th": [
+     "เติมส่วน ผลลัพธ์ ให้ครบ และ ideally จบด้วยตัวเลข",
+     "ลดคำเติมอย่าง อ่า เอ่อ แบบ จะฟังชัดขึ้น",
+     "จับเวลาให้อยู่ราว 45–90 วินาที หรือประมาณ 80–120 คำ"
+    ],
+    "headline_th": "คะแนนรวม 72 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "ConfidenceReport",
+   "note": "pin",
+   "value": {
+    "name_th": "น้องปิน",
+    "role_th": "จบใหม่ / ยังไม่มีประสบการณ์งาน",
+    "overall": 82,
+    "band_th": "พร้อมปานกลาง",
+    "structure": 91,
+    "clarity": 82,
+    "length": 42,
+    "star": 100,
+    "tips_th": [
+     "จับเวลาให้อยู่ราว 45–90 วินาที หรือประมาณ 80–120 คำ"
+    ],
+    "headline_th": "คะแนนรวม 82 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "Drill",
+   "note": "star",
+   "value": {
+    "focus": "star",
+    "task_th": "เล่าคำตอบเดิมใหม่ โดยพูดสี่ประโยคตาม สถานการณ์ / งานที่ได้รับ / สิ่งที่ทำ / ผลลัพธ์",
+    "minutes": 5
+   }
+  },
+  {
+   "def": "Drill",
+   "note": "clarity",
+   "value": {
+    "focus": "clarity",
+    "task_th": "อัดคลิป 30 วินาทีโดยห้ามใช้คำว่า อ่า เอ่อ แบบ",
+    "minutes": 5
+   }
+  },
+  {
+   "def": "Drill",
+   "note": "length",
+   "value": {
+    "focus": "length",
+    "task_th": "ตั้งเวลา 75 วินาที แล้วเล่าให้จบพอดี ไม่เร็วไม่ช้า",
+    "minutes": 5
+   }
+  },
+  {
+   "def": "Drill",
+   "note": "structure",
+   "value": {
+    "focus": "structure",
+    "task_th": "เขียนโครงสามบรรทัด เปิด-เนื้อ-ปิด ก่อนพูด",
+    "minutes": 5
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "gun",
+   "value": {
+    "title_th": "InterviewAce — น้องกันต์",
+    "headline_th": "คะแนนรวม 72 · พร้อมปานกลาง",
+    "hook_th": "ซ้อมสัมภาษณ์งานกับ AI",
+    "role_th": "งานการตลาด",
+    "overall": 72,
+    "layout": "score_report",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with InterviewAce · practice only, not a hiring decision",
+    "cta_th": "คอมเมนต์ ACE รับแพ็กฟรี · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "pin",
+   "value": {
+    "title_th": "InterviewAce — น้องปิน",
+    "headline_th": "คะแนนรวม 82 · พร้อมปานกลาง",
+    "hook_th": "ซ้อมสัมภาษณ์งานกับ AI",
+    "role_th": "จบใหม่ / ยังไม่มีประสบการณ์งาน",
+    "overall": 82,
+    "layout": "score_report",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with InterviewAce · practice only, not a hiring decision",
+    "cta_th": "คอมเมนต์ ACE รับแพ็กฟรี · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "partial",
+   "value": {
+    "allowed": 1,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "stop",
+   "value": {
+    "level": "stop",
+    "message_th": "ยังให้คะแนนไม่ได้ InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "AnswerScore",
+   "note": "gun 45s",
+   "value": {
+    "overall": 74,
+    "structure": 80,
+    "clarity": 62,
+    "length": 78,
+    "star": 75,
+    "band_th": "พร้อมปานกลาง",
+    "word_count": 95,
+    "filler_total": 9,
+    "filler_ratio": 0.0947,
+    "star_flags": {
+     "S": true,
+     "T": true,
+     "A": true,
+     "R": false
+    },
+    "duration_sec": 45,
+    "headline_th": "คะแนนรวม 74 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "AnswerScore",
+   "note": "gun 60s",
+   "value": {
+    "overall": 75,
+    "structure": 80,
+    "clarity": 62,
+    "length": 87,
+    "star": 75,
+    "band_th": "พร้อมปานกลาง",
+    "word_count": 95,
+    "filler_total": 9,
+    "filler_ratio": 0.0947,
+    "star_flags": {
+     "S": true,
+     "T": true,
+     "A": true,
+     "R": false
+    },
+    "duration_sec": 60,
+    "headline_th": "คะแนนรวม 75 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "AnswerScore",
+   "note": "gun 75s",
+   "value": {
+    "overall": 77,
+    "structure": 80,
+    "clarity": 62,
+    "length": 96,
+    "star": 75,
+    "band_th": "พร้อมปานกลาง",
+    "word_count": 95,
+    "filler_total": 9,
+    "filler_ratio": 0.0947,
+    "star_flags": {
+     "S": true,
+     "T": true,
+     "A": true,
+     "R": false
+    },
+    "duration_sec": 75,
+    "headline_th": "คะแนนรวม 77 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "AnswerScore",
+   "note": "gun 90s",
+   "value": {
+    "overall": 75,
+    "structure": 80,
+    "clarity": 62,
+    "length": 87,
+    "star": 75,
+    "band_th": "พร้อมปานกลาง",
+    "word_count": 95,
+    "filler_total": 9,
+    "filler_ratio": 0.0947,
+    "star_flags": {
+     "S": true,
+     "T": true,
+     "A": true,
+     "R": false
+    },
+    "duration_sec": 90,
+    "headline_th": "คะแนนรวม 75 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "extra engineer",
+   "value": {
+    "role": "engineer",
+    "index": 1,
+    "prompt_th": "เคยไม่เห็นด้วยกับแนวทางในทีม แล้วทำอย่างไร",
+    "role_th": "งานวิศวกร / นักพัฒนา",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "extra nurse",
+   "value": {
+    "role": "nurse",
+    "index": 2,
+    "prompt_th": "ทำงานเป็นทีมกับแพทย์และเพื่อนร่วมเวรอย่างไร",
+    "role_th": "งานพยาบาล",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "extra teacher",
+   "value": {
+    "role": "teacher",
+    "index": 0,
+    "prompt_th": "เล่าตอนที่สอนแล้วเด็กไม่เข้าใจ แล้วปรับอย่างไร",
+    "role_th": "งานครู / ติวเตอร์",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "QuestionCard",
+   "note": "extra sales",
+   "value": {
+    "role": "sales",
+    "index": 3,
+    "prompt_th": "ตั้งเป้าและติดตามผลของตัวเองอย่างไร",
+    "role_th": "งานขาย",
+    "ideal_sec": 75,
+    "ideal_words": 100
+   }
+  },
+  {
+   "def": "AnswerScore",
+   "note": "sample 0",
+   "value": {
+    "overall": 77,
+    "structure": 89,
+    "clarity": 78,
+    "length": 24,
+    "star": 100,
+    "band_th": "พร้อมปานกลาง",
+    "word_count": 18,
+    "filler_total": 1,
+    "filler_ratio": 0.0556,
+    "star_flags": {
+     "S": true,
+     "T": true,
+     "A": true,
+     "R": true
+    },
+    "duration_sec": 50,
+    "headline_th": "คะแนนรวม 77 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "FillerCount",
+   "note": "fill 0",
+   "value": {
+    "counts": {
+     "อ่า": 0,
+     "เอ่อ": 0,
+     "คือ": 1,
+     "ก็": 0,
+     "แบบ": 0
+    },
+    "total": 1,
+    "word_count": 18,
+    "ratio": 0.0556,
+    "label_th": "คำเติม 1 จาก 18 คำ"
+   }
+  },
+  {
+   "def": "StarFlags",
+   "note": "flags 0",
+   "value": {
+    "S": true,
+    "T": true,
+    "A": true,
+    "R": true
+   }
+  },
+  {
+   "def": "ConfidenceReport",
+   "note": "rep 0",
+   "value": {
+    "name_th": "ผู้ซ้อม",
+    "role_th": "งานทั่วไป",
+    "overall": 77,
+    "band_th": "พร้อมปานกลาง",
+    "structure": 89,
+    "clarity": 78,
+    "length": 24,
+    "star": 100,
+    "tips_th": [
+     "จับเวลาให้อยู่ราว 45–90 วินาที หรือประมาณ 80–120 คำ"
+    ],
+    "headline_th": "คะแนนรวม 77 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "AnswerScore",
+   "note": "sample 1",
+   "value": {
+    "overall": 6,
+    "structure": 6,
+    "clarity": 0,
+    "length": 22,
+    "star": 0,
+    "band_th": "ต้องซ้อมอีก",
+    "word_count": 12,
+    "filler_total": 3,
+    "filler_ratio": 0.25,
+    "star_flags": {
+     "S": false,
+     "T": false,
+     "A": false,
+     "R": false
+    },
+    "duration_sec": 55,
+    "headline_th": "คะแนนรวม 6 · ต้องซ้อมอีก",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "FillerCount",
+   "note": "fill 1",
+   "value": {
+    "counts": {
+     "อ่า": 1,
+     "เอ่อ": 1,
+     "คือ": 0,
+     "ก็": 0,
+     "แบบ": 1
+    },
+    "total": 3,
+    "word_count": 12,
+    "ratio": 0.25,
+    "label_th": "คำเติม 3 จาก 12 คำ"
+   }
+  },
+  {
+   "def": "StarFlags",
+   "note": "flags 1",
+   "value": {
+    "S": false,
+    "T": false,
+    "A": false,
+    "R": false
+   }
+  },
+  {
+   "def": "ConfidenceReport",
+   "note": "rep 1",
+   "value": {
+    "name_th": "ผู้ซ้อม",
+    "role_th": "งานทั่วไป",
+    "overall": 6,
+    "band_th": "ต้องซ้อมอีก",
+    "structure": 6,
+    "clarity": 0,
+    "length": 22,
+    "star": 0,
+    "tips_th": [
+     "เติมส่วน สถานการณ์ งานที่ได้รับ สิ่งที่ทำ ผลลัพธ์ ให้ครบ และ ideally จบด้วยตัวเลข",
+     "ลดคำเติมอย่าง อ่า เอ่อ แบบ จะฟังชัดขึ้น",
+     "จับเวลาให้อยู่ราว 45–90 วินาที หรือประมาณ 80–120 คำ"
+    ],
+    "headline_th": "คะแนนรวม 6 · ต้องซ้อมอีก",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "AnswerScore",
+   "note": "sample 2",
+   "value": {
+    "overall": 77,
+    "structure": 88,
+    "clarity": 76,
+    "length": 29,
+    "star": 100,
+    "band_th": "พร้อมปานกลาง",
+    "word_count": 17,
+    "filler_total": 1,
+    "filler_ratio": 0.0588,
+    "star_flags": {
+     "S": true,
+     "T": true,
+     "A": true,
+     "R": true
+    },
+    "duration_sec": 60,
+    "headline_th": "คะแนนรวม 77 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "FillerCount",
+   "note": "fill 2",
+   "value": {
+    "counts": {
+     "อ่า": 0,
+     "เอ่อ": 0,
+     "คือ": 1,
+     "ก็": 0,
+     "แบบ": 0
+    },
+    "total": 1,
+    "word_count": 17,
+    "ratio": 0.0588,
+    "label_th": "คำเติม 1 จาก 17 คำ"
+   }
+  },
+  {
+   "def": "StarFlags",
+   "note": "flags 2",
+   "value": {
+    "S": true,
+    "T": true,
+    "A": true,
+    "R": true
+   }
+  },
+  {
+   "def": "ConfidenceReport",
+   "note": "rep 2",
+   "value": {
+    "name_th": "ผู้ซ้อม",
+    "role_th": "งานทั่วไป",
+    "overall": 77,
+    "band_th": "พร้อมปานกลาง",
+    "structure": 88,
+    "clarity": 76,
+    "length": 29,
+    "star": 100,
+    "tips_th": [
+     "จับเวลาให้อยู่ราว 45–90 วินาที หรือประมาณ 80–120 คำ"
+    ],
+    "headline_th": "คะแนนรวม 77 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "AnswerScore",
+   "note": "sample 3",
+   "value": {
+    "overall": 83,
+    "structure": 88,
+    "clarity": 100,
+    "length": 30,
+    "star": 100,
+    "band_th": "พร้อมปานกลาง",
+    "word_count": 15,
+    "filler_total": 0,
+    "filler_ratio": 0.0,
+    "star_flags": {
+     "S": true,
+     "T": true,
+     "A": true,
+     "R": true
+    },
+    "duration_sec": 65,
+    "headline_th": "คะแนนรวม 83 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  },
+  {
+   "def": "FillerCount",
+   "note": "fill 3",
+   "value": {
+    "counts": {
+     "อ่า": 0,
+     "เอ่อ": 0,
+     "คือ": 0,
+     "ก็": 0,
+     "แบบ": 0
+    },
+    "total": 0,
+    "word_count": 15,
+    "ratio": 0.0,
+    "label_th": "คำเติม 0 จาก 15 คำ"
+   }
+  },
+  {
+   "def": "StarFlags",
+   "note": "flags 3",
+   "value": {
+    "S": true,
+    "T": true,
+    "A": true,
+    "R": true
+   }
+  },
+  {
+   "def": "ConfidenceReport",
+   "note": "rep 3",
+   "value": {
+    "name_th": "ผู้ซ้อม",
+    "role_th": "งานทั่วไป",
+    "overall": 83,
+    "band_th": "พร้อมปานกลาง",
+    "structure": 88,
+    "clarity": 100,
+    "length": 30,
+    "star": 100,
+    "tips_th": [
+     "จับเวลาให้อยู่ราว 45–90 วินาที หรือประมาณ 80–120 คำ"
+    ],
+    "headline_th": "คะแนนรวม 83 · พร้อมปานกลาง",
+    "disclaimer_th": "InterviewAce เป็นเครื่องมือซ้อมสัมภาษณ์เท่านั้น ไม่ใช่การรับรองว่าจะได้งาน ไม่ใช่คะแนนจากผู้สัมภาษณ์จริง และไม่ใช่คำแนะนำด้านอาชีพเฉพาะบุคคล คะแนนในแอปเป็นค่าตัวอย่างจากสูตรที่ตั้งเอง"
+   }
+  }
+ ]
+}

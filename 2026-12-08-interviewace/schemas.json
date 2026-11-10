@@ -1,0 +1,553 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/interviewace.schema.json",
+ "title": "InterviewAce",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age",
+    "role"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "role": {
+     "enum": [
+      "marketing",
+      "engineer",
+      "nurse",
+      "teacher",
+      "sales",
+      "fresh_grad"
+     ]
+    },
+    "job_th": {
+     "type": "string"
+    },
+    "company_th": {
+     "type": "string"
+    },
+    "duration_sec": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "question_index": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "RoleInfo": {
+   "type": "object",
+   "required": [
+    "id",
+    "role",
+    "name_th",
+    "name_en",
+    "seniority",
+    "questions",
+    "count"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^r[0-9]{2}$"
+    },
+    "role": {
+     "enum": [
+      "marketing",
+      "engineer",
+      "nurse",
+      "teacher",
+      "sales",
+      "fresh_grad"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "seniority": {
+     "enum": [
+      "entry",
+      "junior",
+      "mid"
+     ]
+    },
+    "questions": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "QuestionCard": {
+   "type": "object",
+   "required": [
+    "role",
+    "index",
+    "prompt_th",
+    "role_th",
+    "ideal_sec",
+    "ideal_words"
+   ],
+   "properties": {
+    "role": {
+     "enum": [
+      "marketing",
+      "engineer",
+      "nurse",
+      "teacher",
+      "sales",
+      "fresh_grad"
+     ]
+    },
+    "index": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "prompt_th": {
+     "type": "string"
+    },
+    "role_th": {
+     "type": "string"
+    },
+    "ideal_sec": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "ideal_words": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "FillerCount": {
+   "type": "object",
+   "required": [
+    "counts",
+    "total",
+    "word_count",
+    "ratio",
+    "label_th"
+   ],
+   "properties": {
+    "counts": {
+     "type": "object",
+     "required": [
+      "อ่า",
+      "เอ่อ",
+      "คือ",
+      "ก็",
+      "แบบ"
+     ],
+     "properties": {
+      "อ่า": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "เอ่อ": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "คือ": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "ก็": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "แบบ": {
+       "type": "integer",
+       "minimum": 0
+      }
+     },
+     "additionalProperties": false
+    },
+    "total": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "word_count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "ratio": {
+     "type": "number",
+     "minimum": 0
+    },
+    "label_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "StarFlags": {
+   "type": "object",
+   "required": [
+    "S",
+    "T",
+    "A",
+    "R"
+   ],
+   "properties": {
+    "S": {
+     "type": "boolean"
+    },
+    "T": {
+     "type": "boolean"
+    },
+    "A": {
+     "type": "boolean"
+    },
+    "R": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "AnswerScore": {
+   "type": "object",
+   "required": [
+    "overall",
+    "structure",
+    "clarity",
+    "length",
+    "star",
+    "band_th",
+    "word_count",
+    "filler_total",
+    "filler_ratio",
+    "star_flags",
+    "headline_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "overall": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "structure": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "clarity": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "length": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "star": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "band_th": {
+     "enum": [
+      "พร้อมมาก",
+      "พร้อมปานกลาง",
+      "ต้องซ้อมอีก"
+     ]
+    },
+    "word_count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "filler_total": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "filler_ratio": {
+     "type": "number",
+     "minimum": 0
+    },
+    "star_flags": {
+     "$ref": "#/$defs/StarFlags"
+    },
+    "duration_sec": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "StarRewrite": {
+   "type": "object",
+   "required": [
+    "situation_th",
+    "task_th",
+    "action_th",
+    "result_th",
+    "text_th",
+    "char_count",
+    "tip_th"
+   ],
+   "properties": {
+    "situation_th": {
+     "type": "string"
+    },
+    "task_th": {
+     "type": "string"
+    },
+    "action_th": {
+     "type": "string"
+    },
+    "result_th": {
+     "type": "string"
+    },
+    "text_th": {
+     "type": "string"
+    },
+    "char_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "tip_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ConfidenceReport": {
+   "type": "object",
+   "required": [
+    "name_th",
+    "role_th",
+    "overall",
+    "band_th",
+    "structure",
+    "clarity",
+    "length",
+    "star",
+    "tips_th",
+    "headline_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "name_th": {
+     "type": "string"
+    },
+    "role_th": {
+     "type": "string"
+    },
+    "overall": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "band_th": {
+     "type": "string"
+    },
+    "structure": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "clarity": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "length": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "star": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Drill": {
+   "type": "object",
+   "required": [
+    "focus",
+    "task_th",
+    "minutes"
+   ],
+   "properties": {
+    "focus": {
+     "enum": [
+      "star",
+      "clarity",
+      "length",
+      "structure"
+     ]
+    },
+    "task_th": {
+     "type": "string"
+    },
+    "minutes": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "role_th",
+    "overall",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "role_th": {
+     "type": "string"
+    },
+    "overall": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "layout": {
+     "enum": [
+      "score_report"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
