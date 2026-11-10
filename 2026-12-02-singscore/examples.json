@@ -1,0 +1,1534 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "พี่ต้อม",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่ต้อม",
+    "name_en": "Tom",
+    "age": 27,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "อยากฮัมสเกลรันบันไดเสียง C แล้วรู้คะแนนเสียงกับจังหวะ และแข่งการ์ดกับเพื่อน"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องนีน่า",
+   "value": {
+    "id": "u02",
+    "name_th": "น้องนีน่า",
+    "name_en": "Nina",
+    "age": 26,
+    "city_th": "เชียงใหม่",
+    "goal_th": "แข่งการ์ดดูเอทกับพี่ต้อมจากคะแนนฝึก"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่บี",
+   "value": {
+    "id": "u03",
+    "name_th": "พี่บี",
+    "name_en": "Bee",
+    "age": 33,
+    "city_th": "ขอนแก่น",
+    "goal_th": "วอร์มอัพแล้วลากสระอา"
+   }
+  },
+  {
+   "def": "Take",
+   "note": "t01",
+   "value": {
+    "id": "t01",
+    "exercise": "scale_run_c",
+    "mean_cents_off": 36,
+    "mean_ms_off": 52,
+    "confidence": 0.95,
+    "notes": [
+     "C",
+     "D",
+     "E",
+     "F",
+     "G",
+     "A",
+     "B",
+     "C"
+    ]
+   }
+  },
+  {
+   "def": "Score",
+   "note": "t01",
+   "value": {
+    "ok": true,
+    "pitch": 82,
+    "timing": 74,
+    "combined": 79,
+    "band": "good",
+    "cents": 36,
+    "ms": 52,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 79 · เสียง 82 · จังหวะ 74",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Take",
+   "note": "t02",
+   "value": {
+    "id": "t02",
+    "exercise": "scale_run_c",
+    "mean_cents_off": 50,
+    "mean_ms_off": 64,
+    "confidence": 0.92,
+    "notes": [
+     "C",
+     "D",
+     "E",
+     "F",
+     "G",
+     "A",
+     "B",
+     "C"
+    ]
+   }
+  },
+  {
+   "def": "Score",
+   "note": "t02",
+   "value": {
+    "ok": true,
+    "pitch": 75,
+    "timing": 68,
+    "combined": 72,
+    "band": "good",
+    "cents": 50,
+    "ms": 64,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 72 · เสียง 75 · จังหวะ 68",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Take",
+   "note": "t03",
+   "value": {
+    "id": "t03",
+    "exercise": "vowel_hold",
+    "mean_cents_off": 20,
+    "mean_ms_off": 20,
+    "confidence": 0.9,
+    "notes": [
+     "A",
+     "A",
+     "A"
+    ]
+   }
+  },
+  {
+   "def": "Score",
+   "note": "t03",
+   "value": {
+    "ok": true,
+    "pitch": 90,
+    "timing": 90,
+    "combined": 90,
+    "band": "great",
+    "cents": 20,
+    "ms": 20,
+    "exercise": "vowel_hold",
+    "headline_th": "คะแนนรวม 90 · เสียง 90 · จังหวะ 90",
+    "message_th": "ใกล้เคียงมาก คงจังหวะนี้ไว้",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Take",
+   "note": "t04",
+   "value": {
+    "id": "t04",
+    "exercise": "scale_run_c",
+    "mean_cents_off": 36,
+    "mean_ms_off": 52,
+    "confidence": 0.41,
+    "notes": [
+     "C"
+    ]
+   }
+  },
+  {
+   "def": "Score",
+   "note": "t04",
+   "value": {
+    "ok": false,
+    "pitch": null,
+    "timing": null,
+    "combined": null,
+    "band": null,
+    "message_th": "สัญญาณเสียงไม่ชัด ลองฮัมใหม่ในที่เงียบ",
+    "cents": 36,
+    "ms": 52,
+    "exercise": "scale_run_c",
+    "headline_th": "สัญญาณเสียงไม่ชัด ลองฮัมใหม่ในที่เงียบ",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "ExerciseInfo",
+   "note": "scale_run_c",
+   "value": {
+    "key": "scale_run_c",
+    "id": "ex01",
+    "name_th": "สเกลรันบันไดเสียง C",
+    "name_en": "ScaleRun in C",
+    "tonic": "C",
+    "mode": "major",
+    "notes": [
+     "C",
+     "D",
+     "E",
+     "F",
+     "G",
+     "A",
+     "B",
+     "C"
+    ]
+   }
+  },
+  {
+   "def": "ExerciseInfo",
+   "note": "scale_run_g",
+   "value": {
+    "key": "scale_run_g",
+    "id": "ex02",
+    "name_th": "สเกลรันบันไดเสียง G",
+    "name_en": "ScaleRun in G",
+    "tonic": "G",
+    "mode": "major",
+    "notes": [
+     "G",
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F#",
+     "G"
+    ]
+   }
+  },
+  {
+   "def": "ExerciseInfo",
+   "note": "scale_run_f",
+   "value": {
+    "key": "scale_run_f",
+    "id": "ex03",
+    "name_th": "สเกลรันบันไดเสียง F",
+    "name_en": "ScaleRun in F",
+    "tonic": "F",
+    "mode": "major",
+    "notes": [
+     "F",
+     "G",
+     "A",
+     "Bb",
+     "C",
+     "D",
+     "E",
+     "F"
+    ]
+   }
+  },
+  {
+   "def": "ExerciseInfo",
+   "note": "breath_pulse",
+   "value": {
+    "key": "breath_pulse",
+    "id": "ex04",
+    "name_th": "พัลส์ลมหายใจ",
+    "name_en": "BreathPulse",
+    "tonic": "C",
+    "mode": "drone",
+    "notes": [
+     "C",
+     "C",
+     "C",
+     "C"
+    ]
+   }
+  },
+  {
+   "def": "ExerciseInfo",
+   "note": "hum_fifth",
+   "value": {
+    "key": "hum_fifth",
+    "id": "ex05",
+    "name_th": "ฮัมช่วงห้า",
+    "name_en": "HumFifth",
+    "tonic": "C",
+    "mode": "fifth",
+    "notes": [
+     "C",
+     "G",
+     "C"
+    ]
+   }
+  },
+  {
+   "def": "ExerciseInfo",
+   "note": "vowel_hold",
+   "value": {
+    "key": "vowel_hold",
+    "id": "ex06",
+    "name_th": "ลากสระอา",
+    "name_en": "VowelHold Ah",
+    "tonic": "A",
+    "mode": "drone",
+    "notes": [
+     "A",
+     "A",
+     "A"
+    ]
+   }
+  },
+  {
+   "def": "KeyFind",
+   "note": "tom ex",
+   "value": {
+    "tonic": "C",
+    "mode": "major",
+    "exercise": "scale_run_c",
+    "name_th": "สเกลรันบันไดเสียง C",
+    "notes": [
+     "C",
+     "D",
+     "E",
+     "F",
+     "G",
+     "A",
+     "B",
+     "C"
+    ],
+    "headline_th": "คีย์ C major · สเกลรันบันไดเสียง C",
+    "source": "exercise"
+   }
+  },
+  {
+   "def": "KeyFind",
+   "note": "tom notes",
+   "value": {
+    "tonic": "C",
+    "mode": "major",
+    "exercise": null,
+    "name_th": null,
+    "notes": [
+     "C",
+     "D",
+     "E",
+     "F",
+     "G",
+     "A",
+     "B",
+     "C"
+    ],
+    "headline_th": "คีย์โดยประมาณ C major",
+    "source": "notes",
+    "hit": 8,
+    "total": 8
+   }
+  },
+  {
+   "def": "KeyFind",
+   "note": "g",
+   "value": {
+    "tonic": "G",
+    "mode": "major",
+    "exercise": "scale_run_g",
+    "name_th": "สเกลรันบันไดเสียง G",
+    "notes": [
+     "G",
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F#",
+     "G"
+    ],
+    "headline_th": "คีย์ G major · สเกลรันบันไดเสียง G",
+    "source": "exercise"
+   }
+  },
+  {
+   "def": "KeyFind",
+   "note": "fifth",
+   "value": {
+    "tonic": "C",
+    "mode": "fifth",
+    "exercise": "hum_fifth",
+    "name_th": "ฮัมช่วงห้า",
+    "notes": [
+     "C",
+     "G",
+     "C"
+    ],
+    "headline_th": "คีย์ C fifth · ฮัมช่วงห้า",
+    "source": "exercise"
+   }
+  },
+  {
+   "def": "WarmupSet",
+   "note": "all",
+   "value": {
+    "items": [
+     {
+      "key": "lip_trill",
+      "id": "wu01",
+      "name_th": "ลิปทริลล์",
+      "sec": 30,
+      "how_th": "ปิดปากเบา ๆ แล้วเป่าลมให้ริมฝีปากสั่น เลื่อนเสียงขึ้นลงช้า ๆ"
+     },
+     {
+      "key": "siren",
+      "id": "wu02",
+      "name_th": "ไซเรนฮัม",
+      "sec": 30,
+      "how_th": "ฮัมจากเสียงต่ำไปสูงแล้วกลับลง เหมือนไซเรน คอยผ่อน"
+     },
+     {
+      "key": "hum_five",
+      "id": "wu03",
+      "name_th": "ฮัมโด–ซอล",
+      "sec": 20,
+      "how_th": "ฮัมโน้ตหลักแล้วกระโดดขึ้นช่วงห้า แล้วกลับมา"
+     },
+     {
+      "key": "vowel_slide",
+      "id": "wu04",
+      "name_th": "ลากสระอี–อา",
+      "sec": 20,
+      "how_th": "เปลี่ยนจากสระอีเป็นอาบนโน้ตเดียว โดยไม่เกร็งคอ"
+     }
+    ],
+    "count": 4,
+    "total_sec": 100,
+    "headline_th": "วอร์มอัพ 4 ท่า · 100 วินาที",
+    "disclaimer_th": "วอร์มอัพเบา ๆ ถ้าเจ็บคอให้หยุด"
+   }
+  },
+  {
+   "def": "WarmupItem",
+   "note": "lip_trill",
+   "value": {
+    "key": "lip_trill",
+    "id": "wu01",
+    "name_th": "ลิปทริลล์",
+    "sec": 30,
+    "how_th": "ปิดปากเบา ๆ แล้วเป่าลมให้ริมฝีปากสั่น เลื่อนเสียงขึ้นลงช้า ๆ"
+   }
+  },
+  {
+   "def": "WarmupItem",
+   "note": "siren",
+   "value": {
+    "key": "siren",
+    "id": "wu02",
+    "name_th": "ไซเรนฮัม",
+    "sec": 30,
+    "how_th": "ฮัมจากเสียงต่ำไปสูงแล้วกลับลง เหมือนไซเรน คอยผ่อน"
+   }
+  },
+  {
+   "def": "WarmupItem",
+   "note": "hum_five",
+   "value": {
+    "key": "hum_five",
+    "id": "wu03",
+    "name_th": "ฮัมโด–ซอล",
+    "sec": 20,
+    "how_th": "ฮัมโน้ตหลักแล้วกระโดดขึ้นช่วงห้า แล้วกลับมา"
+   }
+  },
+  {
+   "def": "WarmupItem",
+   "note": "vowel_slide",
+   "value": {
+    "key": "vowel_slide",
+    "id": "wu04",
+    "name_th": "ลากสระอี–อา",
+    "sec": 20,
+    "how_th": "เปลี่ยนจากสระอีเป็นอาบนโน้ตเดียว โดยไม่เกร็งคอ"
+   }
+  },
+  {
+   "def": "WarmupSet",
+   "note": "subset",
+   "value": {
+    "items": [
+     {
+      "key": "lip_trill",
+      "id": "wu01",
+      "name_th": "ลิปทริลล์",
+      "sec": 30,
+      "how_th": "ปิดปากเบา ๆ แล้วเป่าลมให้ริมฝีปากสั่น เลื่อนเสียงขึ้นลงช้า ๆ"
+     },
+     {
+      "key": "hum_five",
+      "id": "wu03",
+      "name_th": "ฮัมโด–ซอล",
+      "sec": 20,
+      "how_th": "ฮัมโน้ตหลักแล้วกระโดดขึ้นช่วงห้า แล้วกลับมา"
+     }
+    ],
+    "count": 2,
+    "total_sec": 50,
+    "headline_th": "วอร์มอัพ 2 ท่า · 50 วินาที",
+    "disclaimer_th": "วอร์มอัพเบา ๆ ถ้าเจ็บคอให้หยุด"
+   }
+  },
+  {
+   "def": "DuetBattle",
+   "note": "tom wins",
+   "value": {
+    "name_a": "พี่ต้อม",
+    "score_a": 79,
+    "name_b": "น้องนีน่า",
+    "score_b": 72,
+    "verdict": "a",
+    "winner": "พี่ต้อม",
+    "margin": 7,
+    "headline_th": "พี่ต้อม นำ 7 แต้ม",
+    "disclaimer_th": "เป็นการ์ดแข่งสนุกจากคะแนนฝึก ไม่ใช่การประกวดจริง"
+   }
+  },
+  {
+   "def": "DuetBattle",
+   "note": "tie",
+   "value": {
+    "name_a": "พี่ต้อม",
+    "score_a": 80,
+    "name_b": "น้องนีน่า",
+    "score_b": 80,
+    "verdict": "tie",
+    "winner": null,
+    "margin": 0,
+    "headline_th": "เสมอกัน ทั้งคู่ฝึกต่อได้",
+    "disclaimer_th": "เป็นการ์ดแข่งสนุกจากคะแนนฝึก ไม่ใช่การประกวดจริง"
+   }
+  },
+  {
+   "def": "DuetBattle",
+   "note": "nina",
+   "value": {
+    "name_a": "พี่ต้อม",
+    "score_a": 60,
+    "name_b": "น้องนีน่า",
+    "score_b": 88,
+    "verdict": "b",
+    "winner": "น้องนีน่า",
+    "margin": 28,
+    "headline_th": "น้องนีน่า นำ 28 แต้ม",
+    "disclaimer_th": "เป็นการ์ดแข่งสนุกจากคะแนนฝึก ไม่ใช่การประกวดจริง"
+   }
+  },
+  {
+   "def": "PracticeLog",
+   "note": "two",
+   "value": {
+    "rows": [
+     {
+      "date": "2026-12-02",
+      "exercise": "scale_run_c",
+      "name_th": "สเกลรันบันไดเสียง C",
+      "combined": 79,
+      "feeling": "ok"
+     },
+     {
+      "date": "2026-12-02",
+      "exercise": "vowel_hold",
+      "name_th": "ลากสระอา",
+      "combined": 90,
+      "feeling": "easy"
+     }
+    ],
+    "count": 2,
+    "best": 90,
+    "headline_th": "ฝึก 2 ครั้ง · คะแนนดีสุด 90"
+   }
+  },
+  {
+   "def": "LogRow",
+   "note": "scale_run_c",
+   "value": {
+    "date": "2026-12-02",
+    "exercise": "scale_run_c",
+    "name_th": "สเกลรันบันไดเสียง C",
+    "combined": 79,
+    "feeling": "ok"
+   }
+  },
+  {
+   "def": "LogRow",
+   "note": "vowel_hold",
+   "value": {
+    "date": "2026-12-02",
+    "exercise": "vowel_hold",
+    "name_th": "ลากสระอา",
+    "combined": 90,
+    "feeling": "easy"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "tom",
+   "value": {
+    "title_th": "SingScore — พี่ต้อม",
+    "headline_th": "คะแนนรวม 79 · เสียง 82 · จังหวะ 74",
+    "hook_th": "ร้องคาราโอเกะให้คะแนน + โค้ชเสียง",
+    "combined": 79,
+    "pitch": 82,
+    "timing": 74,
+    "key_th": "คีย์ C major · สเกลรันบันไดเสียง C",
+    "layout": "sing_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with SingScore · practice only, no bundled lyrics",
+    "cta_th": "คอมเมนต์ SING รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "no key",
+   "value": {
+    "title_th": "SingScore — พี่ต้อม",
+    "headline_th": "คะแนนรวม 79 · เสียง 82 · จังหวะ 74",
+    "hook_th": "ร้องคาราโอเกะให้คะแนน + โค้ชเสียง",
+    "combined": 79,
+    "pitch": 82,
+    "timing": 74,
+    "key_th": null,
+    "layout": "sing_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with SingScore · practice only, no bundled lyrics",
+    "cta_th": "คอมเมนต์ SING รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exh",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "throat",
+   "value": {
+    "level": "stop",
+    "message_th": "หยุดร้องถ้าเจ็บคอหรือฝืนเสียง แล้วพักน้ำ SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "strain",
+   "value": {
+    "level": "stop",
+    "message_th": "หยุดร้องถ้าเจ็บคอหรือฝืนเสียง แล้วพักน้ำ SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c0-m0",
+   "value": {
+    "ok": true,
+    "pitch": 100,
+    "timing": 100,
+    "combined": 100,
+    "band": "great",
+    "cents": 0,
+    "ms": 0,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 100 · เสียง 100 · จังหวะ 100",
+    "message_th": "ใกล้เคียงมาก คงจังหวะนี้ไว้",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c0-m20",
+   "value": {
+    "ok": true,
+    "pitch": 100,
+    "timing": 90,
+    "combined": 96,
+    "band": "great",
+    "cents": 0,
+    "ms": 20,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 96 · เสียง 100 · จังหวะ 90",
+    "message_th": "ใกล้เคียงมาก คงจังหวะนี้ไว้",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c0-m52",
+   "value": {
+    "ok": true,
+    "pitch": 100,
+    "timing": 74,
+    "combined": 90,
+    "band": "great",
+    "cents": 0,
+    "ms": 52,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 90 · เสียง 100 · จังหวะ 74",
+    "message_th": "ใกล้เคียงมาก คงจังหวะนี้ไว้",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c0-m80",
+   "value": {
+    "ok": true,
+    "pitch": 100,
+    "timing": 60,
+    "combined": 84,
+    "band": "good",
+    "cents": 0,
+    "ms": 80,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 84 · เสียง 100 · จังหวะ 60",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c8-m0",
+   "value": {
+    "ok": true,
+    "pitch": 96,
+    "timing": 100,
+    "combined": 98,
+    "band": "great",
+    "cents": 8,
+    "ms": 0,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 98 · เสียง 96 · จังหวะ 100",
+    "message_th": "ใกล้เคียงมาก คงจังหวะนี้ไว้",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c8-m20",
+   "value": {
+    "ok": true,
+    "pitch": 96,
+    "timing": 90,
+    "combined": 94,
+    "band": "great",
+    "cents": 8,
+    "ms": 20,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 94 · เสียง 96 · จังหวะ 90",
+    "message_th": "ใกล้เคียงมาก คงจังหวะนี้ไว้",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c8-m52",
+   "value": {
+    "ok": true,
+    "pitch": 96,
+    "timing": 74,
+    "combined": 87,
+    "band": "great",
+    "cents": 8,
+    "ms": 52,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 87 · เสียง 96 · จังหวะ 74",
+    "message_th": "ใกล้เคียงมาก คงจังหวะนี้ไว้",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c8-m80",
+   "value": {
+    "ok": true,
+    "pitch": 96,
+    "timing": 60,
+    "combined": 82,
+    "band": "good",
+    "cents": 8,
+    "ms": 80,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 82 · เสียง 96 · จังหวะ 60",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c24-m0",
+   "value": {
+    "ok": true,
+    "pitch": 88,
+    "timing": 100,
+    "combined": 93,
+    "band": "great",
+    "cents": 24,
+    "ms": 0,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 93 · เสียง 88 · จังหวะ 100",
+    "message_th": "ใกล้เคียงมาก คงจังหวะนี้ไว้",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c24-m20",
+   "value": {
+    "ok": true,
+    "pitch": 88,
+    "timing": 90,
+    "combined": 89,
+    "band": "great",
+    "cents": 24,
+    "ms": 20,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 89 · เสียง 88 · จังหวะ 90",
+    "message_th": "ใกล้เคียงมาก คงจังหวะนี้ไว้",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c24-m52",
+   "value": {
+    "ok": true,
+    "pitch": 88,
+    "timing": 74,
+    "combined": 82,
+    "band": "good",
+    "cents": 24,
+    "ms": 52,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 82 · เสียง 88 · จังหวะ 74",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c24-m80",
+   "value": {
+    "ok": true,
+    "pitch": 88,
+    "timing": 60,
+    "combined": 77,
+    "band": "good",
+    "cents": 24,
+    "ms": 80,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 77 · เสียง 88 · จังหวะ 60",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c36-m0",
+   "value": {
+    "ok": true,
+    "pitch": 82,
+    "timing": 100,
+    "combined": 89,
+    "band": "great",
+    "cents": 36,
+    "ms": 0,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 89 · เสียง 82 · จังหวะ 100",
+    "message_th": "ใกล้เคียงมาก คงจังหวะนี้ไว้",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c36-m20",
+   "value": {
+    "ok": true,
+    "pitch": 82,
+    "timing": 90,
+    "combined": 85,
+    "band": "great",
+    "cents": 36,
+    "ms": 20,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 85 · เสียง 82 · จังหวะ 90",
+    "message_th": "ใกล้เคียงมาก คงจังหวะนี้ไว้",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c36-m52",
+   "value": {
+    "ok": true,
+    "pitch": 82,
+    "timing": 74,
+    "combined": 79,
+    "band": "good",
+    "cents": 36,
+    "ms": 52,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 79 · เสียง 82 · จังหวะ 74",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c36-m80",
+   "value": {
+    "ok": true,
+    "pitch": 82,
+    "timing": 60,
+    "combined": 73,
+    "band": "good",
+    "cents": 36,
+    "ms": 80,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 73 · เสียง 82 · จังหวะ 60",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c48-m0",
+   "value": {
+    "ok": true,
+    "pitch": 76,
+    "timing": 100,
+    "combined": 86,
+    "band": "great",
+    "cents": 48,
+    "ms": 0,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 86 · เสียง 76 · จังหวะ 100",
+    "message_th": "ใกล้เคียงมาก คงจังหวะนี้ไว้",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c48-m20",
+   "value": {
+    "ok": true,
+    "pitch": 76,
+    "timing": 90,
+    "combined": 82,
+    "band": "good",
+    "cents": 48,
+    "ms": 20,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 82 · เสียง 76 · จังหวะ 90",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c48-m52",
+   "value": {
+    "ok": true,
+    "pitch": 76,
+    "timing": 74,
+    "combined": 75,
+    "band": "good",
+    "cents": 48,
+    "ms": 52,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 75 · เสียง 76 · จังหวะ 74",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c48-m80",
+   "value": {
+    "ok": true,
+    "pitch": 76,
+    "timing": 60,
+    "combined": 70,
+    "band": "good",
+    "cents": 48,
+    "ms": 80,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 70 · เสียง 76 · จังหวะ 60",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c70-m0",
+   "value": {
+    "ok": true,
+    "pitch": 65,
+    "timing": 100,
+    "combined": 79,
+    "band": "good",
+    "cents": 70,
+    "ms": 0,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 79 · เสียง 65 · จังหวะ 100",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c70-m20",
+   "value": {
+    "ok": true,
+    "pitch": 65,
+    "timing": 90,
+    "combined": 75,
+    "band": "good",
+    "cents": 70,
+    "ms": 20,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 75 · เสียง 65 · จังหวะ 90",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c70-m52",
+   "value": {
+    "ok": true,
+    "pitch": 65,
+    "timing": 74,
+    "combined": 69,
+    "band": "ok",
+    "cents": 70,
+    "ms": 52,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 69 · เสียง 65 · จังหวะ 74",
+    "message_th": "ผ่านเบื้องต้น ลองวอร์มอัพแล้วย้อนสเกลอีกครั้ง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c70-m80",
+   "value": {
+    "ok": true,
+    "pitch": 65,
+    "timing": 60,
+    "combined": 63,
+    "band": "ok",
+    "cents": 70,
+    "ms": 80,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 63 · เสียง 65 · จังหวะ 60",
+    "message_th": "ผ่านเบื้องต้น ลองวอร์มอัพแล้วย้อนสเกลอีกครั้ง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c90-m0",
+   "value": {
+    "ok": true,
+    "pitch": 55,
+    "timing": 100,
+    "combined": 73,
+    "band": "good",
+    "cents": 90,
+    "ms": 0,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 73 · เสียง 55 · จังหวะ 100",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c90-m20",
+   "value": {
+    "ok": true,
+    "pitch": 55,
+    "timing": 90,
+    "combined": 69,
+    "band": "ok",
+    "cents": 90,
+    "ms": 20,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 69 · เสียง 55 · จังหวะ 90",
+    "message_th": "ผ่านเบื้องต้น ลองวอร์มอัพแล้วย้อนสเกลอีกครั้ง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c90-m52",
+   "value": {
+    "ok": true,
+    "pitch": 55,
+    "timing": 74,
+    "combined": 63,
+    "band": "ok",
+    "cents": 90,
+    "ms": 52,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 63 · เสียง 55 · จังหวะ 74",
+    "message_th": "ผ่านเบื้องต้น ลองวอร์มอัพแล้วย้อนสเกลอีกครั้ง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c90-m80",
+   "value": {
+    "ok": true,
+    "pitch": 55,
+    "timing": 60,
+    "combined": 57,
+    "band": "ok",
+    "cents": 90,
+    "ms": 80,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 57 · เสียง 55 · จังหวะ 60",
+    "message_th": "ผ่านเบื้องต้น ลองวอร์มอัพแล้วย้อนสเกลอีกครั้ง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c110-m0",
+   "value": {
+    "ok": true,
+    "pitch": 45,
+    "timing": 100,
+    "combined": 67,
+    "band": "ok",
+    "cents": 110,
+    "ms": 0,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 67 · เสียง 45 · จังหวะ 100",
+    "message_th": "ผ่านเบื้องต้น ลองวอร์มอัพแล้วย้อนสเกลอีกครั้ง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c110-m20",
+   "value": {
+    "ok": true,
+    "pitch": 45,
+    "timing": 90,
+    "combined": 63,
+    "band": "ok",
+    "cents": 110,
+    "ms": 20,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 63 · เสียง 45 · จังหวะ 90",
+    "message_th": "ผ่านเบื้องต้น ลองวอร์มอัพแล้วย้อนสเกลอีกครั้ง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c110-m52",
+   "value": {
+    "ok": true,
+    "pitch": 45,
+    "timing": 74,
+    "combined": 57,
+    "band": "ok",
+    "cents": 110,
+    "ms": 52,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 57 · เสียง 45 · จังหวะ 74",
+    "message_th": "ผ่านเบื้องต้น ลองวอร์มอัพแล้วย้อนสเกลอีกครั้ง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c110-m80",
+   "value": {
+    "ok": true,
+    "pitch": 45,
+    "timing": 60,
+    "combined": 51,
+    "band": "ok",
+    "cents": 110,
+    "ms": 80,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 51 · เสียง 45 · จังหวะ 60",
+    "message_th": "ผ่านเบื้องต้น ลองวอร์มอัพแล้วย้อนสเกลอีกครั้ง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c160-m0",
+   "value": {
+    "ok": true,
+    "pitch": 20,
+    "timing": 100,
+    "combined": 52,
+    "band": "ok",
+    "cents": 160,
+    "ms": 0,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 52 · เสียง 20 · จังหวะ 100",
+    "message_th": "ผ่านเบื้องต้น ลองวอร์มอัพแล้วย้อนสเกลอีกครั้ง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c160-m20",
+   "value": {
+    "ok": true,
+    "pitch": 20,
+    "timing": 90,
+    "combined": 48,
+    "band": "try_again",
+    "cents": 160,
+    "ms": 20,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 48 · เสียง 20 · จังหวะ 90",
+    "message_th": "ยังหลุดค่อนข้างมาก ลองฮัมเบา ๆ ช้าลง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c160-m52",
+   "value": {
+    "ok": true,
+    "pitch": 20,
+    "timing": 74,
+    "combined": 42,
+    "band": "try_again",
+    "cents": 160,
+    "ms": 52,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 42 · เสียง 20 · จังหวะ 74",
+    "message_th": "ยังหลุดค่อนข้างมาก ลองฮัมเบา ๆ ช้าลง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c160-m80",
+   "value": {
+    "ok": true,
+    "pitch": 20,
+    "timing": 60,
+    "combined": 36,
+    "band": "try_again",
+    "cents": 160,
+    "ms": 80,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 36 · เสียง 20 · จังหวะ 60",
+    "message_th": "ยังหลุดค่อนข้างมาก ลองฮัมเบา ๆ ช้าลง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c200-m0",
+   "value": {
+    "ok": true,
+    "pitch": 0,
+    "timing": 100,
+    "combined": 40,
+    "band": "try_again",
+    "cents": 200,
+    "ms": 0,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 40 · เสียง 0 · จังหวะ 100",
+    "message_th": "ยังหลุดค่อนข้างมาก ลองฮัมเบา ๆ ช้าลง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c200-m20",
+   "value": {
+    "ok": true,
+    "pitch": 0,
+    "timing": 90,
+    "combined": 36,
+    "band": "try_again",
+    "cents": 200,
+    "ms": 20,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 36 · เสียง 0 · จังหวะ 90",
+    "message_th": "ยังหลุดค่อนข้างมาก ลองฮัมเบา ๆ ช้าลง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c200-m52",
+   "value": {
+    "ok": true,
+    "pitch": 0,
+    "timing": 74,
+    "combined": 30,
+    "band": "try_again",
+    "cents": 200,
+    "ms": 52,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 30 · เสียง 0 · จังหวะ 74",
+    "message_th": "ยังหลุดค่อนข้างมาก ลองฮัมเบา ๆ ช้าลง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "c200-m80",
+   "value": {
+    "ok": true,
+    "pitch": 0,
+    "timing": 60,
+    "combined": 24,
+    "band": "try_again",
+    "cents": 200,
+    "ms": 80,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 24 · เสียง 0 · จังหวะ 60",
+    "message_th": "ยังหลุดค่อนข้างมาก ลองฮัมเบา ๆ ช้าลง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "PracticeLog",
+   "note": "log scale_run_c",
+   "value": {
+    "rows": [
+     {
+      "date": "2026-12-02",
+      "exercise": "scale_run_c",
+      "name_th": "สเกลรันบันไดเสียง C",
+      "combined": 70,
+      "feeling": "ok"
+     }
+    ],
+    "count": 1,
+    "best": 70,
+    "headline_th": "ฝึก 1 ครั้ง · คะแนนดีสุด 70"
+   }
+  },
+  {
+   "def": "PracticeLog",
+   "note": "log scale_run_g",
+   "value": {
+    "rows": [
+     {
+      "date": "2026-12-02",
+      "exercise": "scale_run_g",
+      "name_th": "สเกลรันบันไดเสียง G",
+      "combined": 70,
+      "feeling": "ok"
+     }
+    ],
+    "count": 1,
+    "best": 70,
+    "headline_th": "ฝึก 1 ครั้ง · คะแนนดีสุด 70"
+   }
+  },
+  {
+   "def": "PracticeLog",
+   "note": "log scale_run_f",
+   "value": {
+    "rows": [
+     {
+      "date": "2026-12-02",
+      "exercise": "scale_run_f",
+      "name_th": "สเกลรันบันไดเสียง F",
+      "combined": 70,
+      "feeling": "ok"
+     }
+    ],
+    "count": 1,
+    "best": 70,
+    "headline_th": "ฝึก 1 ครั้ง · คะแนนดีสุด 70"
+   }
+  },
+  {
+   "def": "PracticeLog",
+   "note": "log breath_pulse",
+   "value": {
+    "rows": [
+     {
+      "date": "2026-12-02",
+      "exercise": "breath_pulse",
+      "name_th": "พัลส์ลมหายใจ",
+      "combined": 70,
+      "feeling": "ok"
+     }
+    ],
+    "count": 1,
+    "best": 70,
+    "headline_th": "ฝึก 1 ครั้ง · คะแนนดีสุด 70"
+   }
+  },
+  {
+   "def": "PracticeLog",
+   "note": "log hum_fifth",
+   "value": {
+    "rows": [
+     {
+      "date": "2026-12-02",
+      "exercise": "hum_fifth",
+      "name_th": "ฮัมช่วงห้า",
+      "combined": 70,
+      "feeling": "ok"
+     }
+    ],
+    "count": 1,
+    "best": 70,
+    "headline_th": "ฝึก 1 ครั้ง · คะแนนดีสุด 70"
+   }
+  },
+  {
+   "def": "PracticeLog",
+   "note": "log vowel_hold",
+   "value": {
+    "rows": [
+     {
+      "date": "2026-12-02",
+      "exercise": "vowel_hold",
+      "name_th": "ลากสระอา",
+      "combined": 70,
+      "feeling": "ok"
+     }
+    ],
+    "count": 1,
+    "best": 70,
+    "headline_th": "ฝึก 1 ครั้ง · คะแนนดีสุด 70"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "great",
+   "value": {
+    "ok": true,
+    "pitch": 95,
+    "timing": 95,
+    "combined": 95,
+    "band": "great",
+    "cents": 10,
+    "ms": 10,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 95 · เสียง 95 · จังหวะ 95",
+    "message_th": "ใกล้เคียงมาก คงจังหวะนี้ไว้",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "good70",
+   "value": {
+    "ok": true,
+    "pitch": 70,
+    "timing": 70,
+    "combined": 70,
+    "band": "good",
+    "cents": 60,
+    "ms": 60,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 70 · เสียง 70 · จังหวะ 70",
+    "message_th": "ดีแล้ว เกลาเสียงให้นิ่งขึ้นอีกนิด",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "ok50",
+   "value": {
+    "ok": true,
+    "pitch": 50,
+    "timing": 50,
+    "combined": 50,
+    "band": "ok",
+    "cents": 100,
+    "ms": 100,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 50 · เสียง 50 · จังหวะ 50",
+    "message_th": "ผ่านเบื้องต้น ลองวอร์มอัพแล้วย้อนสเกลอีกครั้ง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  },
+  {
+   "def": "Score",
+   "note": "retry",
+   "value": {
+    "ok": true,
+    "pitch": 40,
+    "timing": 40,
+    "combined": 40,
+    "band": "try_again",
+    "cents": 120,
+    "ms": 120,
+    "exercise": "scale_run_c",
+    "headline_th": "คะแนนรวม 40 · เสียง 40 · จังหวะ 40",
+    "message_th": "ยังหลุดค่อนข้างมาก ลองฮัมเบา ๆ ช้าลง",
+    "disclaimer_th": "SingScore เป็นคะแนนฝึกซ้อมจากระดับเสียงและจังหวะ ไม่ใช่ครูสอนร้องและไม่ใช่แพทย์ แพ็กนี้ไม่มีเนื้อเพลงลิขสิทธิ์ ผู้ใช้ต้องใช้เสียงฮัมหรือแทร็กของตนเอง และอย่าร้องจนเจ็บคอ"
+   }
+  }
+ ]
+}
