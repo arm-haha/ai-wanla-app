@@ -1,0 +1,1460 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "น้องมิ้น",
+   "value": {
+    "id": "u01",
+    "name_th": "น้องมิ้น",
+    "name_en": "Mint",
+    "age": 27,
+    "city_th": "กรุงเทพฯ",
+    "goal_id": "japan_trip",
+    "goal_th": "เที่ยวญี่ปุ่น",
+    "goal_thb": 45000,
+    "saved_thb": 18900,
+    "start": "2026-03-03",
+    "deadline": "2026-12-03",
+    "week": 18,
+    "base_thb": 100,
+    "seed": "u01-2026"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่บี",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่บี",
+    "name_en": "Bee",
+    "age": 32,
+    "city_th": "เชียงใหม่",
+    "goal_id": "emergency",
+    "goal_th": "กองฉุกเฉิน 3 เดือน",
+    "goal_thb": 30000,
+    "saved_thb": 22500,
+    "start": "2026-06-01",
+    "deadline": "2026-12-31",
+    "week": 26,
+    "base_thb": 50,
+    "seed": "u02-2026"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องอาร์ม",
+   "value": {
+    "id": "u03",
+    "name_th": "น้องอาร์ม",
+    "name_en": "Arm",
+    "age": 23,
+    "city_th": "ขอนแก่น",
+    "goal_id": "gadget",
+    "goal_th": "Gadgets ที่ตั้งใจซื้อ",
+    "goal_thb": 15000,
+    "saved_thb": 12000,
+    "start": "2026-09-01",
+    "deadline": "2026-12-20",
+    "week": 14,
+    "base_thb": 100,
+    "seed": "u03-2026"
+   }
+  },
+  {
+   "def": "GoalPhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.1,
+    "blur": 0.1,
+    "crop": 0.1,
+    "goal_id": "japan_trip"
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": []
+    },
+    "goal_id": "japan_trip"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "steps": [
+     "goal_photo",
+     "jar_fill",
+     "plan",
+     "challenge",
+     "milestone"
+    ]
+   }
+  },
+  {
+   "def": "GoalPhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.18,
+    "blur": 0.12,
+    "crop": 0.16,
+    "goal_id": "emergency"
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "quality": {
+     "score": 85,
+     "ok": true,
+     "tips_th": []
+    },
+    "goal_id": "emergency"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "steps": [
+     "goal_photo",
+     "jar_fill",
+     "plan",
+     "challenge",
+     "milestone"
+    ]
+   }
+  },
+  {
+   "def": "GoalPhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.2,
+    "blur": 0.15,
+    "crop": 0.12,
+    "goal_id": "gadget"
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "quality": {
+     "score": 84,
+     "ok": true,
+     "tips_th": []
+    },
+    "goal_id": "gadget"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "steps": [
+     "goal_photo",
+     "jar_fill",
+     "plan",
+     "challenge",
+     "milestone"
+    ]
+   }
+  },
+  {
+   "def": "GoalPhoto",
+   "note": "p04",
+   "value": {
+    "id": "p04",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.62,
+    "blur": 0.48,
+    "crop": 0.55,
+    "goal_id": "concert"
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "quality": {
+     "score": 46,
+     "ok": false,
+     "tips_th": [
+      "รูปสะท้อนแสง ถ่ายใหม่ในที่ร่มหรือหันจากหน้าต่าง",
+      "ภาพเบลอ ถือนิ่งแล้วถ่ายอีกครั้ง",
+      "เป้าหมายในรูปถูกตัด จัดให้อยู่กลางกรอบ"
+     ]
+    },
+    "goal_id": "concert"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "steps": [
+     "goal_photo",
+     "deglare",
+     "recrop",
+     "jar_fill",
+     "plan",
+     "challenge",
+     "milestone"
+    ]
+   }
+  },
+  {
+   "def": "GoalPhoto",
+   "note": "p05",
+   "value": {
+    "id": "p05",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.15,
+    "blur": 0.1,
+    "crop": 0.1,
+    "goal_id": "tuition"
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": []
+    },
+    "goal_id": "tuition"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "steps": [
+     "goal_photo",
+     "jar_fill",
+     "plan",
+     "challenge",
+     "milestone"
+    ]
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "bad photo",
+   "value": {
+    "score": 46,
+    "ok": false,
+    "tips_th": [
+     "รูปสะท้อนแสง ถ่ายใหม่ในที่ร่มหรือหันจากหน้าต่าง",
+     "ภาพเบลอ ถือนิ่งแล้วถ่ายอีกครั้ง",
+     "เป้าหมายในรูปถูกตัด จัดให้อยู่กลางกรอบ"
+    ]
+   }
+  },
+  {
+   "def": "GoalInfo",
+   "note": "japan_trip",
+   "value": {
+    "id": "g01",
+    "goal_id": "japan_trip",
+    "name_th": "เที่ยวญี่ปุ่น",
+    "name_en": "Japan trip",
+    "icon": "fuji",
+    "hint_th": "เก็บให้ครบก่อนจองตั๋ว และเผื่อค่าเดินทางอีกนิด",
+    "sample_thb": 45000
+   }
+  },
+  {
+   "def": "GoalInfo",
+   "note": "emergency",
+   "value": {
+    "id": "g02",
+    "goal_id": "emergency",
+    "name_th": "กองฉุกเฉิน 3 เดือน",
+    "name_en": "Emergency fund",
+    "icon": "shield",
+    "hint_th": "เก็บแยกต่างหาก อย่าหยิบมาใช้กับของอยากได้",
+    "sample_thb": 30000
+   }
+  },
+  {
+   "def": "GoalInfo",
+   "note": "gadget",
+   "value": {
+    "id": "g03",
+    "goal_id": "gadget",
+    "name_th": "Gadgets ที่ตั้งใจซื้อ",
+    "name_en": "Gadget",
+    "icon": "phone",
+    "hint_th": "ตั้งเป้าตามราคาจริง รวมเคสและประกัน",
+    "sample_thb": 15000
+   }
+  },
+  {
+   "def": "GoalInfo",
+   "note": "wedding",
+   "value": {
+    "id": "g04",
+    "goal_id": "wedding",
+    "name_th": "งานแต่งงาน",
+    "name_en": "Wedding",
+    "icon": "ring",
+    "hint_th": "แยกงบของชำร่วย ชุด และสถานที่ จะได้เห็นชัด",
+    "sample_thb": 150000
+   }
+  },
+  {
+   "def": "GoalInfo",
+   "note": "tuition",
+   "value": {
+    "id": "g05",
+    "goal_id": "tuition",
+    "name_th": "ค่าเทอม / คอร์ส",
+    "name_en": "Tuition",
+    "icon": "book",
+    "hint_th": "นับจากวันปิดรับสมัคร จะได้ไม่เก็บไม่ทัน",
+    "sample_thb": 25000
+   }
+  },
+  {
+   "def": "GoalInfo",
+   "note": "down_payment",
+   "value": {
+    "id": "g06",
+    "goal_id": "down_payment",
+    "name_th": "ดาวน์รถ / ดาวน์บ้าน",
+    "name_en": "Down payment",
+    "icon": "key",
+    "hint_th": "อย่านับเงินกู้เป็นเงินออม และเผื่อค่าธรรมเนียม",
+    "sample_thb": 80000
+   }
+  },
+  {
+   "def": "GoalInfo",
+   "note": "concert",
+   "value": {
+    "id": "g07",
+    "goal_id": "concert",
+    "name_th": "ตั๋วคอนเสิร์ต",
+    "name_en": "Concert ticket",
+    "icon": "ticket",
+    "hint_th": "เผื่องบเดินทางและของที่ระลึกด้วย",
+    "sample_thb": 8000
+   }
+  },
+  {
+   "def": "JarFill",
+   "note": "น้องมิ้น",
+   "value": {
+    "saved_thb": 18900,
+    "goal_thb": 45000,
+    "remaining_thb": 26100,
+    "pct": 42,
+    "level": "growing",
+    "label_th": "กระปุกกำลังโต",
+    "headline_th": "กระปุกโตถึง 42%"
+   }
+  },
+  {
+   "def": "Milestones",
+   "note": "น้องมิ้น",
+   "value": {
+    "pct": 42,
+    "reached": [
+     25
+    ],
+    "next_mark": 50,
+    "next_amount_thb": 22500,
+    "need_thb": 3600,
+    "message_th": "อีก ฿3,600 จะถึงไมล์สโตน 50%"
+   }
+  },
+  {
+   "def": "Week52Plan",
+   "note": "น้องมิ้น",
+   "value": {
+    "kind": "week52",
+    "week": 18,
+    "base_thb": 100,
+    "amount_thb": 1800,
+    "cumulative_thb": 17100,
+    "plan_total_thb": 137800,
+    "label_th": "สัปดาห์ที่ 18 ออม ฿1800"
+   }
+  },
+  {
+   "def": "RandomPlan",
+   "note": "น้องมิ้น",
+   "value": {
+    "kind": "random",
+    "week": 18,
+    "base_thb": 100,
+    "seed": "u01-2026",
+    "multiplier": 38,
+    "amount_thb": 3800,
+    "cumulative_thb": 50200,
+    "plan_total_thb": 137800,
+    "label_th": "สุ่มสัปดาห์ที่ 18 ได้ตัวคูณ 38 ออม ฿3800"
+   }
+  },
+  {
+   "def": "JarFill",
+   "note": "พี่บี",
+   "value": {
+    "saved_thb": 22500,
+    "goal_thb": 30000,
+    "remaining_thb": 7500,
+    "pct": 75,
+    "level": "almost",
+    "label_th": "อีกนิดก็เต็ม",
+    "headline_th": "กระปุกโตถึง 75%"
+   }
+  },
+  {
+   "def": "Milestones",
+   "note": "พี่บี",
+   "value": {
+    "pct": 75,
+    "reached": [
+     25,
+     50,
+     75
+    ],
+    "next_mark": 100,
+    "next_amount_thb": 30000,
+    "need_thb": 7500,
+    "message_th": "อีก ฿7,500 จะถึงไมล์สโตน 100%"
+   }
+  },
+  {
+   "def": "Week52Plan",
+   "note": "พี่บี",
+   "value": {
+    "kind": "week52",
+    "week": 26,
+    "base_thb": 50,
+    "amount_thb": 1300,
+    "cumulative_thb": 17550,
+    "plan_total_thb": 68900,
+    "label_th": "สัปดาห์ที่ 26 ออม ฿1300"
+   }
+  },
+  {
+   "def": "RandomPlan",
+   "note": "พี่บี",
+   "value": {
+    "kind": "random",
+    "week": 26,
+    "base_thb": 50,
+    "seed": "u02-2026",
+    "multiplier": 11,
+    "amount_thb": 550,
+    "cumulative_thb": 35750,
+    "plan_total_thb": 68900,
+    "label_th": "สุ่มสัปดาห์ที่ 26 ได้ตัวคูณ 11 ออม ฿550"
+   }
+  },
+  {
+   "def": "JarFill",
+   "note": "น้องอาร์ม",
+   "value": {
+    "saved_thb": 12000,
+    "goal_thb": 15000,
+    "remaining_thb": 3000,
+    "pct": 80,
+    "level": "almost",
+    "label_th": "อีกนิดก็เต็ม",
+    "headline_th": "กระปุกโตถึง 80%"
+   }
+  },
+  {
+   "def": "Milestones",
+   "note": "น้องอาร์ม",
+   "value": {
+    "pct": 80,
+    "reached": [
+     25,
+     50,
+     75
+    ],
+    "next_mark": 100,
+    "next_amount_thb": 15000,
+    "need_thb": 3000,
+    "message_th": "อีก ฿3,000 จะถึงไมล์สโตน 100%"
+   }
+  },
+  {
+   "def": "Week52Plan",
+   "note": "น้องอาร์ม",
+   "value": {
+    "kind": "week52",
+    "week": 14,
+    "base_thb": 100,
+    "amount_thb": 1400,
+    "cumulative_thb": 10500,
+    "plan_total_thb": 137800,
+    "label_th": "สัปดาห์ที่ 14 ออม ฿1400"
+   }
+  },
+  {
+   "def": "RandomPlan",
+   "note": "น้องอาร์ม",
+   "value": {
+    "kind": "random",
+    "week": 14,
+    "base_thb": 100,
+    "seed": "u03-2026",
+    "multiplier": 8,
+    "amount_thb": 800,
+    "cumulative_thb": 31100,
+    "plan_total_thb": 137800,
+    "label_th": "สุ่มสัปดาห์ที่ 14 ได้ตัวคูณ 8 ออม ฿800"
+   }
+  },
+  {
+   "def": "JarFill",
+   "note": "empty",
+   "value": {
+    "saved_thb": 0,
+    "goal_thb": 45000,
+    "remaining_thb": 45000,
+    "pct": 0,
+    "level": "empty",
+    "label_th": "แทบยังไม่เริ่ม",
+    "headline_th": "กระปุกโตถึง 0%"
+   }
+  },
+  {
+   "def": "JarFill",
+   "note": "full",
+   "value": {
+    "saved_thb": 45000,
+    "goal_thb": 45000,
+    "remaining_thb": 0,
+    "pct": 100,
+    "level": "full",
+    "label_th": "เต็มเป้าแล้ว",
+    "headline_th": "กระปุกเต็มเป้าแล้ว"
+   }
+  },
+  {
+   "def": "Milestones",
+   "note": "done",
+   "value": {
+    "pct": 100,
+    "reached": [
+     25,
+     50,
+     75,
+     100
+    ],
+    "next_mark": null,
+    "next_amount_thb": null,
+    "need_thb": null,
+    "message_th": "ถึงเป้าแล้ว ฉลองด้วยการ์ดแชร์ได้เลย"
+   }
+  },
+  {
+   "def": "Week52Plan",
+   "note": "week 1",
+   "value": {
+    "kind": "week52",
+    "week": 1,
+    "base_thb": 100,
+    "amount_thb": 100,
+    "cumulative_thb": 100,
+    "plan_total_thb": 137800,
+    "label_th": "สัปดาห์ที่ 1 ออม ฿100"
+   }
+  },
+  {
+   "def": "Week52Plan",
+   "note": "week 52",
+   "value": {
+    "kind": "week52",
+    "week": 52,
+    "base_thb": 100,
+    "amount_thb": 5200,
+    "cumulative_thb": 137800,
+    "plan_total_thb": 137800,
+    "label_th": "สัปดาห์ที่ 52 ออม ฿5200"
+   }
+  },
+  {
+   "def": "Challenge",
+   "note": "mint today",
+   "value": {
+    "id": "c03",
+    "name_th": "งดเดลิเวอรี่",
+    "save_thb": 120,
+    "xp": 15,
+    "hint_th": "ค่าส่งกับขั้นต่ำทำให้แพงกว่าที่คิด",
+    "date": "2026-12-03",
+    "suggested": true
+   }
+  },
+  {
+   "def": "Challenge",
+   "note": "bee today",
+   "value": {
+    "id": "c04",
+    "name_th": "เดินแทนแกร็บระยะใกล้",
+    "save_thb": 45,
+    "xp": 10,
+    "hint_th": "ระยะไม่เกิน 1 กม. เดินได้ถ้าปลอดภัย",
+    "date": "2026-12-03",
+    "suggested": true
+   }
+  },
+  {
+   "def": "CompletedChallenge",
+   "note": "skip_cafe",
+   "value": {
+    "id": "c01",
+    "challenge_id": "skip_cafe",
+    "name_th": "งดกาแฟร้าน",
+    "save_thb": 85,
+    "xp": 10,
+    "date": "2026-12-03",
+    "done": true,
+    "message_th": "สำเร็จ งดกาแฟร้าน เก็บได้ ฿85"
+   }
+  },
+  {
+   "def": "CompletedChallenge",
+   "note": "cook_home",
+   "value": {
+    "id": "c02",
+    "challenge_id": "cook_home",
+    "name_th": "ทำข้าวกล่องเอง",
+    "save_thb": 60,
+    "xp": 10,
+    "date": "2026-12-02",
+    "done": true,
+    "message_th": "สำเร็จ ทำข้าวกล่องเอง เก็บได้ ฿60"
+   }
+  },
+  {
+   "def": "CompletedChallenge",
+   "note": "no_delivery",
+   "value": {
+    "id": "c03",
+    "challenge_id": "no_delivery",
+    "name_th": "งดเดลิเวอรี่",
+    "save_thb": 120,
+    "xp": 15,
+    "date": "2026-12-03",
+    "done": true,
+    "message_th": "สำเร็จ งดเดลิเวอรี่ เก็บได้ ฿120"
+   }
+  },
+  {
+   "def": "CompletedChallenge",
+   "note": "walk_not_grab",
+   "value": {
+    "id": "c04",
+    "challenge_id": "walk_not_grab",
+    "name_th": "เดินแทนแกร็บระยะใกล้",
+    "save_thb": 45,
+    "xp": 10,
+    "date": "2026-12-01",
+    "done": true,
+    "message_th": "สำเร็จ เดินแทนแกร็บระยะใกล้ เก็บได้ ฿45"
+   }
+  },
+  {
+   "def": "CompletedChallenge",
+   "note": "pack_water",
+   "value": {
+    "id": "c05",
+    "challenge_id": "pack_water",
+    "name_th": "พกขวดน้ำ",
+    "save_thb": 20,
+    "xp": 5,
+    "date": "2026-11-30",
+    "done": true,
+    "message_th": "สำเร็จ พกขวดน้ำ เก็บได้ ฿20"
+   }
+  },
+  {
+   "def": "CompletedChallenge",
+   "note": "no_snack",
+   "value": {
+    "id": "c06",
+    "challenge_id": "no_snack",
+    "name_th": "งดขนมออฟฟิศ",
+    "save_thb": 35,
+    "xp": 5,
+    "date": "2026-11-29",
+    "done": true,
+    "message_th": "สำเร็จ งดขนมออฟฟิศ เก็บได้ ฿35"
+   }
+  },
+  {
+   "def": "CompletedChallenge",
+   "note": "unsubscribe",
+   "value": {
+    "id": "c07",
+    "challenge_id": "unsubscribe",
+    "name_th": "ยกเลิกสมาชิกที่ไม่ได้ใช้",
+    "save_thb": 149,
+    "xp": 20,
+    "date": "2026-11-28",
+    "done": true,
+    "message_th": "สำเร็จ ยกเลิกสมาชิกที่ไม่ได้ใช้ เก็บได้ ฿149"
+   }
+  },
+  {
+   "def": "CompletedChallenge",
+   "note": "market_not_mall",
+   "value": {
+    "id": "c08",
+    "challenge_id": "market_not_mall",
+    "name_th": "ซื้อของในตลาดแทนห้าง",
+    "save_thb": 80,
+    "xp": 10,
+    "date": "2026-11-27",
+    "done": true,
+    "message_th": "สำเร็จ ซื้อของในตลาดแทนห้าง เก็บได้ ฿80"
+   }
+  },
+  {
+   "def": "Streak",
+   "note": "mint 12",
+   "value": {
+    "days": 12,
+    "frozen_used": 0,
+    "badge_th": "ไฟลุก",
+    "today_saved": true,
+    "message_th": "สตรีค 12 วัน"
+   }
+  },
+  {
+   "def": "Streak",
+   "note": "bee freeze",
+   "value": {
+    "days": 7,
+    "frozen_used": 1,
+    "badge_th": "ไฟลุก",
+    "today_saved": true,
+    "message_th": "สตรีค 7 วัน"
+   }
+  },
+  {
+   "def": "Streak",
+   "note": "yesterday only",
+   "value": {
+    "days": 1,
+    "frozen_used": 0,
+    "badge_th": "กำลังเริ่ม",
+    "today_saved": false,
+    "message_th": "สตรีค 1 วัน"
+   }
+  },
+  {
+   "def": "Streak",
+   "note": "broken",
+   "value": {
+    "days": 0,
+    "frozen_used": 0,
+    "badge_th": "ยังไม่เริ่ม",
+    "today_saved": false,
+    "message_th": "ยังไม่มีสตรีค เริ่มออมวันนี้ได้เลย"
+   }
+  },
+  {
+   "def": "RoundUp",
+   "note": "87 to 90",
+   "value": {
+    "amount_thb": 87,
+    "step_thb": 10,
+    "extra_thb": 3,
+    "rounded_thb": 90
+   }
+  },
+  {
+   "def": "RoundUp",
+   "note": "exact",
+   "value": {
+    "amount_thb": 90,
+    "step_thb": 10,
+    "extra_thb": 0,
+    "rounded_thb": 90
+   }
+  },
+  {
+   "def": "RoundUp",
+   "note": "to 50",
+   "value": {
+    "amount_thb": 87,
+    "step_thb": 50,
+    "extra_thb": 13,
+    "rounded_thb": 100
+   }
+  },
+  {
+   "def": "TeamShare",
+   "note": "mint share",
+   "value": {
+    "name_th": "น้องมิ้น",
+    "amount_thb": 18900,
+    "pct": 42
+   }
+  },
+  {
+   "def": "TeamJar",
+   "note": "three friends",
+   "value": {
+    "goal_thb": 45000,
+    "saved_thb": 24000,
+    "remaining_thb": 21000,
+    "pct": 53,
+    "level": "halfway",
+    "members": [
+     {
+      "name_th": "น้องมิ้น",
+      "amount_thb": 18900,
+      "pct": 42
+     },
+     {
+      "name_th": "พี่บี",
+      "amount_thb": 3600,
+      "pct": 8
+     },
+     {
+      "name_th": "น้องอาร์ม",
+      "amount_thb": 1500,
+      "pct": 3
+     }
+    ],
+    "member_count": 3,
+    "headline_th": "กระปุกร่วม โตถึง 53%"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "mint 42",
+   "value": {
+    "title_th": "SaveQuest — น้องมิ้น",
+    "headline_th": "เที่ยวญี่ปุ่น · กระปุกโตถึง 42%",
+    "hook_th": "ออมเงินแบบเกม เห็นกระปุกโต",
+    "pct": 42,
+    "streak_days": 12,
+    "layout": "jar_milestone",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with SaveQuest · not a bank, not investment advice",
+    "cta_th": "คอมเมนต์ SAVE รับแพ็กฟรี · สตรีค 12 วัน"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "bee 75",
+   "value": {
+    "title_th": "SaveQuest — พี่บี",
+    "headline_th": "กองฉุกเฉิน 3 เดือน · กระปุกโตถึง 75%",
+    "hook_th": "ออมเงินแบบเกม เห็นกระปุกโต",
+    "pct": 75,
+    "streak_days": 7,
+    "layout": "jar_milestone",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with SaveQuest · not a bank, not investment advice",
+    "cta_th": "คอมเมนต์ SAVE รับแพ็กฟรี · สตรีค 7 วัน"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "SaveQuest เป็นเกมช่วยออมเงิน ไม่ใช่บัญชีธนาคาร ไม่ใช่คำแนะนำการลงทุน และไม่รับฝากเงินจริง จำนวนเงินในแอปเป็นค่าที่ผู้ใช้กรอกหรือค่าตัวอย่าง"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "stop",
+   "value": {
+    "level": "stop",
+    "message_th": "ยังตั้งเป้าไม่ได้ SaveQuest เป็นเกมช่วยออมเงิน ไม่ใช่บัญชีธนาคาร ไม่ใช่คำแนะนำการลงทุน และไม่รับฝากเงินจริง จำนวนเงินในแอปเป็นค่าที่ผู้ใช้กรอกหรือค่าตัวอย่าง"
+   }
+  },
+  {
+   "def": "JarFill",
+   "note": "concert empty",
+   "value": {
+    "saved_thb": 0,
+    "goal_thb": 8000,
+    "remaining_thb": 8000,
+    "pct": 0,
+    "level": "empty",
+    "label_th": "แทบยังไม่เริ่ม",
+    "headline_th": "กระปุกโตถึง 0%"
+   }
+  },
+  {
+   "def": "Milestones",
+   "note": "concert empty",
+   "value": {
+    "pct": 0,
+    "reached": [],
+    "next_mark": 25,
+    "next_amount_thb": 2000,
+    "need_thb": 2000,
+    "message_th": "อีก ฿2,000 จะถึงไมล์สโตน 25%"
+   }
+  },
+  {
+   "def": "JarFill",
+   "note": "concert 10",
+   "value": {
+    "saved_thb": 800,
+    "goal_thb": 8000,
+    "remaining_thb": 7200,
+    "pct": 10,
+    "level": "growing",
+    "label_th": "กระปุกกำลังโต",
+    "headline_th": "กระปุกโตถึง 10%"
+   }
+  },
+  {
+   "def": "Milestones",
+   "note": "concert 10",
+   "value": {
+    "pct": 10,
+    "reached": [],
+    "next_mark": 25,
+    "next_amount_thb": 2000,
+    "need_thb": 1200,
+    "message_th": "อีก ฿1,200 จะถึงไมล์สโตน 25%"
+   }
+  },
+  {
+   "def": "JarFill",
+   "note": "concert 25",
+   "value": {
+    "saved_thb": 2000,
+    "goal_thb": 8000,
+    "remaining_thb": 6000,
+    "pct": 25,
+    "level": "growing",
+    "label_th": "กระปุกกำลังโต",
+    "headline_th": "กระปุกโตถึง 25%"
+   }
+  },
+  {
+   "def": "Milestones",
+   "note": "concert 25",
+   "value": {
+    "pct": 25,
+    "reached": [
+     25
+    ],
+    "next_mark": 50,
+    "next_amount_thb": 4000,
+    "need_thb": 2000,
+    "message_th": "อีก ฿2,000 จะถึงไมล์สโตน 50%"
+   }
+  },
+  {
+   "def": "JarFill",
+   "note": "concert 50",
+   "value": {
+    "saved_thb": 4000,
+    "goal_thb": 8000,
+    "remaining_thb": 4000,
+    "pct": 50,
+    "level": "halfway",
+    "label_th": "ถึงครึ่งทางแล้ว",
+    "headline_th": "กระปุกโตถึง 50%"
+   }
+  },
+  {
+   "def": "Milestones",
+   "note": "concert 50",
+   "value": {
+    "pct": 50,
+    "reached": [
+     25,
+     50
+    ],
+    "next_mark": 75,
+    "next_amount_thb": 6000,
+    "need_thb": 2000,
+    "message_th": "อีก ฿2,000 จะถึงไมล์สโตน 75%"
+   }
+  },
+  {
+   "def": "JarFill",
+   "note": "concert 75",
+   "value": {
+    "saved_thb": 6000,
+    "goal_thb": 8000,
+    "remaining_thb": 2000,
+    "pct": 75,
+    "level": "almost",
+    "label_th": "อีกนิดก็เต็ม",
+    "headline_th": "กระปุกโตถึง 75%"
+   }
+  },
+  {
+   "def": "Milestones",
+   "note": "concert 75",
+   "value": {
+    "pct": 75,
+    "reached": [
+     25,
+     50,
+     75
+    ],
+    "next_mark": 100,
+    "next_amount_thb": 8000,
+    "need_thb": 2000,
+    "message_th": "อีก ฿2,000 จะถึงไมล์สโตน 100%"
+   }
+  },
+  {
+   "def": "JarFill",
+   "note": "concert almost",
+   "value": {
+    "saved_thb": 7900,
+    "goal_thb": 8000,
+    "remaining_thb": 100,
+    "pct": 99,
+    "level": "almost",
+    "label_th": "อีกนิดก็เต็ม",
+    "headline_th": "กระปุกโตถึง 99%"
+   }
+  },
+  {
+   "def": "Milestones",
+   "note": "concert almost",
+   "value": {
+    "pct": 99,
+    "reached": [
+     25,
+     50,
+     75
+    ],
+    "next_mark": 100,
+    "next_amount_thb": 8000,
+    "need_thb": 100,
+    "message_th": "อีก ฿100 จะถึงไมล์สโตน 100%"
+   }
+  },
+  {
+   "def": "JarFill",
+   "note": "mint 25",
+   "value": {
+    "saved_thb": 11250,
+    "goal_thb": 45000,
+    "remaining_thb": 33750,
+    "pct": 25,
+    "level": "growing",
+    "label_th": "กระปุกกำลังโต",
+    "headline_th": "กระปุกโตถึง 25%"
+   }
+  },
+  {
+   "def": "Milestones",
+   "note": "mint 25",
+   "value": {
+    "pct": 25,
+    "reached": [
+     25
+    ],
+    "next_mark": 50,
+    "next_amount_thb": 22500,
+    "need_thb": 11250,
+    "message_th": "อีก ฿11,250 จะถึงไมล์สโตน 50%"
+   }
+  },
+  {
+   "def": "JarFill",
+   "note": "mint 75",
+   "value": {
+    "saved_thb": 33750,
+    "goal_thb": 45000,
+    "remaining_thb": 11250,
+    "pct": 75,
+    "level": "almost",
+    "label_th": "อีกนิดก็เต็ม",
+    "headline_th": "กระปุกโตถึง 75%"
+   }
+  },
+  {
+   "def": "Milestones",
+   "note": "mint 75",
+   "value": {
+    "pct": 75,
+    "reached": [
+     25,
+     50,
+     75
+    ],
+    "next_mark": 100,
+    "next_amount_thb": 45000,
+    "need_thb": 11250,
+    "message_th": "อีก ฿11,250 จะถึงไมล์สโตน 100%"
+   }
+  },
+  {
+   "def": "Week52Plan",
+   "note": "w2 base100",
+   "value": {
+    "kind": "week52",
+    "week": 2,
+    "base_thb": 100,
+    "amount_thb": 200,
+    "cumulative_thb": 300,
+    "plan_total_thb": 137800,
+    "label_th": "สัปดาห์ที่ 2 ออม ฿200"
+   }
+  },
+  {
+   "def": "RandomPlan",
+   "note": "rand w2",
+   "value": {
+    "kind": "random",
+    "week": 2,
+    "base_thb": 100,
+    "seed": "u01-2026",
+    "multiplier": 16,
+    "amount_thb": 1600,
+    "cumulative_thb": 6800,
+    "plan_total_thb": 137800,
+    "label_th": "สุ่มสัปดาห์ที่ 2 ได้ตัวคูณ 16 ออม ฿1600"
+   }
+  },
+  {
+   "def": "Week52Plan",
+   "note": "w10 base100",
+   "value": {
+    "kind": "week52",
+    "week": 10,
+    "base_thb": 100,
+    "amount_thb": 1000,
+    "cumulative_thb": 5500,
+    "plan_total_thb": 137800,
+    "label_th": "สัปดาห์ที่ 10 ออม ฿1000"
+   }
+  },
+  {
+   "def": "RandomPlan",
+   "note": "rand w10",
+   "value": {
+    "kind": "random",
+    "week": 10,
+    "base_thb": 100,
+    "seed": "u01-2026",
+    "multiplier": 14,
+    "amount_thb": 1400,
+    "cumulative_thb": 23700,
+    "plan_total_thb": 137800,
+    "label_th": "สุ่มสัปดาห์ที่ 10 ได้ตัวคูณ 14 ออม ฿1400"
+   }
+  },
+  {
+   "def": "Week52Plan",
+   "note": "w26 base100",
+   "value": {
+    "kind": "week52",
+    "week": 26,
+    "base_thb": 100,
+    "amount_thb": 2600,
+    "cumulative_thb": 35100,
+    "plan_total_thb": 137800,
+    "label_th": "สัปดาห์ที่ 26 ออม ฿2600"
+   }
+  },
+  {
+   "def": "RandomPlan",
+   "note": "rand w26",
+   "value": {
+    "kind": "random",
+    "week": 26,
+    "base_thb": 100,
+    "seed": "u01-2026",
+    "multiplier": 4,
+    "amount_thb": 400,
+    "cumulative_thb": 67500,
+    "plan_total_thb": 137800,
+    "label_th": "สุ่มสัปดาห์ที่ 26 ได้ตัวคูณ 4 ออม ฿400"
+   }
+  },
+  {
+   "def": "Week52Plan",
+   "note": "w40 base100",
+   "value": {
+    "kind": "week52",
+    "week": 40,
+    "base_thb": 100,
+    "amount_thb": 4000,
+    "cumulative_thb": 82000,
+    "plan_total_thb": 137800,
+    "label_th": "สัปดาห์ที่ 40 ออม ฿4000"
+   }
+  },
+  {
+   "def": "RandomPlan",
+   "note": "rand w40",
+   "value": {
+    "kind": "random",
+    "week": 40,
+    "base_thb": 100,
+    "seed": "u01-2026",
+    "multiplier": 51,
+    "amount_thb": 5100,
+    "cumulative_thb": 99200,
+    "plan_total_thb": 137800,
+    "label_th": "สุ่มสัปดาห์ที่ 40 ได้ตัวคูณ 51 ออม ฿5100"
+   }
+  },
+  {
+   "def": "Week52Plan",
+   "note": "w51 base100",
+   "value": {
+    "kind": "week52",
+    "week": 51,
+    "base_thb": 100,
+    "amount_thb": 5100,
+    "cumulative_thb": 132600,
+    "plan_total_thb": 137800,
+    "label_th": "สัปดาห์ที่ 51 ออม ฿5100"
+   }
+  },
+  {
+   "def": "RandomPlan",
+   "note": "rand w51",
+   "value": {
+    "kind": "random",
+    "week": 51,
+    "base_thb": 100,
+    "seed": "u01-2026",
+    "multiplier": 37,
+    "amount_thb": 3700,
+    "cumulative_thb": 136600,
+    "plan_total_thb": 137800,
+    "label_th": "สุ่มสัปดาห์ที่ 51 ได้ตัวคูณ 37 ออม ฿3700"
+   }
+  },
+  {
+   "def": "Challenge",
+   "note": "bank skip_cafe",
+   "value": {
+    "id": "c01",
+    "name_th": "งดกาแฟร้าน",
+    "save_thb": 85,
+    "xp": 10,
+    "hint_th": "ชงเองที่บ้านหรือพกแก้วมา",
+    "date": "2026-12-03",
+    "suggested": false,
+    "challenge_id": "skip_cafe"
+   }
+  },
+  {
+   "def": "Challenge",
+   "note": "bank cook_home",
+   "value": {
+    "id": "c02",
+    "name_th": "ทำข้าวกล่องเอง",
+    "save_thb": 60,
+    "xp": 10,
+    "hint_th": "ทำเผื่อพรุ่งด้วยจะประหยัดกว่า",
+    "date": "2026-12-03",
+    "suggested": false,
+    "challenge_id": "cook_home"
+   }
+  },
+  {
+   "def": "Challenge",
+   "note": "bank no_delivery",
+   "value": {
+    "id": "c03",
+    "name_th": "งดเดลิเวอรี่",
+    "save_thb": 120,
+    "xp": 15,
+    "hint_th": "ค่าส่งกับขั้นต่ำทำให้แพงกว่าที่คิด",
+    "date": "2026-12-03",
+    "suggested": false,
+    "challenge_id": "no_delivery"
+   }
+  },
+  {
+   "def": "Challenge",
+   "note": "bank walk_not_grab",
+   "value": {
+    "id": "c04",
+    "name_th": "เดินแทนแกร็บระยะใกล้",
+    "save_thb": 45,
+    "xp": 10,
+    "hint_th": "ระยะไม่เกิน 1 กม. เดินได้ถ้าปลอดภัย",
+    "date": "2026-12-03",
+    "suggested": false,
+    "challenge_id": "walk_not_grab"
+   }
+  },
+  {
+   "def": "Challenge",
+   "note": "bank pack_water",
+   "value": {
+    "id": "c05",
+    "name_th": "พกขวดน้ำ",
+    "save_thb": 20,
+    "xp": 5,
+    "hint_th": "ขวดเล็ก ๆ ในกระเป๋าก็พอ",
+    "date": "2026-12-03",
+    "suggested": false,
+    "challenge_id": "pack_water"
+   }
+  },
+  {
+   "def": "Challenge",
+   "note": "bank no_snack",
+   "value": {
+    "id": "c06",
+    "name_th": "งดขนมออฟฟิศ",
+    "save_thb": 35,
+    "xp": 5,
+    "hint_th": "พกผลไม้หรือถั่วมาเอง",
+    "date": "2026-12-03",
+    "suggested": false,
+    "challenge_id": "no_snack"
+   }
+  },
+  {
+   "def": "Challenge",
+   "note": "bank unsubscribe",
+   "value": {
+    "id": "c07",
+    "name_th": "ยกเลิกสมาชิกที่ไม่ได้ใช้",
+    "save_thb": 149,
+    "xp": 20,
+    "hint_th": "เช็กใบเสร็จย้อนหลัง 30 วัน",
+    "date": "2026-12-03",
+    "suggested": false,
+    "challenge_id": "unsubscribe"
+   }
+  },
+  {
+   "def": "Challenge",
+   "note": "bank market_not_mall",
+   "value": {
+    "id": "c08",
+    "name_th": "ซื้อของในตลาดแทนห้าง",
+    "save_thb": 80,
+    "xp": 10,
+    "hint_th": "เทียบราคา 3 อย่างที่ซื้อประจำ",
+    "date": "2026-12-03",
+    "suggested": false,
+    "challenge_id": "market_not_mall"
+   }
+  },
+  {
+   "def": "RoundUp",
+   "note": "1 to 10",
+   "value": {
+    "amount_thb": 1,
+    "step_thb": 10,
+    "extra_thb": 9,
+    "rounded_thb": 10
+   }
+  },
+  {
+   "def": "RoundUp",
+   "note": "sub to 200",
+   "value": {
+    "amount_thb": 149,
+    "step_thb": 100,
+    "extra_thb": 51,
+    "rounded_thb": 200
+   }
+  },
+  {
+   "def": "TeamJar",
+   "note": "bee lead",
+   "value": {
+    "goal_thb": 30000,
+    "saved_thb": 25500,
+    "remaining_thb": 4500,
+    "pct": 85,
+    "level": "almost",
+    "members": [
+     {
+      "name_th": "พี่บี",
+      "amount_thb": 22500,
+      "pct": 75
+     },
+     {
+      "name_th": "น้องมิ้น",
+      "amount_thb": 3000,
+      "pct": 10
+     }
+    ],
+    "member_count": 2,
+    "headline_th": "กระปุกร่วม โตถึง 85%"
+   }
+  }
+ ]
+}
