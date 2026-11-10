@@ -1,0 +1,1311 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "น้องปอ",
+   "value": {
+    "id": "u01",
+    "name_th": "น้องปอ",
+    "name_en": "Por",
+    "age": 26,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "มือถือเต็ม 127/128 GB แบตไม่ถึงวัน อยากรู้ว่าต้องลบอะไรหรือควรเปลี่ยนเครื่อง",
+    "device_th": "FictoPhone 128 GB"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องมุก",
+   "value": {
+    "id": "u02",
+    "name_th": "น้องมุก",
+    "name_en": "Muk",
+    "age": 24,
+    "city_th": "ขอนแก่น",
+    "goal_th": "แบตเริ่มอ่อน แต่พื้นที่ยังเหลือเยอะ",
+    "device_th": "FictoPhone 128 GB"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "ลุงสม",
+   "value": {
+    "id": "u03",
+    "name_th": "ลุงสม",
+    "name_en": "Som",
+    "age": 58,
+    "city_th": "เชียงใหม่",
+    "goal_th": "เครื่องเก่าแบตทรุด อยากรู้ว่าซ่อมหรือเปลี่ยน",
+    "device_th": "FictoPhone 64 GB"
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s01",
+   "value": {
+    "id": "s01",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.12,
+    "blur": 0.1,
+    "crop": 0.08,
+    "detections": [
+     {
+      "key": "used_gb",
+      "value": 127,
+      "confidence": 0.96
+     },
+     {
+      "key": "total_gb",
+      "value": 128,
+      "confidence": 0.97
+     },
+     {
+      "key": "photos_gb",
+      "value": 84,
+      "confidence": 0.92
+     },
+     {
+      "key": "apps_gb",
+      "value": 28,
+      "confidence": 0.9
+     },
+     {
+      "key": "system_gb",
+      "value": 10,
+      "confidence": 0.88
+     },
+     {
+      "key": "other_gb",
+      "value": 5,
+      "confidence": 0.84
+     }
+    ]
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s01",
+   "value": {
+    "shot_id": "s01",
+    "steps": [
+     "screen_detect",
+     "ocr_storage",
+     "cleanup_plan"
+    ]
+   }
+  },
+  {
+   "def": "StorageScan",
+   "note": "s01",
+   "value": {
+    "shot_id": "s01",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "used_gb": 127,
+    "total_gb": 128,
+    "free_gb": 1,
+    "percent": 99,
+    "breakdown": {
+     "photos_gb": 84,
+     "apps_gb": 28,
+     "system_gb": 10,
+     "other_gb": 5
+    },
+    "message_th": "ใช้ไป 127/128 GB (99%) เหลือ 1 GB"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s01",
+   "value": {
+    "score": 90,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s01 used_gb",
+   "value": {
+    "key": "used_gb",
+    "value": 127,
+    "confidence": 0.96
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s01 total_gb",
+   "value": {
+    "key": "total_gb",
+    "value": 128,
+    "confidence": 0.97
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s02",
+   "value": {
+    "id": "s02",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.15,
+    "blur": 0.12,
+    "crop": 0.1,
+    "detections": [
+     {
+      "key": "health_pct",
+      "value": 86,
+      "confidence": 0.94
+     },
+     {
+      "key": "screen_on_h",
+      "value": 6.5,
+      "confidence": 0.88
+     },
+     {
+      "key": "last_charge_h",
+      "value": 9.0,
+      "confidence": 0.85
+     },
+     {
+      "key": "brightness_pct",
+      "value": 80,
+      "confidence": 0.91
+     },
+     {
+      "key": "background_refresh",
+      "value": true,
+      "confidence": 0.87
+     },
+     {
+      "key": "low_power",
+      "value": false,
+      "confidence": 0.9
+     }
+    ]
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s02",
+   "value": {
+    "shot_id": "s02",
+    "steps": [
+     "screen_detect",
+     "ocr_battery",
+     "battery_tips",
+     "repair_check"
+    ]
+   }
+  },
+  {
+   "def": "BatteryScan",
+   "note": "s02",
+   "value": {
+    "shot_id": "s02",
+    "quality": {
+     "score": 87,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "health_pct": 86,
+    "screen_on_h": 6.5,
+    "last_charge_h": 9.0,
+    "brightness_pct": 80,
+    "background_refresh": true,
+    "low_power": false,
+    "message_th": "สุขภาพแบตประมาณ 86%"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s02",
+   "value": {
+    "score": 87,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s02 health_pct",
+   "value": {
+    "key": "health_pct",
+    "value": 86,
+    "confidence": 0.94
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s02 screen_on_h",
+   "value": {
+    "key": "screen_on_h",
+    "value": 6.5,
+    "confidence": 0.88
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s03",
+   "value": {
+    "id": "s03",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.18,
+    "blur": 0.1,
+    "crop": 0.12,
+    "detections": [
+     {
+      "key": "used_gb",
+      "value": 42,
+      "confidence": 0.95
+     },
+     {
+      "key": "total_gb",
+      "value": 128,
+      "confidence": 0.96
+     },
+     {
+      "key": "photos_gb",
+      "value": 20,
+      "confidence": 0.9
+     },
+     {
+      "key": "apps_gb",
+      "value": 14,
+      "confidence": 0.88
+     }
+    ]
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s03",
+   "value": {
+    "shot_id": "s03",
+    "steps": [
+     "screen_detect",
+     "ocr_storage",
+     "cleanup_plan"
+    ]
+   }
+  },
+  {
+   "def": "StorageScan",
+   "note": "s03",
+   "value": {
+    "shot_id": "s03",
+    "quality": {
+     "score": 87,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "used_gb": 42,
+    "total_gb": 128,
+    "free_gb": 86,
+    "percent": 33,
+    "breakdown": {
+     "photos_gb": 20,
+     "apps_gb": 14
+    },
+    "message_th": "ใช้ไป 42/128 GB (33%) เหลือ 86 GB"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s03",
+   "value": {
+    "score": 87,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s03 used_gb",
+   "value": {
+    "key": "used_gb",
+    "value": 42,
+    "confidence": 0.95
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s03 total_gb",
+   "value": {
+    "key": "total_gb",
+    "value": 128,
+    "confidence": 0.96
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s04",
+   "value": {
+    "id": "s04",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.1,
+    "blur": 0.1,
+    "crop": 0.1,
+    "detections": [
+     {
+      "key": "health_pct",
+      "value": 76,
+      "confidence": 0.93
+     },
+     {
+      "key": "screen_on_h",
+      "value": 4.0,
+      "confidence": 0.86
+     },
+     {
+      "key": "brightness_pct",
+      "value": 50,
+      "confidence": 0.9
+     },
+     {
+      "key": "background_refresh",
+      "value": false,
+      "confidence": 0.88
+     },
+     {
+      "key": "low_power",
+      "value": true,
+      "confidence": 0.9
+     }
+    ]
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s04",
+   "value": {
+    "shot_id": "s04",
+    "steps": [
+     "screen_detect",
+     "ocr_battery",
+     "battery_tips",
+     "repair_check"
+    ]
+   }
+  },
+  {
+   "def": "BatteryScan",
+   "note": "s04",
+   "value": {
+    "shot_id": "s04",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "health_pct": 76,
+    "screen_on_h": 4.0,
+    "last_charge_h": null,
+    "brightness_pct": 50,
+    "background_refresh": false,
+    "low_power": true,
+    "message_th": "สุขภาพแบตประมาณ 76%"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s04",
+   "value": {
+    "score": 90,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s04 health_pct",
+   "value": {
+    "key": "health_pct",
+    "value": 76,
+    "confidence": 0.93
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s04 screen_on_h",
+   "value": {
+    "key": "screen_on_h",
+    "value": 4.0,
+    "confidence": 0.86
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s05",
+   "value": {
+    "id": "s05",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.2,
+    "blur": 0.15,
+    "crop": 0.1,
+    "detections": [
+     {
+      "key": "used_gb",
+      "value": 30,
+      "confidence": 0.92
+     },
+     {
+      "key": "total_gb",
+      "value": 64,
+      "confidence": 0.95
+     }
+    ]
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s05",
+   "value": {
+    "shot_id": "s05",
+    "steps": [
+     "screen_detect",
+     "ocr_storage",
+     "cleanup_plan"
+    ]
+   }
+  },
+  {
+   "def": "StorageScan",
+   "note": "s05",
+   "value": {
+    "shot_id": "s05",
+    "quality": {
+     "score": 84,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "used_gb": 30,
+    "total_gb": 64,
+    "free_gb": 34,
+    "percent": 47,
+    "breakdown": {},
+    "message_th": "ใช้ไป 30/64 GB (47%) เหลือ 34 GB"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s05",
+   "value": {
+    "score": 84,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s05 used_gb",
+   "value": {
+    "key": "used_gb",
+    "value": 30,
+    "confidence": 0.92
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s05 total_gb",
+   "value": {
+    "key": "total_gb",
+    "value": 64,
+    "confidence": 0.95
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s06",
+   "value": {
+    "id": "s06",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.16,
+    "blur": 0.12,
+    "crop": 0.1,
+    "detections": [
+     {
+      "key": "health_pct",
+      "value": 68,
+      "confidence": 0.91
+     },
+     {
+      "key": "screen_on_h",
+      "value": 3.2,
+      "confidence": 0.8
+     },
+     {
+      "key": "brightness_pct",
+      "value": 60,
+      "confidence": 0.86
+     },
+     {
+      "key": "background_refresh",
+      "value": false,
+      "confidence": 0.84
+     },
+     {
+      "key": "low_power",
+      "value": true,
+      "confidence": 0.88
+     }
+    ]
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s06",
+   "value": {
+    "shot_id": "s06",
+    "steps": [
+     "screen_detect",
+     "ocr_battery",
+     "battery_tips",
+     "repair_check"
+    ]
+   }
+  },
+  {
+   "def": "BatteryScan",
+   "note": "s06",
+   "value": {
+    "shot_id": "s06",
+    "quality": {
+     "score": 87,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "health_pct": 68,
+    "screen_on_h": 3.2,
+    "last_charge_h": null,
+    "brightness_pct": 60,
+    "background_refresh": false,
+    "low_power": true,
+    "message_th": "สุขภาพแบตประมาณ 68%"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s06",
+   "value": {
+    "score": 87,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s06 health_pct",
+   "value": {
+    "key": "health_pct",
+    "value": 68,
+    "confidence": 0.91
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s06 screen_on_h",
+   "value": {
+    "key": "screen_on_h",
+    "value": 3.2,
+    "confidence": 0.8
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s07",
+   "value": {
+    "id": "s07",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.68,
+    "blur": 0.52,
+    "crop": 0.5,
+    "detections": [
+     {
+      "key": "used_gb",
+      "value": 100,
+      "confidence": 0.7
+     },
+     {
+      "key": "total_gb",
+      "value": 128,
+      "confidence": 0.72
+     }
+    ]
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s07",
+   "value": {
+    "shot_id": "s07",
+    "steps": [
+     "screen_detect",
+     "deglare",
+     "recrop",
+     "ocr_storage",
+     "cleanup_plan"
+    ]
+   }
+  },
+  {
+   "def": "StorageScan",
+   "note": "s07",
+   "value": {
+    "shot_id": "s07",
+    "quality": {
+     "score": 43,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนบนจอเยอะ ลดความสว่างจอหรือถ่ายในที่ร่ม",
+      "ภาพเบลอ แคปจอจากเครื่องโดยตรงจะอ่านง่ายกว่าการถ่ายหน้าจอ",
+      "ตัวเลขถูกครอป เลื่อนหน้าตั้งค่าให้เห็นทั้งปริมาณที่ใช้และทั้งหมด"
+     ]
+    },
+    "ok": false,
+    "used_gb": 100,
+    "total_gb": 128,
+    "free_gb": 28,
+    "percent": 78,
+    "breakdown": {},
+    "message_th": "ใช้ไป 100/128 GB (78%) เหลือ 28 GB"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s07",
+   "value": {
+    "score": 43,
+    "ok": false,
+    "tips_th": [
+     "แสงสะท้อนบนจอเยอะ ลดความสว่างจอหรือถ่ายในที่ร่ม",
+     "ภาพเบลอ แคปจอจากเครื่องโดยตรงจะอ่านง่ายกว่าการถ่ายหน้าจอ",
+     "ตัวเลขถูกครอป เลื่อนหน้าตั้งค่าให้เห็นทั้งปริมาณที่ใช้และทั้งหมด"
+    ]
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s07 used_gb",
+   "value": {
+    "key": "used_gb",
+    "value": 100,
+    "confidence": 0.7
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s07 total_gb",
+   "value": {
+    "key": "total_gb",
+    "value": 128,
+    "confidence": 0.72
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s08",
+   "value": {
+    "id": "s08",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.2,
+    "blur": 0.15,
+    "crop": 0.1,
+    "detections": []
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s08",
+   "value": {
+    "shot_id": "s08",
+    "steps": [
+     "screen_detect",
+     "need_settings_page"
+    ]
+   }
+  },
+  {
+   "def": "StorageScan",
+   "note": "s08",
+   "value": {
+    "shot_id": "s08",
+    "quality": {
+     "score": 54,
+     "ok": false,
+     "tips_th": [
+      "ไม่เจอตัวเลขพื้นที่หรือแบต เปิดหน้าตั้งค่าพื้นที่ว่างหรือสุขภาพแบตแล้วแคปใหม่"
+     ]
+    },
+    "ok": false,
+    "used_gb": null,
+    "total_gb": null,
+    "free_gb": null,
+    "percent": null,
+    "breakdown": {},
+    "message_th": "อ่านตัวเลขพื้นที่ไม่ครบ ลองแคปหน้าตั้งค่าพื้นที่ว่างใหม่"
+   }
+  },
+  {
+   "def": "BatteryScan",
+   "note": "s08",
+   "value": {
+    "shot_id": "s08",
+    "quality": {
+     "score": 54,
+     "ok": false,
+     "tips_th": [
+      "ไม่เจอตัวเลขพื้นที่หรือแบต เปิดหน้าตั้งค่าพื้นที่ว่างหรือสุขภาพแบตแล้วแคปใหม่"
+     ]
+    },
+    "ok": false,
+    "health_pct": null,
+    "screen_on_h": null,
+    "last_charge_h": null,
+    "brightness_pct": null,
+    "background_refresh": null,
+    "low_power": null,
+    "message_th": "อ่านสุขภาพแบตไม่ครบ เปิดหน้าแบตเตอรี่แล้วแคปใหม่"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s08",
+   "value": {
+    "score": 54,
+    "ok": false,
+    "tips_th": [
+     "ไม่เจอตัวเลขพื้นที่หรือแบต เปิดหน้าตั้งค่าพื้นที่ว่างหรือสุขภาพแบตแล้วแคปใหม่"
+    ]
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s09",
+   "value": {
+    "id": "s09",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.15,
+    "blur": 0.1,
+    "crop": 0.1,
+    "detections": [
+     {
+      "key": "used_gb",
+      "value": 127,
+      "confidence": 0.41
+     },
+     {
+      "key": "total_gb",
+      "value": 128,
+      "confidence": 0.96
+     }
+    ]
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s09",
+   "value": {
+    "shot_id": "s09",
+    "steps": [
+     "screen_detect",
+     "ocr_storage",
+     "cleanup_plan"
+    ]
+   }
+  },
+  {
+   "def": "StorageScan",
+   "note": "s09",
+   "value": {
+    "shot_id": "s09",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": false,
+    "used_gb": null,
+    "total_gb": 128,
+    "free_gb": null,
+    "percent": null,
+    "breakdown": {},
+    "message_th": "อ่านตัวเลขพื้นที่ไม่ครบ ลองแคปหน้าตั้งค่าพื้นที่ว่างใหม่"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s09",
+   "value": {
+    "score": 88,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s09 used_gb",
+   "value": {
+    "key": "used_gb",
+    "value": 127,
+    "confidence": 0.41
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s09 total_gb",
+   "value": {
+    "key": "total_gb",
+    "value": 128,
+    "confidence": 0.96
+   }
+  },
+  {
+   "def": "CleanupPlan",
+   "note": "por",
+   "value": {
+    "used_gb": 127,
+    "total_gb": 128,
+    "free_gb": 1,
+    "saved_gb": 16.8,
+    "after_used_gb": 110.2,
+    "after_free_gb": 17.8,
+    "actions": [
+     {
+      "id": "c01",
+      "key": "duplicates",
+      "name_th": "รูปซ้ำและรูปคล้าย",
+      "gb": 6.2,
+      "priority": 1,
+      "how_th": "เปิดอัลบั้ม ดูกลุ่มรูปคล้าย เก็บแค่ใบที่ดีที่สุดแล้วลบที่เหลือ",
+      "n": 1
+     },
+     {
+      "id": "c02",
+      "key": "screenshots",
+      "name_th": "แคปจอและรูปต่อเนื่อง",
+      "gb": 3.1,
+      "priority": 2,
+      "how_th": "กรองอัลบั้มเป็นแคปจอและเบิร์สต์ ลบที่อ่านแล้วหรือเบลอ",
+      "n": 2
+     },
+     {
+      "id": "c03",
+      "key": "chat_backup",
+      "name_th": "ไฟล์สำรองแชทในเครื่อง",
+      "gb": 4.0,
+      "priority": 3,
+      "how_th": "ย้ายสำรองแชทขึ้นคลาวด์ที่ไว้ใจหรือลบไฟล์เก่าหลังยืนยันว่าสำรองแล้ว",
+      "n": 3
+     },
+     {
+      "id": "c04",
+      "key": "unused_apps",
+      "name_th": "แอปที่ไม่ได้เปิดนาน",
+      "gb": 2.4,
+      "priority": 4,
+      "how_th": "ถอดโหลดหรือลบแอปที่ไม่ได้ใช้ 90 วัน ของในแอปควรสำรองก่อน",
+      "n": 4
+     },
+     {
+      "id": "c05",
+      "key": "cache",
+      "name_th": "แคชแอปและไฟล์ชั่วคราว",
+      "gb": 1.1,
+      "priority": 5,
+      "how_th": "ล้างแคชแอปวิดีโอและเบราว์เซอร์ อย่าลบโฟลเดอร์ดาวน์โหลดทั้งก้อนโดยไม่ดู",
+      "n": 5
+     }
+    ],
+    "count": 5,
+    "headline_th": "เก็บพื้นที่ได้ประมาณ 16.8 GB · เหลือว่าง ~17.8 GB"
+   }
+  },
+  {
+   "def": "CleanupAction",
+   "note": "duplicates",
+   "value": {
+    "id": "c01",
+    "key": "duplicates",
+    "name_th": "รูปซ้ำและรูปคล้าย",
+    "gb": 6.2,
+    "priority": 1,
+    "how_th": "เปิดอัลบั้ม ดูกลุ่มรูปคล้าย เก็บแค่ใบที่ดีที่สุดแล้วลบที่เหลือ",
+    "n": 1
+   }
+  },
+  {
+   "def": "CleanupAction",
+   "note": "screenshots",
+   "value": {
+    "id": "c02",
+    "key": "screenshots",
+    "name_th": "แคปจอและรูปต่อเนื่อง",
+    "gb": 3.1,
+    "priority": 2,
+    "how_th": "กรองอัลบั้มเป็นแคปจอและเบิร์สต์ ลบที่อ่านแล้วหรือเบลอ",
+    "n": 2
+   }
+  },
+  {
+   "def": "CleanupAction",
+   "note": "chat_backup",
+   "value": {
+    "id": "c03",
+    "key": "chat_backup",
+    "name_th": "ไฟล์สำรองแชทในเครื่อง",
+    "gb": 4.0,
+    "priority": 3,
+    "how_th": "ย้ายสำรองแชทขึ้นคลาวด์ที่ไว้ใจหรือลบไฟล์เก่าหลังยืนยันว่าสำรองแล้ว",
+    "n": 3
+   }
+  },
+  {
+   "def": "CleanupAction",
+   "note": "unused_apps",
+   "value": {
+    "id": "c04",
+    "key": "unused_apps",
+    "name_th": "แอปที่ไม่ได้เปิดนาน",
+    "gb": 2.4,
+    "priority": 4,
+    "how_th": "ถอดโหลดหรือลบแอปที่ไม่ได้ใช้ 90 วัน ของในแอปควรสำรองก่อน",
+    "n": 4
+   }
+  },
+  {
+   "def": "CleanupAction",
+   "note": "cache",
+   "value": {
+    "id": "c05",
+    "key": "cache",
+    "name_th": "แคชแอปและไฟล์ชั่วคราว",
+    "gb": 1.1,
+    "priority": 5,
+    "how_th": "ล้างแคชแอปวิดีโอและเบราว์เซอร์ อย่าลบโฟลเดอร์ดาวน์โหลดทั้งก้อนโดยไม่ดู",
+    "n": 5
+   }
+  },
+  {
+   "def": "CleanupPlan",
+   "note": "subset",
+   "value": {
+    "used_gb": 127,
+    "total_gb": 128,
+    "free_gb": 1,
+    "saved_gb": 7.3,
+    "after_used_gb": 119.7,
+    "after_free_gb": 8.3,
+    "actions": [
+     {
+      "id": "c01",
+      "key": "duplicates",
+      "name_th": "รูปซ้ำและรูปคล้าย",
+      "gb": 6.2,
+      "priority": 1,
+      "how_th": "เปิดอัลบั้ม ดูกลุ่มรูปคล้าย เก็บแค่ใบที่ดีที่สุดแล้วลบที่เหลือ",
+      "n": 1
+     },
+     {
+      "id": "c05",
+      "key": "cache",
+      "name_th": "แคชแอปและไฟล์ชั่วคราว",
+      "gb": 1.1,
+      "priority": 5,
+      "how_th": "ล้างแคชแอปวิดีโอและเบราว์เซอร์ อย่าลบโฟลเดอร์ดาวน์โหลดทั้งก้อนโดยไม่ดู",
+      "n": 2
+     }
+    ],
+    "count": 2,
+    "headline_th": "เก็บพื้นที่ได้ประมาณ 7.3 GB · เหลือว่าง ~8.3 GB"
+   }
+  },
+  {
+   "def": "DuplicateGuide",
+   "note": "guide",
+   "value": {
+    "title_th": "คู่มือลบรูปซ้ำ",
+    "steps": [
+     {
+      "n": 1,
+      "text_th": "สำรองรูปสำคัญขึ้นคลาวด์หรือสายคอมพิวเตอร์ก่อนลบ"
+     },
+     {
+      "n": 2,
+      "text_th": "เปิดอัลบั้มแล้วกรองเป็นรูปคล้ายหรือเบิร์สต์"
+     },
+     {
+      "n": 3,
+      "text_th": "ในแต่ละกลุ่มเก็บ 1 ใบที่คมและสว่างที่สุด"
+     },
+     {
+      "n": 4,
+      "text_th": "ลบรูปที่เหลือในกลุ่ม แล้วลบถังขยะรูปด้วย"
+     },
+     {
+      "n": 5,
+      "text_th": "เช็กพื้นที่ว่างอีกครั้งในหน้าตั้งค่า"
+     }
+    ],
+    "disclaimer_th": "สำรองก่อนลบเสมอ PhoneRescue เป็นคำแนะนำเบื้องต้นจากการอ่านหน้าจอตั้งค่า ไม่ใช่ร้านซ่อมและไม่ใช่ใบเสนอราคา สำรองข้อมูลก่อนลบ และอย่ารีเซ็ตเครื่องถ้ายังไม่ได้สำรอง"
+   }
+  },
+  {
+   "def": "GuideStep",
+   "note": "1",
+   "value": {
+    "n": 1,
+    "text_th": "สำรองรูปสำคัญขึ้นคลาวด์หรือสายคอมพิวเตอร์ก่อนลบ"
+   }
+  },
+  {
+   "def": "GuideStep",
+   "note": "2",
+   "value": {
+    "n": 2,
+    "text_th": "เปิดอัลบั้มแล้วกรองเป็นรูปคล้ายหรือเบิร์สต์"
+   }
+  },
+  {
+   "def": "GuideStep",
+   "note": "3",
+   "value": {
+    "n": 3,
+    "text_th": "ในแต่ละกลุ่มเก็บ 1 ใบที่คมและสว่างที่สุด"
+   }
+  },
+  {
+   "def": "GuideStep",
+   "note": "4",
+   "value": {
+    "n": 4,
+    "text_th": "ลบรูปที่เหลือในกลุ่ม แล้วลบถังขยะรูปด้วย"
+   }
+  },
+  {
+   "def": "GuideStep",
+   "note": "5",
+   "value": {
+    "n": 5,
+    "text_th": "เช็กพื้นที่ว่างอีกครั้งในหน้าตั้งค่า"
+   }
+  },
+  {
+   "def": "BatteryTips",
+   "note": "por",
+   "value": {
+    "health_pct": 86,
+    "keys": [
+     "health_ok",
+     "brightness",
+     "background",
+     "low_power",
+     "screen_on"
+    ],
+    "tips_th": [
+     "สุขภาพแบตยังอยู่ในเกณฑ์ที่ใช้ได้ ยังไม่จำเป็นต้องเปลี่ยนทันที",
+     "ความสว่างจอค่อนข้างสูง ลองลดลงหรือใช้ปรับอัตโนมัติ",
+     "ปิดการรีเฟรชพื้นหลังของแอปที่ไม่ได้ใช้ เพื่อประหยัดแบต",
+     "เปิดโหมดประหยัดพลังงานตอนออกจากบ้านหรือแบตเหลือน้อย",
+     "เวลาหน้าจอเปิดสูง ลดเวลาปิดจออัตโนมัติและแจ้งเตือนที่ไม่จำเป็น"
+    ],
+    "count": 5,
+    "headline_th": "สุขภาพแบต ~86% · 5 ข้อที่ปรับได้"
+   }
+  },
+  {
+   "def": "BatteryTips",
+   "note": "muk",
+   "value": {
+    "health_pct": 76,
+    "keys": [
+     "health_low"
+    ],
+    "tips_th": [
+     "สุขภาพแบตต่ำกว่า 80% การเปลี่ยนแบตอาจช่วยให้ใช้งานได้ทั้งวัน"
+    ],
+    "count": 1,
+    "headline_th": "สุขภาพแบต ~76% · 1 ข้อที่ปรับได้"
+   }
+  },
+  {
+   "def": "BatteryTips",
+   "note": "old",
+   "value": {
+    "health_pct": 68,
+    "keys": [
+     "health_low"
+    ],
+    "tips_th": [
+     "สุขภาพแบตต่ำกว่า 80% การเปลี่ยนแบตอาจช่วยให้ใช้งานได้ทั้งวัน"
+    ],
+    "count": 1,
+    "headline_th": "สุขภาพแบต ~68% · 1 ข้อที่ปรับได้"
+   }
+  },
+  {
+   "def": "RepairCheck",
+   "note": "por cleanup",
+   "value": {
+    "verdict": "cleanup",
+    "message_th": "พื้นที่เกือบเต็มเป็นปัญหาหลัก สุขภาพแบตยังใช้ได้ ลองเก็บข้อมูลก่อนคิดเปลี่ยนเครื่อง",
+    "health_pct": 86,
+    "free_gb": 1,
+    "battery_min_thb": 1900,
+    "battery_max_thb": 3500,
+    "phone_min_thb": 12900,
+    "phone_max_thb": 19900,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาศูนย์หรือร้านซ่อมจริง"
+   }
+  },
+  {
+   "def": "RepairCheck",
+   "note": "muk repair",
+   "value": {
+    "verdict": "repair_battery",
+    "message_th": "การเปลี่ยนแบตอาจคุ้มกว่าซื้อเครื่องใหม่ ถ้าเครื่องอื่นยังใช้ดี",
+    "health_pct": 76,
+    "free_gb": 86,
+    "battery_min_thb": 1900,
+    "battery_max_thb": 3500,
+    "phone_min_thb": 12900,
+    "phone_max_thb": 19900,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาศูนย์หรือร้านซ่อมจริง"
+   }
+  },
+  {
+   "def": "RepairCheck",
+   "note": "old replace",
+   "value": {
+    "verdict": "replace_or_repair",
+    "message_th": "สุขภาพแบตต่ำมาก เทียบราคาเปลี่ยนแบตกับเครื่องใหม่ก่อนตัดสินใจ",
+    "health_pct": 68,
+    "free_gb": 34,
+    "battery_min_thb": 1900,
+    "battery_max_thb": 3500,
+    "phone_min_thb": 12900,
+    "phone_max_thb": 19900,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาศูนย์หรือร้านซ่อมจริง"
+   }
+  },
+  {
+   "def": "RepairCheck",
+   "note": "watch",
+   "value": {
+    "verdict": "watch",
+    "message_th": "ยังไม่จำเป็นต้องซ่อมหรือเปลี่ยนทันที ปรับการใช้งานและสำรองข้อมูลเป็นประจำ",
+    "health_pct": 90,
+    "free_gb": 20,
+    "battery_min_thb": 1900,
+    "battery_max_thb": 3500,
+    "phone_min_thb": 12900,
+    "phone_max_thb": 19900,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาศูนย์หรือร้านซ่อมจริง"
+   }
+  },
+  {
+   "def": "RepairCheck",
+   "note": "cleanup then watch",
+   "value": {
+    "verdict": "cleanup_then_watch",
+    "message_th": "เก็บข้อมูลก่อน แล้วเฝ้าดูแบต ถ้าหมดเร็วขึ้นค่อยเทียบราคาเปลี่ยนแบต",
+    "health_pct": 82,
+    "free_gb": 2,
+    "battery_min_thb": 1900,
+    "battery_max_thb": 3500,
+    "phone_min_thb": 12900,
+    "phone_max_thb": 19900,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาศูนย์หรือร้านซ่อมจริง"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "por",
+   "value": {
+    "title_th": "PhoneRescue — น้องปอ",
+    "headline_th": "เก็บพื้นที่ได้ประมาณ 16.8 GB · เหลือว่าง ~17.8 GB",
+    "hook_th": "มือถือเต็มหรือแบตหมดไว ถ่ายหน้าตั้งค่ารู้เลยว่าต้องทำอะไร",
+    "used_gb": 127,
+    "total_gb": 128,
+    "saved_gb": 16.8,
+    "health_pct": 86,
+    "layout": "rescue_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with PhoneRescue · guidance only, not a repair quote",
+    "cta_th": "คอมเมนต์ PHONE รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "PhoneRescue เป็นคำแนะนำเบื้องต้นจากการอ่านหน้าจอตั้งค่า ไม่ใช่ร้านซ่อมและไม่ใช่ใบเสนอราคา สำรองข้อมูลก่อนลบ และอย่ารีเซ็ตเครื่องถ้ายังไม่ได้สำรอง"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "reset no backup",
+   "value": {
+    "level": "stop",
+    "message_th": "อย่ารีเซ็ตเครื่องจนกว่าจะสำรองรูปและแชทแล้ว PhoneRescue เป็นคำแนะนำเบื้องต้นจากการอ่านหน้าจอตั้งค่า ไม่ใช่ร้านซ่อมและไม่ใช่ใบเสนอราคา สำรองข้อมูลก่อนลบ และอย่ารีเซ็ตเครื่องถ้ายังไม่ได้สำรอง"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "reset backed up",
+   "value": {
+    "level": "warn",
+    "message_th": "รีเซ็ตแล้วของในเครื่องจะหาย ตรวจสำรองอีกครั้ง PhoneRescue เป็นคำแนะนำเบื้องต้นจากการอ่านหน้าจอตั้งค่า ไม่ใช่ร้านซ่อมและไม่ใช่ใบเสนอราคา สำรองข้อมูลก่อนลบ และอย่ารีเซ็ตเครื่องถ้ายังไม่ได้สำรอง"
+   }
+  }
+ ]
+}
