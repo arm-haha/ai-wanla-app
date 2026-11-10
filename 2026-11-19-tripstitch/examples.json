@@ -1,0 +1,3644 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "พี่เก้า",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่เก้า",
+    "name_en": "Kao",
+    "age": 29,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "เก็บแคปจอคาเฟ่กับจุดถ่ายรูปในเชียงใหม่ อยากได้ทริป 4 วัน งบ 8,000 สองคน",
+    "dest_th": "เชียงใหม่",
+    "start_date": "2026-12-03",
+    "nights": 3,
+    "pax": 2,
+    "budget_thb": 8000,
+    "climates": [
+     "cool_morning",
+     "rain_possible"
+    ]
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องนิน",
+   "value": {
+    "id": "u02",
+    "name_th": "น้องนิน",
+    "name_en": "Nina",
+    "age": 26,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "สเตย์เคชันในกรุงเทพ 2 วัน จากแคปจอคาเฟ่",
+    "dest_th": "กรุงเทพฯ",
+    "start_date": "2026-11-24",
+    "nights": 1,
+    "pax": 1,
+    "budget_thb": 2500,
+    "climates": [
+     "hot"
+    ]
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่ภู",
+   "value": {
+    "id": "u03",
+    "name_th": "พี่ภู",
+    "name_en": "Phu",
+    "age": 34,
+    "city_th": "อุดรธานี",
+    "goal_th": "ทริปเชียงคาน 3 วันกับครอบครัว",
+    "dest_th": "เชียงคาน",
+    "start_date": "2026-12-15",
+    "nights": 2,
+    "pax": 4,
+    "budget_thb": 9000,
+    "climates": [
+     "cold",
+     "rain_possible"
+    ]
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s01",
+   "value": {
+    "id": "s01",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.12,
+    "blur": 0.08,
+    "crop": 0.1,
+    "detections": [
+     {
+      "id": "pl01",
+      "name_th": "คาเฟ่ FictoBean",
+      "name_en": "FictoBean Cafe",
+      "area": "nimman",
+      "type": "cafe",
+      "confidence": 0.94,
+      "source": "ig",
+      "open_hour": 8,
+      "close_hour": 18,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": "กาแฟและเค้กในนิมมาน"
+     }
+    ]
+   }
+  },
+  {
+   "def": "Extract",
+   "note": "s01",
+   "value": {
+    "shot_id": "s01",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": [],
+     "place_hint_count": 1
+    },
+    "places": [
+     {
+      "id": "pl01",
+      "name_th": "คาเฟ่ FictoBean",
+      "name_en": "FictoBean Cafe",
+      "area": "nimman",
+      "type": "cafe",
+      "source": "ig",
+      "confidence": 0.94,
+      "open_hour": 8,
+      "close_hour": 18,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": "กาแฟและเค้กในนิมมาน"
+     }
+    ],
+    "uncertain": [],
+    "place_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s01",
+   "value": {
+    "shot_id": "s01",
+    "steps": [
+     "screen_detect",
+     "ocr_name",
+     "area_match",
+     "dedupe",
+     "day_plan",
+     "budget"
+    ]
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s02",
+   "value": {
+    "id": "s02",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.18,
+    "blur": 0.12,
+    "crop": 0.15,
+    "detections": [
+     {
+      "id": "pl02",
+      "name_th": "ร้านข้าวซอย FictoSoi",
+      "name_en": "FictoSoi Khao Soi",
+      "area": "nimman",
+      "type": "food",
+      "confidence": 0.91,
+      "source": "tiktok",
+      "open_hour": 10,
+      "close_hour": 21,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     }
+    ]
+   }
+  },
+  {
+   "def": "Extract",
+   "note": "s02",
+   "value": {
+    "shot_id": "s02",
+    "quality": {
+     "score": 85,
+     "ok": true,
+     "tips_th": [],
+     "place_hint_count": 1
+    },
+    "places": [
+     {
+      "id": "pl02",
+      "name_th": "ร้านข้าวซอย FictoSoi",
+      "name_en": "FictoSoi Khao Soi",
+      "area": "nimman",
+      "type": "food",
+      "source": "tiktok",
+      "confidence": 0.91,
+      "open_hour": 10,
+      "close_hour": 21,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     }
+    ],
+    "uncertain": [],
+    "place_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s02",
+   "value": {
+    "shot_id": "s02",
+    "steps": [
+     "screen_detect",
+     "ocr_name",
+     "area_match",
+     "dedupe",
+     "day_plan",
+     "budget"
+    ]
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s03",
+   "value": {
+    "id": "s03",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.1,
+    "blur": 0.1,
+    "crop": 0.08,
+    "detections": [
+     {
+      "id": "pl03",
+      "name_th": "ประตูท่าแพ",
+      "name_en": "Tha Phae Gate",
+      "area": "old_city",
+      "type": "photo",
+      "confidence": 0.96,
+      "source": "ig",
+      "open_hour": 0,
+      "close_hour": 24,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": "จุดถ่ายรูปยามเช้า"
+     }
+    ]
+   }
+  },
+  {
+   "def": "Extract",
+   "note": "s03",
+   "value": {
+    "shot_id": "s03",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": [],
+     "place_hint_count": 1
+    },
+    "places": [
+     {
+      "id": "pl03",
+      "name_th": "ประตูท่าแพ",
+      "name_en": "Tha Phae Gate",
+      "area": "old_city",
+      "type": "photo",
+      "source": "ig",
+      "confidence": 0.96,
+      "open_hour": 0,
+      "close_hour": 24,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": "จุดถ่ายรูปยามเช้า"
+     }
+    ],
+    "uncertain": [],
+    "place_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s03",
+   "value": {
+    "shot_id": "s03",
+    "steps": [
+     "screen_detect",
+     "ocr_name",
+     "area_match",
+     "dedupe",
+     "day_plan",
+     "budget"
+    ]
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s04",
+   "value": {
+    "id": "s04",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.22,
+    "blur": 0.18,
+    "crop": 0.2,
+    "detections": [
+     {
+      "id": "pl04",
+      "name_th": "วอล์กกิ้งสตรีท ไนท์บาซาร์",
+      "name_en": "Walking Street Night Bazaar",
+      "area": "old_city",
+      "type": "market",
+      "confidence": 0.89,
+      "source": "maps",
+      "open_hour": 17,
+      "close_hour": 23,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     }
+    ]
+   }
+  },
+  {
+   "def": "Extract",
+   "note": "s04",
+   "value": {
+    "shot_id": "s04",
+    "quality": {
+     "score": 80,
+     "ok": true,
+     "tips_th": [],
+     "place_hint_count": 1
+    },
+    "places": [
+     {
+      "id": "pl04",
+      "name_th": "วอล์กกิ้งสตรีท ไนท์บาซาร์",
+      "name_en": "Walking Street Night Bazaar",
+      "area": "old_city",
+      "type": "market",
+      "source": "maps",
+      "confidence": 0.89,
+      "open_hour": 17,
+      "close_hour": 23,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     }
+    ],
+    "uncertain": [],
+    "place_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s04",
+   "value": {
+    "shot_id": "s04",
+    "steps": [
+     "screen_detect",
+     "ocr_name",
+     "area_match",
+     "dedupe",
+     "day_plan",
+     "budget"
+    ]
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s05",
+   "value": {
+    "id": "s05",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.15,
+    "blur": 0.1,
+    "crop": 0.12,
+    "detections": [
+     {
+      "id": "pl05",
+      "name_th": "วัดพระธาตุดอยสุเทพ",
+      "name_en": "Doi Suthep Temple",
+      "area": "doi_suthep",
+      "type": "temple",
+      "confidence": 0.97,
+      "source": "maps",
+      "open_hour": 6,
+      "close_hour": 19,
+      "closed_dow": [],
+      "ticket_thb": 50,
+      "note_th": "ชุดสุภาพ"
+     },
+     {
+      "id": "pl99",
+      "name_th": "จุดชมวิวไม่ชัด",
+      "name_en": "Unclear lookout",
+      "area": "doi_suthep",
+      "type": "viewpoint",
+      "confidence": 0.41,
+      "source": "ig",
+      "open_hour": 9,
+      "close_hour": 18,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     }
+    ]
+   }
+  },
+  {
+   "def": "Extract",
+   "note": "s05",
+   "value": {
+    "shot_id": "s05",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": [],
+     "place_hint_count": 2
+    },
+    "places": [
+     {
+      "id": "pl05",
+      "name_th": "วัดพระธาตุดอยสุเทพ",
+      "name_en": "Doi Suthep Temple",
+      "area": "doi_suthep",
+      "type": "temple",
+      "source": "maps",
+      "confidence": 0.97,
+      "open_hour": 6,
+      "close_hour": 19,
+      "closed_dow": [],
+      "ticket_thb": 50,
+      "note_th": "ชุดสุภาพ"
+     }
+    ],
+    "uncertain": [
+     "จุดชมวิวไม่ชัด"
+    ],
+    "place_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s05",
+   "value": {
+    "shot_id": "s05",
+    "steps": [
+     "screen_detect",
+     "ocr_name",
+     "area_match",
+     "dedupe",
+     "day_plan",
+     "budget"
+    ]
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s06",
+   "value": {
+    "id": "s06",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.16,
+    "blur": 0.11,
+    "crop": 0.14,
+    "detections": [
+     {
+      "id": "pl06",
+      "name_th": "คาเฟ่ FictoHill",
+      "name_en": "FictoHill Cafe",
+      "area": "mae_rim",
+      "type": "cafe",
+      "confidence": 0.92,
+      "source": "ig",
+      "open_hour": 9,
+      "close_hour": 17,
+      "closed_dow": [
+       1
+      ],
+      "ticket_thb": 0,
+      "note_th": "ปิดวันอังคาร"
+     }
+    ]
+   }
+  },
+  {
+   "def": "Extract",
+   "note": "s06",
+   "value": {
+    "shot_id": "s06",
+    "quality": {
+     "score": 86,
+     "ok": true,
+     "tips_th": [],
+     "place_hint_count": 1
+    },
+    "places": [
+     {
+      "id": "pl06",
+      "name_th": "คาเฟ่ FictoHill",
+      "name_en": "FictoHill Cafe",
+      "area": "mae_rim",
+      "type": "cafe",
+      "source": "ig",
+      "confidence": 0.92,
+      "open_hour": 9,
+      "close_hour": 17,
+      "closed_dow": [
+       1
+      ],
+      "ticket_thb": 0,
+      "note_th": "ปิดวันอังคาร"
+     }
+    ],
+    "uncertain": [],
+    "place_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s06",
+   "value": {
+    "shot_id": "s06",
+    "steps": [
+     "screen_detect",
+     "ocr_name",
+     "area_match",
+     "dedupe",
+     "day_plan",
+     "budget"
+    ]
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s11",
+   "value": {
+    "id": "s11",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.1,
+    "blur": 0.1,
+    "crop": 0.1,
+    "detections": [
+     {
+      "id": "pl11",
+      "name_th": "คาเฟ่ FictoSilk",
+      "name_en": "FictoSilk Cafe",
+      "area": "thonglor",
+      "type": "cafe",
+      "confidence": 0.9,
+      "source": "ig",
+      "open_hour": 9,
+      "close_hour": 20,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     }
+    ]
+   }
+  },
+  {
+   "def": "Extract",
+   "note": "s11",
+   "value": {
+    "shot_id": "s11",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": [],
+     "place_hint_count": 1
+    },
+    "places": [
+     {
+      "id": "pl11",
+      "name_th": "คาเฟ่ FictoSilk",
+      "name_en": "FictoSilk Cafe",
+      "area": "thonglor",
+      "type": "cafe",
+      "source": "ig",
+      "confidence": 0.9,
+      "open_hour": 9,
+      "close_hour": 20,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     }
+    ],
+    "uncertain": [],
+    "place_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s11",
+   "value": {
+    "shot_id": "s11",
+    "steps": [
+     "screen_detect",
+     "ocr_name",
+     "area_match",
+     "dedupe",
+     "day_plan",
+     "budget"
+    ]
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s12",
+   "value": {
+    "id": "s12",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.15,
+    "blur": 0.12,
+    "crop": 0.1,
+    "detections": [
+     {
+      "id": "pl12",
+      "name_th": "ร้าน FictoBowl",
+      "name_en": "FictoBowl",
+      "area": "thonglor",
+      "type": "food",
+      "confidence": 0.88,
+      "source": "maps",
+      "open_hour": 11,
+      "close_hour": 22,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     },
+     {
+      "id": "pl13",
+      "name_th": "แกลเลอรี FictoFrame",
+      "name_en": "FictoFrame Gallery",
+      "area": "silom",
+      "type": "activity",
+      "confidence": 0.86,
+      "source": "web",
+      "open_hour": 10,
+      "close_hour": 18,
+      "closed_dow": [],
+      "ticket_thb": 150,
+      "note_th": ""
+     }
+    ]
+   }
+  },
+  {
+   "def": "Extract",
+   "note": "s12",
+   "value": {
+    "shot_id": "s12",
+    "quality": {
+     "score": 87,
+     "ok": true,
+     "tips_th": [],
+     "place_hint_count": 2
+    },
+    "places": [
+     {
+      "id": "pl12",
+      "name_th": "ร้าน FictoBowl",
+      "name_en": "FictoBowl",
+      "area": "thonglor",
+      "type": "food",
+      "source": "maps",
+      "confidence": 0.88,
+      "open_hour": 11,
+      "close_hour": 22,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     },
+     {
+      "id": "pl13",
+      "name_th": "แกลเลอรี FictoFrame",
+      "name_en": "FictoFrame Gallery",
+      "area": "silom",
+      "type": "activity",
+      "source": "web",
+      "confidence": 0.86,
+      "open_hour": 10,
+      "close_hour": 18,
+      "closed_dow": [],
+      "ticket_thb": 150,
+      "note_th": ""
+     }
+    ],
+    "uncertain": [],
+    "place_count": 2
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s12",
+   "value": {
+    "shot_id": "s12",
+    "steps": [
+     "screen_detect",
+     "ocr_name",
+     "area_match",
+     "dedupe",
+     "day_plan",
+     "budget"
+    ]
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s21",
+   "value": {
+    "id": "s21",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.14,
+    "blur": 0.1,
+    "crop": 0.12,
+    "detections": [
+     {
+      "id": "pl21",
+      "name_th": "ถนนคนเดินเชียงคาน",
+      "name_en": "Chiang Khan Walking Street",
+      "area": "chiang_khan_walk",
+      "type": "market",
+      "confidence": 0.93,
+      "source": "ig",
+      "open_hour": 16,
+      "close_hour": 22,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     },
+     {
+      "id": "pl22",
+      "name_th": "ริมโขง FictoView",
+      "name_en": "FictoView Mekong",
+      "area": "mekong",
+      "type": "viewpoint",
+      "confidence": 0.91,
+      "source": "maps",
+      "open_hour": 5,
+      "close_hour": 19,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     },
+     {
+      "id": "pl23",
+      "name_th": "คาเฟ่ FictoRaft",
+      "name_en": "FictoRaft Cafe",
+      "area": "mekong",
+      "type": "cafe",
+      "confidence": 0.87,
+      "source": "tiktok",
+      "open_hour": 8,
+      "close_hour": 17,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     },
+     {
+      "id": "pl24",
+      "name_th": "จุดชมวิวเนิน FictoHillCK",
+      "name_en": "FictoHill CK",
+      "area": "hill",
+      "type": "viewpoint",
+      "confidence": 0.84,
+      "source": "ig",
+      "open_hour": 6,
+      "close_hour": 18,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     }
+    ]
+   }
+  },
+  {
+   "def": "Extract",
+   "note": "s21",
+   "value": {
+    "shot_id": "s21",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": [],
+     "place_hint_count": 4
+    },
+    "places": [
+     {
+      "id": "pl21",
+      "name_th": "ถนนคนเดินเชียงคาน",
+      "name_en": "Chiang Khan Walking Street",
+      "area": "chiang_khan_walk",
+      "type": "market",
+      "source": "ig",
+      "confidence": 0.93,
+      "open_hour": 16,
+      "close_hour": 22,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     },
+     {
+      "id": "pl22",
+      "name_th": "ริมโขง FictoView",
+      "name_en": "FictoView Mekong",
+      "area": "mekong",
+      "type": "viewpoint",
+      "source": "maps",
+      "confidence": 0.91,
+      "open_hour": 5,
+      "close_hour": 19,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     },
+     {
+      "id": "pl23",
+      "name_th": "คาเฟ่ FictoRaft",
+      "name_en": "FictoRaft Cafe",
+      "area": "mekong",
+      "type": "cafe",
+      "source": "tiktok",
+      "confidence": 0.87,
+      "open_hour": 8,
+      "close_hour": 17,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     },
+     {
+      "id": "pl24",
+      "name_th": "จุดชมวิวเนิน FictoHillCK",
+      "name_en": "FictoHill CK",
+      "area": "hill",
+      "type": "viewpoint",
+      "source": "ig",
+      "confidence": 0.84,
+      "open_hour": 6,
+      "close_hour": 18,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     }
+    ],
+    "uncertain": [],
+    "place_count": 4
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s21",
+   "value": {
+    "shot_id": "s21",
+    "steps": [
+     "screen_detect",
+     "ocr_name",
+     "area_match",
+     "dedupe",
+     "day_plan",
+     "budget"
+    ]
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s31",
+   "value": {
+    "id": "s31",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.66,
+    "blur": 0.5,
+    "crop": 0.52,
+    "detections": [
+     {
+      "id": "pl01",
+      "name_th": "คาเฟ่ FictoBean",
+      "name_en": "FictoBean Cafe",
+      "area": "nimman",
+      "type": "cafe",
+      "confidence": 0.94,
+      "source": "ig",
+      "open_hour": 8,
+      "close_hour": 18,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": "กาแฟและเค้กในนิมมาน"
+     }
+    ]
+   }
+  },
+  {
+   "def": "Extract",
+   "note": "s31",
+   "value": {
+    "shot_id": "s31",
+    "quality": {
+     "score": 44,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนบนจอเยอะ ลดความสว่างจอหรือถ่ายในที่ร่ม",
+      "ภาพเบลอ แคปจอใหม่จากแอปต้นทางจะคมกว่าการถ่ายหน้าจอ",
+      "ชื่อสถานที่ถูกครอป เลื่อนแคปให้อยู่ครบทั้งชื่อและพิกัด/ย่าน"
+     ],
+     "place_hint_count": 1
+    },
+    "places": [
+     {
+      "id": "pl01",
+      "name_th": "คาเฟ่ FictoBean",
+      "name_en": "FictoBean Cafe",
+      "area": "nimman",
+      "type": "cafe",
+      "source": "ig",
+      "confidence": 0.94,
+      "open_hour": 8,
+      "close_hour": 18,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": "กาแฟและเค้กในนิมมาน"
+     }
+    ],
+    "uncertain": [],
+    "place_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s31",
+   "value": {
+    "shot_id": "s31",
+    "steps": [
+     "screen_detect",
+     "deglare",
+     "recrop",
+     "ocr_name",
+     "area_match",
+     "dedupe",
+     "day_plan",
+     "budget"
+    ]
+   }
+  },
+  {
+   "def": "Screenshot",
+   "note": "s32",
+   "value": {
+    "id": "s32",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.2,
+    "blur": 0.15,
+    "crop": 0.1,
+    "detections": []
+   }
+  },
+  {
+   "def": "Extract",
+   "note": "s32",
+   "value": {
+    "shot_id": "s32",
+    "quality": {
+     "score": 54,
+     "ok": false,
+     "tips_th": [
+      "ไม่เจอชื่อสถานที่ ลองแคปจอที่มีชื่อร้านหรือหมุดแผนที่ชัด ๆ"
+     ],
+     "place_hint_count": 0
+    },
+    "places": [],
+    "uncertain": [],
+    "place_count": 0
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "s32",
+   "value": {
+    "shot_id": "s32",
+    "steps": [
+     "screen_detect",
+     "ocr_name",
+     "area_match",
+     "dedupe",
+     "day_plan",
+     "budget"
+    ]
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "fictobean",
+   "value": {
+    "id": "pl01",
+    "name_th": "คาเฟ่ FictoBean",
+    "name_en": "FictoBean Cafe",
+    "area": "nimman",
+    "type": "cafe",
+    "confidence": 0.94,
+    "source": "ig",
+    "open_hour": 8,
+    "close_hour": 18,
+    "closed_dow": [],
+    "ticket_thb": 0,
+    "note_th": "กาแฟและเค้กในนิมมาน"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "bad shot",
+   "value": {
+    "score": 44,
+    "ok": false,
+    "tips_th": [
+     "แสงสะท้อนบนจอเยอะ ลดความสว่างจอหรือถ่ายในที่ร่ม",
+     "ภาพเบลอ แคปจอใหม่จากแอปต้นทางจะคมกว่าการถ่ายหน้าจอ",
+     "ชื่อสถานที่ถูกครอป เลื่อนแคปให้อยู่ครบทั้งชื่อและพิกัด/ย่าน"
+    ],
+    "place_hint_count": 1
+   }
+  },
+  {
+   "def": "Place",
+   "note": "bean",
+   "value": {
+    "id": "pl01",
+    "name_th": "คาเฟ่ FictoBean",
+    "name_en": "FictoBean Cafe",
+    "area": "nimman",
+    "type": "cafe",
+    "source": "ig",
+    "confidence": 0.94,
+    "open_hour": 8,
+    "close_hour": 18,
+    "closed_dow": [],
+    "ticket_thb": 0,
+    "note_th": "กาแฟและเค้กในนิมมาน"
+   }
+  },
+  {
+   "def": "Stitch",
+   "note": "kao",
+   "value": {
+    "shot_ids": [
+     "s01",
+     "s02",
+     "s03",
+     "s04",
+     "s05",
+     "s06"
+    ],
+    "places": [
+     {
+      "id": "pl05",
+      "name_th": "วัดพระธาตุดอยสุเทพ",
+      "name_en": "Doi Suthep Temple",
+      "area": "doi_suthep",
+      "type": "temple",
+      "source": "maps",
+      "confidence": 0.97,
+      "open_hour": 6,
+      "close_hour": 19,
+      "closed_dow": [],
+      "ticket_thb": 50,
+      "note_th": "ชุดสุภาพ"
+     },
+     {
+      "id": "pl06",
+      "name_th": "คาเฟ่ FictoHill",
+      "name_en": "FictoHill Cafe",
+      "area": "mae_rim",
+      "type": "cafe",
+      "source": "ig",
+      "confidence": 0.92,
+      "open_hour": 9,
+      "close_hour": 17,
+      "closed_dow": [
+       1
+      ],
+      "ticket_thb": 0,
+      "note_th": "ปิดวันอังคาร"
+     },
+     {
+      "id": "pl01",
+      "name_th": "คาเฟ่ FictoBean",
+      "name_en": "FictoBean Cafe",
+      "area": "nimman",
+      "type": "cafe",
+      "source": "ig",
+      "confidence": 0.94,
+      "open_hour": 8,
+      "close_hour": 18,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": "กาแฟและเค้กในนิมมาน"
+     },
+     {
+      "id": "pl02",
+      "name_th": "ร้านข้าวซอย FictoSoi",
+      "name_en": "FictoSoi Khao Soi",
+      "area": "nimman",
+      "type": "food",
+      "source": "tiktok",
+      "confidence": 0.91,
+      "open_hour": 10,
+      "close_hour": 21,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     },
+     {
+      "id": "pl03",
+      "name_th": "ประตูท่าแพ",
+      "name_en": "Tha Phae Gate",
+      "area": "old_city",
+      "type": "photo",
+      "source": "ig",
+      "confidence": 0.96,
+      "open_hour": 0,
+      "close_hour": 24,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": "จุดถ่ายรูปยามเช้า"
+     },
+     {
+      "id": "pl04",
+      "name_th": "วอล์กกิ้งสตรีท ไนท์บาซาร์",
+      "name_en": "Walking Street Night Bazaar",
+      "area": "old_city",
+      "type": "market",
+      "source": "maps",
+      "confidence": 0.89,
+      "open_hour": 17,
+      "close_hour": 23,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     }
+    ],
+    "place_count": 6,
+    "uncertain": [
+     "จุดชมวิวไม่ชัด"
+    ],
+    "areas": [
+     "doi_suthep",
+     "mae_rim",
+     "nimman",
+     "old_city"
+    ]
+   }
+  },
+  {
+   "def": "Stitch",
+   "note": "nina",
+   "value": {
+    "shot_ids": [
+     "s11",
+     "s12"
+    ],
+    "places": [
+     {
+      "id": "pl13",
+      "name_th": "แกลเลอรี FictoFrame",
+      "name_en": "FictoFrame Gallery",
+      "area": "silom",
+      "type": "activity",
+      "source": "web",
+      "confidence": 0.86,
+      "open_hour": 10,
+      "close_hour": 18,
+      "closed_dow": [],
+      "ticket_thb": 150,
+      "note_th": ""
+     },
+     {
+      "id": "pl11",
+      "name_th": "คาเฟ่ FictoSilk",
+      "name_en": "FictoSilk Cafe",
+      "area": "thonglor",
+      "type": "cafe",
+      "source": "ig",
+      "confidence": 0.9,
+      "open_hour": 9,
+      "close_hour": 20,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     },
+     {
+      "id": "pl12",
+      "name_th": "ร้าน FictoBowl",
+      "name_en": "FictoBowl",
+      "area": "thonglor",
+      "type": "food",
+      "source": "maps",
+      "confidence": 0.88,
+      "open_hour": 11,
+      "close_hour": 22,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     }
+    ],
+    "place_count": 3,
+    "uncertain": [],
+    "areas": [
+     "silom",
+     "thonglor"
+    ]
+   }
+  },
+  {
+   "def": "Stitch",
+   "note": "phu",
+   "value": {
+    "shot_ids": [
+     "s21"
+    ],
+    "places": [
+     {
+      "id": "pl21",
+      "name_th": "ถนนคนเดินเชียงคาน",
+      "name_en": "Chiang Khan Walking Street",
+      "area": "chiang_khan_walk",
+      "type": "market",
+      "source": "ig",
+      "confidence": 0.93,
+      "open_hour": 16,
+      "close_hour": 22,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     },
+     {
+      "id": "pl24",
+      "name_th": "จุดชมวิวเนิน FictoHillCK",
+      "name_en": "FictoHill CK",
+      "area": "hill",
+      "type": "viewpoint",
+      "source": "ig",
+      "confidence": 0.84,
+      "open_hour": 6,
+      "close_hour": 18,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     },
+     {
+      "id": "pl23",
+      "name_th": "คาเฟ่ FictoRaft",
+      "name_en": "FictoRaft Cafe",
+      "area": "mekong",
+      "type": "cafe",
+      "source": "tiktok",
+      "confidence": 0.87,
+      "open_hour": 8,
+      "close_hour": 17,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     },
+     {
+      "id": "pl22",
+      "name_th": "ริมโขง FictoView",
+      "name_en": "FictoView Mekong",
+      "area": "mekong",
+      "type": "viewpoint",
+      "source": "maps",
+      "confidence": 0.91,
+      "open_hour": 5,
+      "close_hour": 19,
+      "closed_dow": [],
+      "ticket_thb": 0,
+      "note_th": ""
+     }
+    ],
+    "place_count": 4,
+    "uncertain": [],
+    "areas": [
+     "chiang_khan_walk",
+     "hill",
+     "mekong"
+    ]
+   }
+  },
+  {
+   "def": "TripPlan",
+   "note": "kao",
+   "value": {
+    "start_date": "2026-12-03",
+    "nights": 3,
+    "days": 4,
+    "pax": 2,
+    "itinerary": [
+     {
+      "day": 1,
+      "date": "2026-12-03",
+      "dow": "thursday",
+      "stops": [
+       {
+        "n": 1,
+        "place_id": "pl01",
+        "name_th": "คาเฟ่ FictoBean",
+        "area": "nimman",
+        "type": "cafe",
+        "slot": "morning",
+        "travel_min": 0,
+        "open_hour": 8,
+        "close_hour": 18
+       },
+       {
+        "n": 2,
+        "place_id": "pl02",
+        "name_th": "ร้านข้าวซอย FictoSoi",
+        "area": "nimman",
+        "type": "food",
+        "slot": "afternoon",
+        "travel_min": 10,
+        "open_hour": 10,
+        "close_hour": 21
+       }
+      ],
+      "stop_count": 2,
+      "areas": [
+       "nimman"
+      ],
+      "total_travel_min": 10
+     },
+     {
+      "day": 2,
+      "date": "2026-12-04",
+      "dow": "friday",
+      "stops": [
+       {
+        "n": 1,
+        "place_id": "pl03",
+        "name_th": "ประตูท่าแพ",
+        "area": "old_city",
+        "type": "photo",
+        "slot": "afternoon",
+        "travel_min": 15,
+        "open_hour": 0,
+        "close_hour": 24
+       },
+       {
+        "n": 2,
+        "place_id": "pl04",
+        "name_th": "วอล์กกิ้งสตรีท ไนท์บาซาร์",
+        "area": "old_city",
+        "type": "market",
+        "slot": "evening",
+        "travel_min": 10,
+        "open_hour": 17,
+        "close_hour": 23
+       }
+      ],
+      "stop_count": 2,
+      "areas": [
+       "old_city"
+      ],
+      "total_travel_min": 25
+     },
+     {
+      "day": 3,
+      "date": "2026-12-05",
+      "dow": "saturday",
+      "stops": [
+       {
+        "n": 1,
+        "place_id": "pl05",
+        "name_th": "วัดพระธาตุดอยสุเทพ",
+        "area": "doi_suthep",
+        "type": "temple",
+        "slot": "morning",
+        "travel_min": 30,
+        "open_hour": 6,
+        "close_hour": 19
+       }
+      ],
+      "stop_count": 1,
+      "areas": [
+       "doi_suthep"
+      ],
+      "total_travel_min": 30
+     },
+     {
+      "day": 4,
+      "date": "2026-12-06",
+      "dow": "sunday",
+      "stops": [
+       {
+        "n": 1,
+        "place_id": "pl06",
+        "name_th": "คาเฟ่ FictoHill",
+        "area": "mae_rim",
+        "type": "cafe",
+        "slot": "morning",
+        "travel_min": 50,
+        "open_hour": 9,
+        "close_hour": 17
+       }
+      ],
+      "stop_count": 1,
+      "areas": [
+       "mae_rim"
+      ],
+      "total_travel_min": 50
+     }
+    ],
+    "place_count": 6
+   }
+  },
+  {
+   "def": "DayPlan",
+   "note": "kao day 1",
+   "value": {
+    "day": 1,
+    "date": "2026-12-03",
+    "dow": "thursday",
+    "stops": [
+     {
+      "n": 1,
+      "place_id": "pl01",
+      "name_th": "คาเฟ่ FictoBean",
+      "area": "nimman",
+      "type": "cafe",
+      "slot": "morning",
+      "travel_min": 0,
+      "open_hour": 8,
+      "close_hour": 18
+     },
+     {
+      "n": 2,
+      "place_id": "pl02",
+      "name_th": "ร้านข้าวซอย FictoSoi",
+      "area": "nimman",
+      "type": "food",
+      "slot": "afternoon",
+      "travel_min": 10,
+      "open_hour": 10,
+      "close_hour": 21
+     }
+    ],
+    "stop_count": 2,
+    "areas": [
+     "nimman"
+    ],
+    "total_travel_min": 10
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "kao pl01",
+   "value": {
+    "n": 1,
+    "place_id": "pl01",
+    "name_th": "คาเฟ่ FictoBean",
+    "area": "nimman",
+    "type": "cafe",
+    "slot": "morning",
+    "travel_min": 0,
+    "open_hour": 8,
+    "close_hour": 18
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "kao pl02",
+   "value": {
+    "n": 2,
+    "place_id": "pl02",
+    "name_th": "ร้านข้าวซอย FictoSoi",
+    "area": "nimman",
+    "type": "food",
+    "slot": "afternoon",
+    "travel_min": 10,
+    "open_hour": 10,
+    "close_hour": 21
+   }
+  },
+  {
+   "def": "DayPlan",
+   "note": "kao day 2",
+   "value": {
+    "day": 2,
+    "date": "2026-12-04",
+    "dow": "friday",
+    "stops": [
+     {
+      "n": 1,
+      "place_id": "pl03",
+      "name_th": "ประตูท่าแพ",
+      "area": "old_city",
+      "type": "photo",
+      "slot": "afternoon",
+      "travel_min": 15,
+      "open_hour": 0,
+      "close_hour": 24
+     },
+     {
+      "n": 2,
+      "place_id": "pl04",
+      "name_th": "วอล์กกิ้งสตรีท ไนท์บาซาร์",
+      "area": "old_city",
+      "type": "market",
+      "slot": "evening",
+      "travel_min": 10,
+      "open_hour": 17,
+      "close_hour": 23
+     }
+    ],
+    "stop_count": 2,
+    "areas": [
+     "old_city"
+    ],
+    "total_travel_min": 25
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "kao pl03",
+   "value": {
+    "n": 1,
+    "place_id": "pl03",
+    "name_th": "ประตูท่าแพ",
+    "area": "old_city",
+    "type": "photo",
+    "slot": "afternoon",
+    "travel_min": 15,
+    "open_hour": 0,
+    "close_hour": 24
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "kao pl04",
+   "value": {
+    "n": 2,
+    "place_id": "pl04",
+    "name_th": "วอล์กกิ้งสตรีท ไนท์บาซาร์",
+    "area": "old_city",
+    "type": "market",
+    "slot": "evening",
+    "travel_min": 10,
+    "open_hour": 17,
+    "close_hour": 23
+   }
+  },
+  {
+   "def": "DayPlan",
+   "note": "kao day 3",
+   "value": {
+    "day": 3,
+    "date": "2026-12-05",
+    "dow": "saturday",
+    "stops": [
+     {
+      "n": 1,
+      "place_id": "pl05",
+      "name_th": "วัดพระธาตุดอยสุเทพ",
+      "area": "doi_suthep",
+      "type": "temple",
+      "slot": "morning",
+      "travel_min": 30,
+      "open_hour": 6,
+      "close_hour": 19
+     }
+    ],
+    "stop_count": 1,
+    "areas": [
+     "doi_suthep"
+    ],
+    "total_travel_min": 30
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "kao pl05",
+   "value": {
+    "n": 1,
+    "place_id": "pl05",
+    "name_th": "วัดพระธาตุดอยสุเทพ",
+    "area": "doi_suthep",
+    "type": "temple",
+    "slot": "morning",
+    "travel_min": 30,
+    "open_hour": 6,
+    "close_hour": 19
+   }
+  },
+  {
+   "def": "DayPlan",
+   "note": "kao day 4",
+   "value": {
+    "day": 4,
+    "date": "2026-12-06",
+    "dow": "sunday",
+    "stops": [
+     {
+      "n": 1,
+      "place_id": "pl06",
+      "name_th": "คาเฟ่ FictoHill",
+      "area": "mae_rim",
+      "type": "cafe",
+      "slot": "morning",
+      "travel_min": 50,
+      "open_hour": 9,
+      "close_hour": 17
+     }
+    ],
+    "stop_count": 1,
+    "areas": [
+     "mae_rim"
+    ],
+    "total_travel_min": 50
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "kao pl06",
+   "value": {
+    "n": 1,
+    "place_id": "pl06",
+    "name_th": "คาเฟ่ FictoHill",
+    "area": "mae_rim",
+    "type": "cafe",
+    "slot": "morning",
+    "travel_min": 50,
+    "open_hour": 9,
+    "close_hour": 17
+   }
+  },
+  {
+   "def": "TripPlan",
+   "note": "nina",
+   "value": {
+    "start_date": "2026-11-24",
+    "nights": 1,
+    "days": 2,
+    "pax": 1,
+    "itinerary": [
+     {
+      "day": 1,
+      "date": "2026-11-24",
+      "dow": "tuesday",
+      "stops": [
+       {
+        "n": 1,
+        "place_id": "pl11",
+        "name_th": "คาเฟ่ FictoSilk",
+        "area": "thonglor",
+        "type": "cafe",
+        "slot": "morning",
+        "travel_min": 0,
+        "open_hour": 9,
+        "close_hour": 20
+       },
+       {
+        "n": 2,
+        "place_id": "pl12",
+        "name_th": "ร้าน FictoBowl",
+        "area": "thonglor",
+        "type": "food",
+        "slot": "afternoon",
+        "travel_min": 10,
+        "open_hour": 11,
+        "close_hour": 22
+       }
+      ],
+      "stop_count": 2,
+      "areas": [
+       "thonglor"
+      ],
+      "total_travel_min": 10
+     },
+     {
+      "day": 2,
+      "date": "2026-11-25",
+      "dow": "wednesday",
+      "stops": [
+       {
+        "n": 1,
+        "place_id": "pl13",
+        "name_th": "แกลเลอรี FictoFrame",
+        "area": "silom",
+        "type": "activity",
+        "slot": "afternoon",
+        "travel_min": 20,
+        "open_hour": 10,
+        "close_hour": 18
+       }
+      ],
+      "stop_count": 1,
+      "areas": [
+       "silom"
+      ],
+      "total_travel_min": 20
+     }
+    ],
+    "place_count": 3
+   }
+  },
+  {
+   "def": "DayPlan",
+   "note": "nina day 1",
+   "value": {
+    "day": 1,
+    "date": "2026-11-24",
+    "dow": "tuesday",
+    "stops": [
+     {
+      "n": 1,
+      "place_id": "pl11",
+      "name_th": "คาเฟ่ FictoSilk",
+      "area": "thonglor",
+      "type": "cafe",
+      "slot": "morning",
+      "travel_min": 0,
+      "open_hour": 9,
+      "close_hour": 20
+     },
+     {
+      "n": 2,
+      "place_id": "pl12",
+      "name_th": "ร้าน FictoBowl",
+      "area": "thonglor",
+      "type": "food",
+      "slot": "afternoon",
+      "travel_min": 10,
+      "open_hour": 11,
+      "close_hour": 22
+     }
+    ],
+    "stop_count": 2,
+    "areas": [
+     "thonglor"
+    ],
+    "total_travel_min": 10
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "nina pl11",
+   "value": {
+    "n": 1,
+    "place_id": "pl11",
+    "name_th": "คาเฟ่ FictoSilk",
+    "area": "thonglor",
+    "type": "cafe",
+    "slot": "morning",
+    "travel_min": 0,
+    "open_hour": 9,
+    "close_hour": 20
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "nina pl12",
+   "value": {
+    "n": 2,
+    "place_id": "pl12",
+    "name_th": "ร้าน FictoBowl",
+    "area": "thonglor",
+    "type": "food",
+    "slot": "afternoon",
+    "travel_min": 10,
+    "open_hour": 11,
+    "close_hour": 22
+   }
+  },
+  {
+   "def": "DayPlan",
+   "note": "nina day 2",
+   "value": {
+    "day": 2,
+    "date": "2026-11-25",
+    "dow": "wednesday",
+    "stops": [
+     {
+      "n": 1,
+      "place_id": "pl13",
+      "name_th": "แกลเลอรี FictoFrame",
+      "area": "silom",
+      "type": "activity",
+      "slot": "afternoon",
+      "travel_min": 20,
+      "open_hour": 10,
+      "close_hour": 18
+     }
+    ],
+    "stop_count": 1,
+    "areas": [
+     "silom"
+    ],
+    "total_travel_min": 20
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "nina pl13",
+   "value": {
+    "n": 1,
+    "place_id": "pl13",
+    "name_th": "แกลเลอรี FictoFrame",
+    "area": "silom",
+    "type": "activity",
+    "slot": "afternoon",
+    "travel_min": 20,
+    "open_hour": 10,
+    "close_hour": 18
+   }
+  },
+  {
+   "def": "TripPlan",
+   "note": "phu",
+   "value": {
+    "start_date": "2026-12-15",
+    "nights": 2,
+    "days": 3,
+    "pax": 4,
+    "itinerary": [
+     {
+      "day": 1,
+      "date": "2026-12-15",
+      "dow": "tuesday",
+      "stops": [
+       {
+        "n": 1,
+        "place_id": "pl23",
+        "name_th": "คาเฟ่ FictoRaft",
+        "area": "mekong",
+        "type": "cafe",
+        "slot": "morning",
+        "travel_min": 0,
+        "open_hour": 8,
+        "close_hour": 17
+       },
+       {
+        "n": 2,
+        "place_id": "pl22",
+        "name_th": "ริมโขง FictoView",
+        "area": "mekong",
+        "type": "viewpoint",
+        "slot": "afternoon",
+        "travel_min": 10,
+        "open_hour": 5,
+        "close_hour": 19
+       }
+      ],
+      "stop_count": 2,
+      "areas": [
+       "mekong"
+      ],
+      "total_travel_min": 10
+     },
+     {
+      "day": 2,
+      "date": "2026-12-16",
+      "dow": "wednesday",
+      "stops": [
+       {
+        "n": 1,
+        "place_id": "pl21",
+        "name_th": "ถนนคนเดินเชียงคาน",
+        "area": "chiang_khan_walk",
+        "type": "market",
+        "slot": "evening",
+        "travel_min": 10,
+        "open_hour": 16,
+        "close_hour": 22
+       }
+      ],
+      "stop_count": 1,
+      "areas": [
+       "chiang_khan_walk"
+      ],
+      "total_travel_min": 10
+     },
+     {
+      "day": 3,
+      "date": "2026-12-17",
+      "dow": "thursday",
+      "stops": [
+       {
+        "n": 1,
+        "place_id": "pl24",
+        "name_th": "จุดชมวิวเนิน FictoHillCK",
+        "area": "hill",
+        "type": "viewpoint",
+        "slot": "afternoon",
+        "travel_min": 20,
+        "open_hour": 6,
+        "close_hour": 18
+       }
+      ],
+      "stop_count": 1,
+      "areas": [
+       "hill"
+      ],
+      "total_travel_min": 20
+     }
+    ],
+    "place_count": 4
+   }
+  },
+  {
+   "def": "DayPlan",
+   "note": "phu day 1",
+   "value": {
+    "day": 1,
+    "date": "2026-12-15",
+    "dow": "tuesday",
+    "stops": [
+     {
+      "n": 1,
+      "place_id": "pl23",
+      "name_th": "คาเฟ่ FictoRaft",
+      "area": "mekong",
+      "type": "cafe",
+      "slot": "morning",
+      "travel_min": 0,
+      "open_hour": 8,
+      "close_hour": 17
+     },
+     {
+      "n": 2,
+      "place_id": "pl22",
+      "name_th": "ริมโขง FictoView",
+      "area": "mekong",
+      "type": "viewpoint",
+      "slot": "afternoon",
+      "travel_min": 10,
+      "open_hour": 5,
+      "close_hour": 19
+     }
+    ],
+    "stop_count": 2,
+    "areas": [
+     "mekong"
+    ],
+    "total_travel_min": 10
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "phu pl23",
+   "value": {
+    "n": 1,
+    "place_id": "pl23",
+    "name_th": "คาเฟ่ FictoRaft",
+    "area": "mekong",
+    "type": "cafe",
+    "slot": "morning",
+    "travel_min": 0,
+    "open_hour": 8,
+    "close_hour": 17
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "phu pl22",
+   "value": {
+    "n": 2,
+    "place_id": "pl22",
+    "name_th": "ริมโขง FictoView",
+    "area": "mekong",
+    "type": "viewpoint",
+    "slot": "afternoon",
+    "travel_min": 10,
+    "open_hour": 5,
+    "close_hour": 19
+   }
+  },
+  {
+   "def": "DayPlan",
+   "note": "phu day 2",
+   "value": {
+    "day": 2,
+    "date": "2026-12-16",
+    "dow": "wednesday",
+    "stops": [
+     {
+      "n": 1,
+      "place_id": "pl21",
+      "name_th": "ถนนคนเดินเชียงคาน",
+      "area": "chiang_khan_walk",
+      "type": "market",
+      "slot": "evening",
+      "travel_min": 10,
+      "open_hour": 16,
+      "close_hour": 22
+     }
+    ],
+    "stop_count": 1,
+    "areas": [
+     "chiang_khan_walk"
+    ],
+    "total_travel_min": 10
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "phu pl21",
+   "value": {
+    "n": 1,
+    "place_id": "pl21",
+    "name_th": "ถนนคนเดินเชียงคาน",
+    "area": "chiang_khan_walk",
+    "type": "market",
+    "slot": "evening",
+    "travel_min": 10,
+    "open_hour": 16,
+    "close_hour": 22
+   }
+  },
+  {
+   "def": "DayPlan",
+   "note": "phu day 3",
+   "value": {
+    "day": 3,
+    "date": "2026-12-17",
+    "dow": "thursday",
+    "stops": [
+     {
+      "n": 1,
+      "place_id": "pl24",
+      "name_th": "จุดชมวิวเนิน FictoHillCK",
+      "area": "hill",
+      "type": "viewpoint",
+      "slot": "afternoon",
+      "travel_min": 20,
+      "open_hour": 6,
+      "close_hour": 18
+     }
+    ],
+    "stop_count": 1,
+    "areas": [
+     "hill"
+    ],
+    "total_travel_min": 20
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "phu pl24",
+   "value": {
+    "n": 1,
+    "place_id": "pl24",
+    "name_th": "จุดชมวิวเนิน FictoHillCK",
+    "area": "hill",
+    "type": "viewpoint",
+    "slot": "afternoon",
+    "travel_min": 20,
+    "open_hour": 6,
+    "close_hour": 18
+   }
+  },
+  {
+   "def": "TripPlan",
+   "note": "tue start",
+   "value": {
+    "start_date": "2026-12-05",
+    "nights": 3,
+    "days": 4,
+    "pax": 2,
+    "itinerary": [
+     {
+      "day": 1,
+      "date": "2026-12-05",
+      "dow": "saturday",
+      "stops": [
+       {
+        "n": 1,
+        "place_id": "pl01",
+        "name_th": "คาเฟ่ FictoBean",
+        "area": "nimman",
+        "type": "cafe",
+        "slot": "morning",
+        "travel_min": 0,
+        "open_hour": 8,
+        "close_hour": 18
+       },
+       {
+        "n": 2,
+        "place_id": "pl02",
+        "name_th": "ร้านข้าวซอย FictoSoi",
+        "area": "nimman",
+        "type": "food",
+        "slot": "afternoon",
+        "travel_min": 10,
+        "open_hour": 10,
+        "close_hour": 21
+       }
+      ],
+      "stop_count": 2,
+      "areas": [
+       "nimman"
+      ],
+      "total_travel_min": 10
+     },
+     {
+      "day": 2,
+      "date": "2026-12-06",
+      "dow": "sunday",
+      "stops": [
+       {
+        "n": 1,
+        "place_id": "pl03",
+        "name_th": "ประตูท่าแพ",
+        "area": "old_city",
+        "type": "photo",
+        "slot": "afternoon",
+        "travel_min": 15,
+        "open_hour": 0,
+        "close_hour": 24
+       },
+       {
+        "n": 2,
+        "place_id": "pl04",
+        "name_th": "วอล์กกิ้งสตรีท ไนท์บาซาร์",
+        "area": "old_city",
+        "type": "market",
+        "slot": "evening",
+        "travel_min": 10,
+        "open_hour": 17,
+        "close_hour": 23
+       }
+      ],
+      "stop_count": 2,
+      "areas": [
+       "old_city"
+      ],
+      "total_travel_min": 25
+     },
+     {
+      "day": 3,
+      "date": "2026-12-07",
+      "dow": "monday",
+      "stops": [
+       {
+        "n": 1,
+        "place_id": "pl05",
+        "name_th": "วัดพระธาตุดอยสุเทพ",
+        "area": "doi_suthep",
+        "type": "temple",
+        "slot": "morning",
+        "travel_min": 30,
+        "open_hour": 6,
+        "close_hour": 19
+       }
+      ],
+      "stop_count": 1,
+      "areas": [
+       "doi_suthep"
+      ],
+      "total_travel_min": 30
+     },
+     {
+      "day": 4,
+      "date": "2026-12-08",
+      "dow": "tuesday",
+      "stops": [
+       {
+        "n": 1,
+        "place_id": "pl06",
+        "name_th": "คาเฟ่ FictoHill",
+        "area": "mae_rim",
+        "type": "cafe",
+        "slot": "morning",
+        "travel_min": 50,
+        "open_hour": 9,
+        "close_hour": 17
+       }
+      ],
+      "stop_count": 1,
+      "areas": [
+       "mae_rim"
+      ],
+      "total_travel_min": 50
+     }
+    ],
+    "place_count": 6
+   }
+  },
+  {
+   "def": "DayPlan",
+   "note": "tue start day 1",
+   "value": {
+    "day": 1,
+    "date": "2026-12-05",
+    "dow": "saturday",
+    "stops": [
+     {
+      "n": 1,
+      "place_id": "pl01",
+      "name_th": "คาเฟ่ FictoBean",
+      "area": "nimman",
+      "type": "cafe",
+      "slot": "morning",
+      "travel_min": 0,
+      "open_hour": 8,
+      "close_hour": 18
+     },
+     {
+      "n": 2,
+      "place_id": "pl02",
+      "name_th": "ร้านข้าวซอย FictoSoi",
+      "area": "nimman",
+      "type": "food",
+      "slot": "afternoon",
+      "travel_min": 10,
+      "open_hour": 10,
+      "close_hour": 21
+     }
+    ],
+    "stop_count": 2,
+    "areas": [
+     "nimman"
+    ],
+    "total_travel_min": 10
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "tue start pl01",
+   "value": {
+    "n": 1,
+    "place_id": "pl01",
+    "name_th": "คาเฟ่ FictoBean",
+    "area": "nimman",
+    "type": "cafe",
+    "slot": "morning",
+    "travel_min": 0,
+    "open_hour": 8,
+    "close_hour": 18
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "tue start pl02",
+   "value": {
+    "n": 2,
+    "place_id": "pl02",
+    "name_th": "ร้านข้าวซอย FictoSoi",
+    "area": "nimman",
+    "type": "food",
+    "slot": "afternoon",
+    "travel_min": 10,
+    "open_hour": 10,
+    "close_hour": 21
+   }
+  },
+  {
+   "def": "DayPlan",
+   "note": "tue start day 2",
+   "value": {
+    "day": 2,
+    "date": "2026-12-06",
+    "dow": "sunday",
+    "stops": [
+     {
+      "n": 1,
+      "place_id": "pl03",
+      "name_th": "ประตูท่าแพ",
+      "area": "old_city",
+      "type": "photo",
+      "slot": "afternoon",
+      "travel_min": 15,
+      "open_hour": 0,
+      "close_hour": 24
+     },
+     {
+      "n": 2,
+      "place_id": "pl04",
+      "name_th": "วอล์กกิ้งสตรีท ไนท์บาซาร์",
+      "area": "old_city",
+      "type": "market",
+      "slot": "evening",
+      "travel_min": 10,
+      "open_hour": 17,
+      "close_hour": 23
+     }
+    ],
+    "stop_count": 2,
+    "areas": [
+     "old_city"
+    ],
+    "total_travel_min": 25
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "tue start pl03",
+   "value": {
+    "n": 1,
+    "place_id": "pl03",
+    "name_th": "ประตูท่าแพ",
+    "area": "old_city",
+    "type": "photo",
+    "slot": "afternoon",
+    "travel_min": 15,
+    "open_hour": 0,
+    "close_hour": 24
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "tue start pl04",
+   "value": {
+    "n": 2,
+    "place_id": "pl04",
+    "name_th": "วอล์กกิ้งสตรีท ไนท์บาซาร์",
+    "area": "old_city",
+    "type": "market",
+    "slot": "evening",
+    "travel_min": 10,
+    "open_hour": 17,
+    "close_hour": 23
+   }
+  },
+  {
+   "def": "DayPlan",
+   "note": "tue start day 3",
+   "value": {
+    "day": 3,
+    "date": "2026-12-07",
+    "dow": "monday",
+    "stops": [
+     {
+      "n": 1,
+      "place_id": "pl05",
+      "name_th": "วัดพระธาตุดอยสุเทพ",
+      "area": "doi_suthep",
+      "type": "temple",
+      "slot": "morning",
+      "travel_min": 30,
+      "open_hour": 6,
+      "close_hour": 19
+     }
+    ],
+    "stop_count": 1,
+    "areas": [
+     "doi_suthep"
+    ],
+    "total_travel_min": 30
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "tue start pl05",
+   "value": {
+    "n": 1,
+    "place_id": "pl05",
+    "name_th": "วัดพระธาตุดอยสุเทพ",
+    "area": "doi_suthep",
+    "type": "temple",
+    "slot": "morning",
+    "travel_min": 30,
+    "open_hour": 6,
+    "close_hour": 19
+   }
+  },
+  {
+   "def": "DayPlan",
+   "note": "tue start day 4",
+   "value": {
+    "day": 4,
+    "date": "2026-12-08",
+    "dow": "tuesday",
+    "stops": [
+     {
+      "n": 1,
+      "place_id": "pl06",
+      "name_th": "คาเฟ่ FictoHill",
+      "area": "mae_rim",
+      "type": "cafe",
+      "slot": "morning",
+      "travel_min": 50,
+      "open_hour": 9,
+      "close_hour": 17
+     }
+    ],
+    "stop_count": 1,
+    "areas": [
+     "mae_rim"
+    ],
+    "total_travel_min": 50
+   }
+  },
+  {
+   "def": "Stop",
+   "note": "tue start pl06",
+   "value": {
+    "n": 1,
+    "place_id": "pl06",
+    "name_th": "คาเฟ่ FictoHill",
+    "area": "mae_rim",
+    "type": "cafe",
+    "slot": "morning",
+    "travel_min": 50,
+    "open_hour": 9,
+    "close_hour": 17
+   }
+  },
+  {
+   "def": "ClosedWarning",
+   "note": "คาเฟ่ FictoHill",
+   "value": {
+    "day": 4,
+    "date": "2026-12-08",
+    "place_id": "pl06",
+    "name_th": "คาเฟ่ FictoHill",
+    "message_th": "คาเฟ่ FictoHill ปิดวันนั้น ลองย้ายไปวันอื่นหรือเลือกแผนสำรอง"
+   }
+  },
+  {
+   "def": "RainPlan",
+   "note": "kao rain",
+   "value": {
+    "tips_th": [
+     "เช็กฝนเช้าวันนั้น ถ้าฝนตกหนักสลับคาเฟ่/ร้านอาหารในร่มก่อน",
+     "พกร่มพับและถุงกันชื้นให้กล้อง"
+    ],
+    "indoor_alts": [
+     {
+      "name_th": "คาเฟ่ FictoHill",
+      "area": "mae_rim",
+      "type": "cafe"
+     },
+     {
+      "name_th": "คาเฟ่ FictoBean",
+      "area": "nimman",
+      "type": "cafe"
+     },
+     {
+      "name_th": "ร้านข้าวซอย FictoSoi",
+      "area": "nimman",
+      "type": "food"
+     },
+     {
+      "name_th": "วอล์กกิ้งสตรีท ไนท์บาซาร์",
+      "area": "old_city",
+      "type": "market"
+     }
+    ],
+    "disclaimer_th": "TripStitch เป็นแผนเที่ยวเบื้องต้นจากแคปจอ ไม่ใช่ข้อมูลเวลาเปิด-ปิดหรือราคาจริง ตรวจกับแหล่งทางการก่อนเดินทาง และห้ามแชร์ตำแหน่งบ้านของผู้อื่น"
+   }
+  },
+  {
+   "def": "BudgetSplit",
+   "note": "kao fit",
+   "value": {
+    "budget_thb": 8000,
+    "planned_thb": 6800,
+    "buffer_thb": 1000,
+    "total_thb": 7800,
+    "per_pax_thb": 3900,
+    "pax": 2,
+    "nights": 3,
+    "lines": [
+     {
+      "key": "stay",
+      "label_th": "ที่พัก",
+      "thb": 2700
+     },
+     {
+      "key": "food",
+      "label_th": "อาหาร",
+      "thb": 2400
+     },
+     {
+      "key": "transport",
+      "label_th": "เดินทาง",
+      "thb": 600
+     },
+     {
+      "key": "tickets",
+      "label_th": "ค่าเข้า/ตั๋ว",
+      "thb": 100
+     },
+     {
+      "key": "extras",
+      "label_th": "คาเฟ่และของจิปาถะ",
+      "thb": 1000
+     },
+     {
+      "key": "buffer",
+      "label_th": "เผื่อเหลือ",
+      "thb": 1000
+     }
+    ],
+    "verdict": "fit",
+    "message_th": "อยู่ในงบที่ตั้งไว้",
+    "disclaimer_th": "ตัวเลขงบเป็นค่าประมาณการที่ตั้งเอง ไม่ใช่ราคาจองจริง"
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao fit stay",
+   "value": {
+    "key": "stay",
+    "label_th": "ที่พัก",
+    "thb": 2700
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao fit food",
+   "value": {
+    "key": "food",
+    "label_th": "อาหาร",
+    "thb": 2400
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao fit transport",
+   "value": {
+    "key": "transport",
+    "label_th": "เดินทาง",
+    "thb": 600
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao fit tickets",
+   "value": {
+    "key": "tickets",
+    "label_th": "ค่าเข้า/ตั๋ว",
+    "thb": 100
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao fit extras",
+   "value": {
+    "key": "extras",
+    "label_th": "คาเฟ่และของจิปาถะ",
+    "thb": 1000
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao fit buffer",
+   "value": {
+    "key": "buffer",
+    "label_th": "เผื่อเหลือ",
+    "thb": 1000
+   }
+  },
+  {
+   "def": "BudgetSplit",
+   "note": "kao under",
+   "value": {
+    "budget_thb": 12000,
+    "planned_thb": 6800,
+    "buffer_thb": 1500,
+    "total_thb": 8300,
+    "per_pax_thb": 4150,
+    "pax": 2,
+    "nights": 3,
+    "lines": [
+     {
+      "key": "stay",
+      "label_th": "ที่พัก",
+      "thb": 2700
+     },
+     {
+      "key": "food",
+      "label_th": "อาหาร",
+      "thb": 2400
+     },
+     {
+      "key": "transport",
+      "label_th": "เดินทาง",
+      "thb": 600
+     },
+     {
+      "key": "tickets",
+      "label_th": "ค่าเข้า/ตั๋ว",
+      "thb": 100
+     },
+     {
+      "key": "extras",
+      "label_th": "คาเฟ่และของจิปาถะ",
+      "thb": 1000
+     },
+     {
+      "key": "buffer",
+      "label_th": "เผื่อเหลือ",
+      "thb": 1500
+     }
+    ],
+    "verdict": "under",
+    "message_th": "ต่ำกว่างบที่ตั้งไว้ มีเหลือสำหรับของฝากหรือมื้อพิเศษ",
+    "disclaimer_th": "ตัวเลขงบเป็นค่าประมาณการที่ตั้งเอง ไม่ใช่ราคาจองจริง"
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao under stay",
+   "value": {
+    "key": "stay",
+    "label_th": "ที่พัก",
+    "thb": 2700
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao under food",
+   "value": {
+    "key": "food",
+    "label_th": "อาหาร",
+    "thb": 2400
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao under transport",
+   "value": {
+    "key": "transport",
+    "label_th": "เดินทาง",
+    "thb": 600
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao under tickets",
+   "value": {
+    "key": "tickets",
+    "label_th": "ค่าเข้า/ตั๋ว",
+    "thb": 100
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao under extras",
+   "value": {
+    "key": "extras",
+    "label_th": "คาเฟ่และของจิปาถะ",
+    "thb": 1000
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao under buffer",
+   "value": {
+    "key": "buffer",
+    "label_th": "เผื่อเหลือ",
+    "thb": 1500
+   }
+  },
+  {
+   "def": "BudgetSplit",
+   "note": "kao tight",
+   "value": {
+    "budget_thb": 7200,
+    "planned_thb": 6800,
+    "buffer_thb": 900,
+    "total_thb": 7700,
+    "per_pax_thb": 3850,
+    "pax": 2,
+    "nights": 3,
+    "lines": [
+     {
+      "key": "stay",
+      "label_th": "ที่พัก",
+      "thb": 2700
+     },
+     {
+      "key": "food",
+      "label_th": "อาหาร",
+      "thb": 2400
+     },
+     {
+      "key": "transport",
+      "label_th": "เดินทาง",
+      "thb": 600
+     },
+     {
+      "key": "tickets",
+      "label_th": "ค่าเข้า/ตั๋ว",
+      "thb": 100
+     },
+     {
+      "key": "extras",
+      "label_th": "คาเฟ่และของจิปาถะ",
+      "thb": 1000
+     },
+     {
+      "key": "buffer",
+      "label_th": "เผื่อเหลือ",
+      "thb": 900
+     }
+    ],
+    "verdict": "tight",
+    "message_th": "ตึงงบเล็กน้อย ลดมื้อพิเศษหรือเลือกที่พักถูกลงได้",
+    "disclaimer_th": "ตัวเลขงบเป็นค่าประมาณการที่ตั้งเอง ไม่ใช่ราคาจองจริง"
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao tight stay",
+   "value": {
+    "key": "stay",
+    "label_th": "ที่พัก",
+    "thb": 2700
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao tight food",
+   "value": {
+    "key": "food",
+    "label_th": "อาหาร",
+    "thb": 2400
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao tight transport",
+   "value": {
+    "key": "transport",
+    "label_th": "เดินทาง",
+    "thb": 600
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao tight tickets",
+   "value": {
+    "key": "tickets",
+    "label_th": "ค่าเข้า/ตั๋ว",
+    "thb": 100
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao tight extras",
+   "value": {
+    "key": "extras",
+    "label_th": "คาเฟ่และของจิปาถะ",
+    "thb": 1000
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao tight buffer",
+   "value": {
+    "key": "buffer",
+    "label_th": "เผื่อเหลือ",
+    "thb": 900
+   }
+  },
+  {
+   "def": "BudgetSplit",
+   "note": "kao over",
+   "value": {
+    "budget_thb": 4000,
+    "planned_thb": 6800,
+    "buffer_thb": 850,
+    "total_thb": 7650,
+    "per_pax_thb": 3825,
+    "pax": 2,
+    "nights": 3,
+    "lines": [
+     {
+      "key": "stay",
+      "label_th": "ที่พัก",
+      "thb": 2700
+     },
+     {
+      "key": "food",
+      "label_th": "อาหาร",
+      "thb": 2400
+     },
+     {
+      "key": "transport",
+      "label_th": "เดินทาง",
+      "thb": 600
+     },
+     {
+      "key": "tickets",
+      "label_th": "ค่าเข้า/ตั๋ว",
+      "thb": 100
+     },
+     {
+      "key": "extras",
+      "label_th": "คาเฟ่และของจิปาถะ",
+      "thb": 1000
+     },
+     {
+      "key": "buffer",
+      "label_th": "เผื่อเหลือ",
+      "thb": 850
+     }
+    ],
+    "verdict": "over",
+    "message_th": "เกินงบที่ตั้งไว้ ลองลดคืนที่พัก หรือตัดสถานที่ที่เสียค่าเข้า",
+    "disclaimer_th": "ตัวเลขงบเป็นค่าประมาณการที่ตั้งเอง ไม่ใช่ราคาจองจริง"
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao over stay",
+   "value": {
+    "key": "stay",
+    "label_th": "ที่พัก",
+    "thb": 2700
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao over food",
+   "value": {
+    "key": "food",
+    "label_th": "อาหาร",
+    "thb": 2400
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao over transport",
+   "value": {
+    "key": "transport",
+    "label_th": "เดินทาง",
+    "thb": 600
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao over tickets",
+   "value": {
+    "key": "tickets",
+    "label_th": "ค่าเข้า/ตั๋ว",
+    "thb": 100
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao over extras",
+   "value": {
+    "key": "extras",
+    "label_th": "คาเฟ่และของจิปาถะ",
+    "thb": 1000
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao over buffer",
+   "value": {
+    "key": "buffer",
+    "label_th": "เผื่อเหลือ",
+    "thb": 850
+   }
+  },
+  {
+   "def": "BudgetSplit",
+   "note": "kao no budget",
+   "value": {
+    "budget_thb": 0,
+    "planned_thb": 6800,
+    "buffer_thb": 850,
+    "total_thb": 7650,
+    "per_pax_thb": 3825,
+    "pax": 2,
+    "nights": 3,
+    "lines": [
+     {
+      "key": "stay",
+      "label_th": "ที่พัก",
+      "thb": 2700
+     },
+     {
+      "key": "food",
+      "label_th": "อาหาร",
+      "thb": 2400
+     },
+     {
+      "key": "transport",
+      "label_th": "เดินทาง",
+      "thb": 600
+     },
+     {
+      "key": "tickets",
+      "label_th": "ค่าเข้า/ตั๋ว",
+      "thb": 100
+     },
+     {
+      "key": "extras",
+      "label_th": "คาเฟ่และของจิปาถะ",
+      "thb": 1000
+     },
+     {
+      "key": "buffer",
+      "label_th": "เผื่อเหลือ",
+      "thb": 850
+     }
+    ],
+    "verdict": "unknown",
+    "message_th": "ยังไม่ได้ตั้งงบ",
+    "disclaimer_th": "ตัวเลขงบเป็นค่าประมาณการที่ตั้งเอง ไม่ใช่ราคาจองจริง"
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao no budget stay",
+   "value": {
+    "key": "stay",
+    "label_th": "ที่พัก",
+    "thb": 2700
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao no budget food",
+   "value": {
+    "key": "food",
+    "label_th": "อาหาร",
+    "thb": 2400
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao no budget transport",
+   "value": {
+    "key": "transport",
+    "label_th": "เดินทาง",
+    "thb": 600
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao no budget tickets",
+   "value": {
+    "key": "tickets",
+    "label_th": "ค่าเข้า/ตั๋ว",
+    "thb": 100
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao no budget extras",
+   "value": {
+    "key": "extras",
+    "label_th": "คาเฟ่และของจิปาถะ",
+    "thb": 1000
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao no budget buffer",
+   "value": {
+    "key": "buffer",
+    "label_th": "เผื่อเหลือ",
+    "thb": 850
+   }
+  },
+  {
+   "def": "BudgetSplit",
+   "note": "nina over",
+   "value": {
+    "budget_thb": 2500,
+    "planned_thb": 2600,
+    "buffer_thb": 300,
+    "total_thb": 2900,
+    "per_pax_thb": 2900,
+    "pax": 1,
+    "nights": 1,
+    "lines": [
+     {
+      "key": "stay",
+      "label_th": "ที่พัก",
+      "thb": 900
+     },
+     {
+      "key": "food",
+      "label_th": "อาหาร",
+      "thb": 600
+     },
+     {
+      "key": "transport",
+      "label_th": "เดินทาง",
+      "thb": 300
+     },
+     {
+      "key": "tickets",
+      "label_th": "ค่าเข้า/ตั๋ว",
+      "thb": 150
+     },
+     {
+      "key": "extras",
+      "label_th": "คาเฟ่และของจิปาถะ",
+      "thb": 650
+     },
+     {
+      "key": "buffer",
+      "label_th": "เผื่อเหลือ",
+      "thb": 300
+     }
+    ],
+    "verdict": "over",
+    "message_th": "เกินงบที่ตั้งไว้ ลองลดคืนที่พัก หรือตัดสถานที่ที่เสียค่าเข้า",
+    "disclaimer_th": "ตัวเลขงบเป็นค่าประมาณการที่ตั้งเอง ไม่ใช่ราคาจองจริง"
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "nina over stay",
+   "value": {
+    "key": "stay",
+    "label_th": "ที่พัก",
+    "thb": 900
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "nina over food",
+   "value": {
+    "key": "food",
+    "label_th": "อาหาร",
+    "thb": 600
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "nina over transport",
+   "value": {
+    "key": "transport",
+    "label_th": "เดินทาง",
+    "thb": 300
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "nina over tickets",
+   "value": {
+    "key": "tickets",
+    "label_th": "ค่าเข้า/ตั๋ว",
+    "thb": 150
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "nina over extras",
+   "value": {
+    "key": "extras",
+    "label_th": "คาเฟ่และของจิปาถะ",
+    "thb": 650
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "nina over buffer",
+   "value": {
+    "key": "buffer",
+    "label_th": "เผื่อเหลือ",
+    "thb": 300
+   }
+  },
+  {
+   "def": "BudgetSplit",
+   "note": "phu fit",
+   "value": {
+    "budget_thb": 9000,
+    "planned_thb": 7570,
+    "buffer_thb": 1100,
+    "total_thb": 8670,
+    "per_pax_thb": 2168,
+    "pax": 4,
+    "nights": 2,
+    "lines": [
+     {
+      "key": "stay",
+      "label_th": "ที่พัก",
+      "thb": 1800
+     },
+     {
+      "key": "food",
+      "label_th": "อาหาร",
+      "thb": 3600
+     },
+     {
+      "key": "transport",
+      "label_th": "เดินทาง",
+      "thb": 450
+     },
+     {
+      "key": "tickets",
+      "label_th": "ค่าเข้า/ตั๋ว",
+      "thb": 0
+     },
+     {
+      "key": "extras",
+      "label_th": "คาเฟ่และของจิปาถะ",
+      "thb": 1720
+     },
+     {
+      "key": "buffer",
+      "label_th": "เผื่อเหลือ",
+      "thb": 1100
+     }
+    ],
+    "verdict": "fit",
+    "message_th": "อยู่ในงบที่ตั้งไว้",
+    "disclaimer_th": "ตัวเลขงบเป็นค่าประมาณการที่ตั้งเอง ไม่ใช่ราคาจองจริง"
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "phu fit stay",
+   "value": {
+    "key": "stay",
+    "label_th": "ที่พัก",
+    "thb": 1800
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "phu fit food",
+   "value": {
+    "key": "food",
+    "label_th": "อาหาร",
+    "thb": 3600
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "phu fit transport",
+   "value": {
+    "key": "transport",
+    "label_th": "เดินทาง",
+    "thb": 450
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "phu fit tickets",
+   "value": {
+    "key": "tickets",
+    "label_th": "ค่าเข้า/ตั๋ว",
+    "thb": 0
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "phu fit extras",
+   "value": {
+    "key": "extras",
+    "label_th": "คาเฟ่และของจิปาถะ",
+    "thb": 1720
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "phu fit buffer",
+   "value": {
+    "key": "buffer",
+    "label_th": "เผื่อเหลือ",
+    "thb": 1100
+   }
+  },
+  {
+   "def": "BudgetSplit",
+   "note": "kao no stay",
+   "value": {
+    "budget_thb": 8000,
+    "planned_thb": 4100,
+    "buffer_thb": 1000,
+    "total_thb": 5100,
+    "per_pax_thb": 2550,
+    "pax": 2,
+    "nights": 3,
+    "lines": [
+     {
+      "key": "stay",
+      "label_th": "ที่พัก",
+      "thb": 0
+     },
+     {
+      "key": "food",
+      "label_th": "อาหาร",
+      "thb": 2400
+     },
+     {
+      "key": "transport",
+      "label_th": "เดินทาง",
+      "thb": 600
+     },
+     {
+      "key": "tickets",
+      "label_th": "ค่าเข้า/ตั๋ว",
+      "thb": 100
+     },
+     {
+      "key": "extras",
+      "label_th": "คาเฟ่และของจิปาถะ",
+      "thb": 1000
+     },
+     {
+      "key": "buffer",
+      "label_th": "เผื่อเหลือ",
+      "thb": 1000
+     }
+    ],
+    "verdict": "under",
+    "message_th": "ต่ำกว่างบที่ตั้งไว้ มีเหลือสำหรับของฝากหรือมื้อพิเศษ",
+    "disclaimer_th": "ตัวเลขงบเป็นค่าประมาณการที่ตั้งเอง ไม่ใช่ราคาจองจริง"
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao no stay stay",
+   "value": {
+    "key": "stay",
+    "label_th": "ที่พัก",
+    "thb": 0
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao no stay food",
+   "value": {
+    "key": "food",
+    "label_th": "อาหาร",
+    "thb": 2400
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao no stay transport",
+   "value": {
+    "key": "transport",
+    "label_th": "เดินทาง",
+    "thb": 600
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao no stay tickets",
+   "value": {
+    "key": "tickets",
+    "label_th": "ค่าเข้า/ตั๋ว",
+    "thb": 100
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao no stay extras",
+   "value": {
+    "key": "extras",
+    "label_th": "คาเฟ่และของจิปาถะ",
+    "thb": 1000
+   }
+  },
+  {
+   "def": "BudgetLine",
+   "note": "kao no stay buffer",
+   "value": {
+    "key": "buffer",
+    "label_th": "เผื่อเหลือ",
+    "thb": 1000
+   }
+  },
+  {
+   "def": "PackingList",
+   "note": "kao",
+   "value": {
+    "nights": 3,
+    "days": 4,
+    "climates": [
+     "cool_morning",
+     "rain_possible"
+    ],
+    "count": 15,
+    "items": [
+     {
+      "key": "tees",
+      "text_th": "เสื้อยืดหรือเสื้อสบาย 4 ตัว",
+      "group": "clothes"
+     },
+     {
+      "key": "pants",
+      "text_th": "กางเกง/กระโปรง 3 ตัว",
+      "group": "clothes"
+     },
+     {
+      "key": "underwear",
+      "text_th": "ชุดชั้นในและถุงเท้า 4 ชุด",
+      "group": "clothes"
+     },
+     {
+      "key": "climate_1",
+      "text_th": "เสื้อคลุมบาง",
+      "group": "weather"
+     },
+     {
+      "key": "climate_2",
+      "text_th": "กางเกงขายาว 1 ตัวสำหรับเช้า",
+      "group": "weather"
+     },
+     {
+      "key": "climate_3",
+      "text_th": "ร่มพับหรือเสื้อกันฝนบาง",
+      "group": "weather"
+     },
+     {
+      "key": "climate_4",
+      "text_th": "ถุงซิปล็อคกันชื้น",
+      "group": "weather"
+     },
+     {
+      "key": "type_5",
+      "text_th": "ชุดสุภาพคลุมไหล่-เข่า สำหรับเข้าวัด",
+      "group": "activity"
+     },
+     {
+      "key": "type_6",
+      "text_th": "กล้องหรือมือถือพร้อมที่ชาร์จ",
+      "group": "activity"
+     },
+     {
+      "key": "type_7",
+      "text_th": "กระเป๋าสะพายปิดซิป",
+      "group": "activity"
+     },
+     {
+      "key": "type_8",
+      "text_th": "รองเท้าเดินสบาย",
+      "group": "activity"
+     },
+     {
+      "key": "base_0",
+      "text_th": "ยาประจำตัว",
+      "group": "essentials"
+     },
+     {
+      "key": "base_1",
+      "text_th": "ที่ชาร์จและแบตสำรอง",
+      "group": "essentials"
+     },
+     {
+      "key": "base_2",
+      "text_th": "เอกสาร/บัตรประชาชน",
+      "group": "essentials"
+     },
+     {
+      "key": "base_3",
+      "text_th": "เงินสดเล็กน้อยและบัตร",
+      "group": "essentials"
+     }
+    ]
+   }
+  },
+  {
+   "def": "PackItem",
+   "note": "kao first",
+   "value": {
+    "key": "tees",
+    "text_th": "เสื้อยืดหรือเสื้อสบาย 4 ตัว",
+    "group": "clothes"
+   }
+  },
+  {
+   "def": "PackingList",
+   "note": "nina hot",
+   "value": {
+    "nights": 1,
+    "days": 2,
+    "climates": [
+     "hot"
+    ],
+    "count": 12,
+    "items": [
+     {
+      "key": "tees",
+      "text_th": "เสื้อยืดหรือเสื้อสบาย 2 ตัว",
+      "group": "clothes"
+     },
+     {
+      "key": "pants",
+      "text_th": "กางเกง/กระโปรง 2 ตัว",
+      "group": "clothes"
+     },
+     {
+      "key": "underwear",
+      "text_th": "ชุดชั้นในและถุงเท้า 2 ชุด",
+      "group": "clothes"
+     },
+     {
+      "key": "climate_1",
+      "text_th": "เสื้อระบายอากาศ",
+      "group": "weather"
+     },
+     {
+      "key": "climate_2",
+      "text_th": "ครีมกันแดด",
+      "group": "weather"
+     },
+     {
+      "key": "climate_3",
+      "text_th": "หมวกหรือร่มกันแดด",
+      "group": "weather"
+     },
+     {
+      "key": "climate_4",
+      "text_th": "ขวดน้ำ",
+      "group": "weather"
+     },
+     {
+      "key": "type_5",
+      "text_th": "กล้องหรือมือถือพร้อมที่ชาร์จ",
+      "group": "activity"
+     },
+     {
+      "key": "base_0",
+      "text_th": "ยาประจำตัว",
+      "group": "essentials"
+     },
+     {
+      "key": "base_1",
+      "text_th": "ที่ชาร์จและแบตสำรอง",
+      "group": "essentials"
+     },
+     {
+      "key": "base_2",
+      "text_th": "เอกสาร/บัตรประชาชน",
+      "group": "essentials"
+     },
+     {
+      "key": "base_3",
+      "text_th": "เงินสดเล็กน้อยและบัตร",
+      "group": "essentials"
+     }
+    ]
+   }
+  },
+  {
+   "def": "PackItem",
+   "note": "nina hot first",
+   "value": {
+    "key": "tees",
+    "text_th": "เสื้อยืดหรือเสื้อสบาย 2 ตัว",
+    "group": "clothes"
+   }
+  },
+  {
+   "def": "PackingList",
+   "note": "phu",
+   "value": {
+    "nights": 2,
+    "days": 3,
+    "climates": [
+     "cold",
+     "rain_possible"
+    ],
+    "count": 16,
+    "items": [
+     {
+      "key": "tees",
+      "text_th": "เสื้อยืดหรือเสื้อสบาย 3 ตัว",
+      "group": "clothes"
+     },
+     {
+      "key": "pants",
+      "text_th": "กางเกง/กระโปรง 2 ตัว",
+      "group": "clothes"
+     },
+     {
+      "key": "underwear",
+      "text_th": "ชุดชั้นในและถุงเท้า 3 ชุด",
+      "group": "clothes"
+     },
+     {
+      "key": "climate_1",
+      "text_th": "เสื้อกันหนาว",
+      "group": "weather"
+     },
+     {
+      "key": "climate_2",
+      "text_th": "กางเกงขายาว",
+      "group": "weather"
+     },
+     {
+      "key": "climate_3",
+      "text_th": "ถุงเท้า",
+      "group": "weather"
+     },
+     {
+      "key": "climate_4",
+      "text_th": "ร่มพับหรือเสื้อกันฝนบาง",
+      "group": "weather"
+     },
+     {
+      "key": "climate_5",
+      "text_th": "ถุงซิปล็อคกันชื้น",
+      "group": "weather"
+     },
+     {
+      "key": "type_6",
+      "text_th": "กระเป๋าสะพายปิดซิป",
+      "group": "activity"
+     },
+     {
+      "key": "type_7",
+      "text_th": "รองเท้าเดินสบาย",
+      "group": "activity"
+     },
+     {
+      "key": "type_8",
+      "text_th": "รองเท้ากันลื่น",
+      "group": "activity"
+     },
+     {
+      "key": "type_9",
+      "text_th": "กล้องหรือมือถือพร้อมที่ชาร์จ",
+      "group": "activity"
+     },
+     {
+      "key": "base_0",
+      "text_th": "ยาประจำตัว",
+      "group": "essentials"
+     },
+     {
+      "key": "base_1",
+      "text_th": "ที่ชาร์จและแบตสำรอง",
+      "group": "essentials"
+     },
+     {
+      "key": "base_2",
+      "text_th": "เอกสาร/บัตรประชาชน",
+      "group": "essentials"
+     },
+     {
+      "key": "base_3",
+      "text_th": "เงินสดเล็กน้อยและบัตร",
+      "group": "essentials"
+     }
+    ]
+   }
+  },
+  {
+   "def": "PackItem",
+   "note": "phu first",
+   "value": {
+    "key": "tees",
+    "text_th": "เสื้อยืดหรือเสื้อสบาย 3 ตัว",
+    "group": "clothes"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "kao",
+   "value": {
+    "title_th": "ทริปพี่เก้า",
+    "headline_th": "เชียงใหม่",
+    "hook_th": "แคปจอที่เที่ยวเก็บไว้ กลายเป็นทริปพร้อมเที่ยว",
+    "days_th": "วันที่ 1 2 จุด, วันที่ 2 2 จุด, วันที่ 3 1 จุด, วันที่ 4 1 จุด",
+    "total_thb": 7800,
+    "verdict": "fit",
+    "layout": "trip_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with TripStitch · plan only, not a booking",
+    "offline": true,
+    "cta_th": "งบประมาณ ~฿7,800 · คอมเมนต์ TRIP รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "phu",
+   "value": {
+    "title_th": "ทริปพี่ภู",
+    "headline_th": "เชียงคาน",
+    "hook_th": "แคปจอที่เที่ยวเก็บไว้ กลายเป็นทริปพร้อมเที่ยว",
+    "days_th": "วันที่ 1 2 จุด, วันที่ 2 1 จุด, วันที่ 3 1 จุด",
+    "total_thb": 8670,
+    "verdict": "fit",
+    "layout": "trip_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with TripStitch · plan only, not a booking",
+    "offline": true,
+    "cta_th": "งบประมาณ ~฿8,670 · คอมเมนต์ TRIP รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "TripStitch เป็นแผนเที่ยวเบื้องต้นจากแคปจอ ไม่ใช่ข้อมูลเวลาเปิด-ปิดหรือราคาจริง ตรวจกับแหล่งทางการก่อนเดินทาง และห้ามแชร์ตำแหน่งบ้านของผู้อื่น"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "warn closed",
+   "value": {
+    "level": "warn",
+    "message_th": "มีร้านที่ปิดในวันที่วางไว้ ตรวจอีกครั้งก่อนเดินทาง TripStitch เป็นแผนเที่ยวเบื้องต้นจากแคปจอ ไม่ใช่ข้อมูลเวลาเปิด-ปิดหรือราคาจริง ตรวจกับแหล่งทางการก่อนเดินทาง และห้ามแชร์ตำแหน่งบ้านของผู้อื่น"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "no places",
+   "value": {
+    "level": "warn",
+    "message_th": "ยังไม่มีสถานที่พอสำหรับวางแผน TripStitch เป็นแผนเที่ยวเบื้องต้นจากแคปจอ ไม่ใช่ข้อมูลเวลาเปิด-ปิดหรือราคาจริง ตรวจกับแหล่งทางการก่อนเดินทาง และห้ามแชร์ตำแหน่งบ้านของผู้อื่น"
+   }
+  }
+ ]
+}

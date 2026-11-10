@@ -1,0 +1,924 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/tripstitch.schema.json",
+ "title": "TripStitch",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age",
+    "dest_th",
+    "start_date",
+    "nights",
+    "pax",
+    "budget_thb"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "goal_th": {
+     "type": "string"
+    },
+    "dest_th": {
+     "type": "string"
+    },
+    "start_date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "nights": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "pax": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "budget_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "climates": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "hot",
+       "cool_morning",
+       "rain_possible",
+       "cold"
+      ]
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "Detection": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "area",
+    "type",
+    "confidence"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "area": {
+     "type": "string"
+    },
+    "type": {
+     "enum": [
+      "cafe",
+      "food",
+      "temple",
+      "market",
+      "viewpoint",
+      "photo",
+      "activity",
+      "stay"
+     ]
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "source": {
+     "enum": [
+      "ig",
+      "maps",
+      "tiktok",
+      "web",
+      "note"
+     ]
+    },
+    "open_hour": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0,
+     "maximum": 24
+    },
+    "close_hour": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0,
+     "maximum": 24
+    },
+    "closed_dow": {
+     "type": "array",
+     "items": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 6
+     }
+    },
+    "ticket_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "note_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Screenshot": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "crop",
+    "detections"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^s[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "crop": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "detections": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Detection"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th",
+    "place_hint_count"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "place_hint_count": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "Place": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "name_en",
+    "area",
+    "type",
+    "source",
+    "confidence",
+    "open_hour",
+    "close_hour",
+    "closed_dow",
+    "ticket_thb",
+    "note_th"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "area": {
+     "type": "string"
+    },
+    "type": {
+     "enum": [
+      "cafe",
+      "food",
+      "temple",
+      "market",
+      "viewpoint",
+      "photo",
+      "activity",
+      "stay"
+     ]
+    },
+    "source": {
+     "enum": [
+      "ig",
+      "maps",
+      "tiktok",
+      "web",
+      "note"
+     ]
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "open_hour": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0,
+     "maximum": 24
+    },
+    "close_hour": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0,
+     "maximum": 24
+    },
+    "closed_dow": {
+     "type": "array",
+     "items": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 6
+     }
+    },
+    "ticket_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "note_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Extract": {
+   "type": "object",
+   "required": [
+    "shot_id",
+    "quality",
+    "places",
+    "uncertain",
+    "place_count"
+   ],
+   "properties": {
+    "shot_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    },
+    "places": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Place"
+     }
+    },
+    "uncertain": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "place_count": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "Pipeline": {
+   "type": "object",
+   "required": [
+    "shot_id",
+    "steps"
+   ],
+   "properties": {
+    "shot_id": {
+     "type": "string"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "Stitch": {
+   "type": "object",
+   "required": [
+    "shot_ids",
+    "places",
+    "place_count",
+    "uncertain",
+    "areas"
+   ],
+   "properties": {
+    "shot_ids": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "places": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Place"
+     }
+    },
+    "place_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "uncertain": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "areas": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "Stop": {
+   "type": "object",
+   "required": [
+    "n",
+    "place_id",
+    "name_th",
+    "area",
+    "type",
+    "slot",
+    "travel_min"
+   ],
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "place_id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "area": {
+     "type": "string"
+    },
+    "type": {
+     "enum": [
+      "cafe",
+      "food",
+      "temple",
+      "market",
+      "viewpoint",
+      "photo",
+      "activity",
+      "stay"
+     ]
+    },
+    "slot": {
+     "enum": [
+      "morning",
+      "afternoon",
+      "evening"
+     ]
+    },
+    "travel_min": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "open_hour": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0,
+     "maximum": 24
+    },
+    "close_hour": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0,
+     "maximum": 24
+    }
+   },
+   "additionalProperties": false
+  },
+  "DayPlan": {
+   "type": "object",
+   "required": [
+    "day",
+    "date",
+    "dow",
+    "stops",
+    "stop_count",
+    "areas",
+    "total_travel_min"
+   ],
+   "properties": {
+    "day": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "dow": {
+     "type": "string"
+    },
+    "stops": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Stop"
+     }
+    },
+    "stop_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "areas": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "total_travel_min": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "TripPlan": {
+   "type": "object",
+   "required": [
+    "start_date",
+    "nights",
+    "days",
+    "pax",
+    "itinerary",
+    "place_count"
+   ],
+   "properties": {
+    "start_date": {
+     "type": "string"
+    },
+    "nights": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "days": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "pax": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "itinerary": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/DayPlan"
+     },
+     "minItems": 1
+    },
+    "place_count": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ClosedWarning": {
+   "type": "object",
+   "required": [
+    "day",
+    "date",
+    "place_id",
+    "name_th",
+    "message_th"
+   ],
+   "properties": {
+    "day": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "date": {
+     "type": "string"
+    },
+    "place_id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "RainPlan": {
+   "type": "object",
+   "required": [
+    "tips_th",
+    "indoor_alts",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "indoor_alts": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "name_th",
+       "area",
+       "type"
+      ],
+      "properties": {
+       "name_th": {
+        "type": "string"
+       },
+       "area": {
+        "type": "string"
+       },
+       "type": {
+        "enum": [
+         "cafe",
+         "food",
+         "temple",
+         "market",
+         "viewpoint",
+         "photo",
+         "activity",
+         "stay"
+        ]
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "BudgetLine": {
+   "type": "object",
+   "required": [
+    "key",
+    "label_th",
+    "thb"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "thb": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "BudgetSplit": {
+   "type": "object",
+   "required": [
+    "budget_thb",
+    "planned_thb",
+    "buffer_thb",
+    "total_thb",
+    "per_pax_thb",
+    "pax",
+    "nights",
+    "lines",
+    "verdict",
+    "message_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "budget_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "planned_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "buffer_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "per_pax_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "pax": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "nights": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "lines": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/BudgetLine"
+     },
+     "minItems": 1
+    },
+    "verdict": {
+     "enum": [
+      "unknown",
+      "under",
+      "fit",
+      "tight",
+      "over"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PackItem": {
+   "type": "object",
+   "required": [
+    "key",
+    "text_th",
+    "group"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "text_th": {
+     "type": "string"
+    },
+    "group": {
+     "enum": [
+      "clothes",
+      "weather",
+      "activity",
+      "essentials"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "PackingList": {
+   "type": "object",
+   "required": [
+    "nights",
+    "days",
+    "climates",
+    "count",
+    "items"
+   ],
+   "properties": {
+    "nights": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "days": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "climates": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "hot",
+       "cool_morning",
+       "rain_possible",
+       "cold"
+      ]
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/PackItem"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "days_th",
+    "total_thb",
+    "verdict",
+    "layout",
+    "sizes",
+    "watermark",
+    "offline",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "days_th": {
+     "type": "string"
+    },
+    "total_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "verdict": {
+     "enum": [
+      "unknown",
+      "under",
+      "fit",
+      "tight",
+      "over"
+     ]
+    },
+    "layout": {
+     "enum": [
+      "trip_card"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "offline": {
+     "type": "boolean"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
