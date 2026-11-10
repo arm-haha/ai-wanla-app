@@ -1,0 +1,1264 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/specstry.schema.json",
+ "title": "SpecsTry",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age",
+    "region",
+    "lifestyle"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "goal_th": {
+     "type": "string"
+    },
+    "region": {
+     "enum": [
+      "bkk",
+      "province",
+      "tourist"
+     ]
+    },
+    "lifestyle": {
+     "enum": [
+      "office",
+      "outdoor",
+      "sport",
+      "casual",
+      "fashion"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "Measures": {
+   "type": "object",
+   "required": [
+    "length_mm",
+    "forehead_mm",
+    "cheek_mm",
+    "jaw_mm"
+   ],
+   "properties": {
+    "length_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "forehead_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "cheek_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "jaw_mm": {
+     "type": "number",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "FacePhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "tilt",
+    "face_fill",
+    "eyes_visible",
+    "undertone",
+    "face_confidence",
+    "pd_mm",
+    "measures"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^p[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "tilt": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "face_fill": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "eyes_visible": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "undertone": {
+     "enum": [
+      "warm",
+      "cool",
+      "neutral"
+     ]
+    },
+    "face_confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "pd_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "measures": {
+     "$ref": "#/$defs/Measures"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "FaceShape": {
+   "type": "object",
+   "required": [
+    "shape",
+    "shape_th",
+    "length_mm",
+    "forehead_mm",
+    "cheek_mm",
+    "jaw_mm",
+    "length_to_width",
+    "advice_th"
+   ],
+   "properties": {
+    "shape": {
+     "enum": [
+      "oval",
+      "round",
+      "square",
+      "heart",
+      "oblong",
+      "diamond"
+     ]
+    },
+    "shape_th": {
+     "type": "string"
+    },
+    "length_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "forehead_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "cheek_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "jaw_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "length_to_width": {
+     "type": "number",
+     "minimum": 0
+    },
+    "advice_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "FaceScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "quality",
+    "undertone",
+    "pd_mm",
+    "face",
+    "uncertain",
+    "ok",
+    "message_th"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    },
+    "undertone": {
+     "enum": [
+      "warm",
+      "cool",
+      "neutral"
+     ]
+    },
+    "pd_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "face": {
+     "anyOf": [
+      {
+       "$ref": "#/$defs/FaceShape"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "uncertain": {
+     "type": "boolean"
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Pipeline": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "steps"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "FrameInfo": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "name_en",
+    "shape",
+    "material",
+    "material_th",
+    "lens_width",
+    "bridge",
+    "temple",
+    "color",
+    "base_thb",
+    "best_shapes",
+    "lifestyle",
+    "front_mm"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "f01",
+      "f02",
+      "f03",
+      "f04",
+      "f05",
+      "f06",
+      "f07",
+      "f08",
+      "f09",
+      "f10",
+      "f11",
+      "f12"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "shape": {
+     "type": "string"
+    },
+    "material": {
+     "enum": [
+      "metal",
+      "acetate",
+      "titanium",
+      "rimless"
+     ]
+    },
+    "material_th": {
+     "type": "string"
+    },
+    "lens_width": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "bridge": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "temple": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "color": {
+     "type": "string"
+    },
+    "base_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "best_shapes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "oval",
+       "round",
+       "square",
+       "heart",
+       "oblong",
+       "diamond"
+      ]
+     }
+    },
+    "lifestyle": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "office",
+       "outdoor",
+       "sport",
+       "casual",
+       "fashion"
+      ]
+     }
+    },
+    "front_mm": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "PdStatus": {
+   "type": "object",
+   "required": [
+    "pd_mm",
+    "verdict",
+    "message_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "pd_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "verdict": {
+     "enum": [
+      "typical",
+      "check",
+      "out_of_range"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SizeCheck": {
+   "type": "object",
+   "required": [
+    "frame_id",
+    "pd_mm",
+    "pd_verdict",
+    "face_width_mm",
+    "frame_front_mm",
+    "lens_width",
+    "bridge",
+    "temple",
+    "delta_mm",
+    "verdict",
+    "fit_th",
+    "centres_mm",
+    "center_offset_mm",
+    "message_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "frame_id": {
+     "enum": [
+      "f01",
+      "f02",
+      "f03",
+      "f04",
+      "f05",
+      "f06",
+      "f07",
+      "f08",
+      "f09",
+      "f10",
+      "f11",
+      "f12"
+     ]
+    },
+    "pd_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "pd_verdict": {
+     "enum": [
+      "typical",
+      "check",
+      "out_of_range"
+     ]
+    },
+    "face_width_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "frame_front_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "lens_width": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "bridge": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "temple": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "delta_mm": {
+     "type": "number"
+    },
+    "verdict": {
+     "enum": [
+      "ok",
+      "too_narrow",
+      "too_wide"
+     ]
+    },
+    "fit_th": {
+     "type": "string"
+    },
+    "centres_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "center_offset_mm": {
+     "type": "number"
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "FitScore": {
+   "type": "object",
+   "required": [
+    "frame_id",
+    "score",
+    "face_pts",
+    "size_pts",
+    "contrast_pts",
+    "lifestyle_pts",
+    "reasons_th"
+   ],
+   "properties": {
+    "frame_id": {
+     "enum": [
+      "f01",
+      "f02",
+      "f03",
+      "f04",
+      "f05",
+      "f06",
+      "f07",
+      "f08",
+      "f09",
+      "f10",
+      "f11",
+      "f12"
+     ]
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "face_pts": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "size_pts": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "contrast_pts": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "lifestyle_pts": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "reasons_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "TryOn": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "frame_id",
+    "name_th",
+    "shape",
+    "material",
+    "color",
+    "face_shape",
+    "face_shape_th",
+    "pd_mm",
+    "size_verdict",
+    "fit_score",
+    "quality",
+    "watermark",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "frame_id": {
+     "enum": [
+      "f01",
+      "f02",
+      "f03",
+      "f04",
+      "f05",
+      "f06",
+      "f07",
+      "f08",
+      "f09",
+      "f10",
+      "f11",
+      "f12"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "shape": {
+     "type": "string"
+    },
+    "material": {
+     "enum": [
+      "metal",
+      "acetate",
+      "titanium",
+      "rimless"
+     ]
+    },
+    "color": {
+     "type": "string"
+    },
+    "face_shape": {
+     "enum": [
+      "oval",
+      "round",
+      "square",
+      "heart",
+      "oblong",
+      "diamond"
+     ]
+    },
+    "face_shape_th": {
+     "type": "string"
+    },
+    "pd_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "size_verdict": {
+     "enum": [
+      "ok",
+      "too_narrow",
+      "too_wide"
+     ]
+    },
+    "fit_score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "TryOnGrid": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "count",
+    "ranked",
+    "top_id"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "ranked": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/TryOn"
+     },
+     "minItems": 1
+    },
+    "top_id": {
+     "enum": [
+      "f01",
+      "f02",
+      "f03",
+      "f04",
+      "f05",
+      "f06",
+      "f07",
+      "f08",
+      "f09",
+      "f10",
+      "f11",
+      "f12"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "CompareGrid": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "frames",
+    "count"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "frames": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/TryOn"
+     },
+     "minItems": 2
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 2,
+     "maximum": 4
+    }
+   },
+   "additionalProperties": false
+  },
+  "PriceRange": {
+   "type": "object",
+   "required": [
+    "frame_id",
+    "name_th",
+    "region",
+    "lens",
+    "lens_th",
+    "mid_thb",
+    "min_thb",
+    "max_thb",
+    "currency",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "frame_id": {
+     "enum": [
+      "f01",
+      "f02",
+      "f03",
+      "f04",
+      "f05",
+      "f06",
+      "f07",
+      "f08",
+      "f09",
+      "f10",
+      "f11",
+      "f12"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "region": {
+     "enum": [
+      "bkk",
+      "province",
+      "tourist"
+     ]
+    },
+    "lens": {
+     "enum": [
+      "single",
+      "progressive",
+      "blue_light",
+      "photochromic",
+      "sun"
+     ]
+    },
+    "lens_th": {
+     "type": "string"
+    },
+    "mid_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "min_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "max_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "currency": {
+     "const": "THB"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "QuoteCheck": {
+   "type": "object",
+   "required": [
+    "quote_thb",
+    "min_thb",
+    "max_thb",
+    "mid_thb",
+    "verdict",
+    "message_th",
+    "questions_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "quote_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "min_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "max_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "mid_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "verdict": {
+     "enum": [
+      "low",
+      "fair",
+      "high",
+      "very_high"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "questions_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "LensAdvice": {
+   "type": "object",
+   "required": [
+    "lens",
+    "name_th",
+    "add_thb",
+    "notes_th",
+    "warnings_th",
+    "lifestyle",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "lens": {
+     "enum": [
+      "single",
+      "progressive",
+      "blue_light",
+      "photochromic",
+      "sun"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "add_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "notes_th": {
+     "type": "string"
+    },
+    "warnings_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "lifestyle": {
+     "enum": [
+      "office",
+      "outdoor",
+      "sport",
+      "casual",
+      "fashion"
+     ]
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "OpticianCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "name_th",
+    "face_shape",
+    "face_shape_th",
+    "frame_id",
+    "frame_th",
+    "lens_width",
+    "bridge",
+    "temple",
+    "pd_mm",
+    "fit_score",
+    "size_verdict",
+    "budget_min_thb",
+    "budget_max_thb",
+    "note_th",
+    "line_share_url",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "face_shape": {
+     "enum": [
+      "oval",
+      "round",
+      "square",
+      "heart",
+      "oblong",
+      "diamond"
+     ]
+    },
+    "face_shape_th": {
+     "type": "string"
+    },
+    "frame_id": {
+     "enum": [
+      "f01",
+      "f02",
+      "f03",
+      "f04",
+      "f05",
+      "f06",
+      "f07",
+      "f08",
+      "f09",
+      "f10",
+      "f11",
+      "f12"
+     ]
+    },
+    "frame_th": {
+     "type": "string"
+    },
+    "lens_width": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "bridge": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "temple": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "pd_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "fit_score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "size_verdict": {
+     "enum": [
+      "ok",
+      "too_narrow",
+      "too_wide"
+     ]
+    },
+    "budget_min_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "budget_max_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "note_th": {
+     "type": "string"
+    },
+    "line_share_url": {
+     "type": "string",
+     "pattern": "^https://line\\.me/R/share\\?text="
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiaryEntry": {
+   "type": "object",
+   "required": [
+    "id",
+    "person_id",
+    "date",
+    "frame_id",
+    "shop_th",
+    "cost_thb",
+    "status",
+    "on_device"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "person_id": {
+     "type": "string"
+    },
+    "date": {
+     "type": "string",
+     "format": "date",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "frame_id": {
+     "enum": [
+      "f01",
+      "f02",
+      "f03",
+      "f04",
+      "f05",
+      "f06",
+      "f07",
+      "f08",
+      "f09",
+      "f10",
+      "f11",
+      "f12"
+     ]
+    },
+    "shop_th": {
+     "type": "string"
+    },
+    "cost_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "status": {
+     "enum": [
+      "wishlist",
+      "tried",
+      "bought"
+     ]
+    },
+    "on_device": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiaryStats": {
+   "type": "object",
+   "required": [
+    "count",
+    "total_thb",
+    "avg_thb",
+    "last_date",
+    "top_frame"
+   ],
+   "properties": {
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "avg_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "last_date": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "top_frame": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "frame_id",
+    "face_shape",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "frame_id": {
+     "enum": [
+      "f01",
+      "f02",
+      "f03",
+      "f04",
+      "f05",
+      "f06",
+      "f07",
+      "f08",
+      "f09",
+      "f10",
+      "f11",
+      "f12"
+     ]
+    },
+    "face_shape": {
+     "enum": [
+      "oval",
+      "round",
+      "square",
+      "heart",
+      "oblong",
+      "diamond"
+     ]
+    },
+    "layout": {
+     "enum": [
+      "tryon_result"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}

@@ -1,0 +1,2023 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "น้องเกล",
+   "value": {
+    "id": "u01",
+    "name_th": "น้องเกล",
+    "name_en": "Gale",
+    "age": 26,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "อยากลองแว่นกลมบางโลหะก่อนซื้อ ทำงานออฟฟิศ",
+    "region": "bkk",
+    "lifestyle": "office"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่บอม",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่บอม",
+    "name_en": "Bom",
+    "age": 34,
+    "city_th": "ขอนแก่น",
+    "goal_th": "หน้ากลม อยากได้กรอบเหลี่ยมไปทำงาน",
+    "region": "province",
+    "lifestyle": "office"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่แนน",
+   "value": {
+    "id": "u03",
+    "name_th": "พี่แนน",
+    "name_en": "Nan",
+    "age": 41,
+    "city_th": "พัทยา",
+    "goal_th": "หน้าเหลี่ยม อยากได้ทรงกลมไปเที่ยว",
+    "region": "tourist",
+    "lifestyle": "outdoor"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องมายด์",
+   "value": {
+    "id": "u04",
+    "name_th": "น้องมายด์",
+    "name_en": "Mind",
+    "age": 23,
+    "city_th": "เชียงใหม่",
+    "goal_th": "หน้าหัวใจ อยากได้แคทอาย",
+    "region": "province",
+    "lifestyle": "fashion"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "ลุงสมศักดิ์",
+   "value": {
+    "id": "u05",
+    "name_th": "ลุงสมศักดิ์",
+    "name_en": "Somsak",
+    "age": 58,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "หน้ายาว สนใจเลนส์โปรเกรสซีฟ ต้องให้ร้านวัด",
+    "region": "bkk",
+    "lifestyle": "casual"
+   }
+  },
+  {
+   "def": "FacePhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.16,
+    "blur": 0.1,
+    "tilt": 0.08,
+    "face_fill": 0.82,
+    "eyes_visible": 0.94,
+    "undertone": "cool",
+    "face_confidence": 0.93,
+    "pd_mm": 62,
+    "measures": {
+     "length_mm": 185,
+     "forehead_mm": 132,
+     "cheek_mm": 136,
+     "jaw_mm": 125
+    }
+   }
+  },
+  {
+   "def": "FaceScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": []
+    },
+    "undertone": "cool",
+    "pd_mm": 62,
+    "face": {
+     "shape": "oval",
+     "shape_th": "หน้าไข่",
+     "length_mm": 185,
+     "forehead_mm": 132,
+     "cheek_mm": 136,
+     "jaw_mm": 125,
+     "length_to_width": 1.36,
+     "advice_th": "หน้าไข่เข้าได้หลายทรง ลองทั้งกลมและเหลี่ยมแล้วเทียบกัน"
+    },
+    "uncertain": false,
+    "ok": true,
+    "message_th": ""
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "steps": [
+     "face_detect",
+     "shape_classify",
+     "pd_estimate",
+     "frame_tryon",
+     "size_check",
+     "optician_card"
+    ]
+   }
+  },
+  {
+   "def": "FacePhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.18,
+    "blur": 0.12,
+    "tilt": 0.1,
+    "face_fill": 0.8,
+    "eyes_visible": 0.9,
+    "undertone": "warm",
+    "face_confidence": 0.91,
+    "pd_mm": 64,
+    "measures": {
+     "length_mm": 160,
+     "forehead_mm": 134,
+     "cheek_mm": 136,
+     "jaw_mm": 132
+    }
+   }
+  },
+  {
+   "def": "FaceScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "quality": {
+     "score": 86,
+     "ok": true,
+     "tips_th": []
+    },
+    "undertone": "warm",
+    "pd_mm": 64,
+    "face": {
+     "shape": "round",
+     "shape_th": "หน้ากลม",
+     "length_mm": 160,
+     "forehead_mm": 134,
+     "cheek_mm": 136,
+     "jaw_mm": 132,
+     "length_to_width": 1.18,
+     "advice_th": "เลือกทรงเหลี่ยมหรือสแควร์ เพื่อเพิ่มเส้นมุม"
+    },
+    "uncertain": false,
+    "ok": true,
+    "message_th": ""
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "steps": [
+     "face_detect",
+     "shape_classify",
+     "pd_estimate",
+     "frame_tryon",
+     "size_check",
+     "optician_card"
+    ]
+   }
+  },
+  {
+   "def": "FacePhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.2,
+    "blur": 0.1,
+    "tilt": 0.12,
+    "face_fill": 0.78,
+    "eyes_visible": 0.88,
+    "undertone": "warm",
+    "face_confidence": 0.9,
+    "pd_mm": 66,
+    "measures": {
+     "length_mm": 168,
+     "forehead_mm": 138,
+     "cheek_mm": 140,
+     "jaw_mm": 138
+    }
+   }
+  },
+  {
+   "def": "FaceScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "quality": {
+     "score": 85,
+     "ok": true,
+     "tips_th": []
+    },
+    "undertone": "warm",
+    "pd_mm": 66,
+    "face": {
+     "shape": "square",
+     "shape_th": "หน้าเหลี่ยม",
+     "length_mm": 168,
+     "forehead_mm": 138,
+     "cheek_mm": 140,
+     "jaw_mm": 138,
+     "length_to_width": 1.2,
+     "advice_th": "เลือกทรงกลมหรือไข่ เพื่อทำให้นุ่มขึ้น"
+    },
+    "uncertain": false,
+    "ok": true,
+    "message_th": ""
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "steps": [
+     "face_detect",
+     "shape_classify",
+     "pd_estimate",
+     "frame_tryon",
+     "size_check",
+     "optician_card"
+    ]
+   }
+  },
+  {
+   "def": "FacePhoto",
+   "note": "p04",
+   "value": {
+    "id": "p04",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.15,
+    "blur": 0.1,
+    "tilt": 0.08,
+    "face_fill": 0.85,
+    "eyes_visible": 0.92,
+    "undertone": "cool",
+    "face_confidence": 0.94,
+    "pd_mm": 60,
+    "measures": {
+     "length_mm": 180,
+     "forehead_mm": 140,
+     "cheek_mm": 138,
+     "jaw_mm": 120
+    }
+   }
+  },
+  {
+   "def": "FaceScan",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "quality": {
+     "score": 89,
+     "ok": true,
+     "tips_th": []
+    },
+    "undertone": "cool",
+    "pd_mm": 60,
+    "face": {
+     "shape": "heart",
+     "shape_th": "หน้าหัวใจ",
+     "length_mm": 180,
+     "forehead_mm": 140,
+     "cheek_mm": 138,
+     "jaw_mm": 120,
+     "length_to_width": 1.3,
+     "advice_th": "เลือกแคทอาย กลม หรือไร้ขอบ เลี่ยงบนกว้างล่างแคบเกิน"
+    },
+    "uncertain": false,
+    "ok": true,
+    "message_th": ""
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "steps": [
+     "face_detect",
+     "shape_classify",
+     "pd_estimate",
+     "frame_tryon",
+     "size_check",
+     "optician_card"
+    ]
+   }
+  },
+  {
+   "def": "FacePhoto",
+   "note": "p05",
+   "value": {
+    "id": "p05",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.16,
+    "blur": 0.11,
+    "tilt": 0.09,
+    "face_fill": 0.8,
+    "eyes_visible": 0.9,
+    "undertone": "neutral",
+    "face_confidence": 0.89,
+    "pd_mm": 63,
+    "measures": {
+     "length_mm": 200,
+     "forehead_mm": 130,
+     "cheek_mm": 130,
+     "jaw_mm": 128
+    }
+   }
+  },
+  {
+   "def": "FaceScan",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "quality": {
+     "score": 87,
+     "ok": true,
+     "tips_th": []
+    },
+    "undertone": "neutral",
+    "pd_mm": 63,
+    "face": {
+     "shape": "oblong",
+     "shape_th": "หน้ายาว",
+     "length_mm": 200,
+     "forehead_mm": 130,
+     "cheek_mm": 130,
+     "jaw_mm": 128,
+     "length_to_width": 1.54,
+     "advice_th": "เลือกกรอบสูงหรือมีคิ้วบน เพื่อไม่ให้หน้าดูยาวขึ้น"
+    },
+    "uncertain": false,
+    "ok": true,
+    "message_th": ""
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "steps": [
+     "face_detect",
+     "shape_classify",
+     "pd_estimate",
+     "frame_tryon",
+     "size_check",
+     "optician_card"
+    ]
+   }
+  },
+  {
+   "def": "FacePhoto",
+   "note": "p06",
+   "value": {
+    "id": "p06",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.17,
+    "blur": 0.1,
+    "tilt": 0.08,
+    "face_fill": 0.81,
+    "eyes_visible": 0.91,
+    "undertone": "cool",
+    "face_confidence": 0.92,
+    "pd_mm": 61,
+    "measures": {
+     "length_mm": 180,
+     "forehead_mm": 124,
+     "cheek_mm": 140,
+     "jaw_mm": 124
+    }
+   }
+  },
+  {
+   "def": "FaceScan",
+   "note": "p06",
+   "value": {
+    "photo_id": "p06",
+    "quality": {
+     "score": 87,
+     "ok": true,
+     "tips_th": []
+    },
+    "undertone": "cool",
+    "pd_mm": 61,
+    "face": {
+     "shape": "diamond",
+     "shape_th": "หน้าเพชร",
+     "length_mm": 180,
+     "forehead_mm": 124,
+     "cheek_mm": 140,
+     "jaw_mm": 124,
+     "length_to_width": 1.29,
+     "advice_th": "เลือกไข่ แคทอาย หรือไร้ขอบ เพื่อสมดุลโหนกแก้ม"
+    },
+    "uncertain": false,
+    "ok": true,
+    "message_th": ""
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p06",
+   "value": {
+    "photo_id": "p06",
+    "steps": [
+     "face_detect",
+     "shape_classify",
+     "pd_estimate",
+     "frame_tryon",
+     "size_check",
+     "optician_card"
+    ]
+   }
+  },
+  {
+   "def": "FacePhoto",
+   "note": "p07",
+   "value": {
+    "id": "p07",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.62,
+    "blur": 0.45,
+    "tilt": 0.4,
+    "face_fill": 0.4,
+    "eyes_visible": 0.5,
+    "undertone": "neutral",
+    "face_confidence": 0.55,
+    "pd_mm": 62,
+    "measures": {
+     "length_mm": 185,
+     "forehead_mm": 132,
+     "cheek_mm": 136,
+     "jaw_mm": 125
+    }
+   }
+  },
+  {
+   "def": "FaceScan",
+   "note": "p07",
+   "value": {
+    "photo_id": "p07",
+    "quality": {
+     "score": 49,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนบนหน้าเยอะ หันออกจากหน้าต่างหรือไฟ",
+      "ภาพเบลอ ถือนิ่ง แตะโฟกัสที่ดวงตา",
+      "หน้าเอียงเกินไป ถ่ายหน้าตรง กล้องระดับสายตา",
+      "หน้าเล็กไปในกรอบ เข้าใกล้ขึ้นอีกนิด",
+      "ไม่เห็นตาทั้งสองข้าง ถอดหน้ากากและเก็บผมออกจากหน้า"
+     ]
+    },
+    "undertone": "neutral",
+    "pd_mm": 62,
+    "face": null,
+    "uncertain": true,
+    "ok": false,
+    "message_th": "ยังไม่แน่ใจว่านี่คือใบหน้าตรง ลองถ่ายใหม่หรือยืนยันเอง"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p07",
+   "value": {
+    "photo_id": "p07",
+    "steps": [
+     "face_detect",
+     "deglare",
+     "deskew",
+     "shape_classify",
+     "pd_estimate",
+     "frame_tryon",
+     "size_check",
+     "optician_card"
+    ]
+   }
+  },
+  {
+   "def": "FacePhoto",
+   "note": "p08",
+   "value": {
+    "id": "p08",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.14,
+    "blur": 0.08,
+    "tilt": 0.06,
+    "face_fill": 0.86,
+    "eyes_visible": 0.95,
+    "undertone": "cool",
+    "face_confidence": 0.96,
+    "pd_mm": 50,
+    "measures": {
+     "length_mm": 185,
+     "forehead_mm": 132,
+     "cheek_mm": 136,
+     "jaw_mm": 125
+    }
+   }
+  },
+  {
+   "def": "FaceScan",
+   "note": "p08",
+   "value": {
+    "photo_id": "p08",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": []
+    },
+    "undertone": "cool",
+    "pd_mm": 50,
+    "face": {
+     "shape": "oval",
+     "shape_th": "หน้าไข่",
+     "length_mm": 185,
+     "forehead_mm": 132,
+     "cheek_mm": 136,
+     "jaw_mm": 125,
+     "length_to_width": 1.36,
+     "advice_th": "หน้าไข่เข้าได้หลายทรง ลองทั้งกลมและเหลี่ยมแล้วเทียบกัน"
+    },
+    "uncertain": false,
+    "ok": true,
+    "message_th": ""
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p08",
+   "value": {
+    "photo_id": "p08",
+    "steps": [
+     "face_detect",
+     "shape_classify",
+     "pd_estimate",
+     "frame_tryon",
+     "size_check",
+     "optician_card"
+    ]
+   }
+  },
+  {
+   "def": "FaceShape",
+   "note": "oval",
+   "value": {
+    "shape": "oval",
+    "shape_th": "หน้าไข่",
+    "length_mm": 185,
+    "forehead_mm": 132,
+    "cheek_mm": 136,
+    "jaw_mm": 125,
+    "length_to_width": 1.36,
+    "advice_th": "หน้าไข่เข้าได้หลายทรง ลองทั้งกลมและเหลี่ยมแล้วเทียบกัน"
+   }
+  },
+  {
+   "def": "FaceShape",
+   "note": "round",
+   "value": {
+    "shape": "round",
+    "shape_th": "หน้ากลม",
+    "length_mm": 160,
+    "forehead_mm": 134,
+    "cheek_mm": 136,
+    "jaw_mm": 132,
+    "length_to_width": 1.18,
+    "advice_th": "เลือกทรงเหลี่ยมหรือสแควร์ เพื่อเพิ่มเส้นมุม"
+   }
+  },
+  {
+   "def": "FaceShape",
+   "note": "square",
+   "value": {
+    "shape": "square",
+    "shape_th": "หน้าเหลี่ยม",
+    "length_mm": 168,
+    "forehead_mm": 138,
+    "cheek_mm": 140,
+    "jaw_mm": 138,
+    "length_to_width": 1.2,
+    "advice_th": "เลือกทรงกลมหรือไข่ เพื่อทำให้นุ่มขึ้น"
+   }
+  },
+  {
+   "def": "FaceShape",
+   "note": "heart",
+   "value": {
+    "shape": "heart",
+    "shape_th": "หน้าหัวใจ",
+    "length_mm": 180,
+    "forehead_mm": 140,
+    "cheek_mm": 138,
+    "jaw_mm": 120,
+    "length_to_width": 1.3,
+    "advice_th": "เลือกแคทอาย กลม หรือไร้ขอบ เลี่ยงบนกว้างล่างแคบเกิน"
+   }
+  },
+  {
+   "def": "FaceShape",
+   "note": "oblong",
+   "value": {
+    "shape": "oblong",
+    "shape_th": "หน้ายาว",
+    "length_mm": 200,
+    "forehead_mm": 130,
+    "cheek_mm": 130,
+    "jaw_mm": 128,
+    "length_to_width": 1.54,
+    "advice_th": "เลือกกรอบสูงหรือมีคิ้วบน เพื่อไม่ให้หน้าดูยาวขึ้น"
+   }
+  },
+  {
+   "def": "FaceShape",
+   "note": "diamond",
+   "value": {
+    "shape": "diamond",
+    "shape_th": "หน้าเพชร",
+    "length_mm": 180,
+    "forehead_mm": 124,
+    "cheek_mm": 140,
+    "jaw_mm": 124,
+    "length_to_width": 1.29,
+    "advice_th": "เลือกไข่ แคทอาย หรือไร้ขอบ เพื่อสมดุลโหนกแก้ม"
+   }
+  },
+  {
+   "def": "FrameInfo",
+   "note": "f01",
+   "value": {
+    "name_th": "กลมบางโลหะ",
+    "name_en": "Thin metal round",
+    "shape": "round",
+    "material": "metal",
+    "lens_width": 48,
+    "bridge": 20,
+    "temple": 140,
+    "color": "gold",
+    "base_thb": 2200,
+    "best_shapes": [
+     "oval",
+     "square",
+     "heart"
+    ],
+    "lifestyle": [
+     "office",
+     "casual",
+     "fashion"
+    ],
+    "id": "f01",
+    "front_mm": 132,
+    "material_th": "โลหะ"
+   }
+  },
+  {
+   "def": "FrameInfo",
+   "note": "f02",
+   "value": {
+    "name_th": "เหลี่ยมอะซิเตทเข้ม",
+    "name_en": "Dark acetate rectangle",
+    "shape": "rectangle",
+    "material": "acetate",
+    "lens_width": 52,
+    "bridge": 18,
+    "temple": 145,
+    "color": "black",
+    "base_thb": 2800,
+    "best_shapes": [
+     "oval",
+     "round",
+     "oblong"
+    ],
+    "lifestyle": [
+     "office",
+     "casual"
+    ],
+    "id": "f02",
+    "front_mm": 138,
+    "material_th": "อะซิเตท"
+   }
+  },
+  {
+   "def": "FrameInfo",
+   "note": "f03",
+   "value": {
+    "name_th": "แคทอายลายหินอ่อน",
+    "name_en": "Marble cat-eye",
+    "shape": "cat_eye",
+    "material": "acetate",
+    "lens_width": 50,
+    "bridge": 18,
+    "temple": 140,
+    "color": "tortoise",
+    "base_thb": 3200,
+    "best_shapes": [
+     "oval",
+     "heart",
+     "diamond"
+    ],
+    "lifestyle": [
+     "fashion",
+     "casual"
+    ],
+    "id": "f03",
+    "front_mm": 134,
+    "material_th": "อะซิเตท"
+   }
+  },
+  {
+   "def": "FrameInfo",
+   "note": "f04",
+   "value": {
+    "name_th": "สแควร์ไทเทเนียม",
+    "name_en": "Titanium square",
+    "shape": "square",
+    "material": "titanium",
+    "lens_width": 51,
+    "bridge": 19,
+    "temple": 145,
+    "color": "silver",
+    "base_thb": 4900,
+    "best_shapes": [
+     "oval",
+     "round"
+    ],
+    "lifestyle": [
+     "office",
+     "fashion"
+    ],
+    "id": "f04",
+    "front_mm": 137,
+    "material_th": "ไทเทเนียม"
+   }
+  },
+  {
+   "def": "FrameInfo",
+   "note": "f05",
+   "value": {
+    "name_th": "โบรว์ไลน์คลาสสิก",
+    "name_en": "Classic browline",
+    "shape": "browline",
+    "material": "metal",
+    "lens_width": 50,
+    "bridge": 20,
+    "temple": 145,
+    "color": "black_gold",
+    "base_thb": 3500,
+    "best_shapes": [
+     "oval",
+     "round",
+     "oblong"
+    ],
+    "lifestyle": [
+     "office",
+     "casual"
+    ],
+    "id": "f05",
+    "front_mm": 136,
+    "material_th": "โลหะ"
+   }
+  },
+  {
+   "def": "FrameInfo",
+   "note": "f06",
+   "value": {
+    "name_th": "เอวิเอเตอร์บาง",
+    "name_en": "Slim aviator",
+    "shape": "aviator",
+    "material": "metal",
+    "lens_width": 54,
+    "bridge": 16,
+    "temple": 140,
+    "color": "silver",
+    "base_thb": 2600,
+    "best_shapes": [
+     "oval",
+     "square",
+     "heart"
+    ],
+    "lifestyle": [
+     "outdoor",
+     "fashion",
+     "casual"
+    ],
+    "id": "f06",
+    "front_mm": 140,
+    "material_th": "โลหะ"
+   }
+  },
+  {
+   "def": "FrameInfo",
+   "note": "f07",
+   "value": {
+    "name_th": "ไข่บางไร้ขอบ",
+    "name_en": "Rimless oval",
+    "shape": "oval",
+    "material": "rimless",
+    "lens_width": 49,
+    "bridge": 19,
+    "temple": 140,
+    "color": "clear",
+    "base_thb": 3800,
+    "best_shapes": [
+     "oval",
+     "square",
+     "diamond",
+     "heart"
+    ],
+    "lifestyle": [
+     "office"
+    ],
+    "id": "f07",
+    "front_mm": 133,
+    "material_th": "ไร้ขอบ"
+   }
+  },
+  {
+   "def": "FrameInfo",
+   "note": "f08",
+   "value": {
+    "name_th": "กลมอะซิเตทใหญ่",
+    "name_en": "Chunky acetate round",
+    "shape": "round",
+    "material": "acetate",
+    "lens_width": 50,
+    "bridge": 22,
+    "temple": 150,
+    "color": "honey",
+    "base_thb": 3000,
+    "best_shapes": [
+     "square",
+     "heart",
+     "diamond"
+    ],
+    "lifestyle": [
+     "fashion",
+     "casual"
+    ],
+    "id": "f08",
+    "front_mm": 138,
+    "material_th": "อะซิเตท"
+   }
+  },
+  {
+   "def": "FrameInfo",
+   "note": "f09",
+   "value": {
+    "name_th": "สปอร์ตโค้ง",
+    "name_en": "Wrap sport",
+    "shape": "wrap",
+    "material": "acetate",
+    "lens_width": 55,
+    "bridge": 16,
+    "temple": 130,
+    "color": "black",
+    "base_thb": 2400,
+    "best_shapes": [
+     "oval",
+     "oblong",
+     "square"
+    ],
+    "lifestyle": [
+     "sport",
+     "outdoor"
+    ],
+    "id": "f09",
+    "front_mm": 142,
+    "material_th": "อะซิเตท"
+   }
+  },
+  {
+   "def": "FrameInfo",
+   "note": "f10",
+   "value": {
+    "name_th": "เหลี่ยมแคบสั้น",
+    "name_en": "Narrow short rectangle",
+    "shape": "rectangle",
+    "material": "metal",
+    "lens_width": 44,
+    "bridge": 18,
+    "temple": 135,
+    "color": "black",
+    "base_thb": 1900,
+    "best_shapes": [
+     "round"
+    ],
+    "lifestyle": [
+     "office"
+    ],
+    "id": "f10",
+    "front_mm": 122,
+    "material_th": "โลหะ"
+   }
+  },
+  {
+   "def": "FrameInfo",
+   "note": "f11",
+   "value": {
+    "name_th": "กรอบกว้างพิเศษ",
+    "name_en": "Extra-wide fashion",
+    "shape": "rectangle",
+    "material": "acetate",
+    "lens_width": 58,
+    "bridge": 20,
+    "temple": 150,
+    "color": "clear",
+    "base_thb": 3300,
+    "best_shapes": [
+     "oblong"
+    ],
+    "lifestyle": [
+     "fashion"
+    ],
+    "id": "f11",
+    "front_mm": 152,
+    "material_th": "อะซิเตท"
+   }
+  },
+  {
+   "def": "FrameInfo",
+   "note": "f12",
+   "value": {
+    "name_th": "กลมมินิมอลเงิน",
+    "name_en": "Minimal silver round",
+    "shape": "round",
+    "material": "titanium",
+    "lens_width": 47,
+    "bridge": 21,
+    "temple": 140,
+    "color": "silver",
+    "base_thb": 4200,
+    "best_shapes": [
+     "oval",
+     "square",
+     "heart"
+    ],
+    "lifestyle": [
+     "office",
+     "fashion",
+     "casual"
+    ],
+    "id": "f12",
+    "front_mm": 131,
+    "material_th": "ไทเทเนียม"
+   }
+  },
+  {
+   "def": "PdStatus",
+   "note": "typical",
+   "value": {
+    "pd_mm": 62,
+    "verdict": "typical",
+    "message_th": "ค่า PD นี้อยู่ในช่วงที่พบบ่อย แต่ยังต้องให้ร้านวัดจริงก่อนตัดเลนส์",
+    "disclaimer_th": "PD จากเซลฟี่เป็นค่าประมาณ ไม่ใช่ค่าวัดจริง"
+   }
+  },
+  {
+   "def": "PdStatus",
+   "note": "check",
+   "value": {
+    "pd_mm": 54,
+    "verdict": "check",
+    "message_th": "ค่า PD นี้อยู่นอกช่วงเฉลี่ยเล็กน้อย ให้ร้านวัดซ้ำด้วยเครื่องวัด PD",
+    "disclaimer_th": "PD จากเซลฟี่เป็นค่าประมาณ ไม่ใช่ค่าวัดจริง"
+   }
+  },
+  {
+   "def": "PdStatus",
+   "note": "out of range",
+   "value": {
+    "pd_mm": 50,
+    "verdict": "out_of_range",
+    "message_th": "ค่า PD จากรูปผิดปกติมาก อย่าใช้ตัดเลนส์ ต้องวัดที่ร้านเท่านั้น",
+    "disclaimer_th": "PD จากเซลฟี่เป็นค่าประมาณ ไม่ใช่ค่าวัดจริง"
+   }
+  },
+  {
+   "def": "SizeCheck",
+   "note": "gale ok",
+   "value": {
+    "frame_id": "f01",
+    "pd_mm": 62,
+    "pd_verdict": "typical",
+    "face_width_mm": 136,
+    "frame_front_mm": 132,
+    "lens_width": 48,
+    "bridge": 20,
+    "temple": 140,
+    "delta_mm": -4,
+    "verdict": "ok",
+    "fit_th": "ความกว้างกรอบใกล้เคียงความกว้างหน้า",
+    "centres_mm": 68,
+    "center_offset_mm": 6,
+    "message_th": "ความกว้างกรอบใกล้เคียงความกว้างหน้า · ค่า PD นี้อยู่ในช่วงที่พบบ่อย แต่ยังต้องให้ร้านวัดจริงก่อนตัดเลนส์",
+    "disclaimer_th": "ขนาดจากรูปเป็นค่าประมาณ ให้ร้านวัดหัวและ PD จริงก่อนสั่งทำ"
+   }
+  },
+  {
+   "def": "SizeCheck",
+   "note": "too narrow",
+   "value": {
+    "frame_id": "f10",
+    "pd_mm": 62,
+    "pd_verdict": "typical",
+    "face_width_mm": 136,
+    "frame_front_mm": 122,
+    "lens_width": 44,
+    "bridge": 18,
+    "temple": 135,
+    "delta_mm": -14,
+    "verdict": "too_narrow",
+    "fit_th": "กรอบแคบกว่าหน้า อาจบีบขมับ",
+    "centres_mm": 62,
+    "center_offset_mm": 0,
+    "message_th": "กรอบแคบกว่าหน้า อาจบีบขมับ · ค่า PD นี้อยู่ในช่วงที่พบบ่อย แต่ยังต้องให้ร้านวัดจริงก่อนตัดเลนส์",
+    "disclaimer_th": "ขนาดจากรูปเป็นค่าประมาณ ให้ร้านวัดหัวและ PD จริงก่อนสั่งทำ"
+   }
+  },
+  {
+   "def": "SizeCheck",
+   "note": "too wide",
+   "value": {
+    "frame_id": "f11",
+    "pd_mm": 62,
+    "pd_verdict": "typical",
+    "face_width_mm": 136,
+    "frame_front_mm": 152,
+    "lens_width": 58,
+    "bridge": 20,
+    "temple": 150,
+    "delta_mm": 16,
+    "verdict": "too_wide",
+    "fit_th": "กรอบกว้างกว่าหน้า อาจหลวมหรือล้นโหนกแก้ม",
+    "centres_mm": 78,
+    "center_offset_mm": 16,
+    "message_th": "กรอบกว้างกว่าหน้า อาจหลวมหรือล้นโหนกแก้ม · ค่า PD นี้อยู่ในช่วงที่พบบ่อย แต่ยังต้องให้ร้านวัดจริงก่อนตัดเลนส์",
+    "disclaimer_th": "ขนาดจากรูปเป็นค่าประมาณ ให้ร้านวัดหัวและ PD จริงก่อนสั่งทำ"
+   }
+  },
+  {
+   "def": "SizeCheck",
+   "note": "odd pd",
+   "value": {
+    "frame_id": "f01",
+    "pd_mm": 50,
+    "pd_verdict": "out_of_range",
+    "face_width_mm": 136,
+    "frame_front_mm": 132,
+    "lens_width": 48,
+    "bridge": 20,
+    "temple": 140,
+    "delta_mm": -4,
+    "verdict": "ok",
+    "fit_th": "ความกว้างกรอบใกล้เคียงความกว้างหน้า",
+    "centres_mm": 68,
+    "center_offset_mm": 18,
+    "message_th": "ความกว้างกรอบใกล้เคียงความกว้างหน้า · ค่า PD จากรูปผิดปกติมาก อย่าใช้ตัดเลนส์ ต้องวัดที่ร้านเท่านั้น",
+    "disclaimer_th": "ขนาดจากรูปเป็นค่าประมาณ ให้ร้านวัดหัวและ PD จริงก่อนสั่งทำ"
+   }
+  },
+  {
+   "def": "FitScore",
+   "note": "gale f01",
+   "value": {
+    "frame_id": "f01",
+    "score": 96,
+    "face_pts": 40,
+    "size_pts": 30,
+    "contrast_pts": 11,
+    "lifestyle_pts": 15,
+    "reasons_th": [
+     "ทรงกรอบเข้ากับทรงหน้า",
+     "ความกว้างกรอบใกล้เคียงความกว้างหน้า",
+     "เข้ากับไลฟ์สไตล์ที่เลือก"
+    ]
+   }
+  },
+  {
+   "def": "FitScore",
+   "note": "mismatch",
+   "value": {
+    "frame_id": "f08",
+    "score": 76,
+    "face_pts": 18,
+    "size_pts": 30,
+    "contrast_pts": 13,
+    "lifestyle_pts": 15,
+    "reasons_th": [
+     "ทรงกรอบไม่ใช่กลุ่มที่แนะนำสำหรับทรงหน้านี้ แต่ลองได้",
+     "ความกว้างกรอบใกล้เคียงความกว้างหน้า",
+     "เข้ากับไลฟ์สไตล์ที่เลือก"
+    ]
+   }
+  },
+  {
+   "def": "TryOn",
+   "note": "gale f01",
+   "value": {
+    "photo_id": "p01",
+    "frame_id": "f01",
+    "name_th": "กลมบางโลหะ",
+    "shape": "round",
+    "material": "metal",
+    "color": "gold",
+    "face_shape": "oval",
+    "face_shape_th": "หน้าไข่",
+    "pd_mm": 62,
+    "size_verdict": "ok",
+    "fit_score": 96,
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": []
+    },
+    "watermark": "Made with SpecsTry · preview only, not an eye exam",
+    "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  },
+  {
+   "def": "TryOn",
+   "note": "gale f02",
+   "value": {
+    "photo_id": "p01",
+    "frame_id": "f02",
+    "name_th": "เหลี่ยมอะซิเตทเข้ม",
+    "shape": "rectangle",
+    "material": "acetate",
+    "color": "black",
+    "face_shape": "oval",
+    "face_shape_th": "หน้าไข่",
+    "pd_mm": 62,
+    "size_verdict": "ok",
+    "fit_score": 98,
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": []
+    },
+    "watermark": "Made with SpecsTry · preview only, not an eye exam",
+    "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  },
+  {
+   "def": "TryOn",
+   "note": "bom rectangle",
+   "value": {
+    "photo_id": "p02",
+    "frame_id": "f02",
+    "name_th": "เหลี่ยมอะซิเตทเข้ม",
+    "shape": "rectangle",
+    "material": "acetate",
+    "color": "black",
+    "face_shape": "round",
+    "face_shape_th": "หน้ากลม",
+    "pd_mm": 64,
+    "size_verdict": "ok",
+    "fit_score": 97,
+    "quality": {
+     "score": 86,
+     "ok": true,
+     "tips_th": []
+    },
+    "watermark": "Made with SpecsTry · preview only, not an eye exam",
+    "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  },
+  {
+   "def": "TryOn",
+   "note": "mind cateye",
+   "value": {
+    "photo_id": "p04",
+    "frame_id": "f03",
+    "name_th": "แคทอายลายหินอ่อน",
+    "shape": "cat_eye",
+    "material": "acetate",
+    "color": "tortoise",
+    "face_shape": "heart",
+    "face_shape_th": "หน้าหัวใจ",
+    "pd_mm": 60,
+    "size_verdict": "ok",
+    "fit_score": 96,
+    "quality": {
+     "score": 89,
+     "ok": true,
+     "tips_th": []
+    },
+    "watermark": "Made with SpecsTry · preview only, not an eye exam",
+    "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  },
+  {
+   "def": "TryOn",
+   "note": "bom titanium",
+   "value": {
+    "photo_id": "p02",
+    "frame_id": "f04",
+    "name_th": "สแควร์ไทเทเนียม",
+    "shape": "square",
+    "material": "titanium",
+    "color": "silver",
+    "face_shape": "round",
+    "face_shape_th": "หน้ากลม",
+    "pd_mm": 64,
+    "size_verdict": "ok",
+    "fit_score": 97,
+    "quality": {
+     "score": 86,
+     "ok": true,
+     "tips_th": []
+    },
+    "watermark": "Made with SpecsTry · preview only, not an eye exam",
+    "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  },
+  {
+   "def": "TryOn",
+   "note": "mind rimless",
+   "value": {
+    "photo_id": "p04",
+    "frame_id": "f07",
+    "name_th": "ไข่บางไร้ขอบ",
+    "shape": "oval",
+    "material": "rimless",
+    "color": "clear",
+    "face_shape": "heart",
+    "face_shape_th": "หน้าหัวใจ",
+    "pd_mm": 60,
+    "size_verdict": "too_narrow",
+    "fit_score": 86,
+    "quality": {
+     "score": 89,
+     "ok": true,
+     "tips_th": []
+    },
+    "watermark": "Made with SpecsTry · preview only, not an eye exam",
+    "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  },
+  {
+   "def": "TryOn",
+   "note": "oblong browline",
+   "value": {
+    "photo_id": "p05",
+    "frame_id": "f05",
+    "name_th": "โบรว์ไลน์คลาสสิก",
+    "shape": "browline",
+    "material": "metal",
+    "color": "black_gold",
+    "face_shape": "oblong",
+    "face_shape_th": "หน้ายาว",
+    "pd_mm": 63,
+    "size_verdict": "too_wide",
+    "fit_score": 85,
+    "quality": {
+     "score": 87,
+     "ok": true,
+     "tips_th": []
+    },
+    "watermark": "Made with SpecsTry · preview only, not an eye exam",
+    "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  },
+  {
+   "def": "TryOn",
+   "note": "diamond cateye",
+   "value": {
+    "photo_id": "p06",
+    "frame_id": "f03",
+    "name_th": "แคทอายลายหินอ่อน",
+    "shape": "cat_eye",
+    "material": "acetate",
+    "color": "tortoise",
+    "face_shape": "diamond",
+    "face_shape_th": "หน้าเพชร",
+    "pd_mm": 61,
+    "size_verdict": "too_narrow",
+    "fit_score": 84,
+    "quality": {
+     "score": 87,
+     "ok": true,
+     "tips_th": []
+    },
+    "watermark": "Made with SpecsTry · preview only, not an eye exam",
+    "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  },
+  {
+   "def": "SizeCheck",
+   "note": "f02",
+   "value": {
+    "frame_id": "f02",
+    "pd_mm": 62,
+    "pd_verdict": "typical",
+    "face_width_mm": 136,
+    "frame_front_mm": 138,
+    "lens_width": 52,
+    "bridge": 18,
+    "temple": 145,
+    "delta_mm": 2,
+    "verdict": "ok",
+    "fit_th": "ความกว้างกรอบใกล้เคียงความกว้างหน้า",
+    "centres_mm": 70,
+    "center_offset_mm": 8,
+    "message_th": "ความกว้างกรอบใกล้เคียงความกว้างหน้า · ค่า PD นี้อยู่ในช่วงที่พบบ่อย แต่ยังต้องให้ร้านวัดจริงก่อนตัดเลนส์",
+    "disclaimer_th": "ขนาดจากรูปเป็นค่าประมาณ ให้ร้านวัดหัวและ PD จริงก่อนสั่งทำ"
+   }
+  },
+  {
+   "def": "SizeCheck",
+   "note": "f07",
+   "value": {
+    "frame_id": "f07",
+    "pd_mm": 62,
+    "pd_verdict": "typical",
+    "face_width_mm": 136,
+    "frame_front_mm": 133,
+    "lens_width": 49,
+    "bridge": 19,
+    "temple": 140,
+    "delta_mm": -3,
+    "verdict": "ok",
+    "fit_th": "ความกว้างกรอบใกล้เคียงความกว้างหน้า",
+    "centres_mm": 68,
+    "center_offset_mm": 6,
+    "message_th": "ความกว้างกรอบใกล้เคียงความกว้างหน้า · ค่า PD นี้อยู่ในช่วงที่พบบ่อย แต่ยังต้องให้ร้านวัดจริงก่อนตัดเลนส์",
+    "disclaimer_th": "ขนาดจากรูปเป็นค่าประมาณ ให้ร้านวัดหัวและ PD จริงก่อนสั่งทำ"
+   }
+  },
+  {
+   "def": "SizeCheck",
+   "note": "f12",
+   "value": {
+    "frame_id": "f12",
+    "pd_mm": 62,
+    "pd_verdict": "typical",
+    "face_width_mm": 136,
+    "frame_front_mm": 131,
+    "lens_width": 47,
+    "bridge": 21,
+    "temple": 140,
+    "delta_mm": -5,
+    "verdict": "too_narrow",
+    "fit_th": "กรอบแคบกว่าหน้า อาจบีบขมับ",
+    "centres_mm": 68,
+    "center_offset_mm": 6,
+    "message_th": "กรอบแคบกว่าหน้า อาจบีบขมับ · ค่า PD นี้อยู่ในช่วงที่พบบ่อย แต่ยังต้องให้ร้านวัดจริงก่อนตัดเลนส์",
+    "disclaimer_th": "ขนาดจากรูปเป็นค่าประมาณ ให้ร้านวัดหัวและ PD จริงก่อนสั่งทำ"
+   }
+  },
+  {
+   "def": "FitScore",
+   "note": "gale f02",
+   "value": {
+    "frame_id": "f02",
+    "score": 98,
+    "face_pts": 40,
+    "size_pts": 30,
+    "contrast_pts": 13,
+    "lifestyle_pts": 15,
+    "reasons_th": [
+     "ทรงกรอบเข้ากับทรงหน้า",
+     "ความกว้างกรอบใกล้เคียงความกว้างหน้า",
+     "เข้ากับไลฟ์สไตล์ที่เลือก"
+    ]
+   }
+  },
+  {
+   "def": "FitScore",
+   "note": "gale f07",
+   "value": {
+    "frame_id": "f07",
+    "score": 98,
+    "face_pts": 40,
+    "size_pts": 30,
+    "contrast_pts": 13,
+    "lifestyle_pts": 15,
+    "reasons_th": [
+     "ทรงกรอบเข้ากับทรงหน้า",
+     "ความกว้างกรอบใกล้เคียงความกว้างหน้า",
+     "เข้ากับไลฟ์สไตล์ที่เลือก"
+    ]
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "f12",
+   "value": {
+    "frame_id": "f12",
+    "name_th": "กลมมินิมอลเงิน",
+    "region": "bkk",
+    "lens": "single",
+    "lens_th": "เลนส์มองระยะเดียว",
+    "mid_thb": 5100,
+    "min_thb": 4100,
+    "max_thb": 6900,
+    "currency": "THB",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับแบรนด์ เลนส์ เคลือบและพื้นที่"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "f10",
+   "value": {
+    "frame_id": "f10",
+    "name_th": "เหลี่ยมแคบสั้น",
+    "region": "bkk",
+    "lens": "single",
+    "lens_th": "เลนส์มองระยะเดียว",
+    "mid_thb": 2800,
+    "min_thb": 2250,
+    "max_thb": 3800,
+    "currency": "THB",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับแบรนด์ เลนส์ เคลือบและพื้นที่"
+   }
+  },
+  {
+   "def": "TryOnGrid",
+   "note": "gale 6",
+   "value": {
+    "photo_id": "p01",
+    "count": 6,
+    "ranked": [
+     {
+      "photo_id": "p01",
+      "frame_id": "f02",
+      "name_th": "เหลี่ยมอะซิเตทเข้ม",
+      "shape": "rectangle",
+      "material": "acetate",
+      "color": "black",
+      "face_shape": "oval",
+      "face_shape_th": "หน้าไข่",
+      "pd_mm": 62,
+      "size_verdict": "ok",
+      "fit_score": 98,
+      "quality": {
+       "score": 88,
+       "ok": true,
+       "tips_th": []
+      },
+      "watermark": "Made with SpecsTry · preview only, not an eye exam",
+      "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+     },
+     {
+      "photo_id": "p01",
+      "frame_id": "f07",
+      "name_th": "ไข่บางไร้ขอบ",
+      "shape": "oval",
+      "material": "rimless",
+      "color": "clear",
+      "face_shape": "oval",
+      "face_shape_th": "หน้าไข่",
+      "pd_mm": 62,
+      "size_verdict": "ok",
+      "fit_score": 98,
+      "quality": {
+       "score": 88,
+       "ok": true,
+       "tips_th": []
+      },
+      "watermark": "Made with SpecsTry · preview only, not an eye exam",
+      "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+     },
+     {
+      "photo_id": "p01",
+      "frame_id": "f01",
+      "name_th": "กลมบางโลหะ",
+      "shape": "round",
+      "material": "metal",
+      "color": "gold",
+      "face_shape": "oval",
+      "face_shape_th": "หน้าไข่",
+      "pd_mm": 62,
+      "size_verdict": "ok",
+      "fit_score": 96,
+      "quality": {
+       "score": 88,
+       "ok": true,
+       "tips_th": []
+      },
+      "watermark": "Made with SpecsTry · preview only, not an eye exam",
+      "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+     },
+     {
+      "photo_id": "p01",
+      "frame_id": "f03",
+      "name_th": "แคทอายลายหินอ่อน",
+      "shape": "cat_eye",
+      "material": "acetate",
+      "color": "tortoise",
+      "face_shape": "oval",
+      "face_shape_th": "หน้าไข่",
+      "pd_mm": 62,
+      "size_verdict": "ok",
+      "fit_score": 87,
+      "quality": {
+       "score": 88,
+       "ok": true,
+       "tips_th": []
+      },
+      "watermark": "Made with SpecsTry · preview only, not an eye exam",
+      "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+     },
+     {
+      "photo_id": "p01",
+      "frame_id": "f12",
+      "name_th": "กลมมินิมอลเงิน",
+      "shape": "round",
+      "material": "titanium",
+      "color": "silver",
+      "face_shape": "oval",
+      "face_shape_th": "หน้าไข่",
+      "pd_mm": 62,
+      "size_verdict": "too_narrow",
+      "fit_score": 86,
+      "quality": {
+       "score": 88,
+       "ok": true,
+       "tips_th": []
+      },
+      "watermark": "Made with SpecsTry · preview only, not an eye exam",
+      "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+     },
+     {
+      "photo_id": "p01",
+      "frame_id": "f10",
+      "name_th": "เหลี่ยมแคบสั้น",
+      "shape": "rectangle",
+      "material": "metal",
+      "color": "black",
+      "face_shape": "oval",
+      "face_shape_th": "หน้าไข่",
+      "pd_mm": 62,
+      "size_verdict": "too_narrow",
+      "fit_score": 54,
+      "quality": {
+       "score": 88,
+       "ok": true,
+       "tips_th": []
+      },
+      "watermark": "Made with SpecsTry · preview only, not an eye exam",
+      "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+     }
+    ],
+    "top_id": "f02"
+   }
+  },
+  {
+   "def": "CompareGrid",
+   "note": "top3",
+   "value": {
+    "photo_id": "p01",
+    "frames": [
+     {
+      "photo_id": "p01",
+      "frame_id": "f01",
+      "name_th": "กลมบางโลหะ",
+      "shape": "round",
+      "material": "metal",
+      "color": "gold",
+      "face_shape": "oval",
+      "face_shape_th": "หน้าไข่",
+      "pd_mm": 62,
+      "size_verdict": "ok",
+      "fit_score": 96,
+      "quality": {
+       "score": 88,
+       "ok": true,
+       "tips_th": []
+      },
+      "watermark": "Made with SpecsTry · preview only, not an eye exam",
+      "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+     },
+     {
+      "photo_id": "p01",
+      "frame_id": "f07",
+      "name_th": "ไข่บางไร้ขอบ",
+      "shape": "oval",
+      "material": "rimless",
+      "color": "clear",
+      "face_shape": "oval",
+      "face_shape_th": "หน้าไข่",
+      "pd_mm": 62,
+      "size_verdict": "ok",
+      "fit_score": 98,
+      "quality": {
+       "score": 88,
+       "ok": true,
+       "tips_th": []
+      },
+      "watermark": "Made with SpecsTry · preview only, not an eye exam",
+      "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+     },
+     {
+      "photo_id": "p01",
+      "frame_id": "f02",
+      "name_th": "เหลี่ยมอะซิเตทเข้ม",
+      "shape": "rectangle",
+      "material": "acetate",
+      "color": "black",
+      "face_shape": "oval",
+      "face_shape_th": "หน้าไข่",
+      "pd_mm": 62,
+      "size_verdict": "ok",
+      "fit_score": 98,
+      "quality": {
+       "score": 88,
+       "ok": true,
+       "tips_th": []
+      },
+      "watermark": "Made with SpecsTry · preview only, not an eye exam",
+      "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+     }
+    ],
+    "count": 3
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "gale",
+   "value": {
+    "frame_id": "f01",
+    "name_th": "กลมบางโลหะ",
+    "region": "bkk",
+    "lens": "single",
+    "lens_th": "เลนส์มองระยะเดียว",
+    "mid_thb": 3100,
+    "min_thb": 2500,
+    "max_thb": 4200,
+    "currency": "THB",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับแบรนด์ เลนส์ เคลือบและพื้นที่"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "province",
+   "value": {
+    "frame_id": "f01",
+    "name_th": "กลมบางโลหะ",
+    "region": "province",
+    "lens": "single",
+    "lens_th": "เลนส์มองระยะเดียว",
+    "mid_thb": 2500,
+    "min_thb": 2000,
+    "max_thb": 3400,
+    "currency": "THB",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับแบรนด์ เลนส์ เคลือบและพื้นที่"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "progressive",
+   "value": {
+    "frame_id": "f01",
+    "name_th": "กลมบางโลหะ",
+    "region": "bkk",
+    "lens": "progressive",
+    "lens_th": "เลนส์โปรเกรสซีฟ",
+    "mid_thb": 6700,
+    "min_thb": 5350,
+    "max_thb": 9050,
+    "currency": "THB",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับแบรนด์ เลนส์ เคลือบและพื้นที่"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "tourist titanium",
+   "value": {
+    "frame_id": "f04",
+    "name_th": "สแควร์ไทเทเนียม",
+    "region": "tourist",
+    "lens": "blue_light",
+    "lens_th": "กรองแสงน้ำเงิน (ค่าประมาณ)",
+    "mid_thb": 7300,
+    "min_thb": 5850,
+    "max_thb": 9850,
+    "currency": "THB",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับแบรนด์ เลนส์ เคลือบและพื้นที่"
+   }
+  },
+  {
+   "def": "QuoteCheck",
+   "note": "fair",
+   "value": {
+    "quote_thb": 3200,
+    "min_thb": 2500,
+    "max_thb": 4200,
+    "mid_thb": 3100,
+    "verdict": "fair",
+    "message_th": "อยู่ในช่วงสมเหตุสมผลเมื่อเทียบกับค่าประมาณการของแอป",
+    "questions_th": [
+     "ราคานี้รวมเลนส์ ค่าตรวจ และเคลือบหรือยัง",
+     "ค่า PD และม่านตาที่วัดได้เท่าไร ขอดูใบวัด",
+     "กรอบนี้ปรับจมูกและขาได้ไหม มีรับประกันกี่เดือน",
+     "ถ้าค่าสายตาเปลี่ยนใน 3 เดือน เปลี่ยนเลนส์ได้เท่าไร"
+    ],
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับแบรนด์ เลนส์ เคลือบและพื้นที่"
+   }
+  },
+  {
+   "def": "QuoteCheck",
+   "note": "low",
+   "value": {
+    "quote_thb": 1800,
+    "min_thb": 2500,
+    "max_thb": 4200,
+    "mid_thb": 3100,
+    "verdict": "low",
+    "message_th": "ต่ำกว่าช่วงประมาณการมาก เช็กยี่ห้อเลนส์ วัสดุกรอบ และสิ่งที่รวมในราคา",
+    "questions_th": [
+     "ราคานี้รวมเลนส์ ค่าตรวจ และเคลือบหรือยัง",
+     "ค่า PD และม่านตาที่วัดได้เท่าไร ขอดูใบวัด",
+     "กรอบนี้ปรับจมูกและขาได้ไหม มีรับประกันกี่เดือน",
+     "ถ้าค่าสายตาเปลี่ยนใน 3 เดือน เปลี่ยนเลนส์ได้เท่าไร"
+    ],
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับแบรนด์ เลนส์ เคลือบและพื้นที่"
+   }
+  },
+  {
+   "def": "QuoteCheck",
+   "note": "high",
+   "value": {
+    "quote_thb": 3900,
+    "min_thb": 2500,
+    "max_thb": 4200,
+    "mid_thb": 3100,
+    "verdict": "high",
+    "message_th": "ค่อนข้างสูงกว่าค่ากลาง ยังอยู่ในช่วง แต่ควรถามส่วนลดชุดกรอบ+เลนส์",
+    "questions_th": [
+     "ราคานี้รวมเลนส์ ค่าตรวจ และเคลือบหรือยัง",
+     "ค่า PD และม่านตาที่วัดได้เท่าไร ขอดูใบวัด",
+     "กรอบนี้ปรับจมูกและขาได้ไหม มีรับประกันกี่เดือน",
+     "ถ้าค่าสายตาเปลี่ยนใน 3 เดือน เปลี่ยนเลนส์ได้เท่าไร"
+    ],
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับแบรนด์ เลนส์ เคลือบและพื้นที่"
+   }
+  },
+  {
+   "def": "QuoteCheck",
+   "note": "very high",
+   "value": {
+    "quote_thb": 8000,
+    "min_thb": 2500,
+    "max_thb": 4200,
+    "mid_thb": 3100,
+    "verdict": "very_high",
+    "message_th": "สูงกว่าช่วงประมาณการมาก ขอใบเสนอราคาแยกกรอบ เลนส์ และเคลือบ",
+    "questions_th": [
+     "ราคานี้รวมเลนส์ ค่าตรวจ และเคลือบหรือยัง",
+     "ค่า PD และม่านตาที่วัดได้เท่าไร ขอดูใบวัด",
+     "กรอบนี้ปรับจมูกและขาได้ไหม มีรับประกันกี่เดือน",
+     "ถ้าค่าสายตาเปลี่ยนใน 3 เดือน เปลี่ยนเลนส์ได้เท่าไร"
+    ],
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับแบรนด์ เลนส์ เคลือบและพื้นที่"
+   }
+  },
+  {
+   "def": "LensAdvice",
+   "note": "single",
+   "value": {
+    "lens": "single",
+    "name_th": "เลนส์มองระยะเดียว",
+    "add_thb": 900,
+    "notes_th": "สำหรับค่าสายตาที่ร้านวัดให้ ไม่ใช่ค่าจากแอป",
+    "warnings_th": [],
+    "lifestyle": "office",
+    "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  },
+  {
+   "def": "LensAdvice",
+   "note": "progressive",
+   "value": {
+    "lens": "progressive",
+    "name_th": "เลนส์โปรเกรสซีฟ",
+    "add_thb": 4500,
+    "notes_th": "ต้องวัดและประกอบที่ร้านเท่านั้น",
+    "warnings_th": [],
+    "lifestyle": "office",
+    "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  },
+  {
+   "def": "LensAdvice",
+   "note": "blue_light",
+   "value": {
+    "lens": "blue_light",
+    "name_th": "กรองแสงน้ำเงิน (ค่าประมาณ)",
+    "add_thb": 1200,
+    "notes_th": "เคลือบเพิ่ม ไม่ใช่การรักษาอาการตา",
+    "warnings_th": [
+     "เลนส์กรองแสงน้ำเงินไม่แทนการพักสายตาหรือการตรวจตา"
+    ],
+    "lifestyle": "office",
+    "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  },
+  {
+   "def": "LensAdvice",
+   "note": "photochromic",
+   "value": {
+    "lens": "photochromic",
+    "name_th": "เลนส์ปรับแสง",
+    "add_thb": 2500,
+    "notes_th": "ความมืดในแดดจริงขึ้นกับยี่ห้อ",
+    "warnings_th": [],
+    "lifestyle": "office",
+    "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  },
+  {
+   "def": "LensAdvice",
+   "note": "sun",
+   "value": {
+    "lens": "sun",
+    "name_th": "เลนส์กันแดด",
+    "add_thb": 1500,
+    "notes_th": "ไม่ใช่แว่นเซฟตี้หรือแว่นเชื่อม",
+    "warnings_th": [],
+    "lifestyle": "outdoor",
+    "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  },
+  {
+   "def": "OpticianCard",
+   "note": "gale",
+   "value": {
+    "title_th": "การ์ดยื่นร้านแว่น",
+    "name_th": "น้องเกล",
+    "face_shape": "oval",
+    "face_shape_th": "หน้าไข่",
+    "frame_id": "f01",
+    "frame_th": "กลมบางโลหะ",
+    "lens_width": 48,
+    "bridge": 20,
+    "temple": 140,
+    "pd_mm": 62,
+    "fit_score": 96,
+    "size_verdict": "ok",
+    "budget_min_thb": 2500,
+    "budget_max_thb": 4200,
+    "note_th": "ชอบกรอบกลมบาง สีทอง ทำงานหน้าจอทั้งวัน ขอให้ร้านวัด PD และค่าสายตาใหม่ก่อนตัดเลนส์",
+    "line_share_url": "https://line.me/R/share?text=SpecsTry%20%E2%80%94%20%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%A2%E0%B8%B7%E0%B9%88%E0%B8%99%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%A7%E0%B9%88%E0%B8%99%0A%E0%B8%99%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%81%E0%B8%A5%20%C2%B7%20%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%20%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%82%E0%B9%88%0A%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%9A%3A%20%E0%B8%81%E0%B8%A5%E0%B8%A1%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B9%82%E0%B8%A5%E0%B8%AB%E0%B8%B0%20%2848-20-140%29%0APD%20%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%20%28%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%B9%E0%B8%9B%20%E0%B8%AB%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%95%E0%B8%B1%E0%B8%94%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C%29%3A%2062%20%E0%B8%A1%E0%B8%A1.%0A%E0%B8%87%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%3A%20%E0%B8%BF2%2C500%E2%80%934%2C200%0A%E0%B8%8A%E0%B8%AD%E0%B8%9A%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%9A%E0%B8%81%E0%B8%A5%E0%B8%A1%E0%B8%9A%E0%B8%B2%E0%B8%87%20%E0%B8%AA%E0%B8%B5%E0%B8%97%E0%B8%AD%E0%B8%87%20%E0%B8%97%E0%B8%B3%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%88%E0%B8%AD%E0%B8%97%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%A7%E0%B8%B1%E0%B8%99%20%E0%B8%82%E0%B8%AD%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%A7%E0%B8%B1%E0%B8%94%20PD%20%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%95%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%81%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%95%E0%B8%B1%E0%B8%94%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C",
+    "disclaimer_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์ ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับแบรนด์ เลนส์ เคลือบและพื้นที่"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "e01",
+   "value": {
+    "id": "e01",
+    "person_id": "u01",
+    "date": "2026-03-12",
+    "frame_id": "f05",
+    "shop_th": "ร้านแว่น FictoOptic สยาม",
+    "cost_thb": 0,
+    "status": "tried",
+    "on_device": true
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "e02",
+   "value": {
+    "id": "e02",
+    "person_id": "u01",
+    "date": "2025-08-01",
+    "frame_id": "f07",
+    "shop_th": "ร้านแว่น FictoOptic สยาม",
+    "cost_thb": 5200,
+    "status": "bought",
+    "on_device": true
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "e03",
+   "value": {
+    "id": "e03",
+    "person_id": "u01",
+    "date": "2026-11-12",
+    "frame_id": "f01",
+    "shop_th": "",
+    "cost_thb": 0,
+    "status": "wishlist",
+    "on_device": true
+   }
+  },
+  {
+   "def": "DiaryStats",
+   "note": "gale diary",
+   "value": {
+    "count": 3,
+    "total_thb": 5200,
+    "avg_thb": 5200,
+    "last_date": "2026-11-12",
+    "top_frame": "f05"
+   }
+  },
+  {
+   "def": "DiaryStats",
+   "note": "empty",
+   "value": {
+    "count": 0,
+    "total_thb": 0,
+    "avg_thb": 0,
+    "last_date": null,
+    "top_frame": null
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "gale",
+   "value": {
+    "title_th": "SpecsTry — น้องเกล",
+    "headline_th": "กลมบางโลหะ · เข้ากับหน้าไข่ 96 คะแนน",
+    "hook_th": "ลองแว่นบนหน้าตัวเองก่อนซื้อ",
+    "frame_id": "f01",
+    "face_shape": "oval",
+    "layout": "tryon_result",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with SpecsTry · preview only, not an eye exam",
+    "cta_th": "คอมเมนต์ SPECS รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "stop",
+   "value": {
+    "level": "stop",
+    "message_th": "ยังใช้ค่าจากรูปตัดเลนส์ไม่ได้ SpecsTry เป็นภาพจำลองสำหรับลองกรอบแว่นเท่านั้น ไม่ใช่การตรวจสายตา ไม่ใช่ใบสั่งแว่น และไม่ใช่คำแนะนำจากแพทย์/นักทัศนมาตร วัด PD และค่าสายตาจริงที่ร้านแว่นหรือคลินิกก่อนตัดเลนส์"
+   }
+  }
+ ]
+}
