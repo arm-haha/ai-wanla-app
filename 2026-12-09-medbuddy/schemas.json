@@ -1,0 +1,669 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/medbuddy.schema.json",
+ "title": "MedBuddy",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^[up][0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "relation_th": {
+     "type": "string"
+    },
+    "clinic_th": {
+     "type": "string"
+    },
+    "doctor_th": {
+     "type": "string"
+    },
+    "visit_date": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "LabelPhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "crop"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^p[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "crop": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "PhotoScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "quality"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Pipeline": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "steps"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "LibraryItem": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "kind_th",
+    "form_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^m[0-9]{2}$"
+    },
+    "name": {
+     "type": "string"
+    },
+    "kind_th": {
+     "type": "string"
+    },
+    "form_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ParsedLabel": {
+   "type": "object",
+   "required": [
+    "name",
+    "strength_th",
+    "dose_th",
+    "slots",
+    "food",
+    "food_th",
+    "qty",
+    "confidence",
+    "needs_confirm",
+    "message_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "name": {
+     "type": "string"
+    },
+    "strength_th": {
+     "type": "string"
+    },
+    "dose_th": {
+     "type": "string"
+    },
+    "slots": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "morning",
+       "noon",
+       "evening",
+       "bedtime",
+       "as_needed"
+      ]
+     },
+     "minItems": 1
+    },
+    "food": {
+     "enum": [
+      "before_food",
+      "after_food",
+      "with_food",
+      "any"
+     ]
+    },
+    "food_th": {
+     "type": "string"
+    },
+    "qty": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "daily_units": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "needs_confirm": {
+     "type": "boolean"
+    },
+    "prn_max_per_day": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScheduleItem": {
+   "type": "object",
+   "required": [
+    "name",
+    "strength_th",
+    "dose_th",
+    "food_th"
+   ],
+   "properties": {
+    "name": {
+     "type": "string"
+    },
+    "strength_th": {
+     "type": "string"
+    },
+    "dose_th": {
+     "type": "string"
+    },
+    "food_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScheduleSlot": {
+   "type": "object",
+   "required": [
+    "slot",
+    "slot_th",
+    "items",
+    "count"
+   ],
+   "properties": {
+    "slot": {
+     "enum": [
+      "morning",
+      "noon",
+      "evening",
+      "bedtime",
+      "as_needed"
+     ]
+    },
+    "slot_th": {
+     "type": "string"
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ScheduleItem"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "Schedule": {
+   "type": "object",
+   "required": [
+    "slots",
+    "med_count",
+    "slot_count",
+    "headline_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "slots": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ScheduleSlot"
+     },
+     "minItems": 1
+    },
+    "med_count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "slot_count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Refill": {
+   "type": "object",
+   "required": [
+    "name",
+    "qty",
+    "status",
+    "prn",
+    "message_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "name": {
+     "type": "string"
+    },
+    "qty": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "daily_units": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "days_left": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "due_date": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "status": {
+     "enum": [
+      "ok",
+      "soon",
+      "due",
+      "ask"
+     ]
+    },
+    "prn": {
+     "type": "boolean"
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "MissedGuide": {
+   "type": "object",
+   "required": [
+    "slot",
+    "slot_th",
+    "steps_th",
+    "headline_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "slot": {
+     "enum": [
+      "morning",
+      "noon",
+      "evening",
+      "bedtime",
+      "as_needed"
+     ]
+    },
+    "slot_th": {
+     "type": "string"
+    },
+    "steps_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 3
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "InteractionFlag": {
+   "type": "object",
+   "required": [
+    "level",
+    "med_count",
+    "message_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "ask"
+     ]
+    },
+    "med_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "VisitCard": {
+   "type": "object",
+   "required": [
+    "patient_th",
+    "clinic_th",
+    "doctor_th",
+    "visit_date",
+    "meds",
+    "med_count",
+    "headline_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "patient_th": {
+     "type": "string"
+    },
+    "clinic_th": {
+     "type": "string"
+    },
+    "doctor_th": {
+     "type": "string"
+    },
+    "visit_date": {
+     "type": "string"
+    },
+    "meds": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "med_count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "note_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "CaregiverShare": {
+   "type": "object",
+   "required": [
+    "caregiver_th",
+    "patient_th",
+    "date",
+    "pending_slots_th",
+    "slot_count",
+    "headline_th",
+    "cta_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "caregiver_th": {
+     "type": "string"
+    },
+    "patient_th": {
+     "type": "string"
+    },
+    "date": {
+     "type": "string"
+    },
+    "pending_slots_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "slot_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "med_count",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "med_count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "layout": {
+     "enum": [
+      "schedule_card"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
