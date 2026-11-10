@@ -1,0 +1,1344 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "พี่บอส",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่บอส",
+    "name_en": "Boss",
+    "age": 31,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "ขายโคมไฟตั้งโต๊ะสีครีมสภาพดี อยากได้ชื่อโพสต์ ช่วงราคา และข้อความตอบคนทัก"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่นิด",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่นิด",
+    "name_en": "Nid",
+    "age": 28,
+    "city_th": "ขอนแก่น",
+    "goal_th": "ขายกระเป๋าผ้าสภาพพอใช้"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องสม",
+   "value": {
+    "id": "u03",
+    "name_th": "น้องสม",
+    "name_en": "Som",
+    "age": 22,
+    "city_th": "เชียงใหม่",
+    "goal_th": "ขายหนังสือเรียนสภาพเหมือนใหม่"
+   }
+  },
+  {
+   "def": "ItemPhoto",
+   "note": "s01",
+   "value": {
+    "id": "s01",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.12,
+    "blur": 0.1,
+    "crop": 0.08,
+    "detections": [
+     {
+      "key": "category",
+      "value": "lamp",
+      "confidence": 0.95
+     },
+     {
+      "key": "item_th",
+      "value": "โคมไฟตั้งโต๊ะ",
+      "confidence": 0.94
+     },
+     {
+      "key": "color_th",
+      "value": "ครีม",
+      "confidence": 0.9
+     },
+     {
+      "key": "condition",
+      "value": "good",
+      "confidence": 0.88
+     },
+     {
+      "key": "defect_th",
+      "value": "มีรอยขีดเล็กที่ฐาน",
+      "confidence": 0.84
+     },
+     {
+      "key": "wear",
+      "value": 0.32,
+      "confidence": 0.8
+     }
+    ]
+   }
+  },
+  {
+   "def": "ItemScan",
+   "note": "s01",
+   "value": {
+    "shot_id": "s01",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "category": "lamp",
+    "item_th": "โคมไฟตั้งโต๊ะ",
+    "color_th": "ครีม",
+    "brand_th": null,
+    "defect_th": "มีรอยขีดเล็กที่ฐาน",
+    "category_name_th": "โคมไฟ/ส่องสว่าง",
+    "message_th": "เจอโคมไฟตั้งโต๊ะสีครีม"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s01",
+   "value": {
+    "score": 90,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "ConditionGrade",
+   "note": "s01",
+   "value": {
+    "ok": true,
+    "condition": "good",
+    "grade": "B",
+    "name_th": "สภาพดี",
+    "message_th": "สภาพ B สภาพดี"
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s01 category",
+   "value": {
+    "key": "category",
+    "value": "lamp",
+    "confidence": 0.95
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s01 item_th",
+   "value": {
+    "key": "item_th",
+    "value": "โคมไฟตั้งโต๊ะ",
+    "confidence": 0.94
+   }
+  },
+  {
+   "def": "ItemPhoto",
+   "note": "s02",
+   "value": {
+    "id": "s02",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.18,
+    "blur": 0.12,
+    "crop": 0.1,
+    "detections": [
+     {
+      "key": "category",
+      "value": "bag",
+      "confidence": 0.92
+     },
+     {
+      "key": "item_th",
+      "value": "กระเป๋าผ้า",
+      "confidence": 0.9
+     },
+     {
+      "key": "color_th",
+      "value": "กรม",
+      "confidence": 0.88
+     },
+     {
+      "key": "condition",
+      "value": "fair",
+      "confidence": 0.86
+     },
+     {
+      "key": "defect_th",
+      "value": "สายเริ่มรุ่ย",
+      "confidence": 0.82
+     }
+    ]
+   }
+  },
+  {
+   "def": "ItemScan",
+   "note": "s02",
+   "value": {
+    "shot_id": "s02",
+    "quality": {
+     "score": 86,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "category": "bag",
+    "item_th": "กระเป๋าผ้า",
+    "color_th": "กรม",
+    "brand_th": null,
+    "defect_th": "สายเริ่มรุ่ย",
+    "category_name_th": "กระเป๋า",
+    "message_th": "เจอกระเป๋าผ้าสีกรม"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s02",
+   "value": {
+    "score": 86,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "ConditionGrade",
+   "note": "s02",
+   "value": {
+    "ok": true,
+    "condition": "fair",
+    "grade": "C",
+    "name_th": "ใช้งานได้ มีรอย",
+    "message_th": "สภาพ C ใช้งานได้ มีรอย"
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s02 category",
+   "value": {
+    "key": "category",
+    "value": "bag",
+    "confidence": 0.92
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s02 item_th",
+   "value": {
+    "key": "item_th",
+    "value": "กระเป๋าผ้า",
+    "confidence": 0.9
+   }
+  },
+  {
+   "def": "ItemPhoto",
+   "note": "s03",
+   "value": {
+    "id": "s03",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.1,
+    "blur": 0.1,
+    "crop": 0.1,
+    "detections": [
+     {
+      "key": "category",
+      "value": "book",
+      "confidence": 0.96
+     },
+     {
+      "key": "item_th",
+      "value": "หนังสือเตรียมสอบ",
+      "confidence": 0.93
+     },
+     {
+      "key": "condition",
+      "value": "like_new",
+      "confidence": 0.91
+     }
+    ]
+   }
+  },
+  {
+   "def": "ItemScan",
+   "note": "s03",
+   "value": {
+    "shot_id": "s03",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "category": "book",
+    "item_th": "หนังสือเตรียมสอบ",
+    "color_th": null,
+    "brand_th": null,
+    "defect_th": null,
+    "category_name_th": "หนังสือ",
+    "message_th": "เจอหนังสือเตรียมสอบ"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s03",
+   "value": {
+    "score": 90,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "ConditionGrade",
+   "note": "s03",
+   "value": {
+    "ok": true,
+    "condition": "like_new",
+    "grade": "A",
+    "name_th": "เหมือนใหม่",
+    "message_th": "สภาพ A เหมือนใหม่"
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s03 category",
+   "value": {
+    "key": "category",
+    "value": "book",
+    "confidence": 0.96
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s03 item_th",
+   "value": {
+    "key": "item_th",
+    "value": "หนังสือเตรียมสอบ",
+    "confidence": 0.93
+   }
+  },
+  {
+   "def": "ItemPhoto",
+   "note": "s04",
+   "value": {
+    "id": "s04",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.15,
+    "blur": 0.1,
+    "crop": 0.1,
+    "detections": [
+     {
+      "key": "category",
+      "value": "chair",
+      "confidence": 0.9
+     },
+     {
+      "key": "item_th",
+      "value": "เก้าอี้ไม้",
+      "confidence": 0.88
+     },
+     {
+      "key": "wear",
+      "value": 0.7,
+      "confidence": 0.85
+     }
+    ]
+   }
+  },
+  {
+   "def": "ItemScan",
+   "note": "s04",
+   "value": {
+    "shot_id": "s04",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "category": "chair",
+    "item_th": "เก้าอี้ไม้",
+    "color_th": null,
+    "brand_th": null,
+    "defect_th": null,
+    "category_name_th": "เก้าอี้/เฟอร์นิเจอร์",
+    "message_th": "เจอเก้าอี้ไม้"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s04",
+   "value": {
+    "score": 88,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "ConditionGrade",
+   "note": "s04",
+   "value": {
+    "ok": true,
+    "condition": "poor",
+    "grade": "D",
+    "name_th": "สภาพพอใช้",
+    "message_th": "สภาพ D สภาพพอใช้"
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s04 category",
+   "value": {
+    "key": "category",
+    "value": "chair",
+    "confidence": 0.9
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s04 item_th",
+   "value": {
+    "key": "item_th",
+    "value": "เก้าอี้ไม้",
+    "confidence": 0.88
+   }
+  },
+  {
+   "def": "ItemPhoto",
+   "note": "s05",
+   "value": {
+    "id": "s05",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.68,
+    "blur": 0.52,
+    "crop": 0.5,
+    "detections": [
+     {
+      "key": "category",
+      "value": "lamp",
+      "confidence": 0.7
+     },
+     {
+      "key": "item_th",
+      "value": "โคมไฟ",
+      "confidence": 0.68
+     }
+    ]
+   }
+  },
+  {
+   "def": "ItemScan",
+   "note": "s05",
+   "value": {
+    "shot_id": "s05",
+    "quality": {
+     "score": 43,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนบนของเยอะ ย้ายออกจากไฟตรง ๆ หรือถ่ายข้างหน้าต่าง",
+      "ภาพเบลอ วางของนิ่งแล้วถ่ายใหม่ในที่สว่าง",
+      "ของถูกครอป ถ่ายให้เห็นทั้งชิ้นและพื้นเรียบด้านหลัง"
+     ]
+    },
+    "ok": false,
+    "category": "lamp",
+    "item_th": "โคมไฟ",
+    "color_th": null,
+    "brand_th": null,
+    "defect_th": null,
+    "category_name_th": "โคมไฟ/ส่องสว่าง",
+    "message_th": "เจอโคมไฟ"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s05",
+   "value": {
+    "score": 43,
+    "ok": false,
+    "tips_th": [
+     "แสงสะท้อนบนของเยอะ ย้ายออกจากไฟตรง ๆ หรือถ่ายข้างหน้าต่าง",
+     "ภาพเบลอ วางของนิ่งแล้วถ่ายใหม่ในที่สว่าง",
+     "ของถูกครอป ถ่ายให้เห็นทั้งชิ้นและพื้นเรียบด้านหลัง"
+    ]
+   }
+  },
+  {
+   "def": "ConditionGrade",
+   "note": "s05",
+   "value": {
+    "ok": false,
+    "condition": null,
+    "grade": null,
+    "name_th": null,
+    "message_th": "ยังให้เกรดสภาพไม่ได้ ลองถ่ายจุดที่ใช้แล้วหรือเลือกสภาพเอง"
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s05 category",
+   "value": {
+    "key": "category",
+    "value": "lamp",
+    "confidence": 0.7
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s05 item_th",
+   "value": {
+    "key": "item_th",
+    "value": "โคมไฟ",
+    "confidence": 0.68
+   }
+  },
+  {
+   "def": "ItemPhoto",
+   "note": "s06",
+   "value": {
+    "id": "s06",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.2,
+    "blur": 0.15,
+    "crop": 0.1,
+    "detections": []
+   }
+  },
+  {
+   "def": "ItemScan",
+   "note": "s06",
+   "value": {
+    "shot_id": "s06",
+    "quality": {
+     "score": 54,
+     "ok": false,
+     "tips_th": [
+      "ยังไม่เจอสินค้าในรูป วางของบนพื้นเรียบแล้วถ่ายใหม่"
+     ]
+    },
+    "ok": false,
+    "category": null,
+    "item_th": null,
+    "color_th": null,
+    "brand_th": null,
+    "defect_th": null,
+    "message_th": "อ่านหมวดสินค้าไม่ชัด ลองถ่ายใหม่หรือเลือกหมวดเอง"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s06",
+   "value": {
+    "score": 54,
+    "ok": false,
+    "tips_th": [
+     "ยังไม่เจอสินค้าในรูป วางของบนพื้นเรียบแล้วถ่ายใหม่"
+    ]
+   }
+  },
+  {
+   "def": "ConditionGrade",
+   "note": "s06",
+   "value": {
+    "ok": false,
+    "condition": null,
+    "grade": null,
+    "name_th": null,
+    "message_th": "ยังให้เกรดสภาพไม่ได้ ลองถ่ายจุดที่ใช้แล้วหรือเลือกสภาพเอง"
+   }
+  },
+  {
+   "def": "ItemPhoto",
+   "note": "s07",
+   "value": {
+    "id": "s07",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.12,
+    "blur": 0.1,
+    "crop": 0.08,
+    "detections": [
+     {
+      "key": "category",
+      "value": "lamp",
+      "confidence": 0.41
+     },
+     {
+      "key": "item_th",
+      "value": "โคมไฟตั้งโต๊ะ",
+      "confidence": 0.94
+     }
+    ]
+   }
+  },
+  {
+   "def": "ItemScan",
+   "note": "s07",
+   "value": {
+    "shot_id": "s07",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": false,
+    "category": null,
+    "item_th": "โคมไฟตั้งโต๊ะ",
+    "color_th": null,
+    "brand_th": null,
+    "defect_th": null,
+    "message_th": "อ่านหมวดสินค้าไม่ชัด ลองถ่ายใหม่หรือเลือกหมวดเอง"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s07",
+   "value": {
+    "score": 90,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "ConditionGrade",
+   "note": "s07",
+   "value": {
+    "ok": false,
+    "condition": null,
+    "grade": null,
+    "name_th": null,
+    "message_th": "ยังให้เกรดสภาพไม่ได้ ลองถ่ายจุดที่ใช้แล้วหรือเลือกสภาพเอง"
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s07 category",
+   "value": {
+    "key": "category",
+    "value": "lamp",
+    "confidence": 0.41
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s07 item_th",
+   "value": {
+    "key": "item_th",
+    "value": "โคมไฟตั้งโต๊ะ",
+    "confidence": 0.94
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "boss lamp good",
+   "value": {
+    "min_thb": 450,
+    "max_thb": 750,
+    "mid_thb": 600,
+    "category": "lamp",
+    "condition": "good",
+    "grade": "B",
+    "headline_th": "ราคาแนะนำ ฿450–750 · กลาง ฿600",
+    "disclaimer_th": "ช่วงราคาเป็นค่าตัวอย่างที่ตั้งเอง ไม่ใช่ราคาตลาดจริง ณ วันนี้"
+   }
+  },
+  {
+   "def": "Listing",
+   "note": "boss",
+   "value": {
+    "title_th": "โคมไฟตั้งโต๊ะ สีครีม สภาพดี",
+    "description_th": "โคมไฟตั้งโต๊ะ สีครีม สภาพดี ตำหนิ: มีรอยขีดเล็กที่ฐาน ราคาเสนอ ฿600 (ช่วงประมาณ ฿450–750) มารับเองแถวลาดพร้าว นัดรับได้ ของจริงตามรูป",
+    "item_th": "โคมไฟตั้งโต๊ะ",
+    "condition": "good",
+    "grade": "B",
+    "min_thb": 450,
+    "max_thb": 750,
+    "ask_thb": 600,
+    "headline_th": "โคมไฟตั้งโต๊ะ สีครีม สภาพดี"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "nid bag",
+   "value": {
+    "min_thb": 200,
+    "max_thb": 400,
+    "mid_thb": 300,
+    "category": "bag",
+    "condition": "fair",
+    "grade": "C",
+    "headline_th": "ราคาแนะนำ ฿200–400 · กลาง ฿300",
+    "disclaimer_th": "ช่วงราคาเป็นค่าตัวอย่างที่ตั้งเอง ไม่ใช่ราคาตลาดจริง ณ วันนี้"
+   }
+  },
+  {
+   "def": "Listing",
+   "note": "nid bag",
+   "value": {
+    "title_th": "กระเป๋าผ้า สีกรม ใช้งานได้ มีรอย",
+    "description_th": "กระเป๋าผ้า สีกรม ใช้งานได้ มีรอย ตำหนิ: สายเริ่มรุ่ย ราคาเสนอ ฿300 (ช่วงประมาณ ฿200–400) นัดรับได้ ของจริงตามรูป",
+    "item_th": "กระเป๋าผ้า",
+    "condition": "fair",
+    "grade": "C",
+    "min_thb": 200,
+    "max_thb": 400,
+    "ask_thb": 300,
+    "headline_th": "กระเป๋าผ้า สีกรม ใช้งานได้ มีรอย"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "som book",
+   "value": {
+    "min_thb": 80,
+    "max_thb": 250,
+    "mid_thb": 150,
+    "category": "book",
+    "condition": "like_new",
+    "grade": "A",
+    "headline_th": "ราคาแนะนำ ฿80–250 · กลาง ฿150",
+    "disclaimer_th": "ช่วงราคาเป็นค่าตัวอย่างที่ตั้งเอง ไม่ใช่ราคาตลาดจริง ณ วันนี้"
+   }
+  },
+  {
+   "def": "Listing",
+   "note": "som book",
+   "value": {
+    "title_th": "หนังสือเตรียมสอบ เหมือนใหม่",
+    "description_th": "หนังสือเตรียมสอบ เหมือนใหม่ ราคาเสนอ ฿150 (ช่วงประมาณ ฿80–250) นัดรับได้ ของจริงตามรูป",
+    "item_th": "หนังสือเตรียมสอบ",
+    "condition": "like_new",
+    "grade": "A",
+    "min_thb": 80,
+    "max_thb": 250,
+    "ask_thb": 150,
+    "headline_th": "หนังสือเตรียมสอบ เหมือนใหม่"
+   }
+  },
+  {
+   "def": "PhotoTips",
+   "note": "boss missing extras",
+   "value": {
+    "keys": [
+     "need_defect",
+     "need_scale",
+     "need_all"
+    ],
+    "tips_th": [
+     "เพิ่มรูปโชว์ตำหนิใกล้ ๆ จะได้ไม่ต้องถกกันตอนนัดรับ",
+     "วางของข้างสิ่งที่บอกขนาด เช่น ขวดน้ำ หรือไม้บรรทัด",
+     "ถ่ายอย่างน้อย 3 มุม: ด้านหน้า ด้านข้าง และจุดที่ใช้แล้ว"
+    ],
+    "count": 3,
+    "headline_th": "3 ข้อเพื่อให้รูปขายดีขึ้น"
+   }
+  },
+  {
+   "def": "PhotoTips",
+   "note": "complete",
+   "value": {
+    "keys": [],
+    "tips_th": [],
+    "count": 0,
+    "headline_th": "รูปครบ มุมครบ ตำหนิครบ"
+   }
+  },
+  {
+   "def": "PhotoTips",
+   "note": "bad quality",
+   "value": {
+    "keys": [
+     "glare",
+     "blur",
+     "crop"
+    ],
+    "tips_th": [
+     "แสงสะท้อนบนของเยอะ ย้ายออกจากไฟตรง ๆ หรือถ่ายข้างหน้าต่าง",
+     "ภาพเบลอ วางของนิ่งแล้วถ่ายใหม่ในที่สว่าง",
+     "ของถูกครอป ถ่ายให้เห็นทั้งชิ้นและพื้นเรียบด้านหลัง"
+    ],
+    "count": 3,
+    "headline_th": "3 ข้อเพื่อให้รูปขายดีขึ้น"
+   }
+  },
+  {
+   "def": "ReplyKit",
+   "note": "all",
+   "value": {
+    "ask_thb": 570,
+    "templates": [
+     {
+      "id": "r01",
+      "key": "bargain",
+      "name_th": "ต่อราคา",
+      "text_th": "ขอบคุณที่ทักนะคะ ลดให้ได้ที่ ฿570 ถ้ามารับเองวันนี้"
+     },
+     {
+      "id": "r02",
+      "key": "meetup",
+      "name_th": "นัดรับ",
+      "text_th": "นัดรับที่ที่สาธารณะได้ค่ะ ดูของก่อนได้ โอนหรือจ่ายสดตอนรับ"
+     },
+     {
+      "id": "r03",
+      "key": "reserved",
+      "name_th": "ขอคนนี้ไว้",
+      "text_th": "ขอคนนี้ไว้ก่อนนะคะ รอบโอน/มารับภายในเวลาที่นัด ถ้าไม่มาจะเปิดขายต่อ"
+     },
+     {
+      "id": "r04",
+      "key": "sold",
+      "name_th": "ขายแล้ว",
+      "text_th": "ขายแล้วค่ะ ขอบคุณที่สนใจ ไว้รอบหน้านะคะ"
+     },
+     {
+      "id": "r05",
+      "key": "scam_guard",
+      "name_th": "กันมิจฉาชีพ",
+      "text_th": "ไม่ส่งของก่อนโอน และไม่คลิกลิงก์แปลก นัดรับในที่สาธารณะมีคนพลุกพล่านค่ะ"
+     }
+    ],
+    "count": 5
+   }
+  },
+  {
+   "def": "ReplyTemplate",
+   "note": "bargain",
+   "value": {
+    "id": "r01",
+    "key": "bargain",
+    "name_th": "ต่อราคา",
+    "text_th": "ขอบคุณที่ทักนะคะ ลดให้ได้ที่ ฿570 ถ้ามารับเองวันนี้"
+   }
+  },
+  {
+   "def": "ReplyTemplate",
+   "note": "meetup",
+   "value": {
+    "id": "r02",
+    "key": "meetup",
+    "name_th": "นัดรับ",
+    "text_th": "นัดรับที่ที่สาธารณะได้ค่ะ ดูของก่อนได้ โอนหรือจ่ายสดตอนรับ"
+   }
+  },
+  {
+   "def": "ReplyTemplate",
+   "note": "reserved",
+   "value": {
+    "id": "r03",
+    "key": "reserved",
+    "name_th": "ขอคนนี้ไว้",
+    "text_th": "ขอคนนี้ไว้ก่อนนะคะ รอบโอน/มารับภายในเวลาที่นัด ถ้าไม่มาจะเปิดขายต่อ"
+   }
+  },
+  {
+   "def": "ReplyTemplate",
+   "note": "sold",
+   "value": {
+    "id": "r04",
+    "key": "sold",
+    "name_th": "ขายแล้ว",
+    "text_th": "ขายแล้วค่ะ ขอบคุณที่สนใจ ไว้รอบหน้านะคะ"
+   }
+  },
+  {
+   "def": "ReplyTemplate",
+   "note": "scam_guard",
+   "value": {
+    "id": "r05",
+    "key": "scam_guard",
+    "name_th": "กันมิจฉาชีพ",
+    "text_th": "ไม่ส่งของก่อนโอน และไม่คลิกลิงก์แปลก นัดรับในที่สาธารณะมีคนพลุกพล่านค่ะ"
+   }
+  },
+  {
+   "def": "ReplyKit",
+   "note": "subset",
+   "value": {
+    "ask_thb": 570,
+    "templates": [
+     {
+      "id": "r04",
+      "key": "sold",
+      "name_th": "ขายแล้ว",
+      "text_th": "ขายแล้วค่ะ ขอบคุณที่สนใจ ไว้รอบหน้านะคะ"
+     },
+     {
+      "id": "r02",
+      "key": "meetup",
+      "name_th": "นัดรับ",
+      "text_th": "นัดรับที่ที่สาธารณะได้ค่ะ ดูของก่อนได้ โอนหรือจ่ายสดตอนรับ"
+     }
+    ],
+    "count": 2
+   }
+  },
+  {
+   "def": "LogRow",
+   "note": "l01",
+   "value": {
+    "id": "l01",
+    "status": "for_sale",
+    "ask_thb": 600,
+    "sold_thb": null,
+    "date": null,
+    "title_th": "โคมไฟตั้งโต๊ะ สีครีม สภาพดี"
+   }
+  },
+  {
+   "def": "LogRow",
+   "note": "l02",
+   "value": {
+    "id": "l02",
+    "status": "for_sale",
+    "ask_thb": 300,
+    "sold_thb": null,
+    "date": null,
+    "title_th": "กระเป๋าผ้า สีกรม ใช้งานได้ มีรอย"
+   }
+  },
+  {
+   "def": "LogRow",
+   "note": "l03",
+   "value": {
+    "id": "l03",
+    "status": "sold",
+    "ask_thb": 80,
+    "sold_thb": 80,
+    "date": "2026-11-20",
+    "title_th": "หนังสือเตรียมสอบ เหมือนใหม่"
+   }
+  },
+  {
+   "def": "SoldLog",
+   "note": "sell lamp",
+   "value": {
+    "rows": [
+     {
+      "id": "l01",
+      "status": "sold",
+      "ask_thb": 600,
+      "sold_thb": 550,
+      "date": "2026-11-26",
+      "title_th": "โคมไฟตั้งโต๊ะ สีครีม สภาพดี"
+     },
+     {
+      "id": "l02",
+      "status": "for_sale",
+      "ask_thb": 300,
+      "sold_thb": null,
+      "date": null,
+      "title_th": "กระเป๋าผ้า สีกรม ใช้งานได้ มีรอย"
+     },
+     {
+      "id": "l03",
+      "status": "sold",
+      "ask_thb": 80,
+      "sold_thb": 80,
+      "date": "2026-11-20",
+      "title_th": "หนังสือเตรียมสอบ เหมือนใหม่"
+     }
+    ],
+    "sold_count": 2,
+    "open_count": 1,
+    "reserved_count": 0,
+    "total_sold_thb": 630,
+    "headline_th": "ขายแล้ว 2 ชิ้น รวม ฿630"
+   }
+  },
+  {
+   "def": "SoldLog",
+   "note": "reserve bag",
+   "value": {
+    "rows": [
+     {
+      "id": "l01",
+      "status": "for_sale",
+      "ask_thb": 600,
+      "sold_thb": null,
+      "date": null,
+      "title_th": "โคมไฟตั้งโต๊ะ สีครีม สภาพดี"
+     },
+     {
+      "id": "l02",
+      "status": "reserved",
+      "ask_thb": 300,
+      "sold_thb": null,
+      "date": null,
+      "title_th": "กระเป๋าผ้า สีกรม ใช้งานได้ มีรอย"
+     },
+     {
+      "id": "l03",
+      "status": "sold",
+      "ask_thb": 80,
+      "sold_thb": 80,
+      "date": "2026-11-20",
+      "title_th": "หนังสือเตรียมสอบ เหมือนใหม่"
+     }
+    ],
+    "sold_count": 1,
+    "open_count": 1,
+    "reserved_count": 1,
+    "total_sold_thb": 80,
+    "headline_th": "ขายแล้ว 1 ชิ้น รวม ฿80"
+   }
+  },
+  {
+   "def": "SoldLog",
+   "note": "relist book",
+   "value": {
+    "rows": [
+     {
+      "id": "l01",
+      "status": "for_sale",
+      "ask_thb": 600,
+      "sold_thb": null,
+      "date": null,
+      "title_th": "โคมไฟตั้งโต๊ะ สีครีม สภาพดี"
+     },
+     {
+      "id": "l02",
+      "status": "for_sale",
+      "ask_thb": 300,
+      "sold_thb": null,
+      "date": null,
+      "title_th": "กระเป๋าผ้า สีกรม ใช้งานได้ มีรอย"
+     },
+     {
+      "id": "l03",
+      "status": "for_sale",
+      "ask_thb": 80,
+      "sold_thb": null,
+      "date": "2026-11-20",
+      "title_th": "หนังสือเตรียมสอบ เหมือนใหม่"
+     }
+    ],
+    "sold_count": 0,
+    "open_count": 3,
+    "reserved_count": 0,
+    "total_sold_thb": 0,
+    "headline_th": "ขายแล้ว 0 ชิ้น รวม ฿0"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "chair good",
+   "value": {
+    "min_thb": 500,
+    "max_thb": 900,
+    "mid_thb": 700,
+    "category": "chair",
+    "condition": "good",
+    "grade": "B",
+    "headline_th": "ราคาแนะนำ ฿500–900 · กลาง ฿700",
+    "disclaimer_th": "ช่วงราคาเป็นค่าตัวอย่างที่ตั้งเอง ไม่ใช่ราคาตลาดจริง ณ วันนี้"
+   }
+  },
+  {
+   "def": "Listing",
+   "note": "chair good",
+   "value": {
+    "title_th": "chair สภาพดี",
+    "description_th": "chair สภาพดี ราคาเสนอ ฿700 (ช่วงประมาณ ฿500–900) นัดรับได้ ของจริงตามรูป",
+    "item_th": "chair",
+    "condition": "good",
+    "grade": "B",
+    "min_thb": 500,
+    "max_thb": 900,
+    "ask_thb": 700,
+    "headline_th": "chair สภาพดี"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "electronics good",
+   "value": {
+    "min_thb": 800,
+    "max_thb": 2000,
+    "mid_thb": 1300,
+    "category": "electronics",
+    "condition": "good",
+    "grade": "B",
+    "headline_th": "ราคาแนะนำ ฿800–2000 · กลาง ฿1300",
+    "disclaimer_th": "ช่วงราคาเป็นค่าตัวอย่างที่ตั้งเอง ไม่ใช่ราคาตลาดจริง ณ วันนี้"
+   }
+  },
+  {
+   "def": "Listing",
+   "note": "electronics good",
+   "value": {
+    "title_th": "electronics สภาพดี",
+    "description_th": "electronics สภาพดี ราคาเสนอ ฿1300 (ช่วงประมาณ ฿800–2000) นัดรับได้ ของจริงตามรูป",
+    "item_th": "electronics",
+    "condition": "good",
+    "grade": "B",
+    "min_thb": 800,
+    "max_thb": 2000,
+    "ask_thb": 1300,
+    "headline_th": "electronics สภาพดี"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "clothes like_new",
+   "value": {
+    "min_thb": 250,
+    "max_thb": 700,
+    "mid_thb": 400,
+    "category": "clothes",
+    "condition": "like_new",
+    "grade": "A",
+    "headline_th": "ราคาแนะนำ ฿250–700 · กลาง ฿400",
+    "disclaimer_th": "ช่วงราคาเป็นค่าตัวอย่างที่ตั้งเอง ไม่ใช่ราคาตลาดจริง ณ วันนี้"
+   }
+  },
+  {
+   "def": "Listing",
+   "note": "clothes like_new",
+   "value": {
+    "title_th": "clothes เหมือนใหม่",
+    "description_th": "clothes เหมือนใหม่ ราคาเสนอ ฿400 (ช่วงประมาณ ฿250–700) นัดรับได้ ของจริงตามรูป",
+    "item_th": "clothes",
+    "condition": "like_new",
+    "grade": "A",
+    "min_thb": 250,
+    "max_thb": 700,
+    "ask_thb": 400,
+    "headline_th": "clothes เหมือนใหม่"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "kitchen fair",
+   "value": {
+    "min_thb": 80,
+    "max_thb": 180,
+    "mid_thb": 120,
+    "category": "kitchen",
+    "condition": "fair",
+    "grade": "C",
+    "headline_th": "ราคาแนะนำ ฿80–180 · กลาง ฿120",
+    "disclaimer_th": "ช่วงราคาเป็นค่าตัวอย่างที่ตั้งเอง ไม่ใช่ราคาตลาดจริง ณ วันนี้"
+   }
+  },
+  {
+   "def": "Listing",
+   "note": "kitchen fair",
+   "value": {
+    "title_th": "kitchen ใช้งานได้ มีรอย",
+    "description_th": "kitchen ใช้งานได้ มีรอย ราคาเสนอ ฿120 (ช่วงประมาณ ฿80–180) นัดรับได้ ของจริงตามรูป",
+    "item_th": "kitchen",
+    "condition": "fair",
+    "grade": "C",
+    "min_thb": 80,
+    "max_thb": 180,
+    "ask_thb": 120,
+    "headline_th": "kitchen ใช้งานได้ มีรอย"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "toy poor",
+   "value": {
+    "min_thb": 20,
+    "max_thb": 60,
+    "mid_thb": 35,
+    "category": "toy",
+    "condition": "poor",
+    "grade": "D",
+    "headline_th": "ราคาแนะนำ ฿20–60 · กลาง ฿35",
+    "disclaimer_th": "ช่วงราคาเป็นค่าตัวอย่างที่ตั้งเอง ไม่ใช่ราคาตลาดจริง ณ วันนี้"
+   }
+  },
+  {
+   "def": "Listing",
+   "note": "toy poor",
+   "value": {
+    "title_th": "toy สภาพพอใช้",
+    "description_th": "toy สภาพพอใช้ ราคาเสนอ ฿35 (ช่วงประมาณ ฿20–60) นัดรับได้ ของจริงตามรูป",
+    "item_th": "toy",
+    "condition": "poor",
+    "grade": "D",
+    "min_thb": 20,
+    "max_thb": 60,
+    "ask_thb": 35,
+    "headline_th": "toy สภาพพอใช้"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "other good",
+   "value": {
+    "min_thb": 150,
+    "max_thb": 500,
+    "mid_thb": 300,
+    "category": "other",
+    "condition": "good",
+    "grade": "B",
+    "headline_th": "ราคาแนะนำ ฿150–500 · กลาง ฿300",
+    "disclaimer_th": "ช่วงราคาเป็นค่าตัวอย่างที่ตั้งเอง ไม่ใช่ราคาตลาดจริง ณ วันนี้"
+   }
+  },
+  {
+   "def": "Listing",
+   "note": "other good",
+   "value": {
+    "title_th": "other สภาพดี",
+    "description_th": "other สภาพดี ราคาเสนอ ฿300 (ช่วงประมาณ ฿150–500) นัดรับได้ ของจริงตามรูป",
+    "item_th": "other",
+    "condition": "good",
+    "grade": "B",
+    "min_thb": 150,
+    "max_thb": 500,
+    "ask_thb": 300,
+    "headline_th": "other สภาพดี"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "lamp for_parts",
+   "value": {
+    "min_thb": 50,
+    "max_thb": 120,
+    "mid_thb": 80,
+    "category": "lamp",
+    "condition": "for_parts",
+    "grade": "E",
+    "headline_th": "ราคาแนะนำ ฿50–120 · กลาง ฿80",
+    "disclaimer_th": "ช่วงราคาเป็นค่าตัวอย่างที่ตั้งเอง ไม่ใช่ราคาตลาดจริง ณ วันนี้"
+   }
+  },
+  {
+   "def": "Listing",
+   "note": "lamp for_parts",
+   "value": {
+    "title_th": "lamp ขายซาก/อะไหล่",
+    "description_th": "lamp ขายซาก/อะไหล่ ราคาเสนอ ฿80 (ช่วงประมาณ ฿50–120) นัดรับได้ ของจริงตามรูป",
+    "item_th": "lamp",
+    "condition": "for_parts",
+    "grade": "E",
+    "min_thb": 50,
+    "max_thb": 120,
+    "ask_thb": 80,
+    "headline_th": "lamp ขายซาก/อะไหล่"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "bag like_new",
+   "value": {
+    "min_thb": 800,
+    "max_thb": 2000,
+    "mid_thb": 1200,
+    "category": "bag",
+    "condition": "like_new",
+    "grade": "A",
+    "headline_th": "ราคาแนะนำ ฿800–2000 · กลาง ฿1200",
+    "disclaimer_th": "ช่วงราคาเป็นค่าตัวอย่างที่ตั้งเอง ไม่ใช่ราคาตลาดจริง ณ วันนี้"
+   }
+  },
+  {
+   "def": "Listing",
+   "note": "bag like_new",
+   "value": {
+    "title_th": "bag เหมือนใหม่",
+    "description_th": "bag เหมือนใหม่ ราคาเสนอ ฿1200 (ช่วงประมาณ ฿800–2000) นัดรับได้ ของจริงตามรูป",
+    "item_th": "bag",
+    "condition": "like_new",
+    "grade": "A",
+    "min_thb": 800,
+    "max_thb": 2000,
+    "ask_thb": 1200,
+    "headline_th": "bag เหมือนใหม่"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "boss",
+   "value": {
+    "title_th": "SellSnap — พี่บอส",
+    "headline_th": "โคมไฟตั้งโต๊ะ สีครีม สภาพดี",
+    "hook_th": "ถ่ายของมือสอง ได้โพสต์ขายพร้อมราคา",
+    "min_thb": 450,
+    "max_thb": 750,
+    "ask_thb": 600,
+    "grade": "B",
+    "layout": "listing_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with SellSnap · guidance only, not a live price or a marketplace",
+    "cta_th": "คอมเมนต์ SELL รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "SellSnap เป็นตัวช่วยเขียนโพสต์ขายของมือสอง ไม่ใช่ตลาดกลางและไม่ใช่ราคาตลาดจริง นัดรับในที่สาธารณะ อย่าโอนเงินให้คนแปลกหน้า และตรวจของก่อนส่งมอบ"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "stop",
+   "value": {
+    "level": "stop",
+    "message_th": "อย่าโอนเงินหรือส่งของล่วงหน้าให้นัดในที่ลับ SellSnap เป็นตัวช่วยเขียนโพสต์ขายของมือสอง ไม่ใช่ตลาดกลางและไม่ใช่ราคาตลาดจริง นัดรับในที่สาธารณะ อย่าโอนเงินให้คนแปลกหน้า และตรวจของก่อนส่งมอบ"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "warn prepay",
+   "value": {
+    "level": "warn",
+    "message_th": "ระวังคนขอให้โอนก่อนส่งของ SellSnap เป็นตัวช่วยเขียนโพสต์ขายของมือสอง ไม่ใช่ตลาดกลางและไม่ใช่ราคาตลาดจริง นัดรับในที่สาธารณะ อย่าโอนเงินให้คนแปลกหน้า และตรวจของก่อนส่งมอบ"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "warn meetup",
+   "value": {
+    "level": "warn",
+    "message_th": "นัดรับในที่สาธารณะจะปลอดภัยกว่า SellSnap เป็นตัวช่วยเขียนโพสต์ขายของมือสอง ไม่ใช่ตลาดกลางและไม่ใช่ราคาตลาดจริง นัดรับในที่สาธารณะ อย่าโอนเงินให้คนแปลกหน้า และตรวจของก่อนส่งมอบ"
+   }
+  }
+ ]
+}
