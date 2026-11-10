@@ -1,0 +1,1664 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "พี่แอน",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่แอน",
+    "name_en": "Ann",
+    "age": 34,
+    "city_th": "กรุงเทพฯ",
+    "role": "parent",
+    "goal_th": "อยากให้ลูกเรียนรู้คำศัพท์จากของในครัว โดยไม่ต้องถ่ายหน้าลูก"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องเต้า",
+   "value": {
+    "id": "u02",
+    "name_th": "น้องเต้า",
+    "name_en": "Tao",
+    "age": 7,
+    "city_th": "กรุงเทพฯ",
+    "role": "child",
+    "goal_th": "เล่นทายคำจากกาต้มน้ำ แก้ว และช้อน",
+    "parent_id": "u01"
+   }
+  },
+  {
+   "def": "ScenePhoto",
+   "note": "s01",
+   "value": {
+    "id": "s01",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.12,
+    "blur": 0.1,
+    "crop": 0.12,
+    "detections": [
+     {
+      "key": "kettle",
+      "value": true,
+      "confidence": 0.96
+     },
+     {
+      "key": "cup",
+      "value": true,
+      "confidence": 0.94
+     },
+     {
+      "key": "spoon",
+      "value": true,
+      "confidence": 0.91
+     }
+    ]
+   }
+  },
+  {
+   "def": "SceneScan",
+   "note": "s01",
+   "value": {
+    "shot_id": "s01",
+    "quality": {
+     "score": 89,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "keys": [
+     "kettle",
+     "cup",
+     "spoon"
+    ],
+    "count": 3,
+    "message_th": "เจอของ 3 ชิ้น"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s01",
+   "value": {
+    "score": 89,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s01 kettle",
+   "value": {
+    "key": "kettle",
+    "value": true,
+    "confidence": 0.96
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s01 cup",
+   "value": {
+    "key": "cup",
+    "value": true,
+    "confidence": 0.94
+   }
+  },
+  {
+   "def": "ScenePhoto",
+   "note": "s02",
+   "value": {
+    "id": "s02",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.1,
+    "blur": 0.1,
+    "crop": 0.1,
+    "detections": [
+     {
+      "key": "chair",
+      "value": true,
+      "confidence": 0.92
+     },
+     {
+      "key": "book",
+      "value": true,
+      "confidence": 0.9
+     }
+    ]
+   }
+  },
+  {
+   "def": "SceneScan",
+   "note": "s02",
+   "value": {
+    "shot_id": "s02",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "keys": [
+     "chair",
+     "book"
+    ],
+    "count": 2,
+    "message_th": "เจอของ 2 ชิ้น"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s02",
+   "value": {
+    "score": 90,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s02 chair",
+   "value": {
+    "key": "chair",
+    "value": true,
+    "confidence": 0.92
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s02 book",
+   "value": {
+    "key": "book",
+    "value": true,
+    "confidence": 0.9
+   }
+  },
+  {
+   "def": "ScenePhoto",
+   "note": "s03",
+   "value": {
+    "id": "s03",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.68,
+    "blur": 0.52,
+    "crop": 0.5,
+    "detections": [
+     {
+      "key": "cup",
+      "value": true,
+      "confidence": 0.7
+     }
+    ]
+   }
+  },
+  {
+   "def": "SceneScan",
+   "note": "s03",
+   "value": {
+    "shot_id": "s03",
+    "quality": {
+     "score": 43,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนบนของเยอะ ย้ายออกจากหน้าต่างแล้วถ่ายใหม่",
+      "ภาพเบลอ วางของนิ่งแล้วถ่ายใกล้ขึ้น",
+      "ของถูกครอป ถ่ายให้เห็นทั้งชิ้น"
+     ]
+    },
+    "ok": false,
+    "keys": [
+     "cup"
+    ],
+    "count": 1,
+    "message_th": "เจอของ 1 ชิ้น"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s03",
+   "value": {
+    "score": 43,
+    "ok": false,
+    "tips_th": [
+     "แสงสะท้อนบนของเยอะ ย้ายออกจากหน้าต่างแล้วถ่ายใหม่",
+     "ภาพเบลอ วางของนิ่งแล้วถ่ายใกล้ขึ้น",
+     "ของถูกครอป ถ่ายให้เห็นทั้งชิ้น"
+    ]
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s03 cup",
+   "value": {
+    "key": "cup",
+    "value": true,
+    "confidence": 0.7
+   }
+  },
+  {
+   "def": "ScenePhoto",
+   "note": "s04",
+   "value": {
+    "id": "s04",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.2,
+    "blur": 0.15,
+    "crop": 0.1,
+    "detections": []
+   }
+  },
+  {
+   "def": "SceneScan",
+   "note": "s04",
+   "value": {
+    "shot_id": "s04",
+    "quality": {
+     "score": 54,
+     "ok": false,
+     "tips_th": [
+      "ยังไม่เจอของในรูป วาง 1–3 ชิ้นบนโต๊ะแล้วถ่ายใหม่"
+     ]
+    },
+    "ok": false,
+    "keys": [],
+    "count": 0,
+    "message_th": "ยังจับคำศัพท์จากรูปไม่ได้ ลองถ่ายใหม่หรือเลือกคำเอง"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s04",
+   "value": {
+    "score": 54,
+    "ok": false,
+    "tips_th": [
+     "ยังไม่เจอของในรูป วาง 1–3 ชิ้นบนโต๊ะแล้วถ่ายใหม่"
+    ]
+   }
+  },
+  {
+   "def": "ScenePhoto",
+   "note": "s05",
+   "value": {
+    "id": "s05",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.12,
+    "blur": 0.1,
+    "crop": 0.12,
+    "detections": [
+     {
+      "key": "kettle",
+      "value": true,
+      "confidence": 0.41
+     },
+     {
+      "key": "cup",
+      "value": true,
+      "confidence": 0.94
+     }
+    ]
+   }
+  },
+  {
+   "def": "SceneScan",
+   "note": "s05",
+   "value": {
+    "shot_id": "s05",
+    "quality": {
+     "score": 89,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "keys": [
+     "cup"
+    ],
+    "count": 1,
+    "message_th": "เจอของ 1 ชิ้น"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s05",
+   "value": {
+    "score": 89,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s05 kettle",
+   "value": {
+    "key": "kettle",
+    "value": true,
+    "confidence": 0.41
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s05 cup",
+   "value": {
+    "key": "cup",
+    "value": true,
+    "confidence": 0.94
+   }
+  },
+  {
+   "def": "LabelSet",
+   "note": "kitchen",
+   "value": {
+    "cards": [
+     {
+      "id": "w01",
+      "name_th": "กาต้มน้ำ",
+      "name_en": "kettle",
+      "ipa_en": "/ˈket.əl/",
+      "th_en": "เคท-เทิล",
+      "name_zh": "水壶",
+      "pinyin": "shuǐhú",
+      "th_zh": "สุ่ย-หู",
+      "topic": "kitchen",
+      "key": "kettle",
+      "headline_th": "กาต้มน้ำ · kettle · 水壶",
+      "en_line_th": "kettle /ˈket.əl/ อ่านว่า เคท-เทิล",
+      "zh_line_th": "水壶 shuǐhú อ่านว่า สุ่ย-หู"
+     },
+     {
+      "id": "w02",
+      "name_th": "แก้ว",
+      "name_en": "cup",
+      "ipa_en": "/kʌp/",
+      "th_en": "คัพ",
+      "name_zh": "杯子",
+      "pinyin": "bēizi",
+      "th_zh": "เปย-จึ",
+      "topic": "kitchen",
+      "key": "cup",
+      "headline_th": "แก้ว · cup · 杯子",
+      "en_line_th": "cup /kʌp/ อ่านว่า คัพ",
+      "zh_line_th": "杯子 bēizi อ่านว่า เปย-จึ"
+     },
+     {
+      "id": "w03",
+      "name_th": "ช้อน",
+      "name_en": "spoon",
+      "ipa_en": "/spuːn/",
+      "th_en": "สปูน",
+      "name_zh": "勺子",
+      "pinyin": "sháozi",
+      "th_zh": "เสา-จึ",
+      "topic": "kitchen",
+      "key": "spoon",
+      "headline_th": "ช้อน · spoon · 勺子",
+      "en_line_th": "spoon /spuːn/ อ่านว่า สปูน",
+      "zh_line_th": "勺子 sháozi อ่านว่า เสา-จึ"
+     }
+    ],
+    "count": 3,
+    "headline_th": "คำศัพท์ 3 คำ จากของในบ้าน"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "kettle",
+   "value": {
+    "id": "w01",
+    "name_th": "กาต้มน้ำ",
+    "name_en": "kettle",
+    "ipa_en": "/ˈket.əl/",
+    "th_en": "เคท-เทิล",
+    "name_zh": "水壶",
+    "pinyin": "shuǐhú",
+    "th_zh": "สุ่ย-หู",
+    "topic": "kitchen",
+    "key": "kettle",
+    "headline_th": "กาต้มน้ำ · kettle · 水壶",
+    "en_line_th": "kettle /ˈket.əl/ อ่านว่า เคท-เทิล",
+    "zh_line_th": "水壶 shuǐhú อ่านว่า สุ่ย-หู"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "cup",
+   "value": {
+    "id": "w02",
+    "name_th": "แก้ว",
+    "name_en": "cup",
+    "ipa_en": "/kʌp/",
+    "th_en": "คัพ",
+    "name_zh": "杯子",
+    "pinyin": "bēizi",
+    "th_zh": "เปย-จึ",
+    "topic": "kitchen",
+    "key": "cup",
+    "headline_th": "แก้ว · cup · 杯子",
+    "en_line_th": "cup /kʌp/ อ่านว่า คัพ",
+    "zh_line_th": "杯子 bēizi อ่านว่า เปย-จึ"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "spoon",
+   "value": {
+    "id": "w03",
+    "name_th": "ช้อน",
+    "name_en": "spoon",
+    "ipa_en": "/spuːn/",
+    "th_en": "สปูน",
+    "name_zh": "勺子",
+    "pinyin": "sháozi",
+    "th_zh": "เสา-จึ",
+    "topic": "kitchen",
+    "key": "spoon",
+    "headline_th": "ช้อน · spoon · 勺子",
+    "en_line_th": "spoon /spuːn/ อ่านว่า สปูน",
+    "zh_line_th": "勺子 sháozi อ่านว่า เสา-จึ"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "plate",
+   "value": {
+    "id": "w04",
+    "name_th": "จาน",
+    "name_en": "plate",
+    "ipa_en": "/pleɪt/",
+    "th_en": "เพลต",
+    "name_zh": "盘子",
+    "pinyin": "pánzi",
+    "th_zh": "ผาน-จึ",
+    "topic": "kitchen",
+    "key": "plate",
+    "headline_th": "จาน · plate · 盘子",
+    "en_line_th": "plate /pleɪt/ อ่านว่า เพลต",
+    "zh_line_th": "盘子 pánzi อ่านว่า ผาน-จึ"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "fridge",
+   "value": {
+    "id": "w05",
+    "name_th": "ตู้เย็น",
+    "name_en": "fridge",
+    "ipa_en": "/frɪdʒ/",
+    "th_en": "ฟริดจ์",
+    "name_zh": "冰箱",
+    "pinyin": "bīngxiāng",
+    "th_zh": "ปิง-เซียง",
+    "topic": "kitchen",
+    "key": "fridge",
+    "headline_th": "ตู้เย็น · fridge · 冰箱",
+    "en_line_th": "fridge /frɪdʒ/ อ่านว่า ฟริดจ์",
+    "zh_line_th": "冰箱 bīngxiāng อ่านว่า ปิง-เซียง"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "rice_cooker",
+   "value": {
+    "id": "w06",
+    "name_th": "หม้อหุงข้าว",
+    "name_en": "rice cooker",
+    "ipa_en": "/raɪs ˈkʊk.ər/",
+    "th_en": "ไรซ์ คุก-เคอร์",
+    "name_zh": "电饭煲",
+    "pinyin": "diànfànbāo",
+    "th_zh": "เตี้ยน-ฟ้าน-ปาว",
+    "topic": "kitchen",
+    "key": "rice_cooker",
+    "headline_th": "หม้อหุงข้าว · rice cooker · 电饭煲",
+    "en_line_th": "rice cooker /raɪs ˈkʊk.ər/ อ่านว่า ไรซ์ คุก-เคอร์",
+    "zh_line_th": "电饭煲 diànfànbāo อ่านว่า เตี้ยน-ฟ้าน-ปาว"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "chair",
+   "value": {
+    "id": "w07",
+    "name_th": "เก้าอี้",
+    "name_en": "chair",
+    "ipa_en": "/tʃeər/",
+    "th_en": "แชร์",
+    "name_zh": "椅子",
+    "pinyin": "yǐzi",
+    "th_zh": "อี่-จึ",
+    "topic": "room",
+    "key": "chair",
+    "headline_th": "เก้าอี้ · chair · 椅子",
+    "en_line_th": "chair /tʃeər/ อ่านว่า แชร์",
+    "zh_line_th": "椅子 yǐzi อ่านว่า อี่-จึ"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "table",
+   "value": {
+    "id": "w08",
+    "name_th": "โต๊ะ",
+    "name_en": "table",
+    "ipa_en": "/ˈteɪ.bəl/",
+    "th_en": "เท-เบิล",
+    "name_zh": "桌子",
+    "pinyin": "zhuōzi",
+    "th_zh": "จัว-จึ",
+    "topic": "room",
+    "key": "table",
+    "headline_th": "โต๊ะ · table · 桌子",
+    "en_line_th": "table /ˈteɪ.bəl/ อ่านว่า เท-เบิล",
+    "zh_line_th": "桌子 zhuōzi อ่านว่า จัว-จึ"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "book",
+   "value": {
+    "id": "w09",
+    "name_th": "หนังสือ",
+    "name_en": "book",
+    "ipa_en": "/bʊk/",
+    "th_en": "บุ๊ก",
+    "name_zh": "书",
+    "pinyin": "shū",
+    "th_zh": "ชู",
+    "topic": "room",
+    "key": "book",
+    "headline_th": "หนังสือ · book · 书",
+    "en_line_th": "book /bʊk/ อ่านว่า บุ๊ก",
+    "zh_line_th": "书 shū อ่านว่า ชู"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "lamp",
+   "value": {
+    "id": "w10",
+    "name_th": "โคมไฟ",
+    "name_en": "lamp",
+    "ipa_en": "/læmp/",
+    "th_en": "แลมป์",
+    "name_zh": "灯",
+    "pinyin": "dēng",
+    "th_zh": "เติง",
+    "topic": "room",
+    "key": "lamp",
+    "headline_th": "โคมไฟ · lamp · 灯",
+    "en_line_th": "lamp /læmp/ อ่านว่า แลมป์",
+    "zh_line_th": "灯 dēng อ่านว่า เติง"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "pillow",
+   "value": {
+    "id": "w11",
+    "name_th": "หมอน",
+    "name_en": "pillow",
+    "ipa_en": "/ˈpɪl.oʊ/",
+    "th_en": "พิล-โลว์",
+    "name_zh": "枕头",
+    "pinyin": "zhěntou",
+    "th_zh": "เจิน-โถว",
+    "topic": "room",
+    "key": "pillow",
+    "headline_th": "หมอน · pillow · 枕头",
+    "en_line_th": "pillow /ˈpɪl.oʊ/ อ่านว่า พิล-โลว์",
+    "zh_line_th": "枕头 zhěntou อ่านว่า เจิน-โถว"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "clock",
+   "value": {
+    "id": "w12",
+    "name_th": "นาฬิกา",
+    "name_en": "clock",
+    "ipa_en": "/klɒk/",
+    "th_en": "คล็อก",
+    "name_zh": "时钟",
+    "pinyin": "shízhōng",
+    "th_zh": "สือ-จง",
+    "topic": "room",
+    "key": "clock",
+    "headline_th": "นาฬิกา · clock · 时钟",
+    "en_line_th": "clock /klɒk/ อ่านว่า คล็อก",
+    "zh_line_th": "时钟 shízhōng อ่านว่า สือ-จง"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "shoes",
+   "value": {
+    "id": "w13",
+    "name_th": "รองเท้า",
+    "name_en": "shoes",
+    "ipa_en": "/ʃuːz/",
+    "th_en": "ชูซ์",
+    "name_zh": "鞋子",
+    "pinyin": "xiézi",
+    "th_zh": "เสีย-จึ",
+    "topic": "daily",
+    "key": "shoes",
+    "headline_th": "รองเท้า · shoes · 鞋子",
+    "en_line_th": "shoes /ʃuːz/ อ่านว่า ชูซ์",
+    "zh_line_th": "鞋子 xiézi อ่านว่า เสีย-จึ"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "bag",
+   "value": {
+    "id": "w14",
+    "name_th": "กระเป๋า",
+    "name_en": "bag",
+    "ipa_en": "/bæɡ/",
+    "th_en": "แบ็ก",
+    "name_zh": "包",
+    "pinyin": "bāo",
+    "th_zh": "ปาว",
+    "topic": "daily",
+    "key": "bag",
+    "headline_th": "กระเป๋า · bag · 包",
+    "en_line_th": "bag /bæɡ/ อ่านว่า แบ็ก",
+    "zh_line_th": "包 bāo อ่านว่า ปาว"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "toothbrush",
+   "value": {
+    "id": "w15",
+    "name_th": "แปรงสีฟัน",
+    "name_en": "toothbrush",
+    "ipa_en": "/ˈtuːθ.brʌʃ/",
+    "th_en": "ทูธ-บรัช",
+    "name_zh": "牙刷",
+    "pinyin": "yáshuā",
+    "th_zh": "หยา-ชัว",
+    "topic": "daily",
+    "key": "toothbrush",
+    "headline_th": "แปรงสีฟัน · toothbrush · 牙刷",
+    "en_line_th": "toothbrush /ˈtuːθ.brʌʃ/ อ่านว่า ทูธ-บรัช",
+    "zh_line_th": "牙刷 yáshuā อ่านว่า หยา-ชัว"
+   }
+  },
+  {
+   "def": "LabelCard",
+   "note": "plant",
+   "value": {
+    "id": "w16",
+    "name_th": "ต้นไม้",
+    "name_en": "plant",
+    "ipa_en": "/plɑːnt/",
+    "th_en": "พลานท์",
+    "name_zh": "植物",
+    "pinyin": "zhíwù",
+    "th_zh": "จือ-อู้",
+    "topic": "daily",
+    "key": "plant",
+    "headline_th": "ต้นไม้ · plant · 植物",
+    "en_line_th": "plant /plɑːnt/ อ่านว่า พลานท์",
+    "zh_line_th": "植物 zhíwù อ่านว่า จือ-อู้"
+   }
+  },
+  {
+   "def": "FlashDeck",
+   "note": "en",
+   "value": {
+    "lang": "en",
+    "cards": [
+     {
+      "key": "kettle",
+      "lang": "en",
+      "front_th": "กาต้มน้ำ",
+      "back": "kettle /ˈket.əl/",
+      "say_th": "เคท-เทิล"
+     },
+     {
+      "key": "cup",
+      "lang": "en",
+      "front_th": "แก้ว",
+      "back": "cup /kʌp/",
+      "say_th": "คัพ"
+     },
+     {
+      "key": "spoon",
+      "lang": "en",
+      "front_th": "ช้อน",
+      "back": "spoon /spuːn/",
+      "say_th": "สปูน"
+     }
+    ],
+    "count": 3
+   }
+  },
+  {
+   "def": "FlashCard",
+   "note": "en kettle",
+   "value": {
+    "key": "kettle",
+    "lang": "en",
+    "front_th": "กาต้มน้ำ",
+    "back": "kettle /ˈket.əl/",
+    "say_th": "เคท-เทิล"
+   }
+  },
+  {
+   "def": "FlashCard",
+   "note": "en cup",
+   "value": {
+    "key": "cup",
+    "lang": "en",
+    "front_th": "แก้ว",
+    "back": "cup /kʌp/",
+    "say_th": "คัพ"
+   }
+  },
+  {
+   "def": "FlashCard",
+   "note": "en spoon",
+   "value": {
+    "key": "spoon",
+    "lang": "en",
+    "front_th": "ช้อน",
+    "back": "spoon /spuːn/",
+    "say_th": "สปูน"
+   }
+  },
+  {
+   "def": "FlashDeck",
+   "note": "zh",
+   "value": {
+    "lang": "zh",
+    "cards": [
+     {
+      "key": "kettle",
+      "lang": "zh",
+      "front_th": "กาต้มน้ำ",
+      "back": "水壶 shuǐhú",
+      "say_th": "สุ่ย-หู"
+     },
+     {
+      "key": "cup",
+      "lang": "zh",
+      "front_th": "แก้ว",
+      "back": "杯子 bēizi",
+      "say_th": "เปย-จึ"
+     },
+     {
+      "key": "spoon",
+      "lang": "zh",
+      "front_th": "ช้อน",
+      "back": "勺子 sháozi",
+      "say_th": "เสา-จึ"
+     }
+    ],
+    "count": 3
+   }
+  },
+  {
+   "def": "FlashCard",
+   "note": "zh kettle",
+   "value": {
+    "key": "kettle",
+    "lang": "zh",
+    "front_th": "กาต้มน้ำ",
+    "back": "水壶 shuǐhú",
+    "say_th": "สุ่ย-หู"
+   }
+  },
+  {
+   "def": "FlashCard",
+   "note": "zh cup",
+   "value": {
+    "key": "cup",
+    "lang": "zh",
+    "front_th": "แก้ว",
+    "back": "杯子 bēizi",
+    "say_th": "เปย-จึ"
+   }
+  },
+  {
+   "def": "FlashCard",
+   "note": "zh spoon",
+   "value": {
+    "key": "spoon",
+    "lang": "zh",
+    "front_th": "ช้อน",
+    "back": "勺子 sháozi",
+    "say_th": "เสา-จึ"
+   }
+  },
+  {
+   "def": "MiniQuiz",
+   "note": "unanswered",
+   "value": {
+    "lang": "en",
+    "questions": [
+     {
+      "n": 1,
+      "key": "kettle",
+      "prompt_th": "กาต้มน้ำ คือคำว่าอะไรเป็นภาษาอังกฤษ",
+      "choices": [
+       {
+        "key": "kettle",
+        "text": "kettle",
+        "correct": true
+       },
+       {
+        "key": "cup",
+        "text": "cup",
+        "correct": false
+       },
+       {
+        "key": "spoon",
+        "text": "spoon",
+        "correct": false
+       }
+      ],
+      "answer": null,
+      "correct": null
+     },
+     {
+      "n": 2,
+      "key": "cup",
+      "prompt_th": "แก้ว คือคำว่าอะไรเป็นภาษาอังกฤษ",
+      "choices": [
+       {
+        "key": "spoon",
+        "text": "spoon",
+        "correct": false
+       },
+       {
+        "key": "cup",
+        "text": "cup",
+        "correct": true
+       },
+       {
+        "key": "plate",
+        "text": "plate",
+        "correct": false
+       }
+      ],
+      "answer": null,
+      "correct": null
+     },
+     {
+      "n": 3,
+      "key": "spoon",
+      "prompt_th": "ช้อน คือคำว่าอะไรเป็นภาษาอังกฤษ",
+      "choices": [
+       {
+        "key": "plate",
+        "text": "plate",
+        "correct": false
+       },
+       {
+        "key": "fridge",
+        "text": "fridge",
+        "correct": false
+       },
+       {
+        "key": "spoon",
+        "text": "spoon",
+        "correct": true
+       }
+      ],
+      "answer": null,
+      "correct": null
+     }
+    ],
+    "count": 3,
+    "answered": 0,
+    "right": 0,
+    "score_pct": 0,
+    "headline_th": "แบบทดสอบ 3 ข้อ"
+   }
+  },
+  {
+   "def": "QuizQuestion",
+   "note": "unanswered q1",
+   "value": {
+    "n": 1,
+    "key": "kettle",
+    "prompt_th": "กาต้มน้ำ คือคำว่าอะไรเป็นภาษาอังกฤษ",
+    "choices": [
+     {
+      "key": "kettle",
+      "text": "kettle",
+      "correct": true
+     },
+     {
+      "key": "cup",
+      "text": "cup",
+      "correct": false
+     },
+     {
+      "key": "spoon",
+      "text": "spoon",
+      "correct": false
+     }
+    ],
+    "answer": null,
+    "correct": null
+   }
+  },
+  {
+   "def": "Choice",
+   "note": "unanswered kettle",
+   "value": {
+    "key": "kettle",
+    "text": "kettle",
+    "correct": true
+   }
+  },
+  {
+   "def": "Choice",
+   "note": "unanswered cup",
+   "value": {
+    "key": "cup",
+    "text": "cup",
+    "correct": false
+   }
+  },
+  {
+   "def": "Choice",
+   "note": "unanswered spoon",
+   "value": {
+    "key": "spoon",
+    "text": "spoon",
+    "correct": false
+   }
+  },
+  {
+   "def": "MiniQuiz",
+   "note": "tao 2/3",
+   "value": {
+    "lang": "en",
+    "questions": [
+     {
+      "n": 1,
+      "key": "kettle",
+      "prompt_th": "กาต้มน้ำ คือคำว่าอะไรเป็นภาษาอังกฤษ",
+      "choices": [
+       {
+        "key": "kettle",
+        "text": "kettle",
+        "correct": true
+       },
+       {
+        "key": "cup",
+        "text": "cup",
+        "correct": false
+       },
+       {
+        "key": "spoon",
+        "text": "spoon",
+        "correct": false
+       }
+      ],
+      "answer": "kettle",
+      "correct": true
+     },
+     {
+      "n": 2,
+      "key": "cup",
+      "prompt_th": "แก้ว คือคำว่าอะไรเป็นภาษาอังกฤษ",
+      "choices": [
+       {
+        "key": "spoon",
+        "text": "spoon",
+        "correct": false
+       },
+       {
+        "key": "cup",
+        "text": "cup",
+        "correct": true
+       },
+       {
+        "key": "plate",
+        "text": "plate",
+        "correct": false
+       }
+      ],
+      "answer": "kettle",
+      "correct": false
+     },
+     {
+      "n": 3,
+      "key": "spoon",
+      "prompt_th": "ช้อน คือคำว่าอะไรเป็นภาษาอังกฤษ",
+      "choices": [
+       {
+        "key": "plate",
+        "text": "plate",
+        "correct": false
+       },
+       {
+        "key": "fridge",
+        "text": "fridge",
+        "correct": false
+       },
+       {
+        "key": "spoon",
+        "text": "spoon",
+        "correct": true
+       }
+      ],
+      "answer": "spoon",
+      "correct": true
+     }
+    ],
+    "count": 3,
+    "answered": 3,
+    "right": 2,
+    "score_pct": 67,
+    "headline_th": "ตอบถูก 2/3"
+   }
+  },
+  {
+   "def": "QuizQuestion",
+   "note": "tao 2/3 q1",
+   "value": {
+    "n": 1,
+    "key": "kettle",
+    "prompt_th": "กาต้มน้ำ คือคำว่าอะไรเป็นภาษาอังกฤษ",
+    "choices": [
+     {
+      "key": "kettle",
+      "text": "kettle",
+      "correct": true
+     },
+     {
+      "key": "cup",
+      "text": "cup",
+      "correct": false
+     },
+     {
+      "key": "spoon",
+      "text": "spoon",
+      "correct": false
+     }
+    ],
+    "answer": "kettle",
+    "correct": true
+   }
+  },
+  {
+   "def": "Choice",
+   "note": "tao 2/3 kettle",
+   "value": {
+    "key": "kettle",
+    "text": "kettle",
+    "correct": true
+   }
+  },
+  {
+   "def": "Choice",
+   "note": "tao 2/3 cup",
+   "value": {
+    "key": "cup",
+    "text": "cup",
+    "correct": false
+   }
+  },
+  {
+   "def": "Choice",
+   "note": "tao 2/3 spoon",
+   "value": {
+    "key": "spoon",
+    "text": "spoon",
+    "correct": false
+   }
+  },
+  {
+   "def": "MiniQuiz",
+   "note": "fail",
+   "value": {
+    "lang": "en",
+    "questions": [
+     {
+      "n": 1,
+      "key": "kettle",
+      "prompt_th": "กาต้มน้ำ คือคำว่าอะไรเป็นภาษาอังกฤษ",
+      "choices": [
+       {
+        "key": "kettle",
+        "text": "kettle",
+        "correct": true
+       },
+       {
+        "key": "cup",
+        "text": "cup",
+        "correct": false
+       },
+       {
+        "key": "spoon",
+        "text": "spoon",
+        "correct": false
+       }
+      ],
+      "answer": "cup",
+      "correct": false
+     },
+     {
+      "n": 2,
+      "key": "cup",
+      "prompt_th": "แก้ว คือคำว่าอะไรเป็นภาษาอังกฤษ",
+      "choices": [
+       {
+        "key": "spoon",
+        "text": "spoon",
+        "correct": false
+       },
+       {
+        "key": "cup",
+        "text": "cup",
+        "correct": true
+       },
+       {
+        "key": "plate",
+        "text": "plate",
+        "correct": false
+       }
+      ],
+      "answer": "cup",
+      "correct": true
+     },
+     {
+      "n": 3,
+      "key": "spoon",
+      "prompt_th": "ช้อน คือคำว่าอะไรเป็นภาษาอังกฤษ",
+      "choices": [
+       {
+        "key": "plate",
+        "text": "plate",
+        "correct": false
+       },
+       {
+        "key": "fridge",
+        "text": "fridge",
+        "correct": false
+       },
+       {
+        "key": "spoon",
+        "text": "spoon",
+        "correct": true
+       }
+      ],
+      "answer": "cup",
+      "correct": false
+     }
+    ],
+    "count": 3,
+    "answered": 3,
+    "right": 1,
+    "score_pct": 33,
+    "headline_th": "ตอบถูก 1/3"
+   }
+  },
+  {
+   "def": "QuizQuestion",
+   "note": "fail q1",
+   "value": {
+    "n": 1,
+    "key": "kettle",
+    "prompt_th": "กาต้มน้ำ คือคำว่าอะไรเป็นภาษาอังกฤษ",
+    "choices": [
+     {
+      "key": "kettle",
+      "text": "kettle",
+      "correct": true
+     },
+     {
+      "key": "cup",
+      "text": "cup",
+      "correct": false
+     },
+     {
+      "key": "spoon",
+      "text": "spoon",
+      "correct": false
+     }
+    ],
+    "answer": "cup",
+    "correct": false
+   }
+  },
+  {
+   "def": "Choice",
+   "note": "fail kettle",
+   "value": {
+    "key": "kettle",
+    "text": "kettle",
+    "correct": true
+   }
+  },
+  {
+   "def": "Choice",
+   "note": "fail cup",
+   "value": {
+    "key": "cup",
+    "text": "cup",
+    "correct": false
+   }
+  },
+  {
+   "def": "Choice",
+   "note": "fail spoon",
+   "value": {
+    "key": "spoon",
+    "text": "spoon",
+    "correct": false
+   }
+  },
+  {
+   "def": "MiniQuiz",
+   "note": "zh one",
+   "value": {
+    "lang": "zh",
+    "questions": [
+     {
+      "n": 1,
+      "key": "kettle",
+      "prompt_th": "กาต้มน้ำ คือคำว่าอะไรเป็นภาษาจีน",
+      "choices": [
+       {
+        "key": "kettle",
+        "text": "水壶",
+        "correct": true
+       },
+       {
+        "key": "cup",
+        "text": "杯子",
+        "correct": false
+       },
+       {
+        "key": "spoon",
+        "text": "勺子",
+        "correct": false
+       }
+      ],
+      "answer": "kettle",
+      "correct": true
+     }
+    ],
+    "count": 1,
+    "answered": 1,
+    "right": 1,
+    "score_pct": 100,
+    "headline_th": "ตอบถูก 1/1"
+   }
+  },
+  {
+   "def": "QuizQuestion",
+   "note": "zh one q1",
+   "value": {
+    "n": 1,
+    "key": "kettle",
+    "prompt_th": "กาต้มน้ำ คือคำว่าอะไรเป็นภาษาจีน",
+    "choices": [
+     {
+      "key": "kettle",
+      "text": "水壶",
+      "correct": true
+     },
+     {
+      "key": "cup",
+      "text": "杯子",
+      "correct": false
+     },
+     {
+      "key": "spoon",
+      "text": "勺子",
+      "correct": false
+     }
+    ],
+    "answer": "kettle",
+    "correct": true
+   }
+  },
+  {
+   "def": "Choice",
+   "note": "zh one kettle",
+   "value": {
+    "key": "kettle",
+    "text": "水壶",
+    "correct": true
+   }
+  },
+  {
+   "def": "Choice",
+   "note": "zh one cup",
+   "value": {
+    "key": "cup",
+    "text": "杯子",
+    "correct": false
+   }
+  },
+  {
+   "def": "Choice",
+   "note": "zh one spoon",
+   "value": {
+    "key": "spoon",
+    "text": "勺子",
+    "correct": false
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "star",
+   "value": {
+    "date": "2026-11-30",
+    "passed": true,
+    "streak": 3,
+    "prev_streak": 2,
+    "score_pct": 67,
+    "right": 2,
+    "answered": 3,
+    "rewards": [
+     {
+      "at": 3,
+      "key": "star",
+      "name_th": "ดาว"
+     }
+    ],
+    "reward_count": 1,
+    "headline_th": "ต่อเนื่อง 3 วัน"
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "streak4",
+   "value": {
+    "date": "2026-11-30",
+    "passed": true,
+    "streak": 4,
+    "prev_streak": 3,
+    "score_pct": 67,
+    "right": 2,
+    "answered": 3,
+    "rewards": [],
+    "reward_count": 0,
+    "headline_th": "ต่อเนื่อง 4 วัน"
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "reset",
+   "value": {
+    "date": "2026-11-30",
+    "passed": false,
+    "streak": 0,
+    "prev_streak": 4,
+    "score_pct": 33,
+    "right": 1,
+    "answered": 3,
+    "rewards": [],
+    "reward_count": 0,
+    "headline_th": "วันนี้ยังไม่ครบ ลองใหม่อีกครั้ง"
+   }
+  },
+  {
+   "def": "Reward",
+   "note": "star",
+   "value": {
+    "at": 3,
+    "key": "star",
+    "name_th": "ดาว"
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "sun",
+   "value": {
+    "date": "2026-11-30",
+    "passed": true,
+    "streak": 7,
+    "prev_streak": 6,
+    "score_pct": 67,
+    "right": 2,
+    "answered": 3,
+    "rewards": [
+     {
+      "at": 7,
+      "key": "sun",
+      "name_th": "พระอาทิตย์"
+     }
+    ],
+    "reward_count": 1,
+    "headline_th": "ต่อเนื่อง 7 วัน"
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "rainbow",
+   "value": {
+    "date": null,
+    "passed": true,
+    "streak": 14,
+    "prev_streak": 13,
+    "score_pct": 67,
+    "right": 2,
+    "answered": 3,
+    "rewards": [
+     {
+      "at": 14,
+      "key": "rainbow",
+      "name_th": "รุ้ง"
+     }
+    ],
+    "reward_count": 1,
+    "headline_th": "ต่อเนื่อง 14 วัน"
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "trophy",
+   "value": {
+    "date": null,
+    "passed": true,
+    "streak": 30,
+    "prev_streak": 29,
+    "score_pct": 67,
+    "right": 2,
+    "answered": 3,
+    "rewards": [
+     {
+      "at": 30,
+      "key": "trophy",
+      "name_th": "ถ้วยรางวัล"
+     }
+    ],
+    "reward_count": 1,
+    "headline_th": "ต่อเนื่อง 30 วัน"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "tao",
+   "value": {
+    "title_th": "SnapLingo — น้องเต้า",
+    "headline_th": "คำศัพท์ 3 คำ จากของในบ้าน",
+    "hook_th": "ถ่ายของรอบบ้าน ได้คำศัพท์อังกฤษ/จีนให้ลูก",
+    "parent_th": "พี่แอน",
+    "child_th": "น้องเต้า",
+    "count": 3,
+    "streak": 4,
+    "layout": "lingo_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with SnapLingo · practice only, not a school curriculum",
+    "cta_th": "คอมเมนต์ LINGO รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "no prog",
+   "value": {
+    "title_th": "SnapLingo — น้องเต้า",
+    "headline_th": "คำศัพท์ 3 คำ จากของในบ้าน",
+    "hook_th": "ถ่ายของรอบบ้าน ได้คำศัพท์อังกฤษ/จีนให้ลูก",
+    "parent_th": "พี่แอน",
+    "child_th": "น้องเต้า",
+    "count": 3,
+    "streak": 0,
+    "layout": "lingo_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with SnapLingo · practice only, not a school curriculum",
+    "cta_th": "คอมเมนต์ LINGO รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exh",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "SnapLingo เป็นคลังคำศัพท์ตัวอย่างสำหรับเล่นกับของในบ้าน ไม่ใช่หลักสูตรโรงเรียน และไม่ตรวจการออกเสียงให้คะแนนทางการ ถ่ายของไม่ต้องมีใบหน้าเด็กในรูป"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "warn",
+   "value": {
+    "level": "warn",
+    "message_th": "แนะนำให้ถ่ายเฉพาะตัวของ ไม่ต้องมีใบหน้าเด็ก SnapLingo เป็นคลังคำศัพท์ตัวอย่างสำหรับเล่นกับของในบ้าน ไม่ใช่หลักสูตรโรงเรียน และไม่ตรวจการออกเสียงให้คะแนนทางการ ถ่ายของไม่ต้องมีใบหน้าเด็กในรูป"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "stop",
+   "value": {
+    "level": "stop",
+    "message_th": "มีใบหน้าเด็กในรูป ต้องให้ผู้ปกครองยินยอม หรือถ่ายเฉพาะตัวของ SnapLingo เป็นคลังคำศัพท์ตัวอย่างสำหรับเล่นกับของในบ้าน ไม่ใช่หลักสูตรโรงเรียน และไม่ตรวจการออกเสียงให้คะแนนทางการ ถ่ายของไม่ต้องมีใบหน้าเด็กในรูป"
+   }
+  },
+  {
+   "def": "LabelSet",
+   "note": "room",
+   "value": {
+    "cards": [
+     {
+      "id": "w07",
+      "name_th": "เก้าอี้",
+      "name_en": "chair",
+      "ipa_en": "/tʃeər/",
+      "th_en": "แชร์",
+      "name_zh": "椅子",
+      "pinyin": "yǐzi",
+      "th_zh": "อี่-จึ",
+      "topic": "room",
+      "key": "chair",
+      "headline_th": "เก้าอี้ · chair · 椅子",
+      "en_line_th": "chair /tʃeər/ อ่านว่า แชร์",
+      "zh_line_th": "椅子 yǐzi อ่านว่า อี่-จึ"
+     },
+     {
+      "id": "w09",
+      "name_th": "หนังสือ",
+      "name_en": "book",
+      "ipa_en": "/bʊk/",
+      "th_en": "บุ๊ก",
+      "name_zh": "书",
+      "pinyin": "shū",
+      "th_zh": "ชู",
+      "topic": "room",
+      "key": "book",
+      "headline_th": "หนังสือ · book · 书",
+      "en_line_th": "book /bʊk/ อ่านว่า บุ๊ก",
+      "zh_line_th": "书 shū อ่านว่า ชู"
+     }
+    ],
+    "count": 2,
+    "headline_th": "คำศัพท์ 2 คำ จากของในบ้าน"
+   }
+  },
+  {
+   "def": "FlashDeck",
+   "note": "room en",
+   "value": {
+    "lang": "en",
+    "cards": [
+     {
+      "key": "chair",
+      "lang": "en",
+      "front_th": "เก้าอี้",
+      "back": "chair /tʃeər/",
+      "say_th": "แชร์"
+     },
+     {
+      "key": "book",
+      "lang": "en",
+      "front_th": "หนังสือ",
+      "back": "book /bʊk/",
+      "say_th": "บุ๊ก"
+     }
+    ],
+    "count": 2
+   }
+  },
+  {
+   "def": "FlashDeck",
+   "note": "room zh",
+   "value": {
+    "lang": "zh",
+    "cards": [
+     {
+      "key": "chair",
+      "lang": "zh",
+      "front_th": "เก้าอี้",
+      "back": "椅子 yǐzi",
+      "say_th": "อี่-จึ"
+     },
+     {
+      "key": "book",
+      "lang": "zh",
+      "front_th": "หนังสือ",
+      "back": "书 shū",
+      "say_th": "ชู"
+     }
+    ],
+    "count": 2
+   }
+  }
+ ]
+}

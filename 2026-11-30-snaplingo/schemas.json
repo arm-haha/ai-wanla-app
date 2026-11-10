@@ -1,0 +1,614 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/snaplingo.schema.json",
+ "title": "SnapLingo",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "role": {
+     "type": "string"
+    },
+    "goal_th": {
+     "type": "string"
+    },
+    "parent_id": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Detection": {
+   "type": "object",
+   "required": [
+    "key",
+    "value",
+    "confidence"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "value": true,
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScenePhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "crop",
+    "detections"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^s[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "crop": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "detections": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Detection"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "SceneScan": {
+   "type": "object",
+   "required": [
+    "shot_id",
+    "quality",
+    "ok",
+    "keys",
+    "count",
+    "message_th"
+   ],
+   "properties": {
+    "shot_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "keys": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "LabelCard": {
+   "type": "object",
+   "required": [
+    "key",
+    "id",
+    "name_th",
+    "name_en",
+    "ipa_en",
+    "th_en",
+    "name_zh",
+    "pinyin",
+    "th_zh",
+    "topic",
+    "headline_th",
+    "en_line_th",
+    "zh_line_th"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "ipa_en": {
+     "type": "string"
+    },
+    "th_en": {
+     "type": "string"
+    },
+    "name_zh": {
+     "type": "string"
+    },
+    "pinyin": {
+     "type": "string"
+    },
+    "th_zh": {
+     "type": "string"
+    },
+    "topic": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "en_line_th": {
+     "type": "string"
+    },
+    "zh_line_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "LabelSet": {
+   "type": "object",
+   "required": [
+    "cards",
+    "count",
+    "headline_th"
+   ],
+   "properties": {
+    "cards": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/LabelCard"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "headline_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "FlashCard": {
+   "type": "object",
+   "required": [
+    "key",
+    "lang",
+    "front_th",
+    "back",
+    "say_th"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "lang": {
+     "enum": [
+      "en",
+      "zh"
+     ]
+    },
+    "front_th": {
+     "type": "string"
+    },
+    "back": {
+     "type": "string"
+    },
+    "say_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "FlashDeck": {
+   "type": "object",
+   "required": [
+    "lang",
+    "cards",
+    "count"
+   ],
+   "properties": {
+    "lang": {
+     "enum": [
+      "en",
+      "zh"
+     ]
+    },
+    "cards": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/FlashCard"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "Choice": {
+   "type": "object",
+   "required": [
+    "key",
+    "text",
+    "correct"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "text": {
+     "type": "string"
+    },
+    "correct": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "QuizQuestion": {
+   "type": "object",
+   "required": [
+    "n",
+    "key",
+    "prompt_th",
+    "choices",
+    "answer",
+    "correct"
+   ],
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "key": {
+     "type": "string"
+    },
+    "prompt_th": {
+     "type": "string"
+    },
+    "choices": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Choice"
+     }
+    },
+    "answer": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "correct": {
+     "type": [
+      "boolean",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "MiniQuiz": {
+   "type": "object",
+   "required": [
+    "lang",
+    "questions",
+    "count",
+    "answered",
+    "right",
+    "score_pct",
+    "headline_th"
+   ],
+   "properties": {
+    "lang": {
+     "enum": [
+      "en",
+      "zh"
+     ]
+    },
+    "questions": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/QuizQuestion"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "answered": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "right": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "score_pct": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "headline_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Reward": {
+   "type": "object",
+   "required": [
+    "at",
+    "key",
+    "name_th"
+   ],
+   "properties": {
+    "at": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "key": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Progress": {
+   "type": "object",
+   "required": [
+    "date",
+    "passed",
+    "streak",
+    "prev_streak",
+    "score_pct",
+    "right",
+    "answered",
+    "rewards",
+    "reward_count",
+    "headline_th"
+   ],
+   "properties": {
+    "date": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "passed": {
+     "type": "boolean"
+    },
+    "streak": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "prev_streak": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "score_pct": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "right": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "answered": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "rewards": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Reward"
+     }
+    },
+    "reward_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "headline_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "parent_th",
+    "child_th",
+    "count",
+    "streak",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "parent_th": {
+     "type": "string"
+    },
+    "child_th": {
+     "type": "string"
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "streak": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "layout": {
+     "enum": [
+      "lingo_card"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
