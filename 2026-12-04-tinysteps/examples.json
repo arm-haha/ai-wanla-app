@@ -1,0 +1,1358 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "พี่เมย",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่เมย",
+    "name_en": "Mey",
+    "age": 31,
+    "city_th": "กรุงเทพฯ",
+    "relation_th": "แม่",
+    "own_child": true,
+    "parent_confirmed": true,
+    "all_guardians_ok": true
+   }
+  },
+  {
+   "def": "Child",
+   "note": "น้องภู",
+   "value": {
+    "id": "c01",
+    "name_th": "น้องภู",
+    "name_en": "Phu",
+    "birth": "2026-04-04",
+    "weight_kg": 8.4,
+    "height_cm": 70.0
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่แนน",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่แนน",
+    "name_en": "Nan",
+    "age": 28,
+    "city_th": "เชียงใหม่",
+    "relation_th": "แม่",
+    "own_child": true,
+    "parent_confirmed": true,
+    "all_guardians_ok": true
+   }
+  },
+  {
+   "def": "Child",
+   "note": "น้องไผ่",
+   "value": {
+    "id": "c02",
+    "name_th": "น้องไผ่",
+    "name_en": "Phai",
+    "birth": "2025-12-04",
+    "weight_kg": 9.8,
+    "height_cm": 76.0
+   }
+  },
+  {
+   "def": "MilestonePhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.1,
+    "blur": 0.1,
+    "crop": 0.1,
+    "child_id": "c01"
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": []
+    },
+    "child_id": "c01"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "steps": [
+     "photo",
+     "age_months",
+     "milestone_card",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "MilestonePhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.16,
+    "blur": 0.12,
+    "crop": 0.14,
+    "child_id": "c02"
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "quality": {
+     "score": 86,
+     "ok": true,
+     "tips_th": []
+    },
+    "child_id": "c02"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "steps": [
+     "photo",
+     "age_months",
+     "milestone_card",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "MilestonePhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.62,
+    "blur": 0.48,
+    "crop": 0.55,
+    "child_id": "c01"
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "quality": {
+     "score": 46,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนบนหน้า หันจากหน้าต่างหรือปิดแฟลชแรง ๆ",
+      "ภาพเบลอ ถือนิ่งหรือใช้โหมดถ่ายต่อเนื่อง",
+      "ถูกครอป จัดให้เห็นหัวถึงลำตัวในกรอบ"
+     ]
+    },
+    "child_id": "c01"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "steps": [
+     "photo",
+     "deglare",
+     "recrop",
+     "age_months",
+     "milestone_card",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "MilestonePhoto",
+   "note": "p04",
+   "value": {
+    "id": "p04",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.18,
+    "blur": 0.1,
+    "crop": 0.12,
+    "child_id": "c01"
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "quality": {
+     "score": 87,
+     "ok": true,
+     "tips_th": []
+    },
+    "child_id": "c01"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "steps": [
+     "photo",
+     "age_months",
+     "milestone_card",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "MilestonePhoto",
+   "note": "p05",
+   "value": {
+    "id": "p05",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.12,
+    "blur": 0.14,
+    "crop": 0.1,
+    "child_id": "c02"
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": []
+    },
+    "child_id": "c02"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "steps": [
+     "photo",
+     "age_months",
+     "milestone_card",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "bad",
+   "value": {
+    "score": 46,
+    "ok": false,
+    "tips_th": [
+     "แสงสะท้อนบนหน้า หันจากหน้าต่างหรือปิดแฟลชแรง ๆ",
+     "ภาพเบลอ ถือนิ่งหรือใช้โหมดถ่ายต่อเนื่อง",
+     "ถูกครอป จัดให้เห็นหัวถึงลำตัวในกรอบ"
+    ]
+   }
+  },
+  {
+   "def": "ExampleBand",
+   "note": "m0",
+   "value": {
+    "month": 0,
+    "weight_lo_kg": 1.7,
+    "weight_mid_kg": 3.2,
+    "weight_hi_kg": 4.7,
+    "height_lo_cm": 46.0,
+    "height_mid_cm": 50.0,
+    "height_hi_cm": 54.0,
+    "disclaimer_th": "แถบตัวอย่างในแอปเท่านั้น ไม่ใช่เกณฑ์แพทย์"
+   }
+  },
+  {
+   "def": "ExampleBand",
+   "note": "m1",
+   "value": {
+    "month": 1,
+    "weight_lo_kg": 2.4,
+    "weight_mid_kg": 3.9,
+    "weight_hi_kg": 5.4,
+    "height_lo_cm": 48.5,
+    "height_mid_cm": 52.5,
+    "height_hi_cm": 56.5,
+    "disclaimer_th": "แถบตัวอย่างในแอปเท่านั้น ไม่ใช่เกณฑ์แพทย์"
+   }
+  },
+  {
+   "def": "ExampleBand",
+   "note": "m8",
+   "value": {
+    "month": 8,
+    "weight_lo_kg": 6.9,
+    "weight_mid_kg": 8.4,
+    "weight_hi_kg": 9.9,
+    "height_lo_cm": 66.0,
+    "height_mid_cm": 70.0,
+    "height_hi_cm": 74.0,
+    "disclaimer_th": "แถบตัวอย่างในแอปเท่านั้น ไม่ใช่เกณฑ์แพทย์"
+   }
+  },
+  {
+   "def": "ExampleBand",
+   "note": "m12",
+   "value": {
+    "month": 12,
+    "weight_lo_kg": 9.5,
+    "weight_mid_kg": 11.0,
+    "weight_hi_kg": 12.5,
+    "height_lo_cm": 76.0,
+    "height_mid_cm": 80.0,
+    "height_hi_cm": 84.0,
+    "disclaimer_th": "แถบตัวอย่างในแอปเท่านั้น ไม่ใช่เกณฑ์แพทย์"
+   }
+  },
+  {
+   "def": "ExampleBand",
+   "note": "m24",
+   "value": {
+    "month": 24,
+    "weight_lo_kg": 17.3,
+    "weight_mid_kg": 18.8,
+    "weight_hi_kg": 20.3,
+    "height_lo_cm": 106.0,
+    "height_mid_cm": 110.0,
+    "height_hi_cm": 114.0,
+    "disclaimer_th": "แถบตัวอย่างในแอปเท่านั้น ไม่ใช่เกณฑ์แพทย์"
+   }
+  },
+  {
+   "def": "ExampleBand",
+   "note": "m36",
+   "value": {
+    "month": 36,
+    "weight_lo_kg": 25.1,
+    "weight_mid_kg": 26.6,
+    "weight_hi_kg": 28.1,
+    "height_lo_cm": 136.0,
+    "height_mid_cm": 140.0,
+    "height_hi_cm": 144.0,
+    "disclaimer_th": "แถบตัวอย่างในแอปเท่านั้น ไม่ใช่เกณฑ์แพทย์"
+   }
+  },
+  {
+   "def": "GrowthEntry",
+   "note": "phu in",
+   "value": {
+    "month": 8,
+    "weight_kg": 8.4,
+    "height_cm": 70.0,
+    "weight_pos": "in",
+    "height_pos": "in",
+    "weight_label_th": "อยู่ในแถบตัวอย่างในแอป",
+    "height_label_th": "อยู่ในแถบตัวอย่างในแอป",
+    "band": {
+     "month": 8,
+     "weight_lo_kg": 6.9,
+     "weight_mid_kg": 8.4,
+     "weight_hi_kg": 9.9,
+     "height_lo_cm": 66.0,
+     "height_mid_cm": 70.0,
+     "height_hi_cm": 74.0,
+     "disclaimer_th": "แถบตัวอย่างในแอปเท่านั้น ไม่ใช่เกณฑ์แพทย์"
+    },
+    "disclaimer_th": "TinySteps เป็นการ์ดความทรงจำ ไม่ใช่คำแนะนำทางการแพทย์ ไม่ใช่แบบประเมินพัฒนาการ และไม่ใช่กราฟการเจริญเติบโตทางการ ถ้ากังวลเรื่องสุขภาพหรือพัฒนาการของลูก ให้ปรึกษาแพทย์"
+   }
+  },
+  {
+   "def": "GrowthEntry",
+   "note": "below/above",
+   "value": {
+    "month": 8,
+    "weight_kg": 6.0,
+    "height_cm": 76.0,
+    "weight_pos": "below",
+    "height_pos": "above",
+    "weight_label_th": "ต่ำกว่าแถบตัวอย่างในแอป",
+    "height_label_th": "สูงกว่าแถบตัวอย่างในแอป",
+    "band": {
+     "month": 8,
+     "weight_lo_kg": 6.9,
+     "weight_mid_kg": 8.4,
+     "weight_hi_kg": 9.9,
+     "height_lo_cm": 66.0,
+     "height_mid_cm": 70.0,
+     "height_hi_cm": 74.0,
+     "disclaimer_th": "แถบตัวอย่างในแอปเท่านั้น ไม่ใช่เกณฑ์แพทย์"
+    },
+    "disclaimer_th": "TinySteps เป็นการ์ดความทรงจำ ไม่ใช่คำแนะนำทางการแพทย์ ไม่ใช่แบบประเมินพัฒนาการ และไม่ใช่กราฟการเจริญเติบโตทางการ ถ้ากังวลเรื่องสุขภาพหรือพัฒนาการของลูก ให้ปรึกษาแพทย์"
+   }
+  },
+  {
+   "def": "GrowthEntry",
+   "note": "phai",
+   "value": {
+    "month": 12,
+    "weight_kg": 9.8,
+    "height_cm": 76.0,
+    "weight_pos": "in",
+    "height_pos": "in",
+    "weight_label_th": "อยู่ในแถบตัวอย่างในแอป",
+    "height_label_th": "อยู่ในแถบตัวอย่างในแอป",
+    "band": {
+     "month": 12,
+     "weight_lo_kg": 9.5,
+     "weight_mid_kg": 11.0,
+     "weight_hi_kg": 12.5,
+     "height_lo_cm": 76.0,
+     "height_mid_cm": 80.0,
+     "height_hi_cm": 84.0,
+     "disclaimer_th": "แถบตัวอย่างในแอปเท่านั้น ไม่ใช่เกณฑ์แพทย์"
+    },
+    "disclaimer_th": "TinySteps เป็นการ์ดความทรงจำ ไม่ใช่คำแนะนำทางการแพทย์ ไม่ใช่แบบประเมินพัฒนาการ และไม่ใช่กราฟการเจริญเติบโตทางการ ถ้ากังวลเรื่องสุขภาพหรือพัฒนาการของลูก ให้ปรึกษาแพทย์"
+   }
+  },
+  {
+   "def": "GrowthEntry",
+   "note": "newborn mid",
+   "value": {
+    "month": 0,
+    "weight_kg": 3.2,
+    "height_cm": 50.0,
+    "weight_pos": "in",
+    "height_pos": "in",
+    "weight_label_th": "อยู่ในแถบตัวอย่างในแอป",
+    "height_label_th": "อยู่ในแถบตัวอย่างในแอป",
+    "band": {
+     "month": 0,
+     "weight_lo_kg": 1.7,
+     "weight_mid_kg": 3.2,
+     "weight_hi_kg": 4.7,
+     "height_lo_cm": 46.0,
+     "height_mid_cm": 50.0,
+     "height_hi_cm": 54.0,
+     "disclaimer_th": "แถบตัวอย่างในแอปเท่านั้น ไม่ใช่เกณฑ์แพทย์"
+    },
+    "disclaimer_th": "TinySteps เป็นการ์ดความทรงจำ ไม่ใช่คำแนะนำทางการแพทย์ ไม่ใช่แบบประเมินพัฒนาการ และไม่ใช่กราฟการเจริญเติบโตทางการ ถ้ากังวลเรื่องสุขภาพหรือพัฒนาการของลูก ให้ปรึกษาแพทย์"
+   }
+  },
+  {
+   "def": "FirstInfo",
+   "note": "smile",
+   "value": {
+    "id": "f01",
+    "kind": "smile",
+    "name_th": "ยิ้มครั้งแรก",
+    "example_month": 2,
+    "range_lo": 1,
+    "range_hi": 3,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย"
+   }
+  },
+  {
+   "def": "LoggedFirst",
+   "note": "smile in",
+   "value": {
+    "id": "f01",
+    "kind": "smile",
+    "name_th": "ยิ้มครั้งแรก",
+    "example_month": 2,
+    "range_lo": 1,
+    "range_hi": 3,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+    "logged_month": 2,
+    "flag": "in_example",
+    "tip_th": "อยู่ในช่วงตัวอย่างในแอป ซึ่งไม่ใช่เกณฑ์แพทย์",
+    "note_th": ""
+   }
+  },
+  {
+   "def": "FirstInfo",
+   "note": "roll",
+   "value": {
+    "id": "f02",
+    "kind": "roll",
+    "name_th": "พลิกตัว",
+    "example_month": 5,
+    "range_lo": 4,
+    "range_hi": 6,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย"
+   }
+  },
+  {
+   "def": "LoggedFirst",
+   "note": "roll in",
+   "value": {
+    "id": "f02",
+    "kind": "roll",
+    "name_th": "พลิกตัว",
+    "example_month": 5,
+    "range_lo": 4,
+    "range_hi": 6,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+    "logged_month": 5,
+    "flag": "in_example",
+    "tip_th": "อยู่ในช่วงตัวอย่างในแอป ซึ่งไม่ใช่เกณฑ์แพทย์",
+    "note_th": ""
+   }
+  },
+  {
+   "def": "FirstInfo",
+   "note": "sit",
+   "value": {
+    "id": "f03",
+    "kind": "sit",
+    "name_th": "นั่งทรงตัวได้",
+    "example_month": 8,
+    "range_lo": 6,
+    "range_hi": 9,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย"
+   }
+  },
+  {
+   "def": "LoggedFirst",
+   "note": "sit in",
+   "value": {
+    "id": "f03",
+    "kind": "sit",
+    "name_th": "นั่งทรงตัวได้",
+    "example_month": 8,
+    "range_lo": 6,
+    "range_hi": 9,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+    "logged_month": 8,
+    "flag": "in_example",
+    "tip_th": "อยู่ในช่วงตัวอย่างในแอป ซึ่งไม่ใช่เกณฑ์แพทย์",
+    "note_th": ""
+   }
+  },
+  {
+   "def": "FirstInfo",
+   "note": "crawl",
+   "value": {
+    "id": "f04",
+    "kind": "crawl",
+    "name_th": "คลาน",
+    "example_month": 9,
+    "range_lo": 7,
+    "range_hi": 11,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย"
+   }
+  },
+  {
+   "def": "LoggedFirst",
+   "note": "crawl in",
+   "value": {
+    "id": "f04",
+    "kind": "crawl",
+    "name_th": "คลาน",
+    "example_month": 9,
+    "range_lo": 7,
+    "range_hi": 11,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+    "logged_month": 9,
+    "flag": "in_example",
+    "tip_th": "อยู่ในช่วงตัวอย่างในแอป ซึ่งไม่ใช่เกณฑ์แพทย์",
+    "note_th": ""
+   }
+  },
+  {
+   "def": "FirstInfo",
+   "note": "stand",
+   "value": {
+    "id": "f05",
+    "kind": "stand",
+    "name_th": "ยืนกำกำ",
+    "example_month": 10,
+    "range_lo": 8,
+    "range_hi": 12,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย"
+   }
+  },
+  {
+   "def": "LoggedFirst",
+   "note": "stand in",
+   "value": {
+    "id": "f05",
+    "kind": "stand",
+    "name_th": "ยืนกำกำ",
+    "example_month": 10,
+    "range_lo": 8,
+    "range_hi": 12,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+    "logged_month": 10,
+    "flag": "in_example",
+    "tip_th": "อยู่ในช่วงตัวอย่างในแอป ซึ่งไม่ใช่เกณฑ์แพทย์",
+    "note_th": ""
+   }
+  },
+  {
+   "def": "FirstInfo",
+   "note": "wave",
+   "value": {
+    "id": "f06",
+    "kind": "wave",
+    "name_th": "โบกมือ",
+    "example_month": 10,
+    "range_lo": 8,
+    "range_hi": 13,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย"
+   }
+  },
+  {
+   "def": "LoggedFirst",
+   "note": "wave in",
+   "value": {
+    "id": "f06",
+    "kind": "wave",
+    "name_th": "โบกมือ",
+    "example_month": 10,
+    "range_lo": 8,
+    "range_hi": 13,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+    "logged_month": 10,
+    "flag": "in_example",
+    "tip_th": "อยู่ในช่วงตัวอย่างในแอป ซึ่งไม่ใช่เกณฑ์แพทย์",
+    "note_th": ""
+   }
+  },
+  {
+   "def": "FirstInfo",
+   "note": "walk",
+   "value": {
+    "id": "f07",
+    "kind": "walk",
+    "name_th": "ก้าวแรก",
+    "example_month": 13,
+    "range_lo": 10,
+    "range_hi": 18,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย"
+   }
+  },
+  {
+   "def": "LoggedFirst",
+   "note": "walk in",
+   "value": {
+    "id": "f07",
+    "kind": "walk",
+    "name_th": "ก้าวแรก",
+    "example_month": 13,
+    "range_lo": 10,
+    "range_hi": 18,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+    "logged_month": 13,
+    "flag": "in_example",
+    "tip_th": "อยู่ในช่วงตัวอย่างในแอป ซึ่งไม่ใช่เกณฑ์แพทย์",
+    "note_th": ""
+   }
+  },
+  {
+   "def": "FirstInfo",
+   "note": "word",
+   "value": {
+    "id": "f08",
+    "kind": "word",
+    "name_th": "คำแรก",
+    "example_month": 12,
+    "range_lo": 10,
+    "range_hi": 16,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย"
+   }
+  },
+  {
+   "def": "LoggedFirst",
+   "note": "word in",
+   "value": {
+    "id": "f08",
+    "kind": "word",
+    "name_th": "คำแรก",
+    "example_month": 12,
+    "range_lo": 10,
+    "range_hi": 16,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+    "logged_month": 12,
+    "flag": "in_example",
+    "tip_th": "อยู่ในช่วงตัวอย่างในแอป ซึ่งไม่ใช่เกณฑ์แพทย์",
+    "note_th": ""
+   }
+  },
+  {
+   "def": "LoggedFirst",
+   "note": "sit outside",
+   "value": {
+    "id": "f03",
+    "kind": "sit",
+    "name_th": "นั่งทรงตัวได้",
+    "example_month": 8,
+    "range_lo": 6,
+    "range_hi": 9,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+    "logged_month": 14,
+    "flag": "outside_example",
+    "tip_th": "อยู่นอกช่วงตัวอย่างในแอป — ไม่ได้แปลว่าช้าหรือเร็ว ถ้ากังวลให้ปรึกษาแพทย์",
+    "note_th": "นอกช่วงตัวอย่าง"
+   }
+  },
+  {
+   "def": "LoggedFirst",
+   "note": "walk outside",
+   "value": {
+    "id": "f07",
+    "kind": "walk",
+    "name_th": "ก้าวแรก",
+    "example_month": 13,
+    "range_lo": 10,
+    "range_hi": 18,
+    "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+    "logged_month": 20,
+    "flag": "outside_example",
+    "tip_th": "อยู่นอกช่วงตัวอย่างในแอป — ไม่ได้แปลว่าช้าหรือเร็ว ถ้ากังวลให้ปรึกษาแพทย์",
+    "note_th": ""
+   }
+  },
+  {
+   "def": "Timeline",
+   "note": "phu three",
+   "value": {
+    "count": 3,
+    "entries": [
+     {
+      "id": "f01",
+      "kind": "smile",
+      "name_th": "ยิ้มครั้งแรก",
+      "example_month": 2,
+      "range_lo": 1,
+      "range_hi": 3,
+      "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+      "logged_month": 2,
+      "flag": "in_example",
+      "tip_th": "อยู่ในช่วงตัวอย่างในแอป ซึ่งไม่ใช่เกณฑ์แพทย์",
+      "note_th": "ยิ้มให้แม่ครั้งแรก"
+     },
+     {
+      "id": "f02",
+      "kind": "roll",
+      "name_th": "พลิกตัว",
+      "example_month": 5,
+      "range_lo": 4,
+      "range_hi": 6,
+      "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+      "logged_month": 5,
+      "flag": "in_example",
+      "tip_th": "อยู่ในช่วงตัวอย่างในแอป ซึ่งไม่ใช่เกณฑ์แพทย์",
+      "note_th": "พลิกจากหงายเป็นคว่ำ"
+     },
+     {
+      "id": "f03",
+      "kind": "sit",
+      "name_th": "นั่งทรงตัวได้",
+      "example_month": 8,
+      "range_lo": 6,
+      "range_hi": 9,
+      "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+      "logged_month": 8,
+      "flag": "in_example",
+      "tip_th": "อยู่ในช่วงตัวอย่างในแอป ซึ่งไม่ใช่เกณฑ์แพทย์",
+      "note_th": "นั่งเล่นได้นานขึ้น"
+     }
+    ],
+    "disclaimer_th": "TinySteps เป็นการ์ดความทรงจำ ไม่ใช่คำแนะนำทางการแพทย์ ไม่ใช่แบบประเมินพัฒนาการ และไม่ใช่กราฟการเจริญเติบโตทางการ ถ้ากังวลเรื่องสุขภาพหรือพัฒนาการของลูก ให้ปรึกษาแพทย์"
+   }
+  },
+  {
+   "def": "Timeline",
+   "note": "tie",
+   "value": {
+    "count": 2,
+    "entries": [
+     {
+      "id": "f05",
+      "kind": "stand",
+      "name_th": "ยืนกำกำ",
+      "example_month": 10,
+      "range_lo": 8,
+      "range_hi": 12,
+      "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+      "logged_month": 10,
+      "flag": "in_example",
+      "tip_th": "อยู่ในช่วงตัวอย่างในแอป ซึ่งไม่ใช่เกณฑ์แพทย์",
+      "note_th": ""
+     },
+     {
+      "id": "f06",
+      "kind": "wave",
+      "name_th": "โบกมือ",
+      "example_month": 10,
+      "range_lo": 8,
+      "range_hi": 13,
+      "disclaimer_th": "ช่วงเดือนเป็นตัวอย่างในแอป ไม่ใช่กำหนดแพทย์ และไม่ใช่เส้นตาย",
+      "logged_month": 10,
+      "flag": "in_example",
+      "tip_th": "อยู่ในช่วงตัวอย่างในแอป ซึ่งไม่ใช่เกณฑ์แพทย์",
+      "note_th": ""
+     }
+    ],
+    "disclaimer_th": "TinySteps เป็นการ์ดความทรงจำ ไม่ใช่คำแนะนำทางการแพทย์ ไม่ใช่แบบประเมินพัฒนาการ และไม่ใช่กราฟการเจริญเติบโตทางการ ถ้ากังวลเรื่องสุขภาพหรือพัฒนาการของลูก ให้ปรึกษาแพทย์"
+   }
+  },
+  {
+   "def": "Caption",
+   "note": "น้องภู sit 1",
+   "value": {
+    "n": 1,
+    "kind": "sit",
+    "for_name_th": "น้องภู",
+    "text_th": "เดือนนี้เพิ่งนั่งทรงตัวได้ เก็บช่วงนี้ไว้ในอัลบั้มนะ"
+   }
+  },
+  {
+   "def": "Caption",
+   "note": "น้องภู sit 2",
+   "value": {
+    "n": 2,
+    "kind": "sit",
+    "for_name_th": "น้องภู",
+    "text_th": "นั่งได้เองแล้ว โลกมองสูงขึ้น"
+   }
+  },
+  {
+   "def": "Caption",
+   "note": "น้องภู smile 1",
+   "value": {
+    "n": 1,
+    "kind": "smile",
+    "for_name_th": "น้องภู",
+    "text_th": "ยิ้มนี้คือของขวัญทั้งบ้าน"
+   }
+  },
+  {
+   "def": "Caption",
+   "note": "น้องภู smile 2",
+   "value": {
+    "n": 2,
+    "kind": "smile",
+    "for_name_th": "น้องภู",
+    "text_th": "เก็บรอยยิ้มแรกไว้ให้ดูอีกสิบปี"
+   }
+  },
+  {
+   "def": "Caption",
+   "note": "น้องไผ่ roll 1",
+   "value": {
+    "n": 1,
+    "kind": "roll",
+    "for_name_th": "น้องไผ่",
+    "text_th": "วันนี้พลิกเองได้ ทั้งบ้านปรบมือ"
+   }
+  },
+  {
+   "def": "Caption",
+   "note": "น้องไผ่ roll 2",
+   "value": {
+    "n": 2,
+    "kind": "roll",
+    "for_name_th": "น้องไผ่",
+    "text_th": "พลิกได้แล้ว โลกกว้างขึ้นอีกนิด"
+   }
+  },
+  {
+   "def": "Caption",
+   "note": "น้องไผ่ word 1",
+   "value": {
+    "n": 1,
+    "kind": "word",
+    "for_name_th": "น้องไผ่",
+    "text_th": "พูดได้แล้วนะ คำแรกของเรา"
+   }
+  },
+  {
+   "def": "Caption",
+   "note": "น้องไผ่ word 2",
+   "value": {
+    "n": 2,
+    "kind": "word",
+    "for_name_th": "น้องไผ่",
+    "text_th": "คำแรกในบ้านนี้ ขอเก็บไว้ในอัลบั้ม"
+   }
+  },
+  {
+   "def": "Caption",
+   "note": "น้องภู walk 1",
+   "value": {
+    "n": 1,
+    "kind": "walk",
+    "for_name_th": "น้องภู",
+    "text_th": "ก้าวแรกของเรา บ้านนี้ไม่เหมือนเดิมแล้ว"
+   }
+  },
+  {
+   "def": "Caption",
+   "note": "น้องภู walk 2",
+   "value": {
+    "n": 2,
+    "kind": "walk",
+    "for_name_th": "น้องภู",
+    "text_th": "ก้าวเล็ก ๆ ที่ทั้งบ้านจำได้"
+   }
+  },
+  {
+   "def": "MilestoneCard",
+   "note": "phu sit",
+   "value": {
+    "photo_id": "p01",
+    "name_th": "น้องภู",
+    "month": 8,
+    "kind": "sit",
+    "title_th": "เดือนที่ 8 · นั่งทรงตัวได้",
+    "caption_th": "เดือนนี้เพิ่งนั่งทรงตัวได้ เก็บช่วงนี้ไว้ในอัลบั้มนะ",
+    "layout": "month_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1080",
+     "1080x1920"
+    ],
+    "watermark": "Made with TinySteps · not medical advice",
+    "disclaimer_th": "TinySteps เป็นการ์ดความทรงจำ ไม่ใช่คำแนะนำทางการแพทย์ ไม่ใช่แบบประเมินพัฒนาการ และไม่ใช่กราฟการเจริญเติบโตทางการ ถ้ากังวลเรื่องสุขภาพหรือพัฒนาการของลูก ให้ปรึกษาแพทย์",
+    "headline_th": "น้องภู · เดือนที่ 8 · นั่งทรงตัวได้"
+   }
+  },
+  {
+   "def": "MilestoneCard",
+   "note": "phai word",
+   "value": {
+    "photo_id": "p02",
+    "name_th": "น้องไผ่",
+    "month": 12,
+    "kind": "word",
+    "title_th": "เดือนที่ 12 · คำแรก",
+    "caption_th": "พูดได้แล้วนะ คำแรกของเรา",
+    "layout": "month_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1080",
+     "1080x1920"
+    ],
+    "watermark": "Made with TinySteps · not medical advice",
+    "disclaimer_th": "TinySteps เป็นการ์ดความทรงจำ ไม่ใช่คำแนะนำทางการแพทย์ ไม่ใช่แบบประเมินพัฒนาการ และไม่ใช่กราฟการเจริญเติบโตทางการ ถ้ากังวลเรื่องสุขภาพหรือพัฒนาการของลูก ให้ปรึกษาแพทย์",
+    "headline_th": "น้องไผ่ · เดือนที่ 12 · คำแรก"
+   }
+  },
+  {
+   "def": "MonthIdeas",
+   "note": "ideas 1",
+   "value": {
+    "month": 1,
+    "ideas_th": [
+     "คุยและยิ้มให้ลูกขณะอุ้ม",
+     "วางให้นอนคว่ำสั้น ๆ ใต้สายตาผู้ใหญ่"
+    ],
+    "disclaimer_th": "ไอเดียเล่นเป็นตัวอย่างในแอป ไม่ใช่แบบฝึกแพทย์"
+   }
+  },
+  {
+   "def": "MonthIdeas",
+   "note": "ideas 8",
+   "value": {
+    "month": 8,
+    "ideas_th": [
+     "นั่งเล่นกับหมอนค้ำด้านข้าง",
+     "ให้หยิบของชิ้นใหญ่ด้วยสองมือ"
+    ],
+    "disclaimer_th": "ไอเดียเล่นเป็นตัวอย่างในแอป ไม่ใช่แบบฝึกแพทย์"
+   }
+  },
+  {
+   "def": "MonthIdeas",
+   "note": "ideas 12",
+   "value": {
+    "month": 12,
+    "ideas_th": [
+     "อ่านหนังสือภาพสั้น ๆ ทุกวัน",
+     "ร้องเพลงและปรบมือตามจังหวะ"
+    ],
+    "disclaimer_th": "ไอเดียเล่นเป็นตัวอย่างในแอป ไม่ใช่แบบฝึกแพทย์"
+   }
+  },
+  {
+   "def": "MonthIdeas",
+   "note": "ideas 3",
+   "value": {
+    "month": 3,
+    "ideas_th": [
+     "อ่านนิทานสั้น ๆ ด้วยกัน",
+     "เล่นจ๊ะเอ๋และร้องเพลง"
+    ],
+    "disclaimer_th": "ไอเดียเล่นเป็นตัวอย่างในแอป ไม่ใช่แบบฝึกแพทย์"
+   }
+  },
+  {
+   "def": "CollageSlot",
+   "note": "m01",
+   "value": {
+    "photo_id": "m01",
+    "month": 1,
+    "label_th": "เดือนที่ 1"
+   }
+  },
+  {
+   "def": "CollageSlot",
+   "note": "m02",
+   "value": {
+    "photo_id": "m02",
+    "month": 2,
+    "label_th": "เดือนที่ 2"
+   }
+  },
+  {
+   "def": "CollageSlot",
+   "note": "m03",
+   "value": {
+    "photo_id": "m03",
+    "month": 3,
+    "label_th": "เดือนที่ 3"
+   }
+  },
+  {
+   "def": "CollageSlot",
+   "note": "m04",
+   "value": {
+    "photo_id": "m04",
+    "month": 4,
+    "label_th": "เดือนที่ 4"
+   }
+  },
+  {
+   "def": "CollageSlot",
+   "note": "m05",
+   "value": {
+    "photo_id": "m05",
+    "month": 5,
+    "label_th": "เดือนที่ 5"
+   }
+  },
+  {
+   "def": "CollageSlot",
+   "note": "m06",
+   "value": {
+    "photo_id": "m06",
+    "month": 6,
+    "label_th": "เดือนที่ 6"
+   }
+  },
+  {
+   "def": "CollageSlot",
+   "note": "m07",
+   "value": {
+    "photo_id": "m07",
+    "month": 7,
+    "label_th": "เดือนที่ 7"
+   }
+  },
+  {
+   "def": "CollageSlot",
+   "note": "m08",
+   "value": {
+    "photo_id": "m08",
+    "month": 8,
+    "label_th": "เดือนที่ 8"
+   }
+  },
+  {
+   "def": "Collage",
+   "note": "8 months",
+   "value": {
+    "title_th": "อัลบั้มน้องภู 8 เดือน",
+    "slots": [
+     {
+      "photo_id": "m01",
+      "month": 1,
+      "label_th": "เดือนที่ 1"
+     },
+     {
+      "photo_id": "m02",
+      "month": 2,
+      "label_th": "เดือนที่ 2"
+     },
+     {
+      "photo_id": "m03",
+      "month": 3,
+      "label_th": "เดือนที่ 3"
+     },
+     {
+      "photo_id": "m04",
+      "month": 4,
+      "label_th": "เดือนที่ 4"
+     },
+     {
+      "photo_id": "m05",
+      "month": 5,
+      "label_th": "เดือนที่ 5"
+     },
+     {
+      "photo_id": "m06",
+      "month": 6,
+      "label_th": "เดือนที่ 6"
+     },
+     {
+      "photo_id": "m07",
+      "month": 7,
+      "label_th": "เดือนที่ 7"
+     },
+     {
+      "photo_id": "m08",
+      "month": 8,
+      "label_th": "เดือนที่ 8"
+     }
+    ],
+    "count": 8,
+    "cols": 3,
+    "rows": 3,
+    "disclaimer_th": "ใช้ได้เฉพาะรูปของลูกตนเอง (หรือรูปที่ผู้ปกครองทุกคนยินยอม) ห้ามอัปโหลดรูปเด็กคนอื่น และควรคิดก่อนแชร์รูปเด็กในที่สาธารณะ",
+    "layout": "monthly_grid"
+   }
+  },
+  {
+   "def": "Collage",
+   "note": "four",
+   "value": {
+    "title_th": "สี่เดือนแรก",
+    "slots": [
+     {
+      "photo_id": "m01",
+      "month": 1,
+      "label_th": "เดือนที่ 1"
+     },
+     {
+      "photo_id": "m02",
+      "month": 2,
+      "label_th": "เดือนที่ 2"
+     },
+     {
+      "photo_id": "m03",
+      "month": 3,
+      "label_th": "เดือนที่ 3"
+     },
+     {
+      "photo_id": "m04",
+      "month": 4,
+      "label_th": "เดือนที่ 4"
+     }
+    ],
+    "count": 4,
+    "cols": 2,
+    "rows": 2,
+    "disclaimer_th": "ใช้ได้เฉพาะรูปของลูกตนเอง (หรือรูปที่ผู้ปกครองทุกคนยินยอม) ห้ามอัปโหลดรูปเด็กคนอื่น และควรคิดก่อนแชร์รูปเด็กในที่สาธารณะ",
+    "layout": "monthly_grid"
+   }
+  },
+  {
+   "def": "PrintSheet",
+   "note": "a4",
+   "value": {
+    "name_th": "น้องภู",
+    "month": 8,
+    "caption_th": "เดือนนี้เพิ่งนั่งทรงตัวได้ เก็บช่วงนี้ไว้ในอัลบั้มนะ",
+    "layout": "portrait_a4",
+    "label_th": "A4 การ์ดเดี่ยว",
+    "sizes": [
+     "A4",
+     "1080x1350"
+    ],
+    "bleed_mm": 3,
+    "watermark": "Made with TinySteps · not medical advice"
+   }
+  },
+  {
+   "def": "PrintSheet",
+   "note": "book",
+   "value": {
+    "name_th": "น้องภู",
+    "month": 8,
+    "caption_th": "เดือนนี้เพิ่งนั่งทรงตัวได้ เก็บช่วงนี้ไว้ในอัลบั้มนะ",
+    "layout": "book_20",
+    "label_th": "หน้าอัลบั้ม 20×20 ซม.",
+    "sizes": [
+     "20x20cm"
+    ],
+    "bleed_mm": 3,
+    "watermark": "Made with TinySteps · not medical advice"
+   }
+  },
+  {
+   "def": "PrintSheet",
+   "note": "collage",
+   "value": {
+    "name_th": "น้องภู",
+    "month": 8,
+    "caption_th": "เดือนนี้เพิ่งนั่งทรงตัวได้ เก็บช่วงนี้ไว้ในอัลบั้มนะ",
+    "layout": "collage_a4",
+    "label_th": "A4 คอลลาจรายเดือน",
+    "sizes": [
+     "A4"
+    ],
+    "bleed_mm": 3,
+    "watermark": "Made with TinySteps · not medical advice"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "phu",
+   "value": {
+    "title_th": "TinySteps — น้องภู",
+    "headline_th": "เดือนที่ 8 · นั่งทรงตัวได้",
+    "hook_th": "การ์ดพัฒนาการลูกรายเดือนจากรูป",
+    "caption_th": "เดือนนี้เพิ่งนั่งทรงตัวได้ เก็บช่วงนี้ไว้ในอัลบั้มนะ",
+    "month": 8,
+    "kind": "sit",
+    "layout": "milestone_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with TinySteps · not medical advice",
+    "cta_th": "คอมเมนต์ STEPS รับแพ็กฟรี · น้องภู",
+    "disclaimer_th": "TinySteps เป็นการ์ดความทรงจำ ไม่ใช่คำแนะนำทางการแพทย์ ไม่ใช่แบบประเมินพัฒนาการ และไม่ใช่กราฟการเจริญเติบโตทางการ ถ้ากังวลเรื่องสุขภาพหรือพัฒนาการของลูก ให้ปรึกษาแพทย์"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "phai",
+   "value": {
+    "title_th": "TinySteps — น้องไผ่",
+    "headline_th": "เดือนที่ 12 · คำแรก",
+    "hook_th": "การ์ดพัฒนาการลูกรายเดือนจากรูป",
+    "caption_th": "พูดได้แล้วนะ คำแรกของเรา",
+    "month": 12,
+    "kind": "word",
+    "layout": "milestone_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with TinySteps · not medical advice",
+    "cta_th": "คอมเมนต์ STEPS รับแพ็กฟรี · น้องไผ่",
+    "disclaimer_th": "TinySteps เป็นการ์ดความทรงจำ ไม่ใช่คำแนะนำทางการแพทย์ ไม่ใช่แบบประเมินพัฒนาการ และไม่ใช่กราฟการเจริญเติบโตทางการ ถ้ากังวลเรื่องสุขภาพหรือพัฒนาการของลูก ให้ปรึกษาแพทย์"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "ok",
+   "value": {
+    "ok": true,
+    "level": "ok",
+    "blocks_th": [],
+    "message_th": "ผ่านการตรวจยินยอม พร้อมทำบัตรได้",
+    "disclaimer_th": "ใช้ได้เฉพาะรูปของลูกตนเอง (หรือรูปที่ผู้ปกครองทุกคนยินยอม) ห้ามอัปโหลดรูปเด็กคนอื่น และควรคิดก่อนแชร์รูปเด็กในที่สาธารณะ"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "not own",
+   "value": {
+    "ok": false,
+    "level": "block",
+    "blocks_th": [
+     "ใช้ได้เฉพาะรูปของลูกตนเอง"
+    ],
+    "message_th": "ยังทำบัตรไม่ได้: ใช้ได้เฉพาะรูปของลูกตนเอง",
+    "disclaimer_th": "ใช้ได้เฉพาะรูปของลูกตนเอง (หรือรูปที่ผู้ปกครองทุกคนยินยอม) ห้ามอัปโหลดรูปเด็กคนอื่น และควรคิดก่อนแชร์รูปเด็กในที่สาธารณะ"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "no confirm",
+   "value": {
+    "ok": false,
+    "level": "block",
+    "blocks_th": [
+     "ยังไม่ได้ยืนยันว่าเป็นผู้ปกครอง"
+    ],
+    "message_th": "ยังทำบัตรไม่ได้: ยังไม่ได้ยืนยันว่าเป็นผู้ปกครอง",
+    "disclaimer_th": "ใช้ได้เฉพาะรูปของลูกตนเอง (หรือรูปที่ผู้ปกครองทุกคนยินยอม) ห้ามอัปโหลดรูปเด็กคนอื่น และควรคิดก่อนแชร์รูปเด็กในที่สาธารณะ"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "teen parent",
+   "value": {
+    "ok": false,
+    "level": "block",
+    "blocks_th": [
+     "ผู้ใช้ต้องเป็นผู้ปกครองอายุ 18 ปีขึ้นไป"
+    ],
+    "message_th": "ยังทำบัตรไม่ได้: ผู้ใช้ต้องเป็นผู้ปกครองอายุ 18 ปีขึ้นไป",
+    "disclaimer_th": "ใช้ได้เฉพาะรูปของลูกตนเอง (หรือรูปที่ผู้ปกครองทุกคนยินยอม) ห้ามอัปโหลดรูปเด็กคนอื่น และควรคิดก่อนแชร์รูปเด็กในที่สาธารณะ"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "no age",
+   "value": {
+    "ok": false,
+    "level": "block",
+    "blocks_th": [
+     "ยังไม่ได้ยืนยันอายุผู้ปกครอง"
+    ],
+    "message_th": "ยังทำบัตรไม่ได้: ยังไม่ได้ยืนยันอายุผู้ปกครอง",
+    "disclaimer_th": "ใช้ได้เฉพาะรูปของลูกตนเอง (หรือรูปที่ผู้ปกครองทุกคนยินยอม) ห้ามอัปโหลดรูปเด็กคนอื่น และควรคิดก่อนแชร์รูปเด็กในที่สาธารณะ"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "TinySteps เป็นการ์ดความทรงจำ ไม่ใช่คำแนะนำทางการแพทย์ ไม่ใช่แบบประเมินพัฒนาการ และไม่ใช่กราฟการเจริญเติบโตทางการ ถ้ากังวลเรื่องสุขภาพหรือพัฒนาการของลูก ให้ปรึกษาแพทย์"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "stop",
+   "value": {
+    "level": "stop",
+    "message_th": "ยังทำบัตรไม่ได้ TinySteps เป็นการ์ดความทรงจำ ไม่ใช่คำแนะนำทางการแพทย์ ไม่ใช่แบบประเมินพัฒนาการ และไม่ใช่กราฟการเจริญเติบโตทางการ ถ้ากังวลเรื่องสุขภาพหรือพัฒนาการของลูก ให้ปรึกษาแพทย์"
+   }
+  }
+ ]
+}

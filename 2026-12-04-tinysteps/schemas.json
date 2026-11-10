@@ -1,0 +1,815 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/tinysteps.schema.json",
+ "title": "TinySteps",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age",
+    "own_child",
+    "parent_confirmed"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "relation_th": {
+     "type": "string"
+    },
+    "own_child": {
+     "type": "boolean"
+    },
+    "parent_confirmed": {
+     "type": "boolean"
+    },
+    "all_guardians_ok": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Child": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "birth",
+    "weight_kg",
+    "height_cm"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^c[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "birth": {
+     "type": "string"
+    },
+    "weight_kg": {
+     "type": "number",
+     "exclusiveMinimum": 0
+    },
+    "height_cm": {
+     "type": "number",
+     "exclusiveMinimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "MilestonePhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "crop",
+    "child_id"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^p[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "crop": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "child_id": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "PhotoScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "quality"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    },
+    "child_id": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Pipeline": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "steps"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ExampleBand": {
+   "type": "object",
+   "required": [
+    "month",
+    "weight_lo_kg",
+    "weight_mid_kg",
+    "weight_hi_kg",
+    "height_lo_cm",
+    "height_mid_cm",
+    "height_hi_cm",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "month": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "weight_lo_kg": {
+     "type": "number"
+    },
+    "weight_mid_kg": {
+     "type": "number"
+    },
+    "weight_hi_kg": {
+     "type": "number"
+    },
+    "height_lo_cm": {
+     "type": "number"
+    },
+    "height_mid_cm": {
+     "type": "number"
+    },
+    "height_hi_cm": {
+     "type": "number"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "GrowthEntry": {
+   "type": "object",
+   "required": [
+    "month",
+    "weight_kg",
+    "height_cm",
+    "weight_pos",
+    "height_pos",
+    "weight_label_th",
+    "height_label_th",
+    "band",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "month": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "weight_kg": {
+     "type": "number"
+    },
+    "height_cm": {
+     "type": "number"
+    },
+    "weight_pos": {
+     "enum": [
+      "below",
+      "in",
+      "above"
+     ]
+    },
+    "height_pos": {
+     "enum": [
+      "below",
+      "in",
+      "above"
+     ]
+    },
+    "weight_label_th": {
+     "type": "string"
+    },
+    "height_label_th": {
+     "type": "string"
+    },
+    "band": {
+     "$ref": "#/$defs/ExampleBand"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "FirstInfo": {
+   "type": "object",
+   "required": [
+    "id",
+    "kind",
+    "name_th",
+    "example_month",
+    "range_lo",
+    "range_hi",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^f[0-9]{2}$"
+    },
+    "kind": {
+     "enum": [
+      "smile",
+      "roll",
+      "sit",
+      "crawl",
+      "stand",
+      "wave",
+      "walk",
+      "word"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "example_month": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "range_lo": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "range_hi": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "LoggedFirst": {
+   "type": "object",
+   "required": [
+    "id",
+    "kind",
+    "name_th",
+    "logged_month",
+    "flag",
+    "tip_th"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "kind": {
+     "enum": [
+      "smile",
+      "roll",
+      "sit",
+      "crawl",
+      "stand",
+      "wave",
+      "walk",
+      "word"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "example_month": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "range_lo": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "range_hi": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "disclaimer_th": {
+     "type": "string"
+    },
+    "logged_month": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "flag": {
+     "enum": [
+      "in_example",
+      "outside_example"
+     ]
+    },
+    "tip_th": {
+     "type": "string"
+    },
+    "note_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Timeline": {
+   "type": "object",
+   "required": [
+    "count",
+    "entries",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "entries": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/LoggedFirst"
+     },
+     "minItems": 1
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Caption": {
+   "type": "object",
+   "required": [
+    "n",
+    "kind",
+    "for_name_th",
+    "text_th"
+   ],
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "kind": {
+     "enum": [
+      "smile",
+      "roll",
+      "sit",
+      "crawl",
+      "stand",
+      "wave",
+      "walk",
+      "word"
+     ]
+    },
+    "for_name_th": {
+     "type": "string"
+    },
+    "text_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "MilestoneCard": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "name_th",
+    "month",
+    "kind",
+    "title_th",
+    "caption_th",
+    "layout",
+    "sizes",
+    "watermark",
+    "disclaimer_th",
+    "headline_th"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "month": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "kind": {
+     "enum": [
+      "smile",
+      "roll",
+      "sit",
+      "crawl",
+      "stand",
+      "wave",
+      "walk",
+      "word"
+     ]
+    },
+    "title_th": {
+     "type": "string"
+    },
+    "caption_th": {
+     "type": "string"
+    },
+    "layout": {
+     "enum": [
+      "month_card"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "MonthIdeas": {
+   "type": "object",
+   "required": [
+    "month",
+    "ideas_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "month": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "ideas_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "CollageSlot": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "month",
+    "label_th"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "month": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "label_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Collage": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "slots",
+    "count",
+    "cols",
+    "rows",
+    "disclaimer_th",
+    "layout"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "slots": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/CollageSlot"
+     },
+     "minItems": 1
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "cols": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "rows": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "disclaimer_th": {
+     "type": "string"
+    },
+    "layout": {
+     "enum": [
+      "monthly_grid"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "PrintSheet": {
+   "type": "object",
+   "required": [
+    "name_th",
+    "month",
+    "caption_th",
+    "layout",
+    "label_th",
+    "sizes",
+    "bleed_mm",
+    "watermark"
+   ],
+   "properties": {
+    "name_th": {
+     "type": "string"
+    },
+    "month": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "caption_th": {
+     "type": "string"
+    },
+    "layout": {
+     "enum": [
+      "portrait_a4",
+      "book_20",
+      "collage_a4"
+     ]
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "bleed_mm": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "watermark": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "caption_th",
+    "month",
+    "kind",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "caption_th": {
+     "type": "string"
+    },
+    "month": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "kind": {
+     "enum": [
+      "smile",
+      "roll",
+      "sit",
+      "crawl",
+      "stand",
+      "wave",
+      "walk",
+      "word"
+     ]
+    },
+    "layout": {
+     "enum": [
+      "milestone_card"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ConsentGuard": {
+   "type": "object",
+   "required": [
+    "ok",
+    "level",
+    "blocks_th",
+    "message_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "ok": {
+     "type": "boolean"
+    },
+    "level": {
+     "enum": [
+      "ok",
+      "block"
+     ]
+    },
+    "blocks_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
