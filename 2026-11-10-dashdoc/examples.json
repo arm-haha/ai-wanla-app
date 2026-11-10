@@ -1,0 +1,1875 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "พี่โอ๊ต",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่โอ๊ต",
+    "name_en": "Oat",
+    "age": 34,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "ขับไปทำงานสาย บางนา แล้วไฟส้มขึ้น",
+    "region": "bkk",
+    "car": {
+     "id": "c01",
+     "model_th": "เก๋งเล็ก FictoCity 1.2",
+     "year": 2019,
+     "fuel": "petrol",
+     "car_class": "eco",
+     "odometer_km": 87450
+    }
+   }
+  },
+  {
+   "def": "Car",
+   "note": "c01",
+   "value": {
+    "id": "c01",
+    "model_th": "เก๋งเล็ก FictoCity 1.2",
+    "year": 2019,
+    "fuel": "petrol",
+    "car_class": "eco",
+    "odometer_km": 87450
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องมุก",
+   "value": {
+    "id": "u02",
+    "name_th": "น้องมุก",
+    "name_en": "Muk",
+    "age": 24,
+    "city_th": "ขอนแก่น",
+    "goal_th": "ไฟน้ำมันเครื่องขึ้นบนถนนมิตรภาพ",
+    "region": "province",
+    "car": {
+     "id": "c02",
+     "model_th": "เก๋งเล็ก FictoCity 1.5",
+     "year": 2016,
+     "fuel": "petrol",
+     "car_class": "eco",
+     "odometer_km": 142300
+    }
+   }
+  },
+  {
+   "def": "Car",
+   "note": "c02",
+   "value": {
+    "id": "c02",
+    "model_th": "เก๋งเล็ก FictoCity 1.5",
+    "year": 2016,
+    "fuel": "petrol",
+    "car_class": "eco",
+    "odometer_km": 142300
+   }
+  },
+  {
+   "def": "Person",
+   "note": "ลุงสมชัย",
+   "value": {
+    "id": "u03",
+    "name_th": "ลุงสมชัย",
+    "name_en": "Somchai",
+    "age": 58,
+    "city_th": "เชียงใหม่",
+    "goal_th": "กระบะบรรทุกของ เข็มความร้อนพุ่งขึ้นเขา",
+    "region": "province",
+    "car": {
+     "id": "c03",
+     "model_th": "กระบะ FictoTruck 2.5 ดีเซล",
+     "year": 2014,
+     "fuel": "diesel",
+     "car_class": "suv_pickup",
+     "odometer_km": 231800
+    }
+   }
+  },
+  {
+   "def": "Car",
+   "note": "c03",
+   "value": {
+    "id": "c03",
+    "model_th": "กระบะ FictoTruck 2.5 ดีเซล",
+    "year": 2014,
+    "fuel": "diesel",
+    "car_class": "suv_pickup",
+    "odometer_km": 231800
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่แนน",
+   "value": {
+    "id": "u04",
+    "name_th": "พี่แนน",
+    "name_en": "Nan",
+    "age": 41,
+    "city_th": "พัทยา",
+    "goal_th": "ไฟแบตขึ้นตอนขับรับลูก",
+    "region": "tourist",
+    "car": {
+     "id": "c04",
+     "model_th": "ซีดาน FictoSedan 1.8",
+     "year": 2017,
+     "fuel": "petrol",
+     "car_class": "sedan",
+     "odometer_km": 118900
+    }
+   }
+  },
+  {
+   "def": "Car",
+   "note": "c04",
+   "value": {
+    "id": "c04",
+    "model_th": "ซีดาน FictoSedan 1.8",
+    "year": 2017,
+    "fuel": "petrol",
+    "car_class": "sedan",
+    "odometer_km": 118900
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องบีม",
+   "value": {
+    "id": "u05",
+    "name_th": "น้องบีม",
+    "name_en": "Beam",
+    "age": 27,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "ไฟเตือนเยอะ ไม่รู้ว่าอันไหนต้องกลัว",
+    "region": "bkk",
+    "car": {
+     "id": "c05",
+     "model_th": "SUV FictoSUV 1.6 ไฮบริด",
+     "year": 2021,
+     "fuel": "hybrid",
+     "car_class": "suv_pickup",
+     "odometer_km": 45200
+    }
+   }
+  },
+  {
+   "def": "Car",
+   "note": "c05",
+   "value": {
+    "id": "c05",
+    "model_th": "SUV FictoSUV 1.6 ไฮบริด",
+    "year": 2021,
+    "fuel": "hybrid",
+    "car_class": "suv_pickup",
+    "odometer_km": 45200
+   }
+  },
+  {
+   "def": "DashPhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.2,
+    "blur": 0.1,
+    "tilt": 0.1,
+    "detections": [
+     {
+      "symbol": "check_engine",
+      "color_seen": "yellow",
+      "confidence": 0.93,
+      "flashing": false
+     },
+     {
+      "symbol": "tpms",
+      "color_seen": "yellow",
+      "confidence": 0.88,
+      "flashing": false
+     },
+     {
+      "symbol": "service_due",
+      "color_seen": "green",
+      "confidence": 0.41,
+      "flashing": false
+     }
+    ]
+   }
+  },
+  {
+   "def": "LightScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "quality": {
+     "score": 86,
+     "ok": true,
+     "tips_th": []
+    },
+    "lights": [
+     {
+      "symbol": "check_engine",
+      "name_th": "ไฟเช็กเครื่องยนต์",
+      "name_en": "Check engine",
+      "color_seen": "yellow",
+      "flashing": false,
+      "confidence": 0.93,
+      "severity": "yellow"
+     },
+     {
+      "symbol": "tpms",
+      "name_th": "ไฟลมยางอ่อน (TPMS)",
+      "name_en": "Low tire pressure",
+      "color_seen": "yellow",
+      "flashing": false,
+      "confidence": 0.88,
+      "severity": "yellow"
+     }
+    ],
+    "uncertain": [
+     "service_due"
+    ],
+    "light_count": 2
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "steps": [
+     "panel_detect",
+     "symbol_classify",
+     "color_check",
+     "urgency",
+     "price_range"
+    ]
+   }
+  },
+  {
+   "def": "DashPhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.15,
+    "blur": 0.1,
+    "tilt": 0.05,
+    "detections": [
+     {
+      "symbol": "oil_pressure",
+      "color_seen": "red",
+      "confidence": 0.96,
+      "flashing": false
+     }
+    ]
+   }
+  },
+  {
+   "def": "LightScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "quality": {
+     "score": 89,
+     "ok": true,
+     "tips_th": []
+    },
+    "lights": [
+     {
+      "symbol": "oil_pressure",
+      "name_th": "ไฟแรงดันน้ำมันเครื่อง",
+      "name_en": "Oil pressure",
+      "color_seen": "red",
+      "flashing": false,
+      "confidence": 0.96,
+      "severity": "red"
+     }
+    ],
+    "uncertain": [],
+    "light_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "steps": [
+     "panel_detect",
+     "symbol_classify",
+     "color_check",
+     "urgency",
+     "price_range"
+    ]
+   }
+  },
+  {
+   "def": "DashPhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.3,
+    "blur": 0.2,
+    "tilt": 0.2,
+    "detections": [
+     {
+      "symbol": "coolant_temp",
+      "color_seen": "red",
+      "confidence": 0.94,
+      "flashing": false
+     },
+     {
+      "symbol": "dpf",
+      "color_seen": "yellow",
+      "confidence": 0.81,
+      "flashing": false
+     }
+    ]
+   }
+  },
+  {
+   "def": "LightScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "quality": {
+     "score": 76,
+     "ok": true,
+     "tips_th": []
+    },
+    "lights": [
+     {
+      "symbol": "coolant_temp",
+      "name_th": "ไฟความร้อนเครื่องยนต์สูง",
+      "name_en": "Engine overheating",
+      "color_seen": "red",
+      "flashing": false,
+      "confidence": 0.94,
+      "severity": "red"
+     },
+     {
+      "symbol": "dpf",
+      "name_th": "ไฟกรองไอเสียดีเซล (DPF)",
+      "name_en": "Diesel particulate filter",
+      "color_seen": "yellow",
+      "flashing": false,
+      "confidence": 0.81,
+      "severity": "yellow"
+     }
+    ],
+    "uncertain": [],
+    "light_count": 2
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "steps": [
+     "panel_detect",
+     "symbol_classify",
+     "color_check",
+     "urgency",
+     "price_range"
+    ]
+   }
+  },
+  {
+   "def": "DashPhoto",
+   "note": "p04",
+   "value": {
+    "id": "p04",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.65,
+    "blur": 0.2,
+    "tilt": 0.5,
+    "detections": [
+     {
+      "symbol": "battery_charge",
+      "color_seen": "red",
+      "confidence": 0.9,
+      "flashing": false
+     },
+     {
+      "symbol": "abs",
+      "color_seen": "yellow",
+      "confidence": 0.72,
+      "flashing": false
+     }
+    ]
+   }
+  },
+  {
+   "def": "LightScan",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "quality": {
+     "score": 54,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนบนหน้าปัดเยอะ ลองเอียงมือถือหรือบังแดด",
+      "ถ่ายเอียงเกินไป ถ่ายตรงหน้าปัด"
+     ]
+    },
+    "lights": [
+     {
+      "symbol": "battery_charge",
+      "name_th": "ไฟแบตเตอรี่/ระบบชาร์จ",
+      "name_en": "Battery / charging",
+      "color_seen": "red",
+      "flashing": false,
+      "confidence": 0.9,
+      "severity": "red"
+     },
+     {
+      "symbol": "abs",
+      "name_th": "ไฟ ABS",
+      "name_en": "ABS",
+      "color_seen": "yellow",
+      "flashing": false,
+      "confidence": 0.72,
+      "severity": "yellow"
+     }
+    ],
+    "uncertain": [],
+    "light_count": 2
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "steps": [
+     "panel_detect",
+     "deglare",
+     "deskew",
+     "symbol_classify",
+     "color_check",
+     "urgency",
+     "price_range"
+    ]
+   }
+  },
+  {
+   "def": "DashPhoto",
+   "note": "p05",
+   "value": {
+    "id": "p05",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.1,
+    "blur": 0.1,
+    "tilt": 0.1,
+    "detections": [
+     {
+      "symbol": "washer",
+      "color_seen": "green",
+      "confidence": 0.85,
+      "flashing": false
+     },
+     {
+      "symbol": "high_beam",
+      "color_seen": "blue",
+      "confidence": 0.92,
+      "flashing": false
+     },
+     {
+      "symbol": "seat_belt",
+      "color_seen": "red",
+      "confidence": 0.77,
+      "flashing": false
+     }
+    ]
+   }
+  },
+  {
+   "def": "LightScan",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": []
+    },
+    "lights": [
+     {
+      "symbol": "high_beam",
+      "name_th": "ไฟสูงเปิดอยู่",
+      "name_en": "High beam on",
+      "color_seen": "blue",
+      "flashing": false,
+      "confidence": 0.92,
+      "severity": "green"
+     },
+     {
+      "symbol": "seat_belt",
+      "name_th": "ไฟเตือนเข็มขัดนิรภัย",
+      "name_en": "Seat belt",
+      "color_seen": "red",
+      "flashing": false,
+      "confidence": 0.77,
+      "severity": "green"
+     },
+     {
+      "symbol": "washer",
+      "name_th": "ไฟน้ำฉีดกระจกต่ำ",
+      "name_en": "Washer fluid low",
+      "color_seen": "green",
+      "flashing": false,
+      "confidence": 0.85,
+      "severity": "green"
+     }
+    ],
+    "uncertain": [],
+    "light_count": 3
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "steps": [
+     "panel_detect",
+     "symbol_classify",
+     "color_check",
+     "urgency",
+     "price_range"
+    ]
+   }
+  },
+  {
+   "def": "DashPhoto",
+   "note": "p06",
+   "value": {
+    "id": "p06",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.2,
+    "blur": 0.15,
+    "tilt": 0.1,
+    "detections": [
+     {
+      "symbol": "check_engine",
+      "color_seen": "yellow",
+      "confidence": 0.9,
+      "flashing": true
+     }
+    ]
+   }
+  },
+  {
+   "def": "LightScan",
+   "note": "p06",
+   "value": {
+    "photo_id": "p06",
+    "quality": {
+     "score": 84,
+     "ok": true,
+     "tips_th": []
+    },
+    "lights": [
+     {
+      "symbol": "check_engine",
+      "name_th": "ไฟเช็กเครื่องยนต์",
+      "name_en": "Check engine",
+      "color_seen": "yellow",
+      "flashing": true,
+      "confidence": 0.9,
+      "severity": "red"
+     }
+    ],
+    "uncertain": [],
+    "light_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p06",
+   "value": {
+    "photo_id": "p06",
+    "steps": [
+     "panel_detect",
+     "symbol_classify",
+     "color_check",
+     "urgency",
+     "price_range"
+    ]
+   }
+  },
+  {
+   "def": "DashPhoto",
+   "note": "p07",
+   "value": {
+    "id": "p07",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.2,
+    "blur": 0.1,
+    "tilt": 0.1,
+    "detections": [
+     {
+      "symbol": "abs",
+      "color_seen": "red",
+      "confidence": 0.88,
+      "flashing": false
+     }
+    ]
+   }
+  },
+  {
+   "def": "LightScan",
+   "note": "p07",
+   "value": {
+    "photo_id": "p07",
+    "quality": {
+     "score": 86,
+     "ok": true,
+     "tips_th": []
+    },
+    "lights": [
+     {
+      "symbol": "abs",
+      "name_th": "ไฟ ABS",
+      "name_en": "ABS",
+      "color_seen": "red",
+      "flashing": false,
+      "confidence": 0.88,
+      "severity": "red"
+     }
+    ],
+    "uncertain": [],
+    "light_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p07",
+   "value": {
+    "photo_id": "p07",
+    "steps": [
+     "panel_detect",
+     "symbol_classify",
+     "color_check",
+     "urgency",
+     "price_range"
+    ]
+   }
+  },
+  {
+   "def": "DashPhoto",
+   "note": "p08",
+   "value": {
+    "id": "p08",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.2,
+    "blur": 0.55,
+    "tilt": 0.1,
+    "detections": []
+   }
+  },
+  {
+   "def": "LightScan",
+   "note": "p08",
+   "value": {
+    "photo_id": "p08",
+    "quality": {
+     "score": 40,
+     "ok": false,
+     "tips_th": [
+      "ภาพเบลอ ถือมือถือนิ่ง ๆ แตะโฟกัสที่ไฟเตือน",
+      "ไม่เจอไฟเตือน ติดเครื่องแล้วถ่ายตอนไฟยังติดอยู่"
+     ]
+    },
+    "lights": [],
+    "uncertain": [],
+    "light_count": 0
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p08",
+   "value": {
+    "photo_id": "p08",
+    "steps": [
+     "panel_detect",
+     "symbol_classify",
+     "color_check",
+     "urgency",
+     "price_range"
+    ]
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "oat check engine",
+   "value": {
+    "symbol": "check_engine",
+    "color_seen": "yellow",
+    "confidence": 0.93,
+    "flashing": false
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "bad photo",
+   "value": {
+    "score": 55,
+    "ok": false,
+    "tips_th": [
+     "ภาพเบลอ ถือมือถือนิ่ง ๆ แตะโฟกัสที่ไฟเตือน",
+     "ถ่ายเอียงเกินไป ถ่ายตรงหน้าปัด"
+    ]
+   }
+  },
+  {
+   "def": "IdentifiedLight",
+   "note": "oat top",
+   "value": {
+    "symbol": "check_engine",
+    "name_th": "ไฟเช็กเครื่องยนต์",
+    "name_en": "Check engine",
+    "color_seen": "yellow",
+    "flashing": false,
+    "confidence": 0.93,
+    "severity": "yellow"
+   }
+  },
+  {
+   "def": "LightInfo",
+   "note": "check_engine",
+   "value": {
+    "id": "w01",
+    "symbol": "check_engine",
+    "name_th": "ไฟเช็กเครื่องยนต์",
+    "name_en": "Check engine",
+    "color": "yellow",
+    "meaning_th": "ระบบควบคุมเครื่องยนต์/ไอเสียตรวจเจอความผิดปกติ",
+    "drive_km": 100,
+    "drive_days": 3,
+    "max_speed": 90,
+    "checks": [
+     "gas_cap",
+     "oil_level"
+    ],
+    "fixes": [
+     "f18",
+     "f01",
+     "f02",
+     "f03"
+    ]
+   }
+  },
+  {
+   "def": "LightInfo",
+   "note": "oil_pressure",
+   "value": {
+    "id": "w02",
+    "symbol": "oil_pressure",
+    "name_th": "ไฟแรงดันน้ำมันเครื่อง",
+    "name_en": "Oil pressure",
+    "color": "red",
+    "meaning_th": "น้ำมันเครื่องน้อยหรือแรงดันตก เครื่องอาจพังภายในไม่กี่นาที",
+    "drive_km": 0,
+    "drive_days": 0,
+    "max_speed": 0,
+    "checks": [
+     "oil_level"
+    ],
+    "fixes": [
+     "f09",
+     "f10"
+    ]
+   }
+  },
+  {
+   "def": "LightInfo",
+   "note": "coolant_temp",
+   "value": {
+    "id": "w03",
+    "symbol": "coolant_temp",
+    "name_th": "ไฟความร้อนเครื่องยนต์สูง",
+    "name_en": "Engine overheating",
+    "color": "red",
+    "meaning_th": "น้ำหล่อเย็นน้อยหรือระบบระบายความร้อนมีปัญหา",
+    "drive_km": 0,
+    "drive_days": 0,
+    "max_speed": 0,
+    "checks": [
+     "coolant_level"
+    ],
+    "fixes": [
+     "f11",
+     "f12"
+    ]
+   }
+  },
+  {
+   "def": "LightInfo",
+   "note": "tpms",
+   "value": {
+    "id": "w09",
+    "symbol": "tpms",
+    "name_th": "ไฟลมยางอ่อน (TPMS)",
+    "name_en": "Low tire pressure",
+    "color": "yellow",
+    "meaning_th": "ลมยางอย่างน้อย 1 เส้นต่ำกว่าที่กำหนด ยางอาจรั่วหรือลมตกตามอากาศ",
+    "drive_km": 50,
+    "drive_days": 1,
+    "max_speed": 80,
+    "checks": [
+     "tire_visual"
+    ],
+    "fixes": [
+     "f04",
+     "f05",
+     "f06"
+    ]
+   }
+  },
+  {
+   "def": "LightInfo",
+   "note": "abs",
+   "value": {
+    "id": "w07",
+    "symbol": "abs",
+    "name_th": "ไฟ ABS",
+    "name_en": "ABS",
+    "color": "yellow",
+    "meaning_th": "เบรกธรรมดายังใช้ได้ แต่ ABS ช่วยกันล้อล็อกไม่ทำงาน",
+    "drive_km": 150,
+    "drive_days": 5,
+    "max_speed": 80,
+    "checks": [],
+    "fixes": [
+     "f14",
+     "f18"
+    ]
+   }
+  },
+  {
+   "def": "LightInfo",
+   "note": "dpf",
+   "value": {
+    "id": "w12",
+    "symbol": "dpf",
+    "name_th": "ไฟกรองไอเสียดีเซล (DPF)",
+    "name_en": "Diesel particulate filter",
+    "color": "yellow",
+    "meaning_th": "ตัวกรองเขม่าเริ่มตัน ลองวิ่งทางตรงรอบสม่ำเสมอเพื่อเผาเขม่า",
+    "drive_km": 80,
+    "drive_days": 3,
+    "max_speed": 90,
+    "checks": [],
+    "fixes": [
+     "f16",
+     "f18"
+    ]
+   }
+  },
+  {
+   "def": "LightInfo",
+   "note": "high_beam",
+   "value": {
+    "id": "w16",
+    "symbol": "high_beam",
+    "name_th": "ไฟสูงเปิดอยู่",
+    "name_en": "High beam on",
+    "color": "blue",
+    "meaning_th": "เปิดไฟสูงอยู่ อย่าลืมหรี่เมื่อมีรถสวน",
+    "drive_km": null,
+    "drive_days": null,
+    "max_speed": null,
+    "checks": [],
+    "fixes": []
+   }
+  },
+  {
+   "def": "LightInfo",
+   "note": "seat_belt",
+   "value": {
+    "id": "w17",
+    "symbol": "seat_belt",
+    "name_th": "ไฟเตือนเข็มขัดนิรภัย",
+    "name_en": "Seat belt",
+    "color": "red",
+    "meaning_th": "มีคนยังไม่คาดเข็มขัด คาดแล้วไฟดับเอง (ไม่ต้องจอดฉุกเฉิน)",
+    "drive_km": null,
+    "drive_days": null,
+    "max_speed": null,
+    "checks": [],
+    "fixes": []
+   }
+  },
+  {
+   "def": "Verdict",
+   "note": "oat yellow ~50km",
+   "value": {
+    "level": "yellow",
+    "score": 48,
+    "can_drive": true,
+    "max_km": 50,
+    "max_speed_kmh": 80,
+    "within_days": 1,
+    "headline_th": "ขับต่อได้ ~50 กม.",
+    "answer_th": "ขับต่อได้ไม่เกิน ~50 กม. ความเร็วไม่เกิน 80 กม./ชม. ไปอู่ใกล้สุดภายใน 1 วัน",
+    "reasons_th": [
+     "ไฟเช็กเครื่องยนต์",
+     "ไฟลมยางอ่อน (TPMS)"
+    ]
+   }
+  },
+  {
+   "def": "Verdict",
+   "note": "muk red oil",
+   "value": {
+    "level": "red",
+    "score": 85,
+    "can_drive": false,
+    "max_km": 0,
+    "max_speed_kmh": 0,
+    "within_days": 0,
+    "headline_th": "จอดเดี๋ยวนี้",
+    "answer_th": "ไม่ควรขับต่อ จอดในที่ปลอดภัย ดับเครื่อง แล้วเรียกช่าง/รถยก",
+    "reasons_th": [
+     "ไฟแรงดันน้ำมันเครื่อง"
+    ]
+   }
+  },
+  {
+   "def": "Verdict",
+   "note": "somchai overheating",
+   "value": {
+    "level": "red",
+    "score": 85,
+    "can_drive": false,
+    "max_km": 0,
+    "max_speed_kmh": 0,
+    "within_days": 0,
+    "headline_th": "จอดเดี๋ยวนี้",
+    "answer_th": "ไม่ควรขับต่อ จอดในที่ปลอดภัย ดับเครื่อง แล้วเรียกช่าง/รถยก",
+    "reasons_th": [
+     "ไฟความร้อนเครื่องยนต์สูง"
+    ]
+   }
+  },
+  {
+   "def": "Verdict",
+   "note": "nan battery",
+   "value": {
+    "level": "red",
+    "score": 85,
+    "can_drive": false,
+    "max_km": 0,
+    "max_speed_kmh": 0,
+    "within_days": 0,
+    "headline_th": "จอดเดี๋ยวนี้",
+    "answer_th": "ไม่ควรขับต่อ จอดในที่ปลอดภัย ดับเครื่อง แล้วเรียกช่าง/รถยก",
+    "reasons_th": [
+     "ไฟแบตเตอรี่/ระบบชาร์จ"
+    ]
+   }
+  },
+  {
+   "def": "Verdict",
+   "note": "beam all info",
+   "value": {
+    "level": "green",
+    "score": 24,
+    "can_drive": true,
+    "max_km": null,
+    "max_speed_kmh": null,
+    "within_days": null,
+    "headline_th": "ขับต่อได้ตามปกติ",
+    "answer_th": "ไม่ใช่อาการเสีย ขับต่อได้ แล้วจัดการตามข้อมูลของไฟเมื่อสะดวก",
+    "reasons_th": [
+     "ไฟสูงเปิดอยู่",
+     "ไฟเตือนเข็มขัดนิรภัย",
+     "ไฟน้ำฉีดกระจกต่ำ"
+    ]
+   }
+  },
+  {
+   "def": "Verdict",
+   "note": "flashing check engine",
+   "value": {
+    "level": "red",
+    "score": 92,
+    "can_drive": false,
+    "max_km": 0,
+    "max_speed_kmh": 0,
+    "within_days": 0,
+    "headline_th": "จอดเดี๋ยวนี้",
+    "answer_th": "ไม่ควรขับต่อ จอดในที่ปลอดภัย ดับเครื่อง แล้วเรียกช่าง/รถยก",
+    "reasons_th": [
+     "ไฟเช็กเครื่องยนต์"
+    ]
+   }
+  },
+  {
+   "def": "Verdict",
+   "note": "oat + smoke escalates",
+   "value": {
+    "level": "red",
+    "score": 80,
+    "can_drive": false,
+    "max_km": 0,
+    "max_speed_kmh": 0,
+    "within_days": 0,
+    "headline_th": "จอดเดี๋ยวนี้",
+    "answer_th": "ไม่ควรขับต่อ จอดในที่ปลอดภัย ดับเครื่อง แล้วเรียกช่าง/รถยก",
+    "reasons_th": [
+     "มีควัน",
+     "กลิ่นไหม้"
+    ]
+   }
+  },
+  {
+   "def": "DoNowSteps",
+   "note": "oat",
+   "value": [
+    {
+     "n": 1,
+     "key": "slow",
+     "text_th": "ลดความเร็ว หลีกเลี่ยงเร่งแรง/บรรทุกหนัก/ทางไกล"
+    },
+    {
+     "n": 2,
+     "key": "avoid_night_highway",
+     "text_th": "เลี่ยงทางด่วนและทางไกล เลือกเส้นที่มีปั๊ม/อู่ระหว่างทาง"
+    },
+    {
+     "n": 3,
+     "key": "gas_cap",
+     "text_th": "ลองเปิดแล้วปิดฝาถังน้ำมันให้แน่นจนได้ยินเสียงคลิก"
+    },
+    {
+     "n": 4,
+     "key": "oil_level",
+     "text_th": "จอดบนพื้นเรียบ รอ 5–10 นาที ดึงก้านวัดน้ำมันเครื่องเช็ดแล้วจุ่มใหม่ ดูว่าอยู่ระหว่างขีด MIN–MAX"
+    },
+    {
+     "n": 5,
+     "key": "tire_visual",
+     "text_th": "เดินดูยางทั้ง 4 เส้น มีเส้นไหนแบน มีตะปู หรือยางบวมไหม แล้วเติมลมตามขอบประตูรถ"
+    },
+    {
+     "n": 6,
+     "key": "go_garage",
+     "text_th": "ส่งการ์ดให้ช่างทาง LINE แล้วขับไปอู่ใกล้สุด"
+    }
+   ]
+  },
+  {
+   "def": "DoNowSteps",
+   "note": "muk",
+   "value": [
+    {
+     "n": 1,
+     "key": "hazard",
+     "text_th": "เปิดไฟฉุกเฉิน ลดความเร็วช้า ๆ"
+    },
+    {
+     "n": 2,
+     "key": "pull_over",
+     "text_th": "จอดในที่ปลอดภัยนอกเลนวิ่ง (ไหล่ทาง/ปั๊ม) ห้ามจอดกลางทางโค้ง"
+    },
+    {
+     "n": 3,
+     "key": "engine_off",
+     "text_th": "ดับเครื่อง ดึงเบรกมือ ให้ทุกคนลงจากรถไปยืนที่ปลอดภัย"
+    },
+    {
+     "n": 4,
+     "key": "oil_level",
+     "text_th": "จอดบนพื้นเรียบ รอ 5–10 นาที ดึงก้านวัดน้ำมันเครื่องเช็ดแล้วจุ่มใหม่ ดูว่าอยู่ระหว่างขีด MIN–MAX"
+    },
+    {
+     "n": 5,
+     "key": "call_help",
+     "text_th": "โทรประกัน/รถยก ห้ามสตาร์ทซ้ำถ้าไฟน้ำมันเครื่อง/ความร้อนติด"
+    }
+   ]
+  },
+  {
+   "def": "DoNowSteps",
+   "note": "somchai",
+   "value": [
+    {
+     "n": 1,
+     "key": "hazard",
+     "text_th": "เปิดไฟฉุกเฉิน ลดความเร็วช้า ๆ"
+    },
+    {
+     "n": 2,
+     "key": "pull_over",
+     "text_th": "จอดในที่ปลอดภัยนอกเลนวิ่ง (ไหล่ทาง/ปั๊ม) ห้ามจอดกลางทางโค้ง"
+    },
+    {
+     "n": 3,
+     "key": "engine_off",
+     "text_th": "ดับเครื่อง ดึงเบรกมือ ให้ทุกคนลงจากรถไปยืนที่ปลอดภัย"
+    },
+    {
+     "n": 4,
+     "key": "coolant_level",
+     "text_th": "รอจนเครื่องเย็น (≥30 นาที) ดูระดับน้ำหล่อเย็นที่ถังพัก ห้ามเปิดฝาหม้อน้ำตอนร้อน"
+    },
+    {
+     "n": 5,
+     "key": "call_help",
+     "text_th": "โทรประกัน/รถยก ห้ามสตาร์ทซ้ำถ้าไฟน้ำมันเครื่อง/ความร้อนติด"
+    }
+   ]
+  },
+  {
+   "def": "DoNowSteps",
+   "note": "beam",
+   "value": [
+    {
+     "n": 1,
+     "key": "continue",
+     "text_th": "ขับต่อได้ตามปกติ"
+    }
+   ]
+  },
+  {
+   "def": "FixPrice",
+   "note": "oat f18",
+   "value": {
+    "fix_id": "f18",
+    "name_th": "ต่อเครื่องอ่านรหัส (OBD) วิเคราะห์",
+    "min_thb": 300,
+    "max_thb": 800,
+    "for_symbol": "check_engine"
+   }
+  },
+  {
+   "def": "FixPrice",
+   "note": "oat f01",
+   "value": {
+    "fix_id": "f01",
+    "name_th": "ฝาถังน้ำมันหลวม/เสื่อม",
+    "min_thb": 0,
+    "max_thb": 150,
+    "for_symbol": "check_engine"
+   }
+  },
+  {
+   "def": "FixPrice",
+   "note": "oat f02",
+   "value": {
+    "fix_id": "f02",
+    "name_th": "เปลี่ยนเซนเซอร์ออกซิเจน (O2)",
+    "min_thb": 1500,
+    "max_thb": 4500,
+    "for_symbol": "check_engine"
+   }
+  },
+  {
+   "def": "FixPrice",
+   "note": "oat f03",
+   "value": {
+    "fix_id": "f03",
+    "name_th": "เปลี่ยนหัวเทียน/คอยล์จุดระเบิด",
+    "min_thb": 1200,
+    "max_thb": 5500,
+    "for_symbol": "check_engine"
+   }
+  },
+  {
+   "def": "FixPrice",
+   "note": "nan battery tourist sedan",
+   "value": {
+    "fix_id": "f07",
+    "name_th": "เปลี่ยนแบตเตอรี่",
+    "min_thb": 2500,
+    "max_thb": 6200
+   }
+  },
+  {
+   "def": "FixPrice",
+   "note": "somchai radiator province pickup",
+   "value": {
+    "fix_id": "f12",
+    "name_th": "เปลี่ยนหม้อน้ำ/ปั๊มน้ำ",
+    "min_thb": 4000,
+    "max_thb": 10350
+   }
+  },
+  {
+   "def": "QuoteCheck",
+   "note": "oat f01 quote 0",
+   "value": {
+    "fix_id": "f01",
+    "quote_thb": 0,
+    "min_thb": 0,
+    "max_thb": 150,
+    "verdict": "fair",
+    "message_th": "อยู่ในช่วงที่สมเหตุสมผล",
+    "questions_th": [
+     "ลองปิดฝาถังให้แน่นแล้วขับ 1–2 วัน ไฟดับไหม",
+     "ขอดูอะไหล่เก่า/ภาพถ่ายจุดที่เสีย"
+    ],
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการ ไม่ใช่ราคาจริงของอู่ ขึ้นกับรุ่นรถ อะไหล่ และพื้นที่"
+   }
+  },
+  {
+   "def": "QuoteCheck",
+   "note": "oat f03 quote 4200",
+   "value": {
+    "fix_id": "f03",
+    "quote_thb": 4200,
+    "min_thb": 1200,
+    "max_thb": 5500,
+    "verdict": "fair",
+    "message_th": "อยู่ในช่วงที่สมเหตุสมผล",
+    "questions_th": [
+     "ต้องเปลี่ยนทั้งชุดหรือเฉพาะสูบที่เสีย",
+     "รับประกันกี่เดือน",
+     "ขอดูอะไหล่เก่า/ภาพถ่ายจุดที่เสีย"
+    ],
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการ ไม่ใช่ราคาจริงของอู่ ขึ้นกับรุ่นรถ อะไหล่ และพื้นที่"
+   }
+  },
+  {
+   "def": "QuoteCheck",
+   "note": "oat f04 quote 150",
+   "value": {
+    "fix_id": "f04",
+    "quote_thb": 150,
+    "min_thb": 50,
+    "max_thb": 400,
+    "verdict": "fair",
+    "message_th": "อยู่ในช่วงที่สมเหตุสมผล",
+    "questions_th": [
+     "เป็นแผลรั่วจากตะปูหรือที่ขอบยาง ปะได้ไหม",
+     "ขอดูอะไหล่เก่า/ภาพถ่ายจุดที่เสีย"
+    ],
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการ ไม่ใช่ราคาจริงของอู่ ขึ้นกับรุ่นรถ อะไหล่ และพื้นที่"
+   }
+  },
+  {
+   "def": "QuoteCheck",
+   "note": "very high",
+   "value": {
+    "fix_id": "f03",
+    "quote_thb": 9000,
+    "min_thb": 1200,
+    "max_thb": 5500,
+    "verdict": "very_high",
+    "message_th": "สูงกว่าช่วงปกติมาก ขอใบเสนอราคาเป็นลายลักษณ์อักษรและลองถามอู่อื่น",
+    "questions_th": [
+     "ต้องเปลี่ยนทั้งชุดหรือเฉพาะสูบที่เสีย",
+     "รับประกันกี่เดือน",
+     "ขอดูอะไหล่เก่า/ภาพถ่ายจุดที่เสีย"
+    ],
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการ ไม่ใช่ราคาจริงของอู่ ขึ้นกับรุ่นรถ อะไหล่ และพื้นที่"
+   }
+  },
+  {
+   "def": "QuoteCheck",
+   "note": "low",
+   "value": {
+    "fix_id": "f07",
+    "quote_thb": 900,
+    "min_thb": 1800,
+    "max_thb": 4500,
+    "verdict": "low",
+    "message_th": "ถูกกว่าช่วงปกติ ถามว่าเป็นอะไหล่เกรดไหน/รับประกันไหม",
+    "questions_th": [
+     "ขนาด/ปีผลิตของแบตที่เปลี่ยน",
+     "ขอดูผลวัดแบตและไดชาร์จก่อนเปลี่ยน",
+     "ขอดูอะไหล่เก่า/ภาพถ่ายจุดที่เสีย"
+    ],
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการ ไม่ใช่ราคาจริงของอู่ ขึ้นกับรุ่นรถ อะไหล่ และพื้นที่"
+   }
+  },
+  {
+   "def": "MechanicCard",
+   "note": "oat",
+   "value": {
+    "title_th": "การ์ดส่งช่าง — เก๋งเล็ก FictoCity 1.2",
+    "name_th": "พี่โอ๊ต",
+    "car_model_th": "เก๋งเล็ก FictoCity 1.2",
+    "odometer_km": 87450,
+    "symbols": [
+     "check_engine",
+     "tpms"
+    ],
+    "symptoms": [
+     "none"
+    ],
+    "level": "yellow",
+    "budget_min_thb": 300,
+    "budget_max_thb": 950,
+    "note_th": "รถ: เก๋งเล็ก FictoCity 1.2 ปี 2019 เลขไมล์ 87,450 กม.\nไฟเตือน: ไฟเช็กเครื่องยนต์ + ไฟลมยางอ่อน (TPMS)\nอาการ: ไม่มีอาการอื่น\nความเร่งด่วน: เหลือง · ขับระวังไปอู่\nช่วงงบที่คาดไว้ ~฿300–950 (ประมาณเอง)\nไม่มีเสียงผิดปกติ เครื่องเดินเรียบ\nฝากช่วยเช็กให้หน่อยครับ/ค่ะ — พี่โอ๊ต",
+    "line_share_url": "https://line.me/R/share?text=%E0%B8%A3%E0%B8%96%3A%20%E0%B9%80%E0%B8%81%E0%B9%8B%E0%B8%87%E0%B9%80%E0%B8%A5%E0%B9%87%E0%B8%81%20FictoCity%201.2%20%E0%B8%9B%E0%B8%B5%202019%20%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B9%84%E0%B8%A1%E0%B8%A5%E0%B9%8C%2087%2C450%20%E0%B8%81%E0%B8%A1.%0A%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%95%E0%B8%B7%E0%B8%AD%E0%B8%99%3A%20%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%8A%E0%B9%87%E0%B8%81%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%8C%20%2B%20%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B8%A1%E0%B8%A2%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B9%88%E0%B8%AD%E0%B8%99%20%28TPMS%29%0A%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%A3%3A%20%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AD%E0%B8%B7%E0%B9%88%E0%B8%99%0A%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%A3%E0%B9%88%E0%B8%87%E0%B8%94%E0%B9%88%E0%B8%A7%E0%B8%99%3A%20%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87%20%C2%B7%20%E0%B8%82%E0%B8%B1%E0%B8%9A%E0%B8%A3%E0%B8%B0%E0%B8%A7%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%9B%E0%B8%AD%E0%B8%B9%E0%B9%88%0A%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%87%E0%B8%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%84%E0%B8%B2%E0%B8%94%E0%B9%84%E0%B8%A7%E0%B9%89%20~%E0%B8%BF300%E2%80%93950%20%28%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%E0%B9%80%E0%B8%AD%E0%B8%87%29%0A%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%9C%E0%B8%B4%E0%B8%94%E0%B8%9B%E0%B8%81%E0%B8%95%E0%B8%B4%20%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%9A%0A%E0%B8%9D%E0%B8%B2%E0%B8%81%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%8A%E0%B9%87%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%AD%E0%B8%A2%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%9A/%E0%B8%84%E0%B9%88%E0%B8%B0%20%E2%80%94%20%E0%B8%9E%E0%B8%B5%E0%B9%88%E0%B9%82%E0%B8%AD%E0%B9%8A%E0%B8%95",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการ ไม่ใช่ราคาจริงของอู่ ขึ้นกับรุ่นรถ อะไหล่ และพื้นที่"
+   }
+  },
+  {
+   "def": "MechanicCard",
+   "note": "muk",
+   "value": {
+    "title_th": "การ์ดส่งช่าง — เก๋งเล็ก FictoCity 1.5",
+    "name_th": "น้องมุก",
+    "car_model_th": "เก๋งเล็ก FictoCity 1.5",
+    "odometer_km": 142300,
+    "symbols": [
+     "oil_pressure"
+    ],
+    "symptoms": [
+     "knocking"
+    ],
+    "level": "red",
+    "budget_min_thb": 1350,
+    "budget_max_thb": 9750,
+    "note_th": "รถ: เก๋งเล็ก FictoCity 1.5 ปี 2016 เลขไมล์ 142,300 กม.\nไฟเตือน: ไฟแรงดันน้ำมันเครื่อง\nอาการ: เสียงเคาะ/กระแทกในเครื่อง\nความเร่งด่วน: แดง · จอดเดี๋ยวนี้\nช่วงงบที่คาดไว้ ~฿1,350–9,750 (ประมาณเอง)\nฝากช่วยเช็กให้หน่อยครับ/ค่ะ — น้องมุก",
+    "line_share_url": "https://line.me/R/share?text=%E0%B8%A3%E0%B8%96%3A%20%E0%B9%80%E0%B8%81%E0%B9%8B%E0%B8%87%E0%B9%80%E0%B8%A5%E0%B9%87%E0%B8%81%20FictoCity%201.5%20%E0%B8%9B%E0%B8%B5%202016%20%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B9%84%E0%B8%A1%E0%B8%A5%E0%B9%8C%20142%2C300%20%E0%B8%81%E0%B8%A1.%0A%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%95%E0%B8%B7%E0%B8%AD%E0%B8%99%3A%20%E0%B9%84%E0%B8%9F%E0%B9%81%E0%B8%A3%E0%B8%87%E0%B8%94%E0%B8%B1%E0%B8%99%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%0A%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%A3%3A%20%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%80%E0%B8%84%E0%B8%B2%E0%B8%B0/%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B9%81%E0%B8%97%E0%B8%81%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%0A%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%A3%E0%B9%88%E0%B8%87%E0%B8%94%E0%B9%88%E0%B8%A7%E0%B8%99%3A%20%E0%B9%81%E0%B8%94%E0%B8%87%20%C2%B7%20%E0%B8%88%E0%B8%AD%E0%B8%94%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B9%8B%E0%B8%A2%E0%B8%A7%E0%B8%99%E0%B8%B5%E0%B9%89%0A%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%87%E0%B8%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%84%E0%B8%B2%E0%B8%94%E0%B9%84%E0%B8%A7%E0%B9%89%20~%E0%B8%BF1%2C350%E2%80%939%2C750%20%28%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%E0%B9%80%E0%B8%AD%E0%B8%87%29%0A%E0%B8%9D%E0%B8%B2%E0%B8%81%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%8A%E0%B9%87%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%AD%E0%B8%A2%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%9A/%E0%B8%84%E0%B9%88%E0%B8%B0%20%E2%80%94%20%E0%B8%99%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%A1%E0%B8%B8%E0%B8%81",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการ ไม่ใช่ราคาจริงของอู่ ขึ้นกับรุ่นรถ อะไหล่ และพื้นที่"
+   }
+  },
+  {
+   "def": "ServiceEntry",
+   "note": "e01",
+   "value": {
+    "id": "e01",
+    "car_id": "c01",
+    "date": "2026-04-18",
+    "odometer_km": 76900,
+    "item": "engine_oil",
+    "cost_thb": 1450,
+    "shop_th": "ศูนย์ใกล้บ้าน",
+    "on_device": true
+   }
+  },
+  {
+   "def": "NextDue",
+   "note": "e01",
+   "value": {
+    "item": "engine_oil",
+    "label_th": "น้ำมันเครื่อง",
+    "due_km": 86900,
+    "due_date": "2026-10-18"
+   }
+  },
+  {
+   "def": "ReminderStatus",
+   "note": "e01",
+   "value": {
+    "item": "engine_oil",
+    "label_th": "น้ำมันเครื่อง",
+    "status": "overdue",
+    "days_left": -23,
+    "km_left": -550,
+    "due_km": 86900,
+    "due_date": "2026-10-18"
+   }
+  },
+  {
+   "def": "ServiceEntry",
+   "note": "e02",
+   "value": {
+    "id": "e02",
+    "car_id": "c01",
+    "date": "2025-12-05",
+    "odometer_km": 69200,
+    "item": "tire_replace",
+    "cost_thb": 9800,
+    "shop_th": "ร้านยางบางนา",
+    "on_device": true
+   }
+  },
+  {
+   "def": "NextDue",
+   "note": "e02",
+   "value": {
+    "item": "tire_replace",
+    "label_th": "เปลี่ยนยาง",
+    "due_km": 109200,
+    "due_date": "2029-12-05"
+   }
+  },
+  {
+   "def": "ReminderStatus",
+   "note": "e02",
+   "value": {
+    "item": "tire_replace",
+    "label_th": "เปลี่ยนยาง",
+    "status": "ok",
+    "days_left": 1121,
+    "km_left": 21750,
+    "due_km": 109200,
+    "due_date": "2029-12-05"
+   }
+  },
+  {
+   "def": "ServiceEntry",
+   "note": "e03",
+   "value": {
+    "id": "e03",
+    "car_id": "c01",
+    "date": "2025-09-02",
+    "odometer_km": 64000,
+    "item": "battery",
+    "cost_thb": 2600,
+    "shop_th": "ร้านแบตซอยบ้าน",
+    "on_device": true
+   }
+  },
+  {
+   "def": "NextDue",
+   "note": "e03",
+   "value": {
+    "item": "battery",
+    "label_th": "แบตเตอรี่",
+    "due_km": null,
+    "due_date": "2028-03-02"
+   }
+  },
+  {
+   "def": "ReminderStatus",
+   "note": "e03",
+   "value": {
+    "item": "battery",
+    "label_th": "แบตเตอรี่",
+    "status": "ok",
+    "days_left": 478,
+    "km_left": null,
+    "due_km": null,
+    "due_date": "2028-03-02"
+   }
+  },
+  {
+   "def": "ServiceEntry",
+   "note": "e04",
+   "value": {
+    "id": "e04",
+    "car_id": "c01",
+    "date": "2025-12-20",
+    "odometer_km": 70000,
+    "item": "act",
+    "cost_thb": 645,
+    "shop_th": "ออนไลน์",
+    "on_device": true
+   }
+  },
+  {
+   "def": "NextDue",
+   "note": "e04",
+   "value": {
+    "item": "act",
+    "label_th": "พ.ร.บ.",
+    "due_km": null,
+    "due_date": "2026-12-20"
+   }
+  },
+  {
+   "def": "ReminderStatus",
+   "note": "e04",
+   "value": {
+    "item": "act",
+    "label_th": "พ.ร.บ.",
+    "status": "ok",
+    "days_left": 40,
+    "km_left": null,
+    "due_km": null,
+    "due_date": "2026-12-20"
+   }
+  },
+  {
+   "def": "ServiceEntry",
+   "note": "e05",
+   "value": {
+    "id": "e05",
+    "car_id": "c01",
+    "date": "2025-12-05",
+    "odometer_km": 69200,
+    "item": "tax",
+    "cost_thb": 1100,
+    "shop_th": "ออนไลน์",
+    "on_device": true
+   }
+  },
+  {
+   "def": "NextDue",
+   "note": "e05",
+   "value": {
+    "item": "tax",
+    "label_th": "ภาษีรถประจำปี",
+    "due_km": null,
+    "due_date": "2026-12-05"
+   }
+  },
+  {
+   "def": "ReminderStatus",
+   "note": "e05",
+   "value": {
+    "item": "tax",
+    "label_th": "ภาษีรถประจำปี",
+    "status": "soon",
+    "days_left": 25,
+    "km_left": null,
+    "due_km": null,
+    "due_date": "2026-12-05"
+   }
+  },
+  {
+   "def": "DiaryStats",
+   "note": "oat diary",
+   "value": {
+    "count": 5,
+    "total_thb": 15595,
+    "avg_thb": 3119,
+    "last_odometer_km": 76900,
+    "top_item": "act"
+   }
+  },
+  {
+   "def": "DiaryStats",
+   "note": "empty",
+   "value": {
+    "count": 0,
+    "total_thb": 0,
+    "avg_thb": 0,
+    "last_odometer_km": null,
+    "top_item": null
+   }
+  },
+  {
+   "def": "EmergencyKit",
+   "note": "fresh install",
+   "value": {
+    "contacts": [
+     {
+      "key": "police",
+      "label_th": "ตำรวจ",
+      "number": "191",
+      "kind": "public",
+      "note_th": "เช็กเบอร์จากแหล่งทางการก่อนใช้งานจริง"
+     },
+     {
+      "key": "highway_police",
+      "label_th": "ตำรวจทางหลวง",
+      "number": "1193",
+      "kind": "public",
+      "note_th": "เช็กเบอร์จากแหล่งทางการก่อนใช้งานจริง"
+     },
+     {
+      "key": "medical",
+      "label_th": "การแพทย์ฉุกเฉิน",
+      "number": "1669",
+      "kind": "public",
+      "note_th": "เช็กเบอร์จากแหล่งทางการก่อนใช้งานจริง"
+     },
+     {
+      "key": "insurer",
+      "label_th": "สายด่วนประกันภัยของคุณ",
+      "number": null,
+      "kind": "placeholder",
+      "note_th": "ใส่เบอร์จากกรมธรรม์"
+     },
+     {
+      "key": "tow",
+      "label_th": "รถยกที่ไว้ใจ",
+      "number": null,
+      "kind": "placeholder",
+      "note_th": "ใส่เบอร์ร้าน/ศูนย์ที่คุ้นเคย"
+     },
+     {
+      "key": "garage",
+      "label_th": "อู่ประจำ",
+      "number": null,
+      "kind": "placeholder",
+      "note_th": "ใส่เบอร์อู่"
+     }
+    ],
+    "missing": [
+     "insurer",
+     "tow",
+     "garage"
+    ],
+    "kit_items_th": [
+     "ป้ายสามเหลี่ยมสะท้อนแสง",
+     "สายพ่วงแบตเตอรี่",
+     "ไฟฉาย",
+     "ที่สูบลมไฟฟ้า/ปั๊มลม",
+     "เสื้อสะท้อนแสง",
+     "ผ้าเช็ดมือ+ถุงมือ",
+     "น้ำดื่ม",
+     "สำเนากรมธรรม์/พ.ร.บ."
+    ],
+    "guides": [
+     "flat_tire",
+     "jump_start",
+     "overheating"
+    ]
+   }
+  },
+  {
+   "def": "EmergencyKit",
+   "note": "filled",
+   "value": {
+    "contacts": [
+     {
+      "key": "police",
+      "label_th": "ตำรวจ",
+      "number": "191",
+      "kind": "public",
+      "note_th": "เช็กเบอร์จากแหล่งทางการก่อนใช้งานจริง"
+     },
+     {
+      "key": "highway_police",
+      "label_th": "ตำรวจทางหลวง",
+      "number": "1193",
+      "kind": "public",
+      "note_th": "เช็กเบอร์จากแหล่งทางการก่อนใช้งานจริง"
+     },
+     {
+      "key": "medical",
+      "label_th": "การแพทย์ฉุกเฉิน",
+      "number": "1669",
+      "kind": "public",
+      "note_th": "เช็กเบอร์จากแหล่งทางการก่อนใช้งานจริง"
+     },
+     {
+      "key": "insurer",
+      "label_th": "ประกัน FictoInsure",
+      "number": "<เบอร์ในกรมธรรม์>",
+      "kind": "user",
+      "note_th": "ใส่เบอร์จากกรมธรรม์"
+     },
+     {
+      "key": "tow",
+      "label_th": "รถยกที่ไว้ใจ",
+      "number": null,
+      "kind": "placeholder",
+      "note_th": "ใส่เบอร์ร้าน/ศูนย์ที่คุ้นเคย"
+     },
+     {
+      "key": "garage",
+      "label_th": "อู่ประจำ",
+      "number": "081-000-0000",
+      "kind": "user",
+      "note_th": "ใส่เบอร์อู่"
+     }
+    ],
+    "missing": [
+     "tow"
+    ],
+    "kit_items_th": [
+     "ป้ายสามเหลี่ยมสะท้อนแสง",
+     "สายพ่วงแบตเตอรี่",
+     "ไฟฉาย",
+     "ที่สูบลมไฟฟ้า/ปั๊มลม",
+     "เสื้อสะท้อนแสง",
+     "ผ้าเช็ดมือ+ถุงมือ",
+     "น้ำดื่ม",
+     "สำเนากรมธรรม์/พ.ร.บ."
+    ],
+    "guides": [
+     "flat_tire",
+     "jump_start",
+     "overheating"
+    ]
+   }
+  },
+  {
+   "def": "Guide",
+   "note": "flat_tire",
+   "value": {
+    "key": "flat_tire",
+    "title_th": "ยางแบน",
+    "tools_th": [
+     "แม่แรง",
+     "ประแจถอดล้อ",
+     "ยางอะไหล่",
+     "ไฟฉาย"
+    ],
+    "steps": [
+     {
+      "n": 1,
+      "text_th": "เปิดไฟฉุกเฉิน จอดบนพื้นเรียบนอกถนน ดึงเบรกมือ"
+     },
+     {
+      "n": 2,
+      "text_th": "วางป้ายสามเหลี่ยมห่างท้ายรถ ผู้โดยสารลงไปยืนในที่ปลอดภัย"
+     },
+     {
+      "n": 3,
+      "text_th": "คลายน็อตล้อให้หลวมก่อนยกรถ"
+     },
+     {
+      "n": 4,
+      "text_th": "ยกรถตามจุดแม่แรงในคู่มือ ถอดล้อ"
+     },
+     {
+      "n": 5,
+      "text_th": "ใส่ล้ออะไหล่ ขันน็อตแบบไขว้ ลดแม่แรง ขันให้แน่น"
+     },
+     {
+      "n": 6,
+      "text_th": "ขับช้า ไม่เกิน 80 กม./ชม. ไปร้านยางทันที (ยางอะไหล่ขนาดเล็กห้ามขับไกล)"
+     }
+    ],
+    "disclaimer_th": "DashDoc เป็นคำแนะนำเบื้องต้น ไม่ใช่ช่างและไม่ใช่การวินิจฉัยจริง ไฟสีแดง = จอดในที่ปลอดภัยทันที ถ้าไม่แน่ใจให้เรียกช่าง/ประกันภัย"
+   }
+  },
+  {
+   "def": "Guide",
+   "note": "jump_start",
+   "value": {
+    "key": "jump_start",
+    "title_th": "แบตหมด จั๊มสตาร์ท",
+    "tools_th": [
+     "สายพ่วงแบต",
+     "รถคันช่วย"
+    ],
+    "steps": [
+     {
+      "n": 1,
+      "text_th": "จอดสองคันใกล้กันแต่ไม่ชนกัน ดับเครื่องทั้งสองคัน"
+     },
+     {
+      "n": 2,
+      "text_th": "แดงต่อ + แบตเสีย → + แบตดี"
+     },
+     {
+      "n": 3,
+      "text_th": "ดำต่อ − แบตดี → โลหะเปลือยบนตัวถังรถคันเสีย (ห่างแบต)"
+     },
+     {
+      "n": 4,
+      "text_th": "สตาร์ทคันช่วย รอ 3–5 นาที แล้วสตาร์ทคันเสีย"
+     },
+     {
+      "n": 5,
+      "text_th": "ถอดสายย้อนลำดับ ขับต่อ 30 นาทีให้ชาร์จ แล้วให้ร้านวัดแบต/ไดชาร์จ"
+     }
+    ],
+    "disclaimer_th": "DashDoc เป็นคำแนะนำเบื้องต้น ไม่ใช่ช่างและไม่ใช่การวินิจฉัยจริง ไฟสีแดง = จอดในที่ปลอดภัยทันที ถ้าไม่แน่ใจให้เรียกช่าง/ประกันภัย"
+   }
+  },
+  {
+   "def": "Guide",
+   "note": "overheating",
+   "value": {
+    "key": "overheating",
+    "title_th": "เครื่องร้อนจัด",
+    "tools_th": [
+     "น้ำเปล่า",
+     "ผ้าหนา"
+    ],
+    "steps": [
+     {
+      "n": 1,
+      "text_th": "เปิดไฟฉุกเฉิน จอดข้างทางที่ปลอดภัย ดับเครื่อง"
+     },
+     {
+      "n": 2,
+      "text_th": "เปิดฝากระโปรงเพื่อระบายความร้อน แต่ห้ามเปิดฝาหม้อน้ำตอนร้อน"
+     },
+     {
+      "n": 3,
+      "text_th": "รออย่างน้อย 30 นาทีจนเครื่องเย็น"
+     },
+     {
+      "n": 4,
+      "text_th": "เช็กระดับน้ำหล่อเย็นในถังพัก เติมได้เมื่อเย็นแล้ว"
+     },
+     {
+      "n": 5,
+      "text_th": "ถ้าไฟยังติด/น้ำรั่ว ให้เรียกรถยก ไม่ขับต่อ"
+     }
+    ],
+    "disclaimer_th": "DashDoc เป็นคำแนะนำเบื้องต้น ไม่ใช่ช่างและไม่ใช่การวินิจฉัยจริง ไฟสีแดง = จอดในที่ปลอดภัยทันที ถ้าไม่แน่ใจให้เรียกช่าง/ประกันภัย"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "oat",
+   "value": {
+    "title_th": "DashDoc — พี่โอ๊ต",
+    "headline_th": "ขับต่อได้ ~50 กม.",
+    "hook_th": "ไฟโชว์หน้าปัด ขับต่อได้ไหม? ถ่ายรูปเดียวรู้ใน 3 วิ",
+    "symbols": [
+     "check_engine",
+     "tpms"
+    ],
+    "level": "yellow",
+    "score": 48,
+    "layout": "scan_result",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with DashDoc · estimate only, not a mechanic",
+    "cta_th": "ไฟเตือน Check engine + Low tire pressure · ลอง DashDoc ฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "green",
+   "value": {
+    "level": "ok",
+    "message_th": "DashDoc เป็นคำแนะนำเบื้องต้น ไม่ใช่ช่างและไม่ใช่การวินิจฉัยจริง ไฟสีแดง = จอดในที่ปลอดภัยทันที ถ้าไม่แน่ใจให้เรียกช่าง/ประกันภัย"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "yellow",
+   "value": {
+    "level": "warn",
+    "message_th": "ถ้าอาการแย่ลงระหว่างทาง ให้จอดทันที DashDoc เป็นคำแนะนำเบื้องต้น ไม่ใช่ช่างและไม่ใช่การวินิจฉัยจริง ไฟสีแดง = จอดในที่ปลอดภัยทันที ถ้าไม่แน่ใจให้เรียกช่าง/ประกันภัย"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "red",
+   "value": {
+    "level": "stop",
+    "message_th": "ไฟแดง/อาการรุนแรง: จอดในที่ปลอดภัย อย่าฝืนขับ DashDoc เป็นคำแนะนำเบื้องต้น ไม่ใช่ช่างและไม่ใช่การวินิจฉัยจริง ไฟสีแดง = จอดในที่ปลอดภัยทันที ถ้าไม่แน่ใจให้เรียกช่าง/ประกันภัย"
+   }
+  }
+ ]
+}

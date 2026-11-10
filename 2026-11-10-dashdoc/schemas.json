@@ -1,0 +1,1203 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/dashdoc.schema.json",
+ "title": "DashDoc",
+ "$defs": {
+  "Car": {
+   "type": "object",
+   "required": [
+    "id",
+    "model_th",
+    "year",
+    "fuel",
+    "car_class",
+    "odometer_km"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^c[0-9]{2}$"
+    },
+    "model_th": {
+     "type": "string"
+    },
+    "year": {
+     "type": "integer",
+     "minimum": 1990,
+     "maximum": 2100
+    },
+    "fuel": {
+     "enum": [
+      "petrol",
+      "diesel",
+      "hybrid"
+     ]
+    },
+    "car_class": {
+     "enum": [
+      "eco",
+      "sedan",
+      "suv_pickup"
+     ]
+    },
+    "odometer_km": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age",
+    "region",
+    "car"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "goal_th": {
+     "type": "string"
+    },
+    "region": {
+     "enum": [
+      "bkk",
+      "province",
+      "tourist"
+     ]
+    },
+    "car": {
+     "$ref": "#/$defs/Car"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Detection": {
+   "type": "object",
+   "required": [
+    "symbol",
+    "color_seen",
+    "confidence"
+   ],
+   "properties": {
+    "symbol": {
+     "enum": [
+      "check_engine",
+      "oil_pressure",
+      "coolant_temp",
+      "battery_charge",
+      "brake_system",
+      "parking_brake",
+      "abs",
+      "airbag",
+      "tpms",
+      "low_fuel",
+      "power_steering",
+      "dpf",
+      "esc",
+      "washer",
+      "service_due",
+      "high_beam",
+      "seat_belt"
+     ]
+    },
+    "color_seen": {
+     "enum": [
+      "red",
+      "yellow",
+      "green",
+      "blue"
+     ]
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "flashing": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DashPhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "tilt",
+    "detections"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^p[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "tilt": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "detections": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Detection"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "IdentifiedLight": {
+   "type": "object",
+   "required": [
+    "symbol",
+    "name_th",
+    "name_en",
+    "color_seen",
+    "flashing",
+    "confidence",
+    "severity"
+   ],
+   "properties": {
+    "symbol": {
+     "enum": [
+      "check_engine",
+      "oil_pressure",
+      "coolant_temp",
+      "battery_charge",
+      "brake_system",
+      "parking_brake",
+      "abs",
+      "airbag",
+      "tpms",
+      "low_fuel",
+      "power_steering",
+      "dpf",
+      "esc",
+      "washer",
+      "service_due",
+      "high_beam",
+      "seat_belt"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "color_seen": {
+     "enum": [
+      "red",
+      "yellow",
+      "green",
+      "blue"
+     ]
+    },
+    "flashing": {
+     "type": "boolean"
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "severity": {
+     "enum": [
+      "red",
+      "yellow",
+      "green"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "LightScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "quality",
+    "lights",
+    "uncertain",
+    "light_count"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    },
+    "lights": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/IdentifiedLight"
+     }
+    },
+    "uncertain": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "check_engine",
+       "oil_pressure",
+       "coolant_temp",
+       "battery_charge",
+       "brake_system",
+       "parking_brake",
+       "abs",
+       "airbag",
+       "tpms",
+       "low_fuel",
+       "power_steering",
+       "dpf",
+       "esc",
+       "washer",
+       "service_due",
+       "high_beam",
+       "seat_belt"
+      ]
+     }
+    },
+    "light_count": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "Pipeline": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "steps"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "LightInfo": {
+   "type": "object",
+   "required": [
+    "id",
+    "symbol",
+    "name_th",
+    "name_en",
+    "color",
+    "meaning_th",
+    "drive_km",
+    "drive_days",
+    "max_speed",
+    "checks",
+    "fixes"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^w[0-9]{2}$"
+    },
+    "symbol": {
+     "enum": [
+      "check_engine",
+      "oil_pressure",
+      "coolant_temp",
+      "battery_charge",
+      "brake_system",
+      "parking_brake",
+      "abs",
+      "airbag",
+      "tpms",
+      "low_fuel",
+      "power_steering",
+      "dpf",
+      "esc",
+      "washer",
+      "service_due",
+      "high_beam",
+      "seat_belt"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "color": {
+     "enum": [
+      "red",
+      "yellow",
+      "green",
+      "blue"
+     ]
+    },
+    "meaning_th": {
+     "type": "string"
+    },
+    "drive_km": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "drive_days": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "max_speed": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "checks": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "gas_cap",
+       "oil_level",
+       "coolant_level",
+       "battery_terminals",
+       "parking_brake",
+       "brake_fluid",
+       "tire_visual"
+      ]
+     }
+    },
+    "fixes": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "pattern": "^f[0-9]{2}$"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "Verdict": {
+   "type": "object",
+   "required": [
+    "level",
+    "score",
+    "can_drive",
+    "max_km",
+    "max_speed_kmh",
+    "within_days",
+    "headline_th",
+    "answer_th",
+    "reasons_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "red",
+      "yellow",
+      "green"
+     ]
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "can_drive": {
+     "type": "boolean"
+    },
+    "max_km": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "max_speed_kmh": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "within_days": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "answer_th": {
+     "type": "string"
+    },
+    "reasons_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "DoNowSteps": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "n",
+     "key",
+     "text_th"
+    ],
+    "properties": {
+     "n": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "key": {
+      "type": "string"
+     },
+     "text_th": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "minItems": 1
+  },
+  "FixPrice": {
+   "type": "object",
+   "required": [
+    "fix_id",
+    "name_th",
+    "min_thb",
+    "max_thb"
+   ],
+   "properties": {
+    "fix_id": {
+     "type": "string",
+     "pattern": "^f[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "min_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "max_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "for_symbol": {
+     "enum": [
+      "check_engine",
+      "oil_pressure",
+      "coolant_temp",
+      "battery_charge",
+      "brake_system",
+      "parking_brake",
+      "abs",
+      "airbag",
+      "tpms",
+      "low_fuel",
+      "power_steering",
+      "dpf",
+      "esc",
+      "washer",
+      "service_due",
+      "high_beam",
+      "seat_belt"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "QuoteCheck": {
+   "type": "object",
+   "required": [
+    "fix_id",
+    "quote_thb",
+    "min_thb",
+    "max_thb",
+    "verdict",
+    "message_th",
+    "questions_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "fix_id": {
+     "type": "string",
+     "pattern": "^f[0-9]{2}$"
+    },
+    "quote_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "min_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "max_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "verdict": {
+     "enum": [
+      "low",
+      "fair",
+      "high",
+      "very_high"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "questions_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "MechanicCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "name_th",
+    "car_model_th",
+    "odometer_km",
+    "symbols",
+    "symptoms",
+    "level",
+    "budget_min_thb",
+    "budget_max_thb",
+    "note_th",
+    "line_share_url",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "car_model_th": {
+     "type": "string"
+    },
+    "odometer_km": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "symbols": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "check_engine",
+       "oil_pressure",
+       "coolant_temp",
+       "battery_charge",
+       "brake_system",
+       "parking_brake",
+       "abs",
+       "airbag",
+       "tpms",
+       "low_fuel",
+       "power_steering",
+       "dpf",
+       "esc",
+       "washer",
+       "service_due",
+       "high_beam",
+       "seat_belt"
+      ]
+     },
+     "minItems": 1
+    },
+    "symptoms": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "none",
+       "smoke",
+       "burning_smell",
+       "overheating",
+       "knocking",
+       "brake_soft",
+       "steering_heavy",
+       "shaking",
+       "power_loss",
+       "fluid_leak"
+      ]
+     }
+    },
+    "level": {
+     "enum": [
+      "red",
+      "yellow",
+      "green"
+     ]
+    },
+    "budget_min_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "budget_max_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "note_th": {
+     "type": "string"
+    },
+    "line_share_url": {
+     "type": "string",
+     "pattern": "^https://line\\.me/R/share\\?text="
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ServiceEntry": {
+   "type": "object",
+   "required": [
+    "id",
+    "car_id",
+    "date",
+    "odometer_km",
+    "item",
+    "cost_thb",
+    "shop_th",
+    "on_device"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "car_id": {
+     "type": "string"
+    },
+    "date": {
+     "type": "string",
+     "format": "date",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "odometer_km": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "item": {
+     "enum": [
+      "engine_oil",
+      "tire_rotate",
+      "tire_replace",
+      "battery",
+      "brake_fluid",
+      "coolant",
+      "air_filter",
+      "act",
+      "tax",
+      "insurance"
+     ]
+    },
+    "cost_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "shop_th": {
+     "type": "string"
+    },
+    "on_device": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "NextDue": {
+   "type": "object",
+   "required": [
+    "item",
+    "label_th",
+    "due_km",
+    "due_date"
+   ],
+   "properties": {
+    "item": {
+     "enum": [
+      "engine_oil",
+      "tire_rotate",
+      "tire_replace",
+      "battery",
+      "brake_fluid",
+      "coolant",
+      "air_filter",
+      "act",
+      "tax",
+      "insurance"
+     ]
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "due_km": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "due_date": {
+     "type": "string",
+     "format": "date",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ReminderStatus": {
+   "type": "object",
+   "required": [
+    "item",
+    "label_th",
+    "status",
+    "days_left",
+    "km_left",
+    "due_km",
+    "due_date"
+   ],
+   "properties": {
+    "item": {
+     "enum": [
+      "engine_oil",
+      "tire_rotate",
+      "tire_replace",
+      "battery",
+      "brake_fluid",
+      "coolant",
+      "air_filter",
+      "act",
+      "tax",
+      "insurance"
+     ]
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "status": {
+     "enum": [
+      "ok",
+      "soon",
+      "due",
+      "overdue"
+     ]
+    },
+    "days_left": {
+     "type": "integer"
+    },
+    "km_left": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "due_km": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "due_date": {
+     "type": "string",
+     "format": "date",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiaryStats": {
+   "type": "object",
+   "required": [
+    "count",
+    "total_thb",
+    "avg_thb",
+    "last_odometer_km",
+    "top_item"
+   ],
+   "properties": {
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "avg_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "last_odometer_km": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "top_item": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "Hotline": {
+   "type": "object",
+   "required": [
+    "key",
+    "label_th",
+    "number",
+    "kind",
+    "note_th"
+   ],
+   "properties": {
+    "key": {
+     "enum": [
+      "police",
+      "highway_police",
+      "medical",
+      "insurer",
+      "tow",
+      "garage"
+     ]
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "number": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "kind": {
+     "enum": [
+      "public",
+      "placeholder",
+      "user"
+     ]
+    },
+    "note_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "EmergencyKit": {
+   "type": "object",
+   "required": [
+    "contacts",
+    "missing",
+    "kit_items_th",
+    "guides"
+   ],
+   "properties": {
+    "contacts": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Hotline"
+     },
+     "minItems": 1
+    },
+    "missing": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "kit_items_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "guides": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "Guide": {
+   "type": "object",
+   "required": [
+    "key",
+    "title_th",
+    "tools_th",
+    "steps",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "key": {
+     "enum": [
+      "flat_tire",
+      "jump_start",
+      "overheating"
+     ]
+    },
+    "title_th": {
+     "type": "string"
+    },
+    "tools_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "n",
+       "text_th"
+      ],
+      "properties": {
+       "n": {
+        "type": "integer",
+        "minimum": 1
+       },
+       "text_th": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": false
+     },
+     "minItems": 1
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "symbols",
+    "level",
+    "score",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "symbols": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "check_engine",
+       "oil_pressure",
+       "coolant_temp",
+       "battery_charge",
+       "brake_system",
+       "parking_brake",
+       "abs",
+       "airbag",
+       "tpms",
+       "low_fuel",
+       "power_steering",
+       "dpf",
+       "esc",
+       "washer",
+       "service_due",
+       "high_beam",
+       "seat_belt"
+      ]
+     }
+    },
+    "level": {
+     "enum": [
+      "red",
+      "yellow",
+      "green"
+     ]
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "layout": {
+     "enum": [
+      "scan_result"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
