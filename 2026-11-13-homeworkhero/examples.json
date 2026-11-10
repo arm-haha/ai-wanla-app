@@ -1,0 +1,1832 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "พี่นุ่น",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่นุ่น",
+    "name_en": "Noon",
+    "age": 36,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "ช่วยลูกป.4 เรียนโจทย์ปัญหาร้อยละ โดยไม่บอกคำตอบ",
+    "child_grade": "p4"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่กบ",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่กบ",
+    "name_en": "Kob",
+    "age": 41,
+    "city_th": "ขอนแก่น",
+    "goal_th": "ลูกป.3 สับสนพื้นที่กับความยาวรอบรูป",
+    "child_grade": "p3"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่เจี๊ยบ",
+   "value": {
+    "id": "u03",
+    "name_th": "พี่เจี๊ยบ",
+    "name_en": "Jeab",
+    "age": 39,
+    "city_th": "เชียงใหม่",
+    "goal_th": "ลูกป.5 ติดเศษส่วนของจำนวน",
+    "child_grade": "p5"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่โจ้",
+   "value": {
+    "id": "u04",
+    "name_th": "พี่โจ้",
+    "name_en": "Joe",
+    "age": 38,
+    "city_th": "พัทยา",
+    "goal_th": "ลูกม.1 เลือกกาลกริยาภาษาอังกฤษไม่ถูก",
+    "child_grade": "m1"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่ฝน",
+   "value": {
+    "id": "u05",
+    "name_th": "พี่ฝน",
+    "name_en": "Fon",
+    "age": 44,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "ลูกม.2 ย้ายข้างสมการแล้วลืมเปลี่ยนเครื่องหมาย",
+    "child_grade": "m2"
+   }
+  },
+  {
+   "def": "HomeworkPhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.15,
+    "blur": 0.1,
+    "tilt": 0.08,
+    "text_fill": 0.9,
+    "template": "percent_discount",
+    "confidence": 0.94,
+    "fields": {
+     "price": 800,
+     "percent": 25
+    }
+   }
+  },
+  {
+   "def": "HomeworkScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "quality": {
+     "score": 89,
+     "ok": true,
+     "tips_th": []
+    },
+    "template": "percent_discount",
+    "name_th": "โจทย์ปัญหาร้อยละ (ลดราคา)",
+    "subject": "math",
+    "subject_th": "คณิตศาสตร์",
+    "level": "p4",
+    "level_th": "ประถมศึกษาปีที่ 4",
+    "skill_th": "จำนวนและการดำเนินการ · ร้อยละ",
+    "fields": {
+     "price": 800,
+     "percent": 25
+    },
+    "ok": true,
+    "uncertain": false,
+    "message_th": "",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "steps": [
+     "page_detect",
+     "ocr_block",
+     "template_match",
+     "hint_tree",
+     "parent_script",
+     "practice"
+    ]
+   }
+  },
+  {
+   "def": "HomeworkPhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.18,
+    "blur": 0.12,
+    "tilt": 0.1,
+    "text_fill": 0.86,
+    "template": "area_rect",
+    "confidence": 0.91,
+    "fields": {
+     "length": 10,
+     "width": 4,
+     "unit": "เมตร"
+    }
+   }
+  },
+  {
+   "def": "HomeworkScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "quality": {
+     "score": 86,
+     "ok": true,
+     "tips_th": []
+    },
+    "template": "area_rect",
+    "name_th": "พื้นที่สี่เหลี่ยมมุมฉาก",
+    "subject": "math",
+    "subject_th": "คณิตศาสตร์",
+    "level": "p3",
+    "level_th": "ประถมศึกษาปีที่ 3",
+    "skill_th": "การวัด · พื้นที่",
+    "fields": {
+     "length": 10,
+     "width": 4,
+     "unit": "เมตร"
+    },
+    "ok": true,
+    "uncertain": false,
+    "message_th": "",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "steps": [
+     "page_detect",
+     "ocr_block",
+     "template_match",
+     "hint_tree",
+     "parent_script",
+     "practice"
+    ]
+   }
+  },
+  {
+   "def": "HomeworkPhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.16,
+    "blur": 0.1,
+    "tilt": 0.08,
+    "text_fill": 0.88,
+    "template": "fraction_of",
+    "confidence": 0.92,
+    "fields": {
+     "whole": 24,
+     "num": 1,
+     "den": 3
+    }
+   }
+  },
+  {
+   "def": "HomeworkScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": []
+    },
+    "template": "fraction_of",
+    "name_th": "เศษส่วนของจำนวน",
+    "subject": "math",
+    "subject_th": "คณิตศาสตร์",
+    "level": "p5",
+    "level_th": "ประถมศึกษาปีที่ 5",
+    "skill_th": "จำนวนและการดำเนินการ · เศษส่วน",
+    "fields": {
+     "whole": 24,
+     "num": 1,
+     "den": 3
+    },
+    "ok": true,
+    "uncertain": false,
+    "message_th": "",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "steps": [
+     "page_detect",
+     "ocr_block",
+     "template_match",
+     "hint_tree",
+     "parent_script",
+     "practice"
+    ]
+   }
+  },
+  {
+   "def": "HomeworkPhoto",
+   "note": "p04",
+   "value": {
+    "id": "p04",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.2,
+    "blur": 0.12,
+    "tilt": 0.1,
+    "text_fill": 0.84,
+    "template": "eng_tense",
+    "confidence": 0.9,
+    "fields": {
+     "sentence": "They ____ football yesterday.",
+     "time_word": "yesterday",
+     "answer": "played",
+     "choices": [
+      "play",
+      "played",
+      "playing"
+     ]
+    }
+   }
+  },
+  {
+   "def": "HomeworkScan",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "quality": {
+     "score": 85,
+     "ok": true,
+     "tips_th": []
+    },
+    "template": "eng_tense",
+    "name_th": "เลือกกาลของกริยา",
+    "subject": "eng",
+    "subject_th": "ภาษาอังกฤษ",
+    "level": "m1",
+    "level_th": "มัธยมศึกษาปีที่ 1",
+    "skill_th": "English · verb tense",
+    "fields": {
+     "sentence": "They ____ football yesterday.",
+     "time_word": "yesterday",
+     "answer": "played",
+     "choices": [
+      "play",
+      "played",
+      "playing"
+     ]
+    },
+    "ok": true,
+    "uncertain": false,
+    "message_th": "",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "steps": [
+     "page_detect",
+     "ocr_block",
+     "template_match",
+     "hint_tree",
+     "parent_script",
+     "practice"
+    ]
+   }
+  },
+  {
+   "def": "HomeworkPhoto",
+   "note": "p05",
+   "value": {
+    "id": "p05",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.15,
+    "blur": 0.1,
+    "tilt": 0.08,
+    "text_fill": 0.87,
+    "template": "linear_eq",
+    "confidence": 0.93,
+    "fields": {
+     "a": 2,
+     "b": 3,
+     "c": 11
+    }
+   }
+  },
+  {
+   "def": "HomeworkScan",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": []
+    },
+    "template": "linear_eq",
+    "name_th": "สมการเชิงเส้นตัวแปรเดียว",
+    "subject": "math",
+    "subject_th": "คณิตศาสตร์",
+    "level": "m2",
+    "level_th": "มัธยมศึกษาปีที่ 2",
+    "skill_th": "พีชคณิต · สมการ",
+    "fields": {
+     "a": 2,
+     "b": 3,
+     "c": 11
+    },
+    "ok": true,
+    "uncertain": false,
+    "message_th": "",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "steps": [
+     "page_detect",
+     "ocr_block",
+     "template_match",
+     "hint_tree",
+     "parent_script",
+     "practice"
+    ]
+   }
+  },
+  {
+   "def": "HomeworkPhoto",
+   "note": "p06",
+   "value": {
+    "id": "p06",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.16,
+    "blur": 0.11,
+    "tilt": 0.09,
+    "text_fill": 0.85,
+    "template": "water_cycle",
+    "confidence": 0.89,
+    "fields": {
+     "clue": "น้ำในทะเลกลายเป็นไอเมื่อโดนความร้อน",
+     "answer": "การระเหย"
+    }
+   }
+  },
+  {
+   "def": "HomeworkScan",
+   "note": "p06",
+   "value": {
+    "photo_id": "p06",
+    "quality": {
+     "score": 87,
+     "ok": true,
+     "tips_th": []
+    },
+    "template": "water_cycle",
+    "name_th": "กระบวนการในวัฏจักรน้ำ",
+    "subject": "sci",
+    "subject_th": "วิทยาศาสตร์",
+    "level": "p5",
+    "level_th": "ประถมศึกษาปีที่ 5",
+    "skill_th": "วิทยาศาสตร์กายภาพ · น้ำและอากาศ",
+    "fields": {
+     "clue": "น้ำในทะเลกลายเป็นไอเมื่อโดนความร้อน",
+     "answer": "การระเหย"
+    },
+    "ok": true,
+    "uncertain": false,
+    "message_th": "",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p06",
+   "value": {
+    "photo_id": "p06",
+    "steps": [
+     "page_detect",
+     "ocr_block",
+     "template_match",
+     "hint_tree",
+     "parent_script",
+     "practice"
+    ]
+   }
+  },
+  {
+   "def": "HomeworkPhoto",
+   "note": "p07",
+   "value": {
+    "id": "p07",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.6,
+    "blur": 0.48,
+    "tilt": 0.45,
+    "text_fill": 0.35,
+    "template": "percent_discount",
+    "confidence": 0.4,
+    "fields": {
+     "price": 800,
+     "percent": 25
+    }
+   }
+  },
+  {
+   "def": "HomeworkScan",
+   "note": "p07",
+   "value": {
+    "photo_id": "p07",
+    "quality": {
+     "score": 46,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนบนกระดาษ เอียงมือถือหรือปิดไฟด้านบน",
+      "ตัวอักษรเบลอ ถ่ายใกล้ขึ้นและแตะโฟกัสที่โจทย์",
+      "ถ่ายเอียงเกินไป วางสมุดราบแล้วถ่ายจากด้านบน",
+      "โจทย์ไม่เต็มกรอบ ขยับกล้องให้อยู่ทั้งข้อ"
+     ]
+    },
+    "template": "percent_discount",
+    "name_th": "โจทย์ปัญหาร้อยละ (ลดราคา)",
+    "subject": "math",
+    "subject_th": "คณิตศาสตร์",
+    "level": "p4",
+    "level_th": "ประถมศึกษาปีที่ 4",
+    "skill_th": "จำนวนและการดำเนินการ · ร้อยละ",
+    "fields": {
+     "price": 800,
+     "percent": 25
+    },
+    "ok": false,
+    "uncertain": true,
+    "message_th": "ยังอ่านโจทย์ไม่ชัด ถ่ายใหม่หรือเลือกวิชา/ระดับเอง",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p07",
+   "value": {
+    "photo_id": "p07",
+    "steps": [
+     "page_detect",
+     "deglare",
+     "deskew",
+     "ocr_block",
+     "template_match",
+     "hint_tree",
+     "parent_script",
+     "practice"
+    ]
+   }
+  },
+  {
+   "def": "HomeworkPhoto",
+   "note": "p08",
+   "value": {
+    "id": "p08",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.14,
+    "blur": 0.08,
+    "tilt": 0.06,
+    "text_fill": 0.92,
+    "template": "decimal_add",
+    "confidence": 0.95,
+    "fields": {
+     "a": 1.25,
+     "b": 2.5
+    }
+   }
+  },
+  {
+   "def": "HomeworkScan",
+   "note": "p08",
+   "value": {
+    "photo_id": "p08",
+    "quality": {
+     "score": 91,
+     "ok": true,
+     "tips_th": []
+    },
+    "template": "decimal_add",
+    "name_th": "บวกทศนิยม",
+    "subject": "math",
+    "subject_th": "คณิตศาสตร์",
+    "level": "p4",
+    "level_th": "ประถมศึกษาปีที่ 4",
+    "skill_th": "จำนวนและการดำเนินการ · ทศนิยม",
+    "fields": {
+     "a": 1.25,
+     "b": 2.5
+    },
+    "ok": true,
+    "uncertain": false,
+    "message_th": "",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p08",
+   "value": {
+    "photo_id": "p08",
+    "steps": [
+     "page_detect",
+     "ocr_block",
+     "template_match",
+     "hint_tree",
+     "parent_script",
+     "practice"
+    ]
+   }
+  },
+  {
+   "def": "TemplateInfo",
+   "note": "percent_discount",
+   "value": {
+    "id": "t01",
+    "template": "percent_discount",
+    "name_th": "โจทย์ปัญหาร้อยละ (ลดราคา)",
+    "subject": "math",
+    "subject_th": "คณิตศาสตร์",
+    "level": "p4",
+    "level_th": "ประถมศึกษาปีที่ 4",
+    "skill_th": "จำนวนและการดำเนินการ · ร้อยละ",
+    "fields": [
+     "price",
+     "percent"
+    ]
+   }
+  },
+  {
+   "def": "TemplateInfo",
+   "note": "area_rect",
+   "value": {
+    "id": "t02",
+    "template": "area_rect",
+    "name_th": "พื้นที่สี่เหลี่ยมมุมฉาก",
+    "subject": "math",
+    "subject_th": "คณิตศาสตร์",
+    "level": "p3",
+    "level_th": "ประถมศึกษาปีที่ 3",
+    "skill_th": "การวัด · พื้นที่",
+    "fields": [
+     "length",
+     "width",
+     "unit"
+    ]
+   }
+  },
+  {
+   "def": "TemplateInfo",
+   "note": "fraction_of",
+   "value": {
+    "id": "t03",
+    "template": "fraction_of",
+    "name_th": "เศษส่วนของจำนวน",
+    "subject": "math",
+    "subject_th": "คณิตศาสตร์",
+    "level": "p5",
+    "level_th": "ประถมศึกษาปีที่ 5",
+    "skill_th": "จำนวนและการดำเนินการ · เศษส่วน",
+    "fields": [
+     "whole",
+     "num",
+     "den"
+    ]
+   }
+  },
+  {
+   "def": "TemplateInfo",
+   "note": "unit_rate",
+   "value": {
+    "id": "t04",
+    "template": "unit_rate",
+    "name_th": "ราคาต่อหน่วย",
+    "subject": "math",
+    "subject_th": "คณิตศาสตร์",
+    "level": "p6",
+    "level_th": "ประถมศึกษาปีที่ 6",
+    "skill_th": "อัตราส่วนและร้อยละ · ราคาต่อหน่วย",
+    "fields": [
+     "total",
+     "qty"
+    ]
+   }
+  },
+  {
+   "def": "TemplateInfo",
+   "note": "average",
+   "value": {
+    "id": "t05",
+    "template": "average",
+    "name_th": "ค่าเฉลี่ยเลขคณิต",
+    "subject": "math",
+    "subject_th": "คณิตศาสตร์",
+    "level": "p5",
+    "level_th": "ประถมศึกษาปีที่ 5",
+    "skill_th": "สถิติ · ค่ากลาง",
+    "fields": [
+     "values"
+    ]
+   }
+  },
+  {
+   "def": "TemplateInfo",
+   "note": "decimal_add",
+   "value": {
+    "id": "t06",
+    "template": "decimal_add",
+    "name_th": "บวกทศนิยม",
+    "subject": "math",
+    "subject_th": "คณิตศาสตร์",
+    "level": "p4",
+    "level_th": "ประถมศึกษาปีที่ 4",
+    "skill_th": "จำนวนและการดำเนินการ · ทศนิยม",
+    "fields": [
+     "a",
+     "b"
+    ]
+   }
+  },
+  {
+   "def": "TemplateInfo",
+   "note": "thai_word_choice",
+   "value": {
+    "id": "t07",
+    "template": "thai_word_choice",
+    "name_th": "เลือกคำให้เหมาะกับคำนาม",
+    "subject": "thai",
+    "subject_th": "ภาษาไทย",
+    "level": "p4",
+    "level_th": "ประถมศึกษาปีที่ 4",
+    "skill_th": "หลักการใช้ภาษา · คำและชนิดของคำ",
+    "fields": [
+     "sentence",
+     "answer",
+     "choices"
+    ]
+   }
+  },
+  {
+   "def": "TemplateInfo",
+   "note": "water_cycle",
+   "value": {
+    "id": "t08",
+    "template": "water_cycle",
+    "name_th": "กระบวนการในวัฏจักรน้ำ",
+    "subject": "sci",
+    "subject_th": "วิทยาศาสตร์",
+    "level": "p5",
+    "level_th": "ประถมศึกษาปีที่ 5",
+    "skill_th": "วิทยาศาสตร์กายภาพ · น้ำและอากาศ",
+    "fields": [
+     "clue",
+     "answer"
+    ]
+   }
+  },
+  {
+   "def": "TemplateInfo",
+   "note": "eng_tense",
+   "value": {
+    "id": "t09",
+    "template": "eng_tense",
+    "name_th": "เลือกกาลของกริยา",
+    "subject": "eng",
+    "subject_th": "ภาษาอังกฤษ",
+    "level": "m1",
+    "level_th": "มัธยมศึกษาปีที่ 1",
+    "skill_th": "English · verb tense",
+    "fields": [
+     "sentence",
+     "time_word",
+     "answer",
+     "choices"
+    ]
+   }
+  },
+  {
+   "def": "TemplateInfo",
+   "note": "linear_eq",
+   "value": {
+    "id": "t10",
+    "template": "linear_eq",
+    "name_th": "สมการเชิงเส้นตัวแปรเดียว",
+    "subject": "math",
+    "subject_th": "คณิตศาสตร์",
+    "level": "m2",
+    "level_th": "มัธยมศึกษาปีที่ 2",
+    "skill_th": "พีชคณิต · สมการ",
+    "fields": [
+     "a",
+     "b",
+     "c"
+    ]
+   }
+  },
+  {
+   "def": "LevelInfo",
+   "note": "p1",
+   "value": {
+    "level": "p1",
+    "level_th": "ประถมศึกษาปีที่ 1"
+   }
+  },
+  {
+   "def": "LevelInfo",
+   "note": "p2",
+   "value": {
+    "level": "p2",
+    "level_th": "ประถมศึกษาปีที่ 2"
+   }
+  },
+  {
+   "def": "LevelInfo",
+   "note": "p3",
+   "value": {
+    "level": "p3",
+    "level_th": "ประถมศึกษาปีที่ 3"
+   }
+  },
+  {
+   "def": "LevelInfo",
+   "note": "p4",
+   "value": {
+    "level": "p4",
+    "level_th": "ประถมศึกษาปีที่ 4"
+   }
+  },
+  {
+   "def": "LevelInfo",
+   "note": "p5",
+   "value": {
+    "level": "p5",
+    "level_th": "ประถมศึกษาปีที่ 5"
+   }
+  },
+  {
+   "def": "LevelInfo",
+   "note": "p6",
+   "value": {
+    "level": "p6",
+    "level_th": "ประถมศึกษาปีที่ 6"
+   }
+  },
+  {
+   "def": "LevelInfo",
+   "note": "m1",
+   "value": {
+    "level": "m1",
+    "level_th": "มัธยมศึกษาปีที่ 1"
+   }
+  },
+  {
+   "def": "LevelInfo",
+   "note": "m2",
+   "value": {
+    "level": "m2",
+    "level_th": "มัธยมศึกษาปีที่ 2"
+   }
+  },
+  {
+   "def": "LevelInfo",
+   "note": "m3",
+   "value": {
+    "level": "m3",
+    "level_th": "มัธยมศึกษาปีที่ 3"
+   }
+  },
+  {
+   "def": "LevelInfo",
+   "note": "m4",
+   "value": {
+    "level": "m4",
+    "level_th": "มัธยมศึกษาปีที่ 4"
+   }
+  },
+  {
+   "def": "LevelInfo",
+   "note": "m5",
+   "value": {
+    "level": "m5",
+    "level_th": "มัธยมศึกษาปีที่ 5"
+   }
+  },
+  {
+   "def": "LevelInfo",
+   "note": "m6",
+   "value": {
+    "level": "m6",
+    "level_th": "มัธยมศึกษาปีที่ 6"
+   }
+  },
+  {
+   "def": "StepHints",
+   "note": "noon 1",
+   "value": {
+    "template": "percent_discount",
+    "upto": 1,
+    "hints": [
+     {
+      "n": 1,
+      "text_th": "โจทย์ถามหาราคาที่ต้องจ่ายหลังลดแล้ว ไม่ใช่จำนวนเงินที่ลดเพียงอย่างเดียว",
+      "reveals_answer": false
+     }
+    ],
+    "disclaimer_th": "คำใบ้ไม่ใช่คำตอบของการบ้าน ลูกควรคิดช่องว่างเอง"
+   }
+  },
+  {
+   "def": "StepHints",
+   "note": "noon 2",
+   "value": {
+    "template": "percent_discount",
+    "upto": 2,
+    "hints": [
+     {
+      "n": 1,
+      "text_th": "โจทย์ถามหาราคาที่ต้องจ่ายหลังลดแล้ว ไม่ใช่จำนวนเงินที่ลดเพียงอย่างเดียว",
+      "reveals_answer": false
+     },
+     {
+      "n": 2,
+      "text_th": "ร้อยละในโจทย์แปลว่า 'กี่ส่วนใน 100' ลองคิดเป็นเศษส่วนอย่างง่าย หรือหารร้อยก่อน แล้วคูณกับราคาเดิม เพื่อหาเงินที่ลด",
+      "reveals_answer": false
+     }
+    ],
+    "disclaimer_th": "คำใบ้ไม่ใช่คำตอบของการบ้าน ลูกควรคิดช่องว่างเอง"
+   }
+  },
+  {
+   "def": "StepHints",
+   "note": "noon 3",
+   "value": {
+    "template": "percent_discount",
+    "upto": 3,
+    "hints": [
+     {
+      "n": 1,
+      "text_th": "โจทย์ถามหาราคาที่ต้องจ่ายหลังลดแล้ว ไม่ใช่จำนวนเงินที่ลดเพียงอย่างเดียว",
+      "reveals_answer": false
+     },
+     {
+      "n": 2,
+      "text_th": "ร้อยละในโจทย์แปลว่า 'กี่ส่วนใน 100' ลองคิดเป็นเศษส่วนอย่างง่าย หรือหารร้อยก่อน แล้วคูณกับราคาเดิม เพื่อหาเงินที่ลด",
+      "reveals_answer": false
+     },
+     {
+      "n": 3,
+      "text_th": "วิธี: เงินที่ลด = ราคาเดิม × (ร้อยละ ÷ 100) แล้วราคาที่จ่าย = ราคาเดิม − เงินที่ลด แทนตัวเลขจากโจทย์ในช่องว่าง: เงินที่ลด = 800 × (25 ÷ 100) = ____ จากนั้น ราคาที่จ่าย = 800 − ____ = ____",
+      "reveals_answer": false
+     }
+    ],
+    "disclaimer_th": "คำใบ้ไม่ใช่คำตอบของการบ้าน ลูกควรคิดช่องว่างเอง"
+   }
+  },
+  {
+   "def": "StepHints",
+   "note": "p02",
+   "value": {
+    "template": "area_rect",
+    "upto": 3,
+    "hints": [
+     {
+      "n": 1,
+      "text_th": "โจทย์ถามพื้นที่ ซึ่งเป็นเนื้อที่ในรูป ไม่ใช่ความยาวรอบรูป",
+      "reveals_answer": false
+     },
+     {
+      "n": 2,
+      "text_th": "รูปสี่เหลี่ยมมุมฉาก หาพื้นที่ด้วยด้านคู่ยาวคูณด้านคู่กว้าง ดูหน่วยให้ตรงกันก่อนคูณ",
+      "reveals_answer": false
+     },
+     {
+      "n": 3,
+      "text_th": "วิธี: พื้นที่ = ยาว × กว้าง แทนตัวเลข: 10 × 4 = ____ ตารางเมตร",
+      "reveals_answer": false
+     }
+    ],
+    "disclaimer_th": "คำใบ้ไม่ใช่คำตอบของการบ้าน ลูกควรคิดช่องว่างเอง"
+   }
+  },
+  {
+   "def": "StepHints",
+   "note": "p03",
+   "value": {
+    "template": "fraction_of",
+    "upto": 3,
+    "hints": [
+     {
+      "n": 1,
+      "text_th": "โจทย์ถามว่า 'เศษส่วนของจำนวน' คือการแบ่งจำนวนออกเป็นส่วนเท่า ๆ แล้วเอาบางส่วน",
+      "reveals_answer": false
+     },
+     {
+      "n": 2,
+      "text_th": "ตัวส่วนบอกว่าแบ่งกี่ส่วน ตัวเศษบอกว่าเอาไปกี่ส่วน ลองแบ่งจำนวนออกเป็นส่วนเท่ากับตัวส่วนก่อน",
+      "reveals_answer": false
+     },
+     {
+      "n": 3,
+      "text_th": "วิธี: ค่าที่ขอ = จำนวน × (เศษ ÷ ส่วน) = 24 × (1 ÷ 3) ทำในวงเล็บก่อน แล้วคูณ ได้ ____",
+      "reveals_answer": false
+     }
+    ],
+    "disclaimer_th": "คำใบ้ไม่ใช่คำตอบของการบ้าน ลูกควรคิดช่องว่างเอง"
+   }
+  },
+  {
+   "def": "StepHints",
+   "note": "p04",
+   "value": {
+    "template": "eng_tense",
+    "upto": 3,
+    "hints": [
+     {
+      "n": 1,
+      "text_th": "ดูคำบอกเวลาในประโยคภาษาอังกฤษ ว่าเหตุการณ์จบแล้ว กำลังทำ หรือทำเป็นประจำ",
+      "reveals_answer": false
+     },
+     {
+      "n": 2,
+      "text_th": "คำว่า yesterday / last ... มักใช้รูปอดีต คำว่า every / always มักใช้ปัจจุบันง่าย",
+      "reveals_answer": false
+     },
+     {
+      "n": 3,
+      "text_th": "วิธี: ประโยค «They ____ football yesterday.» มีคำบอกเวลาคือ «yesterday» เลือกกริยารูปที่เข้ากับคำนั้น ช่องว่างคือ ____",
+      "reveals_answer": false
+     }
+    ],
+    "disclaimer_th": "คำใบ้ไม่ใช่คำตอบของการบ้าน ลูกควรคิดช่องว่างเอง"
+   }
+  },
+  {
+   "def": "StepHints",
+   "note": "p05",
+   "value": {
+    "template": "linear_eq",
+    "upto": 3,
+    "hints": [
+     {
+      "n": 1,
+      "text_th": "สมการถามค่าของตัวไม่ทราบค่า เป้าหมายคือทำให้ตัวแปรอยู่คนละข้างกับตัวเลข",
+      "reveals_answer": false
+     },
+     {
+      "n": 2,
+      "text_th": "ทำค้างกับเครื่องหมายที่เห็น: มีบวกให้ลบออก ทั้งสองข้าง มีคูณให้หารทั้งสองข้าง",
+      "reveals_answer": false
+     },
+     {
+      "n": 3,
+      "text_th": "วิธี: จาก 2x + 3 = 11 ลบ 3 ทั้งสองข้าง ได้ 2x = ____ แล้วหารทั้งสองข้างด้วย 2 ได้ x = ____",
+      "reveals_answer": false
+     }
+    ],
+    "disclaimer_th": "คำใบ้ไม่ใช่คำตอบของการบ้าน ลูกควรคิดช่องว่างเอง"
+   }
+  },
+  {
+   "def": "StepHints",
+   "note": "p06",
+   "value": {
+    "template": "water_cycle",
+    "upto": 3,
+    "hints": [
+     {
+      "n": 1,
+      "text_th": "โจทย์วิทยาศาสตร์เรื่องวัฏจักรน้ำถาม 'กระบวนการ' ไม่ใช่ชื่อก้อนเมฆอย่างเดียว",
+      "reveals_answer": false
+     },
+     {
+      "n": 2,
+      "text_th": "ไล่ตามลำดับ: น้ำเปลี่ยนเป็นไอ ขึ้นไปบนฟ้า แล้วกลายเป็นน้ำอีกครั้ง",
+      "reveals_answer": false
+     },
+     {
+      "n": 3,
+      "text_th": "วิธี: จากคำใบ้ «น้ำในทะเลกลายเป็นไอเมื่อโดนความร้อน» เลือกชื่อกระบวนการที่ตรงที่สุดจากบทเรียน ช่องว่างคือ ____",
+      "reveals_answer": false
+     }
+    ],
+    "disclaimer_th": "คำใบ้ไม่ใช่คำตอบของการบ้าน ลูกควรคิดช่องว่างเอง"
+   }
+  },
+  {
+   "def": "StepHints",
+   "note": "p08",
+   "value": {
+    "template": "decimal_add",
+    "upto": 3,
+    "hints": [
+     {
+      "n": 1,
+      "text_th": "การบวกทศนิยมต้องให้จุดทศนิยมอยู่ตรงแนวเดียวกันก่อน แล้วบวกทีละหลัก",
+      "reveals_answer": false
+     },
+     {
+      "n": 2,
+      "text_th": "ถ้าจำนวนหลักหลังจุดไม่เท่ากัน ให้เติมศูนย์ให้เท่ากันจะบวกง่ายขึ้น",
+      "reveals_answer": false
+     },
+     {
+      "n": 3,
+      "text_th": "วิธี: จัดแนวจุดทศนิยมแล้วบวก 1.25 + 2.5 = ____",
+      "reveals_answer": false
+     }
+    ],
+    "disclaimer_th": "คำใบ้ไม่ใช่คำตอบของการบ้าน ลูกควรคิดช่องว่างเอง"
+   }
+  },
+  {
+   "def": "ParentScript",
+   "note": "p01",
+   "value": {
+    "template": "percent_discount",
+    "title_th": "สคริปต์ผู้ปกครอง",
+    "intro_th": "อย่าทำข้อให้ลูก ใช้คำถามด้านล่าง แล้วรอคำตอบของลูกก่อนให้คำใบ้ข้อถัดไป",
+    "steps": [
+     {
+      "n": 1,
+      "text_th": "ถามว่า 'โจทย์อยากได้ราคาที่จ่าย หรือเงินที่ลด'"
+     },
+     {
+      "n": 2,
+      "text_th": "อย่าบอกตัวเลขสุดท้าย ชวนวาดแท่ง 100 ส่วน หรือใช้ของจริงในครัว"
+     },
+     {
+      "n": 3,
+      "text_th": "ถ้าติดที่คูณร้อยละ ให้ถามว่า 25 ใน 100 คือกี่ส่วนจาก 4 ส่วน"
+     }
+    ],
+    "mistakes_th": [
+     "คิดแค่เงินที่ลดแล้วยกเป็นคำตอบ",
+     "คูณร้อยละโดยไม่หาร 100",
+     "ลืมลบออกจากราคาเดิม"
+    ],
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "ParentReveal",
+   "note": "p01",
+   "value": {
+    "template": "percent_discount",
+    "gated": true,
+    "audience": "parent",
+    "answer": {
+     "discount": 200,
+     "pay": 600,
+     "display_th": "ราคาที่จ่าย 600 บาท"
+    },
+    "display_th": "ราคาที่จ่าย 600 บาท",
+    "warning_th": "โชว์เฉพาะผู้ปกครอง อย่าอ่านออกเสียงถ้าลูกยังคิดอยู่",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "ParentScript",
+   "note": "p02",
+   "value": {
+    "template": "area_rect",
+    "title_th": "สคริปต์ผู้ปกครอง",
+    "intro_th": "อย่าทำข้อให้ลูก ใช้คำถามด้านล่าง แล้วรอคำตอบของลูกก่อนให้คำใบ้ข้อถัดไป",
+    "steps": [
+     {
+      "n": 1,
+      "text_th": "ถามความต่างระหว่าง 'รอบรูป' กับ 'พื้นที่'"
+     },
+     {
+      "n": 2,
+      "text_th": "ให้ลูกชี้ด้านยาวและด้านกว้างบนรูปก่อนคูณ"
+     }
+    ],
+    "mistakes_th": [
+     "หาความยาวรอบรูปแทนพื้นที่",
+     "คูณแล้วใส่หน่วยเป็นเซนติเมตรแทนตารางหน่วย"
+    ],
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "ParentReveal",
+   "note": "p02",
+   "value": {
+    "template": "area_rect",
+    "gated": true,
+    "audience": "parent",
+    "answer": {
+     "area": 40,
+     "display_th": "พื้นที่ 40 ตารางเมตร"
+    },
+    "display_th": "พื้นที่ 40 ตารางเมตร",
+    "warning_th": "โชว์เฉพาะผู้ปกครอง อย่าอ่านออกเสียงถ้าลูกยังคิดอยู่",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "ParentScript",
+   "note": "p04",
+   "value": {
+    "template": "eng_tense",
+    "title_th": "สคริปต์ผู้ปกครอง",
+    "intro_th": "อย่าทำข้อให้ลูก ใช้คำถามด้านล่าง แล้วรอคำตอบของลูกก่อนให้คำใบ้ข้อถัดไป",
+    "steps": [
+     {
+      "n": 1,
+      "text_th": "ชี้คำบอกเวลาให้ลูกอ่านก่อนเลือกกริยา อย่าแปลทั้งประโยคให้"
+     }
+    ],
+    "mistakes_th": [
+     "ดูประธานอย่างเดียวแล้วลืมคำบอกเวลา"
+    ],
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "ParentReveal",
+   "note": "p04",
+   "value": {
+    "template": "eng_tense",
+    "gated": true,
+    "audience": "parent",
+    "answer": {
+     "verb": "played",
+     "display_th": "ใช้ «played»"
+    },
+    "display_th": "ใช้ «played»",
+    "warning_th": "โชว์เฉพาะผู้ปกครอง อย่าอ่านออกเสียงถ้าลูกยังคิดอยู่",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "ParentScript",
+   "note": "p05",
+   "value": {
+    "template": "linear_eq",
+    "title_th": "สคริปต์ผู้ปกครอง",
+    "intro_th": "อย่าทำข้อให้ลูก ใช้คำถามด้านล่าง แล้วรอคำตอบของลูกก่อนให้คำใบ้ข้อถัดไป",
+    "steps": [
+     {
+      "n": 1,
+      "text_th": "ให้ลูกพูดว่า 'ทำเหมือนกันทั้งสองข้าง' ทุกครั้งที่ย้ายค่า"
+     }
+    ],
+    "mistakes_th": [
+     "ย้ายข้างแล้วไม่เปลี่ยนเครื่องหมาย",
+     "หารแค่ข้างเดียว"
+    ],
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "ParentReveal",
+   "note": "p05",
+   "value": {
+    "template": "linear_eq",
+    "gated": true,
+    "audience": "parent",
+    "answer": {
+     "x": 4,
+     "display_th": "x = 4"
+    },
+    "display_th": "x = 4",
+    "warning_th": "โชว์เฉพาะผู้ปกครอง อย่าอ่านออกเสียงถ้าลูกยังคิดอยู่",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "ParentReveal",
+   "note": "fraction",
+   "value": {
+    "template": "fraction_of",
+    "gated": true,
+    "audience": "parent",
+    "answer": {
+     "value": 8,
+     "display_th": "ได้ 8"
+    },
+    "display_th": "ได้ 8",
+    "warning_th": "โชว์เฉพาะผู้ปกครอง อย่าอ่านออกเสียงถ้าลูกยังคิดอยู่",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "ParentReveal",
+   "note": "cycle",
+   "value": {
+    "template": "water_cycle",
+    "gated": true,
+    "audience": "parent",
+    "answer": {
+     "process": "การระเหย",
+     "display_th": "กระบวนการคือ การระเหย"
+    },
+    "display_th": "กระบวนการคือ การระเหย",
+    "warning_th": "โชว์เฉพาะผู้ปกครอง อย่าอ่านออกเสียงถ้าลูกยังคิดอยู่",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "SimilarPractice",
+   "note": "percent_discount",
+   "value": {
+    "template": "percent_discount",
+    "count": 3,
+    "items": [
+     {
+      "n": 1,
+      "fields": {
+       "price": 1200,
+       "percent": 20
+      },
+      "method_th": "วิธี: เงินที่ลด = ราคาเดิม × (ร้อยละ ÷ 100) แล้วราคาที่จ่าย = ราคาเดิม − เงินที่ลด แทนตัวเลขจากโจทย์ในช่องว่าง: เงินที่ลด = 1200 × (20 ÷ 100) = ____ จากนั้น ราคาที่จ่าย = 1200 − ____ = ____",
+      "answer_key": {
+       "discount": 240,
+       "pay": 960,
+       "display_th": "ราคาที่จ่าย 960 บาท"
+      }
+     },
+     {
+      "n": 2,
+      "fields": {
+       "price": 500,
+       "percent": 10
+      },
+      "method_th": "วิธี: เงินที่ลด = ราคาเดิม × (ร้อยละ ÷ 100) แล้วราคาที่จ่าย = ราคาเดิม − เงินที่ลด แทนตัวเลขจากโจทย์ในช่องว่าง: เงินที่ลด = 500 × (10 ÷ 100) = ____ จากนั้น ราคาที่จ่าย = 500 − ____ = ____",
+      "answer_key": {
+       "discount": 50,
+       "pay": 450,
+       "display_th": "ราคาที่จ่าย 450 บาท"
+      }
+     },
+     {
+      "n": 3,
+      "fields": {
+       "price": 2000,
+       "percent": 15
+      },
+      "method_th": "วิธี: เงินที่ลด = ราคาเดิม × (ร้อยละ ÷ 100) แล้วราคาที่จ่าย = ราคาเดิม − เงินที่ลด แทนตัวเลขจากโจทย์ในช่องว่าง: เงินที่ลด = 2000 × (15 ÷ 100) = ____ จากนั้น ราคาที่จ่าย = 2000 − ____ = ____",
+      "answer_key": {
+       "discount": 300,
+       "pay": 1700,
+       "display_th": "ราคาที่จ่าย 1700 บาท"
+      }
+     }
+    ],
+    "note_th": "ข้อฝึกเป็นคนละตัวเลขกับงานที่สแกน คำตอบอยู่ใน answer_key สำหรับผู้ปกครองเท่านั้น",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "SimilarPractice",
+   "note": "area_rect",
+   "value": {
+    "template": "area_rect",
+    "count": 3,
+    "items": [
+     {
+      "n": 1,
+      "fields": {
+       "length": 12,
+       "width": 7,
+       "unit": "เมตร"
+      },
+      "method_th": "วิธี: พื้นที่ = ยาว × กว้าง แทนตัวเลข: 12 × 7 = ____ ตารางเมตร",
+      "answer_key": {
+       "area": 84,
+       "display_th": "พื้นที่ 84 ตารางเมตร"
+      }
+     },
+     {
+      "n": 2,
+      "fields": {
+       "length": 8,
+       "width": 5,
+       "unit": "เซนติเมตร"
+      },
+      "method_th": "วิธี: พื้นที่ = ยาว × กว้าง แทนตัวเลข: 8 × 5 = ____ ตารางเซนติเมตร",
+      "answer_key": {
+       "area": 40,
+       "display_th": "พื้นที่ 40 ตารางเซนติเมตร"
+      }
+     },
+     {
+      "n": 3,
+      "fields": {
+       "length": 15,
+       "width": 4,
+       "unit": "เมตร"
+      },
+      "method_th": "วิธี: พื้นที่ = ยาว × กว้าง แทนตัวเลข: 15 × 4 = ____ ตารางเมตร",
+      "answer_key": {
+       "area": 60,
+       "display_th": "พื้นที่ 60 ตารางเมตร"
+      }
+     }
+    ],
+    "note_th": "ข้อฝึกเป็นคนละตัวเลขกับงานที่สแกน คำตอบอยู่ใน answer_key สำหรับผู้ปกครองเท่านั้น",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "SimilarPractice",
+   "note": "linear_eq",
+   "value": {
+    "template": "linear_eq",
+    "count": 3,
+    "items": [
+     {
+      "n": 1,
+      "fields": {
+       "a": 2,
+       "b": 3,
+       "c": 11
+      },
+      "method_th": "วิธี: จาก 2x + 3 = 11 ลบ 3 ทั้งสองข้าง ได้ 2x = ____ แล้วหารทั้งสองข้างด้วย 2 ได้ x = ____",
+      "answer_key": {
+       "x": 4,
+       "display_th": "x = 4"
+      }
+     },
+     {
+      "n": 2,
+      "fields": {
+       "a": 3,
+       "b": 5,
+       "c": 20
+      },
+      "method_th": "วิธี: จาก 3x + 5 = 20 ลบ 5 ทั้งสองข้าง ได้ 3x = ____ แล้วหารทั้งสองข้างด้วย 3 ได้ x = ____",
+      "answer_key": {
+       "x": 5,
+       "display_th": "x = 5"
+      }
+     },
+     {
+      "n": 3,
+      "fields": {
+       "a": 4,
+       "b": 1,
+       "c": 21
+      },
+      "method_th": "วิธี: จาก 4x + 1 = 21 ลบ 1 ทั้งสองข้าง ได้ 4x = ____ แล้วหารทั้งสองข้างด้วย 4 ได้ x = ____",
+      "answer_key": {
+       "x": 5,
+       "display_th": "x = 5"
+      }
+     }
+    ],
+    "note_th": "ข้อฝึกเป็นคนละตัวเลขกับงานที่สแกน คำตอบอยู่ใน answer_key สำหรับผู้ปกครองเท่านั้น",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "SimilarPractice",
+   "note": "eng_tense",
+   "value": {
+    "template": "eng_tense",
+    "count": 3,
+    "items": [
+     {
+      "n": 1,
+      "fields": {
+       "sentence": "She ____ to school every day.",
+       "time_word": "every day",
+       "answer": "goes",
+       "choices": [
+        "goes",
+        "went",
+        "going"
+       ]
+      },
+      "method_th": "วิธี: ประโยค «She ____ to school every day.» มีคำบอกเวลาคือ «every day» เลือกกริยารูปที่เข้ากับคำนั้น ช่องว่างคือ ____",
+      "answer_key": {
+       "verb": "goes",
+       "display_th": "ใช้ «goes»"
+      }
+     },
+     {
+      "n": 2,
+      "fields": {
+       "sentence": "They ____ football yesterday.",
+       "time_word": "yesterday",
+       "answer": "played",
+       "choices": [
+        "play",
+        "played",
+        "playing"
+       ]
+      },
+      "method_th": "วิธี: ประโยค «They ____ football yesterday.» มีคำบอกเวลาคือ «yesterday» เลือกกริยารูปที่เข้ากับคำนั้น ช่องว่างคือ ____",
+      "answer_key": {
+       "verb": "played",
+       "display_th": "ใช้ «played»"
+      }
+     },
+     {
+      "n": 3,
+      "fields": {
+       "sentence": "She ____ to school every day.",
+       "time_word": "every day",
+       "answer": "goes",
+       "choices": [
+        "goes",
+        "went",
+        "going"
+       ]
+      },
+      "method_th": "วิธี: ประโยค «She ____ to school every day.» มีคำบอกเวลาคือ «every day» เลือกกริยารูปที่เข้ากับคำนั้น ช่องว่างคือ ____",
+      "answer_key": {
+       "verb": "goes",
+       "display_th": "ใช้ «goes»"
+      }
+     }
+    ],
+    "note_th": "ข้อฝึกเป็นคนละตัวเลขกับงานที่สแกน คำตอบอยู่ใน answer_key สำหรับผู้ปกครองเท่านั้น",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "SimilarPractice",
+   "note": "average",
+   "value": {
+    "template": "average",
+    "count": 3,
+    "items": [
+     {
+      "n": 1,
+      "fields": {
+       "values": [
+        8,
+        10,
+        12
+       ]
+      },
+      "method_th": "วิธี: ค่าเฉลี่ย = (8 + 10 + 12) ÷ 3 = ____",
+      "answer_key": {
+       "average": 10,
+       "display_th": "ค่าเฉลี่ย 10"
+      }
+     },
+     {
+      "n": 2,
+      "fields": {
+       "values": [
+        5,
+        7,
+        9,
+        11
+       ]
+      },
+      "method_th": "วิธี: ค่าเฉลี่ย = (5 + 7 + 9 + 11) ÷ 4 = ____",
+      "answer_key": {
+       "average": 8,
+       "display_th": "ค่าเฉลี่ย 8"
+      }
+     },
+     {
+      "n": 3,
+      "fields": {
+       "values": [
+        20,
+        30,
+        40
+       ]
+      },
+      "method_th": "วิธี: ค่าเฉลี่ย = (20 + 30 + 40) ÷ 3 = ____",
+      "answer_key": {
+       "average": 30,
+       "display_th": "ค่าเฉลี่ย 30"
+      }
+     }
+    ],
+    "note_th": "ข้อฝึกเป็นคนละตัวเลขกับงานที่สแกน คำตอบอยู่ใน answer_key สำหรับผู้ปกครองเท่านั้น",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "CommonMistakes",
+   "note": "percent_discount",
+   "value": {
+    "template": "percent_discount",
+    "mistakes_th": [
+     "คิดแค่เงินที่ลดแล้วยกเป็นคำตอบ",
+     "คูณร้อยละโดยไม่หาร 100",
+     "ลืมลบออกจากราคาเดิม"
+    ]
+   }
+  },
+  {
+   "def": "CommonMistakes",
+   "note": "area_rect",
+   "value": {
+    "template": "area_rect",
+    "mistakes_th": [
+     "หาความยาวรอบรูปแทนพื้นที่",
+     "คูณแล้วใส่หน่วยเป็นเซนติเมตรแทนตารางหน่วย"
+    ]
+   }
+  },
+  {
+   "def": "CommonMistakes",
+   "note": "fraction_of",
+   "value": {
+    "template": "fraction_of",
+    "mistakes_th": [
+     "คูณตัวเศษอย่างเดียวแล้วหารด้วยจำนวน",
+     "สลับเศษกับส่วน"
+    ]
+   }
+  },
+  {
+   "def": "CommonMistakes",
+   "note": "unit_rate",
+   "value": {
+    "template": "unit_rate",
+    "mistakes_th": [
+     "เอาจำนวนไปหารราคาผิดทาง",
+     "ลืมหน่วยต่อชิ้น"
+    ]
+   }
+  },
+  {
+   "def": "CommonMistakes",
+   "note": "average",
+   "value": {
+    "template": "average",
+    "mistakes_th": [
+     "รวมแล้วไม่หาร",
+     "หารด้วยจำนวนตัวที่ผิด"
+    ]
+   }
+  },
+  {
+   "def": "CommonMistakes",
+   "note": "decimal_add",
+   "value": {
+    "template": "decimal_add",
+    "mistakes_th": [
+     "ไม่จัดแนวจุดทศนิยม",
+     "เติมศูนย์ผิดหลัก"
+    ]
+   }
+  },
+  {
+   "def": "CommonMistakes",
+   "note": "thai_word_choice",
+   "value": {
+    "template": "thai_word_choice",
+    "mistakes_th": [
+     "เลือกคำสุภาพเกินไปหรือน้อยไปโดยไม่ดูคำนาม"
+    ]
+   }
+  },
+  {
+   "def": "CommonMistakes",
+   "note": "water_cycle",
+   "value": {
+    "template": "water_cycle",
+    "mistakes_th": [
+     "สับสนการระเหยกับการควบแน่น"
+    ]
+   }
+  },
+  {
+   "def": "CommonMistakes",
+   "note": "eng_tense",
+   "value": {
+    "template": "eng_tense",
+    "mistakes_th": [
+     "ดูประธานอย่างเดียวแล้วลืมคำบอกเวลา"
+    ]
+   }
+  },
+  {
+   "def": "CommonMistakes",
+   "note": "linear_eq",
+   "value": {
+    "template": "linear_eq",
+    "mistakes_th": [
+     "ย้ายข้างแล้วไม่เปลี่ยนเครื่องหมาย",
+     "หารแค่ข้างเดียว"
+    ]
+   }
+  },
+  {
+   "def": "Timebox",
+   "note": "noon mid",
+   "value": {
+    "minutes": 20,
+    "used_minutes": 7,
+    "left_minutes": 13,
+    "hints_used": 1,
+    "encourage_th": "เก่งมากที่พยายามเอง"
+   }
+  },
+  {
+   "def": "Timebox",
+   "note": "more hints",
+   "value": {
+    "minutes": 20,
+    "used_minutes": 5,
+    "left_minutes": 15,
+    "hints_used": 2,
+    "encourage_th": "พักครึ่งนาที แล้วลองคำใบ้ถัดไป"
+   }
+  },
+  {
+   "def": "Timebox",
+   "note": "done",
+   "value": {
+    "minutes": 20,
+    "used_minutes": 20,
+    "left_minutes": 0,
+    "hints_used": 3,
+    "encourage_th": "หมดเวลาที่ตั้งไว้ พักได้ แล้วค่อยกลับมาทำข้อฝึกคล้ายกัน"
+   }
+  },
+  {
+   "def": "ProgressEntry",
+   "note": "e01",
+   "value": {
+    "id": "e01",
+    "child_id": "c01",
+    "date": "2026-11-06",
+    "template": "decimal_add",
+    "hints_used": 1,
+    "minutes": 12,
+    "self_solved": true,
+    "on_device": true
+   }
+  },
+  {
+   "def": "ProgressEntry",
+   "note": "e02",
+   "value": {
+    "id": "e02",
+    "child_id": "c01",
+    "date": "2026-11-10",
+    "template": "percent_discount",
+    "hints_used": 2,
+    "minutes": 18,
+    "self_solved": true,
+    "on_device": true
+   }
+  },
+  {
+   "def": "ProgressEntry",
+   "note": "e03",
+   "value": {
+    "id": "e03",
+    "child_id": "c01",
+    "date": "2026-11-13",
+    "template": "percent_discount",
+    "hints_used": 2,
+    "minutes": 7,
+    "self_solved": false,
+    "on_device": true
+   }
+  },
+  {
+   "def": "ProgressStats",
+   "note": "noon",
+   "value": {
+    "count": 3,
+    "solved": 2,
+    "avg_hints": 1.67,
+    "avg_minutes": 12.33,
+    "last_date": "2026-11-13",
+    "top_template": "percent_discount"
+   }
+  },
+  {
+   "def": "ProgressStats",
+   "note": "empty",
+   "value": {
+    "count": 0,
+    "solved": 0,
+    "avg_hints": 0,
+    "avg_minutes": 0,
+    "last_date": null,
+    "top_template": null
+   }
+  },
+  {
+   "def": "TeacherNote",
+   "note": "noon",
+   "value": {
+    "title_th": "บันทึกถึงครู",
+    "name_th": "พี่นุ่น",
+    "subject_th": "คณิตศาสตร์",
+    "level_th": "ประถมศึกษาปีที่ 4",
+    "topic_th": "โจทย์ปัญหาร้อยละ (ลดราคา)",
+    "hints_used": 2,
+    "note_th": "ลูกคิดเงินที่ลดได้แล้ว แต่ยังไม่แน่ใจว่าต้องลบออกจากราคาเดิมไหม ใช้คำใบ้ระดับ 2 ยังไม่เปิดคำตอบ",
+    "line_share_url": "https://line.me/R/share?text=HomeworkHero%20%E2%80%94%20%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B8%96%E0%B8%B6%E0%B8%87%E0%B8%84%E0%B8%A3%E0%B8%B9/%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%9B%E0%B8%81%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%87%0A%E0%B8%9E%E0%B8%B5%E0%B9%88%E0%B8%99%E0%B8%B8%E0%B9%88%E0%B8%99%20%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%94%E0%B8%B9%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%93%E0%B8%B4%E0%B8%95%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C%20%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%96%E0%B8%A1%E0%B8%A8%E0%B8%B6%E0%B8%81%E0%B8%A9%E0%B8%B2%E0%B8%9B%E0%B8%B5%E0%B8%97%E0%B8%B5%E0%B9%88%204%0A%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%3A%20%E0%B9%82%E0%B8%88%E0%B8%97%E0%B8%A2%E0%B9%8C%E0%B8%9B%E0%B8%B1%E0%B8%8D%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B8%A5%E0%B8%B0%20%28%E0%B8%A5%E0%B8%94%E0%B8%A3%E0%B8%B2%E0%B8%84%E0%B8%B2%29%0A%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%84%E0%B8%B3%E0%B9%83%E0%B8%9A%E0%B9%89%202%20%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B1%E0%B8%9A%20%28%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%94%E0%B8%84%E0%B8%B3%E0%B8%95%E0%B8%AD%E0%B8%9A%E0%B9%83%E0%B8%99%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%81%29%0A%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A5%E0%B8%94%E0%B9%84%E0%B8%94%E0%B9%89%E0%B9%81%E0%B8%A5%E0%B9%89%E0%B8%A7%20%E0%B9%81%E0%B8%95%E0%B9%88%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%81%E0%B8%99%E0%B9%88%E0%B9%83%E0%B8%88%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%A5%E0%B8%9A%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%84%E0%B8%B2%E0%B9%80%E0%B8%94%E0%B8%B4%E0%B8%A1%E0%B9%84%E0%B8%AB%E0%B8%A1%20%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%84%E0%B8%B3%E0%B9%83%E0%B8%9A%E0%B9%89%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B1%E0%B8%9A%202%20%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%94%E0%B8%84%E0%B8%B3%E0%B8%95%E0%B8%AD%E0%B8%9A",
+    "disclaimer_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "noon",
+   "value": {
+    "title_th": "HomeworkHero — พี่นุ่น",
+    "headline_th": "คณิตศาสตร์ ประถมศึกษาปีที่ 4 · โจทย์ปัญหาร้อยละ (ลดราคา)",
+    "hook_th": "ถ่ายการบ้าน ได้วิธีสอนทีละขั้น ไม่บอกคำตอบ",
+    "subject": "math",
+    "level": "p4",
+    "layout": "hint_session",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with HomeworkHero · hints only, not the answer",
+    "cta_th": "คอมเมนต์ HINT รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "warn",
+   "value": {
+    "level": "warn",
+    "message_th": "กำลังเปิดคำตอบฝั่งผู้ปกครอง อย่าอ่านให้ลูกฟังถ้ายังคิดอยู่ HomeworkHero ให้คำใบ้และวิธีคิดทีละขั้น ไม่บอกคำตอบของการบ้านลูกในหน้าหลัก เป็นเครื่องมือช่วยผู้ปกครองสอน ไม่ใช่ครู ไม่ใช่หลักสูตร สพฐ. อย่างเป็นทางการ และไม่ใช้ทำงานให้ลูก"
+   }
+  }
+ ]
+}

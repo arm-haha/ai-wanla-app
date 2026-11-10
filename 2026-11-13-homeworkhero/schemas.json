@@ -1,0 +1,936 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/homeworkhero.schema.json",
+ "title": "HomeworkHero",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age",
+    "child_grade"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "goal_th": {
+     "type": "string"
+    },
+    "child_grade": {
+     "enum": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "m1",
+      "m2",
+      "m3",
+      "m4",
+      "m5",
+      "m6"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "HomeworkPhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "tilt",
+    "text_fill",
+    "template",
+    "confidence",
+    "fields"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^p[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "tilt": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "text_fill": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "template": {
+     "enum": [
+      "percent_discount",
+      "area_rect",
+      "fraction_of",
+      "unit_rate",
+      "average",
+      "decimal_add",
+      "thai_word_choice",
+      "water_cycle",
+      "eng_tense",
+      "linear_eq"
+     ]
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "fields": {
+     "type": "object"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "HomeworkScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "quality",
+    "template",
+    "name_th",
+    "subject",
+    "subject_th",
+    "level",
+    "level_th",
+    "skill_th",
+    "fields",
+    "ok",
+    "uncertain",
+    "message_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    },
+    "template": {
+     "enum": [
+      "percent_discount",
+      "area_rect",
+      "fraction_of",
+      "unit_rate",
+      "average",
+      "decimal_add",
+      "thai_word_choice",
+      "water_cycle",
+      "eng_tense",
+      "linear_eq"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "subject": {
+     "enum": [
+      "math",
+      "thai",
+      "sci",
+      "eng"
+     ]
+    },
+    "subject_th": {
+     "type": "string"
+    },
+    "level": {
+     "enum": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "m1",
+      "m2",
+      "m3",
+      "m4",
+      "m5",
+      "m6"
+     ]
+    },
+    "level_th": {
+     "type": "string"
+    },
+    "skill_th": {
+     "type": "string"
+    },
+    "fields": {
+     "type": "object"
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "uncertain": {
+     "type": "boolean"
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Pipeline": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "steps"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "TemplateInfo": {
+   "type": "object",
+   "required": [
+    "id",
+    "template",
+    "name_th",
+    "subject",
+    "subject_th",
+    "level",
+    "level_th",
+    "skill_th",
+    "fields"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^t[0-9]{2}$"
+    },
+    "template": {
+     "enum": [
+      "percent_discount",
+      "area_rect",
+      "fraction_of",
+      "unit_rate",
+      "average",
+      "decimal_add",
+      "thai_word_choice",
+      "water_cycle",
+      "eng_tense",
+      "linear_eq"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "subject": {
+     "enum": [
+      "math",
+      "thai",
+      "sci",
+      "eng"
+     ]
+    },
+    "subject_th": {
+     "type": "string"
+    },
+    "level": {
+     "enum": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "m1",
+      "m2",
+      "m3",
+      "m4",
+      "m5",
+      "m6"
+     ]
+    },
+    "level_th": {
+     "type": "string"
+    },
+    "skill_th": {
+     "type": "string"
+    },
+    "fields": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "LevelInfo": {
+   "type": "object",
+   "required": [
+    "level",
+    "level_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "m1",
+      "m2",
+      "m3",
+      "m4",
+      "m5",
+      "m6"
+     ]
+    },
+    "level_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Hint": {
+   "type": "object",
+   "required": [
+    "n",
+    "text_th",
+    "reveals_answer"
+   ],
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "text_th": {
+     "type": "string"
+    },
+    "reveals_answer": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "StepHints": {
+   "type": "object",
+   "required": [
+    "template",
+    "upto",
+    "hints",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "template": {
+     "enum": [
+      "percent_discount",
+      "area_rect",
+      "fraction_of",
+      "unit_rate",
+      "average",
+      "decimal_add",
+      "thai_word_choice",
+      "water_cycle",
+      "eng_tense",
+      "linear_eq"
+     ]
+    },
+    "upto": {
+     "enum": [
+      1,
+      2,
+      3
+     ]
+    },
+    "hints": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Hint"
+     },
+     "minItems": 1
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ParentScript": {
+   "type": "object",
+   "required": [
+    "template",
+    "title_th",
+    "intro_th",
+    "steps",
+    "mistakes_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "template": {
+     "enum": [
+      "percent_discount",
+      "area_rect",
+      "fraction_of",
+      "unit_rate",
+      "average",
+      "decimal_add",
+      "thai_word_choice",
+      "water_cycle",
+      "eng_tense",
+      "linear_eq"
+     ]
+    },
+    "title_th": {
+     "type": "string"
+    },
+    "intro_th": {
+     "type": "string"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "n",
+       "text_th"
+      ],
+      "properties": {
+       "n": {
+        "type": "integer",
+        "minimum": 1
+       },
+       "text_th": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": false
+     },
+     "minItems": 1
+    },
+    "mistakes_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ParentReveal": {
+   "type": "object",
+   "required": [
+    "template",
+    "gated",
+    "audience",
+    "answer",
+    "display_th",
+    "warning_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "template": {
+     "enum": [
+      "percent_discount",
+      "area_rect",
+      "fraction_of",
+      "unit_rate",
+      "average",
+      "decimal_add",
+      "thai_word_choice",
+      "water_cycle",
+      "eng_tense",
+      "linear_eq"
+     ]
+    },
+    "gated": {
+     "const": true
+    },
+    "audience": {
+     "const": "parent"
+    },
+    "answer": {
+     "type": "object"
+    },
+    "display_th": {
+     "type": "string"
+    },
+    "warning_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PracticeItem": {
+   "type": "object",
+   "required": [
+    "n",
+    "fields",
+    "method_th",
+    "answer_key"
+   ],
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "fields": {
+     "type": "object"
+    },
+    "method_th": {
+     "type": "string"
+    },
+    "answer_key": {
+     "type": "object"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SimilarPractice": {
+   "type": "object",
+   "required": [
+    "template",
+    "count",
+    "items",
+    "note_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "template": {
+     "enum": [
+      "percent_discount",
+      "area_rect",
+      "fraction_of",
+      "unit_rate",
+      "average",
+      "decimal_add",
+      "thai_word_choice",
+      "water_cycle",
+      "eng_tense",
+      "linear_eq"
+     ]
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/PracticeItem"
+     },
+     "minItems": 1
+    },
+    "note_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "CommonMistakes": {
+   "type": "object",
+   "required": [
+    "template",
+    "mistakes_th"
+   ],
+   "properties": {
+    "template": {
+     "enum": [
+      "percent_discount",
+      "area_rect",
+      "fraction_of",
+      "unit_rate",
+      "average",
+      "decimal_add",
+      "thai_word_choice",
+      "water_cycle",
+      "eng_tense",
+      "linear_eq"
+     ]
+    },
+    "mistakes_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "Timebox": {
+   "type": "object",
+   "required": [
+    "minutes",
+    "used_minutes",
+    "left_minutes",
+    "hints_used",
+    "encourage_th"
+   ],
+   "properties": {
+    "minutes": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "used_minutes": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_minutes": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "hints_used": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "encourage_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ProgressEntry": {
+   "type": "object",
+   "required": [
+    "id",
+    "child_id",
+    "date",
+    "template",
+    "hints_used",
+    "minutes",
+    "self_solved",
+    "on_device"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "child_id": {
+     "type": "string"
+    },
+    "date": {
+     "type": "string",
+     "format": "date",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "template": {
+     "enum": [
+      "percent_discount",
+      "area_rect",
+      "fraction_of",
+      "unit_rate",
+      "average",
+      "decimal_add",
+      "thai_word_choice",
+      "water_cycle",
+      "eng_tense",
+      "linear_eq"
+     ]
+    },
+    "hints_used": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "minutes": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "self_solved": {
+     "type": "boolean"
+    },
+    "on_device": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ProgressStats": {
+   "type": "object",
+   "required": [
+    "count",
+    "solved",
+    "avg_hints",
+    "avg_minutes",
+    "last_date",
+    "top_template"
+   ],
+   "properties": {
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "solved": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "avg_hints": {
+     "type": "number",
+     "minimum": 0
+    },
+    "avg_minutes": {
+     "type": "number",
+     "minimum": 0
+    },
+    "last_date": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "top_template": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "TeacherNote": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "name_th",
+    "subject_th",
+    "level_th",
+    "topic_th",
+    "hints_used",
+    "note_th",
+    "line_share_url",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "subject_th": {
+     "type": "string"
+    },
+    "level_th": {
+     "type": "string"
+    },
+    "topic_th": {
+     "type": "string"
+    },
+    "hints_used": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "note_th": {
+     "type": "string"
+    },
+    "line_share_url": {
+     "type": "string",
+     "pattern": "^https://line\\.me/R/share\\?text="
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "subject",
+    "level",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "subject": {
+     "enum": [
+      "math",
+      "thai",
+      "sci",
+      "eng"
+     ]
+    },
+    "level": {
+     "enum": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "m1",
+      "m2",
+      "m3",
+      "m4",
+      "m5",
+      "m6"
+     ]
+    },
+    "layout": {
+     "enum": [
+      "hint_session"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
