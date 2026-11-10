@@ -1,0 +1,669 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/movemate.schema.json",
+ "title": "MoveMate",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age",
+    "move_date"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "goal_th": {
+     "type": "string"
+    },
+    "move_date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "region": {
+     "enum": [
+      "bkk",
+      "province",
+      "tourist"
+     ]
+    },
+    "van_type": {
+     "enum": [
+      "pickup",
+      "small_truck",
+      "mid_truck"
+     ]
+    },
+    "van_hour": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 23
+    }
+   },
+   "additionalProperties": false
+  },
+  "CheckItem": {
+   "type": "object",
+   "required": [
+    "key",
+    "text_th",
+    "packed"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "text_th": {
+     "type": "string"
+    },
+    "packed": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "RoomChecklist": {
+   "type": "object",
+   "required": [
+    "room",
+    "name_th",
+    "items",
+    "count",
+    "packed",
+    "progress"
+   ],
+   "properties": {
+    "room": {
+     "enum": [
+      "bedroom",
+      "kitchen",
+      "bathroom",
+      "living",
+      "balcony",
+      "misc"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/CheckItem"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "packed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "progress": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    }
+   },
+   "additionalProperties": false
+  },
+  "Box": {
+   "type": "object",
+   "required": [
+    "code",
+    "short_th",
+    "room",
+    "room_th",
+    "contents_th",
+    "item_count",
+    "fragile",
+    "photo_id",
+    "on_device",
+    "qr_payload",
+    "label_th"
+   ],
+   "properties": {
+    "code": {
+     "type": "string",
+     "pattern": "^B[0-9]{2}$"
+    },
+    "short_th": {
+     "type": "string"
+    },
+    "room": {
+     "enum": [
+      "bedroom",
+      "kitchen",
+      "bathroom",
+      "living",
+      "balcony",
+      "misc"
+     ]
+    },
+    "room_th": {
+     "type": "string"
+    },
+    "contents_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "item_count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "fragile": {
+     "type": "boolean"
+    },
+    "photo_id": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "on_device": {
+     "type": "boolean"
+    },
+    "qr_payload": {
+     "type": "string",
+     "pattern": "^movemate://box/B[0-9]{2}$"
+    },
+    "label_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "BoxLabel": {
+   "type": "object",
+   "required": [
+    "code",
+    "short_th",
+    "label_th",
+    "qr_payload",
+    "room_th",
+    "fragile",
+    "photo_id",
+    "on_device",
+    "sizes"
+   ],
+   "properties": {
+    "code": {
+     "type": "string"
+    },
+    "short_th": {
+     "type": "string"
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "qr_payload": {
+     "type": "string"
+    },
+    "room_th": {
+     "type": "string"
+    },
+    "fragile": {
+     "type": "boolean"
+    },
+    "photo_id": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "on_device": {
+     "type": "boolean"
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "FindHit": {
+   "type": "object",
+   "required": [
+    "code",
+    "short_th",
+    "room",
+    "room_th",
+    "matched_th",
+    "fragile",
+    "photo_id"
+   ],
+   "properties": {
+    "code": {
+     "type": "string"
+    },
+    "short_th": {
+     "type": "string"
+    },
+    "room": {
+     "enum": [
+      "bedroom",
+      "kitchen",
+      "bathroom",
+      "living",
+      "balcony",
+      "misc"
+     ]
+    },
+    "room_th": {
+     "type": "string"
+    },
+    "matched_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "fragile": {
+     "type": "boolean"
+    },
+    "photo_id": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "FindResult": {
+   "type": "object",
+   "required": [
+    "query",
+    "hits",
+    "count"
+   ],
+   "properties": {
+    "query": {
+     "type": "string"
+    },
+    "hits": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/FindHit"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "InventoryStats": {
+   "type": "object",
+   "required": [
+    "box_count",
+    "item_count",
+    "fragile_count",
+    "rooms",
+    "with_photo"
+   ],
+   "properties": {
+    "box_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "item_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "fragile_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "rooms": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "bedroom",
+       "kitchen",
+       "bathroom",
+       "living",
+       "balcony",
+       "misc"
+      ]
+     }
+    },
+    "with_photo": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "TimelineStep": {
+   "type": "object",
+   "required": [
+    "n",
+    "key",
+    "time",
+    "text_th",
+    "owner_th"
+   ],
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "key": {
+     "type": "string"
+    },
+    "time": {
+     "type": "string",
+     "pattern": "^[0-9]{2}:[0-9]{2}$"
+    },
+    "text_th": {
+     "type": "string"
+    },
+    "owner_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Timeline": {
+   "type": "object",
+   "required": [
+    "move_date",
+    "dow",
+    "van_hour",
+    "rooms",
+    "steps",
+    "step_count"
+   ],
+   "properties": {
+    "move_date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "dow": {
+     "type": "string"
+    },
+    "van_hour": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 23
+    },
+    "rooms": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "bedroom",
+       "kitchen",
+       "bathroom",
+       "living",
+       "balcony",
+       "misc"
+      ]
+     },
+     "minItems": 1
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/TimelineStep"
+     },
+     "minItems": 1
+    },
+    "step_count": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "UtilityItem": {
+   "type": "object",
+   "required": [
+    "key",
+    "label_th",
+    "hint_th",
+    "value_th",
+    "status"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "hint_th": {
+     "type": "string"
+    },
+    "value_th": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "status": {
+     "enum": [
+      "done",
+      "pending"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "UtilityList": {
+   "type": "object",
+   "required": [
+    "items",
+    "count",
+    "pending",
+    "missing"
+   ],
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/UtilityItem"
+     },
+     "minItems": 1
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "pending": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "missing": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "CostEstimate": {
+   "type": "object",
+   "required": [
+    "n_boxes",
+    "van_type",
+    "region",
+    "van_thb",
+    "boxes_thb",
+    "tape_thb",
+    "total_thb",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "n_boxes": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "van_type": {
+     "enum": [
+      "pickup",
+      "small_truck",
+      "mid_truck"
+     ]
+    },
+    "region": {
+     "enum": [
+      "bkk",
+      "province",
+      "tourist"
+     ]
+    },
+    "van_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "boxes_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "tape_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "box_count",
+    "item_count",
+    "total_thb",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "box_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "item_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "layout": {
+     "enum": [
+      "move_card"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}

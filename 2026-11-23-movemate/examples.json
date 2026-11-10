@@ -1,0 +1,1681 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "am",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่แอม",
+    "name_en": "Am",
+    "age": 33,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "ย้ายคอนโด 1 ห้องนอนไปเช่าใหม่วันเสาร์ โดยไม่ทำของหาย",
+    "move_date": "2026-11-28",
+    "region": "bkk",
+    "van_type": "pickup",
+    "van_hour": 12
+   }
+  },
+  {
+   "def": "Person",
+   "note": "bee",
+   "value": {
+    "id": "u02",
+    "name_th": "น้องบี",
+    "name_en": "Bee",
+    "age": 27,
+    "city_th": "เชียงใหม่",
+    "goal_th": "ย้ายบ้านเช่าในเชียงใหม่ด้วยรถเล็ก",
+    "move_date": "2026-12-05",
+    "region": "province",
+    "van_type": "pickup",
+    "van_hour": 9
+   }
+  },
+  {
+   "def": "Box",
+   "note": "B01",
+   "value": {
+    "code": "B01",
+    "short_th": "MM-B01",
+    "room": "kitchen",
+    "room_th": "ห้องครัว",
+    "contents_th": [
+     "จานชามชุดขาว",
+     "แก้วน้ำ 8 ใบ",
+     "ชามซุป"
+    ],
+    "item_count": 3,
+    "fragile": true,
+    "photo_id": "ph01",
+    "on_device": true,
+    "qr_payload": "movemate://box/B01",
+    "label_th": "MM-B01 · ห้องครัว · เปราะบาง"
+   }
+  },
+  {
+   "def": "BoxLabel",
+   "note": "B01",
+   "value": {
+    "code": "B01",
+    "short_th": "MM-B01",
+    "label_th": "MM-B01 · ห้องครัว · เปราะบาง",
+    "qr_payload": "movemate://box/B01",
+    "room_th": "ห้องครัว",
+    "fragile": true,
+    "photo_id": "ph01",
+    "on_device": true,
+    "sizes": [
+     "70x50mm",
+     "90x60mm"
+    ]
+   }
+  },
+  {
+   "def": "Box",
+   "note": "B02",
+   "value": {
+    "code": "B02",
+    "short_th": "MM-B02",
+    "room": "kitchen",
+    "room_th": "ห้องครัว",
+    "contents_th": [
+     "เครื่องปรุง",
+     "ข้าวสาร",
+     "กาแฟ"
+    ],
+    "item_count": 3,
+    "fragile": false,
+    "photo_id": "ph02",
+    "on_device": true,
+    "qr_payload": "movemate://box/B02",
+    "label_th": "MM-B02 · ห้องครัว"
+   }
+  },
+  {
+   "def": "BoxLabel",
+   "note": "B02",
+   "value": {
+    "code": "B02",
+    "short_th": "MM-B02",
+    "label_th": "MM-B02 · ห้องครัว",
+    "qr_payload": "movemate://box/B02",
+    "room_th": "ห้องครัว",
+    "fragile": false,
+    "photo_id": "ph02",
+    "on_device": true,
+    "sizes": [
+     "70x50mm",
+     "90x60mm"
+    ]
+   }
+  },
+  {
+   "def": "Box",
+   "note": "B03",
+   "value": {
+    "code": "B03",
+    "short_th": "MM-B03",
+    "room": "bedroom",
+    "room_th": "ห้องนอน",
+    "contents_th": [
+     "เสื้อผ้าฤดูหนาว",
+     "เสื้อยืด",
+     "กางเกง"
+    ],
+    "item_count": 3,
+    "fragile": false,
+    "photo_id": "ph03",
+    "on_device": true,
+    "qr_payload": "movemate://box/B03",
+    "label_th": "MM-B03 · ห้องนอน"
+   }
+  },
+  {
+   "def": "BoxLabel",
+   "note": "B03",
+   "value": {
+    "code": "B03",
+    "short_th": "MM-B03",
+    "label_th": "MM-B03 · ห้องนอน",
+    "qr_payload": "movemate://box/B03",
+    "room_th": "ห้องนอน",
+    "fragile": false,
+    "photo_id": "ph03",
+    "on_device": true,
+    "sizes": [
+     "70x50mm",
+     "90x60mm"
+    ]
+   }
+  },
+  {
+   "def": "Box",
+   "note": "B04",
+   "value": {
+    "code": "B04",
+    "short_th": "MM-B04",
+    "room": "bedroom",
+    "room_th": "ห้องนอน",
+    "contents_th": [
+     "ที่ชาร์จมือถือ",
+     "สาย USB",
+     "ปลั๊กพ่วง",
+     "หูฟัง"
+    ],
+    "item_count": 4,
+    "fragile": false,
+    "photo_id": "ph04",
+    "on_device": true,
+    "qr_payload": "movemate://box/B04",
+    "label_th": "MM-B04 · ห้องนอน"
+   }
+  },
+  {
+   "def": "BoxLabel",
+   "note": "B04",
+   "value": {
+    "code": "B04",
+    "short_th": "MM-B04",
+    "label_th": "MM-B04 · ห้องนอน",
+    "qr_payload": "movemate://box/B04",
+    "room_th": "ห้องนอน",
+    "fragile": false,
+    "photo_id": "ph04",
+    "on_device": true,
+    "sizes": [
+     "70x50mm",
+     "90x60mm"
+    ]
+   }
+  },
+  {
+   "def": "Box",
+   "note": "B05",
+   "value": {
+    "code": "B05",
+    "short_th": "MM-B05",
+    "room": "living",
+    "room_th": "ห้องนั่งเล่น",
+    "contents_th": [
+     "หนังสือ 12 เล่ม",
+     "กรอบรูป"
+    ],
+    "item_count": 2,
+    "fragile": false,
+    "photo_id": "ph05",
+    "on_device": true,
+    "qr_payload": "movemate://box/B05",
+    "label_th": "MM-B05 · ห้องนั่งเล่น"
+   }
+  },
+  {
+   "def": "BoxLabel",
+   "note": "B05",
+   "value": {
+    "code": "B05",
+    "short_th": "MM-B05",
+    "label_th": "MM-B05 · ห้องนั่งเล่น",
+    "qr_payload": "movemate://box/B05",
+    "room_th": "ห้องนั่งเล่น",
+    "fragile": false,
+    "photo_id": "ph05",
+    "on_device": true,
+    "sizes": [
+     "70x50mm",
+     "90x60mm"
+    ]
+   }
+  },
+  {
+   "def": "Box",
+   "note": "B06",
+   "value": {
+    "code": "B06",
+    "short_th": "MM-B06",
+    "room": "bathroom",
+    "room_th": "ห้องน้ำ",
+    "contents_th": [
+     "ผ้าเช็ดตัว",
+     "ของใช้ในห้องน้ำ"
+    ],
+    "item_count": 2,
+    "fragile": false,
+    "photo_id": null,
+    "on_device": true,
+    "qr_payload": "movemate://box/B06",
+    "label_th": "MM-B06 · ห้องน้ำ"
+   }
+  },
+  {
+   "def": "BoxLabel",
+   "note": "B06",
+   "value": {
+    "code": "B06",
+    "short_th": "MM-B06",
+    "label_th": "MM-B06 · ห้องน้ำ",
+    "qr_payload": "movemate://box/B06",
+    "room_th": "ห้องน้ำ",
+    "fragile": false,
+    "photo_id": null,
+    "on_device": true,
+    "sizes": [
+     "70x50mm",
+     "90x60mm"
+    ]
+   }
+  },
+  {
+   "def": "Box",
+   "note": "B07",
+   "value": {
+    "code": "B07",
+    "short_th": "MM-B07",
+    "room": "balcony",
+    "room_th": "ระเบียง",
+    "contents_th": [
+     "ต้นไม้เล็ก 2 ใบ",
+     "ราวพับ"
+    ],
+    "item_count": 2,
+    "fragile": true,
+    "photo_id": "ph07",
+    "on_device": true,
+    "qr_payload": "movemate://box/B07",
+    "label_th": "MM-B07 · ระเบียง · เปราะบาง"
+   }
+  },
+  {
+   "def": "BoxLabel",
+   "note": "B07",
+   "value": {
+    "code": "B07",
+    "short_th": "MM-B07",
+    "label_th": "MM-B07 · ระเบียง · เปราะบาง",
+    "qr_payload": "movemate://box/B07",
+    "room_th": "ระเบียง",
+    "fragile": true,
+    "photo_id": "ph07",
+    "on_device": true,
+    "sizes": [
+     "70x50mm",
+     "90x60mm"
+    ]
+   }
+  },
+  {
+   "def": "Box",
+   "note": "B08",
+   "value": {
+    "code": "B08",
+    "short_th": "MM-B08",
+    "room": "living",
+    "room_th": "ห้องนั่งเล่น",
+    "contents_th": [
+     "สาย HDMI",
+     "รีโมทสำรอง",
+     "อุปกรณ์ทีวี"
+    ],
+    "item_count": 3,
+    "fragile": false,
+    "photo_id": "ph08",
+    "on_device": true,
+    "qr_payload": "movemate://box/B08",
+    "label_th": "MM-B08 · ห้องนั่งเล่น"
+   }
+  },
+  {
+   "def": "BoxLabel",
+   "note": "B08",
+   "value": {
+    "code": "B08",
+    "short_th": "MM-B08",
+    "label_th": "MM-B08 · ห้องนั่งเล่น",
+    "qr_payload": "movemate://box/B08",
+    "room_th": "ห้องนั่งเล่น",
+    "fragile": false,
+    "photo_id": "ph08",
+    "on_device": true,
+    "sizes": [
+     "70x50mm",
+     "90x60mm"
+    ]
+   }
+  },
+  {
+   "def": "Box",
+   "note": "B09",
+   "value": {
+    "code": "B09",
+    "short_th": "MM-B09",
+    "room": "misc",
+    "room_th": "อื่น ๆ",
+    "contents_th": [
+     "เอกสารสัญญาเช่า",
+     "แฟ้มประกัน"
+    ],
+    "item_count": 2,
+    "fragile": false,
+    "photo_id": null,
+    "on_device": true,
+    "qr_payload": "movemate://box/B09",
+    "label_th": "MM-B09 · อื่น ๆ"
+   }
+  },
+  {
+   "def": "BoxLabel",
+   "note": "B09",
+   "value": {
+    "code": "B09",
+    "short_th": "MM-B09",
+    "label_th": "MM-B09 · อื่น ๆ",
+    "qr_payload": "movemate://box/B09",
+    "room_th": "อื่น ๆ",
+    "fragile": false,
+    "photo_id": null,
+    "on_device": true,
+    "sizes": [
+     "70x50mm",
+     "90x60mm"
+    ]
+   }
+  },
+  {
+   "def": "Box",
+   "note": "B10",
+   "value": {
+    "code": "B10",
+    "short_th": "MM-B10",
+    "room": "kitchen",
+    "room_th": "ห้องครัว",
+    "contents_th": [
+     "หม้อกระทะ",
+     "เขียง"
+    ],
+    "item_count": 2,
+    "fragile": false,
+    "photo_id": "ph10",
+    "on_device": true,
+    "qr_payload": "movemate://box/B10",
+    "label_th": "MM-B10 · ห้องครัว"
+   }
+  },
+  {
+   "def": "BoxLabel",
+   "note": "B10",
+   "value": {
+    "code": "B10",
+    "short_th": "MM-B10",
+    "label_th": "MM-B10 · ห้องครัว",
+    "qr_payload": "movemate://box/B10",
+    "room_th": "ห้องครัว",
+    "fragile": false,
+    "photo_id": "ph10",
+    "on_device": true,
+    "sizes": [
+     "70x50mm",
+     "90x60mm"
+    ]
+   }
+  },
+  {
+   "def": "RoomChecklist",
+   "note": "bedroom empty",
+   "value": {
+    "room": "bedroom",
+    "name_th": "ห้องนอน",
+    "items": [
+     {
+      "key": "bedroom_1",
+      "text_th": "เสื้อผ้า",
+      "packed": false
+     },
+     {
+      "key": "bedroom_2",
+      "text_th": "ชุดเครื่องนอน",
+      "packed": false
+     },
+     {
+      "key": "bedroom_3",
+      "text_th": "โคมไฟข้างเตียง",
+      "packed": false
+     },
+     {
+      "key": "bedroom_4",
+      "text_th": "ของในลิ้นชัก",
+      "packed": false
+     },
+     {
+      "key": "bedroom_5",
+      "text_th": "ที่ชาร์จและสายไฟ",
+      "packed": false
+     }
+    ],
+    "count": 5,
+    "packed": 0,
+    "progress": 0
+   }
+  },
+  {
+   "def": "RoomChecklist",
+   "note": "bedroom checked",
+   "value": {
+    "room": "bedroom",
+    "name_th": "ห้องนอน",
+    "items": [
+     {
+      "key": "bedroom_1",
+      "text_th": "เสื้อผ้า",
+      "packed": true
+     },
+     {
+      "key": "bedroom_2",
+      "text_th": "ชุดเครื่องนอน",
+      "packed": false
+     },
+     {
+      "key": "bedroom_3",
+      "text_th": "โคมไฟข้างเตียง",
+      "packed": false
+     },
+     {
+      "key": "bedroom_4",
+      "text_th": "ของในลิ้นชัก",
+      "packed": false
+     },
+     {
+      "key": "bedroom_5",
+      "text_th": "ที่ชาร์จและสายไฟ",
+      "packed": true
+     }
+    ],
+    "count": 5,
+    "packed": 2,
+    "progress": 40
+   }
+  },
+  {
+   "def": "CheckItem",
+   "note": "bedroom",
+   "value": {
+    "key": "bedroom_1",
+    "text_th": "เสื้อผ้า",
+    "packed": true
+   }
+  },
+  {
+   "def": "RoomChecklist",
+   "note": "kitchen empty",
+   "value": {
+    "room": "kitchen",
+    "name_th": "ห้องครัว",
+    "items": [
+     {
+      "key": "kitchen_1",
+      "text_th": "จานชาม",
+      "packed": false
+     },
+     {
+      "key": "kitchen_2",
+      "text_th": "หม้อกระทะ",
+      "packed": false
+     },
+     {
+      "key": "kitchen_3",
+      "text_th": "เครื่องปรุง",
+      "packed": false
+     },
+     {
+      "key": "kitchen_4",
+      "text_th": "เครื่องใช้ไฟฟ้าเล็ก",
+      "packed": false
+     },
+     {
+      "key": "kitchen_5",
+      "text_th": "ของในตู้เย็น",
+      "packed": false
+     }
+    ],
+    "count": 5,
+    "packed": 0,
+    "progress": 0
+   }
+  },
+  {
+   "def": "RoomChecklist",
+   "note": "kitchen checked",
+   "value": {
+    "room": "kitchen",
+    "name_th": "ห้องครัว",
+    "items": [
+     {
+      "key": "kitchen_1",
+      "text_th": "จานชาม",
+      "packed": true
+     },
+     {
+      "key": "kitchen_2",
+      "text_th": "หม้อกระทะ",
+      "packed": true
+     },
+     {
+      "key": "kitchen_3",
+      "text_th": "เครื่องปรุง",
+      "packed": true
+     },
+     {
+      "key": "kitchen_4",
+      "text_th": "เครื่องใช้ไฟฟ้าเล็ก",
+      "packed": true
+     },
+     {
+      "key": "kitchen_5",
+      "text_th": "ของในตู้เย็น",
+      "packed": false
+     }
+    ],
+    "count": 5,
+    "packed": 4,
+    "progress": 80
+   }
+  },
+  {
+   "def": "CheckItem",
+   "note": "kitchen",
+   "value": {
+    "key": "kitchen_1",
+    "text_th": "จานชาม",
+    "packed": true
+   }
+  },
+  {
+   "def": "RoomChecklist",
+   "note": "bathroom empty",
+   "value": {
+    "room": "bathroom",
+    "name_th": "ห้องน้ำ",
+    "items": [
+     {
+      "key": "bathroom_1",
+      "text_th": "ของใช้ในห้องน้ำ",
+      "packed": false
+     },
+     {
+      "key": "bathroom_2",
+      "text_th": "ผ้าเช็ดตัว",
+      "packed": false
+     },
+     {
+      "key": "bathroom_3",
+      "text_th": "ยาสามัญ",
+      "packed": false
+     },
+     {
+      "key": "bathroom_4",
+      "text_th": "อุปกรณ์ซักผ้า",
+      "packed": false
+     }
+    ],
+    "count": 4,
+    "packed": 0,
+    "progress": 0
+   }
+  },
+  {
+   "def": "RoomChecklist",
+   "note": "bathroom checked",
+   "value": {
+    "room": "bathroom",
+    "name_th": "ห้องน้ำ",
+    "items": [
+     {
+      "key": "bathroom_1",
+      "text_th": "ของใช้ในห้องน้ำ",
+      "packed": false
+     },
+     {
+      "key": "bathroom_2",
+      "text_th": "ผ้าเช็ดตัว",
+      "packed": false
+     },
+     {
+      "key": "bathroom_3",
+      "text_th": "ยาสามัญ",
+      "packed": false
+     },
+     {
+      "key": "bathroom_4",
+      "text_th": "อุปกรณ์ซักผ้า",
+      "packed": false
+     }
+    ],
+    "count": 4,
+    "packed": 0,
+    "progress": 0
+   }
+  },
+  {
+   "def": "CheckItem",
+   "note": "bathroom",
+   "value": {
+    "key": "bathroom_1",
+    "text_th": "ของใช้ในห้องน้ำ",
+    "packed": false
+   }
+  },
+  {
+   "def": "RoomChecklist",
+   "note": "living empty",
+   "value": {
+    "room": "living",
+    "name_th": "ห้องนั่งเล่น",
+    "items": [
+     {
+      "key": "living_1",
+      "text_th": "หนังสือ",
+      "packed": false
+     },
+     {
+      "key": "living_2",
+      "text_th": "ของตกแต่ง",
+      "packed": false
+     },
+     {
+      "key": "living_3",
+      "text_th": "อุปกรณ์ทีวี",
+      "packed": false
+     },
+     {
+      "key": "living_4",
+      "text_th": "สายไฟและปลั๊ก",
+      "packed": false
+     },
+     {
+      "key": "living_5",
+      "text_th": "โซฟา/โต๊ะ",
+      "packed": false
+     }
+    ],
+    "count": 5,
+    "packed": 0,
+    "progress": 0
+   }
+  },
+  {
+   "def": "RoomChecklist",
+   "note": "living checked",
+   "value": {
+    "room": "living",
+    "name_th": "ห้องนั่งเล่น",
+    "items": [
+     {
+      "key": "living_1",
+      "text_th": "หนังสือ",
+      "packed": false
+     },
+     {
+      "key": "living_2",
+      "text_th": "ของตกแต่ง",
+      "packed": false
+     },
+     {
+      "key": "living_3",
+      "text_th": "อุปกรณ์ทีวี",
+      "packed": false
+     },
+     {
+      "key": "living_4",
+      "text_th": "สายไฟและปลั๊ก",
+      "packed": false
+     },
+     {
+      "key": "living_5",
+      "text_th": "โซฟา/โต๊ะ",
+      "packed": false
+     }
+    ],
+    "count": 5,
+    "packed": 0,
+    "progress": 0
+   }
+  },
+  {
+   "def": "CheckItem",
+   "note": "living",
+   "value": {
+    "key": "living_1",
+    "text_th": "หนังสือ",
+    "packed": false
+   }
+  },
+  {
+   "def": "RoomChecklist",
+   "note": "balcony empty",
+   "value": {
+    "room": "balcony",
+    "name_th": "ระเบียง",
+    "items": [
+     {
+      "key": "balcony_1",
+      "text_th": "ต้นไม้",
+      "packed": false
+     },
+     {
+      "key": "balcony_2",
+      "text_th": "ราวตากผ้า",
+      "packed": false
+     },
+     {
+      "key": "balcony_3",
+      "text_th": "ของเก็บนอกบ้าน",
+      "packed": false
+     }
+    ],
+    "count": 3,
+    "packed": 0,
+    "progress": 0
+   }
+  },
+  {
+   "def": "RoomChecklist",
+   "note": "balcony checked",
+   "value": {
+    "room": "balcony",
+    "name_th": "ระเบียง",
+    "items": [
+     {
+      "key": "balcony_1",
+      "text_th": "ต้นไม้",
+      "packed": false
+     },
+     {
+      "key": "balcony_2",
+      "text_th": "ราวตากผ้า",
+      "packed": false
+     },
+     {
+      "key": "balcony_3",
+      "text_th": "ของเก็บนอกบ้าน",
+      "packed": false
+     }
+    ],
+    "count": 3,
+    "packed": 0,
+    "progress": 0
+   }
+  },
+  {
+   "def": "CheckItem",
+   "note": "balcony",
+   "value": {
+    "key": "balcony_1",
+    "text_th": "ต้นไม้",
+    "packed": false
+   }
+  },
+  {
+   "def": "RoomChecklist",
+   "note": "misc empty",
+   "value": {
+    "room": "misc",
+    "name_th": "อื่น ๆ",
+    "items": [
+     {
+      "key": "misc_1",
+      "text_th": "เอกสารสำคัญ",
+      "packed": false
+     },
+     {
+      "key": "misc_2",
+      "text_th": "ของมีค่า",
+      "packed": false
+     },
+     {
+      "key": "misc_3",
+      "text_th": "กุญแจสำรอง",
+      "packed": false
+     },
+     {
+      "key": "misc_4",
+      "text_th": "กล่องเครื่องมือ",
+      "packed": false
+     }
+    ],
+    "count": 4,
+    "packed": 0,
+    "progress": 0
+   }
+  },
+  {
+   "def": "RoomChecklist",
+   "note": "misc checked",
+   "value": {
+    "room": "misc",
+    "name_th": "อื่น ๆ",
+    "items": [
+     {
+      "key": "misc_1",
+      "text_th": "เอกสารสำคัญ",
+      "packed": false
+     },
+     {
+      "key": "misc_2",
+      "text_th": "ของมีค่า",
+      "packed": false
+     },
+     {
+      "key": "misc_3",
+      "text_th": "กุญแจสำรอง",
+      "packed": false
+     },
+     {
+      "key": "misc_4",
+      "text_th": "กล่องเครื่องมือ",
+      "packed": false
+     }
+    ],
+    "count": 4,
+    "packed": 0,
+    "progress": 0
+   }
+  },
+  {
+   "def": "CheckItem",
+   "note": "misc",
+   "value": {
+    "key": "misc_1",
+    "text_th": "เอกสารสำคัญ",
+    "packed": false
+   }
+  },
+  {
+   "def": "InventoryStats",
+   "note": "am",
+   "value": {
+    "box_count": 10,
+    "item_count": 26,
+    "fragile_count": 2,
+    "rooms": [
+     "balcony",
+     "bathroom",
+     "bedroom",
+     "kitchen",
+     "living",
+     "misc"
+    ],
+    "with_photo": 8
+   }
+  },
+  {
+   "def": "InventoryStats",
+   "note": "empty",
+   "value": {
+    "box_count": 0,
+    "item_count": 0,
+    "fragile_count": 0,
+    "rooms": [],
+    "with_photo": 0
+   }
+  },
+  {
+   "def": "FindResult",
+   "note": "ที่ชาร์จ",
+   "value": {
+    "query": "ที่ชาร์จ",
+    "hits": [
+     {
+      "code": "B04",
+      "short_th": "MM-B04",
+      "room": "bedroom",
+      "room_th": "ห้องนอน",
+      "matched_th": [
+       "ที่ชาร์จมือถือ"
+      ],
+      "fragile": false,
+      "photo_id": "ph04"
+     }
+    ],
+    "count": 1
+   }
+  },
+  {
+   "def": "FindHit",
+   "note": "ที่ชาร์จ B04",
+   "value": {
+    "code": "B04",
+    "short_th": "MM-B04",
+    "room": "bedroom",
+    "room_th": "ห้องนอน",
+    "matched_th": [
+     "ที่ชาร์จมือถือ"
+    ],
+    "fragile": false,
+    "photo_id": "ph04"
+   }
+  },
+  {
+   "def": "FindResult",
+   "note": "จาน",
+   "value": {
+    "query": "จาน",
+    "hits": [
+     {
+      "code": "B01",
+      "short_th": "MM-B01",
+      "room": "kitchen",
+      "room_th": "ห้องครัว",
+      "matched_th": [
+       "จานชามชุดขาว"
+      ],
+      "fragile": true,
+      "photo_id": "ph01"
+     }
+    ],
+    "count": 1
+   }
+  },
+  {
+   "def": "FindHit",
+   "note": "จาน B01",
+   "value": {
+    "code": "B01",
+    "short_th": "MM-B01",
+    "room": "kitchen",
+    "room_th": "ห้องครัว",
+    "matched_th": [
+     "จานชามชุดขาว"
+    ],
+    "fragile": true,
+    "photo_id": "ph01"
+   }
+  },
+  {
+   "def": "FindResult",
+   "note": "HDMI",
+   "value": {
+    "query": "HDMI",
+    "hits": [
+     {
+      "code": "B08",
+      "short_th": "MM-B08",
+      "room": "living",
+      "room_th": "ห้องนั่งเล่น",
+      "matched_th": [
+       "สาย HDMI"
+      ],
+      "fragile": false,
+      "photo_id": "ph08"
+     }
+    ],
+    "count": 1
+   }
+  },
+  {
+   "def": "FindHit",
+   "note": "HDMI B08",
+   "value": {
+    "code": "B08",
+    "short_th": "MM-B08",
+    "room": "living",
+    "room_th": "ห้องนั่งเล่น",
+    "matched_th": [
+     "สาย HDMI"
+    ],
+    "fragile": false,
+    "photo_id": "ph08"
+   }
+  },
+  {
+   "def": "FindResult",
+   "note": "เปียโน",
+   "value": {
+    "query": "เปียโน",
+    "hits": [],
+    "count": 0
+   }
+  },
+  {
+   "def": "FindResult",
+   "note": "B07",
+   "value": {
+    "query": "B07",
+    "hits": [
+     {
+      "code": "B07",
+      "short_th": "MM-B07",
+      "room": "balcony",
+      "room_th": "ระเบียง",
+      "matched_th": [
+       "B07"
+      ],
+      "fragile": true,
+      "photo_id": "ph07"
+     }
+    ],
+    "count": 1
+   }
+  },
+  {
+   "def": "FindHit",
+   "note": "B07 B07",
+   "value": {
+    "code": "B07",
+    "short_th": "MM-B07",
+    "room": "balcony",
+    "room_th": "ระเบียง",
+    "matched_th": [
+     "B07"
+    ],
+    "fragile": true,
+    "photo_id": "ph07"
+   }
+  },
+  {
+   "def": "FindResult",
+   "note": "MM-B04",
+   "value": {
+    "query": "MM-B04",
+    "hits": [
+     {
+      "code": "B04",
+      "short_th": "MM-B04",
+      "room": "bedroom",
+      "room_th": "ห้องนอน",
+      "matched_th": [
+       "MM-B04"
+      ],
+      "fragile": false,
+      "photo_id": "ph04"
+     }
+    ],
+    "count": 1
+   }
+  },
+  {
+   "def": "FindHit",
+   "note": "MM-B04 B04",
+   "value": {
+    "code": "B04",
+    "short_th": "MM-B04",
+    "room": "bedroom",
+    "room_th": "ห้องนอน",
+    "matched_th": [
+     "MM-B04"
+    ],
+    "fragile": false,
+    "photo_id": "ph04"
+   }
+  },
+  {
+   "def": "Timeline",
+   "note": "am sat",
+   "value": {
+    "move_date": "2026-11-28",
+    "dow": "saturday",
+    "van_hour": 12,
+    "rooms": [
+     "kitchen",
+     "bedroom",
+     "living",
+     "bathroom",
+     "balcony"
+    ],
+    "steps": [
+     {
+      "n": 1,
+      "key": "tape",
+      "time": "07:00",
+      "text_th": "ปิดกล่องสุดท้าย ติดเทปและป้ายให้ครบ",
+      "owner_th": "คุณ"
+     },
+     {
+      "n": 2,
+      "key": "kitchen",
+      "time": "08:00",
+      "text_th": "เคลียร์ครัวและของเปราะบางขึ้นรถท้าย ๆ (ขนลงก่อน)",
+      "owner_th": "คุณ"
+     },
+     {
+      "n": 3,
+      "key": "rooms",
+      "time": "09:30",
+      "text_th": "กล่องห้องนอนและห้องน้ำออกมาที่ทางเดิน",
+      "owner_th": "คุณ"
+     },
+     {
+      "n": 4,
+      "key": "van",
+      "time": "12:00",
+      "text_th": "รถกระบะถึงที่อยู่เดิม ตรวจนับกล่องตามป้าย",
+      "owner_th": "คนขับ/คุณ"
+     },
+     {
+      "n": 5,
+      "key": "load",
+      "time": "12:30",
+      "text_th": "ขนขึ้นรถ ของหนักลงก่อน ของเปราะบางวางบนสุด",
+      "owner_th": "ทุกคน"
+     },
+     {
+      "n": 6,
+      "key": "unload",
+      "time": "14:00",
+      "text_th": "ถึงที่อยู่ใหม่ ขนลงตามห้องที่เขียนบนป้าย",
+      "owner_th": "ทุกคน"
+     },
+     {
+      "n": 7,
+      "key": "utils",
+      "time": "15:30",
+      "text_th": "เปิดไฟ-น้ำ เช็กเน็ต และถ่ายรูปมิเตอร์",
+      "owner_th": "คุณ"
+     },
+     {
+      "n": 8,
+      "key": "keys",
+      "time": "17:00",
+      "text_th": "คืนกุญแจที่อยู่เดิม และถ่ายรูปห้องว่าง",
+      "owner_th": "คุณ"
+     }
+    ],
+    "step_count": 8
+   }
+  },
+  {
+   "def": "TimelineStep",
+   "note": "tape",
+   "value": {
+    "n": 1,
+    "key": "tape",
+    "time": "07:00",
+    "text_th": "ปิดกล่องสุดท้าย ติดเทปและป้ายให้ครบ",
+    "owner_th": "คุณ"
+   }
+  },
+  {
+   "def": "TimelineStep",
+   "note": "kitchen",
+   "value": {
+    "n": 2,
+    "key": "kitchen",
+    "time": "08:00",
+    "text_th": "เคลียร์ครัวและของเปราะบางขึ้นรถท้าย ๆ (ขนลงก่อน)",
+    "owner_th": "คุณ"
+   }
+  },
+  {
+   "def": "TimelineStep",
+   "note": "rooms",
+   "value": {
+    "n": 3,
+    "key": "rooms",
+    "time": "09:30",
+    "text_th": "กล่องห้องนอนและห้องน้ำออกมาที่ทางเดิน",
+    "owner_th": "คุณ"
+   }
+  },
+  {
+   "def": "TimelineStep",
+   "note": "van",
+   "value": {
+    "n": 4,
+    "key": "van",
+    "time": "12:00",
+    "text_th": "รถกระบะถึงที่อยู่เดิม ตรวจนับกล่องตามป้าย",
+    "owner_th": "คนขับ/คุณ"
+   }
+  },
+  {
+   "def": "TimelineStep",
+   "note": "load",
+   "value": {
+    "n": 5,
+    "key": "load",
+    "time": "12:30",
+    "text_th": "ขนขึ้นรถ ของหนักลงก่อน ของเปราะบางวางบนสุด",
+    "owner_th": "ทุกคน"
+   }
+  },
+  {
+   "def": "TimelineStep",
+   "note": "unload",
+   "value": {
+    "n": 6,
+    "key": "unload",
+    "time": "14:00",
+    "text_th": "ถึงที่อยู่ใหม่ ขนลงตามห้องที่เขียนบนป้าย",
+    "owner_th": "ทุกคน"
+   }
+  },
+  {
+   "def": "TimelineStep",
+   "note": "utils",
+   "value": {
+    "n": 7,
+    "key": "utils",
+    "time": "15:30",
+    "text_th": "เปิดไฟ-น้ำ เช็กเน็ต และถ่ายรูปมิเตอร์",
+    "owner_th": "คุณ"
+   }
+  },
+  {
+   "def": "TimelineStep",
+   "note": "keys",
+   "value": {
+    "n": 8,
+    "key": "keys",
+    "time": "17:00",
+    "text_th": "คืนกุญแจที่อยู่เดิม และถ่ายรูปห้องว่าง",
+    "owner_th": "คุณ"
+   }
+  },
+  {
+   "def": "Timeline",
+   "note": "bee early",
+   "value": {
+    "move_date": "2026-12-05",
+    "dow": "saturday",
+    "van_hour": 9,
+    "rooms": [
+     "living"
+    ],
+    "steps": [
+     {
+      "n": 1,
+      "key": "tape",
+      "time": "06:00",
+      "text_th": "ปิดกล่องสุดท้าย ติดเทปและป้ายให้ครบ",
+      "owner_th": "คุณ"
+     },
+     {
+      "n": 2,
+      "key": "kitchen",
+      "time": "07:00",
+      "text_th": "เคลียร์ครัวและของเปราะบางขึ้นรถท้าย ๆ (ขนลงก่อน)",
+      "owner_th": "คุณ"
+     },
+     {
+      "n": 3,
+      "key": "rooms",
+      "time": "08:30",
+      "text_th": "กล่องห้องนอนและห้องน้ำออกมาที่ทางเดิน",
+      "owner_th": "คุณ"
+     },
+     {
+      "n": 4,
+      "key": "van",
+      "time": "09:00",
+      "text_th": "รถกระบะถึงที่อยู่เดิม ตรวจนับกล่องตามป้าย",
+      "owner_th": "คนขับ/คุณ"
+     },
+     {
+      "n": 5,
+      "key": "load",
+      "time": "09:30",
+      "text_th": "ขนขึ้นรถ ของหนักลงก่อน ของเปราะบางวางบนสุด",
+      "owner_th": "ทุกคน"
+     },
+     {
+      "n": 6,
+      "key": "unload",
+      "time": "11:00",
+      "text_th": "ถึงที่อยู่ใหม่ ขนลงตามห้องที่เขียนบนป้าย",
+      "owner_th": "ทุกคน"
+     },
+     {
+      "n": 7,
+      "key": "utils",
+      "time": "12:30",
+      "text_th": "เปิดไฟ-น้ำ เช็กเน็ต และถ่ายรูปมิเตอร์",
+      "owner_th": "คุณ"
+     },
+     {
+      "n": 8,
+      "key": "keys",
+      "time": "14:00",
+      "text_th": "คืนกุญแจที่อยู่เดิม และถ่ายรูปห้องว่าง",
+      "owner_th": "คุณ"
+     }
+    ],
+    "step_count": 8
+   }
+  },
+  {
+   "def": "UtilityList",
+   "note": "am",
+   "value": {
+    "items": [
+     {
+      "key": "electricity",
+      "label_th": "ไฟฟ้า (ชื่อมิเตอร์/การไฟฟ้า)",
+      "hint_th": "แจ้งยกเลิกหรือโอนมิเตอร์ที่อยู่เดิม และเปิดที่อยู่ใหม่",
+      "value_th": "การไฟฟ้า FictoMEA นัด 28 พ.ย. 16:00",
+      "status": "done"
+     },
+     {
+      "key": "water",
+      "label_th": "ประปา",
+      "hint_th": "แจ้งยกเลิก/โอน และบันทึกเลขมิเตอร์วันย้าย",
+      "value_th": "ประปา FictoMWA แจ้งแล้วยกเลิก 29 พ.ย.",
+      "status": "done"
+     },
+     {
+      "key": "internet",
+      "label_th": "เน็ตบ้าน",
+      "hint_th": "นัดช่างย้ายหรือยกเลิกก่อนวันย้ายอย่างน้อย 3–7 วัน",
+      "value_th": null,
+      "status": "pending"
+     },
+     {
+      "key": "parcel",
+      "label_th": "พัสดุและไปรษณีย์",
+      "hint_th": "แจ้งเปลี่ยนที่อยู่และพักของที่คอนโด/รปภ. ชั่วคราว",
+      "value_th": null,
+      "status": "pending"
+     },
+     {
+      "key": "keys",
+      "label_th": "คืนกุญแจที่อยู่เดิม",
+      "hint_th": "นัดคืนกุญแจและถ่ายรูปสภาพห้องก่อนคืน",
+      "value_th": null,
+      "status": "pending"
+     },
+     {
+      "key": "address",
+      "label_th": "อัปเดตที่อยู่",
+      "hint_th": "ธนาคาร กรมธรรม์ ที่ทำงาน และบริการสมัครสมาชิก",
+      "value_th": "แจ้งที่ทำงานแล้ว",
+      "status": "done"
+     },
+     {
+      "key": "waste",
+      "label_th": "ขยะและของบริจาค",
+      "hint_th": "แยกของบริจาคก่อนวันย้าย จะได้ไม่ขนของที่ไม่ใช้",
+      "value_th": null,
+      "status": "pending"
+     }
+    ],
+    "count": 7,
+    "pending": 4,
+    "missing": [
+     "internet",
+     "parcel",
+     "keys",
+     "waste"
+    ]
+   }
+  },
+  {
+   "def": "UtilityList",
+   "note": "fresh",
+   "value": {
+    "items": [
+     {
+      "key": "electricity",
+      "label_th": "ไฟฟ้า (ชื่อมิเตอร์/การไฟฟ้า)",
+      "hint_th": "แจ้งยกเลิกหรือโอนมิเตอร์ที่อยู่เดิม และเปิดที่อยู่ใหม่",
+      "value_th": null,
+      "status": "pending"
+     },
+     {
+      "key": "water",
+      "label_th": "ประปา",
+      "hint_th": "แจ้งยกเลิก/โอน และบันทึกเลขมิเตอร์วันย้าย",
+      "value_th": null,
+      "status": "pending"
+     },
+     {
+      "key": "internet",
+      "label_th": "เน็ตบ้าน",
+      "hint_th": "นัดช่างย้ายหรือยกเลิกก่อนวันย้ายอย่างน้อย 3–7 วัน",
+      "value_th": null,
+      "status": "pending"
+     },
+     {
+      "key": "parcel",
+      "label_th": "พัสดุและไปรษณีย์",
+      "hint_th": "แจ้งเปลี่ยนที่อยู่และพักของที่คอนโด/รปภ. ชั่วคราว",
+      "value_th": null,
+      "status": "pending"
+     },
+     {
+      "key": "keys",
+      "label_th": "คืนกุญแจที่อยู่เดิม",
+      "hint_th": "นัดคืนกุญแจและถ่ายรูปสภาพห้องก่อนคืน",
+      "value_th": null,
+      "status": "pending"
+     },
+     {
+      "key": "address",
+      "label_th": "อัปเดตที่อยู่",
+      "hint_th": "ธนาคาร กรมธรรม์ ที่ทำงาน และบริการสมัครสมาชิก",
+      "value_th": null,
+      "status": "pending"
+     },
+     {
+      "key": "waste",
+      "label_th": "ขยะและของบริจาค",
+      "hint_th": "แยกของบริจาคก่อนวันย้าย จะได้ไม่ขนของที่ไม่ใช้",
+      "value_th": null,
+      "status": "pending"
+     }
+    ],
+    "count": 7,
+    "pending": 7,
+    "missing": [
+     "electricity",
+     "water",
+     "internet",
+     "parcel",
+     "keys",
+     "address",
+     "waste"
+    ]
+   }
+  },
+  {
+   "def": "UtilityItem",
+   "note": "electricity",
+   "value": {
+    "key": "electricity",
+    "label_th": "ไฟฟ้า (ชื่อมิเตอร์/การไฟฟ้า)",
+    "hint_th": "แจ้งยกเลิกหรือโอนมิเตอร์ที่อยู่เดิม และเปิดที่อยู่ใหม่",
+    "value_th": "การไฟฟ้า FictoMEA นัด 28 พ.ย. 16:00",
+    "status": "done"
+   }
+  },
+  {
+   "def": "UtilityItem",
+   "note": "water",
+   "value": {
+    "key": "water",
+    "label_th": "ประปา",
+    "hint_th": "แจ้งยกเลิก/โอน และบันทึกเลขมิเตอร์วันย้าย",
+    "value_th": "ประปา FictoMWA แจ้งแล้วยกเลิก 29 พ.ย.",
+    "status": "done"
+   }
+  },
+  {
+   "def": "UtilityItem",
+   "note": "internet",
+   "value": {
+    "key": "internet",
+    "label_th": "เน็ตบ้าน",
+    "hint_th": "นัดช่างย้ายหรือยกเลิกก่อนวันย้ายอย่างน้อย 3–7 วัน",
+    "value_th": null,
+    "status": "pending"
+   }
+  },
+  {
+   "def": "UtilityItem",
+   "note": "parcel",
+   "value": {
+    "key": "parcel",
+    "label_th": "พัสดุและไปรษณีย์",
+    "hint_th": "แจ้งเปลี่ยนที่อยู่และพักของที่คอนโด/รปภ. ชั่วคราว",
+    "value_th": null,
+    "status": "pending"
+   }
+  },
+  {
+   "def": "UtilityItem",
+   "note": "keys",
+   "value": {
+    "key": "keys",
+    "label_th": "คืนกุญแจที่อยู่เดิม",
+    "hint_th": "นัดคืนกุญแจและถ่ายรูปสภาพห้องก่อนคืน",
+    "value_th": null,
+    "status": "pending"
+   }
+  },
+  {
+   "def": "UtilityItem",
+   "note": "address",
+   "value": {
+    "key": "address",
+    "label_th": "อัปเดตที่อยู่",
+    "hint_th": "ธนาคาร กรมธรรม์ ที่ทำงาน และบริการสมัครสมาชิก",
+    "value_th": "แจ้งที่ทำงานแล้ว",
+    "status": "done"
+   }
+  },
+  {
+   "def": "UtilityItem",
+   "note": "waste",
+   "value": {
+    "key": "waste",
+    "label_th": "ขยะและของบริจาค",
+    "hint_th": "แยกของบริจาคก่อนวันย้าย จะได้ไม่ขนของที่ไม่ใช้",
+    "value_th": null,
+    "status": "pending"
+   }
+  },
+  {
+   "def": "CostEstimate",
+   "note": "am",
+   "value": {
+    "n_boxes": 10,
+    "van_type": "pickup",
+    "region": "bkk",
+    "van_thb": 2800,
+    "boxes_thb": 150,
+    "tape_thb": 80,
+    "total_thb": 3030,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ใบเสนอราคาจากรถรับจ้างจริง"
+   }
+  },
+  {
+   "def": "CostEstimate",
+   "note": "bee",
+   "value": {
+    "n_boxes": 10,
+    "van_type": "pickup",
+    "region": "province",
+    "van_thb": 2400,
+    "boxes_thb": 150,
+    "tape_thb": 80,
+    "total_thb": 2630,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ใบเสนอราคาจากรถรับจ้างจริง"
+   }
+  },
+  {
+   "def": "CostEstimate",
+   "note": "truck",
+   "value": {
+    "n_boxes": 10,
+    "van_type": "small_truck",
+    "region": "bkk",
+    "van_thb": 4200,
+    "boxes_thb": 150,
+    "tape_thb": 80,
+    "total_thb": 4430,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ใบเสนอราคาจากรถรับจ้างจริง"
+   }
+  },
+  {
+   "def": "CostEstimate",
+   "note": "zero",
+   "value": {
+    "n_boxes": 0,
+    "van_type": "pickup",
+    "region": "bkk",
+    "van_thb": 2800,
+    "boxes_thb": 0,
+    "tape_thb": 0,
+    "total_thb": 2800,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ใบเสนอราคาจากรถรับจ้างจริง"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "am",
+   "value": {
+    "title_th": "MoveMate — พี่แอม",
+    "headline_th": "ย้าย 2026-11-28 · 10 กล่อง",
+    "hook_th": "ย้ายบ้านไม่ป่วน",
+    "box_count": 10,
+    "item_count": 26,
+    "total_thb": 3030,
+    "layout": "move_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with MoveMate · plan only, not a mover quote",
+    "cta_th": "10 กล่อง · ~฿3,030 · คอมเมนต์ MOVE รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "MoveMate เป็นเช็กลิสต์ย้ายบ้านเบื้องต้น ไม่ใช่บริษัทขนย้าย ราคาเป็นค่าประมาณ ถ่ายรูปในกล่องเก็บในเครื่อง และอย่าวางของมีค่าในกล่องที่ไม่มีป้าย"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "valuables",
+   "value": {
+    "level": "stop",
+    "message_th": "ของมีค่ายังไม่มีป้าย อย่าใส่รวมกับกล่องทั่วไป MoveMate เป็นเช็กลิสต์ย้ายบ้านเบื้องต้น ไม่ใช่บริษัทขนย้าย ราคาเป็นค่าประมาณ ถ่ายรูปในกล่องเก็บในเครื่อง และอย่าวางของมีค่าในกล่องที่ไม่มีป้าย"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "photos off device",
+   "value": {
+    "level": "warn",
+    "message_th": "รูปในกล่องควรเก็บในเครื่อง MoveMate เป็นเช็กลิสต์ย้ายบ้านเบื้องต้น ไม่ใช่บริษัทขนย้าย ราคาเป็นค่าประมาณ ถ่ายรูปในกล่องเก็บในเครื่อง และอย่าวางของมีค่าในกล่องที่ไม่มีป้าย"
+   }
+  }
+ ]
+}
