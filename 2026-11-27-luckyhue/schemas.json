@@ -1,0 +1,576 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/luckyhue.schema.json",
+ "title": "LuckyHue",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "birth_iso": {
+     "type": "string"
+    },
+    "birth_weekday": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "goal_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ClosetItem": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "category",
+    "color_key",
+    "color_th"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "category": {
+     "enum": [
+      "top",
+      "bottom",
+      "shoes",
+      "bag",
+      "accessory"
+     ]
+    },
+    "color_key": {
+     "type": "string"
+    },
+    "color_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ClosetPhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "crop",
+    "items"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^s[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "crop": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ClosetItem"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "ClosetScan": {
+   "type": "object",
+   "required": [
+    "shot_id",
+    "quality",
+    "ok",
+    "items",
+    "count",
+    "message_th"
+   ],
+   "properties": {
+    "shot_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ClosetItem"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "LuckyColor": {
+   "type": "object",
+   "required": [
+    "weekday",
+    "name_th",
+    "color_th",
+    "color_en",
+    "hex",
+    "accent",
+    "is_birth_day",
+    "today_is_birth_day",
+    "night_mode",
+    "headline_th",
+    "blessing_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "weekday": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "color_th": {
+     "type": "string"
+    },
+    "color_en": {
+     "type": "string"
+    },
+    "hex": {
+     "type": "string"
+    },
+    "accent": {
+     "type": "string"
+    },
+    "is_birth_day": {
+     "type": "boolean"
+    },
+    "today_is_birth_day": {
+     "type": [
+      "boolean",
+      "null"
+     ]
+    },
+    "night_mode": {
+     "type": "boolean"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "blessing_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "OutfitMix": {
+   "type": "object",
+   "required": [
+    "items",
+    "count",
+    "lucky_n",
+    "neutral_n",
+    "other_n",
+    "score",
+    "verdict",
+    "headline_th",
+    "color_th",
+    "hex",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ClosetItem"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "lucky_n": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "neutral_n": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "other_n": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "verdict": {
+     "enum": [
+      "match",
+      "clash",
+      "no_match"
+     ]
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "color_th": {
+     "type": "string"
+    },
+    "hex": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Wallpaper": {
+   "type": "object",
+   "required": [
+    "size",
+    "weekday",
+    "color_th",
+    "hex",
+    "palette",
+    "blessing_th",
+    "title_th",
+    "watermark",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "size": {
+     "enum": [
+      "1080x1920",
+      "1080x1080",
+      "1170x2532"
+     ]
+    },
+    "weekday": {
+     "type": "string"
+    },
+    "color_th": {
+     "type": "string"
+    },
+    "hex": {
+     "type": "string"
+    },
+    "palette": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "blessing_th": {
+     "type": "string"
+    },
+    "title_th": {
+     "type": "string"
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "CalendarDay": {
+   "type": "object",
+   "required": [
+    "iso",
+    "weekday",
+    "name_th",
+    "color_th",
+    "hex",
+    "is_birth_day"
+   ],
+   "properties": {
+    "iso": {
+     "type": "string"
+    },
+    "weekday": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "color_th": {
+     "type": "string"
+    },
+    "hex": {
+     "type": "string"
+    },
+    "is_birth_day": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "WeeklyCalendar": {
+   "type": "object",
+   "required": [
+    "start_iso",
+    "birth_weekday",
+    "days",
+    "count",
+    "headline_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "start_iso": {
+     "type": "string"
+    },
+    "birth_weekday": {
+     "type": "string"
+    },
+    "days": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/CalendarDay"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "color_th",
+    "hex",
+    "outfit_score",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "color_th": {
+     "type": "string"
+    },
+    "hex": {
+     "type": "string"
+    },
+    "outfit_score": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0,
+     "maximum": 100
+    },
+    "layout": {
+     "enum": [
+      "hue_card"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ColorInfo": {
+   "type": "object",
+   "required": [
+    "key",
+    "id",
+    "name_th",
+    "color_th",
+    "color_en",
+    "hex",
+    "accent"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "color_th": {
+     "type": "string"
+    },
+    "color_en": {
+     "type": "string"
+    },
+    "hex": {
+     "type": "string"
+    },
+    "accent": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}

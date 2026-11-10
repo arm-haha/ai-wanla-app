@@ -1,0 +1,2059 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "พี่เมย์",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่เมย์",
+    "name_en": "May",
+    "age": 28,
+    "city_th": "กรุงเทพฯ",
+    "birth_iso": "1998-05-01",
+    "birth_weekday": "friday",
+    "goal_th": "เกิดวันศุกร์ อยากรู้สีมงคล แล้วจับคู่ชุดจากรูปตู้เสื้อผ้า"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องโบว์",
+   "value": {
+    "id": "u02",
+    "name_th": "น้องโบว์",
+    "name_en": "Bow",
+    "age": 25,
+    "city_th": "เชียงใหม่",
+    "birth_iso": "1999-08-15",
+    "birth_weekday": "sunday",
+    "goal_th": "เกิดวันอาทิตย์ อยากได้วอลเปเปอร์สีแดง"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่เคน",
+   "value": {
+    "id": "u03",
+    "name_th": "พี่เคน",
+    "name_en": "Ken",
+    "age": 33,
+    "city_th": "ขอนแก่น",
+    "birth_iso": "1993-06-16",
+    "birth_weekday": "wednesday",
+    "goal_th": "เกิดวันพุธ อยากเทียบสีเขียวกับแสดกลางคืน"
+   }
+  },
+  {
+   "def": "ClosetPhoto",
+   "note": "s01",
+   "value": {
+    "id": "s01",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.14,
+    "blur": 0.12,
+    "crop": 0.08,
+    "items": [
+     {
+      "id": "i01",
+      "name_th": "เสื้อเชิ้ตขาว",
+      "category": "top",
+      "color_key": "white",
+      "color_th": "ขาว"
+     },
+     {
+      "id": "i02",
+      "name_th": "กระโปรงฟ้า",
+      "category": "bottom",
+      "color_key": "blue",
+      "color_th": "ฟ้า"
+     },
+     {
+      "id": "i03",
+      "name_th": "กระเป๋าเบจ",
+      "category": "bag",
+      "color_key": "beige",
+      "color_th": "เบจ"
+     },
+     {
+      "id": "i04",
+      "name_th": "รองเท้าดำ",
+      "category": "shoes",
+      "color_key": "black",
+      "color_th": "ดำ"
+     },
+     {
+      "id": "i05",
+      "name_th": "เสื้อชมพู",
+      "category": "top",
+      "color_key": "pink",
+      "color_th": "ชมพู"
+     }
+    ]
+   }
+  },
+  {
+   "def": "ClosetScan",
+   "note": "s01",
+   "value": {
+    "shot_id": "s01",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "items": [
+     {
+      "id": "i01",
+      "name_th": "เสื้อเชิ้ตขาว",
+      "category": "top",
+      "color_key": "white",
+      "color_th": "ขาว"
+     },
+     {
+      "id": "i02",
+      "name_th": "กระโปรงฟ้า",
+      "category": "bottom",
+      "color_key": "blue",
+      "color_th": "ฟ้า"
+     },
+     {
+      "id": "i03",
+      "name_th": "กระเป๋าเบจ",
+      "category": "bag",
+      "color_key": "beige",
+      "color_th": "เบจ"
+     },
+     {
+      "id": "i04",
+      "name_th": "รองเท้าดำ",
+      "category": "shoes",
+      "color_key": "black",
+      "color_th": "ดำ"
+     },
+     {
+      "id": "i05",
+      "name_th": "เสื้อชมพู",
+      "category": "top",
+      "color_key": "pink",
+      "color_th": "ชมพู"
+     }
+    ],
+    "count": 5,
+    "message_th": "เจอเสื้อผ้า 5 ชิ้น"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s01",
+   "value": {
+    "score": 88,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "ClosetItem",
+   "note": "i01",
+   "value": {
+    "id": "i01",
+    "name_th": "เสื้อเชิ้ตขาว",
+    "category": "top",
+    "color_key": "white",
+    "color_th": "ขาว"
+   }
+  },
+  {
+   "def": "ClosetItem",
+   "note": "i02",
+   "value": {
+    "id": "i02",
+    "name_th": "กระโปรงฟ้า",
+    "category": "bottom",
+    "color_key": "blue",
+    "color_th": "ฟ้า"
+   }
+  },
+  {
+   "def": "ClosetItem",
+   "note": "i03",
+   "value": {
+    "id": "i03",
+    "name_th": "กระเป๋าเบจ",
+    "category": "bag",
+    "color_key": "beige",
+    "color_th": "เบจ"
+   }
+  },
+  {
+   "def": "ClosetPhoto",
+   "note": "s02",
+   "value": {
+    "id": "s02",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.68,
+    "blur": 0.52,
+    "crop": 0.5,
+    "items": [
+     {
+      "id": "i09",
+      "name_th": "เสื้อ",
+      "category": "top",
+      "color_key": "white",
+      "color_th": "ขาว"
+     }
+    ]
+   }
+  },
+  {
+   "def": "ClosetScan",
+   "note": "s02",
+   "value": {
+    "shot_id": "s02",
+    "quality": {
+     "score": 43,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนในตู้เยอะ เปิดประตูตู้แล้วถ่ายในที่ร่ม",
+      "ภาพเบลอ วางมือนิ่งหรือถ่ายทีละชิ้น",
+      "เสื้อผ้าถูกครอป ถ่ายให้เห็นทั้งตัวเสื้อหรือกางเกง"
+     ]
+    },
+    "ok": false,
+    "items": [
+     {
+      "id": "i09",
+      "name_th": "เสื้อ",
+      "category": "top",
+      "color_key": "white",
+      "color_th": "ขาว"
+     }
+    ],
+    "count": 1,
+    "message_th": "เจอเสื้อผ้า 1 ชิ้น"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s02",
+   "value": {
+    "score": 43,
+    "ok": false,
+    "tips_th": [
+     "แสงสะท้อนในตู้เยอะ เปิดประตูตู้แล้วถ่ายในที่ร่ม",
+     "ภาพเบลอ วางมือนิ่งหรือถ่ายทีละชิ้น",
+     "เสื้อผ้าถูกครอป ถ่ายให้เห็นทั้งตัวเสื้อหรือกางเกง"
+    ]
+   }
+  },
+  {
+   "def": "ClosetItem",
+   "note": "i09",
+   "value": {
+    "id": "i09",
+    "name_th": "เสื้อ",
+    "category": "top",
+    "color_key": "white",
+    "color_th": "ขาว"
+   }
+  },
+  {
+   "def": "ClosetPhoto",
+   "note": "s03",
+   "value": {
+    "id": "s03",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.2,
+    "blur": 0.15,
+    "crop": 0.1,
+    "items": []
+   }
+  },
+  {
+   "def": "ClosetScan",
+   "note": "s03",
+   "value": {
+    "shot_id": "s03",
+    "quality": {
+     "score": 54,
+     "ok": false,
+     "tips_th": [
+      "ยังไม่เจอเสื้อผ้าในรูป แขวนหรือวางของบนพื้นเรียบแล้วถ่ายใหม่"
+     ]
+    },
+    "ok": false,
+    "items": [],
+    "count": 0,
+    "message_th": "ยังไม่เจอเสื้อผ้าในรูป"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s03",
+   "value": {
+    "score": 54,
+    "ok": false,
+    "tips_th": [
+     "ยังไม่เจอเสื้อผ้าในรูป แขวนหรือวางของบนพื้นเรียบแล้วถ่ายใหม่"
+    ]
+   }
+  },
+  {
+   "def": "LuckyColor",
+   "note": "sunday",
+   "value": {
+    "weekday": "sunday",
+    "name_th": "วันอาทิตย์",
+    "color_th": "แดง",
+    "color_en": "red",
+    "hex": "#DC2626",
+    "accent": "#FEE2E2",
+    "is_birth_day": true,
+    "today_is_birth_day": false,
+    "night_mode": false,
+    "headline_th": "สีมงคลวันอาทิตย์คือสีแดง",
+    "blessing_th": "ขอให้วันนี้มีพลังและเริ่มต้นสดใส",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "LuckyColor",
+   "note": "monday",
+   "value": {
+    "weekday": "monday",
+    "name_th": "วันจันทร์",
+    "color_th": "เหลือง",
+    "color_en": "yellow",
+    "hex": "#EAB308",
+    "accent": "#FEF9C3",
+    "is_birth_day": true,
+    "today_is_birth_day": false,
+    "night_mode": false,
+    "headline_th": "สีมงคลวันจันทร์คือสีเหลือง",
+    "blessing_th": "ขอให้วันนี้ราบรื่นและใจเบา",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "LuckyColor",
+   "note": "tuesday",
+   "value": {
+    "weekday": "tuesday",
+    "name_th": "วันอังคาร",
+    "color_th": "ชมพู",
+    "color_en": "pink",
+    "hex": "#EC4899",
+    "accent": "#FCE7F3",
+    "is_birth_day": true,
+    "today_is_birth_day": false,
+    "night_mode": false,
+    "headline_th": "สีมงคลวันอังคารคือสีชมพู",
+    "blessing_th": "ขอให้วันนี้มีความกล้าและอ่อนโยน",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "LuckyColor",
+   "note": "wednesday",
+   "value": {
+    "weekday": "wednesday",
+    "name_th": "วันพุธ",
+    "color_th": "เขียว",
+    "color_en": "green",
+    "hex": "#16A34A",
+    "accent": "#DCFCE7",
+    "is_birth_day": true,
+    "today_is_birth_day": false,
+    "night_mode": false,
+    "headline_th": "สีมงคลวันพุธคือสีเขียว",
+    "blessing_th": "ขอให้วันนี้เติบโตและใจเย็น",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "LuckyColor",
+   "note": "thursday",
+   "value": {
+    "weekday": "thursday",
+    "name_th": "วันพฤหัสบดี",
+    "color_th": "ส้ม",
+    "color_en": "orange",
+    "hex": "#F97316",
+    "accent": "#FFEDD5",
+    "is_birth_day": true,
+    "today_is_birth_day": false,
+    "night_mode": false,
+    "headline_th": "สีมงคลวันพฤหัสบดีคือสีส้ม",
+    "blessing_th": "ขอให้วันนี้ฉลาดเลือกและเฮง ๆ",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "LuckyColor",
+   "note": "friday",
+   "value": {
+    "weekday": "friday",
+    "name_th": "วันศุกร์",
+    "color_th": "ฟ้า",
+    "color_en": "blue",
+    "hex": "#38BDF8",
+    "accent": "#E0F2FE",
+    "is_birth_day": true,
+    "today_is_birth_day": true,
+    "night_mode": false,
+    "headline_th": "สีมงคลวันศุกร์คือสีฟ้า",
+    "blessing_th": "ขอให้วันนี้สบายและสิ่งดี ๆ เข้ามา",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "LuckyColor",
+   "note": "saturday",
+   "value": {
+    "weekday": "saturday",
+    "name_th": "วันเสาร์",
+    "color_th": "ม่วง",
+    "color_en": "purple",
+    "hex": "#7C3AED",
+    "accent": "#EDE9FE",
+    "is_birth_day": true,
+    "today_is_birth_day": false,
+    "night_mode": false,
+    "headline_th": "สีมงคลวันเสาร์คือสีม่วง",
+    "blessing_th": "ขอให้วันนี้มั่นคงและพักผ่อนได้",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "LuckyColor",
+   "note": "wed night",
+   "value": {
+    "weekday": "wednesday",
+    "name_th": "วันพุธ",
+    "color_th": "แสด",
+    "color_en": "orange",
+    "hex": "#F97316",
+    "accent": "#DCFCE7",
+    "is_birth_day": true,
+    "today_is_birth_day": null,
+    "night_mode": true,
+    "headline_th": "สีมงคลวันพุธคือสีแสด",
+    "blessing_th": "ขอให้วันนี้เติบโตและใจเย็น",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "OutfitMix",
+   "note": "may match",
+   "value": {
+    "items": [
+     {
+      "id": "i01",
+      "name_th": "เสื้อเชิ้ตขาว",
+      "category": "top",
+      "color_key": "white",
+      "color_th": "ขาว"
+     },
+     {
+      "id": "i02",
+      "name_th": "กระโปรงฟ้า",
+      "category": "bottom",
+      "color_key": "blue",
+      "color_th": "ฟ้า"
+     },
+     {
+      "id": "i03",
+      "name_th": "กระเป๋าเบจ",
+      "category": "bag",
+      "color_key": "beige",
+      "color_th": "เบจ"
+     }
+    ],
+    "count": 3,
+    "lucky_n": 1,
+    "neutral_n": 2,
+    "other_n": 0,
+    "score": 67,
+    "verdict": "match",
+    "headline_th": "แมตช์สีฟ้าวันศุกร์ ได้ 1 ชิ้น คู่กับของกลาง 2 ชิ้น",
+    "color_th": "ฟ้า",
+    "hex": "#38BDF8",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "OutfitMix",
+   "note": "auto",
+   "value": {
+    "items": [
+     {
+      "id": "i01",
+      "name_th": "เสื้อเชิ้ตขาว",
+      "category": "top",
+      "color_key": "white",
+      "color_th": "ขาว"
+     },
+     {
+      "id": "i02",
+      "name_th": "กระโปรงฟ้า",
+      "category": "bottom",
+      "color_key": "blue",
+      "color_th": "ฟ้า"
+     },
+     {
+      "id": "i04",
+      "name_th": "รองเท้าดำ",
+      "category": "shoes",
+      "color_key": "black",
+      "color_th": "ดำ"
+     },
+     {
+      "id": "i03",
+      "name_th": "กระเป๋าเบจ",
+      "category": "bag",
+      "color_key": "beige",
+      "color_th": "เบจ"
+     }
+    ],
+    "count": 4,
+    "lucky_n": 1,
+    "neutral_n": 3,
+    "other_n": 0,
+    "score": 62,
+    "verdict": "match",
+    "headline_th": "แมตช์สีฟ้าวันศุกร์ ได้ 1 ชิ้น คู่กับของกลาง 3 ชิ้น",
+    "color_th": "ฟ้า",
+    "hex": "#38BDF8",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "OutfitMix",
+   "note": "clash",
+   "value": {
+    "items": [
+     {
+      "id": "i05",
+      "name_th": "เสื้อชมพู",
+      "category": "top",
+      "color_key": "pink",
+      "color_th": "ชมพู"
+     },
+     {
+      "id": "i02",
+      "name_th": "กระโปรงฟ้า",
+      "category": "bottom",
+      "color_key": "blue",
+      "color_th": "ฟ้า"
+     }
+    ],
+    "count": 2,
+    "lucky_n": 1,
+    "neutral_n": 0,
+    "other_n": 1,
+    "score": 50,
+    "verdict": "clash",
+    "headline_th": "มีชิ้นที่หลุดจากสีฟ้า ลองเปลี่ยนเป็นสีกลางหรือสีมงคล",
+    "color_th": "ฟ้า",
+    "hex": "#38BDF8",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "OutfitMix",
+   "note": "no match",
+   "value": {
+    "items": [
+     {
+      "id": "i01",
+      "name_th": "เสื้อเชิ้ตขาว",
+      "category": "top",
+      "color_key": "white",
+      "color_th": "ขาว"
+     },
+     {
+      "id": "i03",
+      "name_th": "กระเป๋าเบจ",
+      "category": "bag",
+      "color_key": "beige",
+      "color_th": "เบจ"
+     }
+    ],
+    "count": 2,
+    "lucky_n": 0,
+    "neutral_n": 2,
+    "other_n": 0,
+    "score": 50,
+    "verdict": "no_match",
+    "headline_th": "ยังไม่มีชิ้นสีแดง ลองจับคู่กับของกลาง ๆ หรือเพิ่มชิ้นสีนี้",
+    "color_th": "แดง",
+    "hex": "#DC2626",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "OutfitMix",
+   "note": "empty",
+   "value": {
+    "items": [],
+    "count": 0,
+    "lucky_n": 0,
+    "neutral_n": 0,
+    "other_n": 0,
+    "score": 0,
+    "verdict": "no_match",
+    "headline_th": "ยังไม่มีชิ้นสีฟ้า ลองจับคู่กับของกลาง ๆ หรือเพิ่มชิ้นสีนี้",
+    "color_th": "ฟ้า",
+    "hex": "#38BDF8",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "OutfitMix",
+   "note": "auto sunday",
+   "value": {
+    "items": [
+     {
+      "id": "i01",
+      "name_th": "เสื้อเชิ้ตขาว",
+      "category": "top",
+      "color_key": "white",
+      "color_th": "ขาว"
+     },
+     {
+      "id": "i04",
+      "name_th": "รองเท้าดำ",
+      "category": "shoes",
+      "color_key": "black",
+      "color_th": "ดำ"
+     },
+     {
+      "id": "i03",
+      "name_th": "กระเป๋าเบจ",
+      "category": "bag",
+      "color_key": "beige",
+      "color_th": "เบจ"
+     }
+    ],
+    "count": 3,
+    "lucky_n": 0,
+    "neutral_n": 3,
+    "other_n": 0,
+    "score": 50,
+    "verdict": "no_match",
+    "headline_th": "ยังไม่มีชิ้นสีแดง ลองจับคู่กับของกลาง ๆ หรือเพิ่มชิ้นสีนี้",
+    "color_th": "แดง",
+    "hex": "#DC2626",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "Wallpaper",
+   "note": "wp sunday",
+   "value": {
+    "size": "1080x1920",
+    "weekday": "sunday",
+    "color_th": "แดง",
+    "hex": "#DC2626",
+    "palette": [
+     "#DC2626",
+     "#FEE2E2",
+     "#111827"
+    ],
+    "blessing_th": "ขอให้วันนี้มีพลังและเริ่มต้นสดใส",
+    "title_th": "วอลเปเปอร์สีแดงวันอาทิตย์",
+    "watermark": "Made with LuckyHue · for fun only, not fortune-telling",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "OutfitMix",
+   "note": "auto monday",
+   "value": {
+    "items": [
+     {
+      "id": "i01",
+      "name_th": "เสื้อเชิ้ตขาว",
+      "category": "top",
+      "color_key": "white",
+      "color_th": "ขาว"
+     },
+     {
+      "id": "i04",
+      "name_th": "รองเท้าดำ",
+      "category": "shoes",
+      "color_key": "black",
+      "color_th": "ดำ"
+     },
+     {
+      "id": "i03",
+      "name_th": "กระเป๋าเบจ",
+      "category": "bag",
+      "color_key": "beige",
+      "color_th": "เบจ"
+     }
+    ],
+    "count": 3,
+    "lucky_n": 0,
+    "neutral_n": 3,
+    "other_n": 0,
+    "score": 50,
+    "verdict": "no_match",
+    "headline_th": "ยังไม่มีชิ้นสีเหลือง ลองจับคู่กับของกลาง ๆ หรือเพิ่มชิ้นสีนี้",
+    "color_th": "เหลือง",
+    "hex": "#EAB308",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "Wallpaper",
+   "note": "wp monday",
+   "value": {
+    "size": "1080x1920",
+    "weekday": "monday",
+    "color_th": "เหลือง",
+    "hex": "#EAB308",
+    "palette": [
+     "#EAB308",
+     "#FEF9C3",
+     "#111827"
+    ],
+    "blessing_th": "ขอให้วันนี้ราบรื่นและใจเบา",
+    "title_th": "วอลเปเปอร์สีเหลืองวันจันทร์",
+    "watermark": "Made with LuckyHue · for fun only, not fortune-telling",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "OutfitMix",
+   "note": "auto tuesday",
+   "value": {
+    "items": [
+     {
+      "id": "i05",
+      "name_th": "เสื้อชมพู",
+      "category": "top",
+      "color_key": "pink",
+      "color_th": "ชมพู"
+     },
+     {
+      "id": "i04",
+      "name_th": "รองเท้าดำ",
+      "category": "shoes",
+      "color_key": "black",
+      "color_th": "ดำ"
+     },
+     {
+      "id": "i03",
+      "name_th": "กระเป๋าเบจ",
+      "category": "bag",
+      "color_key": "beige",
+      "color_th": "เบจ"
+     }
+    ],
+    "count": 3,
+    "lucky_n": 1,
+    "neutral_n": 2,
+    "other_n": 0,
+    "score": 67,
+    "verdict": "match",
+    "headline_th": "แมตช์สีชมพูวันอังคาร ได้ 1 ชิ้น คู่กับของกลาง 2 ชิ้น",
+    "color_th": "ชมพู",
+    "hex": "#EC4899",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "Wallpaper",
+   "note": "wp tuesday",
+   "value": {
+    "size": "1080x1920",
+    "weekday": "tuesday",
+    "color_th": "ชมพู",
+    "hex": "#EC4899",
+    "palette": [
+     "#EC4899",
+     "#FCE7F3",
+     "#111827"
+    ],
+    "blessing_th": "ขอให้วันนี้มีความกล้าและอ่อนโยน",
+    "title_th": "วอลเปเปอร์สีชมพูวันอังคาร",
+    "watermark": "Made with LuckyHue · for fun only, not fortune-telling",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "OutfitMix",
+   "note": "auto wednesday",
+   "value": {
+    "items": [
+     {
+      "id": "i01",
+      "name_th": "เสื้อเชิ้ตขาว",
+      "category": "top",
+      "color_key": "white",
+      "color_th": "ขาว"
+     },
+     {
+      "id": "i04",
+      "name_th": "รองเท้าดำ",
+      "category": "shoes",
+      "color_key": "black",
+      "color_th": "ดำ"
+     },
+     {
+      "id": "i03",
+      "name_th": "กระเป๋าเบจ",
+      "category": "bag",
+      "color_key": "beige",
+      "color_th": "เบจ"
+     }
+    ],
+    "count": 3,
+    "lucky_n": 0,
+    "neutral_n": 3,
+    "other_n": 0,
+    "score": 50,
+    "verdict": "no_match",
+    "headline_th": "ยังไม่มีชิ้นสีเขียว ลองจับคู่กับของกลาง ๆ หรือเพิ่มชิ้นสีนี้",
+    "color_th": "เขียว",
+    "hex": "#16A34A",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "Wallpaper",
+   "note": "wp wednesday",
+   "value": {
+    "size": "1080x1920",
+    "weekday": "wednesday",
+    "color_th": "เขียว",
+    "hex": "#16A34A",
+    "palette": [
+     "#16A34A",
+     "#DCFCE7",
+     "#111827"
+    ],
+    "blessing_th": "ขอให้วันนี้เติบโตและใจเย็น",
+    "title_th": "วอลเปเปอร์สีเขียววันพุธ",
+    "watermark": "Made with LuckyHue · for fun only, not fortune-telling",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "OutfitMix",
+   "note": "auto thursday",
+   "value": {
+    "items": [
+     {
+      "id": "i01",
+      "name_th": "เสื้อเชิ้ตขาว",
+      "category": "top",
+      "color_key": "white",
+      "color_th": "ขาว"
+     },
+     {
+      "id": "i04",
+      "name_th": "รองเท้าดำ",
+      "category": "shoes",
+      "color_key": "black",
+      "color_th": "ดำ"
+     },
+     {
+      "id": "i03",
+      "name_th": "กระเป๋าเบจ",
+      "category": "bag",
+      "color_key": "beige",
+      "color_th": "เบจ"
+     }
+    ],
+    "count": 3,
+    "lucky_n": 0,
+    "neutral_n": 3,
+    "other_n": 0,
+    "score": 50,
+    "verdict": "no_match",
+    "headline_th": "ยังไม่มีชิ้นสีส้ม ลองจับคู่กับของกลาง ๆ หรือเพิ่มชิ้นสีนี้",
+    "color_th": "ส้ม",
+    "hex": "#F97316",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "Wallpaper",
+   "note": "wp thursday",
+   "value": {
+    "size": "1080x1920",
+    "weekday": "thursday",
+    "color_th": "ส้ม",
+    "hex": "#F97316",
+    "palette": [
+     "#F97316",
+     "#FFEDD5",
+     "#111827"
+    ],
+    "blessing_th": "ขอให้วันนี้ฉลาดเลือกและเฮง ๆ",
+    "title_th": "วอลเปเปอร์สีส้มวันพฤหัสบดี",
+    "watermark": "Made with LuckyHue · for fun only, not fortune-telling",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "OutfitMix",
+   "note": "auto friday",
+   "value": {
+    "items": [
+     {
+      "id": "i01",
+      "name_th": "เสื้อเชิ้ตขาว",
+      "category": "top",
+      "color_key": "white",
+      "color_th": "ขาว"
+     },
+     {
+      "id": "i02",
+      "name_th": "กระโปรงฟ้า",
+      "category": "bottom",
+      "color_key": "blue",
+      "color_th": "ฟ้า"
+     },
+     {
+      "id": "i04",
+      "name_th": "รองเท้าดำ",
+      "category": "shoes",
+      "color_key": "black",
+      "color_th": "ดำ"
+     },
+     {
+      "id": "i03",
+      "name_th": "กระเป๋าเบจ",
+      "category": "bag",
+      "color_key": "beige",
+      "color_th": "เบจ"
+     }
+    ],
+    "count": 4,
+    "lucky_n": 1,
+    "neutral_n": 3,
+    "other_n": 0,
+    "score": 62,
+    "verdict": "match",
+    "headline_th": "แมตช์สีฟ้าวันศุกร์ ได้ 1 ชิ้น คู่กับของกลาง 3 ชิ้น",
+    "color_th": "ฟ้า",
+    "hex": "#38BDF8",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "Wallpaper",
+   "note": "wp friday",
+   "value": {
+    "size": "1080x1920",
+    "weekday": "friday",
+    "color_th": "ฟ้า",
+    "hex": "#38BDF8",
+    "palette": [
+     "#38BDF8",
+     "#E0F2FE",
+     "#111827"
+    ],
+    "blessing_th": "ขอให้วันนี้สบายและสิ่งดี ๆ เข้ามา",
+    "title_th": "วอลเปเปอร์สีฟ้าวันศุกร์",
+    "watermark": "Made with LuckyHue · for fun only, not fortune-telling",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "OutfitMix",
+   "note": "auto saturday",
+   "value": {
+    "items": [
+     {
+      "id": "i01",
+      "name_th": "เสื้อเชิ้ตขาว",
+      "category": "top",
+      "color_key": "white",
+      "color_th": "ขาว"
+     },
+     {
+      "id": "i04",
+      "name_th": "รองเท้าดำ",
+      "category": "shoes",
+      "color_key": "black",
+      "color_th": "ดำ"
+     },
+     {
+      "id": "i03",
+      "name_th": "กระเป๋าเบจ",
+      "category": "bag",
+      "color_key": "beige",
+      "color_th": "เบจ"
+     }
+    ],
+    "count": 3,
+    "lucky_n": 0,
+    "neutral_n": 3,
+    "other_n": 0,
+    "score": 50,
+    "verdict": "no_match",
+    "headline_th": "ยังไม่มีชิ้นสีม่วง ลองจับคู่กับของกลาง ๆ หรือเพิ่มชิ้นสีนี้",
+    "color_th": "ม่วง",
+    "hex": "#7C3AED",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "Wallpaper",
+   "note": "wp saturday",
+   "value": {
+    "size": "1080x1920",
+    "weekday": "saturday",
+    "color_th": "ม่วง",
+    "hex": "#7C3AED",
+    "palette": [
+     "#7C3AED",
+     "#EDE9FE",
+     "#111827"
+    ],
+    "blessing_th": "ขอให้วันนี้มั่นคงและพักผ่อนได้",
+    "title_th": "วอลเปเปอร์สีม่วงวันเสาร์",
+    "watermark": "Made with LuckyHue · for fun only, not fortune-telling",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "Wallpaper",
+   "note": "friday phone",
+   "value": {
+    "size": "1080x1920",
+    "weekday": "friday",
+    "color_th": "ฟ้า",
+    "hex": "#38BDF8",
+    "palette": [
+     "#38BDF8",
+     "#E0F2FE",
+     "#111827"
+    ],
+    "blessing_th": "ขอให้วันนี้สบายและสิ่งดี ๆ เข้ามา",
+    "title_th": "วอลเปเปอร์สีฟ้าวันศุกร์",
+    "watermark": "Made with LuckyHue · for fun only, not fortune-telling",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "Wallpaper",
+   "note": "square",
+   "value": {
+    "size": "1080x1080",
+    "weekday": "friday",
+    "color_th": "ฟ้า",
+    "hex": "#38BDF8",
+    "palette": [
+     "#38BDF8",
+     "#E0F2FE",
+     "#111827"
+    ],
+    "blessing_th": "ขอให้วันนี้สบายและสิ่งดี ๆ เข้ามา",
+    "title_th": "วอลเปเปอร์สีฟ้าวันศุกร์",
+    "watermark": "Made with LuckyHue · for fun only, not fortune-telling",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "Wallpaper",
+   "note": "sunday",
+   "value": {
+    "size": "1170x2532",
+    "weekday": "sunday",
+    "color_th": "แดง",
+    "hex": "#DC2626",
+    "palette": [
+     "#DC2626",
+     "#FEE2E2",
+     "#111827"
+    ],
+    "blessing_th": "ขอให้วันนี้มีพลังและเริ่มต้นสดใส",
+    "title_th": "วอลเปเปอร์สีแดงวันอาทิตย์",
+    "watermark": "Made with LuckyHue · for fun only, not fortune-telling",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "WeeklyCalendar",
+   "note": "may week",
+   "value": {
+    "start_iso": "2026-11-23",
+    "birth_weekday": "friday",
+    "days": [
+     {
+      "iso": "2026-11-23",
+      "weekday": "monday",
+      "name_th": "วันจันทร์",
+      "color_th": "เหลือง",
+      "hex": "#EAB308",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-24",
+      "weekday": "tuesday",
+      "name_th": "วันอังคาร",
+      "color_th": "ชมพู",
+      "hex": "#EC4899",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-25",
+      "weekday": "wednesday",
+      "name_th": "วันพุธ",
+      "color_th": "เขียว",
+      "hex": "#16A34A",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-26",
+      "weekday": "thursday",
+      "name_th": "วันพฤหัสบดี",
+      "color_th": "ส้ม",
+      "hex": "#F97316",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-27",
+      "weekday": "friday",
+      "name_th": "วันศุกร์",
+      "color_th": "ฟ้า",
+      "hex": "#38BDF8",
+      "is_birth_day": true
+     },
+     {
+      "iso": "2026-11-28",
+      "weekday": "saturday",
+      "name_th": "วันเสาร์",
+      "color_th": "ม่วง",
+      "hex": "#7C3AED",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-29",
+      "weekday": "sunday",
+      "name_th": "วันอาทิตย์",
+      "color_th": "แดง",
+      "hex": "#DC2626",
+      "is_birth_day": false
+     }
+    ],
+    "count": 7,
+    "headline_th": "สัปดาห์นี้ไฮไลต์วันศุกร์ สีฟ้า",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "CalendarDay",
+   "note": "monday",
+   "value": {
+    "iso": "2026-11-23",
+    "weekday": "monday",
+    "name_th": "วันจันทร์",
+    "color_th": "เหลือง",
+    "hex": "#EAB308",
+    "is_birth_day": false
+   }
+  },
+  {
+   "def": "CalendarDay",
+   "note": "tuesday",
+   "value": {
+    "iso": "2026-11-24",
+    "weekday": "tuesday",
+    "name_th": "วันอังคาร",
+    "color_th": "ชมพู",
+    "hex": "#EC4899",
+    "is_birth_day": false
+   }
+  },
+  {
+   "def": "CalendarDay",
+   "note": "wednesday",
+   "value": {
+    "iso": "2026-11-25",
+    "weekday": "wednesday",
+    "name_th": "วันพุธ",
+    "color_th": "เขียว",
+    "hex": "#16A34A",
+    "is_birth_day": false
+   }
+  },
+  {
+   "def": "CalendarDay",
+   "note": "thursday",
+   "value": {
+    "iso": "2026-11-26",
+    "weekday": "thursday",
+    "name_th": "วันพฤหัสบดี",
+    "color_th": "ส้ม",
+    "hex": "#F97316",
+    "is_birth_day": false
+   }
+  },
+  {
+   "def": "CalendarDay",
+   "note": "friday",
+   "value": {
+    "iso": "2026-11-27",
+    "weekday": "friday",
+    "name_th": "วันศุกร์",
+    "color_th": "ฟ้า",
+    "hex": "#38BDF8",
+    "is_birth_day": true
+   }
+  },
+  {
+   "def": "CalendarDay",
+   "note": "saturday",
+   "value": {
+    "iso": "2026-11-28",
+    "weekday": "saturday",
+    "name_th": "วันเสาร์",
+    "color_th": "ม่วง",
+    "hex": "#7C3AED",
+    "is_birth_day": false
+   }
+  },
+  {
+   "def": "CalendarDay",
+   "note": "sunday",
+   "value": {
+    "iso": "2026-11-29",
+    "weekday": "sunday",
+    "name_th": "วันอาทิตย์",
+    "color_th": "แดง",
+    "hex": "#DC2626",
+    "is_birth_day": false
+   }
+  },
+  {
+   "def": "WeeklyCalendar",
+   "note": "midweek start",
+   "value": {
+    "start_iso": "2026-11-23",
+    "birth_weekday": "sunday",
+    "days": [
+     {
+      "iso": "2026-11-23",
+      "weekday": "monday",
+      "name_th": "วันจันทร์",
+      "color_th": "เหลือง",
+      "hex": "#EAB308",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-24",
+      "weekday": "tuesday",
+      "name_th": "วันอังคาร",
+      "color_th": "ชมพู",
+      "hex": "#EC4899",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-25",
+      "weekday": "wednesday",
+      "name_th": "วันพุธ",
+      "color_th": "เขียว",
+      "hex": "#16A34A",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-26",
+      "weekday": "thursday",
+      "name_th": "วันพฤหัสบดี",
+      "color_th": "ส้ม",
+      "hex": "#F97316",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-27",
+      "weekday": "friday",
+      "name_th": "วันศุกร์",
+      "color_th": "ฟ้า",
+      "hex": "#38BDF8",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-28",
+      "weekday": "saturday",
+      "name_th": "วันเสาร์",
+      "color_th": "ม่วง",
+      "hex": "#7C3AED",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-29",
+      "weekday": "sunday",
+      "name_th": "วันอาทิตย์",
+      "color_th": "แดง",
+      "hex": "#DC2626",
+      "is_birth_day": true
+     }
+    ],
+    "count": 7,
+    "headline_th": "สัปดาห์นี้ไฮไลต์วันอาทิตย์ สีแดง",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "may",
+   "value": {
+    "title_th": "LuckyHue — พี่เมย์",
+    "headline_th": "สีมงคลวันศุกร์คือสีฟ้า",
+    "hook_th": "สีมงคลประจำวัน + วอลเปเปอร์สายมู",
+    "color_th": "ฟ้า",
+    "hex": "#38BDF8",
+    "outfit_score": 67,
+    "layout": "hue_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with LuckyHue · for fun only, not fortune-telling",
+    "cta_th": "คอมเมนต์ HUE รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "no mix",
+   "value": {
+    "title_th": "LuckyHue — พี่เมย์",
+    "headline_th": "สีมงคลวันศุกร์คือสีฟ้า",
+    "hook_th": "สีมงคลประจำวัน + วอลเปเปอร์สายมู",
+    "color_th": "ฟ้า",
+    "hex": "#38BDF8",
+    "outfit_score": null,
+    "layout": "hue_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with LuckyHue · for fun only, not fortune-telling",
+    "cta_th": "คอมเมนต์ HUE รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "warn",
+   "value": {
+    "level": "warn",
+    "message_th": "อย่าใช้สีมงคลตัดสินใจเรื่องเงิน สุขภาพ หรือความสัมพันธ์ LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "ColorInfo",
+   "note": "sunday",
+   "value": {
+    "key": "sunday",
+    "id": "d01",
+    "name_th": "วันอาทิตย์",
+    "color_th": "แดง",
+    "color_en": "red",
+    "hex": "#DC2626",
+    "accent": "#FEE2E2"
+   }
+  },
+  {
+   "def": "ColorInfo",
+   "note": "monday",
+   "value": {
+    "key": "monday",
+    "id": "d02",
+    "name_th": "วันจันทร์",
+    "color_th": "เหลือง",
+    "color_en": "yellow",
+    "hex": "#EAB308",
+    "accent": "#FEF9C3"
+   }
+  },
+  {
+   "def": "ColorInfo",
+   "note": "tuesday",
+   "value": {
+    "key": "tuesday",
+    "id": "d03",
+    "name_th": "วันอังคาร",
+    "color_th": "ชมพู",
+    "color_en": "pink",
+    "hex": "#EC4899",
+    "accent": "#FCE7F3"
+   }
+  },
+  {
+   "def": "ColorInfo",
+   "note": "wednesday",
+   "value": {
+    "key": "wednesday",
+    "id": "d04",
+    "name_th": "วันพุธ",
+    "color_th": "เขียว",
+    "color_en": "green",
+    "hex": "#16A34A",
+    "accent": "#DCFCE7"
+   }
+  },
+  {
+   "def": "ColorInfo",
+   "note": "thursday",
+   "value": {
+    "key": "thursday",
+    "id": "d05",
+    "name_th": "วันพฤหัสบดี",
+    "color_th": "ส้ม",
+    "color_en": "orange",
+    "hex": "#F97316",
+    "accent": "#FFEDD5"
+   }
+  },
+  {
+   "def": "ColorInfo",
+   "note": "friday",
+   "value": {
+    "key": "friday",
+    "id": "d06",
+    "name_th": "วันศุกร์",
+    "color_th": "ฟ้า",
+    "color_en": "blue",
+    "hex": "#38BDF8",
+    "accent": "#E0F2FE"
+   }
+  },
+  {
+   "def": "ColorInfo",
+   "note": "saturday",
+   "value": {
+    "key": "saturday",
+    "id": "d07",
+    "name_th": "วันเสาร์",
+    "color_th": "ม่วง",
+    "color_en": "purple",
+    "hex": "#7C3AED",
+    "accent": "#EDE9FE"
+   }
+  },
+  {
+   "def": "WeeklyCalendar",
+   "note": "week sunday",
+   "value": {
+    "start_iso": "2026-11-23",
+    "birth_weekday": "sunday",
+    "days": [
+     {
+      "iso": "2026-11-23",
+      "weekday": "monday",
+      "name_th": "วันจันทร์",
+      "color_th": "เหลือง",
+      "hex": "#EAB308",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-24",
+      "weekday": "tuesday",
+      "name_th": "วันอังคาร",
+      "color_th": "ชมพู",
+      "hex": "#EC4899",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-25",
+      "weekday": "wednesday",
+      "name_th": "วันพุธ",
+      "color_th": "เขียว",
+      "hex": "#16A34A",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-26",
+      "weekday": "thursday",
+      "name_th": "วันพฤหัสบดี",
+      "color_th": "ส้ม",
+      "hex": "#F97316",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-27",
+      "weekday": "friday",
+      "name_th": "วันศุกร์",
+      "color_th": "ฟ้า",
+      "hex": "#38BDF8",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-28",
+      "weekday": "saturday",
+      "name_th": "วันเสาร์",
+      "color_th": "ม่วง",
+      "hex": "#7C3AED",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-29",
+      "weekday": "sunday",
+      "name_th": "วันอาทิตย์",
+      "color_th": "แดง",
+      "hex": "#DC2626",
+      "is_birth_day": true
+     }
+    ],
+    "count": 7,
+    "headline_th": "สัปดาห์นี้ไฮไลต์วันอาทิตย์ สีแดง",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "WeeklyCalendar",
+   "note": "week monday",
+   "value": {
+    "start_iso": "2026-11-23",
+    "birth_weekday": "monday",
+    "days": [
+     {
+      "iso": "2026-11-23",
+      "weekday": "monday",
+      "name_th": "วันจันทร์",
+      "color_th": "เหลือง",
+      "hex": "#EAB308",
+      "is_birth_day": true
+     },
+     {
+      "iso": "2026-11-24",
+      "weekday": "tuesday",
+      "name_th": "วันอังคาร",
+      "color_th": "ชมพู",
+      "hex": "#EC4899",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-25",
+      "weekday": "wednesday",
+      "name_th": "วันพุธ",
+      "color_th": "เขียว",
+      "hex": "#16A34A",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-26",
+      "weekday": "thursday",
+      "name_th": "วันพฤหัสบดี",
+      "color_th": "ส้ม",
+      "hex": "#F97316",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-27",
+      "weekday": "friday",
+      "name_th": "วันศุกร์",
+      "color_th": "ฟ้า",
+      "hex": "#38BDF8",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-28",
+      "weekday": "saturday",
+      "name_th": "วันเสาร์",
+      "color_th": "ม่วง",
+      "hex": "#7C3AED",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-29",
+      "weekday": "sunday",
+      "name_th": "วันอาทิตย์",
+      "color_th": "แดง",
+      "hex": "#DC2626",
+      "is_birth_day": false
+     }
+    ],
+    "count": 7,
+    "headline_th": "สัปดาห์นี้ไฮไลต์วันจันทร์ สีเหลือง",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "WeeklyCalendar",
+   "note": "week tuesday",
+   "value": {
+    "start_iso": "2026-11-23",
+    "birth_weekday": "tuesday",
+    "days": [
+     {
+      "iso": "2026-11-23",
+      "weekday": "monday",
+      "name_th": "วันจันทร์",
+      "color_th": "เหลือง",
+      "hex": "#EAB308",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-24",
+      "weekday": "tuesday",
+      "name_th": "วันอังคาร",
+      "color_th": "ชมพู",
+      "hex": "#EC4899",
+      "is_birth_day": true
+     },
+     {
+      "iso": "2026-11-25",
+      "weekday": "wednesday",
+      "name_th": "วันพุธ",
+      "color_th": "เขียว",
+      "hex": "#16A34A",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-26",
+      "weekday": "thursday",
+      "name_th": "วันพฤหัสบดี",
+      "color_th": "ส้ม",
+      "hex": "#F97316",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-27",
+      "weekday": "friday",
+      "name_th": "วันศุกร์",
+      "color_th": "ฟ้า",
+      "hex": "#38BDF8",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-28",
+      "weekday": "saturday",
+      "name_th": "วันเสาร์",
+      "color_th": "ม่วง",
+      "hex": "#7C3AED",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-29",
+      "weekday": "sunday",
+      "name_th": "วันอาทิตย์",
+      "color_th": "แดง",
+      "hex": "#DC2626",
+      "is_birth_day": false
+     }
+    ],
+    "count": 7,
+    "headline_th": "สัปดาห์นี้ไฮไลต์วันอังคาร สีชมพู",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "WeeklyCalendar",
+   "note": "week wednesday",
+   "value": {
+    "start_iso": "2026-11-23",
+    "birth_weekday": "wednesday",
+    "days": [
+     {
+      "iso": "2026-11-23",
+      "weekday": "monday",
+      "name_th": "วันจันทร์",
+      "color_th": "เหลือง",
+      "hex": "#EAB308",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-24",
+      "weekday": "tuesday",
+      "name_th": "วันอังคาร",
+      "color_th": "ชมพู",
+      "hex": "#EC4899",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-25",
+      "weekday": "wednesday",
+      "name_th": "วันพุธ",
+      "color_th": "เขียว",
+      "hex": "#16A34A",
+      "is_birth_day": true
+     },
+     {
+      "iso": "2026-11-26",
+      "weekday": "thursday",
+      "name_th": "วันพฤหัสบดี",
+      "color_th": "ส้ม",
+      "hex": "#F97316",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-27",
+      "weekday": "friday",
+      "name_th": "วันศุกร์",
+      "color_th": "ฟ้า",
+      "hex": "#38BDF8",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-28",
+      "weekday": "saturday",
+      "name_th": "วันเสาร์",
+      "color_th": "ม่วง",
+      "hex": "#7C3AED",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-29",
+      "weekday": "sunday",
+      "name_th": "วันอาทิตย์",
+      "color_th": "แดง",
+      "hex": "#DC2626",
+      "is_birth_day": false
+     }
+    ],
+    "count": 7,
+    "headline_th": "สัปดาห์นี้ไฮไลต์วันพุธ สีเขียว",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "WeeklyCalendar",
+   "note": "week thursday",
+   "value": {
+    "start_iso": "2026-11-23",
+    "birth_weekday": "thursday",
+    "days": [
+     {
+      "iso": "2026-11-23",
+      "weekday": "monday",
+      "name_th": "วันจันทร์",
+      "color_th": "เหลือง",
+      "hex": "#EAB308",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-24",
+      "weekday": "tuesday",
+      "name_th": "วันอังคาร",
+      "color_th": "ชมพู",
+      "hex": "#EC4899",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-25",
+      "weekday": "wednesday",
+      "name_th": "วันพุธ",
+      "color_th": "เขียว",
+      "hex": "#16A34A",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-26",
+      "weekday": "thursday",
+      "name_th": "วันพฤหัสบดี",
+      "color_th": "ส้ม",
+      "hex": "#F97316",
+      "is_birth_day": true
+     },
+     {
+      "iso": "2026-11-27",
+      "weekday": "friday",
+      "name_th": "วันศุกร์",
+      "color_th": "ฟ้า",
+      "hex": "#38BDF8",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-28",
+      "weekday": "saturday",
+      "name_th": "วันเสาร์",
+      "color_th": "ม่วง",
+      "hex": "#7C3AED",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-29",
+      "weekday": "sunday",
+      "name_th": "วันอาทิตย์",
+      "color_th": "แดง",
+      "hex": "#DC2626",
+      "is_birth_day": false
+     }
+    ],
+    "count": 7,
+    "headline_th": "สัปดาห์นี้ไฮไลต์วันพฤหัสบดี สีส้ม",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "WeeklyCalendar",
+   "note": "week friday",
+   "value": {
+    "start_iso": "2026-11-23",
+    "birth_weekday": "friday",
+    "days": [
+     {
+      "iso": "2026-11-23",
+      "weekday": "monday",
+      "name_th": "วันจันทร์",
+      "color_th": "เหลือง",
+      "hex": "#EAB308",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-24",
+      "weekday": "tuesday",
+      "name_th": "วันอังคาร",
+      "color_th": "ชมพู",
+      "hex": "#EC4899",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-25",
+      "weekday": "wednesday",
+      "name_th": "วันพุธ",
+      "color_th": "เขียว",
+      "hex": "#16A34A",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-26",
+      "weekday": "thursday",
+      "name_th": "วันพฤหัสบดี",
+      "color_th": "ส้ม",
+      "hex": "#F97316",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-27",
+      "weekday": "friday",
+      "name_th": "วันศุกร์",
+      "color_th": "ฟ้า",
+      "hex": "#38BDF8",
+      "is_birth_day": true
+     },
+     {
+      "iso": "2026-11-28",
+      "weekday": "saturday",
+      "name_th": "วันเสาร์",
+      "color_th": "ม่วง",
+      "hex": "#7C3AED",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-29",
+      "weekday": "sunday",
+      "name_th": "วันอาทิตย์",
+      "color_th": "แดง",
+      "hex": "#DC2626",
+      "is_birth_day": false
+     }
+    ],
+    "count": 7,
+    "headline_th": "สัปดาห์นี้ไฮไลต์วันศุกร์ สีฟ้า",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "WeeklyCalendar",
+   "note": "week saturday",
+   "value": {
+    "start_iso": "2026-11-23",
+    "birth_weekday": "saturday",
+    "days": [
+     {
+      "iso": "2026-11-23",
+      "weekday": "monday",
+      "name_th": "วันจันทร์",
+      "color_th": "เหลือง",
+      "hex": "#EAB308",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-24",
+      "weekday": "tuesday",
+      "name_th": "วันอังคาร",
+      "color_th": "ชมพู",
+      "hex": "#EC4899",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-25",
+      "weekday": "wednesday",
+      "name_th": "วันพุธ",
+      "color_th": "เขียว",
+      "hex": "#16A34A",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-26",
+      "weekday": "thursday",
+      "name_th": "วันพฤหัสบดี",
+      "color_th": "ส้ม",
+      "hex": "#F97316",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-27",
+      "weekday": "friday",
+      "name_th": "วันศุกร์",
+      "color_th": "ฟ้า",
+      "hex": "#38BDF8",
+      "is_birth_day": false
+     },
+     {
+      "iso": "2026-11-28",
+      "weekday": "saturday",
+      "name_th": "วันเสาร์",
+      "color_th": "ม่วง",
+      "hex": "#7C3AED",
+      "is_birth_day": true
+     },
+     {
+      "iso": "2026-11-29",
+      "weekday": "sunday",
+      "name_th": "วันอาทิตย์",
+      "color_th": "แดง",
+      "hex": "#DC2626",
+      "is_birth_day": false
+     }
+    ],
+    "count": 7,
+    "headline_th": "สัปดาห์นี้ไฮไลต์วันเสาร์ สีม่วง",
+    "disclaimer_th": "LuckyHue เป็นสีมงคลตามวันที่นิยมหาสนุก ไม่ใช่หมอดู ไม่ใช่โหราศาสตร์ และไม่รับประกันโชคชะตา แหล่งที่มาของสีประจำวันอาจต่างกัน โดยเฉพาะวันพุธ"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "0.1-0.1-0.1-3",
+   "value": {
+    "score": 90,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "0.3-0.2-0.2-2",
+   "value": {
+    "score": 76,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "0.5-0.4-0.3-1",
+   "value": {
+    "score": 59,
+    "ok": false,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "0.0-0.0-0.0-4",
+   "value": {
+    "score": 100,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "0.2-0.3-0.1-5",
+   "value": {
+    "score": 78,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "0.4-0.1-0.2-2",
+   "value": {
+    "score": 77,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "0.6-0.2-0.1-1",
+   "value": {
+    "score": 68,
+    "ok": true,
+    "tips_th": [
+     "แสงสะท้อนในตู้เยอะ เปิดประตูตู้แล้วถ่ายในที่ร่ม"
+    ]
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "0.1-0.6-0.1-2",
+   "value": {
+    "score": 70,
+    "ok": true,
+    "tips_th": [
+     "ภาพเบลอ วางมือนิ่งหรือถ่ายทีละชิ้น"
+    ]
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "0.2-0.2-0.6-1",
+   "value": {
+    "score": 70,
+    "ok": true,
+    "tips_th": [
+     "เสื้อผ้าถูกครอป ถ่ายให้เห็นทั้งตัวเสื้อหรือกางเกง"
+    ]
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "0.05-0.05-0.05-8",
+   "value": {
+    "score": 95,
+    "ok": true,
+    "tips_th": []
+   }
+  }
+ ]
+}
