@@ -1,0 +1,956 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/contractlens.schema.json",
+ "title": "ContractLens",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age",
+    "region"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "goal_th": {
+     "type": "string"
+    },
+    "region": {
+     "enum": [
+      "bkk",
+      "province",
+      "tourist"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "Detection": {
+   "type": "object",
+   "required": [
+    "clause",
+    "confidence"
+   ],
+   "properties": {
+    "clause": {
+     "enum": [
+      "auto_renew",
+      "excess_deposit",
+      "heavy_penalty",
+      "entry_no_notice",
+      "hidden_fee",
+      "utility_unclear",
+      "repair_all",
+      "interest_high",
+      "early_termination",
+      "no_receipt",
+      "seizure",
+      "blank_terms"
+     ]
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "excerpt_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ContractPhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "kind",
+    "glare",
+    "blur",
+    "tilt",
+    "text_fill",
+    "detections"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^p[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "kind": {
+     "enum": [
+      "rental",
+      "loan"
+     ]
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "tilt": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "text_fill": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "detections": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Detection"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "IdentifiedClause": {
+   "type": "object",
+   "required": [
+    "clause",
+    "name_th",
+    "confidence"
+   ],
+   "properties": {
+    "clause": {
+     "enum": [
+      "auto_renew",
+      "excess_deposit",
+      "heavy_penalty",
+      "entry_no_notice",
+      "hidden_fee",
+      "utility_unclear",
+      "repair_all",
+      "interest_high",
+      "early_termination",
+      "no_receipt",
+      "seizure",
+      "blank_terms"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "excerpt_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ContractScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "kind",
+    "kind_th",
+    "quality",
+    "clauses",
+    "uncertain",
+    "clause_count",
+    "ok",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "kind": {
+     "enum": [
+      "rental",
+      "loan"
+     ]
+    },
+    "kind_th": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    },
+    "clauses": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/IdentifiedClause"
+     }
+    },
+    "uncertain": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "auto_renew",
+       "excess_deposit",
+       "heavy_penalty",
+       "entry_no_notice",
+       "hidden_fee",
+       "utility_unclear",
+       "repair_all",
+       "interest_high",
+       "early_termination",
+       "no_receipt",
+       "seizure",
+       "blank_terms"
+      ]
+     }
+    },
+    "clause_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Pipeline": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "steps"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ClauseInfo": {
+   "type": "object",
+   "required": [
+    "id",
+    "key",
+    "name_th",
+    "kind",
+    "default_level",
+    "meaning_th",
+    "why_th",
+    "ask_th"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^c[0-9]{2}$"
+    },
+    "key": {
+     "enum": [
+      "auto_renew",
+      "excess_deposit",
+      "heavy_penalty",
+      "entry_no_notice",
+      "hidden_fee",
+      "utility_unclear",
+      "repair_all",
+      "interest_high",
+      "early_termination",
+      "no_receipt",
+      "seizure",
+      "blank_terms"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "kind": {
+     "enum": [
+      "rental",
+      "loan",
+      "both"
+     ]
+    },
+    "default_level": {
+     "enum": [
+      "red",
+      "yellow",
+      "green"
+     ]
+    },
+    "meaning_th": {
+     "type": "string"
+    },
+    "why_th": {
+     "type": "string"
+    },
+    "ask_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "RiskItem": {
+   "type": "object",
+   "required": [
+    "clause",
+    "name_th",
+    "level",
+    "meaning_th",
+    "why_th",
+    "ask_th"
+   ],
+   "properties": {
+    "clause": {
+     "enum": [
+      "auto_renew",
+      "excess_deposit",
+      "heavy_penalty",
+      "entry_no_notice",
+      "hidden_fee",
+      "utility_unclear",
+      "repair_all",
+      "interest_high",
+      "early_termination",
+      "no_receipt",
+      "seizure",
+      "blank_terms"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "level": {
+     "enum": [
+      "red",
+      "yellow",
+      "green"
+     ]
+    },
+    "meaning_th": {
+     "type": "string"
+    },
+    "why_th": {
+     "type": "string"
+    },
+    "ask_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "RiskHighlights": {
+   "type": "object",
+   "required": [
+    "kind",
+    "level",
+    "score",
+    "count",
+    "items",
+    "red_count",
+    "yellow_count",
+    "headline_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "kind": {
+     "enum": [
+      "rental",
+      "loan"
+     ]
+    },
+    "level": {
+     "enum": [
+      "red",
+      "yellow",
+      "green"
+     ]
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/RiskItem"
+     }
+    },
+    "red_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "yellow_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PlainSummary": {
+   "type": "object",
+   "required": [
+    "kind",
+    "kind_th",
+    "level",
+    "bullets_th",
+    "headline_th",
+    "plain_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "kind": {
+     "enum": [
+      "rental",
+      "loan"
+     ]
+    },
+    "kind_th": {
+     "type": "string"
+    },
+    "level": {
+     "enum": [
+      "red",
+      "yellow",
+      "green"
+     ]
+    },
+    "bullets_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "plain_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "RentalFees": {
+   "type": "object",
+   "required": [
+    "kind",
+    "rent_thb",
+    "deposit_thb",
+    "advance_thb",
+    "extras_thb",
+    "move_in_thb",
+    "late_fee_per_day_thb",
+    "late_30d_thb",
+    "breakdown_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "kind": {
+     "const": "rental"
+    },
+    "rent_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "deposit_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "advance_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "extras_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "move_in_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "late_fee_per_day_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "late_30d_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "breakdown_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "LoanFees": {
+   "type": "object",
+   "required": [
+    "kind",
+    "principal_thb",
+    "interest_total_thb",
+    "total_payable_thb",
+    "installment_thb",
+    "term_months",
+    "method_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "kind": {
+     "const": "loan"
+    },
+    "principal_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "interest_total_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total_payable_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "installment_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "term_months": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "method_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Questions": {
+   "type": "object",
+   "required": [
+    "questions_th",
+    "count",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "questions_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "CheckItem": {
+   "type": "object",
+   "required": [
+    "key",
+    "text_th",
+    "done"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "text_th": {
+     "type": "string"
+    },
+    "done": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SignChecklist": {
+   "type": "object",
+   "required": [
+    "kind",
+    "items",
+    "done_count",
+    "total",
+    "missing",
+    "ready_to_sign",
+    "message_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "kind": {
+     "enum": [
+      "rental",
+      "loan"
+     ]
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/CheckItem"
+     },
+     "minItems": 1
+    },
+    "done_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "missing": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "ready_to_sign": {
+     "type": "boolean"
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "FamilyCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "name_th",
+    "kind",
+    "kind_th",
+    "level",
+    "score",
+    "headline_th",
+    "money_th",
+    "note_th",
+    "line_share_url",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "kind": {
+     "enum": [
+      "rental",
+      "loan"
+     ]
+    },
+    "kind_th": {
+     "type": "string"
+    },
+    "level": {
+     "enum": [
+      "red",
+      "yellow",
+      "green"
+     ]
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "money_th": {
+     "type": "string"
+    },
+    "note_th": {
+     "type": "string"
+    },
+    "line_share_url": {
+     "type": "string",
+     "pattern": "^https://line\\.me/R/share\\?text="
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiaryEntry": {
+   "type": "object",
+   "required": [
+    "id",
+    "person_id",
+    "date",
+    "kind",
+    "title_th",
+    "level",
+    "on_device"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "person_id": {
+     "type": "string"
+    },
+    "date": {
+     "type": "string",
+     "format": "date",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "kind": {
+     "enum": [
+      "rental",
+      "loan"
+     ]
+    },
+    "title_th": {
+     "type": "string"
+    },
+    "level": {
+     "enum": [
+      "red",
+      "yellow",
+      "green"
+     ]
+    },
+    "on_device": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiaryStats": {
+   "type": "object",
+   "required": [
+    "count",
+    "red",
+    "last_date",
+    "top_kind"
+   ],
+   "properties": {
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "red": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "last_date": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "top_kind": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "level",
+    "score",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "level": {
+     "enum": [
+      "red",
+      "yellow",
+      "green"
+     ]
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "layout": {
+     "enum": [
+      "risk_result"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
