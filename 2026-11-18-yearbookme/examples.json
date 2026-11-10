@@ -1,0 +1,2071 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "น้องมายด์",
+   "value": {
+    "id": "u01",
+    "name_th": "น้องมายด์",
+    "name_en": "Mind",
+    "nickname_th": "มายด์",
+    "age": 22,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "อยากได้รูปรุ่นยุค 90s สำหรับรีลงานรับปริญญา",
+    "own_photo": true,
+    "consent_confirmed": true,
+    "guardian_ok": false,
+    "all_consented": true,
+    "celebrity_likely": false,
+    "consented": true,
+    "role": "most_likely_friend"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่เฟิร์น",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่เฟิร์น",
+    "name_en": "Fern",
+    "nickname_th": "เฟิร์น",
+    "age": 23,
+    "city_th": "เชียงใหม่",
+    "goal_th": "อยากลองลุค 80s นีออนสำหรับปาร์ตี้ธีมย้อนยุค",
+    "own_photo": true,
+    "consent_confirmed": true,
+    "guardian_ok": false,
+    "all_consented": true,
+    "celebrity_likely": false,
+    "consented": true,
+    "role": "mc"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องตัง",
+   "value": {
+    "id": "u03",
+    "name_th": "น้องตัง",
+    "name_en": "Tang",
+    "nickname_th": "ตัง",
+    "age": 21,
+    "city_th": "ขอนแก่น",
+    "goal_th": "อยากได้ลุค Y2K แฟลชตรงไปโพสต์สตอรี่",
+    "own_photo": true,
+    "consent_confirmed": true,
+    "guardian_ok": false,
+    "all_consented": true,
+    "celebrity_likely": false,
+    "consented": true,
+    "role": "most_likely_travel"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่เกรซ",
+   "value": {
+    "id": "u04",
+    "name_th": "พี่เกรซ",
+    "name_en": "Grace",
+    "nickname_th": "เกรซ",
+    "age": 24,
+    "city_th": "ภูเก็ต",
+    "goal_th": "อยากได้หน้ารุ่นรวมเพื่อนสำหรับของที่ระลึก",
+    "own_photo": true,
+    "consent_confirmed": true,
+    "guardian_ok": false,
+    "all_consented": true,
+    "celebrity_likely": false,
+    "consented": true,
+    "role": "yearbook_club"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องแพร",
+   "value": {
+    "id": "u05",
+    "name_th": "น้องแพร",
+    "name_en": "Prae",
+    "nickname_th": "แพร",
+    "age": 16,
+    "city_th": "นนทบุรี",
+    "goal_th": "อยากลองสไตล์ 90s แต่ต้องให้แม่กดยินยอมก่อน",
+    "own_photo": true,
+    "consent_confirmed": true,
+    "guardian_ok": true,
+    "all_consented": true,
+    "celebrity_likely": false,
+    "consented": true,
+    "role": "quiet_star"
+   }
+  },
+  {
+   "def": "SelfiePhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.15,
+    "blur": 0.1,
+    "crop": 0.12,
+    "detections": [
+     {
+      "label": "mind",
+      "confidence": 0.96,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 22
+     }
+    ]
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": [],
+     "face_count": 1
+    },
+    "faces": [
+     {
+      "label": "mind",
+      "confidence": 0.96,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 22
+     }
+    ],
+    "uncertain": [],
+    "face_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "steps": [
+     "face_detect",
+     "consent_check",
+     "era_score",
+     "style_render",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "SelfiePhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.2,
+    "blur": 0.15,
+    "crop": 0.18,
+    "detections": [
+     {
+      "label": "fern",
+      "confidence": 0.93,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 23
+     }
+    ]
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "quality": {
+     "score": 83,
+     "ok": true,
+     "tips_th": [],
+     "face_count": 1
+    },
+    "faces": [
+     {
+      "label": "fern",
+      "confidence": 0.93,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 23
+     }
+    ],
+    "uncertain": [],
+    "face_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "steps": [
+     "face_detect",
+     "consent_check",
+     "era_score",
+     "style_render",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "SelfiePhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.25,
+    "blur": 0.12,
+    "crop": 0.2,
+    "detections": [
+     {
+      "label": "tang",
+      "confidence": 0.91,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 21
+     }
+    ]
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "quality": {
+     "score": 82,
+     "ok": true,
+     "tips_th": [],
+     "face_count": 1
+    },
+    "faces": [
+     {
+      "label": "tang",
+      "confidence": 0.91,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 21
+     }
+    ],
+    "uncertain": [],
+    "face_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "steps": [
+     "face_detect",
+     "consent_check",
+     "era_score",
+     "style_render",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "SelfiePhoto",
+   "note": "p04",
+   "value": {
+    "id": "p04",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.18,
+    "blur": 0.1,
+    "crop": 0.15,
+    "detections": [
+     {
+      "label": "grace",
+      "confidence": 0.94,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 24
+     }
+    ]
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "quality": {
+     "score": 86,
+     "ok": true,
+     "tips_th": [],
+     "face_count": 1
+    },
+    "faces": [
+     {
+      "label": "grace",
+      "confidence": 0.94,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 24
+     }
+    ],
+    "uncertain": [],
+    "face_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "steps": [
+     "face_detect",
+     "consent_check",
+     "era_score",
+     "style_render",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "SelfiePhoto",
+   "note": "p05",
+   "value": {
+    "id": "p05",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.22,
+    "blur": 0.18,
+    "crop": 0.16,
+    "detections": [
+     {
+      "label": "prae",
+      "confidence": 0.9,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 16
+     }
+    ]
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "quality": {
+     "score": 81,
+     "ok": true,
+     "tips_th": [],
+     "face_count": 1
+    },
+    "faces": [
+     {
+      "label": "prae",
+      "confidence": 0.9,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 16
+     }
+    ],
+    "uncertain": [],
+    "face_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "steps": [
+     "face_detect",
+     "consent_check",
+     "era_score",
+     "style_render",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "SelfiePhoto",
+   "note": "p06",
+   "value": {
+    "id": "p06",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.62,
+    "blur": 0.48,
+    "crop": 0.55,
+    "detections": [
+     {
+      "label": "mind-bad",
+      "confidence": 0.88,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 22
+     }
+    ]
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p06",
+   "value": {
+    "photo_id": "p06",
+    "quality": {
+     "score": 46,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนบนหน้าเยอะ หันออกจากหน้าต่างหรือปิดแฟลชแรง ๆ",
+      "ภาพเบลอ ถือนิ่ง หรือวางมือถือพิงของแล้วนับ 1-2-3",
+      "ใบหน้าถูกครอป ถ่ายให้หัวถึงไหล่ครบในกรอบ"
+     ],
+     "face_count": 1
+    },
+    "faces": [
+     {
+      "label": "mind-bad",
+      "confidence": 0.88,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 22
+     }
+    ],
+    "uncertain": [],
+    "face_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p06",
+   "value": {
+    "photo_id": "p06",
+    "steps": [
+     "face_detect",
+     "deglare",
+     "recrop",
+     "consent_check",
+     "era_score",
+     "style_render",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "SelfiePhoto",
+   "note": "p07",
+   "value": {
+    "id": "p07",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.15,
+    "blur": 0.1,
+    "crop": 0.1,
+    "detections": []
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p07",
+   "value": {
+    "photo_id": "p07",
+    "quality": {
+     "score": 53,
+     "ok": false,
+     "tips_th": [
+      "ไม่เจอใบหน้า ถ่ายเซลฟี่ให้เห็นหน้าชัดในแสงธรรมชาติ"
+     ],
+     "face_count": 0
+    },
+    "faces": [],
+    "uncertain": [],
+    "face_count": 0
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p07",
+   "value": {
+    "photo_id": "p07",
+    "steps": [
+     "face_detect",
+     "consent_check",
+     "era_score",
+     "style_render",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "SelfiePhoto",
+   "note": "p08",
+   "value": {
+    "id": "p08",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.2,
+    "blur": 0.15,
+    "crop": 0.12,
+    "detections": [
+     {
+      "label": "mind",
+      "confidence": 0.95,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 22
+     },
+     {
+      "label": "friend",
+      "confidence": 0.87,
+      "own_face": false,
+      "celebrity_likely": false,
+      "age_apparent": 22
+     }
+    ]
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p08",
+   "value": {
+    "photo_id": "p08",
+    "quality": {
+     "score": 84,
+     "ok": true,
+     "tips_th": [
+      "มีหลายใบหน้า จะใช้โหมดหน้ารุ่นได้เมื่อทุกคนยินยอม"
+     ],
+     "face_count": 2
+    },
+    "faces": [
+     {
+      "label": "mind",
+      "confidence": 0.95,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 22
+     },
+     {
+      "label": "friend",
+      "confidence": 0.87,
+      "own_face": false,
+      "celebrity_likely": false,
+      "age_apparent": 22
+     }
+    ],
+    "uncertain": [],
+    "face_count": 2
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p08",
+   "value": {
+    "photo_id": "p08",
+    "steps": [
+     "face_detect",
+     "consent_check",
+     "era_score",
+     "style_render",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "SelfiePhoto",
+   "note": "p09",
+   "value": {
+    "id": "p09",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.15,
+    "blur": 0.1,
+    "crop": 0.1,
+    "detections": [
+     {
+      "label": "star",
+      "confidence": 0.97,
+      "own_face": false,
+      "celebrity_likely": true,
+      "age_apparent": 30
+     }
+    ]
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p09",
+   "value": {
+    "photo_id": "p09",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": [],
+     "face_count": 1
+    },
+    "faces": [
+     {
+      "label": "star",
+      "confidence": 0.97,
+      "own_face": false,
+      "celebrity_likely": true,
+      "age_apparent": 30
+     }
+    ],
+    "uncertain": [],
+    "face_count": 1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p09",
+   "value": {
+    "photo_id": "p09",
+    "steps": [
+     "face_detect",
+     "consent_check",
+     "era_score",
+     "style_render",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "SelfiePhoto",
+   "note": "p10",
+   "value": {
+    "id": "p10",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.15,
+    "blur": 0.12,
+    "crop": 0.1,
+    "detections": [
+     {
+      "label": "blur-face",
+      "confidence": 0.41,
+      "own_face": true,
+      "celebrity_likely": false,
+      "age_apparent": 22
+     }
+    ]
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p10",
+   "value": {
+    "photo_id": "p10",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": [],
+     "face_count": 1
+    },
+    "faces": [],
+    "uncertain": [
+     "blur-face"
+    ],
+    "face_count": 0
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p10",
+   "value": {
+    "photo_id": "p10",
+    "steps": [
+     "face_detect",
+     "consent_check",
+     "era_score",
+     "style_render",
+     "caption"
+    ]
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "mind face",
+   "value": {
+    "label": "mind",
+    "confidence": 0.96,
+    "own_face": true,
+    "celebrity_likely": false,
+    "age_apparent": 22
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "bad photo",
+   "value": {
+    "score": 46,
+    "ok": false,
+    "tips_th": [
+     "แสงสะท้อนบนหน้าเยอะ หันออกจากหน้าต่างหรือปิดแฟลชแรง ๆ",
+     "ภาพเบลอ ถือนิ่ง หรือวางมือถือพิงของแล้วนับ 1-2-3",
+     "ใบหน้าถูกครอป ถ่ายให้หัวถึงไหล่ครบในกรอบ"
+    ],
+    "face_count": 1
+   }
+  },
+  {
+   "def": "IdentifiedFace",
+   "note": "mind",
+   "value": {
+    "label": "mind",
+    "confidence": 0.96,
+    "own_face": true,
+    "celebrity_likely": false,
+    "age_apparent": 22
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "mind ok",
+   "value": {
+    "ok": true,
+    "level": "ok",
+    "reasons_th": [],
+    "blocks_th": [],
+    "message_th": "ผ่านการตรวจยินยอม พร้อมแปลงสไตล์ได้",
+    "face_count": 1,
+    "disclaimer_th": "YearbookMe ใช้ได้เฉพาะรูปของตนเอง (หรือรูปที่ทุกคนในภาพยินยอมแล้ว) ไม่ใช่รูปโรงเรียนจริง และไม่ใช่การยืนยันตัวตน"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "not own",
+   "value": {
+    "ok": false,
+    "level": "block",
+    "reasons_th": [],
+    "blocks_th": [
+     "ใช้ได้เฉพาะรูปของตนเอง — ห้ามอัปโหลดรูปคนอื่นมาแปลง"
+    ],
+    "message_th": "ยังแปลงไม่ได้: ใช้ได้เฉพาะรูปของตนเอง — ห้ามอัปโหลดรูปคนอื่นมาแปลง",
+    "face_count": 1,
+    "disclaimer_th": "YearbookMe ใช้ได้เฉพาะรูปของตนเอง (หรือรูปที่ทุกคนในภาพยินยอมแล้ว) ไม่ใช่รูปโรงเรียนจริง และไม่ใช่การยืนยันตัวตน"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "group no consent",
+   "value": {
+    "ok": false,
+    "level": "block",
+    "reasons_th": [],
+    "blocks_th": [
+     "มีคนอื่นในภาพ ต้องได้รับการยินยอมจากทุกคนก่อนทำหน้ารุ่น"
+    ],
+    "message_th": "ยังแปลงไม่ได้: มีคนอื่นในภาพ ต้องได้รับการยินยอมจากทุกคนก่อนทำหน้ารุ่น",
+    "face_count": 2,
+    "disclaimer_th": "YearbookMe ใช้ได้เฉพาะรูปของตนเอง (หรือรูปที่ทุกคนในภาพยินยอมแล้ว) ไม่ใช่รูปโรงเรียนจริง และไม่ใช่การยืนยันตัวตน"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "celeb",
+   "value": {
+    "ok": false,
+    "level": "block",
+    "reasons_th": [],
+    "blocks_th": [
+     "ใช้ได้เฉพาะรูปของตนเอง — ห้ามอัปโหลดรูปคนอื่นมาแปลง",
+     "ระบบสงสัยว่าเป็นบุคคลสาธารณะ จึงไม่แปลงรูปนี้"
+    ],
+    "message_th": "ยังแปลงไม่ได้: ใช้ได้เฉพาะรูปของตนเอง — ห้ามอัปโหลดรูปคนอื่นมาแปลง · ระบบสงสัยว่าเป็นบุคคลสาธารณะ จึงไม่แปลงรูปนี้",
+    "face_count": 1,
+    "disclaimer_th": "YearbookMe ใช้ได้เฉพาะรูปของตนเอง (หรือรูปที่ทุกคนในภาพยินยอมแล้ว) ไม่ใช่รูปโรงเรียนจริง และไม่ใช่การยืนยันตัวตน"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "teen no guardian",
+   "value": {
+    "ok": false,
+    "level": "block",
+    "reasons_th": [],
+    "blocks_th": [
+     "อายุ 13–17 ปี ต้องมีผู้ปกครองยินยอมก่อน"
+    ],
+    "message_th": "ยังแปลงไม่ได้: อายุ 13–17 ปี ต้องมีผู้ปกครองยินยอมก่อน",
+    "face_count": 1,
+    "disclaimer_th": "YearbookMe ใช้ได้เฉพาะรูปของตนเอง (หรือรูปที่ทุกคนในภาพยินยอมแล้ว) ไม่ใช่รูปโรงเรียนจริง และไม่ใช่การยืนยันตัวตน"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "teen with guardian",
+   "value": {
+    "ok": true,
+    "level": "ok",
+    "reasons_th": [],
+    "blocks_th": [],
+    "message_th": "ผ่านการตรวจยินยอม พร้อมแปลงสไตล์ได้",
+    "face_count": 1,
+    "disclaimer_th": "YearbookMe ใช้ได้เฉพาะรูปของตนเอง (หรือรูปที่ทุกคนในภาพยินยอมแล้ว) ไม่ใช่รูปโรงเรียนจริง และไม่ใช่การยืนยันตัวตน"
+   }
+  },
+  {
+   "def": "EraInfo",
+   "note": "80s",
+   "value": {
+    "id": "e80",
+    "era": "80s",
+    "name_th": "ยุค 80s",
+    "name_en": "1980s",
+    "year_label": "Class of '86",
+    "grade_th": "แสงนีออน ฟิล์มอบอุ่น ผมวอลุ่มสูง",
+    "palette": [
+     "#FF2E97",
+     "#7C3AED",
+     "#22D3EE",
+     "#FDE68A"
+    ],
+    "typography": "bold-italic-neon",
+    "props_th": [
+     "ที่คาดผมนีออน",
+     "แจ็กเก็ตโลโก้ใหญ่",
+     "ต่างหูห่วงโต",
+     "เลนส์ไล่สีชมพูฟ้า"
+    ],
+    "hair_th": "ผมวอลุ่ม ดัดลอน หรือไซด์พาร์ทสูง",
+    "clothes_th": "นีออน / ไหล่ตั้ง / แจ็กเก็ตแข่ง"
+   }
+  },
+  {
+   "def": "PropKit",
+   "note": "80s",
+   "value": {
+    "era": "80s",
+    "name_th": "ยุค 80s",
+    "props_th": [
+     "ที่คาดผมนีออน",
+     "แจ็กเก็ตโลโก้ใหญ่",
+     "ต่างหูห่วงโต",
+     "เลนส์ไล่สีชมพูฟ้า"
+    ],
+    "frame": "neon_studio",
+    "tip_th": "เลือก 1–2 ชิ้นก็พอ จะได้ไม่แย่งหน้า ยุค 80s"
+   }
+  },
+  {
+   "def": "EraInfo",
+   "note": "90s",
+   "value": {
+    "id": "e90",
+    "era": "90s",
+    "name_th": "ยุค 90s",
+    "name_en": "1990s",
+    "year_label": "Class of '97",
+    "grade_th": "ฟิล์มโทนเย็น ลายจุดปีบุ๊ก ขอบขาว",
+    "palette": [
+     "#1E3A5F",
+     "#C4A574",
+     "#F4EFE6",
+     "#4B5563"
+    ],
+    "typography": "serif-yearbook",
+    "props_th": [
+     "เดนิมแจ็กเก็ต",
+     "สครับชี่",
+     "สร้อยเงินเล็ก",
+     "กล้องฟิล์มจุด"
+    ],
+    "hair_th": "ผมตรงกลาง parted หรือชาร์จิ้นทิป",
+    "clothes_th": "เดนิม ลายสก็อต เสื้อเชิ้ตโอเวอร์ไซส์"
+   }
+  },
+  {
+   "def": "PropKit",
+   "note": "90s",
+   "value": {
+    "era": "90s",
+    "name_th": "ยุค 90s",
+    "props_th": [
+     "เดนิมแจ็กเก็ต",
+     "สครับชี่",
+     "สร้อยเงินเล็ก",
+     "กล้องฟิล์มจุด"
+    ],
+    "frame": "white_yearbook",
+    "tip_th": "เลือก 1–2 ชิ้นก็พอ จะได้ไม่แย่งหน้า ยุค 90s"
+   }
+  },
+  {
+   "def": "EraInfo",
+   "note": "y2k",
+   "value": {
+    "id": "e2k",
+    "era": "y2k",
+    "name_th": "ยุค Y2K",
+    "name_en": "Y2K",
+    "year_label": "Class of '02",
+    "grade_th": "แฟลชตรง โทนเงินเมทัลลิก สkin โกลว์",
+    "palette": [
+     "#E5E7EB",
+     "#F472B6",
+     "#38BDF8",
+     "#A3E635"
+    ],
+    "typography": "thin-chrome",
+    "props_th": [
+     "มือถือฝาพับ",
+     "แว่นแบบบาง",
+     "กระเป๋ากะพริบ",
+     "โลว์ไรส์เบลต์"
+    ],
+    "hair_th": "ไฮไลต์ชิ้นเล็ก คิ้วบาง ผมตรงเงา",
+    "clothes_th": "เมทัลลิก เสื้อครอป วอร์มแถบข้าง"
+   }
+  },
+  {
+   "def": "PropKit",
+   "note": "y2k",
+   "value": {
+    "era": "y2k",
+    "name_th": "ยุค Y2K",
+    "props_th": [
+     "มือถือฝาพับ",
+     "แว่นแบบบาง",
+     "กระเป๋ากะพริบ",
+     "โลว์ไรส์เบลต์"
+    ],
+    "frame": "chrome_polaroid",
+    "tip_th": "เลือก 1–2 ชิ้นก็พอ จะได้ไม่แย่งหน้า ยุค Y2K"
+   }
+  },
+  {
+   "def": "EraStudio",
+   "note": "น้องมายด์",
+   "value": {
+    "photo_id": "p01",
+    "name_th": "น้องมายด์",
+    "top_era": "90s",
+    "top_score": 88,
+    "renders": [
+     {
+      "photo_id": "p01",
+      "era": "90s",
+      "name_th": "ยุค 90s",
+      "name_en": "1990s",
+      "year_label": "Class of '97",
+      "score": 88,
+      "badge_th": "เข้าสุด",
+      "grade_th": "ฟิล์มโทนเย็น ลายจุดปีบุ๊ก ขอบขาว",
+      "palette": [
+       "#1E3A5F",
+       "#C4A574",
+       "#F4EFE6",
+       "#4B5563"
+      ],
+      "typography": "serif-yearbook",
+      "grain": 0.55,
+      "flash": 0.1,
+      "frame": "white_yearbook",
+      "props_th": [
+       "เดนิมแจ็กเก็ต",
+       "สครับชี่",
+       "สร้อยเงินเล็ก",
+       "กล้องฟิล์มจุด"
+      ],
+      "hair_th": "ผมตรงกลาง parted หรือชาร์จิ้นทิป",
+      "clothes_th": "เดนิม ลายสก็อต เสื้อเชิ้ตโอเวอร์ไซส์",
+      "headline_th": "น้องมายด์ · Class of '97",
+      "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค 90s"
+     },
+     {
+      "photo_id": "p01",
+      "era": "y2k",
+      "name_th": "ยุค Y2K",
+      "name_en": "Y2K",
+      "year_label": "Class of '02",
+      "score": 47,
+      "badge_th": "ลุคทดลอง",
+      "grade_th": "แฟลชตรง โทนเงินเมทัลลิก สkin โกลว์",
+      "palette": [
+       "#E5E7EB",
+       "#F472B6",
+       "#38BDF8",
+       "#A3E635"
+      ],
+      "typography": "thin-chrome",
+      "grain": 0.25,
+      "flash": 0.8,
+      "frame": "chrome_polaroid",
+      "props_th": [
+       "มือถือฝาพับ",
+       "แว่นแบบบาง",
+       "กระเป๋ากะพริบ",
+       "โลว์ไรส์เบลต์"
+      ],
+      "hair_th": "ไฮไลต์ชิ้นเล็ก คิ้วบาง ผมตรงเงา",
+      "clothes_th": "เมทัลลิก เสื้อครอป วอร์มแถบข้าง",
+      "headline_th": "น้องมายด์ · Class of '02",
+      "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค Y2K"
+     },
+     {
+      "photo_id": "p01",
+      "era": "80s",
+      "name_th": "ยุค 80s",
+      "name_en": "1980s",
+      "year_label": "Class of '86",
+      "score": 39,
+      "badge_th": "ลุคทดลอง",
+      "grade_th": "แสงนีออน ฟิล์มอบอุ่น ผมวอลุ่มสูง",
+      "palette": [
+       "#FF2E97",
+       "#7C3AED",
+       "#22D3EE",
+       "#FDE68A"
+      ],
+      "typography": "bold-italic-neon",
+      "grain": 0.45,
+      "flash": 0.2,
+      "frame": "neon_studio",
+      "props_th": [
+       "ที่คาดผมนีออน",
+       "แจ็กเก็ตโลโก้ใหญ่",
+       "ต่างหูห่วงโต",
+       "เลนส์ไล่สีชมพูฟ้า"
+      ],
+      "hair_th": "ผมวอลุ่ม ดัดลอน หรือไซด์พาร์ทสูง",
+      "clothes_th": "นีออน / ไหล่ตั้ง / แจ็กเก็ตแข่ง",
+      "headline_th": "น้องมายด์ · Class of '86",
+      "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค 80s"
+     }
+    ],
+    "count": 3
+   }
+  },
+  {
+   "def": "StyleRender",
+   "note": "น้องมายด์ 90s",
+   "value": {
+    "photo_id": "p01",
+    "era": "90s",
+    "name_th": "ยุค 90s",
+    "name_en": "1990s",
+    "year_label": "Class of '97",
+    "score": 88,
+    "badge_th": "เข้าสุด",
+    "grade_th": "ฟิล์มโทนเย็น ลายจุดปีบุ๊ก ขอบขาว",
+    "palette": [
+     "#1E3A5F",
+     "#C4A574",
+     "#F4EFE6",
+     "#4B5563"
+    ],
+    "typography": "serif-yearbook",
+    "grain": 0.55,
+    "flash": 0.1,
+    "frame": "white_yearbook",
+    "props_th": [
+     "เดนิมแจ็กเก็ต",
+     "สครับชี่",
+     "สร้อยเงินเล็ก",
+     "กล้องฟิล์มจุด"
+    ],
+    "hair_th": "ผมตรงกลาง parted หรือชาร์จิ้นทิป",
+    "clothes_th": "เดนิม ลายสก็อต เสื้อเชิ้ตโอเวอร์ไซส์",
+    "headline_th": "น้องมายด์ · Class of '97",
+    "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค 90s"
+   }
+  },
+  {
+   "def": "StyleRender",
+   "note": "น้องมายด์ y2k",
+   "value": {
+    "photo_id": "p01",
+    "era": "y2k",
+    "name_th": "ยุค Y2K",
+    "name_en": "Y2K",
+    "year_label": "Class of '02",
+    "score": 47,
+    "badge_th": "ลุคทดลอง",
+    "grade_th": "แฟลชตรง โทนเงินเมทัลลิก สkin โกลว์",
+    "palette": [
+     "#E5E7EB",
+     "#F472B6",
+     "#38BDF8",
+     "#A3E635"
+    ],
+    "typography": "thin-chrome",
+    "grain": 0.25,
+    "flash": 0.8,
+    "frame": "chrome_polaroid",
+    "props_th": [
+     "มือถือฝาพับ",
+     "แว่นแบบบาง",
+     "กระเป๋ากะพริบ",
+     "โลว์ไรส์เบลต์"
+    ],
+    "hair_th": "ไฮไลต์ชิ้นเล็ก คิ้วบาง ผมตรงเงา",
+    "clothes_th": "เมทัลลิก เสื้อครอป วอร์มแถบข้าง",
+    "headline_th": "น้องมายด์ · Class of '02",
+    "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค Y2K"
+   }
+  },
+  {
+   "def": "StyleRender",
+   "note": "น้องมายด์ 80s",
+   "value": {
+    "photo_id": "p01",
+    "era": "80s",
+    "name_th": "ยุค 80s",
+    "name_en": "1980s",
+    "year_label": "Class of '86",
+    "score": 39,
+    "badge_th": "ลุคทดลอง",
+    "grade_th": "แสงนีออน ฟิล์มอบอุ่น ผมวอลุ่มสูง",
+    "palette": [
+     "#FF2E97",
+     "#7C3AED",
+     "#22D3EE",
+     "#FDE68A"
+    ],
+    "typography": "bold-italic-neon",
+    "grain": 0.45,
+    "flash": 0.2,
+    "frame": "neon_studio",
+    "props_th": [
+     "ที่คาดผมนีออน",
+     "แจ็กเก็ตโลโก้ใหญ่",
+     "ต่างหูห่วงโต",
+     "เลนส์ไล่สีชมพูฟ้า"
+    ],
+    "hair_th": "ผมวอลุ่ม ดัดลอน หรือไซด์พาร์ทสูง",
+    "clothes_th": "นีออน / ไหล่ตั้ง / แจ็กเก็ตแข่ง",
+    "headline_th": "น้องมายด์ · Class of '86",
+    "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค 80s"
+   }
+  },
+  {
+   "def": "EraStudio",
+   "note": "พี่เฟิร์น",
+   "value": {
+    "photo_id": "p02",
+    "name_th": "พี่เฟิร์น",
+    "top_era": "80s",
+    "top_score": 78,
+    "renders": [
+     {
+      "photo_id": "p02",
+      "era": "80s",
+      "name_th": "ยุค 80s",
+      "name_en": "1980s",
+      "year_label": "Class of '86",
+      "score": 78,
+      "badge_th": "เข้าสุด",
+      "grade_th": "แสงนีออน ฟิล์มอบอุ่น ผมวอลุ่มสูง",
+      "palette": [
+       "#FF2E97",
+       "#7C3AED",
+       "#22D3EE",
+       "#FDE68A"
+      ],
+      "typography": "bold-italic-neon",
+      "grain": 0.45,
+      "flash": 0.2,
+      "frame": "neon_studio",
+      "props_th": [
+       "ที่คาดผมนีออน",
+       "แจ็กเก็ตโลโก้ใหญ่",
+       "ต่างหูห่วงโต",
+       "เลนส์ไล่สีชมพูฟ้า"
+      ],
+      "hair_th": "ผมวอลุ่ม ดัดลอน หรือไซด์พาร์ทสูง",
+      "clothes_th": "นีออน / ไหล่ตั้ง / แจ็กเก็ตแข่ง",
+      "headline_th": "พี่เฟิร์น · Class of '86",
+      "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค 80s"
+     },
+     {
+      "photo_id": "p02",
+      "era": "y2k",
+      "name_th": "ยุค Y2K",
+      "name_en": "Y2K",
+      "year_label": "Class of '02",
+      "score": 57,
+      "badge_th": "ใช้ได้ดี",
+      "grade_th": "แฟลชตรง โทนเงินเมทัลลิก สkin โกลว์",
+      "palette": [
+       "#E5E7EB",
+       "#F472B6",
+       "#38BDF8",
+       "#A3E635"
+      ],
+      "typography": "thin-chrome",
+      "grain": 0.25,
+      "flash": 0.8,
+      "frame": "chrome_polaroid",
+      "props_th": [
+       "มือถือฝาพับ",
+       "แว่นแบบบาง",
+       "กระเป๋ากะพริบ",
+       "โลว์ไรส์เบลต์"
+      ],
+      "hair_th": "ไฮไลต์ชิ้นเล็ก คิ้วบาง ผมตรงเงา",
+      "clothes_th": "เมทัลลิก เสื้อครอป วอร์มแถบข้าง",
+      "headline_th": "พี่เฟิร์น · Class of '02",
+      "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค Y2K"
+     },
+     {
+      "photo_id": "p02",
+      "era": "90s",
+      "name_th": "ยุค 90s",
+      "name_en": "1990s",
+      "year_label": "Class of '97",
+      "score": 45,
+      "badge_th": "ลุคทดลอง",
+      "grade_th": "ฟิล์มโทนเย็น ลายจุดปีบุ๊ก ขอบขาว",
+      "palette": [
+       "#1E3A5F",
+       "#C4A574",
+       "#F4EFE6",
+       "#4B5563"
+      ],
+      "typography": "serif-yearbook",
+      "grain": 0.55,
+      "flash": 0.1,
+      "frame": "white_yearbook",
+      "props_th": [
+       "เดนิมแจ็กเก็ต",
+       "สครับชี่",
+       "สร้อยเงินเล็ก",
+       "กล้องฟิล์มจุด"
+      ],
+      "hair_th": "ผมตรงกลาง parted หรือชาร์จิ้นทิป",
+      "clothes_th": "เดนิม ลายสก็อต เสื้อเชิ้ตโอเวอร์ไซส์",
+      "headline_th": "พี่เฟิร์น · Class of '97",
+      "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค 90s"
+     }
+    ],
+    "count": 3
+   }
+  },
+  {
+   "def": "StyleRender",
+   "note": "พี่เฟิร์น 80s",
+   "value": {
+    "photo_id": "p02",
+    "era": "80s",
+    "name_th": "ยุค 80s",
+    "name_en": "1980s",
+    "year_label": "Class of '86",
+    "score": 78,
+    "badge_th": "เข้าสุด",
+    "grade_th": "แสงนีออน ฟิล์มอบอุ่น ผมวอลุ่มสูง",
+    "palette": [
+     "#FF2E97",
+     "#7C3AED",
+     "#22D3EE",
+     "#FDE68A"
+    ],
+    "typography": "bold-italic-neon",
+    "grain": 0.45,
+    "flash": 0.2,
+    "frame": "neon_studio",
+    "props_th": [
+     "ที่คาดผมนีออน",
+     "แจ็กเก็ตโลโก้ใหญ่",
+     "ต่างหูห่วงโต",
+     "เลนส์ไล่สีชมพูฟ้า"
+    ],
+    "hair_th": "ผมวอลุ่ม ดัดลอน หรือไซด์พาร์ทสูง",
+    "clothes_th": "นีออน / ไหล่ตั้ง / แจ็กเก็ตแข่ง",
+    "headline_th": "พี่เฟิร์น · Class of '86",
+    "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค 80s"
+   }
+  },
+  {
+   "def": "StyleRender",
+   "note": "พี่เฟิร์น y2k",
+   "value": {
+    "photo_id": "p02",
+    "era": "y2k",
+    "name_th": "ยุค Y2K",
+    "name_en": "Y2K",
+    "year_label": "Class of '02",
+    "score": 57,
+    "badge_th": "ใช้ได้ดี",
+    "grade_th": "แฟลชตรง โทนเงินเมทัลลิก สkin โกลว์",
+    "palette": [
+     "#E5E7EB",
+     "#F472B6",
+     "#38BDF8",
+     "#A3E635"
+    ],
+    "typography": "thin-chrome",
+    "grain": 0.25,
+    "flash": 0.8,
+    "frame": "chrome_polaroid",
+    "props_th": [
+     "มือถือฝาพับ",
+     "แว่นแบบบาง",
+     "กระเป๋ากะพริบ",
+     "โลว์ไรส์เบลต์"
+    ],
+    "hair_th": "ไฮไลต์ชิ้นเล็ก คิ้วบาง ผมตรงเงา",
+    "clothes_th": "เมทัลลิก เสื้อครอป วอร์มแถบข้าง",
+    "headline_th": "พี่เฟิร์น · Class of '02",
+    "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค Y2K"
+   }
+  },
+  {
+   "def": "StyleRender",
+   "note": "พี่เฟิร์น 90s",
+   "value": {
+    "photo_id": "p02",
+    "era": "90s",
+    "name_th": "ยุค 90s",
+    "name_en": "1990s",
+    "year_label": "Class of '97",
+    "score": 45,
+    "badge_th": "ลุคทดลอง",
+    "grade_th": "ฟิล์มโทนเย็น ลายจุดปีบุ๊ก ขอบขาว",
+    "palette": [
+     "#1E3A5F",
+     "#C4A574",
+     "#F4EFE6",
+     "#4B5563"
+    ],
+    "typography": "serif-yearbook",
+    "grain": 0.55,
+    "flash": 0.1,
+    "frame": "white_yearbook",
+    "props_th": [
+     "เดนิมแจ็กเก็ต",
+     "สครับชี่",
+     "สร้อยเงินเล็ก",
+     "กล้องฟิล์มจุด"
+    ],
+    "hair_th": "ผมตรงกลาง parted หรือชาร์จิ้นทิป",
+    "clothes_th": "เดนิม ลายสก็อต เสื้อเชิ้ตโอเวอร์ไซส์",
+    "headline_th": "พี่เฟิร์น · Class of '97",
+    "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค 90s"
+   }
+  },
+  {
+   "def": "EraStudio",
+   "note": "น้องตัง",
+   "value": {
+    "photo_id": "p03",
+    "name_th": "น้องตัง",
+    "top_era": "y2k",
+    "top_score": 85,
+    "renders": [
+     {
+      "photo_id": "p03",
+      "era": "y2k",
+      "name_th": "ยุค Y2K",
+      "name_en": "Y2K",
+      "year_label": "Class of '02",
+      "score": 85,
+      "badge_th": "เข้าสุด",
+      "grade_th": "แฟลชตรง โทนเงินเมทัลลิก สkin โกลว์",
+      "palette": [
+       "#E5E7EB",
+       "#F472B6",
+       "#38BDF8",
+       "#A3E635"
+      ],
+      "typography": "thin-chrome",
+      "grain": 0.25,
+      "flash": 0.8,
+      "frame": "chrome_polaroid",
+      "props_th": [
+       "มือถือฝาพับ",
+       "แว่นแบบบาง",
+       "กระเป๋ากะพริบ",
+       "โลว์ไรส์เบลต์"
+      ],
+      "hair_th": "ไฮไลต์ชิ้นเล็ก คิ้วบาง ผมตรงเงา",
+      "clothes_th": "เมทัลลิก เสื้อครอป วอร์มแถบข้าง",
+      "headline_th": "น้องตัง · Class of '02",
+      "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค Y2K"
+     },
+     {
+      "photo_id": "p03",
+      "era": "90s",
+      "name_th": "ยุค 90s",
+      "name_en": "1990s",
+      "year_label": "Class of '97",
+      "score": 62,
+      "badge_th": "ใช้ได้ดี",
+      "grade_th": "ฟิล์มโทนเย็น ลายจุดปีบุ๊ก ขอบขาว",
+      "palette": [
+       "#1E3A5F",
+       "#C4A574",
+       "#F4EFE6",
+       "#4B5563"
+      ],
+      "typography": "serif-yearbook",
+      "grain": 0.55,
+      "flash": 0.1,
+      "frame": "white_yearbook",
+      "props_th": [
+       "เดนิมแจ็กเก็ต",
+       "สครับชี่",
+       "สร้อยเงินเล็ก",
+       "กล้องฟิล์มจุด"
+      ],
+      "hair_th": "ผมตรงกลาง parted หรือชาร์จิ้นทิป",
+      "clothes_th": "เดนิม ลายสก็อต เสื้อเชิ้ตโอเวอร์ไซส์",
+      "headline_th": "น้องตัง · Class of '97",
+      "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค 90s"
+     },
+     {
+      "photo_id": "p03",
+      "era": "80s",
+      "name_th": "ยุค 80s",
+      "name_en": "1980s",
+      "year_label": "Class of '86",
+      "score": 46,
+      "badge_th": "ลุคทดลอง",
+      "grade_th": "แสงนีออน ฟิล์มอบอุ่น ผมวอลุ่มสูง",
+      "palette": [
+       "#FF2E97",
+       "#7C3AED",
+       "#22D3EE",
+       "#FDE68A"
+      ],
+      "typography": "bold-italic-neon",
+      "grain": 0.45,
+      "flash": 0.2,
+      "frame": "neon_studio",
+      "props_th": [
+       "ที่คาดผมนีออน",
+       "แจ็กเก็ตโลโก้ใหญ่",
+       "ต่างหูห่วงโต",
+       "เลนส์ไล่สีชมพูฟ้า"
+      ],
+      "hair_th": "ผมวอลุ่ม ดัดลอน หรือไซด์พาร์ทสูง",
+      "clothes_th": "นีออน / ไหล่ตั้ง / แจ็กเก็ตแข่ง",
+      "headline_th": "น้องตัง · Class of '86",
+      "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค 80s"
+     }
+    ],
+    "count": 3
+   }
+  },
+  {
+   "def": "StyleRender",
+   "note": "น้องตัง y2k",
+   "value": {
+    "photo_id": "p03",
+    "era": "y2k",
+    "name_th": "ยุค Y2K",
+    "name_en": "Y2K",
+    "year_label": "Class of '02",
+    "score": 85,
+    "badge_th": "เข้าสุด",
+    "grade_th": "แฟลชตรง โทนเงินเมทัลลิก สkin โกลว์",
+    "palette": [
+     "#E5E7EB",
+     "#F472B6",
+     "#38BDF8",
+     "#A3E635"
+    ],
+    "typography": "thin-chrome",
+    "grain": 0.25,
+    "flash": 0.8,
+    "frame": "chrome_polaroid",
+    "props_th": [
+     "มือถือฝาพับ",
+     "แว่นแบบบาง",
+     "กระเป๋ากะพริบ",
+     "โลว์ไรส์เบลต์"
+    ],
+    "hair_th": "ไฮไลต์ชิ้นเล็ก คิ้วบาง ผมตรงเงา",
+    "clothes_th": "เมทัลลิก เสื้อครอป วอร์มแถบข้าง",
+    "headline_th": "น้องตัง · Class of '02",
+    "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค Y2K"
+   }
+  },
+  {
+   "def": "StyleRender",
+   "note": "น้องตัง 90s",
+   "value": {
+    "photo_id": "p03",
+    "era": "90s",
+    "name_th": "ยุค 90s",
+    "name_en": "1990s",
+    "year_label": "Class of '97",
+    "score": 62,
+    "badge_th": "ใช้ได้ดี",
+    "grade_th": "ฟิล์มโทนเย็น ลายจุดปีบุ๊ก ขอบขาว",
+    "palette": [
+     "#1E3A5F",
+     "#C4A574",
+     "#F4EFE6",
+     "#4B5563"
+    ],
+    "typography": "serif-yearbook",
+    "grain": 0.55,
+    "flash": 0.1,
+    "frame": "white_yearbook",
+    "props_th": [
+     "เดนิมแจ็กเก็ต",
+     "สครับชี่",
+     "สร้อยเงินเล็ก",
+     "กล้องฟิล์มจุด"
+    ],
+    "hair_th": "ผมตรงกลาง parted หรือชาร์จิ้นทิป",
+    "clothes_th": "เดนิม ลายสก็อต เสื้อเชิ้ตโอเวอร์ไซส์",
+    "headline_th": "น้องตัง · Class of '97",
+    "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค 90s"
+   }
+  },
+  {
+   "def": "StyleRender",
+   "note": "น้องตัง 80s",
+   "value": {
+    "photo_id": "p03",
+    "era": "80s",
+    "name_th": "ยุค 80s",
+    "name_en": "1980s",
+    "year_label": "Class of '86",
+    "score": 46,
+    "badge_th": "ลุคทดลอง",
+    "grade_th": "แสงนีออน ฟิล์มอบอุ่น ผมวอลุ่มสูง",
+    "palette": [
+     "#FF2E97",
+     "#7C3AED",
+     "#22D3EE",
+     "#FDE68A"
+    ],
+    "typography": "bold-italic-neon",
+    "grain": 0.45,
+    "flash": 0.2,
+    "frame": "neon_studio",
+    "props_th": [
+     "ที่คาดผมนีออน",
+     "แจ็กเก็ตโลโก้ใหญ่",
+     "ต่างหูห่วงโต",
+     "เลนส์ไล่สีชมพูฟ้า"
+    ],
+    "hair_th": "ผมวอลุ่ม ดัดลอน หรือไซด์พาร์ทสูง",
+    "clothes_th": "นีออน / ไหล่ตั้ง / แจ็กเก็ตแข่ง",
+    "headline_th": "น้องตัง · Class of '86",
+    "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค 80s"
+   }
+  },
+  {
+   "def": "CaptionQuote",
+   "note": "น้องมายด์ 90s sweet 1",
+   "value": {
+    "n": 1,
+    "era": "90s",
+    "tone": "sweet",
+    "text_th": "เพื่อนที่ขาดไม่ได้ของรุ่นนี้ — ไว้เจอกันอีกสิบปีนะ",
+    "for_name_th": "น้องมายด์"
+   }
+  },
+  {
+   "def": "CaptionQuote",
+   "note": "น้องมายด์ 90s sweet 2",
+   "value": {
+    "n": 2,
+    "era": "90s",
+    "tone": "sweet",
+    "text_th": "เก็บหน้านี้ไว้ในหน้าปีบุ๊ก แล้วอย่าลืมว่าเราเคยผ่านด้วยกัน",
+    "for_name_th": "น้องมายด์"
+   }
+  },
+  {
+   "def": "CaptionQuote",
+   "note": "พี่เฟิร์น 80s funny 1",
+   "value": {
+    "n": 1,
+    "era": "80s",
+    "tone": "funny",
+    "text_th": "ถ้าเทปนี้กินแล้ว อย่าลืมว่าใครยืมวอล์กแมนไป",
+    "for_name_th": "พี่เฟิร์น"
+   }
+  },
+  {
+   "def": "CaptionQuote",
+   "note": "พี่เฟิร์น 80s funny 2",
+   "value": {
+    "n": 2,
+    "era": "80s",
+    "tone": "funny",
+    "text_th": "ผมตั้งแล้ว แต่ใจยังไม่ทันตั้ง — ไว้รุ่นหน้าค่อยเรียบร้อย",
+    "for_name_th": "พี่เฟิร์น"
+   }
+  },
+  {
+   "def": "CaptionQuote",
+   "note": "น้องตัง y2k proud 1",
+   "value": {
+    "n": 1,
+    "era": "y2k",
+    "tone": "proud",
+    "text_th": "รุ่นนี้โหลดเพลงช้า แต่ฝันเร็ว",
+    "for_name_th": "น้องตัง"
+   }
+  },
+  {
+   "def": "CaptionQuote",
+   "note": "น้องตัง y2k proud 2",
+   "value": {
+    "n": 2,
+    "era": "y2k",
+    "tone": "proud",
+    "text_th": "เก็บลุคนี้ไว้เป็นหลักฐานว่าเราเคยกล้ามาก",
+    "for_name_th": "น้องตัง"
+   }
+  },
+  {
+   "def": "CaptionQuote",
+   "note": "พี่เกรซ 90s nostalgic 1",
+   "value": {
+    "n": 1,
+    "era": "90s",
+    "tone": "nostalgic",
+    "text_th": "ถ้าเปิดสมุดนี้ในอีกยี่สิบปี ขอให้ยังจำกลิ่นห้องนั้นได้",
+    "for_name_th": "พี่เกรซ"
+   }
+  },
+  {
+   "def": "CaptionQuote",
+   "note": "พี่เกรซ 90s nostalgic 2",
+   "value": {
+    "n": 2,
+    "era": "90s",
+    "tone": "nostalgic",
+    "text_th": "ฟิล์มจะซีด แต่คำว่าเพื่อนในหน้านี้ยังชัด",
+    "for_name_th": "พี่เกรซ"
+   }
+  },
+  {
+   "def": "CaptionQuote",
+   "note": "น้องแพร 80s sweet 1",
+   "value": {
+    "n": 1,
+    "era": "80s",
+    "tone": "sweet",
+    "text_th": "นีออนนี้จะทำให้จำได้ว่าเราเคยเสียงดังด้วยกันแค่ไหน",
+    "for_name_th": "น้องแพร"
+   }
+  },
+  {
+   "def": "CaptionQuote",
+   "note": "น้องแพร 80s sweet 2",
+   "value": {
+    "n": 2,
+    "era": "80s",
+    "tone": "sweet",
+    "text_th": "เก็บรอยยิ้มนี้ไว้ในเทปเพลงโปรด แล้วมาเปิดฟังด้วยกันอีกสิบปี",
+    "for_name_th": "น้องแพร"
+   }
+  },
+  {
+   "def": "Autograph",
+   "note": "fern to mind",
+   "value": {
+    "from_name_th": "พี่เฟิร์น",
+    "to_name_th": "น้องมายด์",
+    "era": "90s",
+    "tone": "sweet",
+    "text_th": "ถึง น้องมายด์\nเพื่อนที่ขาดไม่ได้ของรุ่นนี้ — ไว้เจอกันอีกสิบปีนะ\n— พี่เฟิร์น",
+    "char_count": 76
+   }
+  },
+  {
+   "def": "Autograph",
+   "note": "tang to grace",
+   "value": {
+    "from_name_th": "น้องตัง",
+    "to_name_th": "พี่เกรซ",
+    "era": "y2k",
+    "tone": "funny",
+    "text_th": "ถึง พี่เกรซ\nถ่ายด้วยแฟลชตรง เพราะตอนนั้นคิดว่ามันเจ๋งมาก — และก็ยังเจ๋ง\n— น้องตัง",
+    "char_count": 81
+   }
+  },
+  {
+   "def": "MemberSlot",
+   "note": "น้องมายด์",
+   "value": {
+    "id": "u01",
+    "name_th": "น้องมายด์",
+    "name_en": "Mind",
+    "nickname_th": "มายด์",
+    "role": "most_likely_friend",
+    "role_th": "เพื่อนที่ขาดไม่ได้",
+    "era": "90s",
+    "score": 88,
+    "headline_th": "น้องมายด์ · Class of '97",
+    "consented": true
+   }
+  },
+  {
+   "def": "MemberSlot",
+   "note": "พี่เฟิร์น",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่เฟิร์น",
+    "name_en": "Fern",
+    "nickname_th": "เฟิร์น",
+    "role": "mc",
+    "role_th": "คนรับไมค์ทุกรอบ",
+    "era": "90s",
+    "score": 45,
+    "headline_th": "พี่เฟิร์น · Class of '97",
+    "consented": true
+   }
+  },
+  {
+   "def": "MemberSlot",
+   "note": "น้องตัง",
+   "value": {
+    "id": "u03",
+    "name_th": "น้องตัง",
+    "name_en": "Tang",
+    "nickname_th": "ตัง",
+    "role": "most_likely_travel",
+    "role_th": "คนที่ทุกทริปต้องมี",
+    "era": "90s",
+    "score": 62,
+    "headline_th": "น้องตัง · Class of '97",
+    "consented": true
+   }
+  },
+  {
+   "def": "MemberSlot",
+   "note": "พี่เกรซ",
+   "value": {
+    "id": "u04",
+    "name_th": "พี่เกรซ",
+    "name_en": "Grace",
+    "nickname_th": "เกรซ",
+    "role": "yearbook_club",
+    "role_th": "ชมรมปีบุ๊ก",
+    "era": "90s",
+    "score": 74,
+    "headline_th": "พี่เกรซ · Class of '97",
+    "consented": true
+   }
+  },
+  {
+   "def": "YearbookPage",
+   "note": "four friends",
+   "value": {
+    "title_th": "หน้ารุ่นจำลอง 2026",
+    "school_th": "Ficto University",
+    "year": 2026,
+    "era": "90s",
+    "year_label": "Class of '97",
+    "frame": "white_yearbook",
+    "palette": [
+     "#1E3A5F",
+     "#C4A574",
+     "#F4EFE6",
+     "#4B5563"
+    ],
+    "members": [
+     {
+      "id": "u01",
+      "name_th": "น้องมายด์",
+      "name_en": "Mind",
+      "nickname_th": "มายด์",
+      "role": "most_likely_friend",
+      "role_th": "เพื่อนที่ขาดไม่ได้",
+      "era": "90s",
+      "score": 88,
+      "headline_th": "น้องมายด์ · Class of '97",
+      "consented": true
+     },
+     {
+      "id": "u02",
+      "name_th": "พี่เฟิร์น",
+      "name_en": "Fern",
+      "nickname_th": "เฟิร์น",
+      "role": "mc",
+      "role_th": "คนรับไมค์ทุกรอบ",
+      "era": "90s",
+      "score": 45,
+      "headline_th": "พี่เฟิร์น · Class of '97",
+      "consented": true
+     },
+     {
+      "id": "u03",
+      "name_th": "น้องตัง",
+      "name_en": "Tang",
+      "nickname_th": "ตัง",
+      "role": "most_likely_travel",
+      "role_th": "คนที่ทุกทริปต้องมี",
+      "era": "90s",
+      "score": 62,
+      "headline_th": "น้องตัง · Class of '97",
+      "consented": true
+     },
+     {
+      "id": "u04",
+      "name_th": "พี่เกรซ",
+      "name_en": "Grace",
+      "nickname_th": "เกรซ",
+      "role": "yearbook_club",
+      "role_th": "ชมรมปีบุ๊ก",
+      "era": "90s",
+      "score": 74,
+      "headline_th": "พี่เกรซ · Class of '97",
+      "consented": true
+     }
+    ],
+    "member_count": 4,
+    "cols": 2,
+    "rows": 2,
+    "disclaimer_th": "หน้ารุ่นจำลองจากรูปที่ทุกคนยินยอม ไม่ใช่สมุดรุ่นของโรงเรียนจริง"
+   }
+  },
+  {
+   "def": "YearbookPage",
+   "note": "five grid",
+   "value": {
+    "title_th": "รุ่นทดลอง",
+    "school_th": "Ficto",
+    "year": 2026,
+    "era": "90s",
+    "year_label": "Class of '97",
+    "frame": "white_yearbook",
+    "palette": [
+     "#1E3A5F",
+     "#C4A574",
+     "#F4EFE6",
+     "#4B5563"
+    ],
+    "members": [
+     {
+      "id": "u01",
+      "name_th": "น้องมายด์",
+      "name_en": "Mind",
+      "nickname_th": "มายด์",
+      "role": "most_likely_friend",
+      "role_th": "เพื่อนที่ขาดไม่ได้",
+      "era": "90s",
+      "score": 88,
+      "headline_th": "น้องมายด์ · Class of '97",
+      "consented": true
+     },
+     {
+      "id": "u02",
+      "name_th": "พี่เฟิร์น",
+      "name_en": "Fern",
+      "nickname_th": "เฟิร์น",
+      "role": "mc",
+      "role_th": "คนรับไมค์ทุกรอบ",
+      "era": "90s",
+      "score": 45,
+      "headline_th": "พี่เฟิร์น · Class of '97",
+      "consented": true
+     },
+     {
+      "id": "u03",
+      "name_th": "น้องตัง",
+      "name_en": "Tang",
+      "nickname_th": "ตัง",
+      "role": "most_likely_travel",
+      "role_th": "คนที่ทุกทริปต้องมี",
+      "era": "90s",
+      "score": 62,
+      "headline_th": "น้องตัง · Class of '97",
+      "consented": true
+     },
+     {
+      "id": "u04",
+      "name_th": "พี่เกรซ",
+      "name_en": "Grace",
+      "nickname_th": "เกรซ",
+      "role": "yearbook_club",
+      "role_th": "ชมรมปีบุ๊ก",
+      "era": "90s",
+      "score": 74,
+      "headline_th": "พี่เกรซ · Class of '97",
+      "consented": true
+     },
+     {
+      "id": "u05",
+      "name_th": "น้องแพร",
+      "name_en": "Prae",
+      "nickname_th": "แพร",
+      "role": "quiet_star",
+      "role_th": "คนเงียบแต่เด่นในรูป",
+      "era": "90s",
+      "score": 79,
+      "headline_th": "น้องแพร · Class of '97",
+      "consented": true
+     }
+    ],
+    "member_count": 5,
+    "cols": 3,
+    "rows": 2,
+    "disclaimer_th": "หน้ารุ่นจำลองจากรูปที่ทุกคนยินยอม ไม่ใช่สมุดรุ่นของโรงเรียนจริง"
+   }
+  },
+  {
+   "def": "PrintSheet",
+   "note": "a4",
+   "value": {
+    "name_th": "น้องมายด์",
+    "era": "90s",
+    "year_label": "Class of '97",
+    "quote_th": "เพื่อนที่ขาดไม่ได้ของรุ่นนี้ — ไว้เจอกันอีกสิบปีนะ",
+    "layout": "portrait_a4",
+    "label_th": "A4 รูปเดี่ยว + คำคม",
+    "sizes": [
+     "A4",
+     "1080x1350"
+    ],
+    "bleed_mm": 3,
+    "watermark": "Made with YearbookMe · styling only, not a real yearbook",
+    "cta_th": "พิมพ์รูปรุ่น ยุค 90s ของ น้องมายด์"
+   }
+  },
+  {
+   "def": "PrintSheet",
+   "note": "four up",
+   "value": {
+    "name_th": "น้องมายด์",
+    "era": "90s",
+    "year_label": "Class of '97",
+    "quote_th": "เพื่อนที่ขาดไม่ได้ของรุ่นนี้ — ไว้เจอกันอีกสิบปีนะ",
+    "layout": "four_up",
+    "label_th": "A4 สี่รูป (80s / 90s / Y2K / ช่องว่างเซ็น)",
+    "sizes": [
+     "A4"
+    ],
+    "bleed_mm": 3,
+    "watermark": "Made with YearbookMe · styling only, not a real yearbook",
+    "cta_th": "พิมพ์รูปรุ่น ยุค 90s ของ น้องมายด์"
+   }
+  },
+  {
+   "def": "PrintSheet",
+   "note": "sticker",
+   "value": {
+    "name_th": "น้องตัง",
+    "era": "y2k",
+    "year_label": "Class of '02",
+    "quote_th": "โกลว์นี้เก็บไว้",
+    "layout": "sticker",
+    "label_th": "สติกเกอร์ 5×5 ซม. 6 ชิ้น",
+    "sizes": [
+     "A4"
+    ],
+    "bleed_mm": 3,
+    "watermark": "Made with YearbookMe · styling only, not a real yearbook",
+    "cta_th": "พิมพ์รูปรุ่น ยุค Y2K ของ น้องตัง"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "mind 90s",
+   "value": {
+    "title_th": "YearbookMe — น้องมายด์",
+    "headline_th": "Class of '97 · ยุค 90s",
+    "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค 90s",
+    "era": "90s",
+    "score": 88,
+    "quote_th": "เพื่อนที่ขาดไม่ได้ของรุ่นนี้ — ไว้เจอกันอีกสิบปีนะ",
+    "layout": "era_portrait",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with YearbookMe · styling only, not a real yearbook",
+    "cta_th": "คอมเมนต์ YEARBOOK รับแพ็กฟรี · คะแนนลุค 88"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "fern 80s",
+   "value": {
+    "title_th": "YearbookMe — พี่เฟิร์น",
+    "headline_th": "Class of '86 · ยุค 80s",
+    "hook_th": "เซลฟี่เดียว กลายเป็นรูปรุ่นยุค 80s",
+    "era": "80s",
+    "score": 78,
+    "quote_th": "ถ้าเทปนี้กินแล้ว อย่าลืมว่าใครยืมวอล์กแมนไป",
+    "layout": "era_portrait",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with YearbookMe · styling only, not a real yearbook",
+    "cta_th": "คอมเมนต์ YEARBOOK รับแพ็กฟรี · คะแนนลุค 78"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "adult ok",
+   "value": {
+    "level": "ok",
+    "message_th": "เป็นสไตล์จำลองเพื่อความบันเทิง ไม่ใช่สมุดรุ่นทางการ ห้ามใช้รูปคนอื่นโดยไม่ได้รับอนุญาต และห้ามใช้รูปเด็กโดยไม่มีผู้ปกครองยินยอม"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "no consent",
+   "value": {
+    "level": "stop",
+    "message_th": "ยังแปลงไม่ได้ จนกว่าจะยืนยันว่าเป็นรูปของตนเอง เป็นสไตล์จำลองเพื่อความบันเทิง ไม่ใช่สมุดรุ่นทางการ ห้ามใช้รูปคนอื่นโดยไม่ได้รับอนุญาต และห้ามใช้รูปเด็กโดยไม่มีผู้ปกครองยินยอม"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "teen warn",
+   "value": {
+    "level": "warn",
+    "message_th": "ต้องมีผู้ปกครองยินยอมสำหรับผู้ใช้ที่ยังไม่บรรลุนิติภาวะ เป็นสไตล์จำลองเพื่อความบันเทิง ไม่ใช่สมุดรุ่นทางการ ห้ามใช้รูปคนอื่นโดยไม่ได้รับอนุญาต และห้ามใช้รูปเด็กโดยไม่มีผู้ปกครองยินยอม"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "child stop",
+   "value": {
+    "level": "stop",
+    "message_th": "เป็นสไตล์จำลองเพื่อความบันเทิง ไม่ใช่สมุดรุ่นทางการ ห้ามใช้รูปคนอื่นโดยไม่ได้รับอนุญาต และห้ามใช้รูปเด็กโดยไม่มีผู้ปกครองยินยอม"
+   }
+  }
+ ]
+}
