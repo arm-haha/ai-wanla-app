@@ -1,0 +1,1986 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "พี่บิ๋ม",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่บิ๋ม",
+    "name_en": "Bim",
+    "age": 31,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "ซื้อของขวัญวันเกิดแฟน งบ 1,500 ชอบคาเฟ่และเสื้อโอเวอร์ไซส์"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่แนน",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่แนน",
+    "name_en": "Nan",
+    "age": 41,
+    "city_th": "เชียงใหม่",
+    "goal_th": "ของขึ้นบ้านใหม่ให้เพื่อน งบ 2,000"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องไกด์",
+   "value": {
+    "id": "u03",
+    "name_th": "น้องไกด์",
+    "name_en": "Guide",
+    "age": 28,
+    "city_th": "ขอนแก่น",
+    "goal_th": "ของวันเกิดหลาน 8 ขวบ งบ 600"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่โอ้",
+   "value": {
+    "id": "u04",
+    "name_th": "พี่โอ้",
+    "name_en": "Oh",
+    "age": 36,
+    "city_th": "ภูเก็ต",
+    "goal_th": "ของขอบคุณหัวหน้า งบ 800"
+   }
+  },
+  {
+   "def": "Quiz",
+   "note": "bim",
+   "value": {
+    "relationship": "partner",
+    "age_band": "25-34",
+    "vibe": "cozy",
+    "hobbies": [
+     "cafe",
+     "fashion"
+    ],
+    "occasion": "birthday",
+    "budget_thb": 1500,
+    "receiver_name_th": "ต้น",
+    "is_minor": false
+   }
+  },
+  {
+   "def": "BudgetPicks",
+   "note": "bim",
+   "value": {
+    "receiver_name_th": "ต้น",
+    "budget_thb": 1500,
+    "picks": [
+     {
+      "gift_id": "g01",
+      "name_th": "เสื้อโอเวอร์ไซส์ FictoSoft",
+      "name_en": "FictoSoft oversized shirt",
+      "min_thb": 690,
+      "max_thb": 1290,
+      "mid_thb": 890,
+      "score": 100,
+      "why_th": "เข้ากับลุคสบาย ๆ และอยู่ในงบ",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g13",
+      "name_th": "ชุดชงชา FictoTea",
+      "name_en": "FictoTea set",
+      "min_thb": 490,
+      "max_thb": 990,
+      "mid_thb": 750,
+      "score": 100,
+      "why_th": "โทนสุภาพ สำหรับผู้ใหญ่หรือคนที่ชอบของบ้าน",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g02",
+      "name_th": "บัตรของขวัญคาเฟ่ FictoBean 2 ที่",
+      "name_en": "FictoBean cafe card for two",
+      "min_thb": 500,
+      "max_thb": 800,
+      "mid_thb": 650,
+      "score": 90,
+      "why_th": "ไปคาเฟ่ด้วยกันได้เลย ไม่ต้องเดาไซส์",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g06",
+      "name_th": "กล่องกาแฟดริป FictoBrew",
+      "name_en": "FictoBrew drip box",
+      "min_thb": 390,
+      "max_thb": 690,
+      "mid_thb": 550,
+      "score": 90,
+      "why_th": "ใช้ได้ทุกเช้า ของปฏิบัติที่ได้จริง",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g05",
+      "name_th": "หนังสือภาพคาเฟ่ FictoPages",
+      "name_en": "FictoPages cafe photobook",
+      "min_thb": 320,
+      "max_thb": 520,
+      "mid_thb": 420,
+      "score": 90,
+      "why_th": "เข้าทั้งคาเฟ่และสายหนังสือ",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     }
+    ],
+    "count": 5,
+    "filtered_out": 0
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "bim g01",
+   "value": {
+    "gift_id": "g01",
+    "name_th": "เสื้อโอเวอร์ไซส์ FictoSoft",
+    "name_en": "FictoSoft oversized shirt",
+    "min_thb": 690,
+    "max_thb": 1290,
+    "mid_thb": 890,
+    "score": 100,
+    "why_th": "เข้ากับลุคสบาย ๆ และอยู่ในงบ",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "bim g13",
+   "value": {
+    "gift_id": "g13",
+    "name_th": "ชุดชงชา FictoTea",
+    "name_en": "FictoTea set",
+    "min_thb": 490,
+    "max_thb": 990,
+    "mid_thb": 750,
+    "score": 100,
+    "why_th": "โทนสุภาพ สำหรับผู้ใหญ่หรือคนที่ชอบของบ้าน",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "bim g02",
+   "value": {
+    "gift_id": "g02",
+    "name_th": "บัตรของขวัญคาเฟ่ FictoBean 2 ที่",
+    "name_en": "FictoBean cafe card for two",
+    "min_thb": 500,
+    "max_thb": 800,
+    "mid_thb": 650,
+    "score": 90,
+    "why_th": "ไปคาเฟ่ด้วยกันได้เลย ไม่ต้องเดาไซส์",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "bim g06",
+   "value": {
+    "gift_id": "g06",
+    "name_th": "กล่องกาแฟดริป FictoBrew",
+    "name_en": "FictoBrew drip box",
+    "min_thb": 390,
+    "max_thb": 690,
+    "mid_thb": 550,
+    "score": 90,
+    "why_th": "ใช้ได้ทุกเช้า ของปฏิบัติที่ได้จริง",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "bim g05",
+   "value": {
+    "gift_id": "g05",
+    "name_th": "หนังสือภาพคาเฟ่ FictoPages",
+    "name_en": "FictoPages cafe photobook",
+    "min_thb": 320,
+    "max_thb": 520,
+    "mid_thb": 420,
+    "score": 90,
+    "why_th": "เข้าทั้งคาเฟ่และสายหนังสือ",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "SwapPicks",
+   "note": "bim",
+   "value": {
+    "picks": [
+     {
+      "gift_id": "g13",
+      "name_th": "ชุดชงชา FictoTea",
+      "name_en": "FictoTea set",
+      "min_thb": 490,
+      "max_thb": 990,
+      "mid_thb": 750,
+      "score": 100,
+      "why_th": "โทนสุภาพ สำหรับผู้ใหญ่หรือคนที่ชอบของบ้าน",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g02",
+      "name_th": "บัตรของขวัญคาเฟ่ FictoBean 2 ที่",
+      "name_en": "FictoBean cafe card for two",
+      "min_thb": 500,
+      "max_thb": 800,
+      "mid_thb": 650,
+      "score": 90,
+      "why_th": "ไปคาเฟ่ด้วยกันได้เลย ไม่ต้องเดาไซส์",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g06",
+      "name_th": "กล่องกาแฟดริป FictoBrew",
+      "name_en": "FictoBrew drip box",
+      "min_thb": 390,
+      "max_thb": 690,
+      "mid_thb": 550,
+      "score": 90,
+      "why_th": "ใช้ได้ทุกเช้า ของปฏิบัติที่ได้จริง",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     }
+    ],
+    "count": 3
+   }
+  },
+  {
+   "def": "Quiz",
+   "note": "nan",
+   "value": {
+    "relationship": "friend",
+    "age_band": "35-49",
+    "vibe": "practical",
+    "hobbies": [
+     "home",
+     "plants",
+     "cooking"
+    ],
+    "occasion": "housewarming",
+    "budget_thb": 2000,
+    "receiver_name_th": "เจ",
+    "is_minor": false
+   }
+  },
+  {
+   "def": "BudgetPicks",
+   "note": "nan",
+   "value": {
+    "receiver_name_th": "เจ",
+    "budget_thb": 2000,
+    "picks": [
+     {
+      "gift_id": "g11",
+      "name_th": "ชุดเครื่องครัวเล็ก FictoPan",
+      "name_en": "FictoPan starter set",
+      "min_thb": 650,
+      "max_thb": 1400,
+      "mid_thb": 990,
+      "score": 100,
+      "why_th": "เหมาะกับบ้านใหม่สายทำอาหาร",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g07",
+      "name_th": "กระถางต้นไม้เล็ก FictoLeaf",
+      "name_en": "FictoLeaf mini planter",
+      "min_thb": 250,
+      "max_thb": 550,
+      "mid_thb": 390,
+      "score": 100,
+      "why_th": "เหมาะกับบ้านใหม่หรือโต๊ะทำงาน",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g15",
+      "name_th": "ชุดไวน์ FictoVine (21+ เท่านั้น)",
+      "name_en": "FictoVine wine set (21+ only)",
+      "min_thb": 890,
+      "max_thb": 1800,
+      "mid_thb": 1290,
+      "score": 90,
+      "why_th": "ของพิเศษสำหรับผู้ใหญ่ในโอกาสสำคัญ",
+      "adult_only": true,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g10",
+      "name_th": "หูฟัง FictoBeat",
+      "name_en": "FictoBeat earphones",
+      "min_thb": 790,
+      "max_thb": 1590,
+      "mid_thb": 1190,
+      "score": 75,
+      "why_th": "ของที่ใช้บ่อย ถ้างบครอบคลุม",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g06",
+      "name_th": "กล่องกาแฟดริป FictoBrew",
+      "name_en": "FictoBrew drip box",
+      "min_thb": 390,
+      "max_thb": 690,
+      "mid_thb": 550,
+      "score": 75,
+      "why_th": "ใช้ได้ทุกเช้า ของปฏิบัติที่ได้จริง",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     }
+    ],
+    "count": 5,
+    "filtered_out": 1
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "nan g11",
+   "value": {
+    "gift_id": "g11",
+    "name_th": "ชุดเครื่องครัวเล็ก FictoPan",
+    "name_en": "FictoPan starter set",
+    "min_thb": 650,
+    "max_thb": 1400,
+    "mid_thb": 990,
+    "score": 100,
+    "why_th": "เหมาะกับบ้านใหม่สายทำอาหาร",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "nan g07",
+   "value": {
+    "gift_id": "g07",
+    "name_th": "กระถางต้นไม้เล็ก FictoLeaf",
+    "name_en": "FictoLeaf mini planter",
+    "min_thb": 250,
+    "max_thb": 550,
+    "mid_thb": 390,
+    "score": 100,
+    "why_th": "เหมาะกับบ้านใหม่หรือโต๊ะทำงาน",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "nan g15",
+   "value": {
+    "gift_id": "g15",
+    "name_th": "ชุดไวน์ FictoVine (21+ เท่านั้น)",
+    "name_en": "FictoVine wine set (21+ only)",
+    "min_thb": 890,
+    "max_thb": 1800,
+    "mid_thb": 1290,
+    "score": 90,
+    "why_th": "ของพิเศษสำหรับผู้ใหญ่ในโอกาสสำคัญ",
+    "adult_only": true,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "nan g10",
+   "value": {
+    "gift_id": "g10",
+    "name_th": "หูฟัง FictoBeat",
+    "name_en": "FictoBeat earphones",
+    "min_thb": 790,
+    "max_thb": 1590,
+    "mid_thb": 1190,
+    "score": 75,
+    "why_th": "ของที่ใช้บ่อย ถ้างบครอบคลุม",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "nan g06",
+   "value": {
+    "gift_id": "g06",
+    "name_th": "กล่องกาแฟดริป FictoBrew",
+    "name_en": "FictoBrew drip box",
+    "min_thb": 390,
+    "max_thb": 690,
+    "mid_thb": 550,
+    "score": 75,
+    "why_th": "ใช้ได้ทุกเช้า ของปฏิบัติที่ได้จริง",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "SwapPicks",
+   "note": "nan",
+   "value": {
+    "picks": [
+     {
+      "gift_id": "g07",
+      "name_th": "กระถางต้นไม้เล็ก FictoLeaf",
+      "name_en": "FictoLeaf mini planter",
+      "min_thb": 250,
+      "max_thb": 550,
+      "mid_thb": 390,
+      "score": 100,
+      "why_th": "เหมาะกับบ้านใหม่หรือโต๊ะทำงาน",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g15",
+      "name_th": "ชุดไวน์ FictoVine (21+ เท่านั้น)",
+      "name_en": "FictoVine wine set (21+ only)",
+      "min_thb": 890,
+      "max_thb": 1800,
+      "mid_thb": 1290,
+      "score": 90,
+      "why_th": "ของพิเศษสำหรับผู้ใหญ่ในโอกาสสำคัญ",
+      "adult_only": true,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g10",
+      "name_th": "หูฟัง FictoBeat",
+      "name_en": "FictoBeat earphones",
+      "min_thb": 790,
+      "max_thb": 1590,
+      "mid_thb": 1190,
+      "score": 75,
+      "why_th": "ของที่ใช้บ่อย ถ้างบครอบคลุม",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     }
+    ],
+    "count": 3
+   }
+  },
+  {
+   "def": "Quiz",
+   "note": "gai",
+   "value": {
+    "relationship": "kid",
+    "age_band": "0-12",
+    "vibe": "playful",
+    "hobbies": [
+     "games"
+    ],
+    "occasion": "birthday",
+    "budget_thb": 600,
+    "receiver_name_th": "น้องภูมิ",
+    "is_minor": true
+   }
+  },
+  {
+   "def": "BudgetPicks",
+   "note": "gai",
+   "value": {
+    "receiver_name_th": "น้องภูมิ",
+    "budget_thb": 600,
+    "picks": [
+     {
+      "gift_id": "g16",
+      "name_th": "ตุ๊กตาผ้า FictoBuddy",
+      "name_en": "FictoBuddy plush",
+      "min_thb": 290,
+      "max_thb": 590,
+      "mid_thb": 390,
+      "score": 100,
+      "why_th": "นุ่ม ปลอดภัย สำหรับเด็ก (ไม่มีชิ้นเล็กหลุดง่ายในชุดตัวอย่าง)",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g12",
+      "name_th": "กล่องขนม FictoTreat (ไม่มีแอลกอฮอล์)",
+      "name_en": "FictoTreat snack box",
+      "min_thb": 250,
+      "max_thb": 550,
+      "mid_thb": 390,
+      "score": 90,
+      "why_th": "ของกินแบ่งได้ ใช้ได้ทุกวัย",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g03",
+      "name_th": "พวงกุญแจกล้องฟิล์ม FictoClick",
+      "name_en": "FictoClick film-camera keychain",
+      "min_thb": 190,
+      "max_thb": 390,
+      "mid_thb": 290,
+      "score": 60,
+      "why_th": "ของจิ๋วน่ารัก ใช้งบเหลือจากของชิ้นหลัก",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g06",
+      "name_th": "กล่องกาแฟดริป FictoBrew",
+      "name_en": "FictoBrew drip box",
+      "min_thb": 390,
+      "max_thb": 690,
+      "mid_thb": 550,
+      "score": 25,
+      "why_th": "ใช้ได้ทุกเช้า ของปฏิบัติที่ได้จริง",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g04",
+      "name_th": "ชุดเทียนหอม FictoGlow",
+      "name_en": "FictoGlow candle set",
+      "min_thb": 350,
+      "max_thb": 690,
+      "mid_thb": 490,
+      "score": 25,
+      "why_th": "เพิ่มบรรยากาศบ้านโดยไม่ต้องเดาไซส์เสื้อผ้า",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     }
+    ],
+    "count": 5,
+    "filtered_out": 8
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "gai g16",
+   "value": {
+    "gift_id": "g16",
+    "name_th": "ตุ๊กตาผ้า FictoBuddy",
+    "name_en": "FictoBuddy plush",
+    "min_thb": 290,
+    "max_thb": 590,
+    "mid_thb": 390,
+    "score": 100,
+    "why_th": "นุ่ม ปลอดภัย สำหรับเด็ก (ไม่มีชิ้นเล็กหลุดง่ายในชุดตัวอย่าง)",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "gai g12",
+   "value": {
+    "gift_id": "g12",
+    "name_th": "กล่องขนม FictoTreat (ไม่มีแอลกอฮอล์)",
+    "name_en": "FictoTreat snack box",
+    "min_thb": 250,
+    "max_thb": 550,
+    "mid_thb": 390,
+    "score": 90,
+    "why_th": "ของกินแบ่งได้ ใช้ได้ทุกวัย",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "gai g03",
+   "value": {
+    "gift_id": "g03",
+    "name_th": "พวงกุญแจกล้องฟิล์ม FictoClick",
+    "name_en": "FictoClick film-camera keychain",
+    "min_thb": 190,
+    "max_thb": 390,
+    "mid_thb": 290,
+    "score": 60,
+    "why_th": "ของจิ๋วน่ารัก ใช้งบเหลือจากของชิ้นหลัก",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "gai g06",
+   "value": {
+    "gift_id": "g06",
+    "name_th": "กล่องกาแฟดริป FictoBrew",
+    "name_en": "FictoBrew drip box",
+    "min_thb": 390,
+    "max_thb": 690,
+    "mid_thb": 550,
+    "score": 25,
+    "why_th": "ใช้ได้ทุกเช้า ของปฏิบัติที่ได้จริง",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "gai g04",
+   "value": {
+    "gift_id": "g04",
+    "name_th": "ชุดเทียนหอม FictoGlow",
+    "name_en": "FictoGlow candle set",
+    "min_thb": 350,
+    "max_thb": 690,
+    "mid_thb": 490,
+    "score": 25,
+    "why_th": "เพิ่มบรรยากาศบ้านโดยไม่ต้องเดาไซส์เสื้อผ้า",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "SwapPicks",
+   "note": "gai",
+   "value": {
+    "picks": [
+     {
+      "gift_id": "g12",
+      "name_th": "กล่องขนม FictoTreat (ไม่มีแอลกอฮอล์)",
+      "name_en": "FictoTreat snack box",
+      "min_thb": 250,
+      "max_thb": 550,
+      "mid_thb": 390,
+      "score": 90,
+      "why_th": "ของกินแบ่งได้ ใช้ได้ทุกวัย",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g03",
+      "name_th": "พวงกุญแจกล้องฟิล์ม FictoClick",
+      "name_en": "FictoClick film-camera keychain",
+      "min_thb": 190,
+      "max_thb": 390,
+      "mid_thb": 290,
+      "score": 60,
+      "why_th": "ของจิ๋วน่ารัก ใช้งบเหลือจากของชิ้นหลัก",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g06",
+      "name_th": "กล่องกาแฟดริป FictoBrew",
+      "name_en": "FictoBrew drip box",
+      "min_thb": 390,
+      "max_thb": 690,
+      "mid_thb": 550,
+      "score": 25,
+      "why_th": "ใช้ได้ทุกเช้า ของปฏิบัติที่ได้จริง",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     }
+    ],
+    "count": 3
+   }
+  },
+  {
+   "def": "Quiz",
+   "note": "ot",
+   "value": {
+    "relationship": "colleague",
+    "age_band": "50+",
+    "vibe": "practical",
+    "hobbies": [
+     "cafe",
+     "books"
+    ],
+    "occasion": "thank_you",
+    "budget_thb": 800,
+    "receiver_name_th": "คุณสุรีย์",
+    "is_minor": false
+   }
+  },
+  {
+   "def": "BudgetPicks",
+   "note": "ot",
+   "value": {
+    "receiver_name_th": "คุณสุรีย์",
+    "budget_thb": 800,
+    "picks": [
+     {
+      "gift_id": "g06",
+      "name_th": "กล่องกาแฟดริป FictoBrew",
+      "name_en": "FictoBrew drip box",
+      "min_thb": 390,
+      "max_thb": 690,
+      "mid_thb": 550,
+      "score": 100,
+      "why_th": "ใช้ได้ทุกเช้า ของปฏิบัติที่ได้จริง",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g02",
+      "name_th": "บัตรของขวัญคาเฟ่ FictoBean 2 ที่",
+      "name_en": "FictoBean cafe card for two",
+      "min_thb": 500,
+      "max_thb": 800,
+      "mid_thb": 650,
+      "score": 80,
+      "why_th": "ไปคาเฟ่ด้วยกันได้เลย ไม่ต้องเดาไซส์",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g07",
+      "name_th": "กระถางต้นไม้เล็ก FictoLeaf",
+      "name_en": "FictoLeaf mini planter",
+      "min_thb": 250,
+      "max_thb": 550,
+      "mid_thb": 390,
+      "score": 80,
+      "why_th": "เหมาะกับบ้านใหม่หรือโต๊ะทำงาน",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g12",
+      "name_th": "กล่องขนม FictoTreat (ไม่มีแอลกอฮอล์)",
+      "name_en": "FictoTreat snack box",
+      "min_thb": 250,
+      "max_thb": 550,
+      "mid_thb": 390,
+      "score": 70,
+      "why_th": "ของกินแบ่งได้ ใช้ได้ทุกวัย",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g08",
+      "name_th": "สมุดแพลนเนอร์ FictoPlan",
+      "name_en": "FictoPlan planner",
+      "min_thb": 280,
+      "max_thb": 480,
+      "mid_thb": 350,
+      "score": 70,
+      "why_th": "ของใช้จริงสำหรับเริ่มงานใหม่",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     }
+    ],
+    "count": 5,
+    "filtered_out": 6
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "ot g06",
+   "value": {
+    "gift_id": "g06",
+    "name_th": "กล่องกาแฟดริป FictoBrew",
+    "name_en": "FictoBrew drip box",
+    "min_thb": 390,
+    "max_thb": 690,
+    "mid_thb": 550,
+    "score": 100,
+    "why_th": "ใช้ได้ทุกเช้า ของปฏิบัติที่ได้จริง",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "ot g02",
+   "value": {
+    "gift_id": "g02",
+    "name_th": "บัตรของขวัญคาเฟ่ FictoBean 2 ที่",
+    "name_en": "FictoBean cafe card for two",
+    "min_thb": 500,
+    "max_thb": 800,
+    "mid_thb": 650,
+    "score": 80,
+    "why_th": "ไปคาเฟ่ด้วยกันได้เลย ไม่ต้องเดาไซส์",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "ot g07",
+   "value": {
+    "gift_id": "g07",
+    "name_th": "กระถางต้นไม้เล็ก FictoLeaf",
+    "name_en": "FictoLeaf mini planter",
+    "min_thb": 250,
+    "max_thb": 550,
+    "mid_thb": 390,
+    "score": 80,
+    "why_th": "เหมาะกับบ้านใหม่หรือโต๊ะทำงาน",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "ot g12",
+   "value": {
+    "gift_id": "g12",
+    "name_th": "กล่องขนม FictoTreat (ไม่มีแอลกอฮอล์)",
+    "name_en": "FictoTreat snack box",
+    "min_thb": 250,
+    "max_thb": 550,
+    "mid_thb": 390,
+    "score": 70,
+    "why_th": "ของกินแบ่งได้ ใช้ได้ทุกวัย",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "ot g08",
+   "value": {
+    "gift_id": "g08",
+    "name_th": "สมุดแพลนเนอร์ FictoPlan",
+    "name_en": "FictoPlan planner",
+    "min_thb": 280,
+    "max_thb": 480,
+    "mid_thb": 350,
+    "score": 70,
+    "why_th": "ของใช้จริงสำหรับเริ่มงานใหม่",
+    "adult_only": false,
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "SwapPicks",
+   "note": "ot",
+   "value": {
+    "picks": [
+     {
+      "gift_id": "g02",
+      "name_th": "บัตรของขวัญคาเฟ่ FictoBean 2 ที่",
+      "name_en": "FictoBean cafe card for two",
+      "min_thb": 500,
+      "max_thb": 800,
+      "mid_thb": 650,
+      "score": 80,
+      "why_th": "ไปคาเฟ่ด้วยกันได้เลย ไม่ต้องเดาไซส์",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g07",
+      "name_th": "กระถางต้นไม้เล็ก FictoLeaf",
+      "name_en": "FictoLeaf mini planter",
+      "min_thb": 250,
+      "max_thb": 550,
+      "mid_thb": 390,
+      "score": 80,
+      "why_th": "เหมาะกับบ้านใหม่หรือโต๊ะทำงาน",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     },
+     {
+      "gift_id": "g12",
+      "name_th": "กล่องขนม FictoTreat (ไม่มีแอลกอฮอล์)",
+      "name_en": "FictoTreat snack box",
+      "min_thb": 250,
+      "max_thb": 550,
+      "mid_thb": 390,
+      "score": 70,
+      "why_th": "ของกินแบ่งได้ ใช้ได้ทุกวัย",
+      "adult_only": false,
+      "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+     }
+    ],
+    "count": 3
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g01",
+   "value": {
+    "id": "g01",
+    "name_th": "เสื้อโอเวอร์ไซส์ FictoSoft",
+    "name_en": "FictoSoft oversized shirt",
+    "min": 690,
+    "max": 1290,
+    "mid": 890,
+    "rel": [
+     "partner",
+     "friend",
+     "sibling"
+    ],
+    "age": [
+     "18-24",
+     "25-34",
+     "35-49"
+    ],
+    "vibe": [
+     "cozy"
+    ],
+    "hobby": [
+     "fashion"
+    ],
+    "occasions": [
+     "birthday",
+     "just_because",
+     "anniversary"
+    ],
+    "adult_only": false,
+    "why_th": "เข้ากับลุคสบาย ๆ และอยู่ในงบ"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g02",
+   "value": {
+    "id": "g02",
+    "name_th": "บัตรของขวัญคาเฟ่ FictoBean 2 ที่",
+    "name_en": "FictoBean cafe card for two",
+    "min": 500,
+    "max": 800,
+    "mid": 650,
+    "rel": [
+     "partner",
+     "friend",
+     "colleague"
+    ],
+    "age": [
+     "18-24",
+     "25-34",
+     "35-49",
+     "50+"
+    ],
+    "vibe": [
+     "cozy"
+    ],
+    "hobby": [
+     "cafe"
+    ],
+    "occasions": [
+     "birthday",
+     "anniversary",
+     "thank_you",
+     "just_because"
+    ],
+    "adult_only": false,
+    "why_th": "ไปคาเฟ่ด้วยกันได้เลย ไม่ต้องเดาไซส์"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g03",
+   "value": {
+    "id": "g03",
+    "name_th": "พวงกุญแจกล้องฟิล์ม FictoClick",
+    "name_en": "FictoClick film-camera keychain",
+    "min": 190,
+    "max": 390,
+    "mid": 290,
+    "rel": [
+     "partner",
+     "friend",
+     "sibling",
+     "kid"
+    ],
+    "age": [
+     "13-17",
+     "18-24",
+     "25-34"
+    ],
+    "vibe": [
+     "playful",
+     "creative"
+    ],
+    "hobby": [
+     "cafe",
+     "travel"
+    ],
+    "occasions": [
+     "birthday",
+     "just_because",
+     "thank_you"
+    ],
+    "adult_only": false,
+    "why_th": "ของจิ๋วน่ารัก ใช้งบเหลือจากของชิ้นหลัก"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g04",
+   "value": {
+    "id": "g04",
+    "name_th": "ชุดเทียนหอม FictoGlow",
+    "name_en": "FictoGlow candle set",
+    "min": 350,
+    "max": 690,
+    "mid": 490,
+    "rel": [
+     "partner",
+     "friend",
+     "parent"
+    ],
+    "age": [
+     "18-24",
+     "25-34",
+     "35-49",
+     "50+"
+    ],
+    "vibe": [
+     "cozy",
+     "luxe"
+    ],
+    "hobby": [
+     "home"
+    ],
+    "occasions": [
+     "birthday",
+     "housewarming",
+     "thank_you"
+    ],
+    "adult_only": false,
+    "why_th": "เพิ่มบรรยากาศบ้านโดยไม่ต้องเดาไซส์เสื้อผ้า"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g05",
+   "value": {
+    "id": "g05",
+    "name_th": "หนังสือภาพคาเฟ่ FictoPages",
+    "name_en": "FictoPages cafe photobook",
+    "min": 320,
+    "max": 520,
+    "mid": 420,
+    "rel": [
+     "partner",
+     "friend"
+    ],
+    "age": [
+     "18-24",
+     "25-34",
+     "35-49"
+    ],
+    "vibe": [
+     "cozy",
+     "creative"
+    ],
+    "hobby": [
+     "cafe",
+     "books"
+    ],
+    "occasions": [
+     "birthday",
+     "just_because"
+    ],
+    "adult_only": false,
+    "why_th": "เข้าทั้งคาเฟ่และสายหนังสือ"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g06",
+   "value": {
+    "id": "g06",
+    "name_th": "กล่องกาแฟดริป FictoBrew",
+    "name_en": "FictoBrew drip box",
+    "min": 390,
+    "max": 690,
+    "mid": 550,
+    "rel": [
+     "partner",
+     "friend",
+     "colleague",
+     "parent"
+    ],
+    "age": [
+     "18-24",
+     "25-34",
+     "35-49",
+     "50+"
+    ],
+    "vibe": [
+     "practical",
+     "cozy"
+    ],
+    "hobby": [
+     "cafe",
+     "cooking"
+    ],
+    "occasions": [
+     "thank_you",
+     "new_job",
+     "birthday"
+    ],
+    "adult_only": false,
+    "why_th": "ใช้ได้ทุกเช้า ของปฏิบัติที่ได้จริง"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g07",
+   "value": {
+    "id": "g07",
+    "name_th": "กระถางต้นไม้เล็ก FictoLeaf",
+    "name_en": "FictoLeaf mini planter",
+    "min": 250,
+    "max": 550,
+    "mid": 390,
+    "rel": [
+     "friend",
+     "colleague",
+     "parent"
+    ],
+    "age": [
+     "18-24",
+     "25-34",
+     "35-49",
+     "50+"
+    ],
+    "vibe": [
+     "practical",
+     "cozy"
+    ],
+    "hobby": [
+     "plants",
+     "home"
+    ],
+    "occasions": [
+     "housewarming",
+     "thank_you",
+     "new_job"
+    ],
+    "adult_only": false,
+    "why_th": "เหมาะกับบ้านใหม่หรือโต๊ะทำงาน"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g08",
+   "value": {
+    "id": "g08",
+    "name_th": "สมุดแพลนเนอร์ FictoPlan",
+    "name_en": "FictoPlan planner",
+    "min": 280,
+    "max": 480,
+    "mid": 350,
+    "rel": [
+     "colleague",
+     "friend",
+     "sibling"
+    ],
+    "age": [
+     "18-24",
+     "25-34",
+     "35-49"
+    ],
+    "vibe": [
+     "practical"
+    ],
+    "hobby": [
+     "books"
+    ],
+    "occasions": [
+     "new_job",
+     "thank_you",
+     "birthday"
+    ],
+    "adult_only": false,
+    "why_th": "ของใช้จริงสำหรับเริ่มงานใหม่"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g09",
+   "value": {
+    "id": "g09",
+    "name_th": "ดัมเบลผ้า FictoFit",
+    "name_en": "FictoFit fabric dumbbells",
+    "min": 450,
+    "max": 890,
+    "mid": 690,
+    "rel": [
+     "partner",
+     "friend",
+     "sibling"
+    ],
+    "age": [
+     "18-24",
+     "25-34",
+     "35-49"
+    ],
+    "vibe": [
+     "sporty",
+     "practical"
+    ],
+    "hobby": [
+     "fitness"
+    ],
+    "occasions": [
+     "birthday",
+     "just_because",
+     "new_job"
+    ],
+    "adult_only": false,
+    "why_th": "เข้ากับสายออกกำลังกายโดยไม่เทอะทะ"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g10",
+   "value": {
+    "id": "g10",
+    "name_th": "หูฟัง FictoBeat",
+    "name_en": "FictoBeat earphones",
+    "min": 790,
+    "max": 1590,
+    "mid": 1190,
+    "rel": [
+     "partner",
+     "friend",
+     "sibling"
+    ],
+    "age": [
+     "13-17",
+     "18-24",
+     "25-34",
+     "35-49"
+    ],
+    "vibe": [
+     "practical",
+     "luxe"
+    ],
+    "hobby": [
+     "music",
+     "games",
+     "travel"
+    ],
+    "occasions": [
+     "birthday",
+     "new_job"
+    ],
+    "adult_only": false,
+    "why_th": "ของที่ใช้บ่อย ถ้างบครอบคลุม"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g11",
+   "value": {
+    "id": "g11",
+    "name_th": "ชุดเครื่องครัวเล็ก FictoPan",
+    "name_en": "FictoPan starter set",
+    "min": 650,
+    "max": 1400,
+    "mid": 990,
+    "rel": [
+     "friend",
+     "sibling",
+     "partner"
+    ],
+    "age": [
+     "18-24",
+     "25-34",
+     "35-49"
+    ],
+    "vibe": [
+     "practical"
+    ],
+    "hobby": [
+     "cooking",
+     "home"
+    ],
+    "occasions": [
+     "housewarming",
+     "birthday"
+    ],
+    "adult_only": false,
+    "why_th": "เหมาะกับบ้านใหม่สายทำอาหาร"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g12",
+   "value": {
+    "id": "g12",
+    "name_th": "กล่องขนม FictoTreat (ไม่มีแอลกอฮอล์)",
+    "name_en": "FictoTreat snack box",
+    "min": 250,
+    "max": 550,
+    "mid": 390,
+    "rel": [
+     "colleague",
+     "friend",
+     "parent",
+     "kid",
+     "sibling"
+    ],
+    "age": [
+     "0-12",
+     "13-17",
+     "18-24",
+     "25-34",
+     "35-49",
+     "50+"
+    ],
+    "vibe": [
+     "playful",
+     "cozy"
+    ],
+    "hobby": [
+     "cafe"
+    ],
+    "occasions": [
+     "thank_you",
+     "birthday",
+     "just_because"
+    ],
+    "adult_only": false,
+    "why_th": "ของกินแบ่งได้ ใช้ได้ทุกวัย"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g13",
+   "value": {
+    "id": "g13",
+    "name_th": "ชุดชงชา FictoTea",
+    "name_en": "FictoTea set",
+    "min": 490,
+    "max": 990,
+    "mid": 750,
+    "rel": [
+     "parent",
+     "partner",
+     "friend"
+    ],
+    "age": [
+     "35-49",
+     "50+",
+     "25-34"
+    ],
+    "vibe": [
+     "cozy",
+     "luxe"
+    ],
+    "hobby": [
+     "cafe",
+     "home"
+    ],
+    "occasions": [
+     "thank_you",
+     "birthday",
+     "anniversary"
+    ],
+    "adult_only": false,
+    "why_th": "โทนสุภาพ สำหรับผู้ใหญ่หรือคนที่ชอบของบ้าน"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g14",
+   "value": {
+    "id": "g14",
+    "name_th": "เกมตั้งโต๊ะ FictoQuest",
+    "name_en": "FictoQuest board game",
+    "min": 590,
+    "max": 1200,
+    "mid": 850,
+    "rel": [
+     "friend",
+     "sibling",
+     "partner",
+     "kid"
+    ],
+    "age": [
+     "0-12",
+     "13-17",
+     "18-24",
+     "25-34"
+    ],
+    "vibe": [
+     "playful"
+    ],
+    "hobby": [
+     "games"
+    ],
+    "occasions": [
+     "birthday",
+     "housewarming",
+     "just_because"
+    ],
+    "adult_only": false,
+    "why_th": "เล่นด้วยกันได้ทั้งบ้าน"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g15",
+   "value": {
+    "id": "g15",
+    "name_th": "ชุดไวน์ FictoVine (21+ เท่านั้น)",
+    "name_en": "FictoVine wine set (21+ only)",
+    "min": 890,
+    "max": 1800,
+    "mid": 1290,
+    "rel": [
+     "partner",
+     "friend",
+     "parent"
+    ],
+    "age": [
+     "25-34",
+     "35-49",
+     "50+"
+    ],
+    "vibe": [
+     "luxe"
+    ],
+    "hobby": [
+     "cooking",
+     "home"
+    ],
+    "occasions": [
+     "anniversary",
+     "thank_you",
+     "housewarming"
+    ],
+    "adult_only": true,
+    "why_th": "ของพิเศษสำหรับผู้ใหญ่ในโอกาสสำคัญ"
+   }
+  },
+  {
+   "def": "GiftInfo",
+   "note": "g16",
+   "value": {
+    "id": "g16",
+    "name_th": "ตุ๊กตาผ้า FictoBuddy",
+    "name_en": "FictoBuddy plush",
+    "min": 290,
+    "max": 590,
+    "mid": 390,
+    "rel": [
+     "kid",
+     "sibling"
+    ],
+    "age": [
+     "0-12",
+     "13-17"
+    ],
+    "vibe": [
+     "playful",
+     "cozy"
+    ],
+    "hobby": [
+     "games"
+    ],
+    "occasions": [
+     "birthday",
+     "just_because"
+    ],
+    "adult_only": false,
+    "why_th": "นุ่ม ปลอดภัย สำหรับเด็ก (ไม่มีชิ้นเล็กหลุดง่ายในชุดตัวอย่าง)"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "ต้น birthday sweet 1",
+   "value": {
+    "n": 1,
+    "occasion": "birthday",
+    "tone": "sweet",
+    "receiver_name_th": "ต้น",
+    "text_th": "สุขสันต์วันเกิดนะ ขอให้ปีนี้มีวันที่สบายใจมากกว่าเดิม"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "ต้น birthday sweet 2",
+   "value": {
+    "n": 2,
+    "occasion": "birthday",
+    "tone": "sweet",
+    "receiver_name_th": "ต้น",
+    "text_th": "เกิดมาเพื่อให้คนข้าง ๆ ยิ้มได้ง่าย ๆ — สุขสันต์วันเกิด"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "ต้น birthday funny 1",
+   "value": {
+    "n": 1,
+    "occasion": "birthday",
+    "tone": "funny",
+    "receiver_name_th": "ต้น",
+    "text_th": "อายุเพิ่ม แต่ความขี้ลืมยังคงที่ สุขสันต์วันเกิด"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "ต้น birthday funny 2",
+   "value": {
+    "n": 2,
+    "occasion": "birthday",
+    "tone": "funny",
+    "receiver_name_th": "ต้น",
+    "text_th": "วันเกิดนี้ขอให้ของขวัญถูกใจกว่าเค้กที่กินไม่หมด"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "คุณสุรีย์ thank_you formal 1",
+   "value": {
+    "n": 1,
+    "occasion": "thank_you",
+    "tone": "formal",
+    "receiver_name_th": "คุณสุรีย์",
+    "text_th": "ขอขอบคุณสำหรับความช่วยเหลือและความปรารถนาดี"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "คุณสุรีย์ thank_you formal 2",
+   "value": {
+    "n": 2,
+    "occasion": "thank_you",
+    "tone": "formal",
+    "receiver_name_th": "คุณสุรีย์",
+    "text_th": "สิ่งนี้เป็นเพียงของแทนความรู้สึกขอบคุณอย่างจริงใจ"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "คุณสุรีย์ thank_you short 1",
+   "value": {
+    "n": 1,
+    "occasion": "thank_you",
+    "tone": "short",
+    "receiver_name_th": "คุณสุรีย์",
+    "text_th": "ขอบคุณมากนะ"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "คุณสุรีย์ thank_you short 2",
+   "value": {
+    "n": 2,
+    "occasion": "thank_you",
+    "tone": "short",
+    "receiver_name_th": "คุณสุรีย์",
+    "text_th": "จำน้ำใจนี้ไว้เสมอ"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "เจ housewarming sweet 1",
+   "value": {
+    "n": 1,
+    "occasion": "housewarming",
+    "tone": "sweet",
+    "receiver_name_th": "เจ",
+    "text_th": "บ้านใหม่นี้ขอให้เป็นที่พักใจทุกวัน"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "เจ housewarming sweet 2",
+   "value": {
+    "n": 2,
+    "occasion": "housewarming",
+    "tone": "sweet",
+    "receiver_name_th": "เจ",
+    "text_th": "ขอให้บ้านใหม่อบอุ่น ปลอดภัย และมีเสียงหัวเราะบ่อย ๆ"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "คุณสุรีย์ condolence formal 1",
+   "value": {
+    "n": 1,
+    "occasion": "condolence",
+    "tone": "formal",
+    "receiver_name_th": "คุณสุรีย์",
+    "text_th": "ขอแสดงความเสียใจ และเป็นกำลังใจให้ครอบครัวผ่านช่วงเวลานี้"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "คุณสุรีย์ condolence formal 2",
+   "value": {
+    "n": 2,
+    "occasion": "condolence",
+    "tone": "formal",
+    "receiver_name_th": "คุณสุรีย์",
+    "text_th": "ขอให้ท่านและครอบครัวได้รับความอบอุ่นจากคนรอบข้าง"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "เจ new_job funny 1",
+   "value": {
+    "n": 1,
+    "occasion": "new_job",
+    "tone": "funny",
+    "receiver_name_th": "เจ",
+    "text_th": "ขอให้ล็อกอินวันแรกผ่านตั้งแต่รอบแรก"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "เจ new_job funny 2",
+   "value": {
+    "n": 2,
+    "occasion": "new_job",
+    "tone": "funny",
+    "receiver_name_th": "เจ",
+    "text_th": "งานใหม่นี้ขอให้มีประชุมน้อยกว่ากาแฟ"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "ต้น anniversary sweet 1",
+   "value": {
+    "n": 1,
+    "occasion": "anniversary",
+    "tone": "sweet",
+    "receiver_name_th": "ต้น",
+    "text_th": "อีกปีที่ผ่านมาด้วยกัน ขอบคุณที่เป็นบ้านของกันและกัน"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "ต้น anniversary sweet 2",
+   "value": {
+    "n": 2,
+    "occasion": "anniversary",
+    "tone": "sweet",
+    "receiver_name_th": "ต้น",
+    "text_th": "ครบรอบนี้ขอถือมือต่ออีกยาว ๆ"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "ต้น just_because short 1",
+   "value": {
+    "n": 1,
+    "occasion": "just_because",
+    "tone": "short",
+    "receiver_name_th": "ต้น",
+    "text_th": "คิดถึง"
+   }
+  },
+  {
+   "def": "CardMessage",
+   "note": "ต้น just_because short 2",
+   "value": {
+    "n": 2,
+    "occasion": "just_because",
+    "tone": "short",
+    "receiver_name_th": "ต้น",
+    "text_th": "ให้ยิ้มหน่อย"
+   }
+  },
+  {
+   "def": "WrapIdeas",
+   "note": "low",
+   "value": {
+    "band": "low",
+    "budget_thb": 400,
+    "ideas_th": [
+     "ถุงกระดาษคราฟท์ + โบว์ผ้า",
+     "ห่อผ้าเก่าที่สะอาด ผูกเชือกป่าน",
+     "ซองจดหมายใหญ่เขียนข้อความหน้าซอง"
+    ],
+    "tip_th": "ห่อเองที่บ้านก็ได้ ไม่ต้องแพงกว่าของข้างใน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "WrapIdeas",
+   "note": "mid",
+   "value": {
+    "band": "mid",
+    "budget_thb": 1500,
+    "ideas_th": [
+     "กล่องคราฟท์ + ดอกไม้แห้ง 1 กิ่ง + การ์ดเขียนมือ",
+     "ถุงผ้าขาว + โบว์สีอ่อน",
+     "ห่อผ้าสีพื้น ติดป้ายชื่อผู้รับ"
+    ],
+    "tip_th": "ห่อเองที่บ้านก็ได้ ไม่ต้องแพงกว่าของข้างใน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "WrapIdeas",
+   "note": "high",
+   "value": {
+    "band": "high",
+    "budget_thb": 2000,
+    "ideas_th": [
+     "กล่องฝาปิดแม่เหล็ก + กระดาษรองสีครีม",
+     "ผ้าห่อของแบบของขวัญ + โบว์กำมะหยี่",
+     "ใส่ตะกร้าเล็กพร้อมการ์ด"
+    ],
+    "tip_th": "ห่อเองที่บ้านก็ได้ ไม่ต้องแพงกว่าของข้างใน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "WrapIdeas",
+   "note": "luxe",
+   "value": {
+    "band": "luxe",
+    "budget_thb": 5000,
+    "ideas_th": [
+     "กล่องแข็งบุผ้า + การ์ดปั๊มนูน",
+     "ผ้าห่อของสีเข้ม + โบว์ไหม",
+     "จัดเป็นชุดบนถาด แล้วคลุมด้วยผ้าโปร่ง"
+    ],
+    "tip_th": "ห่อเองที่บ้านก็ได้ ไม่ต้องแพงกว่าของข้างใน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "WrapIdeas",
+   "note": "low edge",
+   "value": {
+    "band": "low",
+    "budget_thb": 500,
+    "ideas_th": [
+     "ถุงกระดาษคราฟท์ + โบว์ผ้า",
+     "ห่อผ้าเก่าที่สะอาด ผูกเชือกป่าน",
+     "ซองจดหมายใหญ่เขียนข้อความหน้าซอง"
+    ],
+    "tip_th": "ห่อเองที่บ้านก็ได้ ไม่ต้องแพงกว่าของข้างใน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "WrapIdeas",
+   "note": "high edge",
+   "value": {
+    "band": "high",
+    "budget_thb": 3000,
+    "ideas_th": [
+     "กล่องฝาปิดแม่เหล็ก + กระดาษรองสีครีม",
+     "ผ้าห่อของแบบของขวัญ + โบว์กำมะหยี่",
+     "ใส่ตะกร้าเล็กพร้อมการ์ด"
+    ],
+    "tip_th": "ห่อเองที่บ้านก็ได้ ไม่ต้องแพงกว่าของข้างใน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "OccasionEvent",
+   "note": "e01",
+   "value": {
+    "id": "e01",
+    "receiver_name_th": "ต้น",
+    "occasion": "birthday",
+    "event_date": "2026-12-08",
+    "budget_thb": 1500,
+    "days_left": 18,
+    "status": "soon"
+   }
+  },
+  {
+   "def": "ReminderStatus",
+   "note": "e01",
+   "value": {
+    "event_date": "2026-12-08",
+    "today": "2026-11-20",
+    "days_left": 18,
+    "status": "soon"
+   }
+  },
+  {
+   "def": "OccasionEvent",
+   "note": "e02",
+   "value": {
+    "id": "e02",
+    "receiver_name_th": "แม่",
+    "occasion": "birthday",
+    "event_date": "2026-11-25",
+    "budget_thb": 1000,
+    "days_left": 5,
+    "status": "due"
+   }
+  },
+  {
+   "def": "ReminderStatus",
+   "note": "e02",
+   "value": {
+    "event_date": "2026-11-25",
+    "today": "2026-11-20",
+    "days_left": 5,
+    "status": "due"
+   }
+  },
+  {
+   "def": "OccasionEvent",
+   "note": "e03",
+   "value": {
+    "id": "e03",
+    "receiver_name_th": "เจ",
+    "occasion": "housewarming",
+    "event_date": "2026-12-20",
+    "budget_thb": 2000,
+    "days_left": 30,
+    "status": "ok"
+   }
+  },
+  {
+   "def": "ReminderStatus",
+   "note": "e03",
+   "value": {
+    "event_date": "2026-12-20",
+    "today": "2026-11-20",
+    "days_left": 30,
+    "status": "ok"
+   }
+  },
+  {
+   "def": "OccasionEvent",
+   "note": "e04",
+   "value": {
+    "id": "e04",
+    "receiver_name_th": "คุณสุรีย์",
+    "occasion": "thank_you",
+    "event_date": "2026-11-18",
+    "budget_thb": 800,
+    "days_left": -2,
+    "status": "past"
+   }
+  },
+  {
+   "def": "ReminderStatus",
+   "note": "e04",
+   "value": {
+    "event_date": "2026-11-18",
+    "today": "2026-11-20",
+    "days_left": -2,
+    "status": "past"
+   }
+  },
+  {
+   "def": "CalendarStats",
+   "note": "bim cal",
+   "value": {
+    "count": 4,
+    "due": 1,
+    "soon": 1,
+    "next_id": "e02"
+   }
+  },
+  {
+   "def": "CalendarStats",
+   "note": "empty",
+   "value": {
+    "count": 0,
+    "due": 0,
+    "soon": 0,
+    "next_id": null
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "bim",
+   "value": {
+    "title_th": "GiftGenie — ของขวัญให้ ต้น",
+    "headline_th": "เสื้อโอเวอร์ไซส์ FictoSoft",
+    "hook_th": "คิดของขวัญไม่ออก ตอบ 5 ข้อได้ไอเดียตามงบ",
+    "budget_thb": 1500,
+    "score": 100,
+    "message_th": "สุขสันต์วันเกิดนะ ขอให้ปีนี้มีวันที่สบายใจมากกว่าเดิม",
+    "layout": "gift_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with GiftGenie · ideas only, not a shop",
+    "cta_th": "งบ ฿1,500 · คอมเมนต์ GIFT รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "empty",
+   "value": {
+    "title_th": "GiftGenie — ของขวัญให้ ต้น",
+    "headline_th": "ยังไม่มีไอเดียในงบนี้",
+    "hook_th": "คิดของขวัญไม่ออก ตอบ 5 ข้อได้ไอเดียตามงบ",
+    "budget_thb": 1500,
+    "score": 0,
+    "message_th": "",
+    "layout": "gift_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with GiftGenie · ideas only, not a shop",
+    "cta_th": "งบ ฿1,500 · คอมเมนต์ GIFT รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "adult",
+   "value": {
+    "level": "ok",
+    "message_th": "GiftGenie เป็นไอเดียของขวัญเบื้องต้น ไม่ใช่ร้านค้าและไม่ใช่คูปองจริง ราคาเป็นช่วงประมาณ ตรวจอายุผู้รับก่อนเลือกของ และห้ามแนะนำของผิดกฎหมาย"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "minor",
+   "value": {
+    "level": "warn",
+    "message_th": "ผู้รับยังไม่บรรลุนิติภาวะ เลี่ยงของที่มีแอลกอฮอล์ ของมีคม และของเล็กที่กลืนได้ GiftGenie เป็นไอเดียของขวัญเบื้องต้น ไม่ใช่ร้านค้าและไม่ใช่คูปองจริง ราคาเป็นช่วงประมาณ ตรวจอายุผู้รับก่อนเลือกของ และห้ามแนะนำของผิดกฎหมาย"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "minor adult item",
+   "value": {
+    "level": "stop",
+    "message_th": "ไม่แนะนำของสำหรับผู้ใหญ่ให้ผู้รับที่เป็นเด็ก GiftGenie เป็นไอเดียของขวัญเบื้องต้น ไม่ใช่ร้านค้าและไม่ใช่คูปองจริง ราคาเป็นช่วงประมาณ ตรวจอายุผู้รับก่อนเลือกของ และห้ามแนะนำของผิดกฎหมาย"
+   }
+  }
+ ]
+}

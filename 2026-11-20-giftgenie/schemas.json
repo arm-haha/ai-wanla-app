@@ -1,0 +1,646 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/giftgenie.schema.json",
+ "title": "GiftGenie",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "goal_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quiz": {
+   "type": "object",
+   "required": [
+    "relationship",
+    "age_band",
+    "vibe",
+    "hobbies",
+    "occasion",
+    "budget_thb",
+    "receiver_name_th",
+    "is_minor"
+   ],
+   "properties": {
+    "relationship": {
+     "enum": [
+      "partner",
+      "parent",
+      "friend",
+      "sibling",
+      "colleague",
+      "kid"
+     ]
+    },
+    "age_band": {
+     "enum": [
+      "0-12",
+      "13-17",
+      "18-24",
+      "25-34",
+      "35-49",
+      "50+"
+     ]
+    },
+    "vibe": {
+     "enum": [
+      "cozy",
+      "practical",
+      "playful",
+      "luxe",
+      "sporty",
+      "creative"
+     ]
+    },
+    "hobbies": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "cafe",
+       "fashion",
+       "cooking",
+       "books",
+       "plants",
+       "games",
+       "travel",
+       "music",
+       "fitness",
+       "home"
+      ]
+     },
+     "minItems": 1
+    },
+    "occasion": {
+     "enum": [
+      "birthday",
+      "anniversary",
+      "thank_you",
+      "housewarming",
+      "new_job",
+      "condolence",
+      "just_because"
+     ]
+    },
+    "budget_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "receiver_name_th": {
+     "type": "string"
+    },
+    "is_minor": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "GiftInfo": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "name_en",
+    "min",
+    "max",
+    "mid",
+    "rel",
+    "age",
+    "vibe",
+    "hobby",
+    "occasions",
+    "adult_only",
+    "why_th"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^g[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "min": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "max": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "mid": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "rel": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "partner",
+       "parent",
+       "friend",
+       "sibling",
+       "colleague",
+       "kid"
+      ]
+     }
+    },
+    "age": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "0-12",
+       "13-17",
+       "18-24",
+       "25-34",
+       "35-49",
+       "50+"
+      ]
+     }
+    },
+    "vibe": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "cozy",
+       "practical",
+       "playful",
+       "luxe",
+       "sporty",
+       "creative"
+      ]
+     }
+    },
+    "hobby": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "cafe",
+       "fashion",
+       "cooking",
+       "books",
+       "plants",
+       "games",
+       "travel",
+       "music",
+       "fitness",
+       "home"
+      ]
+     }
+    },
+    "occasions": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "birthday",
+       "anniversary",
+       "thank_you",
+       "housewarming",
+       "new_job",
+       "condolence",
+       "just_because"
+      ]
+     }
+    },
+    "adult_only": {
+     "type": "boolean"
+    },
+    "why_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "GiftPick": {
+   "type": "object",
+   "required": [
+    "gift_id",
+    "name_th",
+    "name_en",
+    "min_thb",
+    "max_thb",
+    "mid_thb",
+    "score",
+    "why_th",
+    "adult_only",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "gift_id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "min_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "max_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "mid_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "why_th": {
+     "type": "string"
+    },
+    "adult_only": {
+     "type": "boolean"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "BudgetPicks": {
+   "type": "object",
+   "required": [
+    "receiver_name_th",
+    "budget_thb",
+    "picks",
+    "count",
+    "filtered_out"
+   ],
+   "properties": {
+    "receiver_name_th": {
+     "type": "string"
+    },
+    "budget_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "picks": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/GiftPick"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "filtered_out": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "SwapPicks": {
+   "type": "object",
+   "required": [
+    "picks",
+    "count"
+   ],
+   "properties": {
+    "picks": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/GiftPick"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "CardMessage": {
+   "type": "object",
+   "required": [
+    "n",
+    "occasion",
+    "tone",
+    "receiver_name_th",
+    "text_th"
+   ],
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "occasion": {
+     "enum": [
+      "birthday",
+      "anniversary",
+      "thank_you",
+      "housewarming",
+      "new_job",
+      "condolence",
+      "just_because"
+     ]
+    },
+    "tone": {
+     "enum": [
+      "sweet",
+      "funny",
+      "formal",
+      "short"
+     ]
+    },
+    "receiver_name_th": {
+     "type": "string"
+    },
+    "text_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "WrapIdeas": {
+   "type": "object",
+   "required": [
+    "band",
+    "budget_thb",
+    "ideas_th",
+    "tip_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "band": {
+     "enum": [
+      "low",
+      "mid",
+      "high",
+      "luxe"
+     ]
+    },
+    "budget_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "ideas_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "tip_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ReminderStatus": {
+   "type": "object",
+   "required": [
+    "event_date",
+    "today",
+    "days_left",
+    "status"
+   ],
+   "properties": {
+    "event_date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "today": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "days_left": {
+     "type": "integer"
+    },
+    "status": {
+     "enum": [
+      "past",
+      "due",
+      "soon",
+      "ok"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "OccasionEvent": {
+   "type": "object",
+   "required": [
+    "id",
+    "receiver_name_th",
+    "occasion",
+    "event_date",
+    "budget_thb",
+    "days_left",
+    "status"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "receiver_name_th": {
+     "type": "string"
+    },
+    "occasion": {
+     "enum": [
+      "birthday",
+      "anniversary",
+      "thank_you",
+      "housewarming",
+      "new_job",
+      "condolence",
+      "just_because"
+     ]
+    },
+    "event_date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "budget_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "days_left": {
+     "type": "integer"
+    },
+    "status": {
+     "enum": [
+      "past",
+      "due",
+      "soon",
+      "ok"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "CalendarStats": {
+   "type": "object",
+   "required": [
+    "count",
+    "due",
+    "soon",
+    "next_id"
+   ],
+   "properties": {
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "due": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "soon": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "next_id": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "budget_thb",
+    "score",
+    "message_th",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "budget_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "layout": {
+     "enum": [
+      "gift_card"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
