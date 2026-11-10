@@ -1,0 +1,687 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/stickerme.schema.json",
+ "title": "StickerMe",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "goal_th": {
+     "type": "string"
+    },
+    "style": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Detection": {
+   "type": "object",
+   "required": [
+    "key",
+    "value",
+    "confidence"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "value": true,
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "Selfie": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "crop",
+    "face_conf",
+    "face_frac",
+    "detections"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^s[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "crop": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "face_conf": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "face_frac": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "detections": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Detection"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "FaceScan": {
+   "type": "object",
+   "required": [
+    "shot_id",
+    "quality",
+    "ok",
+    "face_conf",
+    "face_frac",
+    "message_th"
+   ],
+   "properties": {
+    "shot_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "face_conf": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "face_frac": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ConsentGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "code",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "code": {
+     "type": "string"
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "BubbleCheck": {
+   "type": "object",
+   "required": [
+    "ok",
+    "text_th",
+    "chars",
+    "max_chars",
+    "message_th"
+   ],
+   "properties": {
+    "ok": {
+     "type": "boolean"
+    },
+    "text_th": {
+     "type": "string"
+    },
+    "chars": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "max_chars": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Sticker": {
+   "type": "object",
+   "required": [
+    "emotion",
+    "emotion_id",
+    "name_th",
+    "style",
+    "style_id",
+    "w",
+    "h",
+    "format",
+    "transparent",
+    "bubble_id",
+    "text_th",
+    "watermark"
+   ],
+   "properties": {
+    "emotion": {
+     "type": "string"
+    },
+    "emotion_id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "style": {
+     "type": "string"
+    },
+    "style_id": {
+     "type": "string"
+    },
+    "w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "format": {
+     "enum": [
+      "png"
+     ]
+    },
+    "transparent": {
+     "type": "boolean"
+    },
+    "bubble_id": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "text_th": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "watermark": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ExportAsset": {
+   "type": "object",
+   "required": [
+    "w",
+    "h",
+    "format"
+   ],
+   "properties": {
+    "w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "format": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "StickerPack": {
+   "type": "object",
+   "required": [
+    "style",
+    "style_name_th",
+    "count",
+    "with_text",
+    "stickers",
+    "main",
+    "tab",
+    "headline_th",
+    "watermark",
+    "consent_code"
+   ],
+   "properties": {
+    "style": {
+     "type": "string"
+    },
+    "style_name_th": {
+     "type": "string"
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "with_text": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "stickers": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Sticker"
+     }
+    },
+    "main": {
+     "$ref": "#/$defs/ExportAsset"
+    },
+    "tab": {
+     "$ref": "#/$defs/ExportAsset"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "consent_code": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SpecCheck": {
+   "type": "object",
+   "required": [
+    "key",
+    "ok",
+    "detail_th"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "detail_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ExportSpec": {
+   "type": "object",
+   "required": [
+    "ready",
+    "passed",
+    "total",
+    "checks",
+    "sticker_w",
+    "sticker_h",
+    "main_w",
+    "main_h",
+    "tab_w",
+    "tab_h",
+    "max_kb_per_sticker",
+    "headline_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "ready": {
+     "type": "boolean"
+    },
+    "passed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "checks": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/SpecCheck"
+     }
+    },
+    "sticker_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "sticker_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "main_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "main_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "tab_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "tab_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "max_kb_per_sticker": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ChatItem": {
+   "type": "object",
+   "required": [
+    "name_th",
+    "text_th"
+   ],
+   "properties": {
+    "name_th": {
+     "type": "string"
+    },
+    "text_th": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "ChatPreview": {
+   "type": "object",
+   "required": [
+    "layout",
+    "style",
+    "items",
+    "count",
+    "watermark"
+   ],
+   "properties": {
+    "layout": {
+     "enum": [
+      "chat_mock"
+     ]
+    },
+    "style": {
+     "type": "string"
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ChatItem"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "watermark": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "StyleInfo": {
+   "type": "object",
+   "required": [
+    "key",
+    "id",
+    "name_th",
+    "name_en",
+    "outline"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "outline": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "EmotionInfo": {
+   "type": "object",
+   "required": [
+    "key",
+    "id",
+    "name_th",
+    "name_en",
+    "priority"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "priority": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "style",
+    "count",
+    "with_text",
+    "export_ready",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "style": {
+     "type": "string"
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "with_text": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "export_ready": {
+     "type": "boolean"
+    },
+    "layout": {
+     "enum": [
+      "sticker_card"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}

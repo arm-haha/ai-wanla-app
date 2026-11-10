@@ -1,0 +1,1705 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "น้องเจน",
+   "value": {
+    "id": "u01",
+    "name_th": "น้องเจน",
+    "name_en": "Jane",
+    "age": 24,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "เซลฟี่เดียวอยากได้สติกเกอร์ LINE หน้าตัวเองทั้งเซ็ต สไตล์จิ๋วหัวโต มีข้อความไทย",
+    "style": "chibi"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่เบค",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่เบค",
+    "name_en": "Beck",
+    "age": 31,
+    "city_th": "เชียงใหม่",
+    "goal_th": "อยากได้ชุด 8 ใบสไตล์ป๊อป สำหรับแชทงาน",
+    "style": "pop"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องมิน",
+   "value": {
+    "id": "u03",
+    "name_th": "น้องมิน",
+    "name_en": "Min",
+    "age": 16,
+    "city_th": "ขอนแก่น",
+    "goal_th": "อยากทำสติกเกอร์แต่ต้องให้ผู้ปกครองยินยอมก่อน",
+    "style": "comic"
+   }
+  },
+  {
+   "def": "Selfie",
+   "note": "s01",
+   "value": {
+    "id": "s01",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.08,
+    "blur": 0.08,
+    "crop": 0.05,
+    "face_conf": 0.95,
+    "face_frac": 0.8,
+    "detections": [
+     {
+      "key": "face",
+      "value": true,
+      "confidence": 0.95
+     },
+     {
+      "key": "face_frac",
+      "value": 0.8,
+      "confidence": 0.95
+     }
+    ]
+   }
+  },
+  {
+   "def": "FaceScan",
+   "note": "s01",
+   "value": {
+    "shot_id": "s01",
+    "quality": {
+     "score": 91,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "face_conf": 0.95,
+    "face_frac": 0.8,
+    "message_th": "เจอใบหน้า พร้อมสร้างชุด"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s01",
+   "value": {
+    "score": 91,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s01 face",
+   "value": {
+    "key": "face",
+    "value": true,
+    "confidence": 0.95
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s01 face_frac",
+   "value": {
+    "key": "face_frac",
+    "value": 0.8,
+    "confidence": 0.95
+   }
+  },
+  {
+   "def": "Selfie",
+   "note": "s02",
+   "value": {
+    "id": "s02",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.12,
+    "blur": 0.1,
+    "crop": 0.1,
+    "face_conf": 0.9,
+    "face_frac": 0.62,
+    "detections": [
+     {
+      "key": "face",
+      "value": true,
+      "confidence": 0.9
+     },
+     {
+      "key": "face_frac",
+      "value": 0.62,
+      "confidence": 0.9
+     }
+    ]
+   }
+  },
+  {
+   "def": "FaceScan",
+   "note": "s02",
+   "value": {
+    "shot_id": "s02",
+    "quality": {
+     "score": 85,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "face_conf": 0.9,
+    "face_frac": 0.62,
+    "message_th": "เจอใบหน้า พร้อมสร้างชุด"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s02",
+   "value": {
+    "score": 85,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s02 face",
+   "value": {
+    "key": "face",
+    "value": true,
+    "confidence": 0.9
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s02 face_frac",
+   "value": {
+    "key": "face_frac",
+    "value": 0.62,
+    "confidence": 0.9
+   }
+  },
+  {
+   "def": "Selfie",
+   "note": "s03",
+   "value": {
+    "id": "s03",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.1,
+    "blur": 0.1,
+    "crop": 0.1,
+    "face_conf": 0.88,
+    "face_frac": 0.7,
+    "detections": [
+     {
+      "key": "face",
+      "value": true,
+      "confidence": 0.88
+     },
+     {
+      "key": "face_frac",
+      "value": 0.7,
+      "confidence": 0.88
+     }
+    ]
+   }
+  },
+  {
+   "def": "FaceScan",
+   "note": "s03",
+   "value": {
+    "shot_id": "s03",
+    "quality": {
+     "score": 87,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "face_conf": 0.88,
+    "face_frac": 0.7,
+    "message_th": "เจอใบหน้า พร้อมสร้างชุด"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s03",
+   "value": {
+    "score": 87,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s03 face",
+   "value": {
+    "key": "face",
+    "value": true,
+    "confidence": 0.88
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s03 face_frac",
+   "value": {
+    "key": "face_frac",
+    "value": 0.7,
+    "confidence": 0.88
+   }
+  },
+  {
+   "def": "Selfie",
+   "note": "s04",
+   "value": {
+    "id": "s04",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.68,
+    "blur": 0.52,
+    "crop": 0.5,
+    "face_conf": 0.72,
+    "face_frac": 0.18,
+    "detections": [
+     {
+      "key": "face",
+      "value": true,
+      "confidence": 0.72
+     },
+     {
+      "key": "face_frac",
+      "value": 0.18,
+      "confidence": 0.72
+     }
+    ]
+   }
+  },
+  {
+   "def": "FaceScan",
+   "note": "s04",
+   "value": {
+    "shot_id": "s04",
+    "quality": {
+     "score": 39,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนบนหน้าเยอะ หันออกจากหน้าต่างหรือปิดแฟลช",
+      "ภาพเบลอ ถือกล้องนิ่งหรือถ่ายใหม่ในที่สว่าง",
+      "ใบหน้าเล็กหรือถูกครอป ถ่ายใกล้ขึ้นให้เห็นทั้งหน้าและไหล่"
+     ]
+    },
+    "ok": false,
+    "face_conf": 0.72,
+    "face_frac": 0.18,
+    "message_th": "ถ่ายใหม่: แสงสะท้อนบนหน้าเยอะ หันออกจากหน้าต่างหรือปิดแฟลช · ภาพเบลอ ถือกล้องนิ่งหรือถ่ายใหม่ในที่สว่าง · ใบหน้าเล็กหรือถูกครอป ถ่ายใกล้ขึ้นให้เห็นทั้งหน้าและไหล่"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s04",
+   "value": {
+    "score": 39,
+    "ok": false,
+    "tips_th": [
+     "แสงสะท้อนบนหน้าเยอะ หันออกจากหน้าต่างหรือปิดแฟลช",
+     "ภาพเบลอ ถือกล้องนิ่งหรือถ่ายใหม่ในที่สว่าง",
+     "ใบหน้าเล็กหรือถูกครอป ถ่ายใกล้ขึ้นให้เห็นทั้งหน้าและไหล่"
+    ]
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s04 face",
+   "value": {
+    "key": "face",
+    "value": true,
+    "confidence": 0.72
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s04 face_frac",
+   "value": {
+    "key": "face_frac",
+    "value": 0.18,
+    "confidence": 0.72
+   }
+  },
+  {
+   "def": "Selfie",
+   "note": "s05",
+   "value": {
+    "id": "s05",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.2,
+    "blur": 0.15,
+    "crop": 0.1,
+    "face_conf": 0.2,
+    "face_frac": 0.05,
+    "detections": []
+   }
+  },
+  {
+   "def": "FaceScan",
+   "note": "s05",
+   "value": {
+    "shot_id": "s05",
+    "quality": {
+     "score": 42,
+     "ok": false,
+     "tips_th": [
+      "ใบหน้าเล็กหรือถูกครอป ถ่ายใกล้ขึ้นให้เห็นทั้งหน้าและไหล่",
+      "ไม่มั่นใจว่าเป็นใบหน้า ลองถ่ายใหม่ในพื้นเรียบ แสงหน้าตรง"
+     ]
+    },
+    "ok": false,
+    "face_conf": 0.2,
+    "face_frac": 0.05,
+    "message_th": "ถ่ายใหม่: ใบหน้าเล็กหรือถูกครอป ถ่ายใกล้ขึ้นให้เห็นทั้งหน้าและไหล่ · ไม่มั่นใจว่าเป็นใบหน้า ลองถ่ายใหม่ในพื้นเรียบ แสงหน้าตรง"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s05",
+   "value": {
+    "score": 42,
+    "ok": false,
+    "tips_th": [
+     "ใบหน้าเล็กหรือถูกครอป ถ่ายใกล้ขึ้นให้เห็นทั้งหน้าและไหล่",
+     "ไม่มั่นใจว่าเป็นใบหน้า ลองถ่ายใหม่ในพื้นเรียบ แสงหน้าตรง"
+    ]
+   }
+  },
+  {
+   "def": "Selfie",
+   "note": "s06",
+   "value": {
+    "id": "s06",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.1,
+    "blur": 0.1,
+    "crop": 0.1,
+    "face_conf": 0.41,
+    "face_frac": 0.6,
+    "detections": [
+     {
+      "key": "face",
+      "value": true,
+      "confidence": 0.41
+     },
+     {
+      "key": "face_frac",
+      "value": 0.6,
+      "confidence": 0.41
+     }
+    ]
+   }
+  },
+  {
+   "def": "FaceScan",
+   "note": "s06",
+   "value": {
+    "shot_id": "s06",
+    "quality": {
+     "score": 56,
+     "ok": false,
+     "tips_th": [
+      "ไม่มั่นใจว่าเป็นใบหน้า ลองถ่ายใหม่ในพื้นเรียบ แสงหน้าตรง"
+     ]
+    },
+    "ok": false,
+    "face_conf": 0.41,
+    "face_frac": 0.6,
+    "message_th": "ถ่ายใหม่: ไม่มั่นใจว่าเป็นใบหน้า ลองถ่ายใหม่ในพื้นเรียบ แสงหน้าตรง"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s06",
+   "value": {
+    "score": 56,
+    "ok": false,
+    "tips_th": [
+     "ไม่มั่นใจว่าเป็นใบหน้า ลองถ่ายใหม่ในพื้นเรียบ แสงหน้าตรง"
+    ]
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s06 face",
+   "value": {
+    "key": "face",
+    "value": true,
+    "confidence": 0.41
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s06 face_frac",
+   "value": {
+    "key": "face_frac",
+    "value": 0.6,
+    "confidence": 0.41
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "jane ok",
+   "value": {
+    "level": "ok",
+    "code": "ok",
+    "message_th": "StickerMe สร้างภาพประกอบจากเซลฟี่ ไม่ใช่รูปถ่ายจริง และไม่ใช่ผลิตภัณฑ์ของ LINE ใช้ได้เฉพาะใบหน้าของตนเอง (ถ้าดูเป็นผู้เยาว์ต้องได้รับความยินยอมจากผู้ปกครอง) ตรวจสเปกอีกครั้งใน LINE Creators Studio ก่อนอัปโหลด"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "other",
+   "value": {
+    "level": "stop",
+    "code": "other_person",
+    "message_th": "ใช้ได้เฉพาะใบหน้าของตนเอง ไม่สร้างสติกเกอร์จากรูปคนอื่น StickerMe สร้างภาพประกอบจากเซลฟี่ ไม่ใช่รูปถ่ายจริง และไม่ใช่ผลิตภัณฑ์ของ LINE ใช้ได้เฉพาะใบหน้าของตนเอง (ถ้าดูเป็นผู้เยาว์ต้องได้รับความยินยอมจากผู้ปกครอง) ตรวจสเปกอีกครั้งใน LINE Creators Studio ก่อนอัปโหลด"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "no consent",
+   "value": {
+    "level": "stop",
+    "code": "no_consent",
+    "message_th": "ต้องยืนยันว่าเป็นใบหน้าของตนเองก่อนสร้างสติกเกอร์ StickerMe สร้างภาพประกอบจากเซลฟี่ ไม่ใช่รูปถ่ายจริง และไม่ใช่ผลิตภัณฑ์ของ LINE ใช้ได้เฉพาะใบหน้าของตนเอง (ถ้าดูเป็นผู้เยาว์ต้องได้รับความยินยอมจากผู้ปกครอง) ตรวจสเปกอีกครั้งใน LINE Creators Studio ก่อนอัปโหลด"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "minor no",
+   "value": {
+    "level": "stop",
+    "code": "minor_no_guardian",
+    "message_th": "ถ้าดูเหมือนผู้เยาว์ ต้องได้รับความยินยอมจากผู้ปกครองก่อนสร้างชุด StickerMe สร้างภาพประกอบจากเซลฟี่ ไม่ใช่รูปถ่ายจริง และไม่ใช่ผลิตภัณฑ์ของ LINE ใช้ได้เฉพาะใบหน้าของตนเอง (ถ้าดูเป็นผู้เยาว์ต้องได้รับความยินยอมจากผู้ปกครอง) ตรวจสเปกอีกครั้งใน LINE Creators Studio ก่อนอัปโหลด"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "minor yes",
+   "value": {
+    "level": "warn",
+    "code": "minor_with_guardian",
+    "message_th": "สร้างได้เพราะผู้ปกครองยินยอม ภาพเป็นภาพประกอบ ไม่ใช่รูปเด็กจริง StickerMe สร้างภาพประกอบจากเซลฟี่ ไม่ใช่รูปถ่ายจริง และไม่ใช่ผลิตภัณฑ์ของ LINE ใช้ได้เฉพาะใบหน้าของตนเอง (ถ้าดูเป็นผู้เยาว์ต้องได้รับความยินยอมจากผู้ปกครอง) ตรวจสเปกอีกครั้งใน LINE Creators Studio ก่อนอัปโหลด"
+   }
+  },
+  {
+   "def": "ConsentGuard",
+   "note": "celebrity",
+   "value": {
+    "level": "stop",
+    "code": "celebrity",
+    "message_th": "ห้ามสร้างสติกเกอร์เลียนแบบคนดังหรือตัวละครที่มีลิขสิทธิ์ StickerMe สร้างภาพประกอบจากเซลฟี่ ไม่ใช่รูปถ่ายจริง และไม่ใช่ผลิตภัณฑ์ของ LINE ใช้ได้เฉพาะใบหน้าของตนเอง (ถ้าดูเป็นผู้เยาว์ต้องได้รับความยินยอมจากผู้ปกครอง) ตรวจสเปกอีกครั้งใน LINE Creators Studio ก่อนอัปโหลด"
+   }
+  },
+  {
+   "def": "BubbleCheck",
+   "note": "ok",
+   "value": {
+    "ok": true,
+    "text_th": "เข้าใจแล้ว",
+    "chars": 10,
+    "max_chars": 14,
+    "message_th": "ข้อความสั้นพอดี"
+   }
+  },
+  {
+   "def": "BubbleCheck",
+   "note": "empty",
+   "value": {
+    "ok": false,
+    "text_th": "",
+    "chars": 0,
+    "max_chars": 14,
+    "message_th": "ใส่ข้อความสั้น ๆ ก่อนติดบนสติกเกอร์"
+   }
+  },
+  {
+   "def": "BubbleCheck",
+   "note": "long",
+   "value": {
+    "ok": false,
+    "text_th": "ข้อความนี้ยาวเกินกว่าที่จะใส่บนสติกเกอร์ใบเล็ก",
+    "chars": 46,
+    "max_chars": 14,
+    "message_th": "ข้อความยาวเกิน 14 ตัวอักษร ตัดให้สั้นลงเพื่อให้อ่านบนสติกเกอร์"
+   }
+  },
+  {
+   "def": "BubbleCheck",
+   "note": "eaten",
+   "value": {
+    "ok": true,
+    "text_th": "กินข้าวยัง?",
+    "chars": 11,
+    "max_chars": 14,
+    "message_th": "ข้อความสั้นพอดี"
+   }
+  },
+  {
+   "def": "StickerPack",
+   "note": "jane 16",
+   "value": {
+    "style": "chibi",
+    "style_name_th": "จิ๋วหัวโต",
+    "count": 16,
+    "with_text": 8,
+    "stickers": [
+     {
+      "emotion": "happy",
+      "emotion_id": "e01",
+      "name_th": "ยิ้มแย้ม",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": "b01",
+      "text_th": "เข้าใจแล้ว",
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "laugh",
+      "emotion_id": "e02",
+      "name_th": "หัวเราะ",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": "b07",
+      "text_th": "สุดยอด!",
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "love",
+      "emotion_id": "e03",
+      "name_th": "หัวใจ",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": "b05",
+      "text_th": "รักนะ",
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "wink",
+      "emotion_id": "e04",
+      "name_th": "ขยิบตา",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": "b04",
+      "text_th": "โอเค เดี๋ยวมา",
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "ok",
+      "emotion_id": "e05",
+      "name_th": "โอเค",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": "b01",
+      "text_th": "เข้าใจแล้ว",
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "thumbs",
+      "emotion_id": "e06",
+      "name_th": "ยกนิ้ว",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": "b07",
+      "text_th": "สุดยอด!",
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "sad",
+      "emotion_id": "e07",
+      "name_th": "เศร้า",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": "b06",
+      "text_th": "ไม่เป็นไร",
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "cry",
+      "emotion_id": "e08",
+      "name_th": "ร้องไห้",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": "b06",
+      "text_th": "ไม่เป็นไร",
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "angry",
+      "emotion_id": "e09",
+      "name_th": "โกรธ",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "shocked",
+      "emotion_id": "e10",
+      "name_th": "ตกใจ",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "sleepy",
+      "emotion_id": "e11",
+      "name_th": "ง่วง",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "think",
+      "emotion_id": "e12",
+      "name_th": "กำลังคิด",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "sorry",
+      "emotion_id": "e13",
+      "name_th": "ขอโทษ",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "celebrate",
+      "emotion_id": "e14",
+      "name_th": "ฉลอง",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "tired",
+      "emotion_id": "e15",
+      "name_th": "เหนื่อย",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "please",
+      "emotion_id": "e16",
+      "name_th": "ขอร้อง",
+      "style": "chibi",
+      "style_id": "st01",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     }
+    ],
+    "main": {
+     "w": 240,
+     "h": 240,
+     "format": "png"
+    },
+    "tab": {
+     "w": 96,
+     "h": 74,
+     "format": "png"
+    },
+    "headline_th": "ชุดสติกเกอร์ จิ๋วหัวโต 16 ใบ · มีข้อความไทย 8 ใบ",
+    "watermark": "Made with StickerMe · AI illustration, not a LINE product",
+    "consent_code": "ok"
+   }
+  },
+  {
+   "def": "Sticker",
+   "note": "happy",
+   "value": {
+    "emotion": "happy",
+    "emotion_id": "e01",
+    "name_th": "ยิ้มแย้ม",
+    "style": "chibi",
+    "style_id": "st01",
+    "w": 370,
+    "h": 320,
+    "format": "png",
+    "transparent": true,
+    "bubble_id": "b01",
+    "text_th": "เข้าใจแล้ว",
+    "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+   }
+  },
+  {
+   "def": "Sticker",
+   "note": "laugh",
+   "value": {
+    "emotion": "laugh",
+    "emotion_id": "e02",
+    "name_th": "หัวเราะ",
+    "style": "chibi",
+    "style_id": "st01",
+    "w": 370,
+    "h": 320,
+    "format": "png",
+    "transparent": true,
+    "bubble_id": "b07",
+    "text_th": "สุดยอด!",
+    "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+   }
+  },
+  {
+   "def": "Sticker",
+   "note": "love",
+   "value": {
+    "emotion": "love",
+    "emotion_id": "e03",
+    "name_th": "หัวใจ",
+    "style": "chibi",
+    "style_id": "st01",
+    "w": 370,
+    "h": 320,
+    "format": "png",
+    "transparent": true,
+    "bubble_id": "b05",
+    "text_th": "รักนะ",
+    "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+   }
+  },
+  {
+   "def": "Sticker",
+   "note": "wink",
+   "value": {
+    "emotion": "wink",
+    "emotion_id": "e04",
+    "name_th": "ขยิบตา",
+    "style": "chibi",
+    "style_id": "st01",
+    "w": 370,
+    "h": 320,
+    "format": "png",
+    "transparent": true,
+    "bubble_id": "b04",
+    "text_th": "โอเค เดี๋ยวมา",
+    "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+   }
+  },
+  {
+   "def": "Sticker",
+   "note": "angry",
+   "value": {
+    "emotion": "angry",
+    "emotion_id": "e09",
+    "name_th": "โกรธ",
+    "style": "chibi",
+    "style_id": "st01",
+    "w": 370,
+    "h": 320,
+    "format": "png",
+    "transparent": true,
+    "bubble_id": null,
+    "text_th": null,
+    "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+   }
+  },
+  {
+   "def": "Sticker",
+   "note": "shocked",
+   "value": {
+    "emotion": "shocked",
+    "emotion_id": "e10",
+    "name_th": "ตกใจ",
+    "style": "chibi",
+    "style_id": "st01",
+    "w": 370,
+    "h": 320,
+    "format": "png",
+    "transparent": true,
+    "bubble_id": null,
+    "text_th": null,
+    "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+   }
+  },
+  {
+   "def": "ExportAsset",
+   "note": "main",
+   "value": {
+    "w": 240,
+    "h": 240,
+    "format": "png"
+   }
+  },
+  {
+   "def": "ExportAsset",
+   "note": "tab",
+   "value": {
+    "w": 96,
+    "h": 74,
+    "format": "png"
+   }
+  },
+  {
+   "def": "ExportSpec",
+   "note": "ready",
+   "value": {
+    "ready": true,
+    "passed": 6,
+    "total": 6,
+    "checks": [
+     {
+      "key": "count",
+      "ok": true,
+      "detail_th": "จำนวนสติกเกอร์ 16 ใบ (ต้องเป็น 8, 16 หรือ 24)"
+     },
+     {
+      "key": "sticker_size",
+      "ok": true,
+      "detail_th": "ขนาดสติกเกอร์ 370×320 พิกเซล"
+     },
+     {
+      "key": "main_size",
+      "ok": true,
+      "detail_th": "รูปหลัก 240×240 พิกเซล"
+     },
+     {
+      "key": "tab_size",
+      "ok": true,
+      "detail_th": "แท็บ 96×74 พิกเซล"
+     },
+     {
+      "key": "format",
+      "ok": true,
+      "detail_th": "ไฟล์ PNG พื้นโปร่งใส"
+     },
+     {
+      "key": "official_recheck",
+      "ok": true,
+      "detail_th": "ค่าตัวอย่างที่อ้างอิงสเปกที่เผยแพร่ทั่วไป ต้องตรวจกับคู่มือทางการของ LINE Creators Studio ก่อนอัปโหลด"
+     }
+    ],
+    "sticker_w": 370,
+    "sticker_h": 320,
+    "main_w": 240,
+    "main_h": 240,
+    "tab_w": 96,
+    "tab_h": 74,
+    "max_kb_per_sticker": 1000,
+    "headline_th": "พร้อมส่งตรวจใน Creators Studio",
+    "disclaimer_th": "ค่าตัวอย่างที่อ้างอิงสเปกที่เผยแพร่ทั่วไป ต้องตรวจกับคู่มือทางการของ LINE Creators Studio ก่อนอัปโหลด"
+   }
+  },
+  {
+   "def": "SpecCheck",
+   "note": "count",
+   "value": {
+    "key": "count",
+    "ok": true,
+    "detail_th": "จำนวนสติกเกอร์ 16 ใบ (ต้องเป็น 8, 16 หรือ 24)"
+   }
+  },
+  {
+   "def": "SpecCheck",
+   "note": "sticker_size",
+   "value": {
+    "key": "sticker_size",
+    "ok": true,
+    "detail_th": "ขนาดสติกเกอร์ 370×320 พิกเซล"
+   }
+  },
+  {
+   "def": "SpecCheck",
+   "note": "main_size",
+   "value": {
+    "key": "main_size",
+    "ok": true,
+    "detail_th": "รูปหลัก 240×240 พิกเซล"
+   }
+  },
+  {
+   "def": "SpecCheck",
+   "note": "tab_size",
+   "value": {
+    "key": "tab_size",
+    "ok": true,
+    "detail_th": "แท็บ 96×74 พิกเซล"
+   }
+  },
+  {
+   "def": "SpecCheck",
+   "note": "format",
+   "value": {
+    "key": "format",
+    "ok": true,
+    "detail_th": "ไฟล์ PNG พื้นโปร่งใส"
+   }
+  },
+  {
+   "def": "SpecCheck",
+   "note": "official_recheck",
+   "value": {
+    "key": "official_recheck",
+    "ok": true,
+    "detail_th": "ค่าตัวอย่างที่อ้างอิงสเปกที่เผยแพร่ทั่วไป ต้องตรวจกับคู่มือทางการของ LINE Creators Studio ก่อนอัปโหลด"
+   }
+  },
+  {
+   "def": "ExportSpec",
+   "note": "count fail",
+   "value": {
+    "ready": false,
+    "passed": 5,
+    "total": 6,
+    "checks": [
+     {
+      "key": "count",
+      "ok": false,
+      "detail_th": "จำนวนสติกเกอร์ 10 ใบ (ต้องเป็น 8, 16 หรือ 24)"
+     },
+     {
+      "key": "sticker_size",
+      "ok": true,
+      "detail_th": "ขนาดสติกเกอร์ 370×320 พิกเซล"
+     },
+     {
+      "key": "main_size",
+      "ok": true,
+      "detail_th": "รูปหลัก 240×240 พิกเซล"
+     },
+     {
+      "key": "tab_size",
+      "ok": true,
+      "detail_th": "แท็บ 96×74 พิกเซล"
+     },
+     {
+      "key": "format",
+      "ok": true,
+      "detail_th": "ไฟล์ PNG พื้นโปร่งใส"
+     },
+     {
+      "key": "official_recheck",
+      "ok": true,
+      "detail_th": "ค่าตัวอย่างที่อ้างอิงสเปกที่เผยแพร่ทั่วไป ต้องตรวจกับคู่มือทางการของ LINE Creators Studio ก่อนอัปโหลด"
+     }
+    ],
+    "sticker_w": 370,
+    "sticker_h": 320,
+    "main_w": 240,
+    "main_h": 240,
+    "tab_w": 96,
+    "tab_h": 74,
+    "max_kb_per_sticker": 1000,
+    "headline_th": "ยังไม่ครบสเปก ตรวจรายการที่ยังไม่ผ่าน",
+    "disclaimer_th": "ค่าตัวอย่างที่อ้างอิงสเปกที่เผยแพร่ทั่วไป ต้องตรวจกับคู่มือทางการของ LINE Creators Studio ก่อนอัปโหลด"
+   }
+  },
+  {
+   "def": "StickerPack",
+   "note": "beck 8",
+   "value": {
+    "style": "pop",
+    "style_name_th": "ป๊อปอาร์ต",
+    "count": 8,
+    "with_text": 1,
+    "stickers": [
+     {
+      "emotion": "happy",
+      "emotion_id": "e01",
+      "name_th": "ยิ้มแย้ม",
+      "style": "pop",
+      "style_id": "st04",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": "b01",
+      "text_th": "เข้าใจแล้ว",
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "laugh",
+      "emotion_id": "e02",
+      "name_th": "หัวเราะ",
+      "style": "pop",
+      "style_id": "st04",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "love",
+      "emotion_id": "e03",
+      "name_th": "หัวใจ",
+      "style": "pop",
+      "style_id": "st04",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "wink",
+      "emotion_id": "e04",
+      "name_th": "ขยิบตา",
+      "style": "pop",
+      "style_id": "st04",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "ok",
+      "emotion_id": "e05",
+      "name_th": "โอเค",
+      "style": "pop",
+      "style_id": "st04",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "thumbs",
+      "emotion_id": "e06",
+      "name_th": "ยกนิ้ว",
+      "style": "pop",
+      "style_id": "st04",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "sad",
+      "emotion_id": "e07",
+      "name_th": "เศร้า",
+      "style": "pop",
+      "style_id": "st04",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "cry",
+      "emotion_id": "e08",
+      "name_th": "ร้องไห้",
+      "style": "pop",
+      "style_id": "st04",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     }
+    ],
+    "main": {
+     "w": 240,
+     "h": 240,
+     "format": "png"
+    },
+    "tab": {
+     "w": 96,
+     "h": 74,
+     "format": "png"
+    },
+    "headline_th": "ชุดสติกเกอร์ ป๊อปอาร์ต 8 ใบ · มีข้อความไทย 1 ใบ",
+    "watermark": "Made with StickerMe · AI illustration, not a LINE product",
+    "consent_code": "ok"
+   }
+  },
+  {
+   "def": "ExportSpec",
+   "note": "beck ready",
+   "value": {
+    "ready": true,
+    "passed": 6,
+    "total": 6,
+    "checks": [
+     {
+      "key": "count",
+      "ok": true,
+      "detail_th": "จำนวนสติกเกอร์ 8 ใบ (ต้องเป็น 8, 16 หรือ 24)"
+     },
+     {
+      "key": "sticker_size",
+      "ok": true,
+      "detail_th": "ขนาดสติกเกอร์ 370×320 พิกเซล"
+     },
+     {
+      "key": "main_size",
+      "ok": true,
+      "detail_th": "รูปหลัก 240×240 พิกเซล"
+     },
+     {
+      "key": "tab_size",
+      "ok": true,
+      "detail_th": "แท็บ 96×74 พิกเซล"
+     },
+     {
+      "key": "format",
+      "ok": true,
+      "detail_th": "ไฟล์ PNG พื้นโปร่งใส"
+     },
+     {
+      "key": "official_recheck",
+      "ok": true,
+      "detail_th": "ค่าตัวอย่างที่อ้างอิงสเปกที่เผยแพร่ทั่วไป ต้องตรวจกับคู่มือทางการของ LINE Creators Studio ก่อนอัปโหลด"
+     }
+    ],
+    "sticker_w": 370,
+    "sticker_h": 320,
+    "main_w": 240,
+    "main_h": 240,
+    "tab_w": 96,
+    "tab_h": 74,
+    "max_kb_per_sticker": 1000,
+    "headline_th": "พร้อมส่งตรวจใน Creators Studio",
+    "disclaimer_th": "ค่าตัวอย่างที่อ้างอิงสเปกที่เผยแพร่ทั่วไป ต้องตรวจกับคู่มือทางการของ LINE Creators Studio ก่อนอัปโหลด"
+   }
+  },
+  {
+   "def": "StickerPack",
+   "note": "min 8 guardian",
+   "value": {
+    "style": "comic",
+    "style_name_th": "การ์ตูนเส้นหนา",
+    "count": 8,
+    "with_text": 0,
+    "stickers": [
+     {
+      "emotion": "happy",
+      "emotion_id": "e01",
+      "name_th": "ยิ้มแย้ม",
+      "style": "comic",
+      "style_id": "st02",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "laugh",
+      "emotion_id": "e02",
+      "name_th": "หัวเราะ",
+      "style": "comic",
+      "style_id": "st02",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "love",
+      "emotion_id": "e03",
+      "name_th": "หัวใจ",
+      "style": "comic",
+      "style_id": "st02",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "wink",
+      "emotion_id": "e04",
+      "name_th": "ขยิบตา",
+      "style": "comic",
+      "style_id": "st02",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "ok",
+      "emotion_id": "e05",
+      "name_th": "โอเค",
+      "style": "comic",
+      "style_id": "st02",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "thumbs",
+      "emotion_id": "e06",
+      "name_th": "ยกนิ้ว",
+      "style": "comic",
+      "style_id": "st02",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "sad",
+      "emotion_id": "e07",
+      "name_th": "เศร้า",
+      "style": "comic",
+      "style_id": "st02",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     },
+     {
+      "emotion": "cry",
+      "emotion_id": "e08",
+      "name_th": "ร้องไห้",
+      "style": "comic",
+      "style_id": "st02",
+      "w": 370,
+      "h": 320,
+      "format": "png",
+      "transparent": true,
+      "bubble_id": null,
+      "text_th": null,
+      "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+     }
+    ],
+    "main": {
+     "w": 240,
+     "h": 240,
+     "format": "png"
+    },
+    "tab": {
+     "w": 96,
+     "h": 74,
+     "format": "png"
+    },
+    "headline_th": "ชุดสติกเกอร์ การ์ตูนเส้นหนา 8 ใบ · มีข้อความไทย 0 ใบ",
+    "watermark": "Made with StickerMe · AI illustration, not a LINE product",
+    "consent_code": "minor_with_guardian"
+   }
+  },
+  {
+   "def": "ChatPreview",
+   "note": "jane",
+   "value": {
+    "layout": "chat_mock",
+    "style": "chibi",
+    "items": [
+     {
+      "name_th": "ยิ้มแย้ม",
+      "text_th": "เข้าใจแล้ว"
+     },
+     {
+      "name_th": "หัวเราะ",
+      "text_th": "สุดยอด!"
+     },
+     {
+      "name_th": "หัวใจ",
+      "text_th": "รักนะ"
+     },
+     {
+      "name_th": "ขยิบตา",
+      "text_th": "โอเค เดี๋ยวมา"
+     }
+    ],
+    "count": 4,
+    "watermark": "Made with StickerMe · AI illustration, not a LINE product"
+   }
+  },
+  {
+   "def": "ChatItem",
+   "note": "ยิ้มแย้ม",
+   "value": {
+    "name_th": "ยิ้มแย้ม",
+    "text_th": "เข้าใจแล้ว"
+   }
+  },
+  {
+   "def": "ChatItem",
+   "note": "หัวเราะ",
+   "value": {
+    "name_th": "หัวเราะ",
+    "text_th": "สุดยอด!"
+   }
+  },
+  {
+   "def": "ChatItem",
+   "note": "หัวใจ",
+   "value": {
+    "name_th": "หัวใจ",
+    "text_th": "รักนะ"
+   }
+  },
+  {
+   "def": "ChatItem",
+   "note": "ขยิบตา",
+   "value": {
+    "name_th": "ขยิบตา",
+    "text_th": "โอเค เดี๋ยวมา"
+   }
+  },
+  {
+   "def": "StyleInfo",
+   "note": "chibi",
+   "value": {
+    "key": "chibi",
+    "id": "st01",
+    "name_th": "จิ๋วหัวโต",
+    "name_en": "chibi",
+    "outline": true
+   }
+  },
+  {
+   "def": "StyleInfo",
+   "note": "comic",
+   "value": {
+    "key": "comic",
+    "id": "st02",
+    "name_th": "การ์ตูนเส้นหนา",
+    "name_en": "comic",
+    "outline": true
+   }
+  },
+  {
+   "def": "StyleInfo",
+   "note": "watercolor",
+   "value": {
+    "key": "watercolor",
+    "id": "st03",
+    "name_th": "สีน้ำ",
+    "name_en": "watercolor",
+    "outline": false
+   }
+  },
+  {
+   "def": "StyleInfo",
+   "note": "pop",
+   "value": {
+    "key": "pop",
+    "id": "st04",
+    "name_th": "ป๊อปอาร์ต",
+    "name_en": "pop art",
+    "outline": true
+   }
+  },
+  {
+   "def": "StyleInfo",
+   "note": "pixel",
+   "value": {
+    "key": "pixel",
+    "id": "st05",
+    "name_th": "พิกเซล",
+    "name_en": "pixel",
+    "outline": true
+   }
+  },
+  {
+   "def": "StyleInfo",
+   "note": "clay",
+   "value": {
+    "key": "clay",
+    "id": "st06",
+    "name_th": "ดินปั้น",
+    "name_en": "clay",
+    "outline": false
+   }
+  },
+  {
+   "def": "StyleInfo",
+   "note": "lineart",
+   "value": {
+    "key": "lineart",
+    "id": "st07",
+    "name_th": "เส้นบาง",
+    "name_en": "line art",
+    "outline": true
+   }
+  },
+  {
+   "def": "StyleInfo",
+   "note": "gloss",
+   "value": {
+    "key": "gloss",
+    "id": "st08",
+    "name_th": "สติกเกอร์เงา",
+    "name_en": "gloss sticker",
+    "outline": true
+   }
+  },
+  {
+   "def": "EmotionInfo",
+   "note": "happy",
+   "value": {
+    "key": "happy",
+    "id": "e01",
+    "name_th": "ยิ้มแย้ม",
+    "name_en": "happy",
+    "priority": 1
+   }
+  },
+  {
+   "def": "EmotionInfo",
+   "note": "laugh",
+   "value": {
+    "key": "laugh",
+    "id": "e02",
+    "name_th": "หัวเราะ",
+    "name_en": "laugh",
+    "priority": 2
+   }
+  },
+  {
+   "def": "EmotionInfo",
+   "note": "love",
+   "value": {
+    "key": "love",
+    "id": "e03",
+    "name_th": "หัวใจ",
+    "name_en": "love",
+    "priority": 3
+   }
+  },
+  {
+   "def": "EmotionInfo",
+   "note": "wink",
+   "value": {
+    "key": "wink",
+    "id": "e04",
+    "name_th": "ขยิบตา",
+    "name_en": "wink",
+    "priority": 4
+   }
+  },
+  {
+   "def": "EmotionInfo",
+   "note": "ok",
+   "value": {
+    "key": "ok",
+    "id": "e05",
+    "name_th": "โอเค",
+    "name_en": "ok",
+    "priority": 5
+   }
+  },
+  {
+   "def": "EmotionInfo",
+   "note": "thumbs",
+   "value": {
+    "key": "thumbs",
+    "id": "e06",
+    "name_th": "ยกนิ้ว",
+    "name_en": "thumbs up",
+    "priority": 6
+   }
+  },
+  {
+   "def": "EmotionInfo",
+   "note": "sad",
+   "value": {
+    "key": "sad",
+    "id": "e07",
+    "name_th": "เศร้า",
+    "name_en": "sad",
+    "priority": 7
+   }
+  },
+  {
+   "def": "EmotionInfo",
+   "note": "cry",
+   "value": {
+    "key": "cry",
+    "id": "e08",
+    "name_th": "ร้องไห้",
+    "name_en": "cry",
+    "priority": 8
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "jane",
+   "value": {
+    "title_th": "StickerMe — น้องเจน",
+    "headline_th": "ชุดสติกเกอร์ จิ๋วหัวโต 16 ใบ · มีข้อความไทย 8 ใบ",
+    "hook_th": "เซลฟี่เดียว ได้สติกเกอร์ LINE หน้าตัวเองทั้งเซ็ต",
+    "style": "chibi",
+    "count": 16,
+    "with_text": 8,
+    "export_ready": true,
+    "layout": "sticker_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with StickerMe · AI illustration, not a LINE product",
+    "cta_th": "คอมเมนต์ STICKER รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "StickerMe สร้างภาพประกอบจากเซลฟี่ ไม่ใช่รูปถ่ายจริง และไม่ใช่ผลิตภัณฑ์ของ LINE ใช้ได้เฉพาะใบหน้าของตนเอง (ถ้าดูเป็นผู้เยาว์ต้องได้รับความยินยอมจากผู้ปกครอง) ตรวจสเปกอีกครั้งใน LINE Creators Studio ก่อนอัปโหลด"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "stop",
+   "value": {
+    "level": "stop",
+    "message_th": "ใช้ได้เฉพาะใบหน้าของตนเอง ไม่สร้างสติกเกอร์จากรูปคนอื่น StickerMe สร้างภาพประกอบจากเซลฟี่ ไม่ใช่รูปถ่ายจริง และไม่ใช่ผลิตภัณฑ์ของ LINE ใช้ได้เฉพาะใบหน้าของตนเอง (ถ้าดูเป็นผู้เยาว์ต้องได้รับความยินยอมจากผู้ปกครอง) ตรวจสเปกอีกครั้งใน LINE Creators Studio ก่อนอัปโหลด"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "warn",
+   "value": {
+    "level": "warn",
+    "message_th": "สร้างได้เพราะผู้ปกครองยินยอม ภาพเป็นภาพประกอบ ไม่ใช่รูปเด็กจริง StickerMe สร้างภาพประกอบจากเซลฟี่ ไม่ใช่รูปถ่ายจริง และไม่ใช่ผลิตภัณฑ์ของ LINE ใช้ได้เฉพาะใบหน้าของตนเอง (ถ้าดูเป็นผู้เยาว์ต้องได้รับความยินยอมจากผู้ปกครอง) ตรวจสเปกอีกครั้งใน LINE Creators Studio ก่อนอัปโหลด"
+   }
+  }
+ ]
+}
