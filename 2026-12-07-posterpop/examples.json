@@ -1,0 +1,1941 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "พี่เจ",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่เจ",
+    "name_en": "Jay",
+    "age": 29,
+    "city_th": "กรุงเทพฯ",
+    "shop_th": "Ficto Café",
+    "role_th": "เจ้าของร้านกาแฟสมมติ"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่มอ",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่มอ",
+    "name_en": "Morn",
+    "age": 34,
+    "city_th": "เชียงใหม่",
+    "shop_th": "Ficto Night Market",
+    "role_th": "ผู้จัดตลาดนัดสมมติ"
+   }
+  },
+  {
+   "def": "TemplateInfo",
+   "note": "sale",
+   "value": {
+    "id": "t01",
+    "template": "sale",
+    "name_th": "โปรลดราคา",
+    "name_en": "Sale",
+    "mood_th": "ตัวหนา ชัด ดึงสายตา",
+    "zones": [
+     "badge",
+     "title",
+     "offer",
+     "details",
+     "cta",
+     "qr"
+    ],
+    "default_palette": [
+     "#4A2C2A",
+     "#F8F1E3",
+     "#E8772E",
+     "#FFFFFF"
+    ]
+   }
+  },
+  {
+   "def": "TemplateInfo",
+   "note": "event",
+   "value": {
+    "id": "t02",
+    "template": "event",
+    "name_th": "งานอีเวนต์",
+    "name_en": "Event",
+    "mood_th": "วันที่และสถานที่เด่น อ่านง่าย",
+    "zones": [
+     "kicker",
+     "title",
+     "datetime",
+     "place",
+     "details",
+     "cta",
+     "qr"
+    ],
+    "default_palette": [
+     "#1E3A5F",
+     "#F4EFE6",
+     "#C4A574",
+     "#FFFFFF"
+    ]
+   }
+  },
+  {
+   "def": "TemplateInfo",
+   "note": "menu",
+   "value": {
+    "id": "t03",
+    "template": "menu",
+    "name_th": "เมนูร้าน",
+    "name_en": "Menu",
+    "mood_th": "รายการและราคาเป็นคอลัมน์อ่านชัด",
+    "zones": [
+     "logo",
+     "title",
+     "grid",
+     "note",
+     "qr"
+    ],
+    "default_palette": [
+     "#2C1810",
+     "#FFF8EE",
+     "#8B5A2B",
+     "#1A1A1A"
+    ]
+   }
+  },
+  {
+   "def": "SizeInfo",
+   "note": "ig_portrait",
+   "value": {
+    "id": "s01",
+    "size_id": "ig_portrait",
+    "w": 1080,
+    "h": 1350,
+    "label_th": "IG โพสต์แนวตั้ง",
+    "kind": "social"
+   }
+  },
+  {
+   "def": "SizeInfo",
+   "note": "ig_square",
+   "value": {
+    "id": "s02",
+    "size_id": "ig_square",
+    "w": 1080,
+    "h": 1080,
+    "label_th": "IG สี่เหลี่ยม",
+    "kind": "social"
+   }
+  },
+  {
+   "def": "SizeInfo",
+   "note": "ig_story",
+   "value": {
+    "id": "s03",
+    "size_id": "ig_story",
+    "w": 1080,
+    "h": 1920,
+    "label_th": "IG สตอรี่ / Reels",
+    "kind": "social"
+   }
+  },
+  {
+   "def": "SizeInfo",
+   "note": "fb_post",
+   "value": {
+    "id": "s04",
+    "size_id": "fb_post",
+    "w": 1080,
+    "h": 1350,
+    "label_th": "Facebook โพสต์",
+    "kind": "social"
+   }
+  },
+  {
+   "def": "SizeInfo",
+   "note": "a4",
+   "value": {
+    "id": "s05",
+    "size_id": "a4",
+    "w": 2480,
+    "h": 3508,
+    "label_th": "พิมพ์ A4 300dpi",
+    "kind": "print"
+   }
+  },
+  {
+   "def": "SizeInfo",
+   "note": "a3",
+   "value": {
+    "id": "s06",
+    "size_id": "a3",
+    "w": 3508,
+    "h": 4961,
+    "label_th": "พิมพ์ A3 300dpi",
+    "kind": "print"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "jay large",
+   "value": {
+    "fg": "#4A2C2A",
+    "bg": "#F8F1E3",
+    "kind": "large",
+    "ratio": 11.09,
+    "need": 3.0,
+    "ok": true,
+    "level_th": "ผ่าน AA",
+    "tip_th": "ตัวอักษรอ่านชัด"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "jay body",
+   "value": {
+    "fg": "#4A2C2A",
+    "bg": "#F8F1E3",
+    "kind": "body",
+    "ratio": 11.09,
+    "need": 4.5,
+    "ok": true,
+    "level_th": "ผ่าน AA",
+    "tip_th": "ตัวอักษรอ่านชัด"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "fail",
+   "value": {
+    "fg": "#F8F1E3",
+    "bg": "#F8F1E3",
+    "kind": "body",
+    "ratio": 1.0,
+    "need": 4.5,
+    "ok": false,
+    "level_th": "ไม่ผ่าน AA",
+    "tip_th": "ปรับสีให้อ่านชัดขึ้น อย่างน้อยคอนทราสต์ 4.5"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "grey large",
+   "value": {
+    "fg": "#8A8A8A",
+    "bg": "#FFFFFF",
+    "kind": "large",
+    "ratio": 3.45,
+    "need": 3.0,
+    "ok": true,
+    "level_th": "ผ่าน AA",
+    "tip_th": "ตัวอักษรอ่านชัด"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "grey body",
+   "value": {
+    "fg": "#8A8A8A",
+    "bg": "#FFFFFF",
+    "kind": "body",
+    "ratio": 3.45,
+    "need": 4.5,
+    "ok": false,
+    "level_th": "ไม่ผ่าน AA",
+    "tip_th": "ปรับสีให้อ่านชัดขึ้น อย่างน้อยคอนทราสต์ 4.5"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "max",
+   "value": {
+    "fg": "#000000",
+    "bg": "#FFFFFF",
+    "kind": "body",
+    "ratio": 21.0,
+    "need": 4.5,
+    "ok": true,
+    "level_th": "ผ่าน AA",
+    "tip_th": "ตัวอักษรอ่านชัด"
+   }
+  },
+  {
+   "def": "BrandKit",
+   "note": "jay",
+   "value": {
+    "name_th": "Ficto Café",
+    "colors": [
+     "#4A2C2A",
+     "#F8F1E3",
+     "#E8772E"
+    ],
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "contrast": {
+     "fg": "#4A2C2A",
+     "bg": "#F8F1E3",
+     "kind": "large",
+     "ratio": 11.09,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "tip_th": "ใช้สีหลักกับสีพื้นสำหรับหัวข้อ ผ่าน AA"
+   }
+  },
+  {
+   "def": "BrandKit",
+   "note": "morn",
+   "value": {
+    "name_th": "Ficto Night Market",
+    "colors": [
+     "#1E3A5F",
+     "#F4EFE6",
+     "#C4A574"
+    ],
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "contrast": {
+     "fg": "#1E3A5F",
+     "bg": "#F4EFE6",
+     "kind": "large",
+     "ratio": 10.04,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "tip_th": "ใช้สีหลักกับสีพื้นสำหรับหัวข้อ ผ่าน AA"
+   }
+  },
+  {
+   "def": "BrandKit",
+   "note": "clinic",
+   "value": {
+    "name_th": "Ficto Clinic",
+    "colors": [
+     "#1A1A1A",
+     "#FFFFFF",
+     "#2563EB"
+    ],
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "contrast": {
+     "fg": "#1A1A1A",
+     "bg": "#FFFFFF",
+     "kind": "large",
+     "ratio": 17.4,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "tip_th": "ใช้สีหลักกับสีพื้นสำหรับหัวข้อ ผ่าน AA"
+   }
+  },
+  {
+   "def": "QrBlock",
+   "note": "footer_right",
+   "value": {
+    "url": "https://line.me/R/ti/p/@ficto-cafe",
+    "position": "footer_right",
+    "size_px": 220,
+    "label_th": "สแกนเพื่อดูเพิ่ม",
+    "kind": "qr"
+   }
+  },
+  {
+   "def": "QrBlock",
+   "note": "footer_center",
+   "value": {
+    "url": "https://maps.example/ficto-yard",
+    "position": "footer_center",
+    "size_px": 220,
+    "label_th": "สแกนเพื่อดูเพิ่ม",
+    "kind": "qr"
+   }
+  },
+  {
+   "def": "QrBlock",
+   "note": "footer_left",
+   "value": {
+    "url": "https://example.com/menu",
+    "position": "footer_left",
+    "size_px": 220,
+    "label_th": "สแกนเพื่อดูเพิ่ม",
+    "kind": "qr"
+   }
+  },
+  {
+   "def": "MenuRow",
+   "note": "latte",
+   "value": {
+    "name_th": "ลาเต้ Ficto",
+    "price_thb": 85,
+    "price_label_th": "฿85"
+   }
+  },
+  {
+   "def": "MenuGrid",
+   "note": "4 items",
+   "value": {
+    "rows": [
+     {
+      "name_th": "ลาเต้ Ficto",
+      "price_thb": 85,
+      "price_label_th": "฿85"
+     },
+     {
+      "name_th": "อเมริกาโน่",
+      "price_thb": 70,
+      "price_label_th": "฿70"
+     },
+     {
+      "name_th": "ชาไทยเย็น",
+      "price_thb": 65,
+      "price_label_th": "฿65"
+     },
+     {
+      "name_th": "ครัวซองต์เนย",
+      "price_thb": 55,
+      "price_label_th": "฿55"
+     }
+    ],
+    "count": 4,
+    "cols": 1
+   }
+  },
+  {
+   "def": "MenuGrid",
+   "note": "9 items",
+   "value": {
+    "rows": [
+     {
+      "name_th": "ลาเต้ Ficto",
+      "price_thb": 85,
+      "price_label_th": "฿85"
+     },
+     {
+      "name_th": "อเมริกาโน่",
+      "price_thb": 70,
+      "price_label_th": "฿70"
+     },
+     {
+      "name_th": "ชาไทยเย็น",
+      "price_thb": 65,
+      "price_label_th": "฿65"
+     },
+     {
+      "name_th": "ครัวซองต์เนย",
+      "price_thb": 55,
+      "price_label_th": "฿55"
+     },
+     {
+      "name_th": "ลาเต้ Ficto",
+      "price_thb": 85,
+      "price_label_th": "฿85"
+     },
+     {
+      "name_th": "อเมริกาโน่",
+      "price_thb": 70,
+      "price_label_th": "฿70"
+     },
+     {
+      "name_th": "ชาไทยเย็น",
+      "price_thb": 65,
+      "price_label_th": "฿65"
+     },
+     {
+      "name_th": "ครัวซองต์เนย",
+      "price_thb": 55,
+      "price_label_th": "฿55"
+     },
+     {
+      "name_th": "ลาเต้ Ficto",
+      "price_thb": 85,
+      "price_label_th": "฿85"
+     }
+    ],
+    "count": 9,
+    "cols": 2
+   }
+  },
+  {
+   "def": "MenuGrid",
+   "note": "free water",
+   "value": {
+    "rows": [
+     {
+      "name_th": "น้ำเปล่า",
+      "price_thb": 0,
+      "price_label_th": "฿0"
+     }
+    ],
+    "count": 1,
+    "cols": 1
+   }
+  },
+  {
+   "def": "PosterLayout",
+   "note": "jay ig",
+   "value": {
+    "template": "sale",
+    "size_id": "ig_portrait",
+    "w": 1080,
+    "h": 1350,
+    "title_th": "โปรศุกร์ 1 แถม 1",
+    "subtitle_th": "เครื่องดื่มทุกแก้ว",
+    "details_th": "วันศุกร์ 9:00–18:00 · ซอยสุขใจ 12",
+    "date_th": "ทุกวันศุกร์",
+    "place_th": "ซอยสุขใจ 12",
+    "cta_th": "มาร้านได้เลย",
+    "title_px": 72,
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "colors": [
+     "#4A2C2A",
+     "#F8F1E3",
+     "#E8772E"
+    ],
+    "zones": [
+     {
+      "id": "badge",
+      "y": 0.08,
+      "h": 0.1
+     },
+     {
+      "id": "title",
+      "y": 0.18,
+      "h": 0.18
+     },
+     {
+      "id": "offer",
+      "y": 0.36,
+      "h": 0.14
+     },
+     {
+      "id": "details",
+      "y": 0.5,
+      "h": 0.1
+     },
+     {
+      "id": "cta",
+      "y": 0.6,
+      "h": 0.1
+     },
+     {
+      "id": "qr",
+      "y": 0.7,
+      "h": 0.1
+     }
+    ],
+    "qr": {
+     "url": "https://line.me/R/ti/p/@ficto-cafe",
+     "position": "footer_right",
+     "size_px": 220,
+     "label_th": "สแกนเพื่อดูเพิ่ม",
+     "kind": "qr"
+    },
+    "title_contrast": {
+     "fg": "#4A2C2A",
+     "bg": "#F8F1E3",
+     "kind": "large",
+     "ratio": 11.09,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "body_contrast": {
+     "fg": "#4A2C2A",
+     "bg": "#F8F1E3",
+     "kind": "body",
+     "ratio": 11.09,
+     "need": 4.5,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "headline_th": "โปรศุกร์ 1 แถม 1",
+    "ok_contrast": true,
+    "disclaimer_th": "PosterPop ช่วยจัดเลย์เอาต์เท่านั้น ไม่ใช่โรงพิมพ์และไม่ใช่โลโก้แบรนด์สำเร็จ ผู้ใช้ต้องมีสิทธิ์ในข้อความ รูป และเครื่องหมายการค้าที่ใส่ และควรตรวจคำและราคาอีกครั้งก่อนโพสต์หรือพิมพ์"
+   }
+  },
+  {
+   "def": "PosterLayout",
+   "note": "jay a4",
+   "value": {
+    "template": "sale",
+    "size_id": "a4",
+    "w": 2480,
+    "h": 3508,
+    "title_th": "โปรศุกร์ 1 แถม 1",
+    "subtitle_th": "เครื่องดื่มทุกแก้ว",
+    "details_th": "วันศุกร์ 9:00–18:00 · ซอยสุขใจ 12",
+    "date_th": "ทุกวันศุกร์",
+    "place_th": "ซอยสุขใจ 12",
+    "cta_th": "มาร้านได้เลย",
+    "title_px": 72,
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "colors": [
+     "#4A2C2A",
+     "#F8F1E3",
+     "#E8772E"
+    ],
+    "zones": [
+     {
+      "id": "badge",
+      "y": 0.08,
+      "h": 0.1
+     },
+     {
+      "id": "title",
+      "y": 0.18,
+      "h": 0.18
+     },
+     {
+      "id": "offer",
+      "y": 0.36,
+      "h": 0.14
+     },
+     {
+      "id": "details",
+      "y": 0.5,
+      "h": 0.1
+     },
+     {
+      "id": "cta",
+      "y": 0.6,
+      "h": 0.1
+     },
+     {
+      "id": "qr",
+      "y": 0.7,
+      "h": 0.1
+     }
+    ],
+    "qr": {
+     "url": "https://line.me/R/ti/p/@ficto-cafe",
+     "position": "footer_right",
+     "size_px": 220,
+     "label_th": "สแกนเพื่อดูเพิ่ม",
+     "kind": "qr"
+    },
+    "title_contrast": {
+     "fg": "#4A2C2A",
+     "bg": "#F8F1E3",
+     "kind": "large",
+     "ratio": 11.09,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "body_contrast": {
+     "fg": "#4A2C2A",
+     "bg": "#F8F1E3",
+     "kind": "body",
+     "ratio": 11.09,
+     "need": 4.5,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "headline_th": "โปรศุกร์ 1 แถม 1",
+    "ok_contrast": true,
+    "disclaimer_th": "PosterPop ช่วยจัดเลย์เอาต์เท่านั้น ไม่ใช่โรงพิมพ์และไม่ใช่โลโก้แบรนด์สำเร็จ ผู้ใช้ต้องมีสิทธิ์ในข้อความ รูป และเครื่องหมายการค้าที่ใส่ และควรตรวจคำและราคาอีกครั้งก่อนโพสต์หรือพิมพ์"
+   }
+  },
+  {
+   "def": "PosterLayout",
+   "note": "jay story",
+   "value": {
+    "template": "sale",
+    "size_id": "ig_story",
+    "w": 1080,
+    "h": 1920,
+    "title_th": "โปรศุกร์ 1 แถม 1",
+    "subtitle_th": "เครื่องดื่มทุกแก้ว",
+    "details_th": "วันศุกร์ 9:00–18:00 · ซอยสุขใจ 12",
+    "date_th": "ทุกวันศุกร์",
+    "place_th": "ซอยสุขใจ 12",
+    "cta_th": "มาร้านได้เลย",
+    "title_px": 72,
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "colors": [
+     "#4A2C2A",
+     "#F8F1E3",
+     "#E8772E"
+    ],
+    "zones": [
+     {
+      "id": "badge",
+      "y": 0.08,
+      "h": 0.1
+     },
+     {
+      "id": "title",
+      "y": 0.18,
+      "h": 0.18
+     },
+     {
+      "id": "offer",
+      "y": 0.36,
+      "h": 0.14
+     },
+     {
+      "id": "details",
+      "y": 0.5,
+      "h": 0.1
+     },
+     {
+      "id": "cta",
+      "y": 0.6,
+      "h": 0.1
+     },
+     {
+      "id": "qr",
+      "y": 0.7,
+      "h": 0.1
+     }
+    ],
+    "qr": {
+     "url": "https://line.me/R/ti/p/@ficto-cafe",
+     "position": "footer_right",
+     "size_px": 220,
+     "label_th": "สแกนเพื่อดูเพิ่ม",
+     "kind": "qr"
+    },
+    "title_contrast": {
+     "fg": "#4A2C2A",
+     "bg": "#F8F1E3",
+     "kind": "large",
+     "ratio": 11.09,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "body_contrast": {
+     "fg": "#4A2C2A",
+     "bg": "#F8F1E3",
+     "kind": "body",
+     "ratio": 11.09,
+     "need": 4.5,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "headline_th": "โปรศุกร์ 1 แถม 1",
+    "ok_contrast": true,
+    "disclaimer_th": "PosterPop ช่วยจัดเลย์เอาต์เท่านั้น ไม่ใช่โรงพิมพ์และไม่ใช่โลโก้แบรนด์สำเร็จ ผู้ใช้ต้องมีสิทธิ์ในข้อความ รูป และเครื่องหมายการค้าที่ใส่ และควรตรวจคำและราคาอีกครั้งก่อนโพสต์หรือพิมพ์"
+   }
+  },
+  {
+   "def": "PosterLayout",
+   "note": "morn event",
+   "value": {
+    "template": "event",
+    "size_id": "fb_post",
+    "w": 1080,
+    "h": 1350,
+    "title_th": "ตลาดนัดยามเย็น",
+    "subtitle_th": "ของทำมือ 30 ร้าน",
+    "details_th": "เสาร์-อาทิตย์ 16:00–21:00",
+    "date_th": "เสาร์-อาทิตย์ 16:00–21:00",
+    "place_th": "ลาน Ficto Yard",
+    "cta_th": "เข้าฟรี",
+    "title_px": 72,
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "colors": [
+     "#1E3A5F",
+     "#F4EFE6",
+     "#C4A574"
+    ],
+    "zones": [
+     {
+      "id": "kicker",
+      "y": 0.08,
+      "h": 0.1
+     },
+     {
+      "id": "title",
+      "y": 0.18,
+      "h": 0.18
+     },
+     {
+      "id": "datetime",
+      "y": 0.36,
+      "h": 0.1
+     },
+     {
+      "id": "place",
+      "y": 0.46,
+      "h": 0.1
+     },
+     {
+      "id": "details",
+      "y": 0.56,
+      "h": 0.1
+     },
+     {
+      "id": "cta",
+      "y": 0.66,
+      "h": 0.1
+     },
+     {
+      "id": "qr",
+      "y": 0.76,
+      "h": 0.1
+     }
+    ],
+    "qr": {
+     "url": "https://maps.example/ficto-yard",
+     "position": "footer_right",
+     "size_px": 220,
+     "label_th": "สแกนเพื่อดูเพิ่ม",
+     "kind": "qr"
+    },
+    "title_contrast": {
+     "fg": "#1E3A5F",
+     "bg": "#F4EFE6",
+     "kind": "large",
+     "ratio": 10.04,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "body_contrast": {
+     "fg": "#1E3A5F",
+     "bg": "#F4EFE6",
+     "kind": "body",
+     "ratio": 10.04,
+     "need": 4.5,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "headline_th": "ตลาดนัดยามเย็น",
+    "ok_contrast": true,
+    "disclaimer_th": "PosterPop ช่วยจัดเลย์เอาต์เท่านั้น ไม่ใช่โรงพิมพ์และไม่ใช่โลโก้แบรนด์สำเร็จ ผู้ใช้ต้องมีสิทธิ์ในข้อความ รูป และเครื่องหมายการค้าที่ใส่ และควรตรวจคำและราคาอีกครั้งก่อนโพสต์หรือพิมพ์"
+   }
+  },
+  {
+   "def": "PosterLayout",
+   "note": "menu a4",
+   "value": {
+    "template": "menu",
+    "size_id": "a4",
+    "w": 2480,
+    "h": 3508,
+    "title_th": "เมนู Ficto Café",
+    "subtitle_th": "เครื่องดื่มและขนม",
+    "details_th": "",
+    "date_th": "",
+    "place_th": "",
+    "cta_th": "ยินดีต้อนรับ",
+    "title_px": 72,
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "colors": [
+     "#4A2C2A",
+     "#F8F1E3",
+     "#E8772E"
+    ],
+    "zones": [
+     {
+      "id": "logo",
+      "y": 0.08,
+      "h": 0.1
+     },
+     {
+      "id": "title",
+      "y": 0.18,
+      "h": 0.18
+     },
+     {
+      "id": "grid",
+      "y": 0.36,
+      "h": 0.4
+     },
+     {
+      "id": "note",
+      "y": 0.76,
+      "h": 0.1
+     },
+     {
+      "id": "qr",
+      "y": 0.86,
+      "h": 0.1
+     }
+    ],
+    "qr": null,
+    "title_contrast": {
+     "fg": "#4A2C2A",
+     "bg": "#F8F1E3",
+     "kind": "large",
+     "ratio": 11.09,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "body_contrast": {
+     "fg": "#4A2C2A",
+     "bg": "#F8F1E3",
+     "kind": "body",
+     "ratio": 11.09,
+     "need": 4.5,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "headline_th": "เมนู Ficto Café",
+    "ok_contrast": true,
+    "disclaimer_th": "PosterPop ช่วยจัดเลย์เอาต์เท่านั้น ไม่ใช่โรงพิมพ์และไม่ใช่โลโก้แบรนด์สำเร็จ ผู้ใช้ต้องมีสิทธิ์ในข้อความ รูป และเครื่องหมายการค้าที่ใส่ และควรตรวจคำและราคาอีกครั้งก่อนโพสต์หรือพิมพ์"
+   }
+  },
+  {
+   "def": "Zone",
+   "note": "badge",
+   "value": {
+    "id": "badge",
+    "y": 0.08,
+    "h": 0.1
+   }
+  },
+  {
+   "def": "Zone",
+   "note": "title",
+   "value": {
+    "id": "title",
+    "y": 0.18,
+    "h": 0.18
+   }
+  },
+  {
+   "def": "Zone",
+   "note": "offer",
+   "value": {
+    "id": "offer",
+    "y": 0.36,
+    "h": 0.14
+   }
+  },
+  {
+   "def": "Zone",
+   "note": "details",
+   "value": {
+    "id": "details",
+    "y": 0.5,
+    "h": 0.1
+   }
+  },
+  {
+   "def": "Zone",
+   "note": "cta",
+   "value": {
+    "id": "cta",
+    "y": 0.6,
+    "h": 0.1
+   }
+  },
+  {
+   "def": "Zone",
+   "note": "qr",
+   "value": {
+    "id": "qr",
+    "y": 0.7,
+    "h": 0.1
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "sale",
+   "value": {
+    "template": "sale",
+    "steps": [
+     "brief",
+     "template_sale",
+     "brand_kit",
+     "auto_layout",
+     "qr",
+     "export"
+    ]
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "event",
+   "value": {
+    "template": "event",
+    "steps": [
+     "brief",
+     "template_event",
+     "brand_kit",
+     "auto_layout",
+     "qr",
+     "export"
+    ]
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "menu",
+   "value": {
+    "template": "menu",
+    "steps": [
+     "brief",
+     "template_menu",
+     "brand_kit",
+     "auto_layout",
+     "contrast_fix",
+     "export"
+    ]
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "jay",
+   "value": {
+    "title_th": "PosterPop — พี่เจ",
+    "headline_th": "โปรศุกร์ 1 แถม 1",
+    "hook_th": "พิมพ์รายละเอียดงาน ได้โปสเตอร์สวยทันที",
+    "template": "sale",
+    "size_id": "ig_portrait",
+    "layout": "poster_preview",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with PosterPop · check rights to photos and text",
+    "cta_th": "คอมเมนต์ POSTER รับแพ็กฟรี · โปรศุกร์ 1 แถม 1"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "morn",
+   "value": {
+    "title_th": "PosterPop — พี่มอ",
+    "headline_th": "ตลาดนัดยามเย็น",
+    "hook_th": "พิมพ์รายละเอียดงาน ได้โปสเตอร์สวยทันที",
+    "template": "event",
+    "size_id": "fb_post",
+    "layout": "poster_preview",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with PosterPop · check rights to photos and text",
+    "cta_th": "คอมเมนต์ POSTER รับแพ็กฟรี · ตลาดนัดยามเย็น"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "PosterPop ช่วยจัดเลย์เอาต์เท่านั้น ไม่ใช่โรงพิมพ์และไม่ใช่โลโก้แบรนด์สำเร็จ ผู้ใช้ต้องมีสิทธิ์ในข้อความ รูป และเครื่องหมายการค้าที่ใส่ และควรตรวจคำและราคาอีกครั้งก่อนโพสต์หรือพิมพ์"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "stop",
+   "value": {
+    "level": "stop",
+    "message_th": "ยังส่งออกไม่ได้ จนกว่าจะยืนยันสิทธิ์ในข้อความและรูป PosterPop ช่วยจัดเลย์เอาต์เท่านั้น ไม่ใช่โรงพิมพ์และไม่ใช่โลโก้แบรนด์สำเร็จ ผู้ใช้ต้องมีสิทธิ์ในข้อความ รูป และเครื่องหมายการค้าที่ใส่ และควรตรวจคำและราคาอีกครั้งก่อนโพสต์หรือพิมพ์"
+   }
+  },
+  {
+   "def": "PosterLayout",
+   "note": "ig_square",
+   "value": {
+    "template": "sale",
+    "size_id": "ig_square",
+    "w": 1080,
+    "h": 1080,
+    "title_th": "โปรศุกร์ 1 แถม 1",
+    "subtitle_th": "เครื่องดื่มทุกแก้ว",
+    "details_th": "วันศุกร์ 9:00–18:00 · ซอยสุขใจ 12",
+    "date_th": "ทุกวันศุกร์",
+    "place_th": "ซอยสุขใจ 12",
+    "cta_th": "มาร้านได้เลย",
+    "title_px": 72,
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "colors": [
+     "#4A2C2A",
+     "#F8F1E3",
+     "#E8772E"
+    ],
+    "zones": [
+     {
+      "id": "badge",
+      "y": 0.08,
+      "h": 0.1
+     },
+     {
+      "id": "title",
+      "y": 0.18,
+      "h": 0.18
+     },
+     {
+      "id": "offer",
+      "y": 0.36,
+      "h": 0.14
+     },
+     {
+      "id": "details",
+      "y": 0.5,
+      "h": 0.1
+     },
+     {
+      "id": "cta",
+      "y": 0.6,
+      "h": 0.1
+     },
+     {
+      "id": "qr",
+      "y": 0.7,
+      "h": 0.1
+     }
+    ],
+    "qr": {
+     "url": "https://line.me/R/ti/p/@ficto-cafe",
+     "position": "footer_right",
+     "size_px": 220,
+     "label_th": "สแกนเพื่อดูเพิ่ม",
+     "kind": "qr"
+    },
+    "title_contrast": {
+     "fg": "#4A2C2A",
+     "bg": "#F8F1E3",
+     "kind": "large",
+     "ratio": 11.09,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "body_contrast": {
+     "fg": "#4A2C2A",
+     "bg": "#F8F1E3",
+     "kind": "body",
+     "ratio": 11.09,
+     "need": 4.5,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "headline_th": "โปรศุกร์ 1 แถม 1",
+    "ok_contrast": true,
+    "disclaimer_th": "PosterPop ช่วยจัดเลย์เอาต์เท่านั้น ไม่ใช่โรงพิมพ์และไม่ใช่โลโก้แบรนด์สำเร็จ ผู้ใช้ต้องมีสิทธิ์ในข้อความ รูป และเครื่องหมายการค้าที่ใส่ และควรตรวจคำและราคาอีกครั้งก่อนโพสต์หรือพิมพ์"
+   }
+  },
+  {
+   "def": "PosterLayout",
+   "note": "a3",
+   "value": {
+    "template": "sale",
+    "size_id": "a3",
+    "w": 3508,
+    "h": 4961,
+    "title_th": "โปรศุกร์ 1 แถม 1",
+    "subtitle_th": "เครื่องดื่มทุกแก้ว",
+    "details_th": "วันศุกร์ 9:00–18:00 · ซอยสุขใจ 12",
+    "date_th": "ทุกวันศุกร์",
+    "place_th": "ซอยสุขใจ 12",
+    "cta_th": "มาร้านได้เลย",
+    "title_px": 72,
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "colors": [
+     "#4A2C2A",
+     "#F8F1E3",
+     "#E8772E"
+    ],
+    "zones": [
+     {
+      "id": "badge",
+      "y": 0.08,
+      "h": 0.1
+     },
+     {
+      "id": "title",
+      "y": 0.18,
+      "h": 0.18
+     },
+     {
+      "id": "offer",
+      "y": 0.36,
+      "h": 0.14
+     },
+     {
+      "id": "details",
+      "y": 0.5,
+      "h": 0.1
+     },
+     {
+      "id": "cta",
+      "y": 0.6,
+      "h": 0.1
+     },
+     {
+      "id": "qr",
+      "y": 0.7,
+      "h": 0.1
+     }
+    ],
+    "qr": {
+     "url": "https://line.me/R/ti/p/@ficto-cafe",
+     "position": "footer_right",
+     "size_px": 220,
+     "label_th": "สแกนเพื่อดูเพิ่ม",
+     "kind": "qr"
+    },
+    "title_contrast": {
+     "fg": "#4A2C2A",
+     "bg": "#F8F1E3",
+     "kind": "large",
+     "ratio": 11.09,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "body_contrast": {
+     "fg": "#4A2C2A",
+     "bg": "#F8F1E3",
+     "kind": "body",
+     "ratio": 11.09,
+     "need": 4.5,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "headline_th": "โปรศุกร์ 1 แถม 1",
+    "ok_contrast": true,
+    "disclaimer_th": "PosterPop ช่วยจัดเลย์เอาต์เท่านั้น ไม่ใช่โรงพิมพ์และไม่ใช่โลโก้แบรนด์สำเร็จ ผู้ใช้ต้องมีสิทธิ์ในข้อความ รูป และเครื่องหมายการค้าที่ใส่ และควรตรวจคำและราคาอีกครั้งก่อนโพสต์หรือพิมพ์"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "#1E3A5F large",
+   "value": {
+    "fg": "#1E3A5F",
+    "bg": "#F4EFE6",
+    "kind": "large",
+    "ratio": 10.04,
+    "need": 3.0,
+    "ok": true,
+    "level_th": "ผ่าน AA",
+    "tip_th": "ตัวอักษรอ่านชัด"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "#1E3A5F body",
+   "value": {
+    "fg": "#1E3A5F",
+    "bg": "#F4EFE6",
+    "kind": "body",
+    "ratio": 10.04,
+    "need": 4.5,
+    "ok": true,
+    "level_th": "ผ่าน AA",
+    "tip_th": "ตัวอักษรอ่านชัด"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "#2C1810 body",
+   "value": {
+    "fg": "#2C1810",
+    "bg": "#FFF8EE",
+    "kind": "body",
+    "ratio": 15.99,
+    "need": 4.5,
+    "ok": true,
+    "level_th": "ผ่าน AA",
+    "tip_th": "ตัวอักษรอ่านชัด"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "#E8772E large",
+   "value": {
+    "fg": "#E8772E",
+    "bg": "#F8F1E3",
+    "kind": "large",
+    "ratio": 2.63,
+    "need": 3.0,
+    "ok": false,
+    "level_th": "ไม่ผ่าน AA",
+    "tip_th": "ปรับสีให้อ่านชัดขึ้น อย่างน้อยคอนทราสต์ 3.0"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "#E8772E body",
+   "value": {
+    "fg": "#E8772E",
+    "bg": "#F8F1E3",
+    "kind": "body",
+    "ratio": 2.63,
+    "need": 4.5,
+    "ok": false,
+    "level_th": "ไม่ผ่าน AA",
+    "tip_th": "ปรับสีให้อ่านชัดขึ้น อย่างน้อยคอนทราสต์ 4.5"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "#FFFFFF large",
+   "value": {
+    "fg": "#FFFFFF",
+    "bg": "#4A2C2A",
+    "kind": "large",
+    "ratio": 12.46,
+    "need": 3.0,
+    "ok": true,
+    "level_th": "ผ่าน AA",
+    "tip_th": "ตัวอักษรอ่านชัด"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "#C4A574 large",
+   "value": {
+    "fg": "#C4A574",
+    "bg": "#1E3A5F",
+    "kind": "large",
+    "ratio": 4.92,
+    "need": 3.0,
+    "ok": true,
+    "level_th": "ผ่าน AA",
+    "tip_th": "ตัวอักษรอ่านชัด"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "#2563EB body",
+   "value": {
+    "fg": "#2563EB",
+    "bg": "#FFFFFF",
+    "kind": "body",
+    "ratio": 5.17,
+    "need": 4.5,
+    "ok": true,
+    "level_th": "ผ่าน AA",
+    "tip_th": "ตัวอักษรอ่านชัด"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "#111111 large",
+   "value": {
+    "fg": "#111111",
+    "bg": "#FFFF00",
+    "kind": "large",
+    "ratio": 17.58,
+    "need": 3.0,
+    "ok": true,
+    "level_th": "ผ่าน AA",
+    "tip_th": "ตัวอักษรอ่านชัด"
+   }
+  },
+  {
+   "def": "ContrastCheck",
+   "note": "#FF0000 body",
+   "value": {
+    "fg": "#FF0000",
+    "bg": "#FFFFFF",
+    "kind": "body",
+    "ratio": 4.0,
+    "need": 4.5,
+    "ok": false,
+    "level_th": "ไม่ผ่าน AA",
+    "tip_th": "ปรับสีให้อ่านชัดขึ้น อย่างน้อยคอนทราสต์ 4.5"
+   }
+  },
+  {
+   "def": "BrandKit",
+   "note": "Ficto Books",
+   "value": {
+    "name_th": "Ficto Books",
+    "colors": [
+     "#111827",
+     "#FFF7ED",
+     "#B45309"
+    ],
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "contrast": {
+     "fg": "#111827",
+     "bg": "#FFF7ED",
+     "kind": "large",
+     "ratio": 16.71,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "tip_th": "ใช้สีหลักกับสีพื้นสำหรับหัวข้อ ผ่าน AA"
+   }
+  },
+  {
+   "def": "PosterLayout",
+   "note": "Ficto Books",
+   "value": {
+    "template": "sale",
+    "size_id": "ig_portrait",
+    "w": 1080,
+    "h": 1350,
+    "title_th": "เปิดแล้ววันนี้",
+    "subtitle_th": "ลด 20%",
+    "details_th": "เปิด 10:00–20:00",
+    "date_th": "เปิดทุกวัน",
+    "place_th": "ซอยสมมติ 1",
+    "cta_th": "แวะมาได้เลย",
+    "title_px": 72,
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "colors": [
+     "#111827",
+     "#FFF7ED",
+     "#B45309"
+    ],
+    "zones": [
+     {
+      "id": "badge",
+      "y": 0.08,
+      "h": 0.1
+     },
+     {
+      "id": "title",
+      "y": 0.18,
+      "h": 0.18
+     },
+     {
+      "id": "offer",
+      "y": 0.36,
+      "h": 0.14
+     },
+     {
+      "id": "details",
+      "y": 0.5,
+      "h": 0.1
+     },
+     {
+      "id": "cta",
+      "y": 0.6,
+      "h": 0.1
+     },
+     {
+      "id": "qr",
+      "y": 0.7,
+      "h": 0.1
+     }
+    ],
+    "qr": {
+     "url": "https://example.com/books",
+     "position": "footer_right",
+     "size_px": 220,
+     "label_th": "สแกนเพื่อดูเพิ่ม",
+     "kind": "qr"
+    },
+    "title_contrast": {
+     "fg": "#111827",
+     "bg": "#FFF7ED",
+     "kind": "large",
+     "ratio": 16.71,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "body_contrast": {
+     "fg": "#111827",
+     "bg": "#FFF7ED",
+     "kind": "body",
+     "ratio": 16.71,
+     "need": 4.5,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "headline_th": "เปิดแล้ววันนี้",
+    "ok_contrast": true,
+    "disclaimer_th": "PosterPop ช่วยจัดเลย์เอาต์เท่านั้น ไม่ใช่โรงพิมพ์และไม่ใช่โลโก้แบรนด์สำเร็จ ผู้ใช้ต้องมีสิทธิ์ในข้อความ รูป และเครื่องหมายการค้าที่ใส่ และควรตรวจคำและราคาอีกครั้งก่อนโพสต์หรือพิมพ์"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "Ficto Books",
+   "value": {
+    "title_th": "PosterPop — Ficto Books",
+    "headline_th": "เปิดแล้ววันนี้",
+    "hook_th": "พิมพ์รายละเอียดงาน ได้โปสเตอร์สวยทันที",
+    "template": "sale",
+    "size_id": "ig_portrait",
+    "layout": "poster_preview",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with PosterPop · check rights to photos and text",
+    "cta_th": "คอมเมนต์ POSTER รับแพ็กฟรี · เปิดแล้ววันนี้"
+   }
+  },
+  {
+   "def": "QrBlock",
+   "note": "Ficto Books",
+   "value": {
+    "url": "https://example.com/books",
+    "position": "footer_right",
+    "size_px": 220,
+    "label_th": "สแกนเพื่อดูเพิ่ม",
+    "kind": "qr"
+   }
+  },
+  {
+   "def": "BrandKit",
+   "note": "Ficto Gym",
+   "value": {
+    "name_th": "Ficto Gym",
+    "colors": [
+     "#14532D",
+     "#ECFDF5",
+     "#F59E0B"
+    ],
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "contrast": {
+     "fg": "#14532D",
+     "bg": "#ECFDF5",
+     "kind": "large",
+     "ratio": 8.65,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "tip_th": "ใช้สีหลักกับสีพื้นสำหรับหัวข้อ ผ่าน AA"
+   }
+  },
+  {
+   "def": "PosterLayout",
+   "note": "Ficto Gym",
+   "value": {
+    "template": "sale",
+    "size_id": "ig_portrait",
+    "w": 1080,
+    "h": 1350,
+    "title_th": "เปิดแล้ววันนี้",
+    "subtitle_th": "ลด 20%",
+    "details_th": "เปิด 10:00–20:00",
+    "date_th": "เปิดทุกวัน",
+    "place_th": "ซอยสมมติ 1",
+    "cta_th": "แวะมาได้เลย",
+    "title_px": 72,
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "colors": [
+     "#14532D",
+     "#ECFDF5",
+     "#F59E0B"
+    ],
+    "zones": [
+     {
+      "id": "badge",
+      "y": 0.08,
+      "h": 0.1
+     },
+     {
+      "id": "title",
+      "y": 0.18,
+      "h": 0.18
+     },
+     {
+      "id": "offer",
+      "y": 0.36,
+      "h": 0.14
+     },
+     {
+      "id": "details",
+      "y": 0.5,
+      "h": 0.1
+     },
+     {
+      "id": "cta",
+      "y": 0.6,
+      "h": 0.1
+     },
+     {
+      "id": "qr",
+      "y": 0.7,
+      "h": 0.1
+     }
+    ],
+    "qr": {
+     "url": "https://example.com/gym",
+     "position": "footer_right",
+     "size_px": 220,
+     "label_th": "สแกนเพื่อดูเพิ่ม",
+     "kind": "qr"
+    },
+    "title_contrast": {
+     "fg": "#14532D",
+     "bg": "#ECFDF5",
+     "kind": "large",
+     "ratio": 8.65,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "body_contrast": {
+     "fg": "#14532D",
+     "bg": "#ECFDF5",
+     "kind": "body",
+     "ratio": 8.65,
+     "need": 4.5,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "headline_th": "เปิดแล้ววันนี้",
+    "ok_contrast": true,
+    "disclaimer_th": "PosterPop ช่วยจัดเลย์เอาต์เท่านั้น ไม่ใช่โรงพิมพ์และไม่ใช่โลโก้แบรนด์สำเร็จ ผู้ใช้ต้องมีสิทธิ์ในข้อความ รูป และเครื่องหมายการค้าที่ใส่ และควรตรวจคำและราคาอีกครั้งก่อนโพสต์หรือพิมพ์"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "Ficto Gym",
+   "value": {
+    "title_th": "PosterPop — Ficto Gym",
+    "headline_th": "เปิดแล้ววันนี้",
+    "hook_th": "พิมพ์รายละเอียดงาน ได้โปสเตอร์สวยทันที",
+    "template": "sale",
+    "size_id": "ig_portrait",
+    "layout": "poster_preview",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with PosterPop · check rights to photos and text",
+    "cta_th": "คอมเมนต์ POSTER รับแพ็กฟรี · เปิดแล้ววันนี้"
+   }
+  },
+  {
+   "def": "QrBlock",
+   "note": "Ficto Gym",
+   "value": {
+    "url": "https://example.com/gym",
+    "position": "footer_right",
+    "size_px": 220,
+    "label_th": "สแกนเพื่อดูเพิ่ม",
+    "kind": "qr"
+   }
+  },
+  {
+   "def": "BrandKit",
+   "note": "Ficto Salon",
+   "value": {
+    "name_th": "Ficto Salon",
+    "colors": [
+     "#4C0519",
+     "#FFF1F2",
+     "#E11D48"
+    ],
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "contrast": {
+     "fg": "#4C0519",
+     "bg": "#FFF1F2",
+     "kind": "large",
+     "ratio": 14.23,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "tip_th": "ใช้สีหลักกับสีพื้นสำหรับหัวข้อ ผ่าน AA"
+   }
+  },
+  {
+   "def": "PosterLayout",
+   "note": "Ficto Salon",
+   "value": {
+    "template": "sale",
+    "size_id": "ig_portrait",
+    "w": 1080,
+    "h": 1350,
+    "title_th": "เปิดแล้ววันนี้",
+    "subtitle_th": "ลด 20%",
+    "details_th": "เปิด 10:00–20:00",
+    "date_th": "เปิดทุกวัน",
+    "place_th": "ซอยสมมติ 1",
+    "cta_th": "แวะมาได้เลย",
+    "title_px": 72,
+    "heading_font": "Kanit",
+    "body_font": "Sarabun",
+    "colors": [
+     "#4C0519",
+     "#FFF1F2",
+     "#E11D48"
+    ],
+    "zones": [
+     {
+      "id": "badge",
+      "y": 0.08,
+      "h": 0.1
+     },
+     {
+      "id": "title",
+      "y": 0.18,
+      "h": 0.18
+     },
+     {
+      "id": "offer",
+      "y": 0.36,
+      "h": 0.14
+     },
+     {
+      "id": "details",
+      "y": 0.5,
+      "h": 0.1
+     },
+     {
+      "id": "cta",
+      "y": 0.6,
+      "h": 0.1
+     },
+     {
+      "id": "qr",
+      "y": 0.7,
+      "h": 0.1
+     }
+    ],
+    "qr": {
+     "url": "https://example.com/salon",
+     "position": "footer_right",
+     "size_px": 220,
+     "label_th": "สแกนเพื่อดูเพิ่ม",
+     "kind": "qr"
+    },
+    "title_contrast": {
+     "fg": "#4C0519",
+     "bg": "#FFF1F2",
+     "kind": "large",
+     "ratio": 14.23,
+     "need": 3.0,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "body_contrast": {
+     "fg": "#4C0519",
+     "bg": "#FFF1F2",
+     "kind": "body",
+     "ratio": 14.23,
+     "need": 4.5,
+     "ok": true,
+     "level_th": "ผ่าน AA",
+     "tip_th": "ตัวอักษรอ่านชัด"
+    },
+    "headline_th": "เปิดแล้ววันนี้",
+    "ok_contrast": true,
+    "disclaimer_th": "PosterPop ช่วยจัดเลย์เอาต์เท่านั้น ไม่ใช่โรงพิมพ์และไม่ใช่โลโก้แบรนด์สำเร็จ ผู้ใช้ต้องมีสิทธิ์ในข้อความ รูป และเครื่องหมายการค้าที่ใส่ และควรตรวจคำและราคาอีกครั้งก่อนโพสต์หรือพิมพ์"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "Ficto Salon",
+   "value": {
+    "title_th": "PosterPop — Ficto Salon",
+    "headline_th": "เปิดแล้ววันนี้",
+    "hook_th": "พิมพ์รายละเอียดงาน ได้โปสเตอร์สวยทันที",
+    "template": "sale",
+    "size_id": "ig_portrait",
+    "layout": "poster_preview",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with PosterPop · check rights to photos and text",
+    "cta_th": "คอมเมนต์ POSTER รับแพ็กฟรี · เปิดแล้ววันนี้"
+   }
+  },
+  {
+   "def": "QrBlock",
+   "note": "Ficto Salon",
+   "value": {
+    "url": "https://example.com/salon",
+    "position": "footer_right",
+    "size_px": 220,
+    "label_th": "สแกนเพื่อดูเพิ่ม",
+    "kind": "qr"
+   }
+  },
+  {
+   "def": "MenuGrid",
+   "note": "n3",
+   "value": {
+    "rows": [
+     {
+      "name_th": "ข้าวกะเพรา",
+      "price_thb": 60,
+      "price_label_th": "฿60"
+     },
+     {
+      "name_th": "ข้าวผัด",
+      "price_thb": 55,
+      "price_label_th": "฿55"
+     },
+     {
+      "name_th": "ชาเย็น",
+      "price_thb": 40,
+      "price_label_th": "฿40"
+     }
+    ],
+    "count": 3,
+    "cols": 1
+   }
+  },
+  {
+   "def": "MenuRow",
+   "note": "ข้าวกะเพรา",
+   "value": {
+    "name_th": "ข้าวกะเพรา",
+    "price_thb": 60,
+    "price_label_th": "฿60"
+   }
+  },
+  {
+   "def": "MenuRow",
+   "note": "ข้าวผัด",
+   "value": {
+    "name_th": "ข้าวผัด",
+    "price_thb": 55,
+    "price_label_th": "฿55"
+   }
+  },
+  {
+   "def": "MenuRow",
+   "note": "ชาเย็น",
+   "value": {
+    "name_th": "ชาเย็น",
+    "price_thb": 40,
+    "price_label_th": "฿40"
+   }
+  },
+  {
+   "def": "MenuGrid",
+   "note": "n7",
+   "value": {
+    "rows": [
+     {
+      "name_th": "รายการ 1",
+      "price_thb": 25,
+      "price_label_th": "฿25"
+     },
+     {
+      "name_th": "รายการ 2",
+      "price_thb": 30,
+      "price_label_th": "฿30"
+     },
+     {
+      "name_th": "รายการ 3",
+      "price_thb": 35,
+      "price_label_th": "฿35"
+     },
+     {
+      "name_th": "รายการ 4",
+      "price_thb": 40,
+      "price_label_th": "฿40"
+     },
+     {
+      "name_th": "รายการ 5",
+      "price_thb": 45,
+      "price_label_th": "฿45"
+     },
+     {
+      "name_th": "รายการ 6",
+      "price_thb": 50,
+      "price_label_th": "฿50"
+     },
+     {
+      "name_th": "รายการ 7",
+      "price_thb": 55,
+      "price_label_th": "฿55"
+     }
+    ],
+    "count": 7,
+    "cols": 2
+   }
+  },
+  {
+   "def": "MenuRow",
+   "note": "รายการ 1",
+   "value": {
+    "name_th": "รายการ 1",
+    "price_thb": 25,
+    "price_label_th": "฿25"
+   }
+  },
+  {
+   "def": "MenuRow",
+   "note": "รายการ 2",
+   "value": {
+    "name_th": "รายการ 2",
+    "price_thb": 30,
+    "price_label_th": "฿30"
+   }
+  },
+  {
+   "def": "MenuRow",
+   "note": "รายการ 3",
+   "value": {
+    "name_th": "รายการ 3",
+    "price_thb": 35,
+    "price_label_th": "฿35"
+   }
+  }
+ ]
+}

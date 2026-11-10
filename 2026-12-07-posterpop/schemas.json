@@ -1,0 +1,552 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/posterpop.schema.json",
+ "title": "PosterPop",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age",
+    "shop_th"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "shop_th": {
+     "type": "string"
+    },
+    "role_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "TemplateInfo": {
+   "type": "object",
+   "required": [
+    "id",
+    "template",
+    "name_th",
+    "name_en",
+    "mood_th",
+    "zones",
+    "default_palette"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^t[0-9]{2}$"
+    },
+    "template": {
+     "enum": [
+      "sale",
+      "event",
+      "menu"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "mood_th": {
+     "type": "string"
+    },
+    "zones": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "default_palette": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 2
+    }
+   },
+   "additionalProperties": false
+  },
+  "SizeInfo": {
+   "type": "object",
+   "required": [
+    "id",
+    "size_id",
+    "w",
+    "h",
+    "label_th",
+    "kind"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^s[0-9]{2}$"
+    },
+    "size_id": {
+     "enum": [
+      "ig_portrait",
+      "ig_square",
+      "ig_story",
+      "fb_post",
+      "a4",
+      "a3"
+     ]
+    },
+    "w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "kind": {
+     "enum": [
+      "social",
+      "print"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "ContrastCheck": {
+   "type": "object",
+   "required": [
+    "fg",
+    "bg",
+    "kind",
+    "ratio",
+    "need",
+    "ok",
+    "level_th",
+    "tip_th"
+   ],
+   "properties": {
+    "fg": {
+     "type": "string"
+    },
+    "bg": {
+     "type": "string"
+    },
+    "kind": {
+     "enum": [
+      "body",
+      "large"
+     ]
+    },
+    "ratio": {
+     "type": "number",
+     "minimum": 1
+    },
+    "need": {
+     "type": "number"
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "level_th": {
+     "type": "string"
+    },
+    "tip_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "BrandKit": {
+   "type": "object",
+   "required": [
+    "name_th",
+    "colors",
+    "heading_font",
+    "body_font",
+    "contrast",
+    "tip_th"
+   ],
+   "properties": {
+    "name_th": {
+     "type": "string"
+    },
+    "colors": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 2
+    },
+    "heading_font": {
+     "type": "string"
+    },
+    "body_font": {
+     "type": "string"
+    },
+    "contrast": {
+     "$ref": "#/$defs/ContrastCheck"
+    },
+    "tip_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "QrBlock": {
+   "type": "object",
+   "required": [
+    "url",
+    "position",
+    "size_px",
+    "label_th",
+    "kind"
+   ],
+   "properties": {
+    "url": {
+     "type": "string"
+    },
+    "position": {
+     "enum": [
+      "footer_right",
+      "footer_left",
+      "footer_center"
+     ]
+    },
+    "size_px": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "kind": {
+     "const": "qr"
+    }
+   },
+   "additionalProperties": false
+  },
+  "MenuRow": {
+   "type": "object",
+   "required": [
+    "name_th",
+    "price_thb",
+    "price_label_th"
+   ],
+   "properties": {
+    "name_th": {
+     "type": "string"
+    },
+    "price_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "price_label_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "MenuGrid": {
+   "type": "object",
+   "required": [
+    "rows",
+    "count",
+    "cols"
+   ],
+   "properties": {
+    "rows": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/MenuRow"
+     },
+     "minItems": 1
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "cols": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "Zone": {
+   "type": "object",
+   "required": [
+    "id",
+    "y",
+    "h"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "y": {
+     "type": "number"
+    },
+    "h": {
+     "type": "number"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PosterLayout": {
+   "type": "object",
+   "required": [
+    "template",
+    "size_id",
+    "w",
+    "h",
+    "title_th",
+    "title_px",
+    "colors",
+    "zones",
+    "ok_contrast",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "template": {
+     "enum": [
+      "sale",
+      "event",
+      "menu"
+     ]
+    },
+    "size_id": {
+     "enum": [
+      "ig_portrait",
+      "ig_square",
+      "ig_story",
+      "fb_post",
+      "a4",
+      "a3"
+     ]
+    },
+    "w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "title_th": {
+     "type": "string"
+    },
+    "subtitle_th": {
+     "type": "string"
+    },
+    "details_th": {
+     "type": "string"
+    },
+    "date_th": {
+     "type": "string"
+    },
+    "place_th": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    },
+    "title_px": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "heading_font": {
+     "type": "string"
+    },
+    "body_font": {
+     "type": "string"
+    },
+    "colors": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "zones": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Zone"
+     }
+    },
+    "qr": {
+     "type": [
+      "object",
+      "null"
+     ]
+    },
+    "title_contrast": {
+     "$ref": "#/$defs/ContrastCheck"
+    },
+    "body_contrast": {
+     "$ref": "#/$defs/ContrastCheck"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "ok_contrast": {
+     "type": "boolean"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Pipeline": {
+   "type": "object",
+   "required": [
+    "steps"
+   ],
+   "properties": {
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "template": {
+     "enum": [
+      "sale",
+      "event",
+      "menu"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "template",
+    "size_id",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "template": {
+     "enum": [
+      "sale",
+      "event",
+      "menu"
+     ]
+    },
+    "size_id": {
+     "enum": [
+      "ig_portrait",
+      "ig_square",
+      "ig_story",
+      "fb_post",
+      "a4",
+      "a3"
+     ]
+    },
+    "layout": {
+     "enum": [
+      "poster_preview"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
