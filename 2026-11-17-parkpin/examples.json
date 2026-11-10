@@ -1,0 +1,1054 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "พี่เจ",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่เจ",
+    "name_en": "Jay",
+    "age": 41,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "จำที่จอด FictoMall บางนา แล้วส่งให้ภรรยา"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่ฟ้า",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่ฟ้า",
+    "name_en": "Fah",
+    "age": 33,
+    "city_th": "เชียงใหม่",
+    "goal_th": "จอด FictoWorld แล้วลืมชั้น"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องกิ๊ฟ",
+   "value": {
+    "id": "u03",
+    "name_th": "น้องกิ๊ฟ",
+    "name_en": "Gift",
+    "age": 27,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "จอด FictoPlex สิริ ไปดูหนัง"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "ลุงสม",
+   "value": {
+    "id": "u04",
+    "name_th": "ลุงสม",
+    "name_en": "Som",
+    "age": 60,
+    "city_th": "สมุทรปราการ",
+    "goal_th": "จอด FictoPark สนามบิน รับลูก"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่นุช",
+   "value": {
+    "id": "u05",
+    "name_th": "พี่นุช",
+    "name_en": "Nuch",
+    "age": 45,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "แชร์ที่จอดให้ลูกไปเอารถ"
+   }
+  },
+  {
+   "def": "PinPhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "px_w": 3024,
+    "px_h": 4032,
+    "mall_id": "fictomall_bangna",
+    "floor": "B2",
+    "zone": "C",
+    "color": "green",
+    "pillar": "C-14",
+    "glare": 0.18,
+    "blur": 0.1,
+    "tilt": 0.08,
+    "sign_fill": 0.88,
+    "confidence": 0.94,
+    "has_plate": false
+   }
+  },
+  {
+   "def": "PinScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "mall_id": "fictomall_bangna",
+    "mall_th": "FictoMall บางนา",
+    "floor": "B2",
+    "zone": "C",
+    "color": "green",
+    "color_th": "เขียว",
+    "pillar": "C-14",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "uncertain": false,
+    "message_th": "",
+    "has_plate": false,
+    "disclaimer_th": "ParkPin ช่วยจำที่จอดและประมาณค่าจอดจากตารางตัวอย่าง ไม่ใช่อัตราทางการของห้าง และไม่ใช่ระบบนำทางสด ห้ามถ่ายหรือเก็บแผ่นป้ายทะเบียน"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "steps": [
+     "sign_detect",
+     "floor_read",
+     "zone_color",
+     "pin_save",
+     "fee_timer",
+     "walkback"
+    ]
+   }
+  },
+  {
+   "def": "PinPhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "px_w": 3024,
+    "px_h": 4032,
+    "mall_id": "fictoworld_chiangmai",
+    "floor": "3F",
+    "zone": "A",
+    "color": "blue",
+    "pillar": "A-02",
+    "glare": 0.16,
+    "blur": 0.12,
+    "tilt": 0.1,
+    "sign_fill": 0.86,
+    "confidence": 0.91,
+    "has_plate": false
+   }
+  },
+  {
+   "def": "PinScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "mall_id": "fictoworld_chiangmai",
+    "mall_th": "FictoWorld เชียงใหม่",
+    "floor": "3F",
+    "zone": "A",
+    "color": "blue",
+    "color_th": "ฟ้า",
+    "pillar": "A-02",
+    "quality": {
+     "score": 87,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "uncertain": false,
+    "message_th": "",
+    "has_plate": false,
+    "disclaimer_th": "ParkPin ช่วยจำที่จอดและประมาณค่าจอดจากตารางตัวอย่าง ไม่ใช่อัตราทางการของห้าง และไม่ใช่ระบบนำทางสด ห้ามถ่ายหรือเก็บแผ่นป้ายทะเบียน"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "steps": [
+     "sign_detect",
+     "floor_read",
+     "zone_color",
+     "pin_save",
+     "fee_timer",
+     "walkback"
+    ]
+   }
+  },
+  {
+   "def": "PinPhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "px_w": 3024,
+    "px_h": 4032,
+    "mall_id": "fictoplex_siri",
+    "floor": "B1",
+    "zone": "D",
+    "color": "yellow",
+    "pillar": "D-09",
+    "glare": 0.2,
+    "blur": 0.1,
+    "tilt": 0.12,
+    "sign_fill": 0.84,
+    "confidence": 0.9,
+    "has_plate": false
+   }
+  },
+  {
+   "def": "PinScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "mall_id": "fictoplex_siri",
+    "mall_th": "FictoPlex สิริ",
+    "floor": "B1",
+    "zone": "D",
+    "color": "yellow",
+    "color_th": "เหลือง",
+    "pillar": "D-09",
+    "quality": {
+     "score": 86,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "uncertain": false,
+    "message_th": "",
+    "has_plate": false,
+    "disclaimer_th": "ParkPin ช่วยจำที่จอดและประมาณค่าจอดจากตารางตัวอย่าง ไม่ใช่อัตราทางการของห้าง และไม่ใช่ระบบนำทางสด ห้ามถ่ายหรือเก็บแผ่นป้ายทะเบียน"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "steps": [
+     "sign_detect",
+     "floor_read",
+     "zone_color",
+     "pin_save",
+     "fee_timer",
+     "walkback"
+    ]
+   }
+  },
+  {
+   "def": "PinPhoto",
+   "note": "p04",
+   "value": {
+    "id": "p04",
+    "px_w": 3024,
+    "px_h": 4032,
+    "mall_id": "fictopark_airport",
+    "floor": "rooftop",
+    "zone": "E",
+    "color": "orange",
+    "pillar": "E-21",
+    "glare": 0.25,
+    "blur": 0.15,
+    "tilt": 0.1,
+    "sign_fill": 0.8,
+    "confidence": 0.88,
+    "has_plate": false
+   }
+  },
+  {
+   "def": "PinScan",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "mall_id": "fictopark_airport",
+    "mall_th": "FictoPark สนามบิน",
+    "floor": "rooftop",
+    "zone": "E",
+    "color": "orange",
+    "color_th": "ส้ม",
+    "pillar": "E-21",
+    "quality": {
+     "score": 82,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "uncertain": false,
+    "message_th": "",
+    "has_plate": false,
+    "disclaimer_th": "ParkPin ช่วยจำที่จอดและประมาณค่าจอดจากตารางตัวอย่าง ไม่ใช่อัตราทางการของห้าง และไม่ใช่ระบบนำทางสด ห้ามถ่ายหรือเก็บแผ่นป้ายทะเบียน"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "steps": [
+     "sign_detect",
+     "floor_read",
+     "zone_color",
+     "pin_save",
+     "fee_timer",
+     "walkback"
+    ]
+   }
+  },
+  {
+   "def": "PinPhoto",
+   "note": "p05",
+   "value": {
+    "id": "p05",
+    "px_w": 3024,
+    "px_h": 4032,
+    "mall_id": "fictomall_bangna",
+    "floor": "B1",
+    "zone": "B",
+    "color": "red",
+    "pillar": "B-03",
+    "glare": 0.15,
+    "blur": 0.1,
+    "tilt": 0.08,
+    "sign_fill": 0.9,
+    "confidence": 0.93,
+    "has_plate": false
+   }
+  },
+  {
+   "def": "PinScan",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "mall_id": "fictomall_bangna",
+    "mall_th": "FictoMall บางนา",
+    "floor": "B1",
+    "zone": "B",
+    "color": "red",
+    "color_th": "แดง",
+    "pillar": "B-03",
+    "quality": {
+     "score": 89,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "uncertain": false,
+    "message_th": "",
+    "has_plate": false,
+    "disclaimer_th": "ParkPin ช่วยจำที่จอดและประมาณค่าจอดจากตารางตัวอย่าง ไม่ใช่อัตราทางการของห้าง และไม่ใช่ระบบนำทางสด ห้ามถ่ายหรือเก็บแผ่นป้ายทะเบียน"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "steps": [
+     "sign_detect",
+     "floor_read",
+     "zone_color",
+     "pin_save",
+     "fee_timer",
+     "walkback"
+    ]
+   }
+  },
+  {
+   "def": "PinPhoto",
+   "note": "p06",
+   "value": {
+    "id": "p06",
+    "px_w": 3024,
+    "px_h": 4032,
+    "mall_id": "fictoplex_siri",
+    "floor": "G",
+    "zone": "A",
+    "color": "white",
+    "pillar": "A-01",
+    "glare": 0.14,
+    "blur": 0.08,
+    "tilt": 0.06,
+    "sign_fill": 0.92,
+    "confidence": 0.95,
+    "has_plate": false
+   }
+  },
+  {
+   "def": "PinScan",
+   "note": "p06",
+   "value": {
+    "photo_id": "p06",
+    "mall_id": "fictoplex_siri",
+    "mall_th": "FictoPlex สิริ",
+    "floor": "G",
+    "zone": "A",
+    "color": "white",
+    "color_th": "ขาว",
+    "pillar": "A-01",
+    "quality": {
+     "score": 91,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "uncertain": false,
+    "message_th": "",
+    "has_plate": false,
+    "disclaimer_th": "ParkPin ช่วยจำที่จอดและประมาณค่าจอดจากตารางตัวอย่าง ไม่ใช่อัตราทางการของห้าง และไม่ใช่ระบบนำทางสด ห้ามถ่ายหรือเก็บแผ่นป้ายทะเบียน"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p06",
+   "value": {
+    "photo_id": "p06",
+    "steps": [
+     "sign_detect",
+     "floor_read",
+     "zone_color",
+     "pin_save",
+     "fee_timer",
+     "walkback"
+    ]
+   }
+  },
+  {
+   "def": "PinPhoto",
+   "note": "p07",
+   "value": {
+    "id": "p07",
+    "px_w": 3024,
+    "px_h": 4032,
+    "mall_id": "fictomall_bangna",
+    "floor": "B2",
+    "zone": "C",
+    "color": "green",
+    "pillar": "C-14",
+    "glare": 0.62,
+    "blur": 0.5,
+    "tilt": 0.45,
+    "sign_fill": 0.3,
+    "confidence": 0.4,
+    "has_plate": false
+   }
+  },
+  {
+   "def": "PinScan",
+   "note": "p07",
+   "value": {
+    "photo_id": "p07",
+    "mall_id": "fictomall_bangna",
+    "mall_th": "FictoMall บางนา",
+    "floor": "B2",
+    "zone": "C",
+    "color": "green",
+    "color_th": "เขียว",
+    "pillar": "C-14",
+    "quality": {
+     "score": 44,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนบนป้าย/เสา ขยับมุมหรือปิดแฟลช",
+      "ภาพเบลอ ถ่ายเสาหรือป้ายชั้นให้นิ่ง",
+      "ถ่ายเอียงเกินไป ถ่ายป้ายชั้นและเสาให้ตั้งตรง",
+      "ป้ายชั้นหรือเสาไม่เต็มกรอบ ถ่ายให้เห็นตัวอักษรและสีโซน"
+     ]
+    },
+    "ok": false,
+    "uncertain": true,
+    "message_th": "ยังอ่านป้ายชั้น/เสาไม่ชัด เลือกเองหรือถ่ายใหม่",
+    "has_plate": false,
+    "disclaimer_th": "ParkPin ช่วยจำที่จอดและประมาณค่าจอดจากตารางตัวอย่าง ไม่ใช่อัตราทางการของห้าง และไม่ใช่ระบบนำทางสด ห้ามถ่ายหรือเก็บแผ่นป้ายทะเบียน"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p07",
+   "value": {
+    "photo_id": "p07",
+    "steps": [
+     "sign_detect",
+     "deglare",
+     "deskew",
+     "floor_read",
+     "zone_color",
+     "pin_save",
+     "fee_timer",
+     "walkback"
+    ]
+   }
+  },
+  {
+   "def": "PinPhoto",
+   "note": "p08",
+   "value": {
+    "id": "p08",
+    "px_w": 3024,
+    "px_h": 4032,
+    "mall_id": "fictomall_bangna",
+    "floor": "B2",
+    "zone": "C",
+    "color": "green",
+    "pillar": "C-14",
+    "glare": 0.18,
+    "blur": 0.1,
+    "tilt": 0.08,
+    "sign_fill": 0.88,
+    "confidence": 0.94,
+    "has_plate": true
+   }
+  },
+  {
+   "def": "PinScan",
+   "note": "p08",
+   "value": {
+    "photo_id": "p08",
+    "mall_id": "fictomall_bangna",
+    "mall_th": "FictoMall บางนา",
+    "floor": "B2",
+    "zone": "C",
+    "color": "green",
+    "color_th": "เขียว",
+    "pillar": "C-14",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "uncertain": false,
+    "message_th": "",
+    "has_plate": true,
+    "disclaimer_th": "ParkPin ช่วยจำที่จอดและประมาณค่าจอดจากตารางตัวอย่าง ไม่ใช่อัตราทางการของห้าง และไม่ใช่ระบบนำทางสด ห้ามถ่ายหรือเก็บแผ่นป้ายทะเบียน"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p08",
+   "value": {
+    "photo_id": "p08",
+    "steps": [
+     "sign_detect",
+     "plate_blur",
+     "floor_read",
+     "zone_color",
+     "pin_save",
+     "fee_timer",
+     "walkback"
+    ]
+   }
+  },
+  {
+   "def": "MallInfo",
+   "note": "fictomall_bangna",
+   "value": {
+    "id": "m01",
+    "name_th": "FictoMall บางนา",
+    "close_hhmm": "22:00",
+    "grace_min": 15,
+    "per_hour_thb": 20,
+    "cap_thb": 200,
+    "lost_ticket_thb": 300,
+    "landmarks_th": [
+     "ลิฟต์ฝั่งศูนย์อาหาร",
+     "ประตู 3",
+     "ทางเชื่อม BTS จำลอง"
+    ]
+   }
+  },
+  {
+   "def": "MallInfo",
+   "note": "fictoplex_siri",
+   "value": {
+    "id": "m02",
+    "name_th": "FictoPlex สิริ",
+    "close_hhmm": "21:30",
+    "grace_min": 10,
+    "per_hour_thb": 25,
+    "cap_thb": 250,
+    "lost_ticket_thb": 400,
+    "landmarks_th": [
+     "ลิฟต์ฝั่งโรงหนัง",
+     "เสาธงลานหน้า"
+    ]
+   }
+  },
+  {
+   "def": "MallInfo",
+   "note": "fictoworld_chiangmai",
+   "value": {
+    "id": "m03",
+    "name_th": "FictoWorld เชียงใหม่",
+    "close_hhmm": "21:00",
+    "grace_min": 30,
+    "per_hour_thb": 15,
+    "cap_thb": 120,
+    "lost_ticket_thb": 200,
+    "landmarks_th": [
+     "ทางเข้าตลาดจำลอง",
+     "ลิฟต์แก้ว"
+    ]
+   }
+  },
+  {
+   "def": "MallInfo",
+   "note": "fictopark_airport",
+   "value": {
+    "id": "m04",
+    "name_th": "FictoPark สนามบิน",
+    "close_hhmm": "23:59",
+    "grace_min": 0,
+    "per_hour_thb": 40,
+    "cap_thb": 400,
+    "lost_ticket_thb": 500,
+    "landmarks_th": [
+     "สะพานลอยทางเดิน",
+     "ประตู 4"
+    ]
+   }
+  },
+  {
+   "def": "FeeEstimate",
+   "note": "jay 2h30",
+   "value": {
+    "mall_id": "fictomall_bangna",
+    "mall_th": "FictoMall บางนา",
+    "minutes": 150,
+    "hours_billed": 3,
+    "fee_thb": 60,
+    "cap_thb": 200,
+    "per_hour_thb": 20,
+    "grace_min": 15,
+    "next_jump_min": 45,
+    "next_fee_thb": 80,
+    "lost_ticket_thb": 300,
+    "disclaimer_th": "ค่าจอดเป็นตารางตัวอย่างที่ตั้งเอง ไม่ใช่ราคาห้างจริง ตรวจป้ายอัตราที่ลานก่อนออก"
+   }
+  },
+  {
+   "def": "FeeEstimate",
+   "note": "grace",
+   "value": {
+    "mall_id": "fictomall_bangna",
+    "mall_th": "FictoMall บางนา",
+    "minutes": 10,
+    "hours_billed": 0,
+    "fee_thb": 0,
+    "cap_thb": 200,
+    "per_hour_thb": 20,
+    "grace_min": 15,
+    "next_jump_min": 5,
+    "next_fee_thb": 20,
+    "lost_ticket_thb": 300,
+    "disclaimer_th": "ค่าจอดเป็นตารางตัวอย่างที่ตั้งเอง ไม่ใช่ราคาห้างจริง ตรวจป้ายอัตราที่ลานก่อนออก"
+   }
+  },
+  {
+   "def": "FeeEstimate",
+   "note": "cap",
+   "value": {
+    "mall_id": "fictomall_bangna",
+    "mall_th": "FictoMall บางนา",
+    "minutes": 1200,
+    "hours_billed": 20,
+    "fee_thb": 200,
+    "cap_thb": 200,
+    "per_hour_thb": 20,
+    "grace_min": 15,
+    "next_jump_min": null,
+    "next_fee_thb": 200,
+    "lost_ticket_thb": 300,
+    "disclaimer_th": "ค่าจอดเป็นตารางตัวอย่างที่ตั้งเอง ไม่ใช่ราคาห้างจริง ตรวจป้ายอัตราที่ลานก่อนออก"
+   }
+  },
+  {
+   "def": "FeeEstimate",
+   "note": "airport",
+   "value": {
+    "mall_id": "fictopark_airport",
+    "mall_th": "FictoPark สนามบิน",
+    "minutes": 120,
+    "hours_billed": 2,
+    "fee_thb": 80,
+    "cap_thb": 400,
+    "per_hour_thb": 40,
+    "grace_min": 0,
+    "next_jump_min": 60,
+    "next_fee_thb": 120,
+    "lost_ticket_thb": 500,
+    "disclaimer_th": "ค่าจอดเป็นตารางตัวอย่างที่ตั้งเอง ไม่ใช่ราคาห้างจริง ตรวจป้ายอัตราที่ลานก่อนออก"
+   }
+  },
+  {
+   "def": "FeeEstimate",
+   "note": "cnx grace",
+   "value": {
+    "mall_id": "fictoworld_chiangmai",
+    "mall_th": "FictoWorld เชียงใหม่",
+    "minutes": 20,
+    "hours_billed": 0,
+    "fee_thb": 0,
+    "cap_thb": 120,
+    "per_hour_thb": 15,
+    "grace_min": 30,
+    "next_jump_min": 10,
+    "next_fee_thb": 15,
+    "lost_ticket_thb": 200,
+    "disclaimer_th": "ค่าจอดเป็นตารางตัวอย่างที่ตั้งเอง ไม่ใช่ราคาห้างจริง ตรวจป้ายอัตราที่ลานก่อนออก"
+   }
+  },
+  {
+   "def": "CloseReminder",
+   "note": "ok",
+   "value": {
+    "mall_id": "fictomall_bangna",
+    "close_hhmm": "22:00",
+    "minutes_left": 310,
+    "status": "ok",
+    "message_th": "ลานตามตารางตัวอย่างปิด 22:00 เหลืออีก 310 นาที",
+    "disclaimer_th": "เวลาปิดเป็นค่าตัวอย่าง ไม่ใช่เวลาห้างจริง"
+   }
+  },
+  {
+   "def": "CloseReminder",
+   "note": "soon",
+   "value": {
+    "mall_id": "fictomall_bangna",
+    "close_hhmm": "22:00",
+    "minutes_left": 20,
+    "status": "soon",
+    "message_th": "อีก 20 นาทีจะถึงเวลาปิดลานตามตารางตัวอย่าง (22:00)",
+    "disclaimer_th": "เวลาปิดเป็นค่าตัวอย่าง ไม่ใช่เวลาห้างจริง"
+   }
+  },
+  {
+   "def": "CloseReminder",
+   "note": "after",
+   "value": {
+    "mall_id": "fictomall_bangna",
+    "close_hhmm": "22:00",
+    "minutes_left": -10,
+    "status": "after_close",
+    "message_th": "เลยเวลาปิดลานตามตารางตัวอย่างแล้ว ตรวจป้ายจริงก่อนออก",
+    "disclaimer_th": "เวลาปิดเป็นค่าตัวอย่าง ไม่ใช่เวลาห้างจริง"
+   }
+  },
+  {
+   "def": "CloseReminder",
+   "note": "siri soon",
+   "value": {
+    "mall_id": "fictoplex_siri",
+    "close_hhmm": "21:30",
+    "minutes_left": 30,
+    "status": "soon",
+    "message_th": "อีก 30 นาทีจะถึงเวลาปิดลานตามตารางตัวอย่าง (21:30)",
+    "disclaimer_th": "เวลาปิดเป็นค่าตัวอย่าง ไม่ใช่เวลาห้างจริง"
+   }
+  },
+  {
+   "def": "WalkbackGuide",
+   "note": "jay",
+   "value": {
+    "mall_th": "FictoMall บางนา",
+    "floor": "B2",
+    "zone": "C",
+    "color": "green",
+    "color_th": "เขียว",
+    "pillar": "C-14",
+    "steps": [
+     {
+      "n": 1,
+      "text_th": "กลับเข้าFictoMall บางนา จากจุดที่จำได้ เช่น ลิฟต์ฝั่งศูนย์อาหาร"
+     },
+     {
+      "n": 2,
+      "text_th": "ขึ้น/ลงไปชั้น B2"
+     },
+     {
+      "n": 3,
+      "text_th": "ตามโซนสีเขียว โซน C"
+     },
+     {
+      "n": 4,
+      "text_th": "หาเสา C-14"
+     },
+     {
+      "n": 5,
+      "text_th": "ใกล้ประตู 3 รถสีเทาจอดหัวออก"
+     },
+     {
+      "n": 6,
+      "text_th": "ถ้าหาไม่เจอ เปิดโหมดรถหายในแอปแล้วย้อนรูปป้ายที่ปักไว้ อย่าเดินในเลนรถ"
+     }
+    ],
+    "disclaimer_th": "เป็นคำใบ้จากป้ายที่คุณปักไว้ ไม่ใช่ระบบนำทางสด"
+   }
+  },
+  {
+   "def": "WalkbackGuide",
+   "note": "cnx",
+   "value": {
+    "mall_th": "FictoWorld เชียงใหม่",
+    "floor": "3F",
+    "zone": "A",
+    "color": "blue",
+    "color_th": "ฟ้า",
+    "pillar": "A-02",
+    "steps": [
+     {
+      "n": 1,
+      "text_th": "กลับเข้าFictoWorld เชียงใหม่ จากจุดที่จำได้ เช่น ทางเข้าตลาดจำลอง"
+     },
+     {
+      "n": 2,
+      "text_th": "ขึ้น/ลงไปชั้น 3F"
+     },
+     {
+      "n": 3,
+      "text_th": "ตามโซนสีฟ้า โซน A"
+     },
+     {
+      "n": 4,
+      "text_th": "หาเสา A-02"
+     },
+     {
+      "n": 5,
+      "text_th": "ใกล้ลิฟต์แก้ว"
+     },
+     {
+      "n": 6,
+      "text_th": "ถ้าหาไม่เจอ เปิดโหมดรถหายในแอปแล้วย้อนรูปป้ายที่ปักไว้ อย่าเดินในเลนรถ"
+     }
+    ],
+    "disclaimer_th": "เป็นคำใบ้จากป้ายที่คุณปักไว้ ไม่ใช่ระบบนำทางสด"
+   }
+  },
+  {
+   "def": "SavedPin",
+   "note": "jay",
+   "value": {
+    "id": "pin01",
+    "person_id": "u01",
+    "photo_id": "p01",
+    "mall_id": "fictomall_bangna",
+    "mall_th": "FictoMall บางนา",
+    "floor": "B2",
+    "zone": "C",
+    "color": "green",
+    "pillar": "C-14",
+    "parked_at": "2026-11-17T14:20:00",
+    "hint_th": "ใกล้ประตู 3 รถสีเทาจอดหัวออก",
+    "needs_plate_blur": false,
+    "on_device": true
+   }
+  },
+  {
+   "def": "SavedPin",
+   "note": "plate flag",
+   "value": {
+    "id": "pin08",
+    "person_id": "u01",
+    "photo_id": "p08",
+    "mall_id": "fictomall_bangna",
+    "mall_th": "FictoMall บางนา",
+    "floor": "B2",
+    "zone": "C",
+    "color": "green",
+    "pillar": "C-14",
+    "parked_at": "2026-11-17T14:20:00",
+    "hint_th": "ใกล้ประตู 3 รถสีเทาจอดหัวออก",
+    "needs_plate_blur": true,
+    "on_device": true
+   }
+  },
+  {
+   "def": "LostCar",
+   "note": "jay",
+   "value": {
+    "pin_id": "pin01",
+    "mall_th": "FictoMall บางนา",
+    "floor": "B2",
+    "zone": "C",
+    "pillar": "C-14",
+    "minutes": 150,
+    "fee_thb": 60,
+    "walkback": {
+     "mall_th": "FictoMall บางนา",
+     "floor": "B2",
+     "zone": "C",
+     "color": "green",
+     "color_th": "เขียว",
+     "pillar": "C-14",
+     "steps": [
+      {
+       "n": 1,
+       "text_th": "กลับเข้าFictoMall บางนา จากจุดที่จำได้ เช่น ลิฟต์ฝั่งศูนย์อาหาร"
+      },
+      {
+       "n": 2,
+       "text_th": "ขึ้น/ลงไปชั้น B2"
+      },
+      {
+       "n": 3,
+       "text_th": "ตามโซนสีเขียว โซน C"
+      },
+      {
+       "n": 4,
+       "text_th": "หาเสา C-14"
+      },
+      {
+       "n": 5,
+       "text_th": "ใกล้ประตู 3 รถสีเทาจอดหัวออก"
+      },
+      {
+       "n": 6,
+       "text_th": "ถ้าหาไม่เจอ เปิดโหมดรถหายในแอปแล้วย้อนรูปป้ายที่ปักไว้ อย่าเดินในเลนรถ"
+      }
+     ],
+     "disclaimer_th": "เป็นคำใบ้จากป้ายที่คุณปักไว้ ไม่ใช่ระบบนำทางสด"
+    },
+    "message_th": "ปักไว้ชั้น B2 โซน C เสา C-14 เมื่อ 150 นาทีที่แล้ว",
+    "disclaimer_th": "ParkPin ช่วยจำที่จอดและประมาณค่าจอดจากตารางตัวอย่าง ไม่ใช่อัตราทางการของห้าง และไม่ใช่ระบบนำทางสด ห้ามถ่ายหรือเก็บแผ่นป้ายทะเบียน"
+   }
+  },
+  {
+   "def": "FamilyShare",
+   "note": "jay",
+   "value": {
+    "title_th": "แชร์ที่จอดกับครอบครัว",
+    "name_th": "พี่เจ",
+    "mall_th": "FictoMall บางนา",
+    "floor": "B2",
+    "zone": "C",
+    "pillar": "C-14",
+    "minutes": 150,
+    "fee_thb": 60,
+    "steps_count": 6,
+    "note_th": "ชั้น B2 เสา C-14 นะ เดี๋ยวไปหานะ",
+    "line_share_url": "https://line.me/R/share?text=ParkPin%20%E2%80%94%20%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%88%E0%B8%AD%E0%B8%94%E0%B8%A3%E0%B8%96%0AFictoMall%20%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%99%E0%B8%B2%20%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%20B2%20%E0%B9%82%E0%B8%8B%E0%B8%99%20C%20%E0%B9%80%E0%B8%AA%E0%B8%B2%20C-14%0A%E0%B8%88%E0%B8%AD%E0%B8%94%E0%B8%A1%E0%B8%B2%20150%20%E0%B8%99%E0%B8%B2%E0%B8%97%E0%B8%B5%20%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%88%E0%B8%AD%E0%B8%94%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B8%A3%E0%B9%88%E0%B8%B2%E0%B8%A7%20%E0%B8%BF60%20%28%E0%B8%95%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%29%0A%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%20B2%20%E0%B9%80%E0%B8%AA%E0%B8%B2%20C-14%20%E0%B8%99%E0%B8%B0%20%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B9%8B%E0%B8%A2%E0%B8%A7%E0%B9%84%E0%B8%9B%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%B0",
+    "disclaimer_th": "ParkPin ช่วยจำที่จอดและประมาณค่าจอดจากตารางตัวอย่าง ไม่ใช่อัตราทางการของห้าง และไม่ใช่ระบบนำทางสด ห้ามถ่ายหรือเก็บแผ่นป้ายทะเบียน ค่าจอดเป็นตารางตัวอย่างที่ตั้งเอง ไม่ใช่ราคาห้างจริง ตรวจป้ายอัตราที่ลานก่อนออก"
+   }
+  },
+  {
+   "def": "SavedPin",
+   "note": "pin02 hist",
+   "value": {
+    "id": "pin02",
+    "person_id": "u01",
+    "photo_id": "p09",
+    "mall_id": "fictoplex_siri",
+    "mall_th": "FictoPlex สิริ",
+    "floor": "B1",
+    "zone": "D",
+    "color": "yellow",
+    "pillar": "D-02",
+    "parked_at": "2026-11-01T13:00:00",
+    "hint_th": "ใกล้ลิฟต์โรงหนัง",
+    "needs_plate_blur": false,
+    "on_device": true
+   }
+  },
+  {
+   "def": "SavedPin",
+   "note": "pin01 hist",
+   "value": {
+    "id": "pin01",
+    "person_id": "u01",
+    "photo_id": "p01",
+    "mall_id": "fictomall_bangna",
+    "mall_th": "FictoMall บางนา",
+    "floor": "B2",
+    "zone": "C",
+    "color": "green",
+    "pillar": "C-14",
+    "parked_at": "2026-11-17T14:20:00",
+    "hint_th": "ใกล้ประตู 3 รถสีเทาจอดหัวออก",
+    "needs_plate_blur": false,
+    "on_device": true
+   }
+  },
+  {
+   "def": "HistoryStats",
+   "note": "jay hist",
+   "value": {
+    "count": 2,
+    "malls": 2,
+    "last_parked_at": "2026-11-17T14:20:00",
+    "top_mall": "fictoplex_siri"
+   }
+  },
+  {
+   "def": "HistoryStats",
+   "note": "empty",
+   "value": {
+    "count": 0,
+    "malls": 0,
+    "last_parked_at": null,
+    "top_mall": null
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "jay",
+   "value": {
+    "title_th": "ParkPin — พี่เจ",
+    "headline_th": "FictoMall บางนา · B2 โซน C เสา C-14",
+    "hook_th": "จอดมา 150 นาที · ประมาณ ฿60",
+    "floor": "B2",
+    "layout": "pin_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with ParkPin · example rates only, no plate",
+    "cta_th": "คอมเมนต์ PARK รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "ParkPin ช่วยจำที่จอดและประมาณค่าจอดจากตารางตัวอย่าง ไม่ใช่อัตราทางการของห้าง และไม่ใช่ระบบนำทางสด ห้ามถ่ายหรือเก็บแผ่นป้ายทะเบียน"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "plate",
+   "value": {
+    "level": "warn",
+    "message_th": "ตรวจพบว่าในรูปอาจมีป้ายทะเบียน ให้เบลอก่อนบันทึก ParkPin ช่วยจำที่จอดและประมาณค่าจอดจากตารางตัวอย่าง ไม่ใช่อัตราทางการของห้าง และไม่ใช่ระบบนำทางสด ห้ามถ่ายหรือเก็บแผ่นป้ายทะเบียน"
+   }
+  }
+ ]
+}

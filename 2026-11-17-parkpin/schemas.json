@@ -1,0 +1,873 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/parkpin.schema.json",
+ "title": "ParkPin",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "goal_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PinPhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "mall_id",
+    "floor",
+    "zone",
+    "color",
+    "pillar",
+    "glare",
+    "blur",
+    "tilt",
+    "sign_fill",
+    "confidence",
+    "has_plate"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^p[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "mall_id": {
+     "enum": [
+      "fictomall_bangna",
+      "fictoplex_siri",
+      "fictoworld_chiangmai",
+      "fictopark_airport"
+     ]
+    },
+    "floor": {
+     "enum": [
+      "B3",
+      "B2",
+      "B1",
+      "G",
+      "1F",
+      "2F",
+      "3F",
+      "4F",
+      "5F",
+      "6F",
+      "rooftop"
+     ]
+    },
+    "zone": {
+     "type": "string"
+    },
+    "color": {
+     "enum": [
+      "green",
+      "yellow",
+      "red",
+      "blue",
+      "orange",
+      "purple",
+      "white"
+     ]
+    },
+    "pillar": {
+     "type": "string"
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "tilt": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "sign_fill": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "has_plate": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "PinScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "mall_id",
+    "mall_th",
+    "floor",
+    "zone",
+    "color",
+    "color_th",
+    "pillar",
+    "quality",
+    "ok",
+    "uncertain",
+    "message_th",
+    "has_plate",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "mall_id": {
+     "enum": [
+      "fictomall_bangna",
+      "fictoplex_siri",
+      "fictoworld_chiangmai",
+      "fictopark_airport"
+     ]
+    },
+    "mall_th": {
+     "type": "string"
+    },
+    "floor": {
+     "enum": [
+      "B3",
+      "B2",
+      "B1",
+      "G",
+      "1F",
+      "2F",
+      "3F",
+      "4F",
+      "5F",
+      "6F",
+      "rooftop"
+     ]
+    },
+    "zone": {
+     "type": "string"
+    },
+    "color": {
+     "enum": [
+      "green",
+      "yellow",
+      "red",
+      "blue",
+      "orange",
+      "purple",
+      "white"
+     ]
+    },
+    "color_th": {
+     "type": "string"
+    },
+    "pillar": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "uncertain": {
+     "type": "boolean"
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "has_plate": {
+     "type": "boolean"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Pipeline": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "steps"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "MallInfo": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "close_hhmm",
+    "grace_min",
+    "per_hour_thb",
+    "cap_thb",
+    "lost_ticket_thb",
+    "landmarks_th"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^m[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "close_hhmm": {
+     "type": "string"
+    },
+    "grace_min": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "per_hour_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "cap_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "lost_ticket_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "landmarks_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "FeeEstimate": {
+   "type": "object",
+   "required": [
+    "mall_id",
+    "mall_th",
+    "minutes",
+    "hours_billed",
+    "fee_thb",
+    "cap_thb",
+    "per_hour_thb",
+    "grace_min",
+    "next_jump_min",
+    "next_fee_thb",
+    "lost_ticket_thb",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "mall_id": {
+     "enum": [
+      "fictomall_bangna",
+      "fictoplex_siri",
+      "fictoworld_chiangmai",
+      "fictopark_airport"
+     ]
+    },
+    "mall_th": {
+     "type": "string"
+    },
+    "minutes": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "hours_billed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "fee_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "cap_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "per_hour_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "grace_min": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "next_jump_min": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "next_fee_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "lost_ticket_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "CloseReminder": {
+   "type": "object",
+   "required": [
+    "mall_id",
+    "close_hhmm",
+    "minutes_left",
+    "status",
+    "message_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "mall_id": {
+     "enum": [
+      "fictomall_bangna",
+      "fictoplex_siri",
+      "fictoworld_chiangmai",
+      "fictopark_airport"
+     ]
+    },
+    "close_hhmm": {
+     "type": "string"
+    },
+    "minutes_left": {
+     "type": "integer"
+    },
+    "status": {
+     "enum": [
+      "ok",
+      "soon",
+      "after_close"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "WalkStep": {
+   "type": "object",
+   "required": [
+    "n",
+    "text_th"
+   ],
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "text_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "WalkbackGuide": {
+   "type": "object",
+   "required": [
+    "mall_th",
+    "floor",
+    "zone",
+    "color",
+    "color_th",
+    "pillar",
+    "steps",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "mall_th": {
+     "type": "string"
+    },
+    "floor": {
+     "enum": [
+      "B3",
+      "B2",
+      "B1",
+      "G",
+      "1F",
+      "2F",
+      "3F",
+      "4F",
+      "5F",
+      "6F",
+      "rooftop"
+     ]
+    },
+    "zone": {
+     "type": "string"
+    },
+    "color": {
+     "enum": [
+      "green",
+      "yellow",
+      "red",
+      "blue",
+      "orange",
+      "purple",
+      "white"
+     ]
+    },
+    "color_th": {
+     "type": "string"
+    },
+    "pillar": {
+     "type": "string"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/WalkStep"
+     },
+     "minItems": 1
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SavedPin": {
+   "type": "object",
+   "required": [
+    "id",
+    "person_id",
+    "photo_id",
+    "mall_id",
+    "mall_th",
+    "floor",
+    "zone",
+    "color",
+    "pillar",
+    "parked_at",
+    "hint_th",
+    "needs_plate_blur",
+    "on_device"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "person_id": {
+     "type": "string"
+    },
+    "photo_id": {
+     "type": "string"
+    },
+    "mall_id": {
+     "enum": [
+      "fictomall_bangna",
+      "fictoplex_siri",
+      "fictoworld_chiangmai",
+      "fictopark_airport"
+     ]
+    },
+    "mall_th": {
+     "type": "string"
+    },
+    "floor": {
+     "enum": [
+      "B3",
+      "B2",
+      "B1",
+      "G",
+      "1F",
+      "2F",
+      "3F",
+      "4F",
+      "5F",
+      "6F",
+      "rooftop"
+     ]
+    },
+    "zone": {
+     "type": "string"
+    },
+    "color": {
+     "enum": [
+      "green",
+      "yellow",
+      "red",
+      "blue",
+      "orange",
+      "purple",
+      "white"
+     ]
+    },
+    "pillar": {
+     "type": "string"
+    },
+    "parked_at": {
+     "type": "string"
+    },
+    "hint_th": {
+     "type": "string"
+    },
+    "needs_plate_blur": {
+     "type": "boolean"
+    },
+    "on_device": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "LostCar": {
+   "type": "object",
+   "required": [
+    "pin_id",
+    "mall_th",
+    "floor",
+    "zone",
+    "pillar",
+    "minutes",
+    "fee_thb",
+    "walkback",
+    "message_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "pin_id": {
+     "type": "string"
+    },
+    "mall_th": {
+     "type": "string"
+    },
+    "floor": {
+     "enum": [
+      "B3",
+      "B2",
+      "B1",
+      "G",
+      "1F",
+      "2F",
+      "3F",
+      "4F",
+      "5F",
+      "6F",
+      "rooftop"
+     ]
+    },
+    "zone": {
+     "type": "string"
+    },
+    "pillar": {
+     "type": "string"
+    },
+    "minutes": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "fee_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "walkback": {
+     "$ref": "#/$defs/WalkbackGuide"
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "FamilyShare": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "name_th",
+    "mall_th",
+    "floor",
+    "zone",
+    "pillar",
+    "minutes",
+    "fee_thb",
+    "steps_count",
+    "note_th",
+    "line_share_url",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "mall_th": {
+     "type": "string"
+    },
+    "floor": {
+     "enum": [
+      "B3",
+      "B2",
+      "B1",
+      "G",
+      "1F",
+      "2F",
+      "3F",
+      "4F",
+      "5F",
+      "6F",
+      "rooftop"
+     ]
+    },
+    "zone": {
+     "type": "string"
+    },
+    "pillar": {
+     "type": "string"
+    },
+    "minutes": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "fee_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "steps_count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "note_th": {
+     "type": "string"
+    },
+    "line_share_url": {
+     "type": "string",
+     "pattern": "^https://line\\.me/R/share\\?text="
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "HistoryStats": {
+   "type": "object",
+   "required": [
+    "count",
+    "malls",
+    "last_parked_at",
+    "top_mall"
+   ],
+   "properties": {
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "malls": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "last_parked_at": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "top_mall": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "floor",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "floor": {
+     "enum": [
+      "B3",
+      "B2",
+      "B1",
+      "G",
+      "1F",
+      "2F",
+      "3F",
+      "4F",
+      "5F",
+      "6F",
+      "rooftop"
+     ]
+    },
+    "layout": {
+     "enum": [
+      "pin_card"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
