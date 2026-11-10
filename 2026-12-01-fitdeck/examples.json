@@ -1,0 +1,2525 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "พี่กิ๊ฟ",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่กิ๊ฟ",
+    "name_en": "Gift",
+    "age": 29,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "อยากออกกำลัง 20 นาทีที่บ้านด้วยเสื่อโยคะและดัมเบิล 4 กก."
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่บี",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่บี",
+    "name_en": "Bee",
+    "age": 41,
+    "city_th": "ขอนแก่น",
+    "goal_th": "ไม่มีอุปกรณ์ อยากได้แผนน้ำหนักตัว"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องต้น",
+   "value": {
+    "id": "u03",
+    "name_th": "น้องต้น",
+    "name_en": "Ton",
+    "age": 24,
+    "city_th": "เชียงใหม่",
+    "goal_th": "มีเชือกกระโดดกับยางยืด อยากลองระดับกลาง"
+   }
+  },
+  {
+   "def": "GearPhoto",
+   "note": "s01",
+   "value": {
+    "id": "s01",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.12,
+    "blur": 0.1,
+    "crop": 0.08,
+    "detections": [
+     {
+      "key": "yoga_mat",
+      "value": true,
+      "confidence": 0.95
+     },
+     {
+      "key": "dumbbell",
+      "value": true,
+      "confidence": 0.94
+     },
+     {
+      "key": "weight_kg",
+      "value": 4,
+      "confidence": 0.88
+     }
+    ]
+   }
+  },
+  {
+   "def": "GearScan",
+   "note": "s01",
+   "value": {
+    "shot_id": "s01",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "keys": [
+     "yoga_mat",
+     "dumbbell",
+     "bodyweight"
+    ],
+    "weight_kg": 4,
+    "count": 2,
+    "message_th": "เจอ เสื่อโยคะ + ดัมเบิล · ดัมเบิลประมาณ 4 กก."
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s01",
+   "value": {
+    "score": 90,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s01 yoga_mat",
+   "value": {
+    "key": "yoga_mat",
+    "value": true,
+    "confidence": 0.95
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s01 dumbbell",
+   "value": {
+    "key": "dumbbell",
+    "value": true,
+    "confidence": 0.94
+   }
+  },
+  {
+   "def": "GearPhoto",
+   "note": "s02",
+   "value": {
+    "id": "s02",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.12,
+    "blur": 0.1,
+    "crop": 0.1,
+    "detections": [
+     {
+      "key": "chair",
+      "value": true,
+      "confidence": 0.9
+     },
+     {
+      "key": "wall",
+      "value": true,
+      "confidence": 0.86
+     }
+    ]
+   }
+  },
+  {
+   "def": "GearScan",
+   "note": "s02",
+   "value": {
+    "shot_id": "s02",
+    "quality": {
+     "score": 89,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "keys": [
+     "chair",
+     "wall",
+     "bodyweight"
+    ],
+    "weight_kg": null,
+    "count": 2,
+    "message_th": "เจอ เก้าอี้ + ผนัง"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s02",
+   "value": {
+    "score": 89,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s02 chair",
+   "value": {
+    "key": "chair",
+    "value": true,
+    "confidence": 0.9
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s02 wall",
+   "value": {
+    "key": "wall",
+    "value": true,
+    "confidence": 0.86
+   }
+  },
+  {
+   "def": "GearPhoto",
+   "note": "s03",
+   "value": {
+    "id": "s03",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.1,
+    "blur": 0.1,
+    "crop": 0.1,
+    "detections": [
+     {
+      "key": "jump_rope",
+      "value": true,
+      "confidence": 0.92
+     },
+     {
+      "key": "resistance_band",
+      "value": true,
+      "confidence": 0.9
+     }
+    ]
+   }
+  },
+  {
+   "def": "GearScan",
+   "note": "s03",
+   "value": {
+    "shot_id": "s03",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "keys": [
+     "jump_rope",
+     "resistance_band",
+     "bodyweight"
+    ],
+    "weight_kg": null,
+    "count": 2,
+    "message_th": "เจอ เชือกกระโดด + ยางยืด"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s03",
+   "value": {
+    "score": 90,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s03 jump_rope",
+   "value": {
+    "key": "jump_rope",
+    "value": true,
+    "confidence": 0.92
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s03 resistance_band",
+   "value": {
+    "key": "resistance_band",
+    "value": true,
+    "confidence": 0.9
+   }
+  },
+  {
+   "def": "GearPhoto",
+   "note": "s04",
+   "value": {
+    "id": "s04",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.68,
+    "blur": 0.52,
+    "crop": 0.5,
+    "detections": [
+     {
+      "key": "yoga_mat",
+      "value": true,
+      "confidence": 0.7
+     }
+    ]
+   }
+  },
+  {
+   "def": "GearScan",
+   "note": "s04",
+   "value": {
+    "shot_id": "s04",
+    "quality": {
+     "score": 43,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนเยอะ ถ่ายมุมห้องในที่ร่มหรือเปิดไฟเพดาน",
+      "ภาพเบลอ วางมือนิ่งแล้วถ่ายอุปกรณ์ให้เห็นทั้งชิ้น",
+      "อุปกรณ์ถูกครอป ถอยหลังนิดหนึ่งให้เห็นเสื่อหรือดัมเบิลทั้งคู่"
+     ]
+    },
+    "ok": false,
+    "keys": [
+     "yoga_mat",
+     "bodyweight"
+    ],
+    "weight_kg": null,
+    "count": 1,
+    "message_th": "เจอ เสื่อโยคะ"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s04",
+   "value": {
+    "score": 43,
+    "ok": false,
+    "tips_th": [
+     "แสงสะท้อนเยอะ ถ่ายมุมห้องในที่ร่มหรือเปิดไฟเพดาน",
+     "ภาพเบลอ วางมือนิ่งแล้วถ่ายอุปกรณ์ให้เห็นทั้งชิ้น",
+     "อุปกรณ์ถูกครอป ถอยหลังนิดหนึ่งให้เห็นเสื่อหรือดัมเบิลทั้งคู่"
+    ]
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s04 yoga_mat",
+   "value": {
+    "key": "yoga_mat",
+    "value": true,
+    "confidence": 0.7
+   }
+  },
+  {
+   "def": "GearPhoto",
+   "note": "s05",
+   "value": {
+    "id": "s05",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.2,
+    "blur": 0.15,
+    "crop": 0.1,
+    "detections": []
+   }
+  },
+  {
+   "def": "GearScan",
+   "note": "s05",
+   "value": {
+    "shot_id": "s05",
+    "quality": {
+     "score": 54,
+     "ok": false,
+     "tips_th": [
+      "ยังไม่เจออุปกรณ์ วางเสื่อ ดัมเบิล หรือเก้าอี้ในเฟรม แล้วถ่ายใหม่ หรือเลือกน้ำหนักตัว"
+     ]
+    },
+    "ok": false,
+    "keys": [
+     "bodyweight"
+    ],
+    "weight_kg": null,
+    "count": 0,
+    "message_th": "ยังไม่เจออุปกรณ์ จะจัดแผนแบบน้ำหนักตัว"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s05",
+   "value": {
+    "score": 54,
+    "ok": false,
+    "tips_th": [
+     "ยังไม่เจออุปกรณ์ วางเสื่อ ดัมเบิล หรือเก้าอี้ในเฟรม แล้วถ่ายใหม่ หรือเลือกน้ำหนักตัว"
+    ]
+   }
+  },
+  {
+   "def": "GearPhoto",
+   "note": "s06",
+   "value": {
+    "id": "s06",
+    "px_w": 1170,
+    "px_h": 2532,
+    "glare": 0.12,
+    "blur": 0.1,
+    "crop": 0.08,
+    "detections": [
+     {
+      "key": "dumbbell",
+      "value": true,
+      "confidence": 0.41
+     },
+     {
+      "key": "yoga_mat",
+      "value": true,
+      "confidence": 0.95
+     }
+    ]
+   }
+  },
+  {
+   "def": "GearScan",
+   "note": "s06",
+   "value": {
+    "shot_id": "s06",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": []
+    },
+    "ok": true,
+    "keys": [
+     "yoga_mat",
+     "bodyweight"
+    ],
+    "weight_kg": null,
+    "count": 1,
+    "message_th": "เจอ เสื่อโยคะ"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "s06",
+   "value": {
+    "score": 90,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s06 dumbbell",
+   "value": {
+    "key": "dumbbell",
+    "value": true,
+    "confidence": 0.41
+   }
+  },
+  {
+   "def": "Detection",
+   "note": "s06 yoga_mat",
+   "value": {
+    "key": "yoga_mat",
+    "value": true,
+    "confidence": 0.95
+   }
+  },
+  {
+   "def": "Plan",
+   "note": "gift beg",
+   "value": {
+    "level": "beginner",
+    "keys": [
+     "yoga_mat",
+     "dumbbell"
+    ],
+    "weight_kg": 4,
+    "moves": [
+     {
+      "n": 1,
+      "key": "march_warm",
+      "id": "x01",
+      "name_th": "เดินยกเข่าอุ่นเครื่อง",
+      "sec": 120,
+      "minutes": 2.0,
+      "muscles": [
+       "full"
+      ],
+      "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+      "need": []
+     },
+     {
+      "n": 2,
+      "key": "goblet_squat",
+      "id": "x02",
+      "name_th": "สกวอตถือดัมเบิล",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "legs",
+       "glutes"
+      ],
+      "safety_th": "เข่าไม่เลยปลายเท้ามาก หลังตรง เลือกน้ำหนักที่คุมได้",
+      "need": [
+       "dumbbell"
+      ]
+     },
+     {
+      "n": 3,
+      "key": "knee_push",
+      "id": "x04",
+      "name_th": "ดันพื้นเข่าลง",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "chest",
+       "arms"
+      ],
+      "safety_th": "ลำตัวเป็นเส้นตรงจากเข่าถึงหัวไหล่ ข้อมือไม่เจ็บ",
+      "need": [
+       "yoga_mat"
+      ]
+     },
+     {
+      "n": 4,
+      "key": "glute_bridge",
+      "id": "x06",
+      "name_th": "ยกสะพานสะโพก",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "glutes",
+       "core"
+      ],
+      "safety_th": "กดส้นเท้า อย่าแอ่นหลังส่วนล่างมาก",
+      "need": [
+       "yoga_mat"
+      ]
+     },
+     {
+      "n": 5,
+      "key": "dumbbell_row",
+      "id": "x07",
+      "name_th": "โรว์ดัมเบิล",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "back",
+       "arms"
+      ],
+      "safety_th": "หลังตรง ดึงศอกชิดลำตัว อย่ายักไหล่",
+      "need": [
+       "dumbbell"
+      ]
+     },
+     {
+      "n": 6,
+      "key": "dead_bug",
+      "id": "x09",
+      "name_th": "เดดบั๊ก",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "core"
+      ],
+      "safety_th": "หลังติดเสื่อ ถ้าแอ่นให้ก้าวสั้นลง",
+      "need": [
+       "yoga_mat"
+      ]
+     },
+     {
+      "n": 7,
+      "key": "stretch_close",
+      "id": "x12",
+      "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "full"
+      ],
+      "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+      "need": []
+     }
+    ],
+    "count": 7,
+    "total_sec": 1200,
+    "total_min": 20.0,
+    "headline_th": "แผน 20 นาที · beginner · 7 ท่า",
+    "disclaimer_th": "FitDeck เป็นตารางออกกำลังกายตัวอย่างจากอุปกรณ์ที่มี ไม่ใช่เทรนเนอร์และไม่ใช่คำแนะนำทางการแพทย์ ถ้าเจ็บหรือเวียนหัวให้หยุดทันที และปรึกษาแพทย์ก่อนเริ่มถ้ามีโรคประจำตัว"
+   }
+  },
+  {
+   "def": "Move",
+   "note": "gift beg march_warm",
+   "value": {
+    "n": 1,
+    "key": "march_warm",
+    "id": "x01",
+    "name_th": "เดินยกเข่าอุ่นเครื่อง",
+    "sec": 120,
+    "minutes": 2.0,
+    "muscles": [
+     "full"
+    ],
+    "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+    "need": []
+   }
+  },
+  {
+   "def": "Move",
+   "note": "gift beg goblet_squat",
+   "value": {
+    "n": 2,
+    "key": "goblet_squat",
+    "id": "x02",
+    "name_th": "สกวอตถือดัมเบิล",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "legs",
+     "glutes"
+    ],
+    "safety_th": "เข่าไม่เลยปลายเท้ามาก หลังตรง เลือกน้ำหนักที่คุมได้",
+    "need": [
+     "dumbbell"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "gift beg knee_push",
+   "value": {
+    "n": 3,
+    "key": "knee_push",
+    "id": "x04",
+    "name_th": "ดันพื้นเข่าลง",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "chest",
+     "arms"
+    ],
+    "safety_th": "ลำตัวเป็นเส้นตรงจากเข่าถึงหัวไหล่ ข้อมือไม่เจ็บ",
+    "need": [
+     "yoga_mat"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "gift beg glute_bridge",
+   "value": {
+    "n": 4,
+    "key": "glute_bridge",
+    "id": "x06",
+    "name_th": "ยกสะพานสะโพก",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "glutes",
+     "core"
+    ],
+    "safety_th": "กดส้นเท้า อย่าแอ่นหลังส่วนล่างมาก",
+    "need": [
+     "yoga_mat"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "gift beg dumbbell_row",
+   "value": {
+    "n": 5,
+    "key": "dumbbell_row",
+    "id": "x07",
+    "name_th": "โรว์ดัมเบิล",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "back",
+     "arms"
+    ],
+    "safety_th": "หลังตรง ดึงศอกชิดลำตัว อย่ายักไหล่",
+    "need": [
+     "dumbbell"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "gift beg dead_bug",
+   "value": {
+    "n": 6,
+    "key": "dead_bug",
+    "id": "x09",
+    "name_th": "เดดบั๊ก",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "core"
+    ],
+    "safety_th": "หลังติดเสื่อ ถ้าแอ่นให้ก้าวสั้นลง",
+    "need": [
+     "yoga_mat"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "gift beg stretch_close",
+   "value": {
+    "n": 7,
+    "key": "stretch_close",
+    "id": "x12",
+    "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "full"
+    ],
+    "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+    "need": []
+   }
+  },
+  {
+   "def": "TimerDeck",
+   "note": "gift beg",
+   "value": {
+    "cards": [
+     {
+      "n": 1,
+      "key": "march_warm",
+      "name_th": "เดินยกเข่าอุ่นเครื่อง",
+      "sec": 120,
+      "start_sec": 0,
+      "end_sec": 120,
+      "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+      "cue_th": "ท่าที่ 1 เดินยกเข่าอุ่นเครื่อง 120 วินาที"
+     },
+     {
+      "n": 2,
+      "key": "goblet_squat",
+      "name_th": "สกวอตถือดัมเบิล",
+      "sec": 180,
+      "start_sec": 120,
+      "end_sec": 300,
+      "safety_th": "เข่าไม่เลยปลายเท้ามาก หลังตรง เลือกน้ำหนักที่คุมได้",
+      "cue_th": "ท่าที่ 2 สกวอตถือดัมเบิล 180 วินาที"
+     },
+     {
+      "n": 3,
+      "key": "knee_push",
+      "name_th": "ดันพื้นเข่าลง",
+      "sec": 180,
+      "start_sec": 300,
+      "end_sec": 480,
+      "safety_th": "ลำตัวเป็นเส้นตรงจากเข่าถึงหัวไหล่ ข้อมือไม่เจ็บ",
+      "cue_th": "ท่าที่ 3 ดันพื้นเข่าลง 180 วินาที"
+     },
+     {
+      "n": 4,
+      "key": "glute_bridge",
+      "name_th": "ยกสะพานสะโพก",
+      "sec": 180,
+      "start_sec": 480,
+      "end_sec": 660,
+      "safety_th": "กดส้นเท้า อย่าแอ่นหลังส่วนล่างมาก",
+      "cue_th": "ท่าที่ 4 ยกสะพานสะโพก 180 วินาที"
+     },
+     {
+      "n": 5,
+      "key": "dumbbell_row",
+      "name_th": "โรว์ดัมเบิล",
+      "sec": 180,
+      "start_sec": 660,
+      "end_sec": 840,
+      "safety_th": "หลังตรง ดึงศอกชิดลำตัว อย่ายักไหล่",
+      "cue_th": "ท่าที่ 5 โรว์ดัมเบิล 180 วินาที"
+     },
+     {
+      "n": 6,
+      "key": "dead_bug",
+      "name_th": "เดดบั๊ก",
+      "sec": 180,
+      "start_sec": 840,
+      "end_sec": 1020,
+      "safety_th": "หลังติดเสื่อ ถ้าแอ่นให้ก้าวสั้นลง",
+      "cue_th": "ท่าที่ 6 เดดบั๊ก 180 วินาที"
+     },
+     {
+      "n": 7,
+      "key": "stretch_close",
+      "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+      "sec": 180,
+      "start_sec": 1020,
+      "end_sec": 1200,
+      "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+      "cue_th": "ท่าที่ 7 ยืดเหยียดคลายกล้ามเนื้อ 180 วินาที"
+     }
+    ],
+    "count": 7,
+    "total_sec": 1200,
+    "headline_th": "จับเวลา 7 ท่า รวม 1200 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "gift beg t1",
+   "value": {
+    "n": 1,
+    "key": "march_warm",
+    "name_th": "เดินยกเข่าอุ่นเครื่อง",
+    "sec": 120,
+    "start_sec": 0,
+    "end_sec": 120,
+    "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+    "cue_th": "ท่าที่ 1 เดินยกเข่าอุ่นเครื่อง 120 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "gift beg t2",
+   "value": {
+    "n": 2,
+    "key": "goblet_squat",
+    "name_th": "สกวอตถือดัมเบิล",
+    "sec": 180,
+    "start_sec": 120,
+    "end_sec": 300,
+    "safety_th": "เข่าไม่เลยปลายเท้ามาก หลังตรง เลือกน้ำหนักที่คุมได้",
+    "cue_th": "ท่าที่ 2 สกวอตถือดัมเบิล 180 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "gift beg t3",
+   "value": {
+    "n": 3,
+    "key": "knee_push",
+    "name_th": "ดันพื้นเข่าลง",
+    "sec": 180,
+    "start_sec": 300,
+    "end_sec": 480,
+    "safety_th": "ลำตัวเป็นเส้นตรงจากเข่าถึงหัวไหล่ ข้อมือไม่เจ็บ",
+    "cue_th": "ท่าที่ 3 ดันพื้นเข่าลง 180 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "gift beg t4",
+   "value": {
+    "n": 4,
+    "key": "glute_bridge",
+    "name_th": "ยกสะพานสะโพก",
+    "sec": 180,
+    "start_sec": 480,
+    "end_sec": 660,
+    "safety_th": "กดส้นเท้า อย่าแอ่นหลังส่วนล่างมาก",
+    "cue_th": "ท่าที่ 4 ยกสะพานสะโพก 180 วินาที"
+   }
+  },
+  {
+   "def": "Plan",
+   "note": "gift int",
+   "value": {
+    "level": "intermediate",
+    "keys": [
+     "yoga_mat",
+     "dumbbell"
+    ],
+    "weight_kg": 4,
+    "moves": [
+     {
+      "n": 1,
+      "key": "march_warm",
+      "id": "x01",
+      "name_th": "เดินยกเข่าอุ่นเครื่อง",
+      "sec": 120,
+      "minutes": 2.0,
+      "muscles": [
+       "full"
+      ],
+      "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+      "need": []
+     },
+     {
+      "n": 2,
+      "key": "goblet_squat",
+      "id": "x02",
+      "name_th": "สกวอตถือดัมเบิล",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "legs",
+       "glutes"
+      ],
+      "safety_th": "เข่าไม่เลยปลายเท้ามาก หลังตรง เลือกน้ำหนักที่คุมได้",
+      "need": [
+       "dumbbell"
+      ]
+     },
+     {
+      "n": 3,
+      "key": "overhead_press",
+      "id": "x14",
+      "name_th": "ดันดัมเบิลเหนือหัว",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "shoulders",
+       "arms"
+      ],
+      "safety_th": "อย่าโก่งหลัง เลือกน้ำหนักที่กดขึ้นได้ครบจังหวะ",
+      "need": [
+       "dumbbell"
+      ]
+     },
+     {
+      "n": 4,
+      "key": "glute_bridge",
+      "id": "x06",
+      "name_th": "ยกสะพานสะโพก",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "glutes",
+       "core"
+      ],
+      "safety_th": "กดส้นเท้า อย่าแอ่นหลังส่วนล่างมาก",
+      "need": [
+       "yoga_mat"
+      ]
+     },
+     {
+      "n": 5,
+      "key": "dumbbell_row",
+      "id": "x07",
+      "name_th": "โรว์ดัมเบิล",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "back",
+       "arms"
+      ],
+      "safety_th": "หลังตรง ดึงศอกชิดลำตัว อย่ายักไหล่",
+      "need": [
+       "dumbbell"
+      ]
+     },
+     {
+      "n": 6,
+      "key": "plank_knee",
+      "id": "x13",
+      "name_th": "แพลงก์เข่าลง",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "core"
+      ],
+      "safety_th": "อย่าห้อยสะโพกหรือยกสูงเกินไป",
+      "need": [
+       "yoga_mat"
+      ]
+     },
+     {
+      "n": 7,
+      "key": "stretch_close",
+      "id": "x12",
+      "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "full"
+      ],
+      "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+      "need": []
+     }
+    ],
+    "count": 7,
+    "total_sec": 1200,
+    "total_min": 20.0,
+    "headline_th": "แผน 20 นาที · intermediate · 7 ท่า",
+    "disclaimer_th": "FitDeck เป็นตารางออกกำลังกายตัวอย่างจากอุปกรณ์ที่มี ไม่ใช่เทรนเนอร์และไม่ใช่คำแนะนำทางการแพทย์ ถ้าเจ็บหรือเวียนหัวให้หยุดทันที และปรึกษาแพทย์ก่อนเริ่มถ้ามีโรคประจำตัว"
+   }
+  },
+  {
+   "def": "Move",
+   "note": "gift int march_warm",
+   "value": {
+    "n": 1,
+    "key": "march_warm",
+    "id": "x01",
+    "name_th": "เดินยกเข่าอุ่นเครื่อง",
+    "sec": 120,
+    "minutes": 2.0,
+    "muscles": [
+     "full"
+    ],
+    "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+    "need": []
+   }
+  },
+  {
+   "def": "Move",
+   "note": "gift int goblet_squat",
+   "value": {
+    "n": 2,
+    "key": "goblet_squat",
+    "id": "x02",
+    "name_th": "สกวอตถือดัมเบิล",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "legs",
+     "glutes"
+    ],
+    "safety_th": "เข่าไม่เลยปลายเท้ามาก หลังตรง เลือกน้ำหนักที่คุมได้",
+    "need": [
+     "dumbbell"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "gift int overhead_press",
+   "value": {
+    "n": 3,
+    "key": "overhead_press",
+    "id": "x14",
+    "name_th": "ดันดัมเบิลเหนือหัว",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "shoulders",
+     "arms"
+    ],
+    "safety_th": "อย่าโก่งหลัง เลือกน้ำหนักที่กดขึ้นได้ครบจังหวะ",
+    "need": [
+     "dumbbell"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "gift int glute_bridge",
+   "value": {
+    "n": 4,
+    "key": "glute_bridge",
+    "id": "x06",
+    "name_th": "ยกสะพานสะโพก",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "glutes",
+     "core"
+    ],
+    "safety_th": "กดส้นเท้า อย่าแอ่นหลังส่วนล่างมาก",
+    "need": [
+     "yoga_mat"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "gift int dumbbell_row",
+   "value": {
+    "n": 5,
+    "key": "dumbbell_row",
+    "id": "x07",
+    "name_th": "โรว์ดัมเบิล",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "back",
+     "arms"
+    ],
+    "safety_th": "หลังตรง ดึงศอกชิดลำตัว อย่ายักไหล่",
+    "need": [
+     "dumbbell"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "gift int plank_knee",
+   "value": {
+    "n": 6,
+    "key": "plank_knee",
+    "id": "x13",
+    "name_th": "แพลงก์เข่าลง",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "core"
+    ],
+    "safety_th": "อย่าห้อยสะโพกหรือยกสูงเกินไป",
+    "need": [
+     "yoga_mat"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "gift int stretch_close",
+   "value": {
+    "n": 7,
+    "key": "stretch_close",
+    "id": "x12",
+    "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "full"
+    ],
+    "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+    "need": []
+   }
+  },
+  {
+   "def": "TimerDeck",
+   "note": "gift int",
+   "value": {
+    "cards": [
+     {
+      "n": 1,
+      "key": "march_warm",
+      "name_th": "เดินยกเข่าอุ่นเครื่อง",
+      "sec": 120,
+      "start_sec": 0,
+      "end_sec": 120,
+      "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+      "cue_th": "ท่าที่ 1 เดินยกเข่าอุ่นเครื่อง 120 วินาที"
+     },
+     {
+      "n": 2,
+      "key": "goblet_squat",
+      "name_th": "สกวอตถือดัมเบิล",
+      "sec": 180,
+      "start_sec": 120,
+      "end_sec": 300,
+      "safety_th": "เข่าไม่เลยปลายเท้ามาก หลังตรง เลือกน้ำหนักที่คุมได้",
+      "cue_th": "ท่าที่ 2 สกวอตถือดัมเบิล 180 วินาที"
+     },
+     {
+      "n": 3,
+      "key": "overhead_press",
+      "name_th": "ดันดัมเบิลเหนือหัว",
+      "sec": 180,
+      "start_sec": 300,
+      "end_sec": 480,
+      "safety_th": "อย่าโก่งหลัง เลือกน้ำหนักที่กดขึ้นได้ครบจังหวะ",
+      "cue_th": "ท่าที่ 3 ดันดัมเบิลเหนือหัว 180 วินาที"
+     },
+     {
+      "n": 4,
+      "key": "glute_bridge",
+      "name_th": "ยกสะพานสะโพก",
+      "sec": 180,
+      "start_sec": 480,
+      "end_sec": 660,
+      "safety_th": "กดส้นเท้า อย่าแอ่นหลังส่วนล่างมาก",
+      "cue_th": "ท่าที่ 4 ยกสะพานสะโพก 180 วินาที"
+     },
+     {
+      "n": 5,
+      "key": "dumbbell_row",
+      "name_th": "โรว์ดัมเบิล",
+      "sec": 180,
+      "start_sec": 660,
+      "end_sec": 840,
+      "safety_th": "หลังตรง ดึงศอกชิดลำตัว อย่ายักไหล่",
+      "cue_th": "ท่าที่ 5 โรว์ดัมเบิล 180 วินาที"
+     },
+     {
+      "n": 6,
+      "key": "plank_knee",
+      "name_th": "แพลงก์เข่าลง",
+      "sec": 180,
+      "start_sec": 840,
+      "end_sec": 1020,
+      "safety_th": "อย่าห้อยสะโพกหรือยกสูงเกินไป",
+      "cue_th": "ท่าที่ 6 แพลงก์เข่าลง 180 วินาที"
+     },
+     {
+      "n": 7,
+      "key": "stretch_close",
+      "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+      "sec": 180,
+      "start_sec": 1020,
+      "end_sec": 1200,
+      "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+      "cue_th": "ท่าที่ 7 ยืดเหยียดคลายกล้ามเนื้อ 180 วินาที"
+     }
+    ],
+    "count": 7,
+    "total_sec": 1200,
+    "headline_th": "จับเวลา 7 ท่า รวม 1200 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "gift int t1",
+   "value": {
+    "n": 1,
+    "key": "march_warm",
+    "name_th": "เดินยกเข่าอุ่นเครื่อง",
+    "sec": 120,
+    "start_sec": 0,
+    "end_sec": 120,
+    "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+    "cue_th": "ท่าที่ 1 เดินยกเข่าอุ่นเครื่อง 120 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "gift int t2",
+   "value": {
+    "n": 2,
+    "key": "goblet_squat",
+    "name_th": "สกวอตถือดัมเบิล",
+    "sec": 180,
+    "start_sec": 120,
+    "end_sec": 300,
+    "safety_th": "เข่าไม่เลยปลายเท้ามาก หลังตรง เลือกน้ำหนักที่คุมได้",
+    "cue_th": "ท่าที่ 2 สกวอตถือดัมเบิล 180 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "gift int t3",
+   "value": {
+    "n": 3,
+    "key": "overhead_press",
+    "name_th": "ดันดัมเบิลเหนือหัว",
+    "sec": 180,
+    "start_sec": 300,
+    "end_sec": 480,
+    "safety_th": "อย่าโก่งหลัง เลือกน้ำหนักที่กดขึ้นได้ครบจังหวะ",
+    "cue_th": "ท่าที่ 3 ดันดัมเบิลเหนือหัว 180 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "gift int t4",
+   "value": {
+    "n": 4,
+    "key": "glute_bridge",
+    "name_th": "ยกสะพานสะโพก",
+    "sec": 180,
+    "start_sec": 480,
+    "end_sec": 660,
+    "safety_th": "กดส้นเท้า อย่าแอ่นหลังส่วนล่างมาก",
+    "cue_th": "ท่าที่ 4 ยกสะพานสะโพก 180 วินาที"
+   }
+  },
+  {
+   "def": "Plan",
+   "note": "bee",
+   "value": {
+    "level": "beginner",
+    "keys": [
+     "chair",
+     "wall"
+    ],
+    "weight_kg": null,
+    "moves": [
+     {
+      "n": 1,
+      "key": "march_warm",
+      "id": "x01",
+      "name_th": "เดินยกเข่าอุ่นเครื่อง",
+      "sec": 120,
+      "minutes": 2.0,
+      "muscles": [
+       "full"
+      ],
+      "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+      "need": []
+     },
+     {
+      "n": 2,
+      "key": "chair_sit",
+      "id": "x10",
+      "name_th": "นั่ง-ยืนจากเก้าอี้",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "legs"
+      ],
+      "safety_th": "เก้าอี้ไม่มียางล้อ วางชิดผนังถ้าไม่มั่นคง",
+      "need": [
+       "chair"
+      ]
+     },
+     {
+      "n": 3,
+      "key": "wall_push",
+      "id": "x05",
+      "name_th": "ดันผนัง",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "chest",
+       "arms"
+      ],
+      "safety_th": "ยืนระยะที่ข้อมือสบาย อย่าล็อกข้อศอก",
+      "need": [
+       "wall"
+      ]
+     },
+     {
+      "n": 4,
+      "key": "body_squat",
+      "id": "x03",
+      "name_th": "สกวอตน้ำหนักตัว",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "legs",
+       "glutes"
+      ],
+      "safety_th": "ส้นเท้าติดพื้น อย่าให้เข่าบิดเข้าใน",
+      "need": []
+     },
+     {
+      "n": 5,
+      "key": "air_press",
+      "id": "x15",
+      "name_th": "ยกแขนเหนือหัวแบบน้ำหนักตัว",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "shoulders"
+      ],
+      "safety_th": "ไหล่ไม่ยัก ยกในกรอบที่ปวด",
+      "need": []
+     },
+     {
+      "n": 6,
+      "key": "stand_core",
+      "id": "x16",
+      "name_th": "ยกเข่าแตะศอกยืน",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "core"
+      ],
+      "safety_th": "ลำตัวตรง อย่าเหวี่ยงหลัง",
+      "need": []
+     },
+     {
+      "n": 7,
+      "key": "stretch_close",
+      "id": "x12",
+      "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "full"
+      ],
+      "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+      "need": []
+     }
+    ],
+    "count": 7,
+    "total_sec": 1200,
+    "total_min": 20.0,
+    "headline_th": "แผน 20 นาที · beginner · 7 ท่า",
+    "disclaimer_th": "FitDeck เป็นตารางออกกำลังกายตัวอย่างจากอุปกรณ์ที่มี ไม่ใช่เทรนเนอร์และไม่ใช่คำแนะนำทางการแพทย์ ถ้าเจ็บหรือเวียนหัวให้หยุดทันที และปรึกษาแพทย์ก่อนเริ่มถ้ามีโรคประจำตัว"
+   }
+  },
+  {
+   "def": "Move",
+   "note": "bee march_warm",
+   "value": {
+    "n": 1,
+    "key": "march_warm",
+    "id": "x01",
+    "name_th": "เดินยกเข่าอุ่นเครื่อง",
+    "sec": 120,
+    "minutes": 2.0,
+    "muscles": [
+     "full"
+    ],
+    "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+    "need": []
+   }
+  },
+  {
+   "def": "Move",
+   "note": "bee chair_sit",
+   "value": {
+    "n": 2,
+    "key": "chair_sit",
+    "id": "x10",
+    "name_th": "นั่ง-ยืนจากเก้าอี้",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "legs"
+    ],
+    "safety_th": "เก้าอี้ไม่มียางล้อ วางชิดผนังถ้าไม่มั่นคง",
+    "need": [
+     "chair"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "bee wall_push",
+   "value": {
+    "n": 3,
+    "key": "wall_push",
+    "id": "x05",
+    "name_th": "ดันผนัง",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "chest",
+     "arms"
+    ],
+    "safety_th": "ยืนระยะที่ข้อมือสบาย อย่าล็อกข้อศอก",
+    "need": [
+     "wall"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "bee body_squat",
+   "value": {
+    "n": 4,
+    "key": "body_squat",
+    "id": "x03",
+    "name_th": "สกวอตน้ำหนักตัว",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "legs",
+     "glutes"
+    ],
+    "safety_th": "ส้นเท้าติดพื้น อย่าให้เข่าบิดเข้าใน",
+    "need": []
+   }
+  },
+  {
+   "def": "Move",
+   "note": "bee air_press",
+   "value": {
+    "n": 5,
+    "key": "air_press",
+    "id": "x15",
+    "name_th": "ยกแขนเหนือหัวแบบน้ำหนักตัว",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "shoulders"
+    ],
+    "safety_th": "ไหล่ไม่ยัก ยกในกรอบที่ปวด",
+    "need": []
+   }
+  },
+  {
+   "def": "Move",
+   "note": "bee stand_core",
+   "value": {
+    "n": 6,
+    "key": "stand_core",
+    "id": "x16",
+    "name_th": "ยกเข่าแตะศอกยืน",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "core"
+    ],
+    "safety_th": "ลำตัวตรง อย่าเหวี่ยงหลัง",
+    "need": []
+   }
+  },
+  {
+   "def": "Move",
+   "note": "bee stretch_close",
+   "value": {
+    "n": 7,
+    "key": "stretch_close",
+    "id": "x12",
+    "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "full"
+    ],
+    "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+    "need": []
+   }
+  },
+  {
+   "def": "TimerDeck",
+   "note": "bee",
+   "value": {
+    "cards": [
+     {
+      "n": 1,
+      "key": "march_warm",
+      "name_th": "เดินยกเข่าอุ่นเครื่อง",
+      "sec": 120,
+      "start_sec": 0,
+      "end_sec": 120,
+      "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+      "cue_th": "ท่าที่ 1 เดินยกเข่าอุ่นเครื่อง 120 วินาที"
+     },
+     {
+      "n": 2,
+      "key": "chair_sit",
+      "name_th": "นั่ง-ยืนจากเก้าอี้",
+      "sec": 180,
+      "start_sec": 120,
+      "end_sec": 300,
+      "safety_th": "เก้าอี้ไม่มียางล้อ วางชิดผนังถ้าไม่มั่นคง",
+      "cue_th": "ท่าที่ 2 นั่ง-ยืนจากเก้าอี้ 180 วินาที"
+     },
+     {
+      "n": 3,
+      "key": "wall_push",
+      "name_th": "ดันผนัง",
+      "sec": 180,
+      "start_sec": 300,
+      "end_sec": 480,
+      "safety_th": "ยืนระยะที่ข้อมือสบาย อย่าล็อกข้อศอก",
+      "cue_th": "ท่าที่ 3 ดันผนัง 180 วินาที"
+     },
+     {
+      "n": 4,
+      "key": "body_squat",
+      "name_th": "สกวอตน้ำหนักตัว",
+      "sec": 180,
+      "start_sec": 480,
+      "end_sec": 660,
+      "safety_th": "ส้นเท้าติดพื้น อย่าให้เข่าบิดเข้าใน",
+      "cue_th": "ท่าที่ 4 สกวอตน้ำหนักตัว 180 วินาที"
+     },
+     {
+      "n": 5,
+      "key": "air_press",
+      "name_th": "ยกแขนเหนือหัวแบบน้ำหนักตัว",
+      "sec": 180,
+      "start_sec": 660,
+      "end_sec": 840,
+      "safety_th": "ไหล่ไม่ยัก ยกในกรอบที่ปวด",
+      "cue_th": "ท่าที่ 5 ยกแขนเหนือหัวแบบน้ำหนักตัว 180 วินาที"
+     },
+     {
+      "n": 6,
+      "key": "stand_core",
+      "name_th": "ยกเข่าแตะศอกยืน",
+      "sec": 180,
+      "start_sec": 840,
+      "end_sec": 1020,
+      "safety_th": "ลำตัวตรง อย่าเหวี่ยงหลัง",
+      "cue_th": "ท่าที่ 6 ยกเข่าแตะศอกยืน 180 วินาที"
+     },
+     {
+      "n": 7,
+      "key": "stretch_close",
+      "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+      "sec": 180,
+      "start_sec": 1020,
+      "end_sec": 1200,
+      "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+      "cue_th": "ท่าที่ 7 ยืดเหยียดคลายกล้ามเนื้อ 180 วินาที"
+     }
+    ],
+    "count": 7,
+    "total_sec": 1200,
+    "headline_th": "จับเวลา 7 ท่า รวม 1200 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "bee t1",
+   "value": {
+    "n": 1,
+    "key": "march_warm",
+    "name_th": "เดินยกเข่าอุ่นเครื่อง",
+    "sec": 120,
+    "start_sec": 0,
+    "end_sec": 120,
+    "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+    "cue_th": "ท่าที่ 1 เดินยกเข่าอุ่นเครื่อง 120 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "bee t2",
+   "value": {
+    "n": 2,
+    "key": "chair_sit",
+    "name_th": "นั่ง-ยืนจากเก้าอี้",
+    "sec": 180,
+    "start_sec": 120,
+    "end_sec": 300,
+    "safety_th": "เก้าอี้ไม่มียางล้อ วางชิดผนังถ้าไม่มั่นคง",
+    "cue_th": "ท่าที่ 2 นั่ง-ยืนจากเก้าอี้ 180 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "bee t3",
+   "value": {
+    "n": 3,
+    "key": "wall_push",
+    "name_th": "ดันผนัง",
+    "sec": 180,
+    "start_sec": 300,
+    "end_sec": 480,
+    "safety_th": "ยืนระยะที่ข้อมือสบาย อย่าล็อกข้อศอก",
+    "cue_th": "ท่าที่ 3 ดันผนัง 180 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "bee t4",
+   "value": {
+    "n": 4,
+    "key": "body_squat",
+    "name_th": "สกวอตน้ำหนักตัว",
+    "sec": 180,
+    "start_sec": 480,
+    "end_sec": 660,
+    "safety_th": "ส้นเท้าติดพื้น อย่าให้เข่าบิดเข้าใน",
+    "cue_th": "ท่าที่ 4 สกวอตน้ำหนักตัว 180 วินาที"
+   }
+  },
+  {
+   "def": "Plan",
+   "note": "ton",
+   "value": {
+    "level": "intermediate",
+    "keys": [
+     "jump_rope",
+     "resistance_band"
+    ],
+    "weight_kg": null,
+    "moves": [
+     {
+      "n": 1,
+      "key": "march_warm",
+      "id": "x01",
+      "name_th": "เดินยกเข่าอุ่นเครื่อง",
+      "sec": 120,
+      "minutes": 2.0,
+      "muscles": [
+       "full"
+      ],
+      "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+      "need": []
+     },
+     {
+      "n": 2,
+      "key": "body_squat",
+      "id": "x03",
+      "name_th": "สกวอตน้ำหนักตัว",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "legs",
+       "glutes"
+      ],
+      "safety_th": "ส้นเท้าติดพื้น อย่าให้เข่าบิดเข้าใน",
+      "need": []
+     },
+     {
+      "n": 3,
+      "key": "air_press",
+      "id": "x15",
+      "name_th": "ยกแขนเหนือหัวแบบน้ำหนักตัว",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "shoulders"
+      ],
+      "safety_th": "ไหล่ไม่ยัก ยกในกรอบที่ปวด",
+      "need": []
+     },
+     {
+      "n": 4,
+      "key": "jump_rope",
+      "id": "x11",
+      "name_th": "กระโดดเชือกเบา",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "cardio",
+       "legs"
+      ],
+      "safety_th": "กระโดดต่ำ ลงด้วยปลายเท้า ถ้าเหนื่อยให้เดินแทน",
+      "need": [
+       "jump_rope"
+      ]
+     },
+     {
+      "n": 5,
+      "key": "band_row",
+      "id": "x08",
+      "name_th": "โรว์ยางยืด",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "back",
+       "arms"
+      ],
+      "safety_th": "ยางไม่สะบัดเข้าหน้า ยืนให้ยางตึงพอดี",
+      "need": [
+       "resistance_band"
+      ]
+     },
+     {
+      "n": 6,
+      "key": "stand_core",
+      "id": "x16",
+      "name_th": "ยกเข่าแตะศอกยืน",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "core"
+      ],
+      "safety_th": "ลำตัวตรง อย่าเหวี่ยงหลัง",
+      "need": []
+     },
+     {
+      "n": 7,
+      "key": "stretch_close",
+      "id": "x12",
+      "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "full"
+      ],
+      "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+      "need": []
+     }
+    ],
+    "count": 7,
+    "total_sec": 1200,
+    "total_min": 20.0,
+    "headline_th": "แผน 20 นาที · intermediate · 7 ท่า",
+    "disclaimer_th": "FitDeck เป็นตารางออกกำลังกายตัวอย่างจากอุปกรณ์ที่มี ไม่ใช่เทรนเนอร์และไม่ใช่คำแนะนำทางการแพทย์ ถ้าเจ็บหรือเวียนหัวให้หยุดทันที และปรึกษาแพทย์ก่อนเริ่มถ้ามีโรคประจำตัว"
+   }
+  },
+  {
+   "def": "Move",
+   "note": "ton march_warm",
+   "value": {
+    "n": 1,
+    "key": "march_warm",
+    "id": "x01",
+    "name_th": "เดินยกเข่าอุ่นเครื่อง",
+    "sec": 120,
+    "minutes": 2.0,
+    "muscles": [
+     "full"
+    ],
+    "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+    "need": []
+   }
+  },
+  {
+   "def": "Move",
+   "note": "ton body_squat",
+   "value": {
+    "n": 2,
+    "key": "body_squat",
+    "id": "x03",
+    "name_th": "สกวอตน้ำหนักตัว",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "legs",
+     "glutes"
+    ],
+    "safety_th": "ส้นเท้าติดพื้น อย่าให้เข่าบิดเข้าใน",
+    "need": []
+   }
+  },
+  {
+   "def": "Move",
+   "note": "ton air_press",
+   "value": {
+    "n": 3,
+    "key": "air_press",
+    "id": "x15",
+    "name_th": "ยกแขนเหนือหัวแบบน้ำหนักตัว",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "shoulders"
+    ],
+    "safety_th": "ไหล่ไม่ยัก ยกในกรอบที่ปวด",
+    "need": []
+   }
+  },
+  {
+   "def": "Move",
+   "note": "ton jump_rope",
+   "value": {
+    "n": 4,
+    "key": "jump_rope",
+    "id": "x11",
+    "name_th": "กระโดดเชือกเบา",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "cardio",
+     "legs"
+    ],
+    "safety_th": "กระโดดต่ำ ลงด้วยปลายเท้า ถ้าเหนื่อยให้เดินแทน",
+    "need": [
+     "jump_rope"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "ton band_row",
+   "value": {
+    "n": 5,
+    "key": "band_row",
+    "id": "x08",
+    "name_th": "โรว์ยางยืด",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "back",
+     "arms"
+    ],
+    "safety_th": "ยางไม่สะบัดเข้าหน้า ยืนให้ยางตึงพอดี",
+    "need": [
+     "resistance_band"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "ton stand_core",
+   "value": {
+    "n": 6,
+    "key": "stand_core",
+    "id": "x16",
+    "name_th": "ยกเข่าแตะศอกยืน",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "core"
+    ],
+    "safety_th": "ลำตัวตรง อย่าเหวี่ยงหลัง",
+    "need": []
+   }
+  },
+  {
+   "def": "Move",
+   "note": "ton stretch_close",
+   "value": {
+    "n": 7,
+    "key": "stretch_close",
+    "id": "x12",
+    "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "full"
+    ],
+    "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+    "need": []
+   }
+  },
+  {
+   "def": "TimerDeck",
+   "note": "ton",
+   "value": {
+    "cards": [
+     {
+      "n": 1,
+      "key": "march_warm",
+      "name_th": "เดินยกเข่าอุ่นเครื่อง",
+      "sec": 120,
+      "start_sec": 0,
+      "end_sec": 120,
+      "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+      "cue_th": "ท่าที่ 1 เดินยกเข่าอุ่นเครื่อง 120 วินาที"
+     },
+     {
+      "n": 2,
+      "key": "body_squat",
+      "name_th": "สกวอตน้ำหนักตัว",
+      "sec": 180,
+      "start_sec": 120,
+      "end_sec": 300,
+      "safety_th": "ส้นเท้าติดพื้น อย่าให้เข่าบิดเข้าใน",
+      "cue_th": "ท่าที่ 2 สกวอตน้ำหนักตัว 180 วินาที"
+     },
+     {
+      "n": 3,
+      "key": "air_press",
+      "name_th": "ยกแขนเหนือหัวแบบน้ำหนักตัว",
+      "sec": 180,
+      "start_sec": 300,
+      "end_sec": 480,
+      "safety_th": "ไหล่ไม่ยัก ยกในกรอบที่ปวด",
+      "cue_th": "ท่าที่ 3 ยกแขนเหนือหัวแบบน้ำหนักตัว 180 วินาที"
+     },
+     {
+      "n": 4,
+      "key": "jump_rope",
+      "name_th": "กระโดดเชือกเบา",
+      "sec": 180,
+      "start_sec": 480,
+      "end_sec": 660,
+      "safety_th": "กระโดดต่ำ ลงด้วยปลายเท้า ถ้าเหนื่อยให้เดินแทน",
+      "cue_th": "ท่าที่ 4 กระโดดเชือกเบา 180 วินาที"
+     },
+     {
+      "n": 5,
+      "key": "band_row",
+      "name_th": "โรว์ยางยืด",
+      "sec": 180,
+      "start_sec": 660,
+      "end_sec": 840,
+      "safety_th": "ยางไม่สะบัดเข้าหน้า ยืนให้ยางตึงพอดี",
+      "cue_th": "ท่าที่ 5 โรว์ยางยืด 180 วินาที"
+     },
+     {
+      "n": 6,
+      "key": "stand_core",
+      "name_th": "ยกเข่าแตะศอกยืน",
+      "sec": 180,
+      "start_sec": 840,
+      "end_sec": 1020,
+      "safety_th": "ลำตัวตรง อย่าเหวี่ยงหลัง",
+      "cue_th": "ท่าที่ 6 ยกเข่าแตะศอกยืน 180 วินาที"
+     },
+     {
+      "n": 7,
+      "key": "stretch_close",
+      "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+      "sec": 180,
+      "start_sec": 1020,
+      "end_sec": 1200,
+      "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+      "cue_th": "ท่าที่ 7 ยืดเหยียดคลายกล้ามเนื้อ 180 วินาที"
+     }
+    ],
+    "count": 7,
+    "total_sec": 1200,
+    "headline_th": "จับเวลา 7 ท่า รวม 1200 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "ton t1",
+   "value": {
+    "n": 1,
+    "key": "march_warm",
+    "name_th": "เดินยกเข่าอุ่นเครื่อง",
+    "sec": 120,
+    "start_sec": 0,
+    "end_sec": 120,
+    "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+    "cue_th": "ท่าที่ 1 เดินยกเข่าอุ่นเครื่อง 120 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "ton t2",
+   "value": {
+    "n": 2,
+    "key": "body_squat",
+    "name_th": "สกวอตน้ำหนักตัว",
+    "sec": 180,
+    "start_sec": 120,
+    "end_sec": 300,
+    "safety_th": "ส้นเท้าติดพื้น อย่าให้เข่าบิดเข้าใน",
+    "cue_th": "ท่าที่ 2 สกวอตน้ำหนักตัว 180 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "ton t3",
+   "value": {
+    "n": 3,
+    "key": "air_press",
+    "name_th": "ยกแขนเหนือหัวแบบน้ำหนักตัว",
+    "sec": 180,
+    "start_sec": 300,
+    "end_sec": 480,
+    "safety_th": "ไหล่ไม่ยัก ยกในกรอบที่ปวด",
+    "cue_th": "ท่าที่ 3 ยกแขนเหนือหัวแบบน้ำหนักตัว 180 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "ton t4",
+   "value": {
+    "n": 4,
+    "key": "jump_rope",
+    "name_th": "กระโดดเชือกเบา",
+    "sec": 180,
+    "start_sec": 480,
+    "end_sec": 660,
+    "safety_th": "กระโดดต่ำ ลงด้วยปลายเท้า ถ้าเหนื่อยให้เดินแทน",
+    "cue_th": "ท่าที่ 4 กระโดดเชือกเบา 180 วินาที"
+   }
+  },
+  {
+   "def": "Plan",
+   "note": "low",
+   "value": {
+    "level": "beginner",
+    "keys": [
+     "yoga_mat"
+    ],
+    "weight_kg": null,
+    "moves": [
+     {
+      "n": 1,
+      "key": "march_warm",
+      "id": "x01",
+      "name_th": "เดินยกเข่าอุ่นเครื่อง",
+      "sec": 120,
+      "minutes": 2.0,
+      "muscles": [
+       "full"
+      ],
+      "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+      "need": []
+     },
+     {
+      "n": 2,
+      "key": "body_squat",
+      "id": "x03",
+      "name_th": "สกวอตน้ำหนักตัว",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "legs",
+       "glutes"
+      ],
+      "safety_th": "ส้นเท้าติดพื้น อย่าให้เข่าบิดเข้าใน",
+      "need": []
+     },
+     {
+      "n": 3,
+      "key": "knee_push",
+      "id": "x04",
+      "name_th": "ดันพื้นเข่าลง",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "chest",
+       "arms"
+      ],
+      "safety_th": "ลำตัวเป็นเส้นตรงจากเข่าถึงหัวไหล่ ข้อมือไม่เจ็บ",
+      "need": [
+       "yoga_mat"
+      ]
+     },
+     {
+      "n": 4,
+      "key": "glute_bridge",
+      "id": "x06",
+      "name_th": "ยกสะพานสะโพก",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "glutes",
+       "core"
+      ],
+      "safety_th": "กดส้นเท้า อย่าแอ่นหลังส่วนล่างมาก",
+      "need": [
+       "yoga_mat"
+      ]
+     },
+     {
+      "n": 5,
+      "key": "air_press",
+      "id": "x15",
+      "name_th": "ยกแขนเหนือหัวแบบน้ำหนักตัว",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "shoulders"
+      ],
+      "safety_th": "ไหล่ไม่ยัก ยกในกรอบที่ปวด",
+      "need": []
+     },
+     {
+      "n": 6,
+      "key": "dead_bug",
+      "id": "x09",
+      "name_th": "เดดบั๊ก",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "core"
+      ],
+      "safety_th": "หลังติดเสื่อ ถ้าแอ่นให้ก้าวสั้นลง",
+      "need": [
+       "yoga_mat"
+      ]
+     },
+     {
+      "n": 7,
+      "key": "stretch_close",
+      "id": "x12",
+      "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+      "sec": 180,
+      "minutes": 3.0,
+      "muscles": [
+       "full"
+      ],
+      "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+      "need": []
+     }
+    ],
+    "count": 7,
+    "total_sec": 1200,
+    "total_min": 20.0,
+    "headline_th": "แผน 20 นาที · beginner · 7 ท่า",
+    "disclaimer_th": "FitDeck เป็นตารางออกกำลังกายตัวอย่างจากอุปกรณ์ที่มี ไม่ใช่เทรนเนอร์และไม่ใช่คำแนะนำทางการแพทย์ ถ้าเจ็บหรือเวียนหัวให้หยุดทันที และปรึกษาแพทย์ก่อนเริ่มถ้ามีโรคประจำตัว"
+   }
+  },
+  {
+   "def": "Move",
+   "note": "low march_warm",
+   "value": {
+    "n": 1,
+    "key": "march_warm",
+    "id": "x01",
+    "name_th": "เดินยกเข่าอุ่นเครื่อง",
+    "sec": 120,
+    "minutes": 2.0,
+    "muscles": [
+     "full"
+    ],
+    "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+    "need": []
+   }
+  },
+  {
+   "def": "Move",
+   "note": "low body_squat",
+   "value": {
+    "n": 2,
+    "key": "body_squat",
+    "id": "x03",
+    "name_th": "สกวอตน้ำหนักตัว",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "legs",
+     "glutes"
+    ],
+    "safety_th": "ส้นเท้าติดพื้น อย่าให้เข่าบิดเข้าใน",
+    "need": []
+   }
+  },
+  {
+   "def": "Move",
+   "note": "low knee_push",
+   "value": {
+    "n": 3,
+    "key": "knee_push",
+    "id": "x04",
+    "name_th": "ดันพื้นเข่าลง",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "chest",
+     "arms"
+    ],
+    "safety_th": "ลำตัวเป็นเส้นตรงจากเข่าถึงหัวไหล่ ข้อมือไม่เจ็บ",
+    "need": [
+     "yoga_mat"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "low glute_bridge",
+   "value": {
+    "n": 4,
+    "key": "glute_bridge",
+    "id": "x06",
+    "name_th": "ยกสะพานสะโพก",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "glutes",
+     "core"
+    ],
+    "safety_th": "กดส้นเท้า อย่าแอ่นหลังส่วนล่างมาก",
+    "need": [
+     "yoga_mat"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "low air_press",
+   "value": {
+    "n": 5,
+    "key": "air_press",
+    "id": "x15",
+    "name_th": "ยกแขนเหนือหัวแบบน้ำหนักตัว",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "shoulders"
+    ],
+    "safety_th": "ไหล่ไม่ยัก ยกในกรอบที่ปวด",
+    "need": []
+   }
+  },
+  {
+   "def": "Move",
+   "note": "low dead_bug",
+   "value": {
+    "n": 6,
+    "key": "dead_bug",
+    "id": "x09",
+    "name_th": "เดดบั๊ก",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "core"
+    ],
+    "safety_th": "หลังติดเสื่อ ถ้าแอ่นให้ก้าวสั้นลง",
+    "need": [
+     "yoga_mat"
+    ]
+   }
+  },
+  {
+   "def": "Move",
+   "note": "low stretch_close",
+   "value": {
+    "n": 7,
+    "key": "stretch_close",
+    "id": "x12",
+    "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+    "sec": 180,
+    "minutes": 3.0,
+    "muscles": [
+     "full"
+    ],
+    "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+    "need": []
+   }
+  },
+  {
+   "def": "TimerDeck",
+   "note": "low",
+   "value": {
+    "cards": [
+     {
+      "n": 1,
+      "key": "march_warm",
+      "name_th": "เดินยกเข่าอุ่นเครื่อง",
+      "sec": 120,
+      "start_sec": 0,
+      "end_sec": 120,
+      "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+      "cue_th": "ท่าที่ 1 เดินยกเข่าอุ่นเครื่อง 120 วินาที"
+     },
+     {
+      "n": 2,
+      "key": "body_squat",
+      "name_th": "สกวอตน้ำหนักตัว",
+      "sec": 180,
+      "start_sec": 120,
+      "end_sec": 300,
+      "safety_th": "ส้นเท้าติดพื้น อย่าให้เข่าบิดเข้าใน",
+      "cue_th": "ท่าที่ 2 สกวอตน้ำหนักตัว 180 วินาที"
+     },
+     {
+      "n": 3,
+      "key": "knee_push",
+      "name_th": "ดันพื้นเข่าลง",
+      "sec": 180,
+      "start_sec": 300,
+      "end_sec": 480,
+      "safety_th": "ลำตัวเป็นเส้นตรงจากเข่าถึงหัวไหล่ ข้อมือไม่เจ็บ",
+      "cue_th": "ท่าที่ 3 ดันพื้นเข่าลง 180 วินาที"
+     },
+     {
+      "n": 4,
+      "key": "glute_bridge",
+      "name_th": "ยกสะพานสะโพก",
+      "sec": 180,
+      "start_sec": 480,
+      "end_sec": 660,
+      "safety_th": "กดส้นเท้า อย่าแอ่นหลังส่วนล่างมาก",
+      "cue_th": "ท่าที่ 4 ยกสะพานสะโพก 180 วินาที"
+     },
+     {
+      "n": 5,
+      "key": "air_press",
+      "name_th": "ยกแขนเหนือหัวแบบน้ำหนักตัว",
+      "sec": 180,
+      "start_sec": 660,
+      "end_sec": 840,
+      "safety_th": "ไหล่ไม่ยัก ยกในกรอบที่ปวด",
+      "cue_th": "ท่าที่ 5 ยกแขนเหนือหัวแบบน้ำหนักตัว 180 วินาที"
+     },
+     {
+      "n": 6,
+      "key": "dead_bug",
+      "name_th": "เดดบั๊ก",
+      "sec": 180,
+      "start_sec": 840,
+      "end_sec": 1020,
+      "safety_th": "หลังติดเสื่อ ถ้าแอ่นให้ก้าวสั้นลง",
+      "cue_th": "ท่าที่ 6 เดดบั๊ก 180 วินาที"
+     },
+     {
+      "n": 7,
+      "key": "stretch_close",
+      "name_th": "ยืดเหยียดคลายกล้ามเนื้อ",
+      "sec": 180,
+      "start_sec": 1020,
+      "end_sec": 1200,
+      "safety_th": "ยืดจนตึง ไม่ยืดจนเจ็บ",
+      "cue_th": "ท่าที่ 7 ยืดเหยียดคลายกล้ามเนื้อ 180 วินาที"
+     }
+    ],
+    "count": 7,
+    "total_sec": 1200,
+    "headline_th": "จับเวลา 7 ท่า รวม 1200 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "low t1",
+   "value": {
+    "n": 1,
+    "key": "march_warm",
+    "name_th": "เดินยกเข่าอุ่นเครื่อง",
+    "sec": 120,
+    "start_sec": 0,
+    "end_sec": 120,
+    "safety_th": "ค่อย ๆ ยกเข่า อย่ากลั้นหายใจ",
+    "cue_th": "ท่าที่ 1 เดินยกเข่าอุ่นเครื่อง 120 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "low t2",
+   "value": {
+    "n": 2,
+    "key": "body_squat",
+    "name_th": "สกวอตน้ำหนักตัว",
+    "sec": 180,
+    "start_sec": 120,
+    "end_sec": 300,
+    "safety_th": "ส้นเท้าติดพื้น อย่าให้เข่าบิดเข้าใน",
+    "cue_th": "ท่าที่ 2 สกวอตน้ำหนักตัว 180 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "low t3",
+   "value": {
+    "n": 3,
+    "key": "knee_push",
+    "name_th": "ดันพื้นเข่าลง",
+    "sec": 180,
+    "start_sec": 300,
+    "end_sec": 480,
+    "safety_th": "ลำตัวเป็นเส้นตรงจากเข่าถึงหัวไหล่ ข้อมือไม่เจ็บ",
+    "cue_th": "ท่าที่ 3 ดันพื้นเข่าลง 180 วินาที"
+   }
+  },
+  {
+   "def": "TimerCard",
+   "note": "low t4",
+   "value": {
+    "n": 4,
+    "key": "glute_bridge",
+    "name_th": "ยกสะพานสะโพก",
+    "sec": 180,
+    "start_sec": 480,
+    "end_sec": 660,
+    "safety_th": "กดส้นเท้า อย่าแอ่นหลังส่วนล่างมาก",
+    "cue_th": "ท่าที่ 4 ยกสะพานสะโพก 180 วินาที"
+   }
+  },
+  {
+   "def": "SessionLog",
+   "note": "complete",
+   "value": {
+    "rows": [
+     {
+      "date": "2026-12-01",
+      "level": "beginner",
+      "planned": 7,
+      "completed": 7,
+      "total_sec": 1200,
+      "feeling": "ok",
+      "stopped": false
+     }
+    ],
+    "count": 1,
+    "finished_sessions": 1,
+    "headline_th": "บันทึก 1 ครั้ง · ทำครบ 1 ครั้ง"
+   }
+  },
+  {
+   "def": "LogRow",
+   "note": "complete row",
+   "value": {
+    "date": "2026-12-01",
+    "level": "beginner",
+    "planned": 7,
+    "completed": 7,
+    "total_sec": 1200,
+    "feeling": "ok",
+    "stopped": false
+   }
+  },
+  {
+   "def": "SessionLog",
+   "note": "then stop",
+   "value": {
+    "rows": [
+     {
+      "date": "2026-12-01",
+      "level": "beginner",
+      "planned": 7,
+      "completed": 7,
+      "total_sec": 1200,
+      "feeling": "ok",
+      "stopped": false
+     },
+     {
+      "date": "2026-12-02",
+      "level": "beginner",
+      "planned": 7,
+      "completed": 2,
+      "total_sec": 300,
+      "feeling": "stop",
+      "stopped": true
+     }
+    ],
+    "count": 2,
+    "finished_sessions": 1,
+    "headline_th": "บันทึก 2 ครั้ง · ทำครบ 1 ครั้ง"
+   }
+  },
+  {
+   "def": "LogRow",
+   "note": "stop row",
+   "value": {
+    "date": "2026-12-02",
+    "level": "beginner",
+    "planned": 7,
+    "completed": 2,
+    "total_sec": 300,
+    "feeling": "stop",
+    "stopped": true
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "gift",
+   "value": {
+    "title_th": "FitDeck — พี่กิ๊ฟ",
+    "headline_th": "แผน 20 นาที · beginner · 7 ท่า",
+    "hook_th": "ถ่ายอุปกรณ์ที่มี ได้ตารางออกกำลังกายที่บ้าน",
+    "total_min": 20.0,
+    "count": 7,
+    "level": "beginner",
+    "layout": "fit_card",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with FitDeck · guidance only, not a trainer or medical advice",
+    "cta_th": "คอมเมนต์ FIT รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exh",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "FitDeck เป็นตารางออกกำลังกายตัวอย่างจากอุปกรณ์ที่มี ไม่ใช่เทรนเนอร์และไม่ใช่คำแนะนำทางการแพทย์ ถ้าเจ็บหรือเวียนหัวให้หยุดทันที และปรึกษาแพทย์ก่อนเริ่มถ้ามีโรคประจำตัว"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "pain",
+   "value": {
+    "level": "stop",
+    "message_th": "หยุดทันทีถ้าเจ็บหรือเวียนหัว แล้วพัก FitDeck เป็นตารางออกกำลังกายตัวอย่างจากอุปกรณ์ที่มี ไม่ใช่เทรนเนอร์และไม่ใช่คำแนะนำทางการแพทย์ ถ้าเจ็บหรือเวียนหัวให้หยุดทันที และปรึกษาแพทย์ก่อนเริ่มถ้ามีโรคประจำตัว"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "dizzy",
+   "value": {
+    "level": "stop",
+    "message_th": "หยุดทันทีถ้าเจ็บหรือเวียนหัว แล้วพัก FitDeck เป็นตารางออกกำลังกายตัวอย่างจากอุปกรณ์ที่มี ไม่ใช่เทรนเนอร์และไม่ใช่คำแนะนำทางการแพทย์ ถ้าเจ็บหรือเวียนหัวให้หยุดทันที และปรึกษาแพทย์ก่อนเริ่มถ้ามีโรคประจำตัว"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "not cleared",
+   "value": {
+    "level": "warn",
+    "message_th": "ถ้ามีโรคประจำตัวหรือไม่เคยออกกำลัง ควรปรึกษาแพทย์ก่อน FitDeck เป็นตารางออกกำลังกายตัวอย่างจากอุปกรณ์ที่มี ไม่ใช่เทรนเนอร์และไม่ใช่คำแนะนำทางการแพทย์ ถ้าเจ็บหรือเวียนหัวให้หยุดทันที และปรึกษาแพทย์ก่อนเริ่มถ้ามีโรคประจำตัว"
+   }
+  }
+ ]
+}

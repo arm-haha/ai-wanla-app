@@ -1,0 +1,537 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/fitdeck.schema.json",
+ "title": "FitDeck",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "goal_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Detection": {
+   "type": "object",
+   "required": [
+    "key",
+    "value",
+    "confidence"
+   ],
+   "properties": {
+    "key": {
+     "type": "string"
+    },
+    "value": true,
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "GearPhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "crop",
+    "detections"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^s[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "crop": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "detections": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Detection"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "GearScan": {
+   "type": "object",
+   "required": [
+    "shot_id",
+    "quality",
+    "ok",
+    "keys",
+    "weight_kg",
+    "count",
+    "message_th"
+   ],
+   "properties": {
+    "shot_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "keys": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "weight_kg": {
+     "type": [
+      "number",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Move": {
+   "type": "object",
+   "required": [
+    "n",
+    "key",
+    "id",
+    "name_th",
+    "sec",
+    "minutes",
+    "muscles",
+    "safety_th",
+    "need"
+   ],
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "key": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "sec": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "minutes": {
+     "type": "number",
+     "minimum": 0
+    },
+    "muscles": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "safety_th": {
+     "type": "string"
+    },
+    "need": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "Plan": {
+   "type": "object",
+   "required": [
+    "level",
+    "keys",
+    "weight_kg",
+    "moves",
+    "count",
+    "total_sec",
+    "total_min",
+    "headline_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "beginner",
+      "intermediate"
+     ]
+    },
+    "keys": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "weight_kg": {
+     "type": [
+      "number",
+      "null"
+     ]
+    },
+    "moves": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Move"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total_sec": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total_min": {
+     "type": "number",
+     "minimum": 0
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "TimerCard": {
+   "type": "object",
+   "required": [
+    "n",
+    "key",
+    "name_th",
+    "sec",
+    "start_sec",
+    "end_sec",
+    "safety_th",
+    "cue_th"
+   ],
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "key": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "sec": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "start_sec": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "end_sec": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "safety_th": {
+     "type": "string"
+    },
+    "cue_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "TimerDeck": {
+   "type": "object",
+   "required": [
+    "cards",
+    "count",
+    "total_sec",
+    "headline_th"
+   ],
+   "properties": {
+    "cards": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/TimerCard"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total_sec": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "headline_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "LogRow": {
+   "type": "object",
+   "required": [
+    "date",
+    "level",
+    "planned",
+    "completed",
+    "total_sec",
+    "feeling",
+    "stopped"
+   ],
+   "properties": {
+    "date": {
+     "type": "string"
+    },
+    "level": {
+     "type": "string"
+    },
+    "planned": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "completed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total_sec": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "feeling": {
+     "enum": [
+      "easy",
+      "ok",
+      "hard",
+      "stop"
+     ]
+    },
+    "stopped": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SessionLog": {
+   "type": "object",
+   "required": [
+    "rows",
+    "count",
+    "finished_sessions",
+    "headline_th"
+   ],
+   "properties": {
+    "rows": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/LogRow"
+     }
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "finished_sessions": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "headline_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "total_min",
+    "count",
+    "level",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "total_min": {
+     "type": "number",
+     "minimum": 0
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "level": {
+     "type": "string"
+    },
+    "layout": {
+     "enum": [
+      "fit_card"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
