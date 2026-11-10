@@ -1,0 +1,1738 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "พี่มิ้นต์",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่มิ้นต์",
+    "name_en": "Mint",
+    "age": 28,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "อยากลองช่อใบโอลิฟ์เส้นบางที่แขนด้านในก่อนจองช่าง",
+    "region": "bkk"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องเพชร",
+   "value": {
+    "id": "u02",
+    "name_th": "น้องเพชร",
+    "name_en": "Petch",
+    "age": 22,
+    "city_th": "เชียงใหม่",
+    "goal_th": "อยากสักข้อมือแต่ไม่แน่ใจว่าเล็กไปไหม",
+    "region": "province"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่เอก",
+   "value": {
+    "id": "u03",
+    "name_th": "พี่เอก",
+    "name_en": "Ekk",
+    "age": 41,
+    "city_th": "พัทยา",
+    "goal_th": "อยากได้มังกรสีที่ต้นแขน ให้อู่สักที่ท่องเที่ยวประเมินราคา",
+    "region": "tourist"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "พี่ฟ้า",
+   "value": {
+    "id": "u04",
+    "name_th": "พี่ฟ้า",
+    "name_en": "Fah",
+    "age": 33,
+    "city_th": "ขอนแก่น",
+    "goal_th": "เคยมีคีลอยด์ อยากรู้ว่าแอปจะเตือนไหม",
+    "region": "province"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "น้องต้า",
+   "value": {
+    "id": "u05",
+    "name_th": "น้องต้า",
+    "name_en": "Ta",
+    "age": 19,
+    "city_th": "กรุงเทพฯ",
+    "goal_th": "อยากสักหลังมือ แต่กลัวจางเร็ว",
+    "region": "bkk"
+   }
+  },
+  {
+   "def": "SkinPhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.18,
+    "blur": 0.1,
+    "tilt": 0.08,
+    "skin_visible": 0.92,
+    "undertone": "warm",
+    "detections": [
+     {
+      "placement": "inner_forearm",
+      "confidence": 0.94,
+      "side": "left"
+     },
+     {
+      "placement": "wrist",
+      "confidence": 0.42,
+      "side": "left"
+     }
+    ]
+   }
+  },
+  {
+   "def": "SkinScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": []
+    },
+    "placements": [
+     {
+      "placement": "inner_forearm",
+      "name_th": "แขนด้านใน",
+      "name_en": "Inner forearm",
+      "confidence": 0.94,
+      "side": "left"
+     }
+    ],
+    "uncertain": [
+     "wrist"
+    ],
+    "placement_count": 1,
+    "undertone": "warm"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "steps": [
+     "skin_detect",
+     "placement_classify",
+     "overlay",
+     "size_check",
+     "aging_preview",
+     "artist_card"
+    ]
+   }
+  },
+  {
+   "def": "SkinPhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.2,
+    "blur": 0.12,
+    "tilt": 0.1,
+    "skin_visible": 0.88,
+    "undertone": "cool",
+    "detections": [
+     {
+      "placement": "wrist",
+      "confidence": 0.91,
+      "side": "right"
+     }
+    ]
+   }
+  },
+  {
+   "def": "SkinScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "quality": {
+     "score": 86,
+     "ok": true,
+     "tips_th": []
+    },
+    "placements": [
+     {
+      "placement": "wrist",
+      "name_th": "ข้อมือ",
+      "name_en": "Wrist",
+      "confidence": 0.91,
+      "side": "right"
+     }
+    ],
+    "uncertain": [],
+    "placement_count": 1,
+    "undertone": "cool"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "steps": [
+     "skin_detect",
+     "placement_classify",
+     "overlay",
+     "size_check",
+     "aging_preview",
+     "artist_card"
+    ]
+   }
+  },
+  {
+   "def": "SkinPhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.25,
+    "blur": 0.15,
+    "tilt": 0.12,
+    "skin_visible": 0.9,
+    "undertone": "neutral",
+    "detections": [
+     {
+      "placement": "upper_arm",
+      "confidence": 0.95,
+      "side": "left"
+     }
+    ]
+   }
+  },
+  {
+   "def": "SkinScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "quality": {
+     "score": 83,
+     "ok": true,
+     "tips_th": []
+    },
+    "placements": [
+     {
+      "placement": "upper_arm",
+      "name_th": "ต้นแขน",
+      "name_en": "Upper arm",
+      "confidence": 0.95,
+      "side": "left"
+     }
+    ],
+    "uncertain": [],
+    "placement_count": 1,
+    "undertone": "neutral"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "steps": [
+     "skin_detect",
+     "placement_classify",
+     "overlay",
+     "size_check",
+     "aging_preview",
+     "artist_card"
+    ]
+   }
+  },
+  {
+   "def": "SkinPhoto",
+   "note": "p04",
+   "value": {
+    "id": "p04",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.62,
+    "blur": 0.22,
+    "tilt": 0.48,
+    "skin_visible": 0.7,
+    "undertone": "warm",
+    "detections": [
+     {
+      "placement": "ribs",
+      "confidence": 0.86,
+      "side": "right"
+     }
+    ]
+   }
+  },
+  {
+   "def": "SkinScan",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "quality": {
+     "score": 58,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนบนผิวเยอะ ลองหันออกจากไฟหรือบังแดด",
+      "ถ่ายเอียงเกินไป ถ่ายตั้งฉากกับผิว"
+     ]
+    },
+    "placements": [
+     {
+      "placement": "ribs",
+      "name_th": "ซี่โครง",
+      "name_en": "Ribs",
+      "confidence": 0.86,
+      "side": "right"
+     }
+    ],
+    "uncertain": [],
+    "placement_count": 1,
+    "undertone": "warm"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "steps": [
+     "skin_detect",
+     "deglare",
+     "deskew",
+     "placement_classify",
+     "overlay",
+     "size_check",
+     "aging_preview",
+     "artist_card"
+    ]
+   }
+  },
+  {
+   "def": "SkinPhoto",
+   "note": "p05",
+   "value": {
+    "id": "p05",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.16,
+    "blur": 0.1,
+    "tilt": 0.08,
+    "skin_visible": 0.93,
+    "undertone": "cool",
+    "detections": [
+     {
+      "placement": "hand",
+      "confidence": 0.92,
+      "side": "left"
+     }
+    ]
+   }
+  },
+  {
+   "def": "SkinScan",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "quality": {
+     "score": 89,
+     "ok": true,
+     "tips_th": []
+    },
+    "placements": [
+     {
+      "placement": "hand",
+      "name_th": "หลังมือ",
+      "name_en": "Hand",
+      "confidence": 0.92,
+      "side": "left"
+     }
+    ],
+    "uncertain": [],
+    "placement_count": 1,
+    "undertone": "cool"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "steps": [
+     "skin_detect",
+     "placement_classify",
+     "overlay",
+     "size_check",
+     "aging_preview",
+     "artist_card"
+    ]
+   }
+  },
+  {
+   "def": "SkinPhoto",
+   "note": "p06",
+   "value": {
+    "id": "p06",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.18,
+    "blur": 0.1,
+    "tilt": 0.1,
+    "skin_visible": 0.9,
+    "undertone": "neutral",
+    "detections": [
+     {
+      "placement": "calf",
+      "confidence": 0.89,
+      "side": "right"
+     }
+    ]
+   }
+  },
+  {
+   "def": "SkinScan",
+   "note": "p06",
+   "value": {
+    "photo_id": "p06",
+    "quality": {
+     "score": 87,
+     "ok": true,
+     "tips_th": []
+    },
+    "placements": [
+     {
+      "placement": "calf",
+      "name_th": "น่อง",
+      "name_en": "Calf",
+      "confidence": 0.89,
+      "side": "right"
+     }
+    ],
+    "uncertain": [],
+    "placement_count": 1,
+    "undertone": "neutral"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p06",
+   "value": {
+    "photo_id": "p06",
+    "steps": [
+     "skin_detect",
+     "placement_classify",
+     "overlay",
+     "size_check",
+     "aging_preview",
+     "artist_card"
+    ]
+   }
+  },
+  {
+   "def": "SkinPhoto",
+   "note": "p07",
+   "value": {
+    "id": "p07",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.2,
+    "blur": 0.55,
+    "tilt": 0.15,
+    "skin_visible": 0.3,
+    "undertone": "warm",
+    "detections": []
+   }
+  },
+  {
+   "def": "SkinScan",
+   "note": "p07",
+   "value": {
+    "photo_id": "p07",
+    "quality": {
+     "score": 64,
+     "ok": false,
+     "tips_th": [
+      "ภาพเบลอ ถือมือถือให้นิ่ง แตะโฟกัสที่ผิว",
+      "เห็นผิวน้อยไป ดึงแขนเสื้อ/จัดมุมให้ผิวที่ต้องการสักเต็มกรอบ"
+     ]
+    },
+    "placements": [],
+    "uncertain": [],
+    "placement_count": 0,
+    "undertone": "warm"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p07",
+   "value": {
+    "photo_id": "p07",
+    "steps": [
+     "skin_detect",
+     "placement_classify",
+     "overlay",
+     "size_check",
+     "aging_preview",
+     "artist_card"
+    ]
+   }
+  },
+  {
+   "def": "SkinPhoto",
+   "note": "p08",
+   "value": {
+    "id": "p08",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.15,
+    "blur": 0.1,
+    "tilt": 0.08,
+    "skin_visible": 0.91,
+    "undertone": "warm",
+    "detections": [
+     {
+      "placement": "behind_ear",
+      "confidence": 0.87,
+      "side": "left"
+     }
+    ]
+   }
+  },
+  {
+   "def": "SkinScan",
+   "note": "p08",
+   "value": {
+    "photo_id": "p08",
+    "quality": {
+     "score": 89,
+     "ok": true,
+     "tips_th": []
+    },
+    "placements": [
+     {
+      "placement": "behind_ear",
+      "name_th": "หลังใบหู",
+      "name_en": "Behind the ear",
+      "confidence": 0.87,
+      "side": "left"
+     }
+    ],
+    "uncertain": [],
+    "placement_count": 1,
+    "undertone": "warm"
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p08",
+   "value": {
+    "photo_id": "p08",
+    "steps": [
+     "skin_detect",
+     "placement_classify",
+     "overlay",
+     "size_check",
+     "aging_preview",
+     "artist_card"
+    ]
+   }
+  },
+  {
+   "def": "PlacementInfo",
+   "note": "inner_forearm",
+   "value": {
+    "id": "pl01",
+    "placement": "inner_forearm",
+    "name_th": "แขนด้านใน",
+    "name_en": "Inner forearm",
+    "pain": 4,
+    "heal_days": 14,
+    "min_cm": 4,
+    "max_cm": 18,
+    "notes_th": "เห็นง่าย ซ่อนด้วยแขนยาวได้ นิยมงานเส้นบาง"
+   }
+  },
+  {
+   "def": "PlacementInfo",
+   "note": "wrist",
+   "value": {
+    "id": "pl03",
+    "placement": "wrist",
+    "name_th": "ข้อมือ",
+    "name_en": "Wrist",
+    "pain": 6,
+    "heal_days": 14,
+    "min_cm": 2,
+    "max_cm": 8,
+    "notes_th": "พื้นที่แคบ ลายใหญ่จะเบียด"
+   }
+  },
+  {
+   "def": "PlacementInfo",
+   "note": "upper_arm",
+   "value": {
+    "id": "pl04",
+    "placement": "upper_arm",
+    "name_th": "ต้นแขน",
+    "name_en": "Upper arm",
+    "pain": 3,
+    "heal_days": 14,
+    "min_cm": 5,
+    "max_cm": 25,
+    "notes_th": "เจ็บน้อย เหมาะลายขนาดกลาง–ใหญ่"
+   }
+  },
+  {
+   "def": "PlacementInfo",
+   "note": "ribs",
+   "value": {
+    "id": "pl11",
+    "placement": "ribs",
+    "name_th": "ซี่โครง",
+    "name_en": "Ribs",
+    "pain": 8,
+    "heal_days": 21,
+    "min_cm": 5,
+    "max_cm": 25,
+    "notes_th": "เจ็บมาก หายใจแล้วผิวขยับ ควรมีประสบการณ์ก่อน"
+   }
+  },
+  {
+   "def": "PlacementInfo",
+   "note": "hand",
+   "value": {
+    "id": "pl13",
+    "placement": "hand",
+    "name_th": "หลังมือ",
+    "name_en": "Hand",
+    "pain": 8,
+    "heal_days": 18,
+    "min_cm": 2,
+    "max_cm": 10,
+    "notes_th": "จางเร็ว เพราะใช้มือทั้งวันและโดนแดด"
+   }
+  },
+  {
+   "def": "PlacementInfo",
+   "note": "finger",
+   "value": {
+    "id": "pl14",
+    "placement": "finger",
+    "name_th": "นิ้ว",
+    "name_en": "Finger",
+    "pain": 7,
+    "heal_days": 14,
+    "min_cm": 1,
+    "max_cm": 4,
+    "notes_th": "จางเร็วมาก มักต้องสักซ้ำ"
+   }
+  },
+  {
+   "def": "PlacementInfo",
+   "note": "behind_ear",
+   "value": {
+    "id": "pl15",
+    "placement": "behind_ear",
+    "name_th": "หลังใบหู",
+    "name_en": "Behind the ear",
+    "pain": 6,
+    "heal_days": 12,
+    "min_cm": 1,
+    "max_cm": 5,
+    "notes_th": "ลายเล็กเท่านั้น ซ่อนง่าย"
+   }
+  },
+  {
+   "def": "PlacementInfo",
+   "note": "ankle",
+   "value": {
+    "id": "pl06",
+    "placement": "ankle",
+    "name_th": "ข้อเท้า",
+    "name_en": "Ankle",
+    "pain": 7,
+    "heal_days": 18,
+    "min_cm": 2,
+    "max_cm": 10,
+    "notes_th": "ผิวบาง เจ็บกว่าแขน รองเท้าอาจเสียดสี"
+   }
+  },
+  {
+   "def": "PlacementInfo",
+   "note": "back",
+   "value": {
+    "id": "pl09",
+    "placement": "back",
+    "name_th": "แผ่นหลัง",
+    "name_en": "Back",
+    "pain": 3,
+    "heal_days": 21,
+    "min_cm": 8,
+    "max_cm": 40,
+    "notes_th": "พื้นที่กว้างที่สุด หายช้ากว่าเพราะนอนทับได้"
+   }
+  },
+  {
+   "def": "PlacementInfo",
+   "note": "nape",
+   "value": {
+    "id": "pl10",
+    "placement": "nape",
+    "name_th": "ท้ายทอย",
+    "name_en": "Nape",
+    "pain": 6,
+    "heal_days": 14,
+    "min_cm": 2,
+    "max_cm": 10,
+    "notes_th": "ผมสั้นจะโชว์ ผมยาวซ่อนได้"
+   }
+  },
+  {
+   "def": "PlacementInfo",
+   "note": "shoulder",
+   "value": {
+    "id": "pl05",
+    "placement": "shoulder",
+    "name_th": "หัวไหล่",
+    "name_en": "Shoulder",
+    "pain": 4,
+    "heal_days": 16,
+    "min_cm": 6,
+    "max_cm": 22,
+    "notes_th": "โค้งตามหัวไหล่ ต้องให้ช่างจัดวาง"
+   }
+  },
+  {
+   "def": "PlacementInfo",
+   "note": "collarbone",
+   "value": {
+    "id": "pl12",
+    "placement": "collarbone",
+    "name_th": "ไหปลาร้า",
+    "name_en": "Collarbone",
+    "pain": 7,
+    "heal_days": 16,
+    "min_cm": 3,
+    "max_cm": 16,
+    "notes_th": "ผิวบางใกล้กระดูก ลายเส้นบางดูดี"
+   }
+  },
+  {
+   "def": "PlacementInfo",
+   "note": "calf",
+   "value": {
+    "id": "pl07",
+    "placement": "calf",
+    "name_th": "น่อง",
+    "name_en": "Calf",
+    "pain": 3,
+    "heal_days": 16,
+    "min_cm": 6,
+    "max_cm": 28,
+    "notes_th": "พื้นที่กว้าง เจ็บน้อย"
+   }
+  },
+  {
+   "def": "DesignInfo",
+   "note": "d01",
+   "value": {
+    "id": "d01",
+    "name_th": "ช่อใบโอลิฟ์เส้นบาง",
+    "name_en": "Fine-line olive sprig",
+    "style": "fine_line",
+    "style_th": "เส้นบาง (Fine line)",
+    "default_mode": "bw",
+    "tags": [
+     "botanical",
+     "fine"
+    ],
+    "color_ok": true,
+    "bw_ok": true,
+    "notes_th": "ดูบางและเรียบ แต่จางและเบลอเร็วกว่างานเส้นหนา"
+   }
+  },
+  {
+   "def": "DesignInfo",
+   "note": "d02",
+   "value": {
+    "id": "d02",
+    "name_th": "ดอกโบตั๋น",
+    "name_en": "Peony",
+    "style": "floral",
+    "style_th": "ดอกไม้ / พฤกษา",
+    "default_mode": "color",
+    "tags": [
+     "floral",
+     "color"
+    ],
+    "color_ok": true,
+    "bw_ok": true,
+    "notes_th": "นิยมเส้นบางหรือสีอ่อน ควรเว้นระยะให้ดอกไม่ชนกัน"
+   }
+  },
+  {
+   "def": "DesignInfo",
+   "note": "d05",
+   "value": {
+    "id": "d05",
+    "name_th": "มังกรเล็ก",
+    "name_en": "Small dragon",
+    "style": "traditional",
+    "style_th": "แบบดั้งเดิม (Traditional)",
+    "default_mode": "color",
+    "tags": [
+     "animal",
+     "classic"
+    ],
+    "color_ok": true,
+    "bw_ok": true,
+    "notes_th": "เส้นหนา สีแน่น อยู่ทน"
+   }
+  },
+  {
+   "def": "DesignInfo",
+   "note": "d07",
+   "value": {
+    "id": "d07",
+    "name_th": "นกกระเรียน",
+    "name_en": "Crane",
+    "style": "watercolor",
+    "style_th": "สีน้ำ (Watercolor)",
+    "default_mode": "color",
+    "tags": [
+     "bird",
+     "wash"
+    ],
+    "color_ok": true,
+    "bw_ok": false,
+    "notes_th": "สีฟุ้งสวยตอนใหม่ แต่จางเร็ว ต้องเก็บรายละเอียด"
+   }
+  },
+  {
+   "def": "DesignInfo",
+   "note": "d08",
+   "value": {
+    "id": "d08",
+    "name_th": "แมวเส้นบาง",
+    "name_en": "Fine-line cat",
+    "style": "fine_line",
+    "style_th": "เส้นบาง (Fine line)",
+    "default_mode": "bw",
+    "tags": [
+     "animal",
+     "fine"
+    ],
+    "color_ok": true,
+    "bw_ok": true,
+    "notes_th": "ดูบางและเรียบ แต่จางและเบลอเร็วกว่างานเส้นหนา"
+   }
+  },
+  {
+   "def": "DesignInfo",
+   "note": "d09",
+   "value": {
+    "id": "d09",
+    "name_th": "แถบแบล็ควork",
+    "name_en": "Blackwork band",
+    "style": "blackwork",
+    "style_th": "แบล็ควอร์ก เข้ม",
+    "default_mode": "bw",
+    "tags": [
+     "band"
+    ],
+    "color_ok": false,
+    "bw_ok": true,
+    "notes_th": "พื้นที่ดำแน่น อยู่ทน แต่เจ็บและบวมกว่า"
+   }
+  },
+  {
+   "def": "DesignInfo",
+   "note": "d10",
+   "value": {
+    "id": "d10",
+    "name_th": "ดาวจุด",
+    "name_en": "Dotwork star",
+    "style": "dotwork",
+    "style_th": "จุด (Dotwork)",
+    "default_mode": "bw",
+    "tags": [
+     "star"
+    ],
+    "color_ok": true,
+    "bw_ok": true,
+    "notes_th": "เงาจากจุด ใช้เวลา ต้องช่างที่ถนัดเทคนิคนี้"
+   }
+  },
+  {
+   "def": "SizeCheck",
+   "note": "mint ok",
+   "value": {
+    "placement": "inner_forearm",
+    "size_cm": 8,
+    "band": "small",
+    "band_th": "เล็ก",
+    "min_cm": 4,
+    "max_cm": 18,
+    "in_range": true,
+    "verdict": "ok",
+    "message_th": "ขนาด 8 ซม. อยู่ในช่วงที่เหมาะกับแขนด้านใน (4–18 ซม.)",
+    "wrap_th": "ผิวค่อนข้างเรียบ วางลายตรงได้"
+   }
+  },
+  {
+   "def": "SizeCheck",
+   "note": "too small",
+   "value": {
+    "placement": "inner_forearm",
+    "size_cm": 3,
+    "band": "tiny",
+    "band_th": "จิ๋ว",
+    "min_cm": 4,
+    "max_cm": 18,
+    "in_range": false,
+    "verdict": "too_small",
+    "message_th": "เล็กไปสำหรับแขนด้านใน แนะนำ 4–18 ซม. จะได้ไม่จางจนอ่านไม่ออก",
+    "wrap_th": "ผิวค่อนข้างเรียบ วางลายตรงได้"
+   }
+  },
+  {
+   "def": "SizeCheck",
+   "note": "too big",
+   "value": {
+    "placement": "wrist",
+    "size_cm": 12,
+    "band": "medium",
+    "band_th": "กลาง",
+    "min_cm": 2,
+    "max_cm": 8,
+    "in_range": false,
+    "verdict": "too_big",
+    "message_th": "ใหญ่ไปสำหรับข้อมือ แนะนำ 2–8 ซม. หรือย้ายไปตำแหน่งที่กว้างกว่า",
+    "wrap_th": "ส่วนนี้โค้ง ต้องให้ช่างวางลายตามแนวกระดูก/กล้ามเนื้อ"
+   }
+  },
+  {
+   "def": "SizeCheck",
+   "note": "finger ok",
+   "value": {
+    "placement": "finger",
+    "size_cm": 2,
+    "band": "tiny",
+    "band_th": "จิ๋ว",
+    "min_cm": 1,
+    "max_cm": 4,
+    "in_range": true,
+    "verdict": "ok",
+    "message_th": "ขนาด 2 ซม. อยู่ในช่วงที่เหมาะกับนิ้ว (1–4 ซม.)",
+    "wrap_th": "ส่วนนี้โค้ง ต้องให้ช่างวางลายตามแนวกระดูก/กล้ามเนื้อ"
+   }
+  },
+  {
+   "def": "ColorVariants",
+   "note": "mint",
+   "value": {
+    "design_id": "d01",
+    "name_th": "ช่อใบโอลิฟ์เส้นบาง",
+    "style": "fine_line",
+    "undertone": "warm",
+    "placement": "inner_forearm",
+    "size_cm": 8,
+    "variants": [
+     {
+      "design_id": "d01",
+      "style": "fine_line",
+      "color_mode": "bw",
+      "label_th": "ขาวดำ",
+      "contrast": 80,
+      "recommended": true
+     },
+     {
+      "design_id": "d01",
+      "style": "fine_line",
+      "color_mode": "color",
+      "label_th": "ลงสี",
+      "contrast": 76,
+      "recommended": false
+     }
+    ],
+    "best_mode": "bw"
+   }
+  },
+  {
+   "def": "ColorVariants",
+   "note": "peony",
+   "value": {
+    "design_id": "d02",
+    "name_th": "ดอกโบตั๋น",
+    "style": "floral",
+    "undertone": "cool",
+    "placement": "upper_arm",
+    "size_cm": 14,
+    "variants": [
+     {
+      "design_id": "d02",
+      "style": "floral",
+      "color_mode": "color",
+      "label_th": "ลงสี",
+      "contrast": 86,
+      "recommended": true
+     },
+     {
+      "design_id": "d02",
+      "style": "floral",
+      "color_mode": "bw",
+      "label_th": "ขาวดำ",
+      "contrast": 80,
+      "recommended": false
+     }
+    ],
+    "best_mode": "color"
+   }
+  },
+  {
+   "def": "ColorVariants",
+   "note": "blackwork bw only",
+   "value": {
+    "design_id": "d09",
+    "name_th": "แถบแบล็ควork",
+    "style": "blackwork",
+    "undertone": "neutral",
+    "placement": "calf",
+    "size_cm": 10,
+    "variants": [
+     {
+      "design_id": "d09",
+      "style": "blackwork",
+      "color_mode": "bw",
+      "label_th": "ขาวดำ",
+      "contrast": 82,
+      "recommended": true
+     }
+    ],
+    "best_mode": "bw"
+   }
+  },
+  {
+   "def": "TryOn",
+   "note": "mint olive",
+   "value": {
+    "photo_id": "p01",
+    "design_id": "d01",
+    "name_th": "ช่อใบโอลิฟ์เส้นบาง",
+    "placement": "inner_forearm",
+    "placement_th": "แขนด้านใน",
+    "size_cm": 8,
+    "style": "fine_line",
+    "color_mode": "bw",
+    "contrast": 80,
+    "size_verdict": "ok",
+    "placement_matched": true,
+    "quality": {
+     "score": 88,
+     "ok": true,
+     "tips_th": []
+    },
+    "watermark": "Made with InkTry · preview only, not a real tattoo",
+    "disclaimer_th": "InkTry เป็นภาพจำลอง ไม่ใช่รอยสักจริง และไม่ใช่คำแนะนำทางการแพทย์ ปรึกษาช่างสักที่มีใบอนุญาตและแพทย์หากมีโรคผิวหนังหรือประวัติคีลอยด์ ผู้ใช้ต้องอายุ 18 ปีขึ้นไป"
+   }
+  },
+  {
+   "def": "TryOn",
+   "note": "petch vine",
+   "value": {
+    "photo_id": "p02",
+    "design_id": "d11",
+    "name_th": "เถาวัลย์ข้อมือ",
+    "placement": "wrist",
+    "placement_th": "ข้อมือ",
+    "size_cm": 5,
+    "style": "fine_line",
+    "color_mode": "bw",
+    "contrast": 76,
+    "size_verdict": "ok",
+    "placement_matched": true,
+    "quality": {
+     "score": 86,
+     "ok": true,
+     "tips_th": []
+    },
+    "watermark": "Made with InkTry · preview only, not a real tattoo",
+    "disclaimer_th": "InkTry เป็นภาพจำลอง ไม่ใช่รอยสักจริง และไม่ใช่คำแนะนำทางการแพทย์ ปรึกษาช่างสักที่มีใบอนุญาตและแพทย์หากมีโรคผิวหนังหรือประวัติคีลอยด์ ผู้ใช้ต้องอายุ 18 ปีขึ้นไป"
+   }
+  },
+  {
+   "def": "TryOn",
+   "note": "ekk dragon",
+   "value": {
+    "photo_id": "p03",
+    "design_id": "d05",
+    "name_th": "มังกรเล็ก",
+    "placement": "upper_arm",
+    "placement_th": "ต้นแขน",
+    "size_cm": 16,
+    "style": "traditional",
+    "color_mode": "color",
+    "contrast": 83,
+    "size_verdict": "ok",
+    "placement_matched": true,
+    "quality": {
+     "score": 83,
+     "ok": true,
+     "tips_th": []
+    },
+    "watermark": "Made with InkTry · preview only, not a real tattoo",
+    "disclaimer_th": "InkTry เป็นภาพจำลอง ไม่ใช่รอยสักจริง และไม่ใช่คำแนะนำทางการแพทย์ ปรึกษาช่างสักที่มีใบอนุญาตและแพทย์หากมีโรคผิวหนังหรือประวัติคีลอยด์ ผู้ใช้ต้องอายุ 18 ปีขึ้นไป"
+   }
+  },
+  {
+   "def": "TryOn",
+   "note": "ta cat",
+   "value": {
+    "photo_id": "p05",
+    "design_id": "d08",
+    "name_th": "แมวเส้นบาง",
+    "placement": "hand",
+    "placement_th": "หลังมือ",
+    "size_cm": 6,
+    "style": "fine_line",
+    "color_mode": "bw",
+    "contrast": 76,
+    "size_verdict": "ok",
+    "placement_matched": true,
+    "quality": {
+     "score": 89,
+     "ok": true,
+     "tips_th": []
+    },
+    "watermark": "Made with InkTry · preview only, not a real tattoo",
+    "disclaimer_th": "InkTry เป็นภาพจำลอง ไม่ใช่รอยสักจริง และไม่ใช่คำแนะนำทางการแพทย์ ปรึกษาช่างสักที่มีใบอนุญาตและแพทย์หากมีโรคผิวหนังหรือประวัติคีลอยด์ ผู้ใช้ต้องอายุ 18 ปีขึ้นไป"
+   }
+  },
+  {
+   "def": "AgingPreview",
+   "note": "mint 1y",
+   "value": {
+    "style": "fine_line",
+    "color_mode": "bw",
+    "placement": "inner_forearm",
+    "years": 1,
+    "size_cm": 8,
+    "fade_pct": 12,
+    "spread_mm": 0.2,
+    "sharpness_left": 88,
+    "look_th": "ยังคมอยู่ อาจซีดเล็กน้อยตามแดดและการดูแล",
+    "care_th": "ทาครีมกันแดดและเลี่ยงการแกะสะเก็ดจะช่วยให้จางช้าลง (ค่าจำลอง ไม่ใช่ผลจริง)",
+    "disclaimer_th": "การจำลองความเก่าเป็นค่าตัวอย่าง ไม่ใช่ผลที่รับประกันบนผิวจริง"
+   }
+  },
+  {
+   "def": "AgingPreview",
+   "note": "mint 5y",
+   "value": {
+    "style": "fine_line",
+    "color_mode": "bw",
+    "placement": "inner_forearm",
+    "years": 5,
+    "size_cm": 8,
+    "fade_pct": 60,
+    "spread_mm": 0.98,
+    "sharpness_left": 40,
+    "look_th": "สีซีดลง ขอบลายเริ่มนุ่ม ยังมองออกแต่ไม่คมเท่าวันสัก",
+    "care_th": "ทาครีมกันแดดและเลี่ยงการแกะสะเก็ดจะช่วยให้จางช้าลง (ค่าจำลอง ไม่ใช่ผลจริง)",
+    "disclaimer_th": "การจำลองความเก่าเป็นค่าตัวอย่าง ไม่ใช่ผลที่รับประกันบนผิวจริง"
+   }
+  },
+  {
+   "def": "AgingPreview",
+   "note": "mint 10y",
+   "value": {
+    "style": "fine_line",
+    "color_mode": "bw",
+    "placement": "inner_forearm",
+    "years": 10,
+    "size_cm": 8,
+    "fade_pct": 90,
+    "spread_mm": 1.95,
+    "sharpness_left": 10,
+    "look_th": "จางและเบลอชัด อาจอ่านรายละเอียดเล็กไม่ออก ควรคุยเรื่องเติมลาย",
+    "care_th": "ทาครีมกันแดดและเลี่ยงการแกะสะเก็ดจะช่วยให้จางช้าลง (ค่าจำลอง ไม่ใช่ผลจริง)",
+    "disclaimer_th": "การจำลองความเก่าเป็นค่าตัวอย่าง ไม่ใช่ผลที่รับประกันบนผิวจริง"
+   }
+  },
+  {
+   "def": "AgingPreview",
+   "note": "hand fades",
+   "value": {
+    "style": "fine_line",
+    "color_mode": "bw",
+    "placement": "hand",
+    "years": 5,
+    "size_cm": 8,
+    "fade_pct": 90,
+    "spread_mm": 0.98,
+    "sharpness_left": 10,
+    "look_th": "จางและเบลอชัด อาจอ่านรายละเอียดเล็กไม่ออก ควรคุยเรื่องเติมลาย",
+    "care_th": "ทาครีมกันแดดและเลี่ยงการแกะสะเก็ดจะช่วยให้จางช้าลง (ค่าจำลอง ไม่ใช่ผลจริง)",
+    "disclaimer_th": "การจำลองความเก่าเป็นค่าตัวอย่าง ไม่ใช่ผลที่รับประกันบนผิวจริง"
+   }
+  },
+  {
+   "def": "AgingPreview",
+   "note": "watercolor color",
+   "value": {
+    "style": "watercolor",
+    "color_mode": "color",
+    "placement": "inner_forearm",
+    "years": 5,
+    "size_cm": 8,
+    "fade_pct": 86,
+    "spread_mm": 1.05,
+    "sharpness_left": 14,
+    "look_th": "จางและเบลอชัด อาจอ่านรายละเอียดเล็กไม่ออก ควรคุยเรื่องเติมลาย",
+    "care_th": "ทาครีมกันแดดและเลี่ยงการแกะสะเก็ดจะช่วยให้จางช้าลง (ค่าจำลอง ไม่ใช่ผลจริง)",
+    "disclaimer_th": "การจำลองความเก่าเป็นค่าตัวอย่าง ไม่ใช่ผลที่รับประกันบนผิวจริง"
+   }
+  },
+  {
+   "def": "AgingPreview",
+   "note": "traditional 10y",
+   "value": {
+    "style": "traditional",
+    "color_mode": "color",
+    "placement": "upper_arm",
+    "years": 10,
+    "size_cm": 16,
+    "fade_pct": 62,
+    "spread_mm": 1.35,
+    "sharpness_left": 38,
+    "look_th": "สีซีดลง ขอบลายเริ่มนุ่ม ยังมองออกแต่ไม่คมเท่าวันสัก",
+    "care_th": "ทาครีมกันแดดและเลี่ยงการแกะสะเก็ดจะช่วยให้จางช้าลง (ค่าจำลอง ไม่ใช่ผลจริง)",
+    "disclaimer_th": "การจำลองความเก่าเป็นค่าตัวอย่าง ไม่ใช่ผลที่รับประกันบนผิวจริง"
+   }
+  },
+  {
+   "def": "PainGuide",
+   "note": "inner_forearm",
+   "value": {
+    "placement": "inner_forearm",
+    "name_th": "แขนด้านใน",
+    "pain": 4,
+    "pain_max": 10,
+    "level": "low",
+    "heal_days": 14,
+    "tip_th": "โดยทั่วไปเจ็บน้อยกว่าจุดอื่น แต่ความทนของแต่ละคนต่างกัน",
+    "notes_th": "เห็นง่าย ซ่อนด้วยแขนยาวได้ นิยมงานเส้นบาง",
+    "disclaimer_th": "ระดับความเจ็บเป็นค่าเฉลี่ยอย่างหยาบ แต่ละคนต่างกัน ไม่ใช่การวินิจฉัย"
+   }
+  },
+  {
+   "def": "PainGuide",
+   "note": "ribs",
+   "value": {
+    "placement": "ribs",
+    "name_th": "ซี่โครง",
+    "pain": 8,
+    "pain_max": 10,
+    "level": "high",
+    "heal_days": 21,
+    "tip_th": "เจ็บมากเป็นปกติในจุดที่ผิวบางหรือใกล้กระดูก พักได้ และอย่าฝืนหิว",
+    "notes_th": "เจ็บมาก หายใจแล้วผิวขยับ ควรมีประสบการณ์ก่อน",
+    "disclaimer_th": "ระดับความเจ็บเป็นค่าเฉลี่ยอย่างหยาบ แต่ละคนต่างกัน ไม่ใช่การวินิจฉัย"
+   }
+  },
+  {
+   "def": "PainGuide",
+   "note": "hand",
+   "value": {
+    "placement": "hand",
+    "name_th": "หลังมือ",
+    "pain": 8,
+    "pain_max": 10,
+    "level": "high",
+    "heal_days": 18,
+    "tip_th": "เจ็บมากเป็นปกติในจุดที่ผิวบางหรือใกล้กระดูก พักได้ และอย่าฝืนหิว",
+    "notes_th": "จางเร็ว เพราะใช้มือทั้งวันและโดนแดด",
+    "disclaimer_th": "ระดับความเจ็บเป็นค่าเฉลี่ยอย่างหยาบ แต่ละคนต่างกัน ไม่ใช่การวินิจฉัย"
+   }
+  },
+  {
+   "def": "PainGuide",
+   "note": "ankle",
+   "value": {
+    "placement": "ankle",
+    "name_th": "ข้อเท้า",
+    "pain": 7,
+    "pain_max": 10,
+    "level": "high",
+    "heal_days": 18,
+    "tip_th": "เจ็บมากเป็นปกติในจุดที่ผิวบางหรือใกล้กระดูก พักได้ และอย่าฝืนหิว",
+    "notes_th": "ผิวบาง เจ็บกว่าแขน รองเท้าอาจเสียดสี",
+    "disclaimer_th": "ระดับความเจ็บเป็นค่าเฉลี่ยอย่างหยาบ แต่ละคนต่างกัน ไม่ใช่การวินิจฉัย"
+   }
+  },
+  {
+   "def": "PainGuide",
+   "note": "thigh",
+   "value": {
+    "placement": "thigh",
+    "name_th": "ต้นขา",
+    "pain": 3,
+    "pain_max": 10,
+    "level": "low",
+    "heal_days": 16,
+    "tip_th": "โดยทั่วไปเจ็บน้อยกว่าจุดอื่น แต่ความทนของแต่ละคนต่างกัน",
+    "notes_th": "ซ่อนง่าย เหมาะลายใหญ่",
+    "disclaimer_th": "ระดับความเจ็บเป็นค่าเฉลี่ยอย่างหยาบ แต่ละคนต่างกัน ไม่ใช่การวินิจฉัย"
+   }
+  },
+  {
+   "def": "AftercareGuide",
+   "note": "standard",
+   "value": {
+    "title_th": "ดูแลรอยสักช่วงแรก",
+    "days": 14,
+    "steps": [
+     {
+      "n": 1,
+      "text_th": "ล้างมือก่อนแตะรอยสัก ล้างด้วยน้ำสะอาดและสบู่อ่อนตามที่ช่างแนะนำ"
+     },
+     {
+      "n": 2,
+      "text_th": "เช็ดซับ ไม่ถู และทาครีมที่ช่างให้ในชั้นบาง ๆ"
+     },
+     {
+      "n": 3,
+      "text_th": "อย่าแกะสะเก็ด อย่าแช่น้ำนาน งดสระในสระ/ทะเลอย่างน้อย 2 สัปดาห์ (ตามช่าง)"
+     },
+     {
+      "n": 4,
+      "text_th": "ใส่เสื้อหลวม ไม่ให้ผ้าเสียดสีโดยตรงช่วงแรก"
+     },
+     {
+      "n": 5,
+      "text_th": "กันแดดเมื่อผิวปิดแล้ว ทาครีมกันแดดทุกครั้งที่ออกแดด เพื่อให้สีนานขึ้น"
+     },
+     {
+      "n": 6,
+      "text_th": "ถ้าบวม แดง ร้อนขึ้น หรือมีหนอง ให้พบแพทย์ ไม่ทายาเองมั่ว"
+     }
+    ],
+    "disclaimer_th": "ทำตามคำช่างและแพทย์เป็นหลัก คู่มือนี้เป็นแนวทางทั่วไป"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "mint",
+   "value": {
+    "style": "fine_line",
+    "placement": "inner_forearm",
+    "size_cm": 8,
+    "region": "bkk",
+    "color_mode": "bw",
+    "mid_thb": 3200,
+    "min_thb": 2550,
+    "max_thb": 4500,
+    "currency": "THB",
+    "name_th": "เส้นบาง (Fine line)",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับช่าง รายละเอียดลาย พื้นที่ และคิวงาน"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "province",
+   "value": {
+    "style": "fine_line",
+    "placement": "inner_forearm",
+    "size_cm": 8,
+    "region": "province",
+    "color_mode": "bw",
+    "mid_thb": 2400,
+    "min_thb": 1900,
+    "max_thb": 3350,
+    "currency": "THB",
+    "name_th": "เส้นบาง (Fine line)",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับช่าง รายละเอียดลาย พื้นที่ และคิวงาน"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "tourist dragon",
+   "value": {
+    "style": "traditional",
+    "placement": "upper_arm",
+    "size_cm": 16,
+    "region": "tourist",
+    "color_mode": "color",
+    "mid_thb": 10150,
+    "min_thb": 8100,
+    "max_thb": 14200,
+    "currency": "THB",
+    "name_th": "แบบดั้งเดิม (Traditional)",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับช่าง รายละเอียดลาย พื้นที่ และคิวงาน"
+   }
+  },
+  {
+   "def": "PriceRange",
+   "note": "min charge",
+   "value": {
+    "style": "minimal",
+    "placement": "behind_ear",
+    "size_cm": 2,
+    "region": "province",
+    "color_mode": "bw",
+    "mid_thb": 1500,
+    "min_thb": 1500,
+    "max_thb": 2100,
+    "currency": "THB",
+    "name_th": "มินิมอล",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับช่าง รายละเอียดลาย พื้นที่ และคิวงาน"
+   }
+  },
+  {
+   "def": "QuoteCheck",
+   "note": "mint fair",
+   "value": {
+    "quote_thb": 3500,
+    "min_thb": 2550,
+    "max_thb": 4500,
+    "mid_thb": 3200,
+    "verdict": "fair",
+    "message_th": "อยู่ในช่วงสมเหตุสมผลเมื่อเทียบกับค่าประมาณการของแอป",
+    "questions_th": [
+     "ช่างมีใบอนุญาตและใช้เข็ม/สีแบบสักครั้งเดียวทิ้งหรือไม่",
+     "ลายนี้ปรับขนาดและวางบนส่วนโค้งของฉันอย่างไร",
+     "สีนี้จางประมาณกี่ปี และมีรอบเติมฟรีหรือคิดเท่าไร",
+     "ช่วงพักฟื้นกี่วัน ห้ามทำอะไรบ้าง",
+     "ราคานี้รวมออกแบบ ลงสี และภาษีแล้วหรือยัง"
+    ],
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับช่าง รายละเอียดลาย พื้นที่ และคิวงาน"
+   }
+  },
+  {
+   "def": "QuoteCheck",
+   "note": "low",
+   "value": {
+    "quote_thb": 1800,
+    "min_thb": 2550,
+    "max_thb": 4500,
+    "mid_thb": 3200,
+    "verdict": "low",
+    "message_th": "ต่ำกว่าช่วงประมาณการมาก ถามให้ชัดว่า inclusive อะไร และมาตรฐานความสะอาด",
+    "questions_th": [
+     "ช่างมีใบอนุญาตและใช้เข็ม/สีแบบสักครั้งเดียวทิ้งหรือไม่",
+     "ลายนี้ปรับขนาดและวางบนส่วนโค้งของฉันอย่างไร",
+     "สีนี้จางประมาณกี่ปี และมีรอบเติมฟรีหรือคิดเท่าไร",
+     "ช่วงพักฟื้นกี่วัน ห้ามทำอะไรบ้าง",
+     "ราคานี้รวมออกแบบ ลงสี และภาษีแล้วหรือยัง"
+    ],
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับช่าง รายละเอียดลาย พื้นที่ และคิวงาน"
+   }
+  },
+  {
+   "def": "QuoteCheck",
+   "note": "high",
+   "value": {
+    "quote_thb": 4300,
+    "min_thb": 2550,
+    "max_thb": 4500,
+    "mid_thb": 3200,
+    "verdict": "high",
+    "message_th": "ค่อนข้างสูงกว่าค่ากลาง ยังอยู่ในช่วง แต่ควรถามรายละเอียดงานและรอบเติม",
+    "questions_th": [
+     "ช่างมีใบอนุญาตและใช้เข็ม/สีแบบสักครั้งเดียวทิ้งหรือไม่",
+     "ลายนี้ปรับขนาดและวางบนส่วนโค้งของฉันอย่างไร",
+     "สีนี้จางประมาณกี่ปี และมีรอบเติมฟรีหรือคิดเท่าไร",
+     "ช่วงพักฟื้นกี่วัน ห้ามทำอะไรบ้าง",
+     "ราคานี้รวมออกแบบ ลงสี และภาษีแล้วหรือยัง"
+    ],
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับช่าง รายละเอียดลาย พื้นที่ และคิวงาน"
+   }
+  },
+  {
+   "def": "QuoteCheck",
+   "note": "very high",
+   "value": {
+    "quote_thb": 8000,
+    "min_thb": 2550,
+    "max_thb": 4500,
+    "mid_thb": 3200,
+    "verdict": "very_high",
+    "message_th": "สูงกว่าช่วงประมาณการมาก ขอใบเสนอราคาแยกออกแบบ/ลงสี/เติมลาย",
+    "questions_th": [
+     "ช่างมีใบอนุญาตและใช้เข็ม/สีแบบสักครั้งเดียวทิ้งหรือไม่",
+     "ลายนี้ปรับขนาดและวางบนส่วนโค้งของฉันอย่างไร",
+     "สีนี้จางประมาณกี่ปี และมีรอบเติมฟรีหรือคิดเท่าไร",
+     "ช่วงพักฟื้นกี่วัน ห้ามทำอะไรบ้าง",
+     "ราคานี้รวมออกแบบ ลงสี และภาษีแล้วหรือยัง"
+    ],
+    "disclaimer_th": "ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับช่าง รายละเอียดลาย พื้นที่ และคิวงาน"
+   }
+  },
+  {
+   "def": "SafetyFlags",
+   "note": "mint",
+   "value": {
+    "level": "green",
+    "can_book": true,
+    "flags": [
+     "none"
+    ],
+    "reasons_th": [
+     "ไม่มีข้อควรระวังที่เลือกไว้ แต่ยังต้องให้ช่างประเมินผิวจริง"
+    ],
+    "disclaimer_th": "InkTry เป็นภาพจำลอง ไม่ใช่รอยสักจริง และไม่ใช่คำแนะนำทางการแพทย์ ปรึกษาช่างสักที่มีใบอนุญาตและแพทย์หากมีโรคผิวหนังหรือประวัติคีลอยด์ ผู้ใช้ต้องอายุ 18 ปีขึ้นไป"
+   }
+  },
+  {
+   "def": "SafetyFlags",
+   "note": "fah keloid",
+   "value": {
+    "level": "red",
+    "can_book": false,
+    "flags": [
+     "keloid"
+    ],
+    "reasons_th": [
+     "มีประวัติคีลอยด์ — ปรึกษาแพทย์ผิวหนังและช่างก่อน ไม่ควรสักเองตามแฟชั่น"
+    ],
+    "disclaimer_th": "InkTry เป็นภาพจำลอง ไม่ใช่รอยสักจริง และไม่ใช่คำแนะนำทางการแพทย์ ปรึกษาช่างสักที่มีใบอนุญาตและแพทย์หากมีโรคผิวหนังหรือประวัติคีลอยด์ ผู้ใช้ต้องอายุ 18 ปีขึ้นไป"
+   }
+  },
+  {
+   "def": "SafetyFlags",
+   "note": "under 18",
+   "value": {
+    "level": "red",
+    "can_book": false,
+    "flags": [
+     "under_18"
+    ],
+    "reasons_th": [
+     "ผู้ใช้ต้องอายุ 18 ปีขึ้นไป จึงยังไม่ควรสัก"
+    ],
+    "disclaimer_th": "InkTry เป็นภาพจำลอง ไม่ใช่รอยสักจริง และไม่ใช่คำแนะนำทางการแพทย์ ปรึกษาช่างสักที่มีใบอนุญาตและแพทย์หากมีโรคผิวหนังหรือประวัติคีลอยด์ ผู้ใช้ต้องอายุ 18 ปีขึ้นไป"
+   }
+  },
+  {
+   "def": "SafetyFlags",
+   "note": "warn",
+   "value": {
+    "level": "yellow",
+    "can_book": true,
+    "flags": [
+     "blood_thinner"
+    ],
+    "reasons_th": [
+     "ใช้ยาละลายลิ่มเลือดหรือมีโรคเลือด — ต้องให้แพทย์อนุญาตก่อน"
+    ],
+    "disclaimer_th": "InkTry เป็นภาพจำลอง ไม่ใช่รอยสักจริง และไม่ใช่คำแนะนำทางการแพทย์ ปรึกษาช่างสักที่มีใบอนุญาตและแพทย์หากมีโรคผิวหนังหรือประวัติคีลอยด์ ผู้ใช้ต้องอายุ 18 ปีขึ้นไป"
+   }
+  },
+  {
+   "def": "ArtistCard",
+   "note": "mint",
+   "value": {
+    "title_th": "การ์ดบรีฟช่างสัก",
+    "name_th": "พี่มิ้นต์",
+    "design_th": "ช่อใบโอลิฟ์เส้นบาง",
+    "style": "fine_line",
+    "color_mode": "bw",
+    "placement": "inner_forearm",
+    "placement_th": "แขนด้านใน",
+    "size_cm": 8,
+    "budget_min_thb": 2550,
+    "budget_max_thb": 4500,
+    "aging_5y_fade_pct": 60,
+    "note_th": "ชอบแนวเส้นบาง อยากให้ช่อไม่เกินข้อพับศอก และขอแบบขาวดำก่อน",
+    "questions_th": [
+     "ช่างมีใบอนุญาตและใช้เข็ม/สีแบบสักครั้งเดียวทิ้งหรือไม่",
+     "ลายนี้ปรับขนาดและวางบนส่วนโค้งของฉันอย่างไร",
+     "สีนี้จางประมาณกี่ปี และมีรอบเติมฟรีหรือคิดเท่าไร",
+     "ช่วงพักฟื้นกี่วัน ห้ามทำอะไรบ้าง",
+     "ราคานี้รวมออกแบบ ลงสี และภาษีแล้วหรือยัง"
+    ],
+    "line_share_url": "https://line.me/R/share?text=InkTry%20%E2%80%94%20%E0%B8%9A%E0%B8%A3%E0%B8%B5%E0%B8%9F%E0%B8%8A%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%B1%E0%B8%81%0A%E0%B8%9E%E0%B8%B5%E0%B9%88%E0%B8%A1%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B8%95%E0%B9%8C%20%C2%B7%20%E0%B8%8A%E0%B9%88%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B9%82%E0%B8%AD%E0%B8%A5%E0%B8%B4%E0%B8%9F%E0%B9%8C%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99%E0%B8%9A%E0%B8%B2%E0%B8%87%20%28fine_line%2C%20%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B8%94%E0%B8%B3%29%0A%E0%B8%95%E0%B8%B3%E0%B9%81%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%87%3A%20%E0%B9%81%E0%B8%82%E0%B8%99%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%83%E0%B8%99%20%C2%B7%20%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94%208%20%E0%B8%8B%E0%B8%A1.%0A%E0%B8%87%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%3A%20%E0%B8%BF2%2C550%E2%80%934%2C500%0A%E0%B8%9E%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%A7%E0%B8%AD%E0%B8%B2%E0%B8%A2%E0%B8%B8%205%20%E0%B8%9B%E0%B8%B5%20%28%E0%B8%88%E0%B8%B3%E0%B8%A5%E0%B8%AD%E0%B8%87%29%3A%20%E0%B8%88%E0%B8%B2%E0%B8%87%2060%25%20%E0%B9%80%E0%B8%9A%E0%B8%A5%E0%B8%AD%200.98%20%E0%B8%A1%E0%B8%A1.%0A%E0%B8%8A%E0%B8%AD%E0%B8%9A%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99%E0%B8%9A%E0%B8%B2%E0%B8%87%20%E0%B8%AD%E0%B8%A2%E0%B8%B2%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%8A%E0%B9%88%E0%B8%AD%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%99%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9E%E0%B8%B1%E0%B8%9A%E0%B8%A8%E0%B8%AD%E0%B8%81%20%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%82%E0%B8%AD%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B8%94%E0%B8%B3%E0%B8%81%E0%B9%88%E0%B8%AD%E0%B8%99",
+    "can_book": true,
+    "disclaimer_th": "InkTry เป็นภาพจำลอง ไม่ใช่รอยสักจริง และไม่ใช่คำแนะนำทางการแพทย์ ปรึกษาช่างสักที่มีใบอนุญาตและแพทย์หากมีโรคผิวหนังหรือประวัติคีลอยด์ ผู้ใช้ต้องอายุ 18 ปีขึ้นไป ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับช่าง รายละเอียดลาย พื้นที่ และคิวงาน"
+   }
+  },
+  {
+   "def": "ArtistCard",
+   "note": "fah blocked",
+   "value": {
+    "title_th": "การ์ดบรีฟช่างสัก",
+    "name_th": "พี่ฟ้า",
+    "design_th": "ช่อใบโอลิฟ์เส้นบาง",
+    "style": "fine_line",
+    "color_mode": "bw",
+    "placement": "inner_forearm",
+    "placement_th": "แขนด้านใน",
+    "size_cm": 8,
+    "budget_min_thb": 2550,
+    "budget_max_thb": 4500,
+    "aging_5y_fade_pct": 60,
+    "note_th": "เคยเป็นคีลอยด์",
+    "questions_th": [
+     "ช่างมีใบอนุญาตและใช้เข็ม/สีแบบสักครั้งเดียวทิ้งหรือไม่",
+     "ลายนี้ปรับขนาดและวางบนส่วนโค้งของฉันอย่างไร",
+     "สีนี้จางประมาณกี่ปี และมีรอบเติมฟรีหรือคิดเท่าไร",
+     "ช่วงพักฟื้นกี่วัน ห้ามทำอะไรบ้าง",
+     "ราคานี้รวมออกแบบ ลงสี และภาษีแล้วหรือยัง"
+    ],
+    "line_share_url": "https://line.me/R/share?text=InkTry%20%E2%80%94%20%E0%B8%9A%E0%B8%A3%E0%B8%B5%E0%B8%9F%E0%B8%8A%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%B1%E0%B8%81%0A%E0%B8%9E%E0%B8%B5%E0%B9%88%E0%B8%9F%E0%B9%89%E0%B8%B2%20%C2%B7%20%E0%B8%8A%E0%B9%88%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B9%82%E0%B8%AD%E0%B8%A5%E0%B8%B4%E0%B8%9F%E0%B9%8C%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99%E0%B8%9A%E0%B8%B2%E0%B8%87%20%28fine_line%2C%20%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B8%94%E0%B8%B3%29%0A%E0%B8%95%E0%B8%B3%E0%B9%81%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%87%3A%20%E0%B9%81%E0%B8%82%E0%B8%99%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%83%E0%B8%99%20%C2%B7%20%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94%208%20%E0%B8%8B%E0%B8%A1.%0A%E0%B8%87%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%3A%20%E0%B8%BF2%2C550%E2%80%934%2C500%0A%E0%B8%9E%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%A7%E0%B8%AD%E0%B8%B2%E0%B8%A2%E0%B8%B8%205%20%E0%B8%9B%E0%B8%B5%20%28%E0%B8%88%E0%B8%B3%E0%B8%A5%E0%B8%AD%E0%B8%87%29%3A%20%E0%B8%88%E0%B8%B2%E0%B8%87%2060%25%20%E0%B9%80%E0%B8%9A%E0%B8%A5%E0%B8%AD%200.98%20%E0%B8%A1%E0%B8%A1.%0A%E0%B9%80%E0%B8%84%E0%B8%A2%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%84%E0%B8%B5%E0%B8%A5%E0%B8%AD%E0%B8%A2%E0%B8%94%E0%B9%8C",
+    "can_book": false,
+    "disclaimer_th": "InkTry เป็นภาพจำลอง ไม่ใช่รอยสักจริง และไม่ใช่คำแนะนำทางการแพทย์ ปรึกษาช่างสักที่มีใบอนุญาตและแพทย์หากมีโรคผิวหนังหรือประวัติคีลอยด์ ผู้ใช้ต้องอายุ 18 ปีขึ้นไป ราคาเป็นช่วงประมาณการที่ตั้งเอง ไม่ใช่ราคาร้านจริง ขึ้นกับช่าง รายละเอียดลาย พื้นที่ และคิวงาน"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "e01",
+   "value": {
+    "id": "e01",
+    "person_id": "u01",
+    "date": "2026-06-02",
+    "design_id": "d03",
+    "placement": "behind_ear",
+    "size_cm": 2,
+    "status": "done",
+    "shop_th": "FictoInk สุขุมวิท",
+    "cost_thb": 2200,
+    "on_device": true
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "e02",
+   "value": {
+    "id": "e02",
+    "person_id": "u01",
+    "date": "2026-11-20",
+    "design_id": "d01",
+    "placement": "inner_forearm",
+    "size_cm": 8,
+    "status": "booked",
+    "shop_th": "FictoInk สุขุมวิท",
+    "cost_thb": 0,
+    "on_device": true
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "e03",
+   "value": {
+    "id": "e03",
+    "person_id": "u01",
+    "date": "2025-12-18",
+    "design_id": "d06",
+    "placement": "wrist",
+    "size_cm": 3,
+    "status": "wishlist",
+    "shop_th": "",
+    "cost_thb": 0,
+    "on_device": true
+   }
+  },
+  {
+   "def": "DiaryStats",
+   "note": "mint diary",
+   "value": {
+    "count": 3,
+    "total_thb": 2200,
+    "avg_thb": 2200,
+    "last_date": "2026-11-20",
+    "top_placement": "behind_ear"
+   }
+  },
+  {
+   "def": "DiaryStats",
+   "note": "empty",
+   "value": {
+    "count": 0,
+    "total_thb": 0,
+    "avg_thb": 0,
+    "last_date": null,
+    "top_placement": null
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "mint",
+   "value": {
+    "title_th": "InkTry — พี่มิ้นต์",
+    "headline_th": "ช่อใบโอลิฟ์เส้นบาง ที่แขนด้านใน 8 ซม.",
+    "hook_th": "พรีวิว 5 ปี · จาง 60% (จำลอง)",
+    "placement": "inner_forearm",
+    "style": "fine_line",
+    "color_mode": "bw",
+    "layout": "tryon_result",
+    "sizes": [
+     "1080x1350",
+     "1080x1920",
+     "1080x1080"
+    ],
+    "watermark": "Made with InkTry · preview only, not a real tattoo",
+    "cta_th": "คอมเมนต์ INK รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "free",
+   "value": {
+    "allowed": 1,
+    "left_after": 1,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "exhausted",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "pro",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "green",
+   "value": {
+    "level": "ok",
+    "message_th": "InkTry เป็นภาพจำลอง ไม่ใช่รอยสักจริง และไม่ใช่คำแนะนำทางการแพทย์ ปรึกษาช่างสักที่มีใบอนุญาตและแพทย์หากมีโรคผิวหนังหรือประวัติคีลอยด์ ผู้ใช้ต้องอายุ 18 ปีขึ้นไป"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "yellow",
+   "value": {
+    "level": "warn",
+    "message_th": "ควรปรึกษาแพทย์หรือช่างก่อนนัด InkTry เป็นภาพจำลอง ไม่ใช่รอยสักจริง และไม่ใช่คำแนะนำทางการแพทย์ ปรึกษาช่างสักที่มีใบอนุญาตและแพทย์หากมีโรคผิวหนังหรือประวัติคีลอยด์ ผู้ใช้ต้องอายุ 18 ปีขึ้นไป"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "red",
+   "value": {
+    "level": "stop",
+    "message_th": "ยังไม่ควรนัดสักในตอนนี้ InkTry เป็นภาพจำลอง ไม่ใช่รอยสักจริง และไม่ใช่คำแนะนำทางการแพทย์ ปรึกษาช่างสักที่มีใบอนุญาตและแพทย์หากมีโรคผิวหนังหรือประวัติคีลอยด์ ผู้ใช้ต้องอายุ 18 ปีขึ้นไป"
+   }
+  }
+ ]
+}

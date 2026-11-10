@@ -1,0 +1,1547 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/inktry.schema.json",
+ "title": "InkTry",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age",
+    "region"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "goal_th": {
+     "type": "string"
+    },
+    "region": {
+     "enum": [
+      "bkk",
+      "province",
+      "tourist"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "Detection": {
+   "type": "object",
+   "required": [
+    "placement",
+    "confidence"
+   ],
+   "properties": {
+    "placement": {
+     "enum": [
+      "inner_forearm",
+      "outer_forearm",
+      "wrist",
+      "upper_arm",
+      "shoulder",
+      "ankle",
+      "calf",
+      "thigh",
+      "back",
+      "nape",
+      "ribs",
+      "collarbone",
+      "hand",
+      "finger",
+      "behind_ear"
+     ]
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "side": {
+     "enum": [
+      "left",
+      "right",
+      "unknown"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "SkinPhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "tilt",
+    "skin_visible",
+    "undertone",
+    "detections"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^p[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "tilt": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "skin_visible": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "undertone": {
+     "enum": [
+      "warm",
+      "cool",
+      "neutral"
+     ]
+    },
+    "detections": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Detection"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "IdentifiedPlacement": {
+   "type": "object",
+   "required": [
+    "placement",
+    "name_th",
+    "name_en",
+    "confidence"
+   ],
+   "properties": {
+    "placement": {
+     "enum": [
+      "inner_forearm",
+      "outer_forearm",
+      "wrist",
+      "upper_arm",
+      "shoulder",
+      "ankle",
+      "calf",
+      "thigh",
+      "back",
+      "nape",
+      "ribs",
+      "collarbone",
+      "hand",
+      "finger",
+      "behind_ear"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "side": {
+     "enum": [
+      "left",
+      "right",
+      "unknown"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "SkinScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "quality",
+    "placements",
+    "uncertain",
+    "placement_count",
+    "undertone"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    },
+    "placements": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/IdentifiedPlacement"
+     }
+    },
+    "uncertain": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "inner_forearm",
+       "outer_forearm",
+       "wrist",
+       "upper_arm",
+       "shoulder",
+       "ankle",
+       "calf",
+       "thigh",
+       "back",
+       "nape",
+       "ribs",
+       "collarbone",
+       "hand",
+       "finger",
+       "behind_ear"
+      ]
+     }
+    },
+    "placement_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "undertone": {
+     "enum": [
+      "warm",
+      "cool",
+      "neutral"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "Pipeline": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "steps"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "PlacementInfo": {
+   "type": "object",
+   "required": [
+    "id",
+    "placement",
+    "name_th",
+    "name_en",
+    "pain",
+    "heal_days",
+    "min_cm",
+    "max_cm",
+    "notes_th"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^pl[0-9]{2}$"
+    },
+    "placement": {
+     "enum": [
+      "inner_forearm",
+      "outer_forearm",
+      "wrist",
+      "upper_arm",
+      "shoulder",
+      "ankle",
+      "calf",
+      "thigh",
+      "back",
+      "nape",
+      "ribs",
+      "collarbone",
+      "hand",
+      "finger",
+      "behind_ear"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "pain": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 10
+    },
+    "heal_days": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "min_cm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "max_cm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "notes_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DesignInfo": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "name_en",
+    "style",
+    "style_th",
+    "default_mode",
+    "tags",
+    "color_ok",
+    "bw_ok",
+    "notes_th"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "d01",
+      "d02",
+      "d03",
+      "d04",
+      "d05",
+      "d06",
+      "d07",
+      "d08",
+      "d09",
+      "d10",
+      "d11",
+      "d12"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "style": {
+     "enum": [
+      "fine_line",
+      "traditional",
+      "watercolor",
+      "geometric",
+      "script",
+      "floral",
+      "animal",
+      "minimal",
+      "blackwork",
+      "dotwork"
+     ]
+    },
+    "style_th": {
+     "type": "string"
+    },
+    "default_mode": {
+     "enum": [
+      "color",
+      "bw"
+     ]
+    },
+    "tags": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "color_ok": {
+     "type": "boolean"
+    },
+    "bw_ok": {
+     "type": "boolean"
+    },
+    "notes_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SizeCheck": {
+   "type": "object",
+   "required": [
+    "placement",
+    "size_cm",
+    "band",
+    "band_th",
+    "min_cm",
+    "max_cm",
+    "in_range",
+    "verdict",
+    "message_th",
+    "wrap_th"
+   ],
+   "properties": {
+    "placement": {
+     "enum": [
+      "inner_forearm",
+      "outer_forearm",
+      "wrist",
+      "upper_arm",
+      "shoulder",
+      "ankle",
+      "calf",
+      "thigh",
+      "back",
+      "nape",
+      "ribs",
+      "collarbone",
+      "hand",
+      "finger",
+      "behind_ear"
+     ]
+    },
+    "size_cm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "band": {
+     "enum": [
+      "tiny",
+      "small",
+      "medium",
+      "large",
+      "xl"
+     ]
+    },
+    "band_th": {
+     "type": "string"
+    },
+    "min_cm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "max_cm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "in_range": {
+     "type": "boolean"
+    },
+    "verdict": {
+     "enum": [
+      "ok",
+      "too_small",
+      "too_big"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "wrap_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ColorVariant": {
+   "type": "object",
+   "required": [
+    "design_id",
+    "style",
+    "color_mode",
+    "label_th",
+    "contrast",
+    "recommended"
+   ],
+   "properties": {
+    "design_id": {
+     "enum": [
+      "d01",
+      "d02",
+      "d03",
+      "d04",
+      "d05",
+      "d06",
+      "d07",
+      "d08",
+      "d09",
+      "d10",
+      "d11",
+      "d12"
+     ]
+    },
+    "style": {
+     "enum": [
+      "fine_line",
+      "traditional",
+      "watercolor",
+      "geometric",
+      "script",
+      "floral",
+      "animal",
+      "minimal",
+      "blackwork",
+      "dotwork"
+     ]
+    },
+    "color_mode": {
+     "enum": [
+      "color",
+      "bw"
+     ]
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "contrast": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "recommended": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ColorVariants": {
+   "type": "object",
+   "required": [
+    "design_id",
+    "name_th",
+    "style",
+    "undertone",
+    "placement",
+    "size_cm",
+    "variants",
+    "best_mode"
+   ],
+   "properties": {
+    "design_id": {
+     "enum": [
+      "d01",
+      "d02",
+      "d03",
+      "d04",
+      "d05",
+      "d06",
+      "d07",
+      "d08",
+      "d09",
+      "d10",
+      "d11",
+      "d12"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "style": {
+     "enum": [
+      "fine_line",
+      "traditional",
+      "watercolor",
+      "geometric",
+      "script",
+      "floral",
+      "animal",
+      "minimal",
+      "blackwork",
+      "dotwork"
+     ]
+    },
+    "undertone": {
+     "enum": [
+      "warm",
+      "cool",
+      "neutral"
+     ]
+    },
+    "placement": {
+     "enum": [
+      "inner_forearm",
+      "outer_forearm",
+      "wrist",
+      "upper_arm",
+      "shoulder",
+      "ankle",
+      "calf",
+      "thigh",
+      "back",
+      "nape",
+      "ribs",
+      "collarbone",
+      "hand",
+      "finger",
+      "behind_ear"
+     ]
+    },
+    "size_cm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "variants": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ColorVariant"
+     },
+     "minItems": 1
+    },
+    "best_mode": {
+     "enum": [
+      "color",
+      "bw"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "TryOn": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "design_id",
+    "name_th",
+    "placement",
+    "placement_th",
+    "size_cm",
+    "style",
+    "color_mode",
+    "contrast",
+    "size_verdict",
+    "placement_matched",
+    "quality",
+    "watermark",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "design_id": {
+     "enum": [
+      "d01",
+      "d02",
+      "d03",
+      "d04",
+      "d05",
+      "d06",
+      "d07",
+      "d08",
+      "d09",
+      "d10",
+      "d11",
+      "d12"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "placement": {
+     "enum": [
+      "inner_forearm",
+      "outer_forearm",
+      "wrist",
+      "upper_arm",
+      "shoulder",
+      "ankle",
+      "calf",
+      "thigh",
+      "back",
+      "nape",
+      "ribs",
+      "collarbone",
+      "hand",
+      "finger",
+      "behind_ear"
+     ]
+    },
+    "placement_th": {
+     "type": "string"
+    },
+    "size_cm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "style": {
+     "enum": [
+      "fine_line",
+      "traditional",
+      "watercolor",
+      "geometric",
+      "script",
+      "floral",
+      "animal",
+      "minimal",
+      "blackwork",
+      "dotwork"
+     ]
+    },
+    "color_mode": {
+     "enum": [
+      "color",
+      "bw"
+     ]
+    },
+    "contrast": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "size_verdict": {
+     "enum": [
+      "ok",
+      "too_small",
+      "too_big"
+     ]
+    },
+    "placement_matched": {
+     "type": "boolean"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "AgingPreview": {
+   "type": "object",
+   "required": [
+    "style",
+    "color_mode",
+    "placement",
+    "years",
+    "size_cm",
+    "fade_pct",
+    "spread_mm",
+    "sharpness_left",
+    "look_th",
+    "care_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "style": {
+     "enum": [
+      "fine_line",
+      "traditional",
+      "watercolor",
+      "geometric",
+      "script",
+      "floral",
+      "animal",
+      "minimal",
+      "blackwork",
+      "dotwork"
+     ]
+    },
+    "color_mode": {
+     "enum": [
+      "color",
+      "bw"
+     ]
+    },
+    "placement": {
+     "enum": [
+      "inner_forearm",
+      "outer_forearm",
+      "wrist",
+      "upper_arm",
+      "shoulder",
+      "ankle",
+      "calf",
+      "thigh",
+      "back",
+      "nape",
+      "ribs",
+      "collarbone",
+      "hand",
+      "finger",
+      "behind_ear"
+     ]
+    },
+    "years": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "size_cm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "fade_pct": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "spread_mm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "sharpness_left": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "look_th": {
+     "type": "string"
+    },
+    "care_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PainGuide": {
+   "type": "object",
+   "required": [
+    "placement",
+    "name_th",
+    "pain",
+    "pain_max",
+    "level",
+    "heal_days",
+    "tip_th",
+    "notes_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "placement": {
+     "enum": [
+      "inner_forearm",
+      "outer_forearm",
+      "wrist",
+      "upper_arm",
+      "shoulder",
+      "ankle",
+      "calf",
+      "thigh",
+      "back",
+      "nape",
+      "ribs",
+      "collarbone",
+      "hand",
+      "finger",
+      "behind_ear"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "pain": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 10
+    },
+    "pain_max": {
+     "const": 10
+    },
+    "level": {
+     "enum": [
+      "low",
+      "medium",
+      "high"
+     ]
+    },
+    "heal_days": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "tip_th": {
+     "type": "string"
+    },
+    "notes_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "AftercareGuide": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "days",
+    "steps",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "days": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "n",
+       "text_th"
+      ],
+      "properties": {
+       "n": {
+        "type": "integer",
+        "minimum": 1
+       },
+       "text_th": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": false
+     },
+     "minItems": 1
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PriceRange": {
+   "type": "object",
+   "required": [
+    "style",
+    "placement",
+    "size_cm",
+    "region",
+    "color_mode",
+    "mid_thb",
+    "min_thb",
+    "max_thb",
+    "currency",
+    "name_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "style": {
+     "enum": [
+      "fine_line",
+      "traditional",
+      "watercolor",
+      "geometric",
+      "script",
+      "floral",
+      "animal",
+      "minimal",
+      "blackwork",
+      "dotwork"
+     ]
+    },
+    "placement": {
+     "enum": [
+      "inner_forearm",
+      "outer_forearm",
+      "wrist",
+      "upper_arm",
+      "shoulder",
+      "ankle",
+      "calf",
+      "thigh",
+      "back",
+      "nape",
+      "ribs",
+      "collarbone",
+      "hand",
+      "finger",
+      "behind_ear"
+     ]
+    },
+    "size_cm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "region": {
+     "enum": [
+      "bkk",
+      "province",
+      "tourist"
+     ]
+    },
+    "color_mode": {
+     "enum": [
+      "color",
+      "bw"
+     ]
+    },
+    "mid_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "min_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "max_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "currency": {
+     "const": "THB"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "QuoteCheck": {
+   "type": "object",
+   "required": [
+    "quote_thb",
+    "min_thb",
+    "max_thb",
+    "mid_thb",
+    "verdict",
+    "message_th",
+    "questions_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "quote_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "min_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "max_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "mid_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "verdict": {
+     "enum": [
+      "low",
+      "fair",
+      "high",
+      "very_high"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "questions_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyFlags": {
+   "type": "object",
+   "required": [
+    "level",
+    "can_book",
+    "flags",
+    "reasons_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "green",
+      "yellow",
+      "red"
+     ]
+    },
+    "can_book": {
+     "type": "boolean"
+    },
+    "flags": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "under_18",
+       "pregnancy",
+       "keloid",
+       "infection",
+       "blood_thinner",
+       "allergy_ink",
+       "sunburn",
+       "none"
+      ]
+     },
+     "minItems": 1
+    },
+    "reasons_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ArtistCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "name_th",
+    "design_th",
+    "style",
+    "color_mode",
+    "placement",
+    "placement_th",
+    "size_cm",
+    "budget_min_thb",
+    "budget_max_thb",
+    "aging_5y_fade_pct",
+    "note_th",
+    "questions_th",
+    "line_share_url",
+    "can_book",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "design_th": {
+     "type": "string"
+    },
+    "style": {
+     "enum": [
+      "fine_line",
+      "traditional",
+      "watercolor",
+      "geometric",
+      "script",
+      "floral",
+      "animal",
+      "minimal",
+      "blackwork",
+      "dotwork"
+     ]
+    },
+    "color_mode": {
+     "enum": [
+      "color",
+      "bw"
+     ]
+    },
+    "placement": {
+     "enum": [
+      "inner_forearm",
+      "outer_forearm",
+      "wrist",
+      "upper_arm",
+      "shoulder",
+      "ankle",
+      "calf",
+      "thigh",
+      "back",
+      "nape",
+      "ribs",
+      "collarbone",
+      "hand",
+      "finger",
+      "behind_ear"
+     ]
+    },
+    "placement_th": {
+     "type": "string"
+    },
+    "size_cm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "budget_min_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "budget_max_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "aging_5y_fade_pct": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "note_th": {
+     "type": "string"
+    },
+    "questions_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "line_share_url": {
+     "type": "string",
+     "pattern": "^https://line\\.me/R/share\\?text="
+    },
+    "can_book": {
+     "type": "boolean"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiaryEntry": {
+   "type": "object",
+   "required": [
+    "id",
+    "person_id",
+    "date",
+    "design_id",
+    "placement",
+    "size_cm",
+    "status",
+    "shop_th",
+    "cost_thb",
+    "on_device"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "person_id": {
+     "type": "string"
+    },
+    "date": {
+     "type": "string",
+     "format": "date",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "design_id": {
+     "enum": [
+      "d01",
+      "d02",
+      "d03",
+      "d04",
+      "d05",
+      "d06",
+      "d07",
+      "d08",
+      "d09",
+      "d10",
+      "d11",
+      "d12"
+     ]
+    },
+    "placement": {
+     "enum": [
+      "inner_forearm",
+      "outer_forearm",
+      "wrist",
+      "upper_arm",
+      "shoulder",
+      "ankle",
+      "calf",
+      "thigh",
+      "back",
+      "nape",
+      "ribs",
+      "collarbone",
+      "hand",
+      "finger",
+      "behind_ear"
+     ]
+    },
+    "size_cm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "status": {
+     "enum": [
+      "wishlist",
+      "booked",
+      "done",
+      "touch_up"
+     ]
+    },
+    "shop_th": {
+     "type": "string"
+    },
+    "cost_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "on_device": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiaryStats": {
+   "type": "object",
+   "required": [
+    "count",
+    "total_thb",
+    "avg_thb",
+    "last_date",
+    "top_placement"
+   ],
+   "properties": {
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "avg_thb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "last_date": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "top_placement": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "placement",
+    "style",
+    "color_mode",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "placement": {
+     "enum": [
+      "inner_forearm",
+      "outer_forearm",
+      "wrist",
+      "upper_arm",
+      "shoulder",
+      "ankle",
+      "calf",
+      "thigh",
+      "back",
+      "nape",
+      "ribs",
+      "collarbone",
+      "hand",
+      "finger",
+      "behind_ear"
+     ]
+    },
+    "style": {
+     "enum": [
+      "fine_line",
+      "traditional",
+      "watercolor",
+      "geometric",
+      "script",
+      "floral",
+      "animal",
+      "minimal",
+      "blackwork",
+      "dotwork"
+     ]
+    },
+    "color_mode": {
+     "enum": [
+      "color",
+      "bw"
+     ]
+    },
+    "layout": {
+     "enum": [
+      "tryon_result"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
