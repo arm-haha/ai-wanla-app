@@ -1,0 +1,960 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/stainsos.schema.json",
+ "title": "StainSOS",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "StainPhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "crop"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^p[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "crop": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "PhotoScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "quality"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Pipeline": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "steps"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "StainRaw": {
+   "type": "object",
+   "required": [
+    "stain",
+    "fabric",
+    "color",
+    "age_hours",
+    "size_cm",
+    "confidence"
+   ],
+   "properties": {
+    "stain": {
+     "enum": [
+      "coffee",
+      "thai_tea",
+      "curry",
+      "oil",
+      "lipstick",
+      "ink",
+      "blood",
+      "mud"
+     ]
+    },
+    "fabric": {
+     "enum": [
+      "cotton",
+      "denim",
+      "polyester",
+      "rayon",
+      "wool",
+      "silk"
+     ]
+    },
+    "color": {
+     "enum": [
+      "white",
+      "colored"
+     ]
+    },
+    "age_hours": {
+     "type": "number",
+     "minimum": 0
+    },
+    "size_cm": {
+     "type": "number",
+     "exclusiveMinimum": 0
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ParsedStain": {
+   "type": "object",
+   "required": [
+    "stain",
+    "stain_th",
+    "cls",
+    "fabric",
+    "fabric_th",
+    "color",
+    "age_hours",
+    "size_cm",
+    "confidence",
+    "needs_confirm",
+    "message_th"
+   ],
+   "properties": {
+    "stain": {
+     "enum": [
+      "coffee",
+      "thai_tea",
+      "curry",
+      "oil",
+      "lipstick",
+      "ink",
+      "blood",
+      "mud"
+     ]
+    },
+    "stain_th": {
+     "type": "string"
+    },
+    "cls": {
+     "enum": [
+      "tannin",
+      "oil",
+      "oil_pigment",
+      "protein",
+      "ink",
+      "dirt"
+     ]
+    },
+    "fabric": {
+     "enum": [
+      "cotton",
+      "denim",
+      "polyester",
+      "rayon",
+      "wool",
+      "silk"
+     ]
+    },
+    "fabric_th": {
+     "type": "string"
+    },
+    "color": {
+     "enum": [
+      "white",
+      "colored"
+     ]
+    },
+    "age_hours": {
+     "type": "number",
+     "minimum": 0
+    },
+    "size_cm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "needs_confirm": {
+     "type": "boolean"
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "RiskMeter": {
+   "type": "object",
+   "required": [
+    "score",
+    "level",
+    "level_th",
+    "dry_clean",
+    "expected_fade_pct",
+    "act_within_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "level": {
+     "enum": [
+      "easy",
+      "medium",
+      "hard",
+      "pro"
+     ]
+    },
+    "level_th": {
+     "type": "string"
+    },
+    "dry_clean": {
+     "type": "boolean"
+    },
+    "expected_fade_pct": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "act_within_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "RescueStep": {
+   "type": "object",
+   "required": [
+    "order",
+    "action_th",
+    "item",
+    "minutes",
+    "missing",
+    "substitute"
+   ],
+   "properties": {
+    "order": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "action_th": {
+     "type": "string"
+    },
+    "item": {
+     "anyOf": [
+      {
+       "enum": [
+        "water",
+        "dish_soap",
+        "baking_soda",
+        "white_vinegar",
+        "oxygen_bleach",
+        "alcohol",
+        "hand_sanitizer",
+        "cornstarch",
+        "brush",
+        "gentle_detergent",
+        "chlorine_bleach",
+        "ammonia",
+        "hydrogen_peroxide"
+       ]
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "minutes": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "missing": {
+     "type": "boolean"
+    },
+    "substitute": {
+     "anyOf": [
+      {
+       "enum": [
+        "water",
+        "dish_soap",
+        "baking_soda",
+        "white_vinegar",
+        "oxygen_bleach",
+        "alcohol",
+        "hand_sanitizer",
+        "cornstarch",
+        "brush",
+        "gentle_detergent",
+        "chlorine_bleach",
+        "ammonia",
+        "hydrogen_peroxide"
+       ]
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "RescuePlan": {
+   "type": "object",
+   "required": [
+    "stain",
+    "fabric",
+    "risk_level",
+    "dry_clean",
+    "steps",
+    "step_count",
+    "total_minutes",
+    "items_used",
+    "shopping_list",
+    "warnings_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "stain": {
+     "enum": [
+      "coffee",
+      "thai_tea",
+      "curry",
+      "oil",
+      "lipstick",
+      "ink",
+      "blood",
+      "mud"
+     ]
+    },
+    "fabric": {
+     "enum": [
+      "cotton",
+      "denim",
+      "polyester",
+      "rayon",
+      "wool",
+      "silk"
+     ]
+    },
+    "risk_level": {
+     "enum": [
+      "easy",
+      "medium",
+      "hard",
+      "pro"
+     ]
+    },
+    "dry_clean": {
+     "type": "boolean"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/RescueStep"
+     },
+     "minItems": 1
+    },
+    "step_count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "total_minutes": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "items_used": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "water",
+       "dish_soap",
+       "baking_soda",
+       "white_vinegar",
+       "oxygen_bleach",
+       "alcohol",
+       "hand_sanitizer",
+       "cornstarch",
+       "brush",
+       "gentle_detergent",
+       "chlorine_bleach",
+       "ammonia",
+       "hydrogen_peroxide"
+      ]
+     }
+    },
+    "shopping_list": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "water",
+       "dish_soap",
+       "baking_soda",
+       "white_vinegar",
+       "oxygen_bleach",
+       "alcohol",
+       "hand_sanitizer",
+       "cornstarch",
+       "brush",
+       "gentle_detergent",
+       "chlorine_bleach",
+       "ammonia",
+       "hydrogen_peroxide"
+      ]
+     }
+    },
+    "warnings_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyPair": {
+   "type": "object",
+   "required": [
+    "a",
+    "b",
+    "why_th"
+   ],
+   "properties": {
+    "a": {
+     "enum": [
+      "water",
+      "dish_soap",
+      "baking_soda",
+      "white_vinegar",
+      "oxygen_bleach",
+      "alcohol",
+      "hand_sanitizer",
+      "cornstarch",
+      "brush",
+      "gentle_detergent",
+      "chlorine_bleach",
+      "ammonia",
+      "hydrogen_peroxide"
+     ]
+    },
+    "b": {
+     "enum": [
+      "water",
+      "dish_soap",
+      "baking_soda",
+      "white_vinegar",
+      "oxygen_bleach",
+      "alcohol",
+      "hand_sanitizer",
+      "cornstarch",
+      "brush",
+      "gentle_detergent",
+      "chlorine_bleach",
+      "ammonia",
+      "hydrogen_peroxide"
+     ]
+    },
+    "why_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyCheck": {
+   "type": "object",
+   "required": [
+    "level",
+    "pairs",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "danger"
+     ]
+    },
+    "pairs": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/SafetyPair"
+     }
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "CareLabel": {
+   "type": "object",
+   "required": [
+    "codes",
+    "lines_th",
+    "max_wash_c",
+    "bleach",
+    "dryer_ok",
+    "dry_clean_only"
+   ],
+   "properties": {
+    "codes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "wash_30",
+       "wash_40",
+       "wash_60",
+       "hand_wash",
+       "no_wash",
+       "no_bleach",
+       "non_chlorine_bleach",
+       "tumble_low",
+       "no_tumble",
+       "iron_low",
+       "iron_med",
+       "dry_clean",
+       "no_dry_clean"
+      ]
+     },
+     "minItems": 1
+    },
+    "lines_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "max_wash_c": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "bleach": {
+     "enum": [
+      "any",
+      "oxygen_only",
+      "none"
+     ]
+    },
+    "dryer_ok": {
+     "type": "boolean"
+    },
+    "dry_clean_only": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "LabelFit": {
+   "type": "object",
+   "required": [
+    "ok",
+    "issues_th"
+   ],
+   "properties": {
+    "ok": {
+     "type": "boolean"
+    },
+    "issues_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "KitCheck": {
+   "type": "object",
+   "required": [
+    "kit",
+    "ready_for",
+    "ready_count",
+    "total",
+    "headline_th"
+   ],
+   "properties": {
+    "kit": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "water",
+       "dish_soap",
+       "baking_soda",
+       "white_vinegar",
+       "oxygen_bleach",
+       "alcohol",
+       "hand_sanitizer",
+       "cornstarch",
+       "brush",
+       "gentle_detergent",
+       "chlorine_bleach",
+       "ammonia",
+       "hydrogen_peroxide"
+      ]
+     }
+    },
+    "ready_for": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "coffee",
+       "thai_tea",
+       "curry",
+       "oil",
+       "lipstick",
+       "ink",
+       "blood",
+       "mud"
+      ]
+     }
+    },
+    "ready_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "total": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "headline_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiaryEntry": {
+   "type": "object",
+   "required": [
+    "date",
+    "item_th",
+    "stain",
+    "result",
+    "value_baht"
+   ],
+   "properties": {
+    "date": {
+     "type": "string"
+    },
+    "item_th": {
+     "type": "string"
+    },
+    "stain": {
+     "enum": [
+      "coffee",
+      "thai_tea",
+      "curry",
+      "oil",
+      "lipstick",
+      "ink",
+      "blood",
+      "mud"
+     ]
+    },
+    "result": {
+     "enum": [
+      "removed",
+      "faded",
+      "stuck"
+     ]
+    },
+    "value_baht": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiarySummary": {
+   "type": "object",
+   "required": [
+    "count",
+    "removed",
+    "faded",
+    "success_rate_pct",
+    "saved_baht",
+    "headline_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "removed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "faded": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "success_rate_pct": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "saved_baht": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "headline_th",
+    "hook_th",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "layout": {
+     "enum": [
+      "before_after"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "AiStainExtract": {
+   "type": "object",
+   "required": [
+    "stain",
+    "fabric",
+    "color",
+    "age_hours",
+    "size_cm",
+    "confidence"
+   ],
+   "properties": {
+    "stain": {
+     "enum": [
+      "coffee",
+      "thai_tea",
+      "curry",
+      "oil",
+      "lipstick",
+      "ink",
+      "blood",
+      "mud"
+     ]
+    },
+    "fabric": {
+     "enum": [
+      "cotton",
+      "denim",
+      "polyester",
+      "rayon",
+      "wool",
+      "silk"
+     ]
+    },
+    "color": {
+     "enum": [
+      "white",
+      "colored"
+     ]
+    },
+    "age_hours": {
+     "type": "number",
+     "minimum": 0
+    },
+    "size_cm": {
+     "type": "number",
+     "minimum": 0
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "notes_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}

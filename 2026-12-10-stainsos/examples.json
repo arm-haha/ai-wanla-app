@@ -1,0 +1,2379 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "Prae",
+   "value": {
+    "id": "u01",
+    "name_th": "น้องแพร",
+    "name_en": "Prae",
+    "age": 24,
+    "city_th": "เชียงใหม่"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Oat",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่โอ๊ต",
+    "name_en": "Oat",
+    "age": 31,
+    "city_th": "กรุงเทพฯ"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Joy",
+   "value": {
+    "id": "u03",
+    "name_th": "คุณแม่จอย",
+    "name_en": "Joy",
+    "age": 42,
+    "city_th": "ขอนแก่น"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Tonkla",
+   "value": {
+    "id": "u04",
+    "name_th": "ต้นกล้า",
+    "name_en": "Tonkla",
+    "age": 19,
+    "city_th": "ภูเก็ต"
+   }
+  },
+  {
+   "def": "StainPhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.1,
+    "blur": 0.08,
+    "crop": 0.1
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "quality": {
+     "score": 91,
+     "ok": true,
+     "tips_th": []
+    }
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "steps": [
+     "stain_photo",
+     "parse_stain",
+     "risk_meter",
+     "rescue_plan",
+     "safety_check"
+    ]
+   }
+  },
+  {
+   "def": "StainPhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.2,
+    "blur": 0.15,
+    "crop": 0.12
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "quality": {
+     "score": 84,
+     "ok": true,
+     "tips_th": []
+    }
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "steps": [
+     "stain_photo",
+     "parse_stain",
+     "risk_meter",
+     "rescue_plan",
+     "safety_check"
+    ]
+   }
+  },
+  {
+   "def": "StainPhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.15,
+    "blur": 0.3,
+    "crop": 0.2
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "quality": {
+     "score": 78,
+     "ok": true,
+     "tips_th": []
+    }
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "steps": [
+     "stain_photo",
+     "parse_stain",
+     "risk_meter",
+     "rescue_plan",
+     "safety_check"
+    ]
+   }
+  },
+  {
+   "def": "StainPhoto",
+   "note": "p04",
+   "value": {
+    "id": "p04",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.62,
+    "blur": 0.48,
+    "crop": 0.55
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "quality": {
+     "score": 46,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนบนผ้า ถ่ายใกล้หน้าต่างแต่ไม่โดนแดดตรง",
+      "ภาพเบลอ ถือนิ่งแล้วถ่ายให้เห็นขอบคราบชัด",
+      "คราบถูกตัด ถอยออกให้เห็นคราบทั้งหมดและเนื้อผ้ารอบ ๆ"
+     ]
+    }
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p04",
+   "value": {
+    "photo_id": "p04",
+    "steps": [
+     "stain_photo",
+     "deglare",
+     "parse_stain",
+     "risk_meter",
+     "rescue_plan",
+     "safety_check"
+    ]
+   }
+  },
+  {
+   "def": "StainPhoto",
+   "note": "p05",
+   "value": {
+    "id": "p05",
+    "px_w": 3024,
+    "px_h": 4032,
+    "glare": 0.05,
+    "blur": 0.05,
+    "crop": 0.05
+   }
+  },
+  {
+   "def": "PhotoScan",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "quality": {
+     "score": 95,
+     "ok": true,
+     "tips_th": []
+    }
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "p05",
+   "value": {
+    "photo_id": "p05",
+    "steps": [
+     "stain_photo",
+     "parse_stain",
+     "risk_meter",
+     "rescue_plan",
+     "safety_check"
+    ]
+   }
+  },
+  {
+   "def": "Pipeline",
+   "note": "low conf",
+   "value": {
+    "photo_id": "p01",
+    "steps": [
+     "stain_photo",
+     "parse_stain",
+     "ask_user_confirm"
+    ]
+   }
+  },
+  {
+   "def": "StainRaw",
+   "note": "tea",
+   "value": {
+    "stain": "thai_tea",
+    "fabric": "cotton",
+    "color": "white",
+    "age_hours": 2,
+    "size_cm": 4,
+    "confidence": 0.91
+   }
+  },
+  {
+   "def": "AiStainExtract",
+   "note": "tea",
+   "value": {
+    "stain": "thai_tea",
+    "fabric": "cotton",
+    "color": "white",
+    "age_hours": 2,
+    "size_cm": 4,
+    "confidence": 0.91,
+    "notes_th": "ตัวอย่างผลจาก vision"
+   }
+  },
+  {
+   "def": "ParsedStain",
+   "note": "tea",
+   "value": {
+    "stain": "thai_tea",
+    "stain_th": "ชาไทย / ชานม",
+    "cls": "tannin",
+    "fabric": "cotton",
+    "fabric_th": "ผ้าฝ้าย",
+    "color": "white",
+    "age_hours": 2,
+    "size_cm": 4,
+    "confidence": 0.91,
+    "needs_confirm": false,
+    "message_th": "เจอคราบชาไทย / ชานมบนผ้าฝ้ายสีขาว ประมาณ 4 ซม."
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "tea",
+   "value": {
+    "score": 50,
+    "level": "medium",
+    "level_th": "พอไหว ทำตามขั้น",
+    "dry_clean": false,
+    "expected_fade_pct": 70,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "tea",
+   "value": {
+    "stain": "thai_tea",
+    "fabric": "cotton",
+    "risk_level": "medium",
+    "dry_clean": false,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+      "item": null,
+      "minutes": 1,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "ล้างน้ำเย็นจากด้านหลังผ้า",
+      "item": "water",
+      "minutes": 2,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ถูเบา ๆ ด้วยน้ำยาล้างจาน",
+      "item": "dish_soap",
+      "minutes": 3,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 4,
+      "action_th": "แช่ผงฟอกออกซิเจนน้ำอุ่น",
+      "item": "oxygen_bleach",
+      "minutes": 30,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 5,
+      "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 5,
+    "total_minutes": 36,
+    "items_used": [
+     "dish_soap",
+     "oxygen_bleach",
+     "water"
+    ],
+    "shopping_list": [],
+    "warnings_th": [
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "tea step 1",
+   "value": {
+    "order": 1,
+    "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+    "item": null,
+    "minutes": 1,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "tea step 2",
+   "value": {
+    "order": 2,
+    "action_th": "ล้างน้ำเย็นจากด้านหลังผ้า",
+    "item": "water",
+    "minutes": 2,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "tea step 3",
+   "value": {
+    "order": 3,
+    "action_th": "ถูเบา ๆ ด้วยน้ำยาล้างจาน",
+    "item": "dish_soap",
+    "minutes": 3,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "tea step 4",
+   "value": {
+    "order": 4,
+    "action_th": "แช่ผงฟอกออกซิเจนน้ำอุ่น",
+    "item": "oxygen_bleach",
+    "minutes": 30,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "tea step 5",
+   "value": {
+    "order": 5,
+    "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+    "item": null,
+    "minutes": 0,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "StainRaw",
+   "note": "curry",
+   "value": {
+    "stain": "curry",
+    "fabric": "polyester",
+    "color": "colored",
+    "age_hours": 3,
+    "size_cm": 4,
+    "confidence": 0.84
+   }
+  },
+  {
+   "def": "AiStainExtract",
+   "note": "curry",
+   "value": {
+    "stain": "curry",
+    "fabric": "polyester",
+    "color": "colored",
+    "age_hours": 3,
+    "size_cm": 4,
+    "confidence": 0.84,
+    "notes_th": "ตัวอย่างผลจาก vision"
+   }
+  },
+  {
+   "def": "ParsedStain",
+   "note": "curry",
+   "value": {
+    "stain": "curry",
+    "stain_th": "แกง / ขมิ้น",
+    "cls": "oil_pigment",
+    "fabric": "polyester",
+    "fabric_th": "โพลีเอสเตอร์",
+    "color": "colored",
+    "age_hours": 3,
+    "size_cm": 4,
+    "confidence": 0.84,
+    "needs_confirm": false,
+    "message_th": "เจอคราบแกง / ขมิ้นบนโพลีเอสเตอร์สี ประมาณ 4 ซม."
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "curry",
+   "value": {
+    "score": 75,
+    "level": "hard",
+    "level_th": "ยาก ต้องใจเย็น",
+    "dry_clean": false,
+    "expected_fade_pct": 55,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "curry",
+   "value": {
+    "stain": "curry",
+    "fabric": "polyester",
+    "risk_level": "hard",
+    "dry_clean": false,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+      "item": null,
+      "minutes": 1,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "โรยเบกกิ้งโซดาให้ดูดน้ำมัน",
+      "item": "baking_soda",
+      "minutes": 15,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ถูน้ำยาล้างจาน",
+      "item": "dish_soap",
+      "minutes": 5,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 4,
+      "action_th": "แช่ผงฟอกออกซิเจนน้ำอุ่น",
+      "item": "oxygen_bleach",
+      "minutes": 30,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 5,
+      "action_th": "ตากแดดหลังซัก แสงแดดช่วยให้สีขมิ้นจาง",
+      "item": null,
+      "minutes": 60,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 6,
+      "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 6,
+    "total_minutes": 111,
+    "items_used": [
+     "baking_soda",
+     "dish_soap",
+     "oxygen_bleach"
+    ],
+    "shopping_list": [],
+    "warnings_th": [
+     "ผ้าสี: ทดสอบน้ำยากับตะเข็บด้านในก่อน 5 นาที",
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "curry step 1",
+   "value": {
+    "order": 1,
+    "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+    "item": null,
+    "minutes": 1,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "curry step 2",
+   "value": {
+    "order": 2,
+    "action_th": "โรยเบกกิ้งโซดาให้ดูดน้ำมัน",
+    "item": "baking_soda",
+    "minutes": 15,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "curry step 3",
+   "value": {
+    "order": 3,
+    "action_th": "ถูน้ำยาล้างจาน",
+    "item": "dish_soap",
+    "minutes": 5,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "curry step 4",
+   "value": {
+    "order": 4,
+    "action_th": "แช่ผงฟอกออกซิเจนน้ำอุ่น",
+    "item": "oxygen_bleach",
+    "minutes": 30,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "curry step 5",
+   "value": {
+    "order": 5,
+    "action_th": "ตากแดดหลังซัก แสงแดดช่วยให้สีขมิ้นจาง",
+    "item": null,
+    "minutes": 60,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "curry step 6",
+   "value": {
+    "order": 6,
+    "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+    "item": null,
+    "minutes": 0,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "StainRaw",
+   "note": "ink silk",
+   "value": {
+    "stain": "ink",
+    "fabric": "silk",
+    "color": "colored",
+    "age_hours": 30,
+    "size_cm": 2,
+    "confidence": 0.88
+   }
+  },
+  {
+   "def": "AiStainExtract",
+   "note": "ink silk",
+   "value": {
+    "stain": "ink",
+    "fabric": "silk",
+    "color": "colored",
+    "age_hours": 30,
+    "size_cm": 2,
+    "confidence": 0.88,
+    "notes_th": "ตัวอย่างผลจาก vision"
+   }
+  },
+  {
+   "def": "ParsedStain",
+   "note": "ink silk",
+   "value": {
+    "stain": "ink",
+    "stain_th": "หมึกปากกา",
+    "cls": "ink",
+    "fabric": "silk",
+    "fabric_th": "ผ้าไหม",
+    "color": "colored",
+    "age_hours": 30,
+    "size_cm": 2,
+    "confidence": 0.88,
+    "needs_confirm": false,
+    "message_th": "เจอคราบหมึกปากกาบนผ้าไหมสี ประมาณ 2 ซม."
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "ink silk",
+   "value": {
+    "score": 100,
+    "level": "pro",
+    "level_th": "ส่งมือโปร",
+    "dry_clean": true,
+    "expected_fade_pct": 40,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "ink silk",
+   "value": {
+    "stain": "ink",
+    "fabric": "silk",
+    "risk_level": "pro",
+    "dry_clean": true,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+      "item": null,
+      "minutes": 1,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "แตะน้ำเย็นเบา ๆ จากด้านหลัง",
+      "item": "water",
+      "minutes": 2,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ห่อผ้าแยก ส่งร้านซักแห้งภายใน 24 ชม. บอกชนิดคราบ",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 3,
+    "total_minutes": 3,
+    "items_used": [
+     "water"
+    ],
+    "shopping_list": [],
+    "warnings_th": [
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "ink silk step 1",
+   "value": {
+    "order": 1,
+    "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+    "item": null,
+    "minutes": 1,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "ink silk step 2",
+   "value": {
+    "order": 2,
+    "action_th": "แตะน้ำเย็นเบา ๆ จากด้านหลัง",
+    "item": "water",
+    "minutes": 2,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "ink silk step 3",
+   "value": {
+    "order": 3,
+    "action_th": "ห่อผ้าแยก ส่งร้านซักแห้งภายใน 24 ชม. บอกชนิดคราบ",
+    "item": null,
+    "minutes": 0,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "StainRaw",
+   "note": "blood",
+   "value": {
+    "stain": "blood",
+    "fabric": "cotton",
+    "color": "white",
+    "age_hours": 0.5,
+    "size_cm": 3,
+    "confidence": 0.8
+   }
+  },
+  {
+   "def": "AiStainExtract",
+   "note": "blood",
+   "value": {
+    "stain": "blood",
+    "fabric": "cotton",
+    "color": "white",
+    "age_hours": 0.5,
+    "size_cm": 3,
+    "confidence": 0.8,
+    "notes_th": "ตัวอย่างผลจาก vision"
+   }
+  },
+  {
+   "def": "ParsedStain",
+   "note": "blood",
+   "value": {
+    "stain": "blood",
+    "stain_th": "เลือด",
+    "cls": "protein",
+    "fabric": "cotton",
+    "fabric_th": "ผ้าฝ้าย",
+    "color": "white",
+    "age_hours": 0.5,
+    "size_cm": 3,
+    "confidence": 0.8,
+    "needs_confirm": false,
+    "message_th": "เจอคราบเลือดบนผ้าฝ้ายสีขาว ประมาณ 3 ซม."
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "blood",
+   "value": {
+    "score": 45,
+    "level": "medium",
+    "level_th": "พอไหว ทำตามขั้น",
+    "dry_clean": false,
+    "expected_fade_pct": 73,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "blood",
+   "value": {
+    "stain": "blood",
+    "fabric": "cotton",
+    "risk_level": "medium",
+    "dry_clean": false,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+      "item": null,
+      "minutes": 1,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "ล้างน้ำเย็นเท่านั้น ห้ามน้ำร้อน",
+      "item": "water",
+      "minutes": 3,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ถูน้ำยาล้างจาน",
+      "item": "dish_soap",
+      "minutes": 5,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 4,
+      "action_th": "แช่ผงฟอกออกซิเจนน้ำอุ่น",
+      "item": "oxygen_bleach",
+      "minutes": 30,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 5,
+      "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 5,
+    "total_minutes": 39,
+    "items_used": [
+     "dish_soap",
+     "oxygen_bleach",
+     "water"
+    ],
+    "shopping_list": [],
+    "warnings_th": [
+     "คราบเลือด/โปรตีน ห้ามใช้น้ำร้อน จะทำให้คราบติดแน่น",
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "blood step 1",
+   "value": {
+    "order": 1,
+    "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+    "item": null,
+    "minutes": 1,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "blood step 2",
+   "value": {
+    "order": 2,
+    "action_th": "ล้างน้ำเย็นเท่านั้น ห้ามน้ำร้อน",
+    "item": "water",
+    "minutes": 3,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "blood step 3",
+   "value": {
+    "order": 3,
+    "action_th": "ถูน้ำยาล้างจาน",
+    "item": "dish_soap",
+    "minutes": 5,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "blood step 4",
+   "value": {
+    "order": 4,
+    "action_th": "แช่ผงฟอกออกซิเจนน้ำอุ่น",
+    "item": "oxygen_bleach",
+    "minutes": 30,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "blood step 5",
+   "value": {
+    "order": 5,
+    "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+    "item": null,
+    "minutes": 0,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "StainRaw",
+   "note": "mud",
+   "value": {
+    "stain": "mud",
+    "fabric": "denim",
+    "color": "colored",
+    "age_hours": 4,
+    "size_cm": 12,
+    "confidence": 0.93
+   }
+  },
+  {
+   "def": "AiStainExtract",
+   "note": "mud",
+   "value": {
+    "stain": "mud",
+    "fabric": "denim",
+    "color": "colored",
+    "age_hours": 4,
+    "size_cm": 12,
+    "confidence": 0.93,
+    "notes_th": "ตัวอย่างผลจาก vision"
+   }
+  },
+  {
+   "def": "ParsedStain",
+   "note": "mud",
+   "value": {
+    "stain": "mud",
+    "stain_th": "โคลน / ดิน",
+    "cls": "dirt",
+    "fabric": "denim",
+    "fabric_th": "ยีนส์",
+    "color": "colored",
+    "age_hours": 4,
+    "size_cm": 12,
+    "confidence": 0.93,
+    "needs_confirm": false,
+    "message_th": "เจอคราบโคลน / ดินบนยีนส์สี ประมาณ 12 ซม."
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "mud",
+   "value": {
+    "score": 50,
+    "level": "medium",
+    "level_th": "พอไหว ทำตามขั้น",
+    "dry_clean": false,
+    "expected_fade_pct": 70,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "mud",
+   "value": {
+    "stain": "mud",
+    "fabric": "denim",
+    "risk_level": "medium",
+    "dry_clean": false,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ปล่อยให้โคลนแห้งก่อน",
+      "item": null,
+      "minutes": 30,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "ปัดออกด้วยแปรง",
+      "item": "brush",
+      "minutes": 2,
+      "missing": true,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ถูน้ำยาล้างจาน",
+      "item": "dish_soap",
+      "minutes": 5,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 4,
+      "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 4,
+    "total_minutes": 37,
+    "items_used": [
+     "dish_soap"
+    ],
+    "shopping_list": [
+     "brush"
+    ],
+    "warnings_th": [
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "mud step 1",
+   "value": {
+    "order": 1,
+    "action_th": "ปล่อยให้โคลนแห้งก่อน",
+    "item": null,
+    "minutes": 30,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "mud step 2",
+   "value": {
+    "order": 2,
+    "action_th": "ปัดออกด้วยแปรง",
+    "item": "brush",
+    "minutes": 2,
+    "missing": true,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "mud step 3",
+   "value": {
+    "order": 3,
+    "action_th": "ถูน้ำยาล้างจาน",
+    "item": "dish_soap",
+    "minutes": 5,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "RescueStep",
+   "note": "mud step 4",
+   "value": {
+    "order": 4,
+    "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+    "item": null,
+    "minutes": 0,
+    "missing": false,
+    "substitute": null
+   }
+  },
+  {
+   "def": "StainRaw",
+   "note": "low",
+   "value": {
+    "stain": "coffee",
+    "fabric": "cotton",
+    "color": "white",
+    "age_hours": 1,
+    "size_cm": 3,
+    "confidence": 0.41
+   }
+  },
+  {
+   "def": "AiStainExtract",
+   "note": "low",
+   "value": {
+    "stain": "coffee",
+    "fabric": "cotton",
+    "color": "white",
+    "age_hours": 1,
+    "size_cm": 3,
+    "confidence": 0.41,
+    "notes_th": "ตัวอย่างผลจาก vision"
+   }
+  },
+  {
+   "def": "ParsedStain",
+   "note": "low",
+   "value": {
+    "stain": "coffee",
+    "stain_th": "กาแฟ",
+    "cls": "tannin",
+    "fabric": "cotton",
+    "fabric_th": "ผ้าฝ้าย",
+    "color": "white",
+    "age_hours": 1,
+    "size_cm": 3,
+    "confidence": 0.41,
+    "needs_confirm": true,
+    "message_th": "ยังไม่แน่ใจ ช่วยยืนยันว่าเป็นคราบกาแฟบนผ้าฝ้ายก่อน ห้ามเริ่มขั้นตอนจนกว่าจะยืนยัน"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "low",
+   "value": {
+    "score": 40,
+    "level": "medium",
+    "level_th": "พอไหว ทำตามขั้น",
+    "dry_clean": false,
+    "expected_fade_pct": 76,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "coffee fresh",
+   "value": {
+    "score": 35,
+    "level": "easy",
+    "level_th": "ง่าย เอาอยู่",
+    "dry_clean": false,
+    "expected_fade_pct": 79,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "coffee full kit",
+   "value": {
+    "stain": "coffee",
+    "fabric": "cotton",
+    "risk_level": "easy",
+    "dry_clean": false,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+      "item": null,
+      "minutes": 1,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "ล้างน้ำเย็นจากด้านหลังผ้า",
+      "item": "water",
+      "minutes": 2,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ถูเบา ๆ ด้วยน้ำยาล้างจาน",
+      "item": "dish_soap",
+      "minutes": 3,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 4,
+      "action_th": "แช่ผงฟอกออกซิเจนน้ำอุ่น",
+      "item": "oxygen_bleach",
+      "minutes": 30,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 5,
+      "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 5,
+    "total_minutes": 36,
+    "items_used": [
+     "dish_soap",
+     "oxygen_bleach",
+     "water"
+    ],
+    "shopping_list": [],
+    "warnings_th": [
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "thai_tea fresh",
+   "value": {
+    "score": 45,
+    "level": "medium",
+    "level_th": "พอไหว ทำตามขั้น",
+    "dry_clean": false,
+    "expected_fade_pct": 73,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "thai_tea full kit",
+   "value": {
+    "stain": "thai_tea",
+    "fabric": "cotton",
+    "risk_level": "medium",
+    "dry_clean": false,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+      "item": null,
+      "minutes": 1,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "ล้างน้ำเย็นจากด้านหลังผ้า",
+      "item": "water",
+      "minutes": 2,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ถูเบา ๆ ด้วยน้ำยาล้างจาน",
+      "item": "dish_soap",
+      "minutes": 3,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 4,
+      "action_th": "แช่ผงฟอกออกซิเจนน้ำอุ่น",
+      "item": "oxygen_bleach",
+      "minutes": 30,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 5,
+      "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 5,
+    "total_minutes": 36,
+    "items_used": [
+     "dish_soap",
+     "oxygen_bleach",
+     "water"
+    ],
+    "shopping_list": [],
+    "warnings_th": [
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "curry fresh",
+   "value": {
+    "score": 60,
+    "level": "hard",
+    "level_th": "ยาก ต้องใจเย็น",
+    "dry_clean": false,
+    "expected_fade_pct": 64,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "curry full kit",
+   "value": {
+    "stain": "curry",
+    "fabric": "cotton",
+    "risk_level": "hard",
+    "dry_clean": false,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+      "item": null,
+      "minutes": 1,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "โรยเบกกิ้งโซดาให้ดูดน้ำมัน",
+      "item": "baking_soda",
+      "minutes": 15,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ถูน้ำยาล้างจาน",
+      "item": "dish_soap",
+      "minutes": 5,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 4,
+      "action_th": "แช่ผงฟอกออกซิเจนน้ำอุ่น",
+      "item": "oxygen_bleach",
+      "minutes": 30,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 5,
+      "action_th": "ตากแดดหลังซัก แสงแดดช่วยให้สีขมิ้นจาง",
+      "item": null,
+      "minutes": 60,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 6,
+      "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 6,
+    "total_minutes": 111,
+    "items_used": [
+     "baking_soda",
+     "dish_soap",
+     "oxygen_bleach"
+    ],
+    "shopping_list": [],
+    "warnings_th": [
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "oil fresh",
+   "value": {
+    "score": 40,
+    "level": "medium",
+    "level_th": "พอไหว ทำตามขั้น",
+    "dry_clean": false,
+    "expected_fade_pct": 76,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "oil full kit",
+   "value": {
+    "stain": "oil",
+    "fabric": "cotton",
+    "risk_level": "medium",
+    "dry_clean": false,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+      "item": null,
+      "minutes": 1,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "โรยเบกกิ้งโซดาให้ดูดน้ำมัน",
+      "item": "baking_soda",
+      "minutes": 15,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ถูน้ำยาล้างจาน",
+      "item": "dish_soap",
+      "minutes": 5,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 4,
+      "action_th": "ล้างน้ำอุ่น",
+      "item": "water",
+      "minutes": 2,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 5,
+      "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 5,
+    "total_minutes": 23,
+    "items_used": [
+     "baking_soda",
+     "dish_soap",
+     "water"
+    ],
+    "shopping_list": [],
+    "warnings_th": [
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "lipstick fresh",
+   "value": {
+    "score": 50,
+    "level": "medium",
+    "level_th": "พอไหว ทำตามขั้น",
+    "dry_clean": false,
+    "expected_fade_pct": 70,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "lipstick full kit",
+   "value": {
+    "stain": "lipstick",
+    "fabric": "cotton",
+    "risk_level": "medium",
+    "dry_clean": false,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+      "item": null,
+      "minutes": 1,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "โรยเบกกิ้งโซดาให้ดูดน้ำมัน",
+      "item": "baking_soda",
+      "minutes": 15,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ถูน้ำยาล้างจาน",
+      "item": "dish_soap",
+      "minutes": 5,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 4,
+      "action_th": "แช่ผงฟอกออกซิเจนน้ำอุ่น",
+      "item": "oxygen_bleach",
+      "minutes": 30,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 5,
+      "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 5,
+    "total_minutes": 51,
+    "items_used": [
+     "baking_soda",
+     "dish_soap",
+     "oxygen_bleach"
+    ],
+    "shopping_list": [],
+    "warnings_th": [
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "ink fresh",
+   "value": {
+    "score": 65,
+    "level": "hard",
+    "level_th": "ยาก ต้องใจเย็น",
+    "dry_clean": false,
+    "expected_fade_pct": 61,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "ink full kit",
+   "value": {
+    "stain": "ink",
+    "fabric": "cotton",
+    "risk_level": "hard",
+    "dry_clean": false,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+      "item": null,
+      "minutes": 1,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "แตะแอลกอฮอล์ด้วยสำลี เปลี่ยนด้านกระดาษซับบ่อย ๆ",
+      "item": "alcohol",
+      "minutes": 5,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ถูน้ำยาล้างจาน",
+      "item": "dish_soap",
+      "minutes": 3,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 4,
+      "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 4,
+    "total_minutes": 9,
+    "items_used": [
+     "alcohol",
+     "dish_soap"
+    ],
+    "shopping_list": [],
+    "warnings_th": [
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "blood fresh",
+   "value": {
+    "score": 45,
+    "level": "medium",
+    "level_th": "พอไหว ทำตามขั้น",
+    "dry_clean": false,
+    "expected_fade_pct": 73,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "blood full kit",
+   "value": {
+    "stain": "blood",
+    "fabric": "cotton",
+    "risk_level": "medium",
+    "dry_clean": false,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+      "item": null,
+      "minutes": 1,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "ล้างน้ำเย็นเท่านั้น ห้ามน้ำร้อน",
+      "item": "water",
+      "minutes": 3,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ถูน้ำยาล้างจาน",
+      "item": "dish_soap",
+      "minutes": 5,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 4,
+      "action_th": "แช่ผงฟอกออกซิเจนน้ำอุ่น",
+      "item": "oxygen_bleach",
+      "minutes": 30,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 5,
+      "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 5,
+    "total_minutes": 39,
+    "items_used": [
+     "dish_soap",
+     "oxygen_bleach",
+     "water"
+    ],
+    "shopping_list": [],
+    "warnings_th": [
+     "คราบเลือด/โปรตีน ห้ามใช้น้ำร้อน จะทำให้คราบติดแน่น",
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "mud fresh",
+   "value": {
+    "score": 30,
+    "level": "easy",
+    "level_th": "ง่าย เอาอยู่",
+    "dry_clean": false,
+    "expected_fade_pct": 82,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "mud full kit",
+   "value": {
+    "stain": "mud",
+    "fabric": "cotton",
+    "risk_level": "easy",
+    "dry_clean": false,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ปล่อยให้โคลนแห้งก่อน",
+      "item": null,
+      "minutes": 30,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "ปัดออกด้วยแปรง",
+      "item": "brush",
+      "minutes": 2,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ถูน้ำยาล้างจาน",
+      "item": "dish_soap",
+      "minutes": 5,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 4,
+      "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 4,
+    "total_minutes": 37,
+    "items_used": [
+     "brush",
+     "dish_soap"
+    ],
+    "shopping_list": [],
+    "warnings_th": [
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "tea on cotton",
+   "value": {
+    "score": 50,
+    "level": "medium",
+    "level_th": "พอไหว ทำตามขั้น",
+    "dry_clean": false,
+    "expected_fade_pct": 70,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "tea on denim",
+   "value": {
+    "score": 50,
+    "level": "medium",
+    "level_th": "พอไหว ทำตามขั้น",
+    "dry_clean": false,
+    "expected_fade_pct": 70,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "tea on polyester",
+   "value": {
+    "score": 55,
+    "level": "medium",
+    "level_th": "พอไหว ทำตามขั้น",
+    "dry_clean": false,
+    "expected_fade_pct": 67,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "tea on rayon",
+   "value": {
+    "score": 65,
+    "level": "hard",
+    "level_th": "ยาก ต้องใจเย็น",
+    "dry_clean": true,
+    "expected_fade_pct": 61,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "tea on wool",
+   "value": {
+    "score": 70,
+    "level": "hard",
+    "level_th": "ยาก ต้องใจเย็น",
+    "dry_clean": true,
+    "expected_fade_pct": 58,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RiskMeter",
+   "note": "tea on silk",
+   "value": {
+    "score": 75,
+    "level": "hard",
+    "level_th": "ยาก ต้องใจเย็น",
+    "dry_clean": true,
+    "expected_fade_pct": 55,
+    "act_within_th": "ยิ่งเร็วยิ่งดี ภายใน 1 ชม. หายง่ายสุด",
+    "disclaimer_th": "คะแนนและ % เป็นค่าประมาณจากกฎในแอป ไม่ใช่ผลรับประกัน"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "vinegar substitute",
+   "value": {
+    "stain": "thai_tea",
+    "fabric": "cotton",
+    "risk_level": "medium",
+    "dry_clean": false,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+      "item": null,
+      "minutes": 1,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "ล้างน้ำเย็นจากด้านหลังผ้า",
+      "item": "water",
+      "minutes": 2,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ถูเบา ๆ ด้วยน้ำยาล้างจาน",
+      "item": "dish_soap",
+      "minutes": 3,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 4,
+      "action_th": "แช่ผงฟอกออกซิเจนน้ำอุ่น",
+      "item": "oxygen_bleach",
+      "minutes": 30,
+      "missing": true,
+      "substitute": "white_vinegar"
+     },
+     {
+      "order": 5,
+      "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 5,
+    "total_minutes": 36,
+    "items_used": [
+     "dish_soap",
+     "water",
+     "white_vinegar"
+    ],
+    "shopping_list": [],
+    "warnings_th": [
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "RescuePlan",
+   "note": "empty kit → shopping",
+   "value": {
+    "stain": "thai_tea",
+    "fabric": "cotton",
+    "risk_level": "medium",
+    "dry_clean": false,
+    "steps": [
+     {
+      "order": 1,
+      "action_th": "ซับคราบออกด้วยกระดาษ ห้ามขยี้",
+      "item": null,
+      "minutes": 1,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 2,
+      "action_th": "ล้างน้ำเย็นจากด้านหลังผ้า",
+      "item": "water",
+      "minutes": 2,
+      "missing": false,
+      "substitute": null
+     },
+     {
+      "order": 3,
+      "action_th": "ถูเบา ๆ ด้วยน้ำยาล้างจาน",
+      "item": "dish_soap",
+      "minutes": 3,
+      "missing": true,
+      "substitute": null
+     },
+     {
+      "order": 4,
+      "action_th": "แช่ผงฟอกออกซิเจนน้ำอุ่น",
+      "item": "oxygen_bleach",
+      "minutes": 30,
+      "missing": true,
+      "substitute": null
+     },
+     {
+      "order": 5,
+      "action_th": "ซักตามป้ายผ้า แล้วเช็กก่อนอบ (ความร้อนทำให้คราบติดถาวร)",
+      "item": null,
+      "minutes": 0,
+      "missing": false,
+      "substitute": null
+     }
+    ],
+    "step_count": 5,
+    "total_minutes": 36,
+    "items_used": [
+     "water"
+    ],
+    "shopping_list": [
+     "dish_soap",
+     "oxygen_bleach"
+    ],
+    "warnings_th": [
+     "อย่าอบหรือรีดจนกว่าคราบจะหายหมด"
+    ],
+    "disclaimer_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "SafetyCheck",
+   "note": "prae",
+   "value": {
+    "level": "ok",
+    "pairs": [],
+    "message_th": "ไม่พบคู่น้ำยาอันตราย ใช้ทีละชนิดและล้างน้ำออกก่อนเปลี่ยนน้ำยา"
+   }
+  },
+  {
+   "def": "SafetyCheck",
+   "note": "danger",
+   "value": {
+    "level": "danger",
+    "pairs": [
+     {
+      "a": "chlorine_bleach",
+      "b": "white_vinegar",
+      "why_th": "เกิดก๊าซคลอรีน อันตรายต่อปอด"
+     }
+    ],
+    "message_th": "ห้ามใช้ร่วมกันเด็ดขาด: น้ำยาฟอกขาวคลอรีน + น้ำส้มสายชูกลั่น (เกิดก๊าซคลอรีน อันตรายต่อปอด)"
+   }
+  },
+  {
+   "def": "SafetyCheck",
+   "note": "danger x2",
+   "value": {
+    "level": "danger",
+    "pairs": [
+     {
+      "a": "chlorine_bleach",
+      "b": "ammonia",
+      "why_th": "เกิดก๊าซคลอรามีน อันตรายต่อปอด"
+     },
+     {
+      "a": "chlorine_bleach",
+      "b": "alcohol",
+      "why_th": "เกิดสารระเหยอันตราย (คลอโรฟอร์ม)"
+     }
+    ],
+    "message_th": "ห้ามใช้ร่วมกันเด็ดขาด: น้ำยาฟอกขาวคลอรีน + แอมโมเนีย (เกิดก๊าซคลอรามีน อันตรายต่อปอด) · น้ำยาฟอกขาวคลอรีน + แอลกอฮอล์ล้างแผล 70% (เกิดสารระเหยอันตราย (คลอโรฟอร์ม))"
+   }
+  },
+  {
+   "def": "SafetyCheck",
+   "note": "peroxide+vinegar",
+   "value": {
+    "level": "danger",
+    "pairs": [
+     {
+      "a": "hydrogen_peroxide",
+      "b": "white_vinegar",
+      "why_th": "เกิดกรดเปอร์อะซิติก กัดผิวและตา"
+     }
+    ],
+    "message_th": "ห้ามใช้ร่วมกันเด็ดขาด: ไฮโดรเจนเปอร์ออกไซด์ + น้ำส้มสายชูกลั่น (เกิดกรดเปอร์อะซิติก กัดผิวและตา)"
+   }
+  },
+  {
+   "def": "CareLabel",
+   "note": "shirt",
+   "value": {
+    "codes": [
+     "wash_40",
+     "non_chlorine_bleach",
+     "tumble_low",
+     "iron_med"
+    ],
+    "lines_th": [
+     "ซักน้ำไม่เกิน 40°C",
+     "ใช้ได้เฉพาะสารฟอกไม่มีคลอรีน",
+     "อบผ้าไฟอ่อน",
+     "รีดไฟกลาง (≤150°C)"
+    ],
+    "max_wash_c": 40,
+    "bleach": "oxygen_only",
+    "dryer_ok": true,
+    "dry_clean_only": false
+   }
+  },
+  {
+   "def": "CareLabel",
+   "note": "silk",
+   "value": {
+    "codes": [
+     "hand_wash",
+     "no_bleach",
+     "no_tumble",
+     "iron_low",
+     "dry_clean"
+    ],
+    "lines_th": [
+     "ซักมือเท่านั้น",
+     "ห้ามใช้สารฟอกทุกชนิด",
+     "ห้ามอบผ้า",
+     "รีดไฟอ่อน (≤110°C)",
+     "ซักแห้งได้"
+    ],
+    "max_wash_c": 30,
+    "bleach": "none",
+    "dryer_ok": false,
+    "dry_clean_only": false
+   }
+  },
+  {
+   "def": "CareLabel",
+   "note": "dry clean only",
+   "value": {
+    "codes": [
+     "no_wash",
+     "dry_clean"
+    ],
+    "lines_th": [
+     "ห้ามซักน้ำ",
+     "ซักแห้งได้"
+    ],
+    "max_wash_c": 0,
+    "bleach": "any",
+    "dryer_ok": true,
+    "dry_clean_only": true
+   }
+  },
+  {
+   "def": "CareLabel",
+   "note": "towel",
+   "value": {
+    "codes": [
+     "wash_60",
+     "tumble_low"
+    ],
+    "lines_th": [
+     "ซักน้ำไม่เกิน 60°C",
+     "อบผ้าไฟอ่อน"
+    ],
+    "max_wash_c": 60,
+    "bleach": "any",
+    "dryer_ok": true,
+    "dry_clean_only": false
+   }
+  },
+  {
+   "def": "LabelFit",
+   "note": "fits",
+   "value": {
+    "ok": true,
+    "issues_th": []
+   }
+  },
+  {
+   "def": "LabelFit",
+   "note": "no bleach",
+   "value": {
+    "ok": false,
+    "issues_th": [
+     "ป้ายผ้าห้ามสารฟอก ข้ามขั้นแช่ผงฟอก"
+    ]
+   }
+  },
+  {
+   "def": "KitCheck",
+   "note": "prae",
+   "value": {
+    "kit": [
+     "baking_soda",
+     "dish_soap",
+     "oxygen_bleach",
+     "water",
+     "white_vinegar"
+    ],
+    "ready_for": [
+     "coffee",
+     "thai_tea",
+     "curry",
+     "oil",
+     "lipstick",
+     "blood"
+    ],
+    "ready_count": 6,
+    "total": 8,
+    "headline_th": "ชุดในบ้านพร้อมรับมือ 6/8 คราบ"
+   }
+  },
+  {
+   "def": "KitCheck",
+   "note": "full",
+   "value": {
+    "kit": [
+     "alcohol",
+     "baking_soda",
+     "brush",
+     "dish_soap",
+     "oxygen_bleach",
+     "water",
+     "white_vinegar"
+    ],
+    "ready_for": [
+     "coffee",
+     "thai_tea",
+     "curry",
+     "oil",
+     "lipstick",
+     "ink",
+     "blood",
+     "mud"
+    ],
+    "ready_count": 8,
+    "total": 8,
+    "headline_th": "ชุดในบ้านพร้อมรับมือ 8/8 คราบ"
+   }
+  },
+  {
+   "def": "KitCheck",
+   "note": "empty",
+   "value": {
+    "kit": [
+     "water"
+    ],
+    "ready_for": [],
+    "ready_count": 0,
+    "total": 8,
+    "headline_th": "ชุดในบ้านพร้อมรับมือ 0/8 คราบ"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "เสื้อนักศึกษาขาว",
+   "value": {
+    "date": "2026-12-10",
+    "item_th": "เสื้อนักศึกษาขาว",
+    "stain": "thai_tea",
+    "result": "removed",
+    "value_baht": 290
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "กางเกงยีนส์",
+   "value": {
+    "date": "2026-12-03",
+    "item_th": "กางเกงยีนส์",
+    "stain": "mud",
+    "result": "removed",
+    "value_baht": 890
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "เสื้อยืดลายแมว",
+   "value": {
+    "date": "2026-11-28",
+    "item_th": "เสื้อยืดลายแมว",
+    "stain": "curry",
+    "result": "faded",
+    "value_baht": 250
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "ผ้าปูที่นอน",
+   "value": {
+    "date": "2026-11-20",
+    "item_th": "ผ้าปูที่นอน",
+    "stain": "blood",
+    "result": "removed",
+    "value_baht": 590
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "เสื้อเชิ้ตทำงาน",
+   "value": {
+    "date": "2026-11-12",
+    "item_th": "เสื้อเชิ้ตทำงาน",
+    "stain": "ink",
+    "result": "stuck",
+    "value_baht": 450
+   }
+  },
+  {
+   "def": "DiarySummary",
+   "note": "prae diary",
+   "value": {
+    "count": 5,
+    "removed": 3,
+    "faded": 1,
+    "success_rate_pct": 60,
+    "saved_baht": 1770,
+    "headline_th": "กู้เสื้อรอดแล้ว 3 ตัว ประหยัดประมาณ ฿1,770",
+    "disclaimer_th": "มูลค่าเป็นราคาที่ผู้ใช้กรอกเอง"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "demo",
+   "value": {
+    "title_th": "StainSOS ก่อน/หลัง",
+    "headline_th": "เสื้อนักศึกษาขาว รอดแล้ว!",
+    "hook_th": "คราบชาไทย จางไปประมาณ 70% ใน 1 รอบ",
+    "layout": "before_after",
+    "sizes": [
+     "1080x1350",
+     "1080x1920"
+    ],
+    "watermark": "Made with StainSOS · test on a hidden spot first",
+    "cta_th": "คอมเมนต์ STAIN รับแอปฟรี",
+    "disclaimer_th": "ผลจริงขึ้นกับชนิดผ้าและอายุคราบ"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "mud",
+   "value": {
+    "title_th": "StainSOS ก่อน/หลัง",
+    "headline_th": "กางเกงยีนส์ รอดแล้ว!",
+    "hook_th": "คราบโคลน จางไปประมาณ 70% ใน 1 รอบ",
+    "layout": "before_after",
+    "sizes": [
+     "1080x1350",
+     "1080x1920"
+    ],
+    "watermark": "Made with StainSOS · test on a hidden spot first",
+    "cta_th": "คอมเมนต์ STAIN รับแอปฟรี",
+    "disclaimer_th": "ผลจริงขึ้นกับชนิดผ้าและอายุคราบ"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(0, 1)",
+   "value": {
+    "allowed": 1,
+    "left_after": 2,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(2, 1)",
+   "value": {
+    "allowed": 1,
+    "left_after": 0,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(3, 1)",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(1, 5)",
+   "value": {
+    "allowed": 2,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(9, 5, True)",
+   "value": {
+    "allowed": 5,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "ok",
+   "value": {
+    "level": "ok",
+    "message_th": "StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "stop",
+   "value": {
+    "level": "stop",
+    "message_th": "หยุดก่อน มีน้ำยาที่ห้ามผสมกัน StainSOS ให้ขั้นตอนทั่วไปและค่าประมาณเท่านั้น ไม่รับประกันว่าคราบจะหาย ทดสอบมุมด้านในก่อนทุกครั้ง อ่านป้ายผ้าก่อนใช้ อย่าผสมน้ำยาต่างชนิดกัน ใส่ถุงมือและเปิดหน้าต่าง ผ้าแพงหรือผ้าบอบบางควรส่งร้านซักแห้ง"
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "bad",
+   "value": {
+    "score": 46,
+    "ok": false,
+    "tips_th": [
+     "แสงสะท้อนบนผ้า ถ่ายใกล้หน้าต่างแต่ไม่โดนแดดตรง",
+     "ภาพเบลอ ถือนิ่งแล้วถ่ายให้เห็นขอบคราบชัด",
+     "คราบถูกตัด ถอยออกให้เห็นคราบทั้งหมดและเนื้อผ้ารอบ ๆ"
+    ]
+   }
+  }
+ ]
+}
