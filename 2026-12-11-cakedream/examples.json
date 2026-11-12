@@ -1,0 +1,1990 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "Mae Puk",
+   "value": {
+    "id": "u01",
+    "name_th": "แม่ปุ๊ก",
+    "name_en": "Mae Puk",
+    "age": 34,
+    "city_th": "นนทบุรี"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Nan",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่แนน",
+    "name_en": "Nan",
+    "age": 27,
+    "city_th": "กรุงเทพฯ"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Uncle Chai",
+   "value": {
+    "id": "u03",
+    "name_th": "ลุงชัย",
+    "name_en": "Uncle Chai",
+    "age": 58,
+    "city_th": "เชียงใหม่"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Fah",
+   "value": {
+    "id": "u04",
+    "name_th": "ฟ้า",
+    "name_en": "Fah",
+    "age": 22,
+    "city_th": "ขอนแก่น"
+   }
+  },
+  {
+   "def": "RefPhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "px_w": 1080,
+    "px_h": 1350,
+    "glare": 0.1,
+    "blur": 0.05,
+    "crop": 0.0
+   }
+  },
+  {
+   "def": "RefScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "quality": {
+     "score": 94,
+     "ok": true,
+     "tips_th": []
+    }
+   }
+  },
+  {
+   "def": "RefPhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "px_w": 720,
+    "px_h": 960,
+    "glare": 0.4,
+    "blur": 0.2,
+    "crop": 0.1
+   }
+  },
+  {
+   "def": "RefScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "quality": {
+     "score": 76,
+     "ok": true,
+     "tips_th": [
+      "แสงสะท้อนเยอะ ถ่ายรูปตัวอย่างใหม่ไม่ใช้แฟลช"
+     ]
+    }
+   }
+  },
+  {
+   "def": "RefPhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "px_w": 640,
+    "px_h": 640,
+    "glare": 0.6,
+    "blur": 0.5,
+    "crop": 0.4
+   }
+  },
+  {
+   "def": "RefScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "quality": {
+     "score": 49,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนเยอะ ถ่ายรูปตัวอย่างใหม่ไม่ใช้แฟลช",
+      "ภาพเบลอ ถือนิ่ง ๆ แล้วถ่ายใหม่",
+      "เค้กโดนครอป ถ่ายให้เห็นทั้งก้อน"
+     ]
+    }
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "mid",
+   "value": {
+    "score": 80,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "GuestInput",
+   "note": "(8, 10, 'normal', False)",
+   "value": {
+    "adults": 8,
+    "kids": 10,
+    "appetite": "normal",
+    "leftovers": false
+   }
+  },
+  {
+   "def": "Servings",
+   "note": "(8, 10, 'normal', False)",
+   "value": {
+    "guests": 18,
+    "adults": 8,
+    "kids": 10,
+    "servings_needed": 14,
+    "pounds": 2,
+    "shape": "round",
+    "diameter_in": 8,
+    "servings_capacity": 14,
+    "headline_th": "แขก 18 คน → เค้ก 2 ปอนด์ (8 นิ้ว) ได้ 14 ชิ้น"
+   }
+  },
+  {
+   "def": "GuestInput",
+   "note": "(8, 10, 'dessert_lovers', False)",
+   "value": {
+    "adults": 8,
+    "kids": 10,
+    "appetite": "dessert_lovers",
+    "leftovers": false
+   }
+  },
+  {
+   "def": "Servings",
+   "note": "(8, 10, 'dessert_lovers', False)",
+   "value": {
+    "guests": 18,
+    "adults": 8,
+    "kids": 10,
+    "servings_needed": 19,
+    "pounds": 3,
+    "shape": "round",
+    "diameter_in": 9,
+    "servings_capacity": 20,
+    "headline_th": "แขก 18 คน → เค้ก 3 ปอนด์ (9 นิ้ว) ได้ 20 ชิ้น"
+   }
+  },
+  {
+   "def": "GuestInput",
+   "note": "(8, 10, 'normal', True)",
+   "value": {
+    "adults": 8,
+    "kids": 10,
+    "appetite": "normal",
+    "leftovers": true
+   }
+  },
+  {
+   "def": "Servings",
+   "note": "(8, 10, 'normal', True)",
+   "value": {
+    "guests": 18,
+    "adults": 8,
+    "kids": 10,
+    "servings_needed": 17,
+    "pounds": 3,
+    "shape": "round",
+    "diameter_in": 9,
+    "servings_capacity": 20,
+    "headline_th": "แขก 18 คน → เค้ก 3 ปอนด์ (9 นิ้ว) ได้ 20 ชิ้น"
+   }
+  },
+  {
+   "def": "GuestInput",
+   "note": "(4, 2, 'light', False)",
+   "value": {
+    "adults": 4,
+    "kids": 2,
+    "appetite": "light",
+    "leftovers": false
+   }
+  },
+  {
+   "def": "Servings",
+   "note": "(4, 2, 'light', False)",
+   "value": {
+    "guests": 6,
+    "adults": 4,
+    "kids": 2,
+    "servings_needed": 5,
+    "pounds": 1,
+    "shape": "round",
+    "diameter_in": 6,
+    "servings_capacity": 7,
+    "headline_th": "แขก 6 คน → เค้ก 1 ปอนด์ (6 นิ้ว) ได้ 7 ชิ้น"
+   }
+  },
+  {
+   "def": "GuestInput",
+   "note": "(30, 0, 'normal', False)",
+   "value": {
+    "adults": 30,
+    "kids": 0,
+    "appetite": "normal",
+    "leftovers": false
+   }
+  },
+  {
+   "def": "Servings",
+   "note": "(30, 0, 'normal', False)",
+   "value": {
+    "guests": 30,
+    "adults": 30,
+    "kids": 0,
+    "servings_needed": 30,
+    "pounds": 5,
+    "shape": "tier2",
+    "diameter_in": 10,
+    "servings_capacity": 34,
+    "headline_th": "แขก 30 คน → เค้ก 5 ปอนด์ (10 นิ้ว) ได้ 34 ชิ้น"
+   }
+  },
+  {
+   "def": "GuestInput",
+   "note": "(50, 0, 'normal', False)",
+   "value": {
+    "adults": 50,
+    "kids": 0,
+    "appetite": "normal",
+    "leftovers": false
+   }
+  },
+  {
+   "def": "Servings",
+   "note": "(50, 0, 'normal', False)",
+   "value": {
+    "guests": 50,
+    "adults": 50,
+    "kids": 0,
+    "servings_needed": 50,
+    "pounds": 8,
+    "shape": "tier3",
+    "diameter_in": 12,
+    "servings_capacity": 54,
+    "headline_th": "แขก 50 คน → เค้ก 8 ปอนด์ (12 นิ้ว) ได้ 54 ชิ้น"
+   }
+  },
+  {
+   "def": "GuestInput",
+   "note": "(2, 0, 'normal', False)",
+   "value": {
+    "adults": 2,
+    "kids": 0,
+    "appetite": "normal",
+    "leftovers": false
+   }
+  },
+  {
+   "def": "Servings",
+   "note": "(2, 0, 'normal', False)",
+   "value": {
+    "guests": 2,
+    "adults": 2,
+    "kids": 0,
+    "servings_needed": 2,
+    "pounds": 0.5,
+    "shape": "round",
+    "diameter_in": 4,
+    "servings_capacity": 3,
+    "headline_th": "แขก 2 คน → เค้ก 0.5 ปอนด์ (4 นิ้ว) ได้ 3 ชิ้น"
+   }
+  },
+  {
+   "def": "MessageFit",
+   "note": "HBD น้องภูมิ",
+   "value": {
+    "text": "HBD น้องภูมิ 5 ขวบ",
+    "glyphs": 13,
+    "limit_per_line": 20,
+    "lines": 1,
+    "fits": true,
+    "tip_th": ""
+   }
+  },
+  {
+   "def": "MessageFit",
+   "note": "สุขสันต์วันเ",
+   "value": {
+    "text": "สุขสันต์วันเกิดคุณแม่ที่รักที่สุดในโลก",
+    "glyphs": 25,
+    "limit_per_line": 15,
+    "lines": 2,
+    "fits": true,
+    "tip_th": "แบ่ง 2 บรรทัดได้"
+   }
+  },
+  {
+   "def": "MessageFit",
+   "note": "กกกกกกกกกกกก",
+   "value": {
+    "text": "กกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกก",
+    "glyphs": 40,
+    "limit_per_line": 10,
+    "lines": 2,
+    "fits": false,
+    "tip_th": "ยาวเกิน ตัดให้เหลือไม่เกิน 20 ตัว"
+   }
+  },
+  {
+   "def": "MessageFit",
+   "note": "Happy 60th ล",
+   "value": {
+    "text": "Happy 60th ลุงชัย",
+    "glyphs": 14,
+    "limit_per_line": 22,
+    "lines": 1,
+    "fits": true,
+    "tip_th": ""
+   }
+  },
+  {
+   "def": "MessageFit",
+   "note": "รักนะ",
+   "value": {
+    "text": "รักนะ",
+    "glyphs": 4,
+    "limit_per_line": 15,
+    "lines": 1,
+    "fits": true,
+    "tip_th": ""
+   }
+  },
+  {
+   "def": "DesignRequest",
+   "note": "dinosaur 2lb",
+   "value": {
+    "theme": "dinosaur",
+    "flavor": "vanilla_chiffon",
+    "pounds": 2,
+    "message": "HBD น้องภูมิ 5 ขวบ",
+    "extra_toppers": 0
+   }
+  },
+  {
+   "def": "DesignSpec",
+   "note": "dinosaur 2lb",
+   "value": {
+    "theme": "dinosaur",
+    "theme_th": "ไดโนเสาร์",
+    "flavor": "vanilla_chiffon",
+    "flavor_th": "ชิฟฟอนวานิลลา",
+    "pounds": 2,
+    "shape": "round",
+    "diameter_in": 8,
+    "palette": [
+     "#7CC36B",
+     "#F4D35E",
+     "#5B8C3A"
+    ],
+    "toppers_th": [
+     "ไดโนฟองดองต์",
+     "ภูเขาไฟช็อกโกแลต",
+     "ใบไม้น้ำตาล"
+    ],
+    "extra_toppers": 0,
+    "complexity": 3,
+    "message": {
+     "text": "HBD น้องภูมิ 5 ขวบ",
+     "glyphs": 13,
+     "limit_per_line": 20,
+     "lines": 1,
+     "fits": true,
+     "tip_th": ""
+    },
+    "image_prompt": "studio photo of a 8-inch dinosaur themed birthday cake, palette #7CC36B, #F4D35E, #5B8C3A, 3 toppers, piped message on top, soft daylight, 4:5, no logos, no real people",
+    "disclaimer_th": "ภาพจำลองและราคาเป็นค่าประมาณ ร้านจริงอาจทำได้ต่างจากภาพ แจ้งเรื่องแพ้อาหารกับร้านทุกครั้ง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "dinosaur 2lb bkk",
+   "value": {
+    "region": "bkk",
+    "low": 1100,
+    "mid": 1300,
+    "high": 1620,
+    "per_serving": 93,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "dinosaur 2lb metro",
+   "value": {
+    "region": "metro",
+    "low": 1010,
+    "mid": 1190,
+    "high": 1490,
+    "per_serving": 85,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "dinosaur 2lb province",
+   "value": {
+    "region": "province",
+    "low": 870,
+    "mid": 1020,
+    "high": 1280,
+    "per_serving": 73,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "DesignRequest",
+   "note": "unicorn 1.5lb",
+   "value": {
+    "theme": "unicorn",
+    "flavor": "strawberry",
+    "pounds": 1.5,
+    "message": "Happy 6th Mali",
+    "extra_toppers": 1
+   }
+  },
+  {
+   "def": "DesignSpec",
+   "note": "unicorn 1.5lb",
+   "value": {
+    "theme": "unicorn",
+    "theme_th": "ยูนิคอร์น",
+    "flavor": "strawberry",
+    "flavor_th": "สตรอว์เบอร์รีครีมสด",
+    "pounds": 1.5,
+    "shape": "round",
+    "diameter_in": 7,
+    "palette": [
+     "#F9C6D9",
+     "#B8A9F0",
+     "#FFFFFF"
+    ],
+    "toppers_th": [
+     "เขาทอง",
+     "หูฟองดองต์",
+     "ดอกครีมพาสเทล"
+    ],
+    "extra_toppers": 1,
+    "complexity": 3,
+    "message": {
+     "text": "Happy 6th Mali",
+     "glyphs": 13,
+     "limit_per_line": 17,
+     "lines": 1,
+     "fits": true,
+     "tip_th": ""
+    },
+    "image_prompt": "studio photo of a 7-inch unicorn themed birthday cake, palette #F9C6D9, #B8A9F0, #FFFFFF, 4 toppers, piped message on top, soft daylight, 4:5, no logos, no real people",
+    "disclaimer_th": "ภาพจำลองและราคาเป็นค่าประมาณ ร้านจริงอาจทำได้ต่างจากภาพ แจ้งเรื่องแพ้อาหารกับร้านทุกครั้ง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "unicorn 1.5lb bkk",
+   "value": {
+    "region": "bkk",
+    "low": 1070,
+    "mid": 1260,
+    "high": 1580,
+    "per_serving": 126,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "unicorn 1.5lb metro",
+   "value": {
+    "region": "metro",
+    "low": 980,
+    "mid": 1150,
+    "high": 1440,
+    "per_serving": 115,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "unicorn 1.5lb province",
+   "value": {
+    "region": "province",
+    "low": 830,
+    "mid": 980,
+    "high": 1220,
+    "per_serving": 98,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "DesignRequest",
+   "note": "korean_minimal 1lb",
+   "value": {
+    "theme": "korean_minimal",
+    "flavor": "thai_tea",
+    "pounds": 1,
+    "message": "รักนะ",
+    "extra_toppers": 0
+   }
+  },
+  {
+   "def": "DesignSpec",
+   "note": "korean_minimal 1lb",
+   "value": {
+    "theme": "korean_minimal",
+    "theme_th": "มินิมอลเกาหลี",
+    "flavor": "thai_tea",
+    "flavor_th": "ชาไทย",
+    "pounds": 1,
+    "shape": "round",
+    "diameter_in": 6,
+    "palette": [
+     "#F3E9DC",
+     "#C9A36A",
+     "#FFFFFF"
+    ],
+    "toppers_th": [
+     "ขอบครีมวินเทจ",
+     "ตัวอักษรไอซิ่ง"
+    ],
+    "extra_toppers": 0,
+    "complexity": 1,
+    "message": {
+     "text": "รักนะ",
+     "glyphs": 4,
+     "limit_per_line": 15,
+     "lines": 1,
+     "fits": true,
+     "tip_th": ""
+    },
+    "image_prompt": "studio photo of a 6-inch korean minimal themed birthday cake, palette #F3E9DC, #C9A36A, #FFFFFF, 2 toppers, piped message on top, soft daylight, 4:5, no logos, no real people",
+    "disclaimer_th": "ภาพจำลองและราคาเป็นค่าประมาณ ร้านจริงอาจทำได้ต่างจากภาพ แจ้งเรื่องแพ้อาหารกับร้านทุกครั้ง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "korean_minimal 1lb bkk",
+   "value": {
+    "region": "bkk",
+    "low": 450,
+    "mid": 530,
+    "high": 660,
+    "per_serving": 76,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "korean_minimal 1lb metro",
+   "value": {
+    "region": "metro",
+    "low": 410,
+    "mid": 480,
+    "high": 600,
+    "per_serving": 69,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "korean_minimal 1lb province",
+   "value": {
+    "region": "province",
+    "low": 350,
+    "mid": 410,
+    "high": 510,
+    "per_serving": 59,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "DesignRequest",
+   "note": "princess 5lb",
+   "value": {
+    "theme": "princess",
+    "flavor": "chocolate",
+    "pounds": 5,
+    "message": "Happy 60",
+    "extra_toppers": 3
+   }
+  },
+  {
+   "def": "DesignSpec",
+   "note": "princess 5lb",
+   "value": {
+    "theme": "princess",
+    "theme_th": "เจ้าหญิง / ปราสาท",
+    "flavor": "chocolate",
+    "flavor_th": "ช็อกโกแลตฟัดจ์",
+    "pounds": 5,
+    "shape": "tier2",
+    "diameter_in": 10,
+    "palette": [
+     "#F8C8DC",
+     "#E6C36A",
+     "#FFFFFF"
+    ],
+    "toppers_th": [
+     "ปราสาทน้ำตาล",
+     "มงกุฎทอง",
+     "ไข่มุกน้ำตาล"
+    ],
+    "extra_toppers": 3,
+    "complexity": 4,
+    "message": {
+     "text": "Happy 60",
+     "glyphs": 7,
+     "limit_per_line": 25,
+     "lines": 1,
+     "fits": true,
+     "tip_th": ""
+    },
+    "image_prompt": "studio photo of a 2-tier 10-inch princess themed birthday cake, palette #F8C8DC, #E6C36A, #FFFFFF, 6 toppers, piped message on top, soft daylight, 4:5, no logos, no real people",
+    "disclaimer_th": "ภาพจำลองและราคาเป็นค่าประมาณ ร้านจริงอาจทำได้ต่างจากภาพ แจ้งเรื่องแพ้อาหารกับร้านทุกครั้ง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "princess 5lb bkk",
+   "value": {
+    "region": "bkk",
+    "low": 3990,
+    "mid": 4690,
+    "high": 5860,
+    "per_serving": 138,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "princess 5lb metro",
+   "value": {
+    "region": "metro",
+    "low": 3640,
+    "mid": 4280,
+    "high": 5350,
+    "per_serving": 126,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "princess 5lb province",
+   "value": {
+    "region": "province",
+    "low": 3120,
+    "mid": 3670,
+    "high": 4590,
+    "per_serving": 108,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "DesignRequest",
+   "note": "gold_luxury 3lb",
+   "value": {
+    "theme": "gold_luxury",
+    "flavor": "chocolate",
+    "pounds": 3,
+    "message": "Happy 60th ลุงชัย",
+    "extra_toppers": 0
+   }
+  },
+  {
+   "def": "DesignSpec",
+   "note": "gold_luxury 3lb",
+   "value": {
+    "theme": "gold_luxury",
+    "theme_th": "ทองหรู (ผู้ใหญ่)",
+    "flavor": "chocolate",
+    "flavor_th": "ช็อกโกแลตฟัดจ์",
+    "pounds": 3,
+    "shape": "round",
+    "diameter_in": 9,
+    "palette": [
+     "#1A1A1A",
+     "#D4AF37",
+     "#FFFFFF"
+    ],
+    "toppers_th": [
+     "แผ่นทองกินได้",
+     "ดริปช็อกโกแลต"
+    ],
+    "extra_toppers": 0,
+    "complexity": 3,
+    "message": {
+     "text": "Happy 60th ลุงชัย",
+     "glyphs": 14,
+     "limit_per_line": 22,
+     "lines": 1,
+     "fits": true,
+     "tip_th": ""
+    },
+    "image_prompt": "studio photo of a 9-inch gold luxury themed birthday cake, palette #1A1A1A, #D4AF37, #FFFFFF, 2 toppers, piped message on top, soft daylight, 4:5, no logos, no real people",
+    "disclaimer_th": "ภาพจำลองและราคาเป็นค่าประมาณ ร้านจริงอาจทำได้ต่างจากภาพ แจ้งเรื่องแพ้อาหารกับร้านทุกครั้ง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "gold_luxury 3lb bkk",
+   "value": {
+    "region": "bkk",
+    "low": 1900,
+    "mid": 2240,
+    "high": 2800,
+    "per_serving": 112,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "gold_luxury 3lb metro",
+   "value": {
+    "region": "metro",
+    "low": 1730,
+    "mid": 2040,
+    "high": 2550,
+    "per_serving": 102,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "gold_luxury 3lb province",
+   "value": {
+    "region": "province",
+    "low": 1490,
+    "mid": 1750,
+    "high": 2190,
+    "per_serving": 88,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "DesignRequest",
+   "note": "floral 2lb",
+   "value": {
+    "theme": "floral",
+    "flavor": "pandan_coconut",
+    "pounds": 2,
+    "message": "ขอบคุณแม่",
+    "extra_toppers": 2
+   }
+  },
+  {
+   "def": "DesignSpec",
+   "note": "floral 2lb",
+   "value": {
+    "theme": "floral",
+    "theme_th": "ดอกไม้ครีม",
+    "flavor": "pandan_coconut",
+    "flavor_th": "ใบเตยมะพร้าวอ่อน",
+    "pounds": 2,
+    "shape": "round",
+    "diameter_in": 8,
+    "palette": [
+     "#F7B2BD",
+     "#FFE5EC",
+     "#6BA368"
+    ],
+    "toppers_th": [
+     "กุหลาบครีมบีบ",
+     "ใบไม้ครีม"
+    ],
+    "extra_toppers": 2,
+    "complexity": 2,
+    "message": {
+     "text": "ขอบคุณแม่",
+     "glyphs": 7,
+     "limit_per_line": 20,
+     "lines": 1,
+     "fits": true,
+     "tip_th": ""
+    },
+    "image_prompt": "studio photo of a 8-inch floral themed birthday cake, palette #F7B2BD, #FFE5EC, #6BA368, 4 toppers, piped message on top, soft daylight, 4:5, no logos, no real people",
+    "disclaimer_th": "ภาพจำลองและราคาเป็นค่าประมาณ ร้านจริงอาจทำได้ต่างจากภาพ แจ้งเรื่องแพ้อาหารกับร้านทุกครั้ง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "floral 2lb bkk",
+   "value": {
+    "region": "bkk",
+    "low": 1190,
+    "mid": 1400,
+    "high": 1750,
+    "per_serving": 100,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "floral 2lb metro",
+   "value": {
+    "region": "metro",
+    "low": 1090,
+    "mid": 1280,
+    "high": 1600,
+    "per_serving": 91,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "floral 2lb province",
+   "value": {
+    "region": "province",
+    "low": 940,
+    "mid": 1100,
+    "high": 1380,
+    "per_serving": 79,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "DesignRequest",
+   "note": "football 1lb",
+   "value": {
+    "theme": "football",
+    "flavor": "eggless_choc",
+    "pounds": 1,
+    "message": "Fah 22",
+    "extra_toppers": 0
+   }
+  },
+  {
+   "def": "DesignSpec",
+   "note": "football 1lb",
+   "value": {
+    "theme": "football",
+    "theme_th": "ฟุตบอล",
+    "flavor": "eggless_choc",
+    "flavor_th": "ช็อกโกแลตไม่ใส่ไข่",
+    "pounds": 1,
+    "shape": "round",
+    "diameter_in": 6,
+    "palette": [
+     "#2E8B57",
+     "#FFFFFF",
+     "#1A1A1A"
+    ],
+    "toppers_th": [
+     "ลูกบอลฟองดองต์",
+     "ประตูช็อกโกแลต"
+    ],
+    "extra_toppers": 0,
+    "complexity": 2,
+    "message": {
+     "text": "Fah 22",
+     "glyphs": 5,
+     "limit_per_line": 15,
+     "lines": 1,
+     "fits": true,
+     "tip_th": ""
+    },
+    "image_prompt": "studio photo of a 6-inch football themed birthday cake, palette #2E8B57, #FFFFFF, #1A1A1A, 2 toppers, piped message on top, soft daylight, 4:5, no logos, no real people",
+    "disclaimer_th": "ภาพจำลองและราคาเป็นค่าประมาณ ร้านจริงอาจทำได้ต่างจากภาพ แจ้งเรื่องแพ้อาหารกับร้านทุกครั้ง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "football 1lb bkk",
+   "value": {
+    "region": "bkk",
+    "low": 570,
+    "mid": 670,
+    "high": 840,
+    "per_serving": 96,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "football 1lb metro",
+   "value": {
+    "region": "metro",
+    "low": 530,
+    "mid": 620,
+    "high": 780,
+    "per_serving": 89,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "football 1lb province",
+   "value": {
+    "region": "province",
+    "low": 450,
+    "mid": 530,
+    "high": 660,
+    "per_serving": 76,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "DesignRequest",
+   "note": "cartoon_bear 0.5lb",
+   "value": {
+    "theme": "cartoon_bear",
+    "flavor": "almond_crunch",
+    "pounds": 0.5,
+    "message": "Bear",
+    "extra_toppers": 0
+   }
+  },
+  {
+   "def": "DesignSpec",
+   "note": "cartoon_bear 0.5lb",
+   "value": {
+    "theme": "cartoon_bear",
+    "theme_th": "หมีการ์ตูน",
+    "flavor": "almond_crunch",
+    "flavor_th": "อัลมอนด์ครันช์",
+    "pounds": 0.5,
+    "shape": "round",
+    "diameter_in": 4,
+    "palette": [
+     "#C68B59",
+     "#FCE5CD",
+     "#FFFFFF"
+    ],
+    "toppers_th": [
+     "หน้าหมีฟองดองต์",
+     "หูช็อกโกแลต"
+    ],
+    "extra_toppers": 0,
+    "complexity": 2,
+    "message": {
+     "text": "Bear",
+     "glyphs": 4,
+     "limit_per_line": 10,
+     "lines": 1,
+     "fits": true,
+     "tip_th": ""
+    },
+    "image_prompt": "studio photo of a 4-inch cartoon bear themed birthday cake, palette #C68B59, #FCE5CD, #FFFFFF, 2 toppers, piped message on top, soft daylight, 4:5, no logos, no real people",
+    "disclaimer_th": "ภาพจำลองและราคาเป็นค่าประมาณ ร้านจริงอาจทำได้ต่างจากภาพ แจ้งเรื่องแพ้อาหารกับร้านทุกครั้ง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "cartoon_bear 0.5lb bkk",
+   "value": {
+    "region": "bkk",
+    "low": 270,
+    "mid": 320,
+    "high": 400,
+    "per_serving": 107,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "cartoon_bear 0.5lb metro",
+   "value": {
+    "region": "metro",
+    "low": 260,
+    "mid": 300,
+    "high": 380,
+    "per_serving": 100,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "PriceEstimate",
+   "note": "cartoon_bear 0.5lb province",
+   "value": {
+    "region": "province",
+    "low": 210,
+    "mid": 250,
+    "high": 310,
+    "per_serving": 83,
+    "disclaimer_th": "ช่วงราคาประมาณการจากค่าตัวอย่าง ไม่ใช่ราคาร้านจริง"
+   }
+  },
+  {
+   "def": "FairPrice",
+   "note": "700",
+   "value": {
+    "quote": 700,
+    "verdict": "suspicious_low",
+    "verdict_th": "ถูกผิดปกติ ถามขนาด/วัตถุดิบให้ชัด",
+    "diff_from_mid_pct": -46
+   }
+  },
+  {
+   "def": "FairPrice",
+   "note": "1000",
+   "value": {
+    "quote": 1000,
+    "verdict": "cheap",
+    "verdict_th": "ถูกกว่าช่วงปกติ",
+    "diff_from_mid_pct": -23
+   }
+  },
+  {
+   "def": "FairPrice",
+   "note": "1250",
+   "value": {
+    "quote": 1250,
+    "verdict": "fair",
+    "verdict_th": "สมเหตุสมผล",
+    "diff_from_mid_pct": -4
+   }
+  },
+  {
+   "def": "FairPrice",
+   "note": "1500",
+   "value": {
+    "quote": 1500,
+    "verdict": "fair",
+    "verdict_th": "สมเหตุสมผล",
+    "diff_from_mid_pct": 15
+   }
+  },
+  {
+   "def": "FairPrice",
+   "note": "2000",
+   "value": {
+    "quote": 2000,
+    "verdict": "pricey",
+    "verdict_th": "แพงกว่าช่วงปกติ ลองถามส่วนลดหรือลดท็อปเปอร์",
+    "diff_from_mid_pct": 54
+   }
+  },
+  {
+   "def": "FairPrice",
+   "note": "2600",
+   "value": {
+    "quote": 2600,
+    "verdict": "very_pricey",
+    "verdict_th": "แพงมาก ลองเทียบร้านอื่น",
+    "diff_from_mid_pct": 100
+   }
+  },
+  {
+   "def": "AllergyCheck",
+   "note": "vanilla_chiffon[]",
+   "value": {
+    "level": "ok",
+    "hits": [],
+    "alternatives": [
+     "vanilla_chiffon",
+     "chocolate",
+     "thai_tea",
+     "pandan_coconut",
+     "strawberry",
+     "almond_crunch",
+     "eggless_choc"
+    ],
+    "message_th": "ไม่พบสารก่อแพ้ที่แจ้งไว้ในรสนี้ แต่ต้องยืนยันกับร้านอีกครั้ง"
+   }
+  },
+  {
+   "def": "AllergyCheck",
+   "note": "vanilla_chiffon['nuts']",
+   "value": {
+    "level": "ok",
+    "hits": [],
+    "alternatives": [
+     "vanilla_chiffon",
+     "chocolate",
+     "thai_tea",
+     "pandan_coconut",
+     "strawberry",
+     "eggless_choc"
+    ],
+    "message_th": "ไม่พบสารก่อแพ้ที่แจ้งไว้ในรสนี้ แต่ต้องยืนยันกับร้านอีกครั้ง"
+   }
+  },
+  {
+   "def": "AllergyCheck",
+   "note": "almond_crunch['nuts']",
+   "value": {
+    "level": "stop",
+    "hits": [
+     "nuts"
+    ],
+    "alternatives": [
+     "vanilla_chiffon",
+     "chocolate",
+     "thai_tea",
+     "pandan_coconut",
+     "strawberry",
+     "eggless_choc"
+    ],
+    "message_th": "รสนี้มี ถั่ว / อัลมอนด์ — เปลี่ยนรสหรือทำเค้กแยกให้คนที่แพ้"
+   }
+  },
+  {
+   "def": "AllergyCheck",
+   "note": "chocolate['egg']",
+   "value": {
+    "level": "warn",
+    "hits": [
+     "egg"
+    ],
+    "alternatives": [
+     "eggless_choc"
+    ],
+    "message_th": "รสนี้มี ไข่ — เปลี่ยนรสหรือทำเค้กแยกให้คนที่แพ้"
+   }
+  },
+  {
+   "def": "AllergyCheck",
+   "note": "pandan_coconut['dairy']",
+   "value": {
+    "level": "ok",
+    "hits": [],
+    "alternatives": [
+     "pandan_coconut"
+    ],
+    "message_th": "ไม่พบสารก่อแพ้ที่แจ้งไว้ในรสนี้ แต่ต้องยืนยันกับร้านอีกครั้ง"
+   }
+  },
+  {
+   "def": "AllergyCheck",
+   "note": "strawberry['egg', 'dairy']",
+   "value": {
+    "level": "warn",
+    "hits": [
+     "egg",
+     "dairy"
+    ],
+    "alternatives": [],
+    "message_th": "รสนี้มี ไข่, นม — เปลี่ยนรสหรือทำเค้กแยกให้คนที่แพ้"
+   }
+  },
+  {
+   "def": "DiyRecipe",
+   "note": "0.5lb",
+   "value": {
+    "pounds": 0.5,
+    "flavor": "vanilla_chiffon",
+    "ingredients": [
+     {
+      "item": "cake_flour",
+      "item_th": "แป้งเค้ก",
+      "qty": 45,
+      "unit": "กรัม",
+      "cost_baht": 3
+     },
+     {
+      "item": "sugar",
+      "item_th": "น้ำตาลทราย",
+      "qty": 55,
+      "unit": "กรัม",
+      "cost_baht": 2
+     },
+     {
+      "item": "egg",
+      "item_th": "ไข่ไก่ (ฟอง)",
+      "qty": 2,
+      "unit": "ฟอง",
+      "cost_baht": 10
+     },
+     {
+      "item": "oil",
+      "item_th": "น้ำมันพืช",
+      "qty": 23,
+      "unit": "กรัม",
+      "cost_baht": 1
+     },
+     {
+      "item": "milk",
+      "item_th": "นม",
+      "qty": 30,
+      "unit": "กรัม",
+      "cost_baht": 2
+     },
+     {
+      "item": "whipping_cream",
+      "item_th": "วิปปิ้งครีม",
+      "qty": 100,
+      "unit": "กรัม",
+      "cost_baht": 20
+     },
+     {
+      "item": "baking_powder",
+      "item_th": "ผงฟู",
+      "qty": 2,
+      "unit": "กรัม",
+      "cost_baht": 1
+     }
+    ],
+    "total_cost_baht": 39,
+    "bake_minutes": 25,
+    "oven_c": 170,
+    "steps_th": [
+     "ตีไข่ขาวกับน้ำตาลจนตั้งยอดอ่อน",
+     "ผสมไข่แดง นม น้ำมัน แป้ง ผงฟู",
+     "ตะล่อมรวม เทพิมพ์",
+     "อบ 170°C 25 นาที",
+     "พักเย็นคว่ำพิมพ์ แล้วแต่งวิปครีม"
+    ]
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "0.5lb cake_flour",
+   "value": {
+    "item": "cake_flour",
+    "item_th": "แป้งเค้ก",
+    "qty": 45,
+    "unit": "กรัม",
+    "cost_baht": 3
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "0.5lb sugar",
+   "value": {
+    "item": "sugar",
+    "item_th": "น้ำตาลทราย",
+    "qty": 55,
+    "unit": "กรัม",
+    "cost_baht": 2
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "0.5lb egg",
+   "value": {
+    "item": "egg",
+    "item_th": "ไข่ไก่ (ฟอง)",
+    "qty": 2,
+    "unit": "ฟอง",
+    "cost_baht": 10
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "0.5lb oil",
+   "value": {
+    "item": "oil",
+    "item_th": "น้ำมันพืช",
+    "qty": 23,
+    "unit": "กรัม",
+    "cost_baht": 1
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "0.5lb milk",
+   "value": {
+    "item": "milk",
+    "item_th": "นม",
+    "qty": 30,
+    "unit": "กรัม",
+    "cost_baht": 2
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "0.5lb whipping_cream",
+   "value": {
+    "item": "whipping_cream",
+    "item_th": "วิปปิ้งครีม",
+    "qty": 100,
+    "unit": "กรัม",
+    "cost_baht": 20
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "0.5lb baking_powder",
+   "value": {
+    "item": "baking_powder",
+    "item_th": "ผงฟู",
+    "qty": 2,
+    "unit": "กรัม",
+    "cost_baht": 1
+   }
+  },
+  {
+   "def": "DiyRecipe",
+   "note": "1lb",
+   "value": {
+    "pounds": 1,
+    "flavor": "vanilla_chiffon",
+    "ingredients": [
+     {
+      "item": "cake_flour",
+      "item_th": "แป้งเค้ก",
+      "qty": 90,
+      "unit": "กรัม",
+      "cost_baht": 5
+     },
+     {
+      "item": "sugar",
+      "item_th": "น้ำตาลทราย",
+      "qty": 110,
+      "unit": "กรัม",
+      "cost_baht": 3
+     },
+     {
+      "item": "egg",
+      "item_th": "ไข่ไก่ (ฟอง)",
+      "qty": 4,
+      "unit": "ฟอง",
+      "cost_baht": 20
+     },
+     {
+      "item": "oil",
+      "item_th": "น้ำมันพืช",
+      "qty": 45,
+      "unit": "กรัม",
+      "cost_baht": 3
+     },
+     {
+      "item": "milk",
+      "item_th": "นม",
+      "qty": 60,
+      "unit": "กรัม",
+      "cost_baht": 3
+     },
+     {
+      "item": "whipping_cream",
+      "item_th": "วิปปิ้งครีม",
+      "qty": 200,
+      "unit": "กรัม",
+      "cost_baht": 40
+     },
+     {
+      "item": "baking_powder",
+      "item_th": "ผงฟู",
+      "qty": 4,
+      "unit": "กรัม",
+      "cost_baht": 1
+     }
+    ],
+    "total_cost_baht": 75,
+    "bake_minutes": 35,
+    "oven_c": 170,
+    "steps_th": [
+     "ตีไข่ขาวกับน้ำตาลจนตั้งยอดอ่อน",
+     "ผสมไข่แดง นม น้ำมัน แป้ง ผงฟู",
+     "ตะล่อมรวม เทพิมพ์",
+     "อบ 170°C 35 นาที",
+     "พักเย็นคว่ำพิมพ์ แล้วแต่งวิปครีม"
+    ]
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "1lb cake_flour",
+   "value": {
+    "item": "cake_flour",
+    "item_th": "แป้งเค้ก",
+    "qty": 90,
+    "unit": "กรัม",
+    "cost_baht": 5
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "1lb sugar",
+   "value": {
+    "item": "sugar",
+    "item_th": "น้ำตาลทราย",
+    "qty": 110,
+    "unit": "กรัม",
+    "cost_baht": 3
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "1lb egg",
+   "value": {
+    "item": "egg",
+    "item_th": "ไข่ไก่ (ฟอง)",
+    "qty": 4,
+    "unit": "ฟอง",
+    "cost_baht": 20
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "1lb oil",
+   "value": {
+    "item": "oil",
+    "item_th": "น้ำมันพืช",
+    "qty": 45,
+    "unit": "กรัม",
+    "cost_baht": 3
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "1lb milk",
+   "value": {
+    "item": "milk",
+    "item_th": "นม",
+    "qty": 60,
+    "unit": "กรัม",
+    "cost_baht": 3
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "1lb whipping_cream",
+   "value": {
+    "item": "whipping_cream",
+    "item_th": "วิปปิ้งครีม",
+    "qty": 200,
+    "unit": "กรัม",
+    "cost_baht": 40
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "1lb baking_powder",
+   "value": {
+    "item": "baking_powder",
+    "item_th": "ผงฟู",
+    "qty": 4,
+    "unit": "กรัม",
+    "cost_baht": 1
+   }
+  },
+  {
+   "def": "DiyRecipe",
+   "note": "2lb",
+   "value": {
+    "pounds": 2,
+    "flavor": "vanilla_chiffon",
+    "ingredients": [
+     {
+      "item": "cake_flour",
+      "item_th": "แป้งเค้ก",
+      "qty": 180,
+      "unit": "กรัม",
+      "cost_baht": 11
+     },
+     {
+      "item": "sugar",
+      "item_th": "น้ำตาลทราย",
+      "qty": 220,
+      "unit": "กรัม",
+      "cost_baht": 7
+     },
+     {
+      "item": "egg",
+      "item_th": "ไข่ไก่ (ฟอง)",
+      "qty": 8,
+      "unit": "ฟอง",
+      "cost_baht": 40
+     },
+     {
+      "item": "oil",
+      "item_th": "น้ำมันพืช",
+      "qty": 90,
+      "unit": "กรัม",
+      "cost_baht": 5
+     },
+     {
+      "item": "milk",
+      "item_th": "นม",
+      "qty": 120,
+      "unit": "กรัม",
+      "cost_baht": 6
+     },
+     {
+      "item": "whipping_cream",
+      "item_th": "วิปปิ้งครีม",
+      "qty": 400,
+      "unit": "กรัม",
+      "cost_baht": 80
+     },
+     {
+      "item": "baking_powder",
+      "item_th": "ผงฟู",
+      "qty": 8,
+      "unit": "กรัม",
+      "cost_baht": 2
+     }
+    ],
+    "total_cost_baht": 151,
+    "bake_minutes": 43,
+    "oven_c": 170,
+    "steps_th": [
+     "ตีไข่ขาวกับน้ำตาลจนตั้งยอดอ่อน",
+     "ผสมไข่แดง นม น้ำมัน แป้ง ผงฟู",
+     "ตะล่อมรวม เทพิมพ์",
+     "อบ 170°C 43 นาที",
+     "พักเย็นคว่ำพิมพ์ แล้วแต่งวิปครีม"
+    ]
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "2lb cake_flour",
+   "value": {
+    "item": "cake_flour",
+    "item_th": "แป้งเค้ก",
+    "qty": 180,
+    "unit": "กรัม",
+    "cost_baht": 11
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "2lb sugar",
+   "value": {
+    "item": "sugar",
+    "item_th": "น้ำตาลทราย",
+    "qty": 220,
+    "unit": "กรัม",
+    "cost_baht": 7
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "2lb egg",
+   "value": {
+    "item": "egg",
+    "item_th": "ไข่ไก่ (ฟอง)",
+    "qty": 8,
+    "unit": "ฟอง",
+    "cost_baht": 40
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "2lb oil",
+   "value": {
+    "item": "oil",
+    "item_th": "น้ำมันพืช",
+    "qty": 90,
+    "unit": "กรัม",
+    "cost_baht": 5
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "2lb milk",
+   "value": {
+    "item": "milk",
+    "item_th": "นม",
+    "qty": 120,
+    "unit": "กรัม",
+    "cost_baht": 6
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "2lb whipping_cream",
+   "value": {
+    "item": "whipping_cream",
+    "item_th": "วิปปิ้งครีม",
+    "qty": 400,
+    "unit": "กรัม",
+    "cost_baht": 80
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "2lb baking_powder",
+   "value": {
+    "item": "baking_powder",
+    "item_th": "ผงฟู",
+    "qty": 8,
+    "unit": "กรัม",
+    "cost_baht": 2
+   }
+  },
+  {
+   "def": "DiyRecipe",
+   "note": "3lb",
+   "value": {
+    "pounds": 3,
+    "flavor": "vanilla_chiffon",
+    "ingredients": [
+     {
+      "item": "cake_flour",
+      "item_th": "แป้งเค้ก",
+      "qty": 270,
+      "unit": "กรัม",
+      "cost_baht": 16
+     },
+     {
+      "item": "sugar",
+      "item_th": "น้ำตาลทราย",
+      "qty": 330,
+      "unit": "กรัม",
+      "cost_baht": 10
+     },
+     {
+      "item": "egg",
+      "item_th": "ไข่ไก่ (ฟอง)",
+      "qty": 12,
+      "unit": "ฟอง",
+      "cost_baht": 60
+     },
+     {
+      "item": "oil",
+      "item_th": "น้ำมันพืช",
+      "qty": 135,
+      "unit": "กรัม",
+      "cost_baht": 8
+     },
+     {
+      "item": "milk",
+      "item_th": "นม",
+      "qty": 180,
+      "unit": "กรัม",
+      "cost_baht": 9
+     },
+     {
+      "item": "whipping_cream",
+      "item_th": "วิปปิ้งครีม",
+      "qty": 600,
+      "unit": "กรัม",
+      "cost_baht": 120
+     },
+     {
+      "item": "baking_powder",
+      "item_th": "ผงฟู",
+      "qty": 12,
+      "unit": "กรัม",
+      "cost_baht": 4
+     }
+    ],
+    "total_cost_baht": 227,
+    "bake_minutes": 51,
+    "oven_c": 170,
+    "steps_th": [
+     "ตีไข่ขาวกับน้ำตาลจนตั้งยอดอ่อน",
+     "ผสมไข่แดง นม น้ำมัน แป้ง ผงฟู",
+     "ตะล่อมรวม เทพิมพ์",
+     "อบ 170°C 51 นาที",
+     "พักเย็นคว่ำพิมพ์ แล้วแต่งวิปครีม"
+    ]
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "3lb cake_flour",
+   "value": {
+    "item": "cake_flour",
+    "item_th": "แป้งเค้ก",
+    "qty": 270,
+    "unit": "กรัม",
+    "cost_baht": 16
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "3lb sugar",
+   "value": {
+    "item": "sugar",
+    "item_th": "น้ำตาลทราย",
+    "qty": 330,
+    "unit": "กรัม",
+    "cost_baht": 10
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "3lb egg",
+   "value": {
+    "item": "egg",
+    "item_th": "ไข่ไก่ (ฟอง)",
+    "qty": 12,
+    "unit": "ฟอง",
+    "cost_baht": 60
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "3lb oil",
+   "value": {
+    "item": "oil",
+    "item_th": "น้ำมันพืช",
+    "qty": 135,
+    "unit": "กรัม",
+    "cost_baht": 8
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "3lb milk",
+   "value": {
+    "item": "milk",
+    "item_th": "นม",
+    "qty": 180,
+    "unit": "กรัม",
+    "cost_baht": 9
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "3lb whipping_cream",
+   "value": {
+    "item": "whipping_cream",
+    "item_th": "วิปปิ้งครีม",
+    "qty": 600,
+    "unit": "กรัม",
+    "cost_baht": 120
+   }
+  },
+  {
+   "def": "Ingredient",
+   "note": "3lb baking_powder",
+   "value": {
+    "item": "baking_powder",
+    "item_th": "ผงฟู",
+    "qty": 12,
+    "unit": "กรัม",
+    "cost_baht": 4
+   }
+  },
+  {
+   "def": "OrderDeadline",
+   "note": "2026-12-19",
+   "value": {
+    "party_date": "2026-12-19",
+    "order_by": "2026-12-16",
+    "days_left": 5,
+    "status": "ok",
+    "message_th": "สั่งร้านภายใน 2026-12-16 (เหลือ 5 วัน)"
+   }
+  },
+  {
+   "def": "OrderDeadline",
+   "note": "2026-12-14",
+   "value": {
+    "party_date": "2026-12-14",
+    "order_by": "2026-12-11",
+    "days_left": 0,
+    "status": "last_call",
+    "message_th": "ต้องสั่งวันนี้–พรุ่งนี้!"
+   }
+  },
+  {
+   "def": "OrderDeadline",
+   "note": "2026-12-12",
+   "value": {
+    "party_date": "2026-12-12",
+    "order_by": "2026-12-07",
+    "days_left": -4,
+    "status": "too_late",
+    "message_th": "ไม่ทันเวลาทำลายนี้ ลดความซับซ้อนหรือซื้อเค้กหน้าร้าน + ท็อปเปอร์"
+   }
+  },
+  {
+   "def": "OrderDeadline",
+   "note": "2026-12-25",
+   "value": {
+    "party_date": "2026-12-25",
+    "order_by": "2026-12-24",
+    "days_left": 13,
+    "status": "ok",
+    "message_th": "สั่งร้านภายใน 2026-12-24 (เหลือ 13 วัน)"
+   }
+  },
+  {
+   "def": "OrderCard",
+   "note": "demo",
+   "value": {
+    "to": "ร้านเค้ก (LINE)",
+    "from_th": "แม่ปุ๊ก",
+    "lines_th": [
+     "สั่งเค้ก: ธีมไดโนเสาร์ รสชิฟฟอนวานิลลา",
+     "ขนาด 2 ปอนด์ (8 นิ้ว) สำหรับ 18 คน",
+     "ข้อความบนเค้ก: \"HBD น้องภูมิ 5 ขวบ\"",
+     "สีหลัก: #7CC36B #F4D35E #5B8C3A",
+     "ท็อปเปอร์: ไดโนฟองดองต์, ภูเขาไฟช็อกโกแลต, ใบไม้น้ำตาล",
+     "งบประมาณ ฿1,100–1,620",
+     "รับวันที่ 2026-12-19"
+    ],
+    "attach": [
+     "mockup_4x5.png"
+    ],
+    "share_text": "สั่งเค้ก: ธีมไดโนเสาร์ รสชิฟฟอนวานิลลา\nขนาด 2 ปอนด์ (8 นิ้ว) สำหรับ 18 คน\nข้อความบนเค้ก: \"HBD น้องภูมิ 5 ขวบ\"\nสีหลัก: #7CC36B #F4D35E #5B8C3A\nท็อปเปอร์: ไดโนฟองดองต์, ภูเขาไฟช็อกโกแลต, ใบไม้น้ำตาล\nงบประมาณ ฿1,100–1,620\nรับวันที่ 2026-12-19",
+    "disclaimer_th": "ภาพจำลองและราคาเป็นค่าประมาณ ร้านจริงอาจทำได้ต่างจากภาพ แจ้งเรื่องแพ้อาหารกับร้านทุกครั้ง"
+   }
+  },
+  {
+   "def": "OrderCard",
+   "note": "allergy",
+   "value": {
+    "to": "ร้านเค้ก (LINE)",
+    "from_th": "พี่แนน",
+    "lines_th": [
+     "สั่งเค้ก: ธีมยูนิคอร์น รสช็อกโกแลตฟัดจ์",
+     "ขนาด 1 ปอนด์ (6 นิ้ว) สำหรับ 5 คน",
+     "ข้อความบนเค้ก: \"Nan\"",
+     "สีหลัก: #F9C6D9 #B8A9F0 #FFFFFF",
+     "ท็อปเปอร์: เขาทอง, หูฟองดองต์, ดอกครีมพาสเทล",
+     "งบประมาณ ฿640–940",
+     "รับวันที่ 2026-12-19",
+     "⚠️ มีแขกแพ้: ไข่"
+    ],
+    "attach": [
+     "mockup_4x5.png"
+    ],
+    "share_text": "สั่งเค้ก: ธีมยูนิคอร์น รสช็อกโกแลตฟัดจ์\nขนาด 1 ปอนด์ (6 นิ้ว) สำหรับ 5 คน\nข้อความบนเค้ก: \"Nan\"\nสีหลัก: #F9C6D9 #B8A9F0 #FFFFFF\nท็อปเปอร์: เขาทอง, หูฟองดองต์, ดอกครีมพาสเทล\nงบประมาณ ฿640–940\nรับวันที่ 2026-12-19\n⚠️ มีแขกแพ้: ไข่",
+    "disclaimer_th": "ภาพจำลองและราคาเป็นค่าประมาณ ร้านจริงอาจทำได้ต่างจากภาพ แจ้งเรื่องแพ้อาหารกับร้านทุกครั้ง"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "korean_minimal",
+   "value": {
+    "date": "2026-06-02",
+    "theme": "korean_minimal",
+    "paid_baht": 650,
+    "stars": 4
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "football",
+   "value": {
+    "date": "2026-09-14",
+    "theme": "football",
+    "paid_baht": 1100,
+    "stars": 5
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "dinosaur",
+   "value": {
+    "date": "2026-12-19",
+    "theme": "dinosaur",
+    "paid_baht": 1250,
+    "stars": 5
+   }
+  },
+  {
+   "def": "DiarySummary",
+   "note": "puk",
+   "value": {
+    "count": 3,
+    "spent_baht": 3000,
+    "avg_stars": 4.7,
+    "top_theme": "football",
+    "headline_th": "3 ปาร์ตี้ เฉลี่ย 4.7 ดาว"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "demo",
+   "value": {
+    "title_th": "เค้กธีมไดโนเสาร์",
+    "hook_th": "จากไอเดีย เป็นภาพเค้กใน 10 วิ",
+    "layout": "idea_to_mockup",
+    "sizes": [
+     "1080x1350",
+     "1080x1920"
+    ],
+    "watermark": "CakeDream · AI วันละแอป",
+    "cta_th": "ลองออกแบบเค้กของคุณ",
+    "disclaimer_th": "ภาพจำลองและราคาเป็นค่าประมาณ ร้านจริงอาจทำได้ต่างจากภาพ แจ้งเรื่องแพ้อาหารกับร้านทุกครั้ง"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(0,)",
+   "value": {
+    "allowed": 1,
+    "left_after": 2,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(2,)",
+   "value": {
+    "allowed": 1,
+    "left_after": 0,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(3,)",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(9, 3, True)",
+   "value": {
+    "allowed": 1,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "None",
+   "value": {
+    "level": "ok",
+    "message_th": "ภาพจำลองและราคาเป็นค่าประมาณ ร้านจริงอาจทำได้ต่างจากภาพ แจ้งเรื่องแพ้อาหารกับร้านทุกครั้ง"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "real_brand",
+   "value": {
+    "level": "stop",
+    "message_th": "ห้ามใช้โลโก้/ตัวละครลิขสิทธิ์บนเค้กสั่งขาย ใช้ธีมทั่วไปแทน"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "nuts",
+   "value": {
+    "level": "stop",
+    "message_th": "มีแขกแพ้ถั่ว ห้ามสั่งรสที่มีถั่ว และแจ้งร้านเรื่องปนเปื้อน"
+   }
+  },
+  {
+   "def": "AiIdeaExtract",
+   "note": "voice",
+   "value": {
+    "theme": "dinosaur",
+    "flavor": "vanilla_chiffon",
+    "message": "HBD น้องภูมิ 5 ขวบ",
+    "confidence": 0.91,
+    "colors": [
+     "#7CC36B",
+     "#F4D35E"
+    ],
+    "notes_th": "ตัวอย่างผลจากเสียง/ข้อความ"
+   }
+  },
+  {
+   "def": "AiIdeaExtract",
+   "note": "low conf",
+   "value": {
+    "theme": "unicorn",
+    "flavor": "strawberry",
+    "message": "Happy 6th Mali",
+    "confidence": 0.58,
+    "notes_th": "ไม่แน่ใจรส ให้ผู้ใช้ยืนยัน"
+   }
+  }
+ ]
+}

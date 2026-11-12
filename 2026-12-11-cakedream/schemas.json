@@ -1,0 +1,924 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/cakedream.schema.json",
+ "title": "CakeDream",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "RefPhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "crop"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^p[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "crop": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "RefScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "quality"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    }
+   },
+   "additionalProperties": false
+  },
+  "GuestInput": {
+   "type": "object",
+   "required": [
+    "adults",
+    "kids",
+    "appetite",
+    "leftovers"
+   ],
+   "properties": {
+    "adults": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "kids": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "appetite": {
+     "enum": [
+      "light",
+      "normal",
+      "dessert_lovers"
+     ]
+    },
+    "leftovers": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Servings": {
+   "type": "object",
+   "required": [
+    "guests",
+    "adults",
+    "kids",
+    "servings_needed",
+    "pounds",
+    "shape",
+    "diameter_in",
+    "servings_capacity",
+    "headline_th"
+   ],
+   "properties": {
+    "guests": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "adults": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "kids": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "servings_needed": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "pounds": {
+     "enum": [
+      0.5,
+      1,
+      1.5,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+     ]
+    },
+    "shape": {
+     "enum": [
+      "round",
+      "tier2",
+      "tier3"
+     ]
+    },
+    "diameter_in": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "servings_capacity": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "headline_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "MessageFit": {
+   "type": "object",
+   "required": [
+    "text",
+    "glyphs",
+    "limit_per_line",
+    "lines",
+    "fits",
+    "tip_th"
+   ],
+   "properties": {
+    "text": {
+     "type": "string"
+    },
+    "glyphs": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "limit_per_line": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "lines": {
+     "enum": [
+      1,
+      2
+     ]
+    },
+    "fits": {
+     "type": "boolean"
+    },
+    "tip_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DesignRequest": {
+   "type": "object",
+   "required": [
+    "theme",
+    "flavor",
+    "pounds",
+    "message"
+   ],
+   "properties": {
+    "theme": {
+     "enum": [
+      "dinosaur",
+      "unicorn",
+      "korean_minimal",
+      "floral",
+      "football",
+      "princess",
+      "cartoon_bear",
+      "gold_luxury"
+     ]
+    },
+    "flavor": {
+     "enum": [
+      "vanilla_chiffon",
+      "chocolate",
+      "thai_tea",
+      "pandan_coconut",
+      "strawberry",
+      "almond_crunch",
+      "eggless_choc"
+     ]
+    },
+    "pounds": {
+     "enum": [
+      0.5,
+      1,
+      1.5,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+     ]
+    },
+    "message": {
+     "type": "string"
+    },
+    "extra_toppers": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 5
+    }
+   },
+   "additionalProperties": false
+  },
+  "DesignSpec": {
+   "type": "object",
+   "required": [
+    "theme",
+    "theme_th",
+    "flavor",
+    "flavor_th",
+    "pounds",
+    "shape",
+    "diameter_in",
+    "palette",
+    "toppers_th",
+    "extra_toppers",
+    "complexity",
+    "message",
+    "image_prompt",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "theme": {
+     "enum": [
+      "dinosaur",
+      "unicorn",
+      "korean_minimal",
+      "floral",
+      "football",
+      "princess",
+      "cartoon_bear",
+      "gold_luxury"
+     ]
+    },
+    "theme_th": {
+     "type": "string"
+    },
+    "flavor": {
+     "enum": [
+      "vanilla_chiffon",
+      "chocolate",
+      "thai_tea",
+      "pandan_coconut",
+      "strawberry",
+      "almond_crunch",
+      "eggless_choc"
+     ]
+    },
+    "flavor_th": {
+     "type": "string"
+    },
+    "pounds": {
+     "enum": [
+      0.5,
+      1,
+      1.5,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+     ]
+    },
+    "shape": {
+     "enum": [
+      "round",
+      "tier2",
+      "tier3"
+     ]
+    },
+    "diameter_in": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "palette": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "pattern": "^#[0-9A-F]{6}$"
+     },
+     "minItems": 2
+    },
+    "toppers_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "extra_toppers": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "complexity": {
+     "enum": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    "message": {
+     "$ref": "#/$defs/MessageFit"
+    },
+    "image_prompt": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PriceEstimate": {
+   "type": "object",
+   "required": [
+    "region",
+    "low",
+    "mid",
+    "high",
+    "per_serving",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "region": {
+     "enum": [
+      "bkk",
+      "metro",
+      "province"
+     ]
+    },
+    "low": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "mid": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "high": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "per_serving": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "FairPrice": {
+   "type": "object",
+   "required": [
+    "quote",
+    "verdict",
+    "verdict_th",
+    "diff_from_mid_pct"
+   ],
+   "properties": {
+    "quote": {
+     "type": "number",
+     "exclusiveMinimum": 0
+    },
+    "verdict": {
+     "enum": [
+      "suspicious_low",
+      "cheap",
+      "fair",
+      "pricey",
+      "very_pricey"
+     ]
+    },
+    "verdict_th": {
+     "type": "string"
+    },
+    "diff_from_mid_pct": {
+     "type": "integer"
+    }
+   },
+   "additionalProperties": false
+  },
+  "AllergyCheck": {
+   "type": "object",
+   "required": [
+    "level",
+    "hits",
+    "alternatives",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "hits": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "egg",
+       "dairy",
+       "gluten",
+       "nuts"
+      ]
+     }
+    },
+    "alternatives": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "vanilla_chiffon",
+       "chocolate",
+       "thai_tea",
+       "pandan_coconut",
+       "strawberry",
+       "almond_crunch",
+       "eggless_choc"
+      ]
+     }
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Ingredient": {
+   "type": "object",
+   "required": [
+    "item",
+    "item_th",
+    "qty",
+    "unit",
+    "cost_baht"
+   ],
+   "properties": {
+    "item": {
+     "type": "string"
+    },
+    "item_th": {
+     "type": "string"
+    },
+    "qty": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "unit": {
+     "enum": [
+      "กรัม",
+      "ฟอง"
+     ]
+    },
+    "cost_baht": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiyRecipe": {
+   "type": "object",
+   "required": [
+    "pounds",
+    "flavor",
+    "ingredients",
+    "total_cost_baht",
+    "bake_minutes",
+    "oven_c",
+    "steps_th"
+   ],
+   "properties": {
+    "pounds": {
+     "enum": [
+      0.5,
+      1,
+      1.5,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+     ]
+    },
+    "flavor": {
+     "enum": [
+      "vanilla_chiffon",
+      "chocolate",
+      "thai_tea",
+      "pandan_coconut",
+      "strawberry",
+      "almond_crunch",
+      "eggless_choc"
+     ]
+    },
+    "ingredients": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Ingredient"
+     },
+     "minItems": 1
+    },
+    "total_cost_baht": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "bake_minutes": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "oven_c": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "steps_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "OrderDeadline": {
+   "type": "object",
+   "required": [
+    "party_date",
+    "order_by",
+    "days_left",
+    "status",
+    "message_th"
+   ],
+   "properties": {
+    "party_date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "order_by": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "days_left": {
+     "type": "integer"
+    },
+    "status": {
+     "enum": [
+      "ok",
+      "last_call",
+      "too_late"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "OrderCard": {
+   "type": "object",
+   "required": [
+    "to",
+    "from_th",
+    "lines_th",
+    "attach",
+    "share_text",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "to": {
+     "type": "string"
+    },
+    "from_th": {
+     "type": "string"
+    },
+    "lines_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 5
+    },
+    "attach": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "share_text": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiaryEntry": {
+   "type": "object",
+   "required": [
+    "date",
+    "theme",
+    "paid_baht",
+    "stars"
+   ],
+   "properties": {
+    "date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "theme": {
+     "enum": [
+      "dinosaur",
+      "unicorn",
+      "korean_minimal",
+      "floral",
+      "football",
+      "princess",
+      "cartoon_bear",
+      "gold_luxury"
+     ]
+    },
+    "paid_baht": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "stars": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 5
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiarySummary": {
+   "type": "object",
+   "required": [
+    "count",
+    "spent_baht",
+    "avg_stars",
+    "top_theme",
+    "headline_th"
+   ],
+   "properties": {
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "spent_baht": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "avg_stars": {
+     "type": "number",
+     "minimum": 1,
+     "maximum": 5
+    },
+    "top_theme": {
+     "enum": [
+      "dinosaur",
+      "unicorn",
+      "korean_minimal",
+      "floral",
+      "football",
+      "princess",
+      "cartoon_bear",
+      "gold_luxury"
+     ]
+    },
+    "headline_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "hook_th",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "layout": {
+     "enum": [
+      "idea_to_mockup"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "AiIdeaExtract": {
+   "type": "object",
+   "required": [
+    "theme",
+    "flavor",
+    "message",
+    "confidence"
+   ],
+   "properties": {
+    "theme": {
+     "enum": [
+      "dinosaur",
+      "unicorn",
+      "korean_minimal",
+      "floral",
+      "football",
+      "princess",
+      "cartoon_bear",
+      "gold_luxury"
+     ]
+    },
+    "flavor": {
+     "enum": [
+      "vanilla_chiffon",
+      "chocolate",
+      "thai_tea",
+      "pandan_coconut",
+      "strawberry",
+      "almond_crunch",
+      "eggless_choc"
+     ]
+    },
+    "message": {
+     "type": "string"
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "colors": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "pattern": "^#[0-9A-F]{6}$"
+     }
+    },
+    "notes_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
