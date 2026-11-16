@@ -1,0 +1,920 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/balconyfarm.schema.json",
+ "title": "BalconyFarm",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "BalconyPhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "crop"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^p[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "crop": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "BalconyScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "quality"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    }
+   },
+   "additionalProperties": false
+  },
+  "AiBalconyExtract": {
+   "type": "object",
+   "required": [
+    "is_balcony",
+    "obstruction",
+    "overhang_m",
+    "width_m",
+    "depth_m",
+    "confidence"
+   ],
+   "properties": {
+    "is_balcony": {
+     "type": "boolean"
+    },
+    "obstruction": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "overhang_m": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 3
+    },
+    "width_m": {
+     "type": "number",
+     "minimum": 0
+    },
+    "depth_m": {
+     "type": "number",
+     "minimum": 0
+    },
+    "railing": {
+     "enum": [
+      "glass",
+      "metal_bars",
+      "concrete_wall"
+     ]
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "notes_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SunInput": {
+   "type": "object",
+   "required": [
+    "facing",
+    "obstruction",
+    "overhang_m",
+    "floor"
+   ],
+   "properties": {
+    "facing": {
+     "enum": [
+      "n",
+      "ne",
+      "e",
+      "se",
+      "s",
+      "sw",
+      "w",
+      "nw"
+     ]
+    },
+    "obstruction": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "overhang_m": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 3
+    },
+    "floor": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 80
+    }
+   },
+   "additionalProperties": false
+  },
+  "SunEstimate": {
+   "type": "object",
+   "required": [
+    "facing",
+    "facing_th",
+    "sun_hours",
+    "light",
+    "light_th",
+    "hot_afternoon",
+    "note_th",
+    "headline_th"
+   ],
+   "properties": {
+    "facing": {
+     "enum": [
+      "n",
+      "ne",
+      "e",
+      "se",
+      "s",
+      "sw",
+      "w",
+      "nw"
+     ]
+    },
+    "facing_th": {
+     "type": "string"
+    },
+    "sun_hours": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 12
+    },
+    "light": {
+     "enum": [
+      "full",
+      "partial",
+      "shade"
+     ]
+    },
+    "light_th": {
+     "type": "string"
+    },
+    "hot_afternoon": {
+     "type": "boolean"
+    },
+    "note_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PlantFit": {
+   "type": "object",
+   "required": [
+    "plant",
+    "plant_th",
+    "score",
+    "light_fit",
+    "in_season",
+    "why_th"
+   ],
+   "properties": {
+    "plant": {
+     "enum": [
+      "kaprao",
+      "horapha",
+      "chili",
+      "spring_onion",
+      "coriander",
+      "lemongrass",
+      "kaffir_lime",
+      "mint",
+      "morning_glory",
+      "lettuce",
+      "cherry_tomato",
+      "pandan"
+     ]
+    },
+    "plant_th": {
+     "type": "string"
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "light_fit": {
+     "enum": [
+      0.0,
+      0.5,
+      1.0
+     ]
+    },
+    "in_season": {
+     "type": "boolean"
+    },
+    "why_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PlantPicks": {
+   "type": "object",
+   "required": [
+    "sun_hours",
+    "light",
+    "month",
+    "picks",
+    "headline_th"
+   ],
+   "properties": {
+    "sun_hours": {
+     "type": "number"
+    },
+    "light": {
+     "enum": [
+      "full",
+      "partial",
+      "shade"
+     ]
+    },
+    "month": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 12
+    },
+    "picks": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/PlantFit"
+     },
+     "minItems": 1
+    },
+    "headline_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PotPlacement": {
+   "type": "object",
+   "required": [
+    "plant",
+    "x_cm",
+    "y_cm",
+    "pot_cm"
+   ],
+   "properties": {
+    "plant": {
+     "enum": [
+      "kaprao",
+      "horapha",
+      "chili",
+      "spring_onion",
+      "coriander",
+      "lemongrass",
+      "kaffir_lime",
+      "mint",
+      "morning_glory",
+      "lettuce",
+      "cherry_tomato",
+      "pandan"
+     ]
+    },
+    "x_cm": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "y_cm": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "pot_cm": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "Layout": {
+   "type": "object",
+   "required": [
+    "width_m",
+    "depth_m",
+    "usable_depth_m",
+    "walkway_m",
+    "pots",
+    "skipped",
+    "total_wet_kg",
+    "load_kg_m2",
+    "load_limit_kg_m2",
+    "load_status",
+    "load_th"
+   ],
+   "properties": {
+    "width_m": {
+     "type": "number"
+    },
+    "depth_m": {
+     "type": "number"
+    },
+    "usable_depth_m": {
+     "type": "number"
+    },
+    "walkway_m": {
+     "type": "number"
+    },
+    "pots": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/PotPlacement"
+     }
+    },
+    "skipped": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "kaprao",
+       "horapha",
+       "chili",
+       "spring_onion",
+       "coriander",
+       "lemongrass",
+       "kaffir_lime",
+       "mint",
+       "morning_glory",
+       "lettuce",
+       "cherry_tomato",
+       "pandan"
+      ]
+     }
+    },
+    "total_wet_kg": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "load_kg_m2": {
+     "type": "number",
+     "minimum": 0
+    },
+    "load_limit_kg_m2": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "load_status": {
+     "enum": [
+      "ok",
+      "warn",
+      "over"
+     ]
+    },
+    "load_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "WaterDay": {
+   "type": "object",
+   "required": [
+    "date",
+    "water"
+   ],
+   "properties": {
+    "date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "water": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "kaprao",
+       "horapha",
+       "chili",
+       "spring_onion",
+       "coriander",
+       "lemongrass",
+       "kaffir_lime",
+       "mint",
+       "morning_glory",
+       "lettuce",
+       "cherry_tomato",
+       "pandan"
+      ]
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "WaterPlan": {
+   "type": "object",
+   "required": [
+    "season",
+    "every_days",
+    "days",
+    "tip_th"
+   ],
+   "properties": {
+    "season": {
+     "enum": [
+      "hot",
+      "rainy",
+      "cool"
+     ]
+    },
+    "every_days": {
+     "type": "object",
+     "propertyNames": {
+      "enum": [
+       "kaprao",
+       "horapha",
+       "chili",
+       "spring_onion",
+       "coriander",
+       "lemongrass",
+       "kaffir_lime",
+       "mint",
+       "morning_glory",
+       "lettuce",
+       "cherry_tomato",
+       "pandan"
+      ]
+     },
+     "additionalProperties": {
+      "type": "integer",
+      "minimum": 1
+     }
+    },
+    "days": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/WaterDay"
+     },
+     "minItems": 1
+    },
+    "tip_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "HarvestItem": {
+   "type": "object",
+   "required": [
+    "plant",
+    "plant_th",
+    "first_harvest",
+    "days"
+   ],
+   "properties": {
+    "plant": {
+     "enum": [
+      "kaprao",
+      "horapha",
+      "chili",
+      "spring_onion",
+      "coriander",
+      "lemongrass",
+      "kaffir_lime",
+      "mint",
+      "morning_glory",
+      "lettuce",
+      "cherry_tomato",
+      "pandan"
+     ]
+    },
+    "plant_th": {
+     "type": "string"
+    },
+    "first_harvest": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "days": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "HarvestPlan": {
+   "type": "object",
+   "required": [
+    "planted",
+    "items",
+    "first_up",
+    "saves_baht_month",
+    "headline_th"
+   ],
+   "properties": {
+    "planted": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HarvestItem"
+     },
+     "minItems": 1
+    },
+    "first_up": {
+     "type": "string"
+    },
+    "saves_baht_month": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "headline_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShoppingItem": {
+   "type": "object",
+   "required": [
+    "plant",
+    "plant_th",
+    "pots",
+    "pot_cm",
+    "soil_l",
+    "cost_baht"
+   ],
+   "properties": {
+    "plant": {
+     "enum": [
+      "kaprao",
+      "horapha",
+      "chili",
+      "spring_onion",
+      "coriander",
+      "lemongrass",
+      "kaffir_lime",
+      "mint",
+      "morning_glory",
+      "lettuce",
+      "cherry_tomato",
+      "pandan"
+     ]
+    },
+    "plant_th": {
+     "type": "string"
+    },
+    "pots": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "pot_cm": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "soil_l": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "cost_baht": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShoppingList": {
+   "type": "object",
+   "required": [
+    "items",
+    "soil_total_l",
+    "total_baht",
+    "payback_months",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ShoppingItem"
+     },
+     "minItems": 1
+    },
+    "soil_total_l": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "total_baht": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "payback_months": {
+     "type": "number",
+     "minimum": 0
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "MockupSpec": {
+   "type": "object",
+   "required": [
+    "style",
+    "plants",
+    "image_prompt",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "style": {
+     "enum": [
+      "tropical_cafe",
+      "minimal_white",
+      "thai_retro"
+     ]
+    },
+    "plants": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "kaprao",
+       "horapha",
+       "chili",
+       "spring_onion",
+       "coriander",
+       "lemongrass",
+       "kaffir_lime",
+       "mint",
+       "morning_glory",
+       "lettuce",
+       "cherry_tomato",
+       "pandan"
+      ]
+     },
+     "minItems": 1
+    },
+    "image_prompt": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiaryEntry": {
+   "type": "object",
+   "required": [
+    "date",
+    "plant",
+    "action"
+   ],
+   "properties": {
+    "date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "plant": {
+     "enum": [
+      "kaprao",
+      "horapha",
+      "chili",
+      "spring_onion",
+      "coriander",
+      "lemongrass",
+      "kaffir_lime",
+      "mint",
+      "morning_glory",
+      "lettuce",
+      "cherry_tomato",
+      "pandan"
+     ]
+    },
+    "action": {
+     "enum": [
+      "water",
+      "harvest",
+      "photo",
+      "fertilize"
+     ]
+    },
+    "grams": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiarySummary": {
+   "type": "object",
+   "required": [
+    "entries",
+    "streak_days",
+    "harvest_g",
+    "saved_baht",
+    "headline_th"
+   ],
+   "properties": {
+    "entries": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "streak_days": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "harvest_g": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "saved_baht": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "headline_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "hook_th",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "layout": {
+     "enum": [
+      "balcony_before_after"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}

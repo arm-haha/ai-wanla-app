@@ -1,0 +1,2329 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "Keng",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่เก่ง",
+    "name_en": "Keng",
+    "age": 29,
+    "city_th": "กรุงเทพฯ (บางนา)"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Pla",
+   "value": {
+    "id": "u02",
+    "name_th": "น้องปลา",
+    "name_en": "Pla",
+    "age": 25,
+    "city_th": "นนทบุรี"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Grandma Boon",
+   "value": {
+    "id": "u03",
+    "name_th": "คุณยายบุญ",
+    "name_en": "Grandma Boon",
+    "age": 68,
+    "city_th": "ขอนแก่น"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Jae Muay",
+   "value": {
+    "id": "u04",
+    "name_th": "เจ๊หมวย",
+    "name_en": "Jae Muay",
+    "age": 45,
+    "city_th": "หาดใหญ่"
+   }
+  },
+  {
+   "def": "BalconyPhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "px_w": 1080,
+    "px_h": 1350,
+    "glare": 0.1,
+    "blur": 0.05,
+    "crop": 0.0
+   }
+  },
+  {
+   "def": "BalconyScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "quality": {
+     "score": 94,
+     "ok": true,
+     "tips_th": []
+    }
+   }
+  },
+  {
+   "def": "BalconyPhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "px_w": 720,
+    "px_h": 960,
+    "glare": 0.4,
+    "blur": 0.2,
+    "crop": 0.1
+   }
+  },
+  {
+   "def": "BalconyScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "quality": {
+     "score": 76,
+     "ok": true,
+     "tips_th": [
+      "ย้อนแสงเกินไป หันหลังให้ดวงอาทิตย์แล้วถ่ายใหม่"
+     ]
+    }
+   }
+  },
+  {
+   "def": "BalconyPhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "px_w": 640,
+    "px_h": 640,
+    "glare": 0.6,
+    "blur": 0.5,
+    "crop": 0.4
+   }
+  },
+  {
+   "def": "BalconyScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "quality": {
+     "score": 49,
+     "ok": false,
+     "tips_th": [
+      "ย้อนแสงเกินไป หันหลังให้ดวงอาทิตย์แล้วถ่ายใหม่",
+      "ภาพเบลอ ถือนิ่ง ๆ แล้วถ่ายใหม่",
+      "ถ่ายให้เห็นระเบียงทั้งความกว้าง ตั้งแต่พื้นถึงราว"
+     ]
+    }
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "mid",
+   "value": {
+    "score": 80,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "AiBalconyExtract",
+   "note": "demo",
+   "value": {
+    "is_balcony": true,
+    "obstruction": 0.3,
+    "overhang_m": 1.0,
+    "width_m": 2.4,
+    "depth_m": 1.2,
+    "railing": "glass",
+    "confidence": 0.84,
+    "notes_th": "ตึกฝั่งตรงข้ามบังบางส่วน"
+   }
+  },
+  {
+   "def": "AiBalconyExtract",
+   "note": "not balcony",
+   "value": {
+    "is_balcony": false,
+    "obstruction": 0,
+    "overhang_m": 0,
+    "width_m": 0,
+    "depth_m": 0,
+    "confidence": 0.9,
+    "notes_th": "รูปนี้เป็นห้องนั่งเล่น"
+   }
+  },
+  {
+   "def": "SunInput",
+   "note": "se floor 12",
+   "value": {
+    "facing": "se",
+    "obstruction": 0.3,
+    "overhang_m": 1.0,
+    "floor": 12
+   }
+  },
+  {
+   "def": "SunEstimate",
+   "note": "se floor 12",
+   "value": {
+    "facing": "se",
+    "facing_th": "ทิศตะวันออกเฉียงใต้",
+    "sun_hours": 3.8,
+    "light": "partial",
+    "light_th": "ครึ่งแดด",
+    "hot_afternoon": false,
+    "note_th": "แดดเช้าอ่อนโยน เหมาะกับผักใบ",
+    "headline_th": "ทิศตะวันออกเฉียงใต้ แดดตรงประมาณ 3.8 ชม./วัน → ครึ่งแดด"
+   }
+  },
+  {
+   "def": "PlantPicks",
+   "note": "se floor 12 m12",
+   "value": {
+    "sun_hours": 3.8,
+    "light": "partial",
+    "month": 12,
+    "picks": [
+     {
+      "plant": "lettuce",
+      "plant_th": "ผักสลัด",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "coriander",
+      "plant_th": "ผักชี",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "horapha",
+      "plant_th": "โหระพา",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "mint",
+      "plant_th": "สะระแหน่",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "spring_onion",
+      "plant_th": "ต้นหอม",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     }
+    ],
+    "headline_th": "แนะนำ ผักสลัด ผักชี โหระพา"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "se floor 12 lettuce",
+   "value": {
+    "plant": "lettuce",
+    "plant_th": "ผักสลัด",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "se floor 12 coriander",
+   "value": {
+    "plant": "coriander",
+    "plant_th": "ผักชี",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "se floor 12 horapha",
+   "value": {
+    "plant": "horapha",
+    "plant_th": "โหระพา",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "se floor 12 mint",
+   "value": {
+    "plant": "mint",
+    "plant_th": "สะระแหน่",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "se floor 12 spring_onion",
+   "value": {
+    "plant": "spring_onion",
+    "plant_th": "ต้นหอม",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "WaterPlan",
+   "note": "se floor 12",
+   "value": {
+    "season": "cool",
+    "every_days": {
+     "lettuce": 2,
+     "coriander": 2,
+     "horapha": 2,
+     "mint": 2,
+     "spring_onion": 2
+    },
+    "days": [
+     {
+      "date": "2026-12-15",
+      "water": [
+       "lettuce",
+       "coriander",
+       "horapha",
+       "mint",
+       "spring_onion"
+      ]
+     },
+     {
+      "date": "2026-12-16",
+      "water": []
+     },
+     {
+      "date": "2026-12-17",
+      "water": [
+       "lettuce",
+       "coriander",
+       "horapha",
+       "mint",
+       "spring_onion"
+      ]
+     },
+     {
+      "date": "2026-12-18",
+      "water": []
+     },
+     {
+      "date": "2026-12-19",
+      "water": [
+       "lettuce",
+       "coriander",
+       "horapha",
+       "mint",
+       "spring_onion"
+      ]
+     },
+     {
+      "date": "2026-12-20",
+      "water": []
+     },
+     {
+      "date": "2026-12-21",
+      "water": [
+       "lettuce",
+       "coriander",
+       "horapha",
+       "mint",
+       "spring_onion"
+      ]
+     }
+    ],
+    "tip_th": "รดน้ำเช้าก่อน 9 โมง เช็กดินด้วยนิ้ว ถ้ายังชื้นข้ามได้"
+   }
+  },
+  {
+   "def": "MockupSpec",
+   "note": "se floor 12",
+   "value": {
+    "style": "minimal_white",
+    "plants": [
+     "lettuce",
+     "coriander",
+     "horapha",
+     "mint",
+     "spring_onion"
+    ],
+    "image_prompt": "same condo balcony from the photo, partial sun, potted kitchen herbs: lettuce, coriander, horapha, mint, spring onion; minimal white pots, clean lines; all pots inside the railing on the floor, photorealistic 4:5, keep walls and railing unchanged, no people, no logos",
+    "disclaimer_th": "ภาพจำลอง ต้นไม้จริงต้องใช้เวลาโต"
+   }
+  },
+  {
+   "def": "SunInput",
+   "note": "s floor 20",
+   "value": {
+    "facing": "s",
+    "obstruction": 0.0,
+    "overhang_m": 0.0,
+    "floor": 20
+   }
+  },
+  {
+   "def": "SunEstimate",
+   "note": "s floor 20",
+   "value": {
+    "facing": "s",
+    "facing_th": "ทิศใต้",
+    "sun_hours": 6.0,
+    "light": "full",
+    "light_th": "แดดเต็ม",
+    "hot_afternoon": false,
+    "note_th": "แสงสม่ำเสมอ",
+    "headline_th": "ทิศใต้ แดดตรงประมาณ 6.0 ชม./วัน → แดดเต็ม"
+   }
+  },
+  {
+   "def": "PlantPicks",
+   "note": "s floor 20 m1",
+   "value": {
+    "sun_hours": 6.0,
+    "light": "full",
+    "month": 1,
+    "picks": [
+     {
+      "plant": "cherry_tomato",
+      "plant_th": "มะเขือเทศเชอร์รี",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "morning_glory",
+      "plant_th": "ผักบุ้ง",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "kaprao",
+      "plant_th": "กะเพรา",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "coriander",
+      "plant_th": "ผักชี",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "horapha",
+      "plant_th": "โหระพา",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     }
+    ],
+    "headline_th": "แนะนำ มะเขือเทศเชอร์รี ผักบุ้ง กะเพรา"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "s floor 20 cherry_tomato",
+   "value": {
+    "plant": "cherry_tomato",
+    "plant_th": "มะเขือเทศเชอร์รี",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "s floor 20 morning_glory",
+   "value": {
+    "plant": "morning_glory",
+    "plant_th": "ผักบุ้ง",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "s floor 20 kaprao",
+   "value": {
+    "plant": "kaprao",
+    "plant_th": "กะเพรา",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "s floor 20 coriander",
+   "value": {
+    "plant": "coriander",
+    "plant_th": "ผักชี",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "s floor 20 horapha",
+   "value": {
+    "plant": "horapha",
+    "plant_th": "โหระพา",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "WaterPlan",
+   "note": "s floor 20",
+   "value": {
+    "season": "cool",
+    "every_days": {
+     "cherry_tomato": 1,
+     "morning_glory": 1,
+     "kaprao": 1,
+     "coriander": 1,
+     "horapha": 1
+    },
+    "days": [
+     {
+      "date": "2026-12-15",
+      "water": [
+       "cherry_tomato",
+       "morning_glory",
+       "kaprao",
+       "coriander",
+       "horapha"
+      ]
+     },
+     {
+      "date": "2026-12-16",
+      "water": [
+       "cherry_tomato",
+       "morning_glory",
+       "kaprao",
+       "coriander",
+       "horapha"
+      ]
+     },
+     {
+      "date": "2026-12-17",
+      "water": [
+       "cherry_tomato",
+       "morning_glory",
+       "kaprao",
+       "coriander",
+       "horapha"
+      ]
+     },
+     {
+      "date": "2026-12-18",
+      "water": [
+       "cherry_tomato",
+       "morning_glory",
+       "kaprao",
+       "coriander",
+       "horapha"
+      ]
+     },
+     {
+      "date": "2026-12-19",
+      "water": [
+       "cherry_tomato",
+       "morning_glory",
+       "kaprao",
+       "coriander",
+       "horapha"
+      ]
+     },
+     {
+      "date": "2026-12-20",
+      "water": [
+       "cherry_tomato",
+       "morning_glory",
+       "kaprao",
+       "coriander",
+       "horapha"
+      ]
+     },
+     {
+      "date": "2026-12-21",
+      "water": [
+       "cherry_tomato",
+       "morning_glory",
+       "kaprao",
+       "coriander",
+       "horapha"
+      ]
+     }
+    ],
+    "tip_th": "รดน้ำเช้าก่อน 9 โมง เช็กดินด้วยนิ้ว ถ้ายังชื้นข้ามได้"
+   }
+  },
+  {
+   "def": "MockupSpec",
+   "note": "s floor 20",
+   "value": {
+    "style": "thai_retro",
+    "plants": [
+     "cherry_tomato",
+     "morning_glory",
+     "kaprao",
+     "coriander",
+     "horapha"
+    ],
+    "image_prompt": "same condo balcony from the photo, full sun, potted kitchen herbs: cherry tomato, morning glory, kaprao, coriander, horapha; terracotta and enamel pots, rattan stool, Thai retro; all pots inside the railing on the floor, photorealistic 4:5, keep walls and railing unchanged, no people, no logos",
+    "disclaimer_th": "ภาพจำลอง ต้นไม้จริงต้องใช้เวลาโต"
+   }
+  },
+  {
+   "def": "SunInput",
+   "note": "w floor 5",
+   "value": {
+    "facing": "w",
+    "obstruction": 0.1,
+    "overhang_m": 0.5,
+    "floor": 5
+   }
+  },
+  {
+   "def": "SunEstimate",
+   "note": "w floor 5",
+   "value": {
+    "facing": "w",
+    "facing_th": "ทิศตะวันตก",
+    "sun_hours": 3.7,
+    "light": "partial",
+    "light_th": "ครึ่งแดด",
+    "hot_afternoon": true,
+    "note_th": "แดดบ่ายร้อนจัด ใช้กระถางสีอ่อนและรดน้ำเช้า-เย็น",
+    "headline_th": "ทิศตะวันตก แดดตรงประมาณ 3.7 ชม./วัน → ครึ่งแดด"
+   }
+  },
+  {
+   "def": "PlantPicks",
+   "note": "w floor 5 m4",
+   "value": {
+    "sun_hours": 3.7,
+    "light": "partial",
+    "month": 4,
+    "picks": [
+     {
+      "plant": "horapha",
+      "plant_th": "โหระพา",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "mint",
+      "plant_th": "สะระแหน่",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "spring_onion",
+      "plant_th": "ต้นหอม",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "pandan",
+      "plant_th": "ใบเตย",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "lettuce",
+      "plant_th": "ผักสลัด",
+      "score": 70,
+      "light_fit": 1.0,
+      "in_season": false,
+      "why_th": "แดดพอดี · นอกฤดู โตช้า"
+     }
+    ],
+    "headline_th": "แนะนำ โหระพา สะระแหน่ ต้นหอม"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "w floor 5 horapha",
+   "value": {
+    "plant": "horapha",
+    "plant_th": "โหระพา",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "w floor 5 mint",
+   "value": {
+    "plant": "mint",
+    "plant_th": "สะระแหน่",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "w floor 5 spring_onion",
+   "value": {
+    "plant": "spring_onion",
+    "plant_th": "ต้นหอม",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "w floor 5 pandan",
+   "value": {
+    "plant": "pandan",
+    "plant_th": "ใบเตย",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "w floor 5 lettuce",
+   "value": {
+    "plant": "lettuce",
+    "plant_th": "ผักสลัด",
+    "score": 70,
+    "light_fit": 1.0,
+    "in_season": false,
+    "why_th": "แดดพอดี · นอกฤดู โตช้า"
+   }
+  },
+  {
+   "def": "WaterPlan",
+   "note": "w floor 5",
+   "value": {
+    "season": "hot",
+    "every_days": {
+     "horapha": 1,
+     "mint": 1,
+     "spring_onion": 1,
+     "pandan": 1,
+     "lettuce": 1
+    },
+    "days": [
+     {
+      "date": "2026-12-15",
+      "water": [
+       "horapha",
+       "mint",
+       "spring_onion",
+       "pandan",
+       "lettuce"
+      ]
+     },
+     {
+      "date": "2026-12-16",
+      "water": [
+       "horapha",
+       "mint",
+       "spring_onion",
+       "pandan",
+       "lettuce"
+      ]
+     },
+     {
+      "date": "2026-12-17",
+      "water": [
+       "horapha",
+       "mint",
+       "spring_onion",
+       "pandan",
+       "lettuce"
+      ]
+     },
+     {
+      "date": "2026-12-18",
+      "water": [
+       "horapha",
+       "mint",
+       "spring_onion",
+       "pandan",
+       "lettuce"
+      ]
+     },
+     {
+      "date": "2026-12-19",
+      "water": [
+       "horapha",
+       "mint",
+       "spring_onion",
+       "pandan",
+       "lettuce"
+      ]
+     },
+     {
+      "date": "2026-12-20",
+      "water": [
+       "horapha",
+       "mint",
+       "spring_onion",
+       "pandan",
+       "lettuce"
+      ]
+     },
+     {
+      "date": "2026-12-21",
+      "water": [
+       "horapha",
+       "mint",
+       "spring_onion",
+       "pandan",
+       "lettuce"
+      ]
+     }
+    ],
+    "tip_th": "รดน้ำเช้าก่อน 9 โมง เช็กดินด้วยนิ้ว ถ้ายังชื้นข้ามได้"
+   }
+  },
+  {
+   "def": "MockupSpec",
+   "note": "w floor 5",
+   "value": {
+    "style": "tropical_cafe",
+    "plants": [
+     "horapha",
+     "mint",
+     "spring_onion",
+     "pandan",
+     "lettuce"
+    ],
+    "image_prompt": "same condo balcony from the photo, partial sun, potted kitchen herbs: horapha, mint, spring onion, pandan, lettuce; cozy tropical cafe style, wooden shelf, warm string lights; all pots inside the railing on the floor, photorealistic 4:5, keep walls and railing unchanged, no people, no logos",
+    "disclaimer_th": "ภาพจำลอง ต้นไม้จริงต้องใช้เวลาโต"
+   }
+  },
+  {
+   "def": "SunInput",
+   "note": "n floor 3",
+   "value": {
+    "facing": "n",
+    "obstruction": 0.5,
+    "overhang_m": 1.5,
+    "floor": 3
+   }
+  },
+  {
+   "def": "SunEstimate",
+   "note": "n floor 3",
+   "value": {
+    "facing": "n",
+    "facing_th": "ทิศเหนือ",
+    "sun_hours": 0.8,
+    "light": "shade",
+    "light_th": "ร่มรำไร",
+    "hot_afternoon": false,
+    "note_th": "แสงสม่ำเสมอ",
+    "headline_th": "ทิศเหนือ แดดตรงประมาณ 0.8 ชม./วัน → ร่มรำไร"
+   }
+  },
+  {
+   "def": "PlantPicks",
+   "note": "n floor 3 m7",
+   "value": {
+    "sun_hours": 0.8,
+    "light": "shade",
+    "month": 7,
+    "picks": [
+     {
+      "plant": "pandan",
+      "plant_th": "ใบเตย",
+      "score": 65,
+      "light_fit": 0.5,
+      "in_season": true,
+      "why_th": "แดดเกือบพอ · ตรงฤดู"
+     }
+    ],
+    "headline_th": "แนะนำ ใบเตย"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "n floor 3 pandan",
+   "value": {
+    "plant": "pandan",
+    "plant_th": "ใบเตย",
+    "score": 65,
+    "light_fit": 0.5,
+    "in_season": true,
+    "why_th": "แดดเกือบพอ · ตรงฤดู"
+   }
+  },
+  {
+   "def": "WaterPlan",
+   "note": "n floor 3",
+   "value": {
+    "season": "rainy",
+    "every_days": {
+     "pandan": 5
+    },
+    "days": [
+     {
+      "date": "2026-12-15",
+      "water": [
+       "pandan"
+      ]
+     },
+     {
+      "date": "2026-12-16",
+      "water": []
+     },
+     {
+      "date": "2026-12-17",
+      "water": []
+     },
+     {
+      "date": "2026-12-18",
+      "water": []
+     },
+     {
+      "date": "2026-12-19",
+      "water": []
+     },
+     {
+      "date": "2026-12-20",
+      "water": [
+       "pandan"
+      ]
+     },
+     {
+      "date": "2026-12-21",
+      "water": []
+     }
+    ],
+    "tip_th": "รดน้ำเช้าก่อน 9 โมง เช็กดินด้วยนิ้ว ถ้ายังชื้นข้ามได้"
+   }
+  },
+  {
+   "def": "MockupSpec",
+   "note": "n floor 3",
+   "value": {
+    "style": "tropical_cafe",
+    "plants": [
+     "pandan"
+    ],
+    "image_prompt": "same condo balcony from the photo, shade sun, potted kitchen herbs: pandan; cozy tropical cafe style, wooden shelf, warm string lights; all pots inside the railing on the floor, photorealistic 4:5, keep walls and railing unchanged, no people, no logos",
+    "disclaimer_th": "ภาพจำลอง ต้นไม้จริงต้องใช้เวลาโต"
+   }
+  },
+  {
+   "def": "SunInput",
+   "note": "e floor 8",
+   "value": {
+    "facing": "e",
+    "obstruction": 0.2,
+    "overhang_m": 0.8,
+    "floor": 8
+   }
+  },
+  {
+   "def": "SunEstimate",
+   "note": "e floor 8",
+   "value": {
+    "facing": "e",
+    "facing_th": "ทิศตะวันออก",
+    "sun_hours": 3.2,
+    "light": "partial",
+    "light_th": "ครึ่งแดด",
+    "hot_afternoon": false,
+    "note_th": "แดดเช้าอ่อนโยน เหมาะกับผักใบ",
+    "headline_th": "ทิศตะวันออก แดดตรงประมาณ 3.2 ชม./วัน → ครึ่งแดด"
+   }
+  },
+  {
+   "def": "PlantPicks",
+   "note": "e floor 8 m9",
+   "value": {
+    "sun_hours": 3.2,
+    "light": "partial",
+    "month": 9,
+    "picks": [
+     {
+      "plant": "horapha",
+      "plant_th": "โหระพา",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "mint",
+      "plant_th": "สะระแหน่",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "spring_onion",
+      "plant_th": "ต้นหอม",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "pandan",
+      "plant_th": "ใบเตย",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "lettuce",
+      "plant_th": "ผักสลัด",
+      "score": 70,
+      "light_fit": 1.0,
+      "in_season": false,
+      "why_th": "แดดพอดี · นอกฤดู โตช้า"
+     }
+    ],
+    "headline_th": "แนะนำ โหระพา สะระแหน่ ต้นหอม"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "e floor 8 horapha",
+   "value": {
+    "plant": "horapha",
+    "plant_th": "โหระพา",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "e floor 8 mint",
+   "value": {
+    "plant": "mint",
+    "plant_th": "สะระแหน่",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "e floor 8 spring_onion",
+   "value": {
+    "plant": "spring_onion",
+    "plant_th": "ต้นหอม",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "e floor 8 pandan",
+   "value": {
+    "plant": "pandan",
+    "plant_th": "ใบเตย",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "e floor 8 lettuce",
+   "value": {
+    "plant": "lettuce",
+    "plant_th": "ผักสลัด",
+    "score": 70,
+    "light_fit": 1.0,
+    "in_season": false,
+    "why_th": "แดดพอดี · นอกฤดู โตช้า"
+   }
+  },
+  {
+   "def": "WaterPlan",
+   "note": "e floor 8",
+   "value": {
+    "season": "rainy",
+    "every_days": {
+     "horapha": 2,
+     "mint": 2,
+     "spring_onion": 2,
+     "pandan": 4,
+     "lettuce": 2
+    },
+    "days": [
+     {
+      "date": "2026-12-15",
+      "water": [
+       "horapha",
+       "mint",
+       "spring_onion",
+       "pandan",
+       "lettuce"
+      ]
+     },
+     {
+      "date": "2026-12-16",
+      "water": []
+     },
+     {
+      "date": "2026-12-17",
+      "water": [
+       "horapha",
+       "mint",
+       "spring_onion",
+       "lettuce"
+      ]
+     },
+     {
+      "date": "2026-12-18",
+      "water": []
+     },
+     {
+      "date": "2026-12-19",
+      "water": [
+       "horapha",
+       "mint",
+       "spring_onion",
+       "pandan",
+       "lettuce"
+      ]
+     },
+     {
+      "date": "2026-12-20",
+      "water": []
+     },
+     {
+      "date": "2026-12-21",
+      "water": [
+       "horapha",
+       "mint",
+       "spring_onion",
+       "lettuce"
+      ]
+     }
+    ],
+    "tip_th": "รดน้ำเช้าก่อน 9 โมง เช็กดินด้วยนิ้ว ถ้ายังชื้นข้ามได้"
+   }
+  },
+  {
+   "def": "MockupSpec",
+   "note": "e floor 8",
+   "value": {
+    "style": "minimal_white",
+    "plants": [
+     "horapha",
+     "mint",
+     "spring_onion",
+     "pandan",
+     "lettuce"
+    ],
+    "image_prompt": "same condo balcony from the photo, partial sun, potted kitchen herbs: horapha, mint, spring onion, pandan, lettuce; minimal white pots, clean lines; all pots inside the railing on the floor, photorealistic 4:5, keep walls and railing unchanged, no people, no logos",
+    "disclaimer_th": "ภาพจำลอง ต้นไม้จริงต้องใช้เวลาโต"
+   }
+  },
+  {
+   "def": "SunInput",
+   "note": "sw floor 25",
+   "value": {
+    "facing": "sw",
+    "obstruction": 0.4,
+    "overhang_m": 0.3,
+    "floor": 25
+   }
+  },
+  {
+   "def": "SunEstimate",
+   "note": "sw floor 25",
+   "value": {
+    "facing": "sw",
+    "facing_th": "ทิศตะวันตกเฉียงใต้",
+    "sun_hours": 4.0,
+    "light": "partial",
+    "light_th": "ครึ่งแดด",
+    "hot_afternoon": true,
+    "note_th": "แดดบ่ายร้อนจัด ใช้กระถางสีอ่อนและรดน้ำเช้า-เย็น",
+    "headline_th": "ทิศตะวันตกเฉียงใต้ แดดตรงประมาณ 4.0 ชม./วัน → ครึ่งแดด"
+   }
+  },
+  {
+   "def": "PlantPicks",
+   "note": "sw floor 25 m12",
+   "value": {
+    "sun_hours": 4.0,
+    "light": "partial",
+    "month": 12,
+    "picks": [
+     {
+      "plant": "lettuce",
+      "plant_th": "ผักสลัด",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "kaprao",
+      "plant_th": "กะเพรา",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "coriander",
+      "plant_th": "ผักชี",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "horapha",
+      "plant_th": "โหระพา",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "mint",
+      "plant_th": "สะระแหน่",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     }
+    ],
+    "headline_th": "แนะนำ ผักสลัด กะเพรา ผักชี"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "sw floor 25 lettuce",
+   "value": {
+    "plant": "lettuce",
+    "plant_th": "ผักสลัด",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "sw floor 25 kaprao",
+   "value": {
+    "plant": "kaprao",
+    "plant_th": "กะเพรา",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "sw floor 25 coriander",
+   "value": {
+    "plant": "coriander",
+    "plant_th": "ผักชี",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "sw floor 25 horapha",
+   "value": {
+    "plant": "horapha",
+    "plant_th": "โหระพา",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "sw floor 25 mint",
+   "value": {
+    "plant": "mint",
+    "plant_th": "สะระแหน่",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "WaterPlan",
+   "note": "sw floor 25",
+   "value": {
+    "season": "cool",
+    "every_days": {
+     "lettuce": 1,
+     "kaprao": 1,
+     "coriander": 1,
+     "horapha": 1,
+     "mint": 1
+    },
+    "days": [
+     {
+      "date": "2026-12-15",
+      "water": [
+       "lettuce",
+       "kaprao",
+       "coriander",
+       "horapha",
+       "mint"
+      ]
+     },
+     {
+      "date": "2026-12-16",
+      "water": [
+       "lettuce",
+       "kaprao",
+       "coriander",
+       "horapha",
+       "mint"
+      ]
+     },
+     {
+      "date": "2026-12-17",
+      "water": [
+       "lettuce",
+       "kaprao",
+       "coriander",
+       "horapha",
+       "mint"
+      ]
+     },
+     {
+      "date": "2026-12-18",
+      "water": [
+       "lettuce",
+       "kaprao",
+       "coriander",
+       "horapha",
+       "mint"
+      ]
+     },
+     {
+      "date": "2026-12-19",
+      "water": [
+       "lettuce",
+       "kaprao",
+       "coriander",
+       "horapha",
+       "mint"
+      ]
+     },
+     {
+      "date": "2026-12-20",
+      "water": [
+       "lettuce",
+       "kaprao",
+       "coriander",
+       "horapha",
+       "mint"
+      ]
+     },
+     {
+      "date": "2026-12-21",
+      "water": [
+       "lettuce",
+       "kaprao",
+       "coriander",
+       "horapha",
+       "mint"
+      ]
+     }
+    ],
+    "tip_th": "รดน้ำเช้าก่อน 9 โมง เช็กดินด้วยนิ้ว ถ้ายังชื้นข้ามได้"
+   }
+  },
+  {
+   "def": "MockupSpec",
+   "note": "sw floor 25",
+   "value": {
+    "style": "thai_retro",
+    "plants": [
+     "lettuce",
+     "kaprao",
+     "coriander",
+     "horapha",
+     "mint"
+    ],
+    "image_prompt": "same condo balcony from the photo, partial sun, potted kitchen herbs: lettuce, kaprao, coriander, horapha, mint; terracotta and enamel pots, rattan stool, Thai retro; all pots inside the railing on the floor, photorealistic 4:5, keep walls and railing unchanged, no people, no logos",
+    "disclaimer_th": "ภาพจำลอง ต้นไม้จริงต้องใช้เวลาโต"
+   }
+  },
+  {
+   "def": "SunInput",
+   "note": "ne floor 15",
+   "value": {
+    "facing": "ne",
+    "obstruction": 0.0,
+    "overhang_m": 0.5,
+    "floor": 15
+   }
+  },
+  {
+   "def": "SunEstimate",
+   "note": "ne floor 15",
+   "value": {
+    "facing": "ne",
+    "facing_th": "ทิศตะวันออกเฉียงเหนือ",
+    "sun_hours": 2.8,
+    "light": "shade",
+    "light_th": "ร่มรำไร",
+    "hot_afternoon": false,
+    "note_th": "แดดเช้าอ่อนโยน เหมาะกับผักใบ",
+    "headline_th": "ทิศตะวันออกเฉียงเหนือ แดดตรงประมาณ 2.8 ชม./วัน → ร่มรำไร"
+   }
+  },
+  {
+   "def": "PlantPicks",
+   "note": "ne floor 15 m2",
+   "value": {
+    "sun_hours": 2.8,
+    "light": "shade",
+    "month": 2,
+    "picks": [
+     {
+      "plant": "mint",
+      "plant_th": "สะระแหน่",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "pandan",
+      "plant_th": "ใบเตย",
+      "score": 100,
+      "light_fit": 1.0,
+      "in_season": true,
+      "why_th": "แดดพอดี · ตรงฤดู"
+     },
+     {
+      "plant": "lettuce",
+      "plant_th": "ผักสลัด",
+      "score": 65,
+      "light_fit": 0.5,
+      "in_season": true,
+      "why_th": "แดดเกือบพอ · ตรงฤดู"
+     },
+     {
+      "plant": "coriander",
+      "plant_th": "ผักชี",
+      "score": 65,
+      "light_fit": 0.5,
+      "in_season": true,
+      "why_th": "แดดเกือบพอ · ตรงฤดู"
+     },
+     {
+      "plant": "horapha",
+      "plant_th": "โหระพา",
+      "score": 65,
+      "light_fit": 0.5,
+      "in_season": true,
+      "why_th": "แดดเกือบพอ · ตรงฤดู"
+     }
+    ],
+    "headline_th": "แนะนำ สะระแหน่ ใบเตย ผักสลัด"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "ne floor 15 mint",
+   "value": {
+    "plant": "mint",
+    "plant_th": "สะระแหน่",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "ne floor 15 pandan",
+   "value": {
+    "plant": "pandan",
+    "plant_th": "ใบเตย",
+    "score": 100,
+    "light_fit": 1.0,
+    "in_season": true,
+    "why_th": "แดดพอดี · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "ne floor 15 lettuce",
+   "value": {
+    "plant": "lettuce",
+    "plant_th": "ผักสลัด",
+    "score": 65,
+    "light_fit": 0.5,
+    "in_season": true,
+    "why_th": "แดดเกือบพอ · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "ne floor 15 coriander",
+   "value": {
+    "plant": "coriander",
+    "plant_th": "ผักชี",
+    "score": 65,
+    "light_fit": 0.5,
+    "in_season": true,
+    "why_th": "แดดเกือบพอ · ตรงฤดู"
+   }
+  },
+  {
+   "def": "PlantFit",
+   "note": "ne floor 15 horapha",
+   "value": {
+    "plant": "horapha",
+    "plant_th": "โหระพา",
+    "score": 65,
+    "light_fit": 0.5,
+    "in_season": true,
+    "why_th": "แดดเกือบพอ · ตรงฤดู"
+   }
+  },
+  {
+   "def": "WaterPlan",
+   "note": "ne floor 15",
+   "value": {
+    "season": "cool",
+    "every_days": {
+     "mint": 2,
+     "pandan": 4,
+     "lettuce": 2,
+     "coriander": 2,
+     "horapha": 2
+    },
+    "days": [
+     {
+      "date": "2026-12-15",
+      "water": [
+       "mint",
+       "pandan",
+       "lettuce",
+       "coriander",
+       "horapha"
+      ]
+     },
+     {
+      "date": "2026-12-16",
+      "water": []
+     },
+     {
+      "date": "2026-12-17",
+      "water": [
+       "mint",
+       "lettuce",
+       "coriander",
+       "horapha"
+      ]
+     },
+     {
+      "date": "2026-12-18",
+      "water": []
+     },
+     {
+      "date": "2026-12-19",
+      "water": [
+       "mint",
+       "pandan",
+       "lettuce",
+       "coriander",
+       "horapha"
+      ]
+     },
+     {
+      "date": "2026-12-20",
+      "water": []
+     },
+     {
+      "date": "2026-12-21",
+      "water": [
+       "mint",
+       "lettuce",
+       "coriander",
+       "horapha"
+      ]
+     }
+    ],
+    "tip_th": "รดน้ำเช้าก่อน 9 โมง เช็กดินด้วยนิ้ว ถ้ายังชื้นข้ามได้"
+   }
+  },
+  {
+   "def": "MockupSpec",
+   "note": "ne floor 15",
+   "value": {
+    "style": "tropical_cafe",
+    "plants": [
+     "mint",
+     "pandan",
+     "lettuce",
+     "coriander",
+     "horapha"
+    ],
+    "image_prompt": "same condo balcony from the photo, shade sun, potted kitchen herbs: mint, pandan, lettuce, coriander, horapha; cozy tropical cafe style, wooden shelf, warm string lights; all pots inside the railing on the floor, photorealistic 4:5, keep walls and railing unchanged, no people, no logos",
+    "disclaimer_th": "ภาพจำลอง ต้นไม้จริงต้องใช้เวลาโต"
+   }
+  },
+  {
+   "def": "Layout",
+   "note": "demo 2.4x1.2",
+   "value": {
+    "width_m": 2.4,
+    "depth_m": 1.2,
+    "usable_depth_m": 0.6,
+    "walkway_m": 0.6,
+    "pots": [
+     {
+      "plant": "horapha",
+      "x_cm": 0,
+      "y_cm": 0,
+      "pot_cm": 25
+     },
+     {
+      "plant": "lettuce",
+      "x_cm": 25,
+      "y_cm": 0,
+      "pot_cm": 25
+     },
+     {
+      "plant": "coriander",
+      "x_cm": 50,
+      "y_cm": 0,
+      "pot_cm": 20
+     },
+     {
+      "plant": "mint",
+      "x_cm": 70,
+      "y_cm": 0,
+      "pot_cm": 20
+     },
+     {
+      "plant": "spring_onion",
+      "x_cm": 90,
+      "y_cm": 0,
+      "pot_cm": 20
+     }
+    ],
+    "skipped": [],
+    "total_wet_kg": 23,
+    "load_kg_m2": 16.0,
+    "load_limit_kg_m2": 150,
+    "load_status": "ok",
+    "load_th": "น้ำหนักรวมสบาย ๆ"
+   }
+  },
+  {
+   "def": "PotPlacement",
+   "note": "horapha",
+   "value": {
+    "plant": "horapha",
+    "x_cm": 0,
+    "y_cm": 0,
+    "pot_cm": 25
+   }
+  },
+  {
+   "def": "PotPlacement",
+   "note": "lettuce",
+   "value": {
+    "plant": "lettuce",
+    "x_cm": 25,
+    "y_cm": 0,
+    "pot_cm": 25
+   }
+  },
+  {
+   "def": "PotPlacement",
+   "note": "coriander",
+   "value": {
+    "plant": "coriander",
+    "x_cm": 50,
+    "y_cm": 0,
+    "pot_cm": 20
+   }
+  },
+  {
+   "def": "PotPlacement",
+   "note": "mint",
+   "value": {
+    "plant": "mint",
+    "x_cm": 70,
+    "y_cm": 0,
+    "pot_cm": 20
+   }
+  },
+  {
+   "def": "PotPlacement",
+   "note": "spring_onion",
+   "value": {
+    "plant": "spring_onion",
+    "x_cm": 90,
+    "y_cm": 0,
+    "pot_cm": 20
+   }
+  },
+  {
+   "def": "Layout",
+   "note": "heavy small",
+   "value": {
+    "width_m": 1.5,
+    "depth_m": 1.0,
+    "usable_depth_m": 0.4,
+    "walkway_m": 0.6,
+    "pots": [
+     {
+      "plant": "kaffir_lime",
+      "x_cm": 0,
+      "y_cm": 0,
+      "pot_cm": 40
+     },
+     {
+      "plant": "cherry_tomato",
+      "x_cm": 40,
+      "y_cm": 0,
+      "pot_cm": 35
+     },
+     {
+      "plant": "chili",
+      "x_cm": 75,
+      "y_cm": 0,
+      "pot_cm": 30
+     },
+     {
+      "plant": "lemongrass",
+      "x_cm": 105,
+      "y_cm": 0,
+      "pot_cm": 30
+     }
+    ],
+    "skipped": [
+     "kaprao"
+    ],
+    "total_wet_kg": 60,
+    "load_kg_m2": 100.0,
+    "load_limit_kg_m2": 150,
+    "load_status": "warn",
+    "load_th": "ค่อนข้างหนัก กระจายกระถางชิดผนัง ไม่วางกองรวม"
+   }
+  },
+  {
+   "def": "Layout",
+   "note": "over",
+   "value": {
+    "width_m": 1.2,
+    "depth_m": 1.0,
+    "usable_depth_m": 0.4,
+    "walkway_m": 0.6,
+    "pots": [
+     {
+      "plant": "kaffir_lime",
+      "x_cm": 0,
+      "y_cm": 0,
+      "pot_cm": 40
+     },
+     {
+      "plant": "kaffir_lime",
+      "x_cm": 40,
+      "y_cm": 0,
+      "pot_cm": 40
+     },
+     {
+      "plant": "kaffir_lime",
+      "x_cm": 80,
+      "y_cm": 0,
+      "pot_cm": 40
+     }
+    ],
+    "skipped": [],
+    "total_wet_kg": 75,
+    "load_kg_m2": 156.2,
+    "load_limit_kg_m2": 150,
+    "load_status": "over",
+    "load_th": "หนักเกินค่าแนะนำ ลดกระถางใหญ่หรือถามนิติบุคคล"
+   }
+  },
+  {
+   "def": "WaterDay",
+   "note": "2026-12-15",
+   "value": {
+    "date": "2026-12-15",
+    "water": [
+     "lettuce",
+     "coriander",
+     "horapha",
+     "mint",
+     "spring_onion"
+    ]
+   }
+  },
+  {
+   "def": "WaterDay",
+   "note": "2026-12-16",
+   "value": {
+    "date": "2026-12-16",
+    "water": []
+   }
+  },
+  {
+   "def": "WaterDay",
+   "note": "2026-12-17",
+   "value": {
+    "date": "2026-12-17",
+    "water": [
+     "lettuce",
+     "coriander",
+     "horapha",
+     "mint",
+     "spring_onion"
+    ]
+   }
+  },
+  {
+   "def": "WaterDay",
+   "note": "2026-12-18",
+   "value": {
+    "date": "2026-12-18",
+    "water": []
+   }
+  },
+  {
+   "def": "WaterDay",
+   "note": "2026-12-19",
+   "value": {
+    "date": "2026-12-19",
+    "water": [
+     "lettuce",
+     "coriander",
+     "horapha",
+     "mint",
+     "spring_onion"
+    ]
+   }
+  },
+  {
+   "def": "WaterDay",
+   "note": "2026-12-20",
+   "value": {
+    "date": "2026-12-20",
+    "water": []
+   }
+  },
+  {
+   "def": "WaterDay",
+   "note": "2026-12-21",
+   "value": {
+    "date": "2026-12-21",
+    "water": [
+     "lettuce",
+     "coriander",
+     "horapha",
+     "mint",
+     "spring_onion"
+    ]
+   }
+  },
+  {
+   "def": "HarvestPlan",
+   "note": "demo",
+   "value": {
+    "planted": "2026-12-15",
+    "items": [
+     {
+      "plant": "mint",
+      "plant_th": "สะระแหน่",
+      "first_harvest": "2027-01-14",
+      "days": 30
+     },
+     {
+      "plant": "spring_onion",
+      "plant_th": "ต้นหอม",
+      "first_harvest": "2027-01-14",
+      "days": 30
+     },
+     {
+      "plant": "lettuce",
+      "plant_th": "ผักสลัด",
+      "first_harvest": "2027-01-19",
+      "days": 35
+     },
+     {
+      "plant": "coriander",
+      "plant_th": "ผักชี",
+      "first_harvest": "2027-01-24",
+      "days": 40
+     },
+     {
+      "plant": "horapha",
+      "plant_th": "โหระพา",
+      "first_harvest": "2027-01-24",
+      "days": 40
+     }
+    ],
+    "first_up": "สะระแหน่",
+    "saves_baht_month": 260,
+    "headline_th": "เก็บสะระแหน่ได้ก่อนใน 30 วัน ประหยัดค่าผักราว ฿260/เดือน"
+   }
+  },
+  {
+   "def": "HarvestItem",
+   "note": "mint",
+   "value": {
+    "plant": "mint",
+    "plant_th": "สะระแหน่",
+    "first_harvest": "2027-01-14",
+    "days": 30
+   }
+  },
+  {
+   "def": "HarvestItem",
+   "note": "spring_onion",
+   "value": {
+    "plant": "spring_onion",
+    "plant_th": "ต้นหอม",
+    "first_harvest": "2027-01-14",
+    "days": 30
+   }
+  },
+  {
+   "def": "HarvestItem",
+   "note": "lettuce",
+   "value": {
+    "plant": "lettuce",
+    "plant_th": "ผักสลัด",
+    "first_harvest": "2027-01-19",
+    "days": 35
+   }
+  },
+  {
+   "def": "HarvestItem",
+   "note": "coriander",
+   "value": {
+    "plant": "coriander",
+    "plant_th": "ผักชี",
+    "first_harvest": "2027-01-24",
+    "days": 40
+   }
+  },
+  {
+   "def": "HarvestItem",
+   "note": "horapha",
+   "value": {
+    "plant": "horapha",
+    "plant_th": "โหระพา",
+    "first_harvest": "2027-01-24",
+    "days": 40
+   }
+  },
+  {
+   "def": "HarvestPlan",
+   "note": "sunny",
+   "value": {
+    "planted": "2026-04-01",
+    "items": [
+     {
+      "plant": "morning_glory",
+      "plant_th": "ผักบุ้ง",
+      "first_harvest": "2026-04-22",
+      "days": 21
+     },
+     {
+      "plant": "kaprao",
+      "plant_th": "กะเพรา",
+      "first_harvest": "2026-05-16",
+      "days": 45
+     },
+     {
+      "plant": "chili",
+      "plant_th": "พริกขี้หนู",
+      "first_harvest": "2026-06-15",
+      "days": 75
+     }
+    ],
+    "first_up": "ผักบุ้ง",
+    "saves_baht_month": 160,
+    "headline_th": "เก็บผักบุ้งได้ก่อนใน 21 วัน ประหยัดค่าผักราว ฿160/เดือน"
+   }
+  },
+  {
+   "def": "ShoppingList",
+   "note": "demo",
+   "value": {
+    "items": [
+     {
+      "plant": "lettuce",
+      "plant_th": "ผักสลัด",
+      "pots": 1,
+      "pot_cm": 25,
+      "soil_l": 6,
+      "cost_baht": 93
+     },
+     {
+      "plant": "coriander",
+      "plant_th": "ผักชี",
+      "pots": 1,
+      "pot_cm": 20,
+      "soil_l": 5,
+      "cost_baht": 70
+     },
+     {
+      "plant": "horapha",
+      "plant_th": "โหระพา",
+      "pots": 1,
+      "pot_cm": 25,
+      "soil_l": 8,
+      "cost_baht": 94
+     },
+     {
+      "plant": "mint",
+      "plant_th": "สะระแหน่",
+      "pots": 1,
+      "pot_cm": 20,
+      "soil_l": 5,
+      "cost_baht": 70
+     },
+     {
+      "plant": "spring_onion",
+      "plant_th": "ต้นหอม",
+      "pots": 1,
+      "pot_cm": 20,
+      "soil_l": 5,
+      "cost_baht": 70
+     }
+    ],
+    "soil_total_l": 29,
+    "total_baht": 397,
+    "payback_months": 1.5,
+    "disclaimer_th": "ราคาเป็นค่าตัวอย่าง ร้านจริงอาจต่างกัน"
+   }
+  },
+  {
+   "def": "ShoppingItem",
+   "note": "lettuce",
+   "value": {
+    "plant": "lettuce",
+    "plant_th": "ผักสลัด",
+    "pots": 1,
+    "pot_cm": 25,
+    "soil_l": 6,
+    "cost_baht": 93
+   }
+  },
+  {
+   "def": "ShoppingItem",
+   "note": "coriander",
+   "value": {
+    "plant": "coriander",
+    "plant_th": "ผักชี",
+    "pots": 1,
+    "pot_cm": 20,
+    "soil_l": 5,
+    "cost_baht": 70
+   }
+  },
+  {
+   "def": "ShoppingItem",
+   "note": "horapha",
+   "value": {
+    "plant": "horapha",
+    "plant_th": "โหระพา",
+    "pots": 1,
+    "pot_cm": 25,
+    "soil_l": 8,
+    "cost_baht": 94
+   }
+  },
+  {
+   "def": "ShoppingItem",
+   "note": "mint",
+   "value": {
+    "plant": "mint",
+    "plant_th": "สะระแหน่",
+    "pots": 1,
+    "pot_cm": 20,
+    "soil_l": 5,
+    "cost_baht": 70
+   }
+  },
+  {
+   "def": "ShoppingItem",
+   "note": "spring_onion",
+   "value": {
+    "plant": "spring_onion",
+    "plant_th": "ต้นหอม",
+    "pots": 1,
+    "pot_cm": 20,
+    "soil_l": 5,
+    "cost_baht": 70
+   }
+  },
+  {
+   "def": "ShoppingList",
+   "note": "sunny",
+   "value": {
+    "items": [
+     {
+      "plant": "kaprao",
+      "plant_th": "กะเพรา",
+      "pots": 2,
+      "pot_cm": 25,
+      "soil_l": 16,
+      "cost_baht": 188
+     },
+     {
+      "plant": "chili",
+      "plant_th": "พริกขี้หนู",
+      "pots": 1,
+      "pot_cm": 30,
+      "soil_l": 15,
+      "cost_baht": 135
+     },
+     {
+      "plant": "kaffir_lime",
+      "plant_th": "มะกรูด",
+      "pots": 1,
+      "pot_cm": 40,
+      "soil_l": 30,
+      "cost_baht": 330
+     }
+    ],
+    "soil_total_l": 61,
+    "total_baht": 653,
+    "payback_months": 3.4,
+    "disclaimer_th": "ราคาเป็นค่าตัวอย่าง ร้านจริงอาจต่างกัน"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "horapha",
+   "value": {
+    "date": "2026-12-11",
+    "plant": "horapha",
+    "action": "water"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "horapha",
+   "value": {
+    "date": "2026-12-13",
+    "plant": "horapha",
+    "action": "water"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "spring_onion",
+   "value": {
+    "date": "2026-12-14",
+    "plant": "spring_onion",
+    "action": "harvest",
+    "grams": 80
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "mint",
+   "value": {
+    "date": "2026-12-15",
+    "plant": "mint",
+    "action": "harvest",
+    "grams": 45
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "lettuce",
+   "value": {
+    "date": "2026-12-15",
+    "plant": "lettuce",
+    "action": "photo"
+   }
+  },
+  {
+   "def": "DiarySummary",
+   "note": "keng",
+   "value": {
+    "entries": 5,
+    "streak_days": 3,
+    "harvest_g": 125,
+    "saved_baht": 15,
+    "headline_th": "ดูแลต่อเนื่อง 3 วัน เก็บผักได้ 125 กรัม ประหยัด ~฿15"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "demo",
+   "value": {
+    "title_th": "ระเบียงครึ่งแดด ปลูกได้ 5 อย่าง",
+    "hook_th": "ระเบียงโล่ง ๆ กลายเป็นสวนผักใน 10 วิ",
+    "layout": "balcony_before_after",
+    "sizes": [
+     "1080x1350",
+     "1080x1920"
+    ],
+    "watermark": "BalconyFarm · AI วันละแอป",
+    "cta_th": "คอมเมนต์ FARM รับแพ็กฟรี",
+    "disclaimer_th": "ภาพจำลอง ค่าประมาณ"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(0,)",
+   "value": {
+    "allowed": 1,
+    "left_after": 2,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(2,)",
+   "value": {
+    "allowed": 1,
+    "left_after": 0,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(3,)",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(9, 3, True)",
+   "value": {
+    "allowed": 1,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "None",
+   "value": {
+    "level": "ok",
+    "message_th": "วางกระถางบนพื้นด้านในราวเท่านั้น ใช้จานรองกันน้ำหยดใส่ห้องล่าง"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "railing",
+   "value": {
+    "level": "stop",
+    "message_th": "ห้ามแขวนหรือวางกระถางบนราว/นอกราว เสี่ยงตกใส่คนข้างล่าง"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "overload",
+   "value": {
+    "level": "warn",
+    "message_th": "น้ำหนักเกินค่าแนะนำ ลดกระถางใหญ่และสอบถามนิติบุคคลก่อน"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "pesticide",
+   "value": {
+    "level": "warn",
+    "message_th": "ผักกินเอง เลี่ยงสารเคมี ใช้น้ำส้มควันไม้/สบู่อ่อนเจือจาง และล้างก่อนกิน"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "not_balcony",
+   "value": {
+    "level": "stop",
+    "message_th": "ไม่พบระเบียงในรูป ถ่ายใหม่ให้เห็นพื้นและราว"
+   }
+  }
+ ]
+}
