@@ -1,0 +1,1976 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "Tom",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่ต้อม",
+    "name_en": "Tom",
+    "age": 31,
+    "city_th": "กรุงเทพฯ"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Auntie Daeng",
+   "value": {
+    "id": "u02",
+    "name_th": "ป้าแดง",
+    "name_en": "Auntie Daeng",
+    "age": 57,
+    "city_th": "ราชบุรี"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Mind",
+   "value": {
+    "id": "u03",
+    "name_th": "มายด์",
+    "name_en": "Mind",
+    "age": 24,
+    "city_th": "เชียงใหม่"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Uncle Sompong",
+   "value": {
+    "id": "u04",
+    "name_th": "ลุงสมพงษ์",
+    "name_en": "Uncle Sompong",
+    "age": 63,
+    "city_th": "จันทบุรี"
+   }
+  },
+  {
+   "def": "FruitPhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "fruit": "avocado",
+    "px_w": 1080,
+    "px_h": 1350,
+    "glare": 0.1,
+    "blur": 0.05,
+    "crop": 0.0
+   }
+  },
+  {
+   "def": "FruitScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "fruit": "avocado",
+    "quality": {
+     "score": 94,
+     "ok": true,
+     "tips_th": []
+    }
+   }
+  },
+  {
+   "def": "FruitPhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "fruit": "mango",
+    "px_w": 720,
+    "px_h": 960,
+    "glare": 0.4,
+    "blur": 0.2,
+    "crop": 0.1
+   }
+  },
+  {
+   "def": "FruitScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "fruit": "mango",
+    "quality": {
+     "score": 76,
+     "ok": true,
+     "tips_th": [
+      "แสงสะท้อนเยอะ ย้ายไปถ่ายใต้แสงธรรมชาติ ไม่ใช้แฟลช"
+     ]
+    }
+   }
+  },
+  {
+   "def": "FruitPhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "fruit": "banana",
+    "px_w": 640,
+    "px_h": 640,
+    "glare": 0.6,
+    "blur": 0.5,
+    "crop": 0.4
+   }
+  },
+  {
+   "def": "FruitScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "fruit": "banana",
+    "quality": {
+     "score": 49,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนเยอะ ย้ายไปถ่ายใต้แสงธรรมชาติ ไม่ใช้แฟลช",
+      "ภาพเบลอ ถือนิ่ง ๆ แตะโฟกัสที่ผลไม้",
+      "ผลไม้โดนครอป ถ่ายให้เห็นทั้งลูก"
+     ]
+    }
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "mid",
+   "value": {
+    "score": 80,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "AiCueExtract",
+   "note": "avocado",
+   "value": {
+    "fruit": "avocado",
+    "color": 0.4,
+    "spots": 0.05,
+    "confidence": 0.88,
+    "mold_seen": false,
+    "notes_th": "เปลือกเริ่มเข้ม ยังมีสีเขียวมาก"
+   }
+  },
+  {
+   "def": "AiCueExtract",
+   "note": "banana spotted",
+   "value": {
+    "fruit": "banana",
+    "color": 0.95,
+    "spots": 0.7,
+    "confidence": 0.93,
+    "mold_seen": false
+   }
+  },
+  {
+   "def": "AiCueExtract",
+   "note": "mold",
+   "value": {
+    "fruit": "papaya",
+    "color": 0.7,
+    "spots": 0.3,
+    "confidence": 0.62,
+    "mold_seen": true,
+    "notes_th": "เห็นจุดฟูขาวที่ขั้ว"
+   }
+  },
+  {
+   "def": "RipenessInput",
+   "note": "avocado unripe",
+   "value": {
+    "fruit": "avocado",
+    "color": 0.4,
+    "spots": 0.05,
+    "firmness": "firm"
+   }
+  },
+  {
+   "def": "RipenessResult",
+   "note": "avocado unripe",
+   "value": {
+    "fruit": "avocado",
+    "fruit_th": "อะโวคาโด",
+    "index": 0.318,
+    "score": 32,
+    "stage": "unripe",
+    "stage_th": "ยังดิบ",
+    "ripens_after_pick": true,
+    "days_to_perfect": 3,
+    "eat_within_days": 5,
+    "cues_used": [
+     "color",
+     "spots",
+     "firmness"
+    ],
+    "confidence": 0.85,
+    "headline_th": "อะโวคาโด ยังดิบ รออีกประมาณ 3 วัน",
+    "disclaimer_th": "ผลเป็นค่าประมาณจากรูปและคำตอบของคุณ ไม่ใช่การรับรองความปลอดภัยของอาหาร ถ้ามีรา กลิ่นบูด หรือเนื้อเละผิดปกติ ห้ามกิน"
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "avocado unripe speed_up",
+   "value": {
+    "fruit": "avocado",
+    "goal": "speed_up",
+    "where": "paper_bag",
+    "speed_factor": 0.7,
+    "steps_th": [
+     "ใส่ถุงกระดาษพร้อมกล้วยสุก 1 ลูก",
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "avocado unripe keep",
+   "value": {
+    "fruit": "avocado",
+    "goal": "keep",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "avocado unripe slow_down",
+   "value": {
+    "fruit": "avocado",
+    "goal": "slow_down",
+    "where": "counter",
+    "speed_factor": 1.2,
+    "steps_th": [
+     "ยังไม่สุก อย่าเพิ่งแช่เย็น จะไม่สุกต่อ",
+     "วางในที่เย็น ลมผ่าน แยกจากกล้วย"
+    ]
+   }
+  },
+  {
+   "def": "RipenessInput",
+   "note": "mango perfect",
+   "value": {
+    "fruit": "mango",
+    "color": 0.85,
+    "spots": 0.1,
+    "firmness": "yielding",
+    "aroma": "strong"
+   }
+  },
+  {
+   "def": "RipenessResult",
+   "note": "mango perfect",
+   "value": {
+    "fruit": "mango",
+    "fruit_th": "มะม่วงน้ำดอกไม้",
+    "index": 0.752,
+    "score": 75,
+    "stage": "perfect",
+    "stage_th": "สุกพอดี",
+    "ripens_after_pick": true,
+    "days_to_perfect": 0,
+    "eat_within_days": 2,
+    "cues_used": [
+     "color",
+     "spots",
+     "firmness",
+     "aroma"
+    ],
+    "confidence": 0.95,
+    "headline_th": "มะม่วงน้ำดอกไม้ สุกพอดี กินภายใน 2 วัน",
+    "disclaimer_th": "ผลเป็นค่าประมาณจากรูปและคำตอบของคุณ ไม่ใช่การรับรองความปลอดภัยของอาหาร ถ้ามีรา กลิ่นบูด หรือเนื้อเละผิดปกติ ห้ามกิน"
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "mango perfect speed_up",
+   "value": {
+    "fruit": "mango",
+    "goal": "speed_up",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "สุกแล้ว ไม่ต้องเร่ง"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "mango perfect keep",
+   "value": {
+    "fruit": "mango",
+    "goal": "keep",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "mango perfect slow_down",
+   "value": {
+    "fruit": "mango",
+    "goal": "slow_down",
+    "where": "fridge",
+    "speed_factor": 2.0,
+    "steps_th": [
+     "แช่ช่องผักในตู้เย็น",
+     "ห่อ/ใส่กล่องกันกลิ่นติดของอื่น"
+    ]
+   }
+  },
+  {
+   "def": "RipenessInput",
+   "note": "banana overripe",
+   "value": {
+    "fruit": "banana",
+    "color": 0.95,
+    "spots": 0.7
+   }
+  },
+  {
+   "def": "RipenessResult",
+   "note": "banana overripe",
+   "value": {
+    "fruit": "banana",
+    "fruit_th": "กล้วยหอม",
+    "index": 0.883,
+    "score": 88,
+    "stage": "overripe",
+    "stage_th": "สุกเกิน",
+    "ripens_after_pick": true,
+    "days_to_perfect": 0,
+    "eat_within_days": 0,
+    "cues_used": [
+     "color",
+     "spots"
+    ],
+    "confidence": 0.75,
+    "headline_th": "กล้วยหอม สุกเกินแล้ว เหมาะทำสมูทตี้/ขนม ตรวจกลิ่นและราก่อนกิน",
+    "disclaimer_th": "ผลเป็นค่าประมาณจากรูปและคำตอบของคุณ ไม่ใช่การรับรองความปลอดภัยของอาหาร ถ้ามีรา กลิ่นบูด หรือเนื้อเละผิดปกติ ห้ามกิน"
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "banana overripe speed_up",
+   "value": {
+    "fruit": "banana",
+    "goal": "speed_up",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "สุกแล้ว ไม่ต้องเร่ง"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "banana overripe keep",
+   "value": {
+    "fruit": "banana",
+    "goal": "keep",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "banana overripe slow_down",
+   "value": {
+    "fruit": "banana",
+    "goal": "slow_down",
+    "where": "counter",
+    "speed_factor": 1.3,
+    "steps_th": [
+     "ห้ามแช่ตู้เย็นตอนยังไม่สุก เปลือกจะดำ",
+     "แยกหวี ห่อขั้วด้วยฟิล์ม"
+    ]
+   }
+  },
+  {
+   "def": "RipenessInput",
+   "note": "watermelon perfect",
+   "value": {
+    "fruit": "watermelon",
+    "color": 0.6,
+    "spots": 0.05,
+    "knock": 0.75
+   }
+  },
+  {
+   "def": "RipenessResult",
+   "note": "watermelon perfect",
+   "value": {
+    "fruit": "watermelon",
+    "fruit_th": "แตงโม",
+    "index": 0.662,
+    "score": 66,
+    "stage": "perfect",
+    "stage_th": "สุกพอดี",
+    "ripens_after_pick": false,
+    "days_to_perfect": 0,
+    "eat_within_days": 2,
+    "cues_used": [
+     "color",
+     "spots",
+     "knock"
+    ],
+    "confidence": 0.85,
+    "headline_th": "แตงโม สุกพอดี กินภายใน 2 วัน",
+    "disclaimer_th": "ผลเป็นค่าประมาณจากรูปและคำตอบของคุณ ไม่ใช่การรับรองความปลอดภัยของอาหาร ถ้ามีรา กลิ่นบูด หรือเนื้อเละผิดปกติ ห้ามกิน"
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "watermelon perfect speed_up",
+   "value": {
+    "fruit": "watermelon",
+    "goal": "speed_up",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "สุกแล้ว ไม่ต้องเร่ง"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "watermelon perfect keep",
+   "value": {
+    "fruit": "watermelon",
+    "goal": "keep",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "watermelon perfect slow_down",
+   "value": {
+    "fruit": "watermelon",
+    "goal": "slow_down",
+    "where": "fridge",
+    "speed_factor": 2.0,
+    "steps_th": [
+     "แช่ช่องผักในตู้เย็น",
+     "ห่อ/ใส่กล่องกันกลิ่นติดของอื่น"
+    ]
+   }
+  },
+  {
+   "def": "RipenessInput",
+   "note": "watermelon almost",
+   "value": {
+    "fruit": "watermelon",
+    "color": 0.6,
+    "spots": 0.05
+   }
+  },
+  {
+   "def": "RipenessResult",
+   "note": "watermelon almost",
+   "value": {
+    "fruit": "watermelon",
+    "fruit_th": "แตงโม",
+    "index": 0.531,
+    "score": 53,
+    "stage": "almost",
+    "stage_th": "ใกล้สุก",
+    "ripens_after_pick": false,
+    "days_to_perfect": 0,
+    "eat_within_days": 0,
+    "cues_used": [
+     "color",
+     "spots"
+    ],
+    "confidence": 0.75,
+    "headline_th": "แตงโม ยังไม่สุกพอ และไม่สุกต่อหลังตัดจากต้น เลือกลูกอื่นดีกว่า",
+    "disclaimer_th": "ผลเป็นค่าประมาณจากรูปและคำตอบของคุณ ไม่ใช่การรับรองความปลอดภัยของอาหาร ถ้ามีรา กลิ่นบูด หรือเนื้อเละผิดปกติ ห้ามกิน"
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "watermelon almost speed_up",
+   "value": {
+    "fruit": "watermelon",
+    "goal": "speed_up",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "ผลไม้ชนิดนี้ไม่สุกต่อหลังเก็บ เลือกลูกที่สุกแล้วตั้งแต่ซื้อ"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "watermelon almost keep",
+   "value": {
+    "fruit": "watermelon",
+    "goal": "keep",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "watermelon almost slow_down",
+   "value": {
+    "fruit": "watermelon",
+    "goal": "slow_down",
+    "where": "counter",
+    "speed_factor": 1.2,
+    "steps_th": [
+     "ยังไม่สุก อย่าเพิ่งแช่เย็น จะไม่สุกต่อ",
+     "วางในที่เย็น ลมผ่าน แยกจากกล้วย"
+    ]
+   }
+  },
+  {
+   "def": "RipenessInput",
+   "note": "durian perfect",
+   "value": {
+    "fruit": "durian",
+    "color": 0.5,
+    "spots": 0.1,
+    "firmness": "yielding",
+    "aroma": "strong",
+    "knock": 0.75
+   }
+  },
+  {
+   "def": "RipenessResult",
+   "note": "durian perfect",
+   "value": {
+    "fruit": "durian",
+    "fruit_th": "ทุเรียนหมอนทอง",
+    "index": 0.74,
+    "score": 74,
+    "stage": "perfect",
+    "stage_th": "สุกพอดี",
+    "ripens_after_pick": true,
+    "days_to_perfect": 0,
+    "eat_within_days": 2,
+    "cues_used": [
+     "color",
+     "spots",
+     "firmness",
+     "aroma",
+     "knock"
+    ],
+    "confidence": 0.95,
+    "headline_th": "ทุเรียนหมอนทอง สุกพอดี กินภายใน 2 วัน",
+    "disclaimer_th": "ผลเป็นค่าประมาณจากรูปและคำตอบของคุณ ไม่ใช่การรับรองความปลอดภัยของอาหาร ถ้ามีรา กลิ่นบูด หรือเนื้อเละผิดปกติ ห้ามกิน"
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "durian perfect speed_up",
+   "value": {
+    "fruit": "durian",
+    "goal": "speed_up",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "สุกแล้ว ไม่ต้องเร่ง"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "durian perfect keep",
+   "value": {
+    "fruit": "durian",
+    "goal": "keep",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "durian perfect slow_down",
+   "value": {
+    "fruit": "durian",
+    "goal": "slow_down",
+    "where": "fridge",
+    "speed_factor": 2.0,
+    "steps_th": [
+     "แช่ช่องผักในตู้เย็น",
+     "ห่อ/ใส่กล่องกันกลิ่นติดของอื่น"
+    ]
+   }
+  },
+  {
+   "def": "RipenessInput",
+   "note": "papaya unripe",
+   "value": {
+    "fruit": "papaya",
+    "color": 0.3,
+    "spots": 0.0,
+    "firmness": "hard"
+   }
+  },
+  {
+   "def": "RipenessResult",
+   "note": "papaya unripe",
+   "value": {
+    "fruit": "papaya",
+    "fruit_th": "มะละกอฮอลแลนด์",
+    "index": 0.183,
+    "score": 18,
+    "stage": "unripe",
+    "stage_th": "ยังดิบ",
+    "ripens_after_pick": true,
+    "days_to_perfect": 3,
+    "eat_within_days": 5,
+    "cues_used": [
+     "color",
+     "spots",
+     "firmness"
+    ],
+    "confidence": 0.85,
+    "headline_th": "มะละกอฮอลแลนด์ ยังดิบ รออีกประมาณ 3 วัน",
+    "disclaimer_th": "ผลเป็นค่าประมาณจากรูปและคำตอบของคุณ ไม่ใช่การรับรองความปลอดภัยของอาหาร ถ้ามีรา กลิ่นบูด หรือเนื้อเละผิดปกติ ห้ามกิน"
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "papaya unripe speed_up",
+   "value": {
+    "fruit": "papaya",
+    "goal": "speed_up",
+    "where": "paper_bag",
+    "speed_factor": 0.7,
+    "steps_th": [
+     "ใส่ถุงกระดาษพร้อมกล้วยสุก 1 ลูก",
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "papaya unripe keep",
+   "value": {
+    "fruit": "papaya",
+    "goal": "keep",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "papaya unripe slow_down",
+   "value": {
+    "fruit": "papaya",
+    "goal": "slow_down",
+    "where": "counter",
+    "speed_factor": 1.2,
+    "steps_th": [
+     "ยังไม่สุก อย่าเพิ่งแช่เย็น จะไม่สุกต่อ",
+     "วางในที่เย็น ลมผ่าน แยกจากกล้วย"
+    ]
+   }
+  },
+  {
+   "def": "RipenessInput",
+   "note": "pineapple almost",
+   "value": {
+    "fruit": "pineapple",
+    "color": 0.7,
+    "spots": 0.1,
+    "firmness": "firm",
+    "aroma": "faint"
+   }
+  },
+  {
+   "def": "RipenessResult",
+   "note": "pineapple almost",
+   "value": {
+    "fruit": "pineapple",
+    "fruit_th": "สับปะรดภูแล",
+    "index": 0.535,
+    "score": 54,
+    "stage": "almost",
+    "stage_th": "ใกล้สุก",
+    "ripens_after_pick": true,
+    "days_to_perfect": 1,
+    "eat_within_days": 3,
+    "cues_used": [
+     "color",
+     "spots",
+     "firmness",
+     "aroma"
+    ],
+    "confidence": 0.95,
+    "headline_th": "สับปะรดภูแล ใกล้สุก กินได้ในอีก 1 วัน",
+    "disclaimer_th": "ผลเป็นค่าประมาณจากรูปและคำตอบของคุณ ไม่ใช่การรับรองความปลอดภัยของอาหาร ถ้ามีรา กลิ่นบูด หรือเนื้อเละผิดปกติ ห้ามกิน"
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "pineapple almost speed_up",
+   "value": {
+    "fruit": "pineapple",
+    "goal": "speed_up",
+    "where": "paper_bag",
+    "speed_factor": 0.7,
+    "steps_th": [
+     "ใส่ถุงกระดาษพร้อมกล้วยสุก 1 ลูก",
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "pineapple almost keep",
+   "value": {
+    "fruit": "pineapple",
+    "goal": "keep",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "pineapple almost slow_down",
+   "value": {
+    "fruit": "pineapple",
+    "goal": "slow_down",
+    "where": "counter",
+    "speed_factor": 1.2,
+    "steps_th": [
+     "ยังไม่สุก อย่าเพิ่งแช่เย็น จะไม่สุกต่อ",
+     "วางในที่เย็น ลมผ่าน แยกจากกล้วย"
+    ]
+   }
+  },
+  {
+   "def": "RipenessInput",
+   "note": "mangosteen perfect",
+   "value": {
+    "fruit": "mangosteen",
+    "color": 0.9,
+    "spots": 0.1,
+    "firmness": "yielding"
+   }
+  },
+  {
+   "def": "RipenessResult",
+   "note": "mangosteen perfect",
+   "value": {
+    "fruit": "mangosteen",
+    "fruit_th": "มังคุด",
+    "index": 0.7,
+    "score": 70,
+    "stage": "perfect",
+    "stage_th": "สุกพอดี",
+    "ripens_after_pick": true,
+    "days_to_perfect": 0,
+    "eat_within_days": 2,
+    "cues_used": [
+     "color",
+     "spots",
+     "firmness"
+    ],
+    "confidence": 0.85,
+    "headline_th": "มังคุด สุกพอดี กินภายใน 2 วัน",
+    "disclaimer_th": "ผลเป็นค่าประมาณจากรูปและคำตอบของคุณ ไม่ใช่การรับรองความปลอดภัยของอาหาร ถ้ามีรา กลิ่นบูด หรือเนื้อเละผิดปกติ ห้ามกิน"
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "mangosteen perfect speed_up",
+   "value": {
+    "fruit": "mangosteen",
+    "goal": "speed_up",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "สุกแล้ว ไม่ต้องเร่ง"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "mangosteen perfect keep",
+   "value": {
+    "fruit": "mangosteen",
+    "goal": "keep",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "mangosteen perfect slow_down",
+   "value": {
+    "fruit": "mangosteen",
+    "goal": "slow_down",
+    "where": "fridge",
+    "speed_factor": 2.0,
+    "steps_th": [
+     "แช่ช่องผักในตู้เย็น",
+     "ห่อ/ใส่กล่องกันกลิ่นติดของอื่น"
+    ]
+   }
+  },
+  {
+   "def": "RipenessInput",
+   "note": "avocado perfect",
+   "value": {
+    "fruit": "avocado",
+    "color": 0.8,
+    "spots": 0.2,
+    "firmness": "soft"
+   }
+  },
+  {
+   "def": "RipenessResult",
+   "note": "avocado perfect",
+   "value": {
+    "fruit": "avocado",
+    "fruit_th": "อะโวคาโด",
+    "index": 0.77,
+    "score": 77,
+    "stage": "perfect",
+    "stage_th": "สุกพอดี",
+    "ripens_after_pick": true,
+    "days_to_perfect": 0,
+    "eat_within_days": 2,
+    "cues_used": [
+     "color",
+     "spots",
+     "firmness"
+    ],
+    "confidence": 0.85,
+    "headline_th": "อะโวคาโด สุกพอดี กินภายใน 2 วัน",
+    "disclaimer_th": "ผลเป็นค่าประมาณจากรูปและคำตอบของคุณ ไม่ใช่การรับรองความปลอดภัยของอาหาร ถ้ามีรา กลิ่นบูด หรือเนื้อเละผิดปกติ ห้ามกิน"
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "avocado perfect speed_up",
+   "value": {
+    "fruit": "avocado",
+    "goal": "speed_up",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "สุกแล้ว ไม่ต้องเร่ง"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "avocado perfect keep",
+   "value": {
+    "fruit": "avocado",
+    "goal": "keep",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "avocado perfect slow_down",
+   "value": {
+    "fruit": "avocado",
+    "goal": "slow_down",
+    "where": "fridge",
+    "speed_factor": 2.0,
+    "steps_th": [
+     "แช่ช่องผักในตู้เย็น",
+     "ห่อ/ใส่กล่องกันกลิ่นติดของอื่น"
+    ]
+   }
+  },
+  {
+   "def": "RipenessInput",
+   "note": "mango unripe",
+   "value": {
+    "fruit": "mango",
+    "color": 0.1,
+    "spots": 0.0,
+    "firmness": "hard",
+    "aroma": "none"
+   }
+  },
+  {
+   "def": "RipenessResult",
+   "note": "mango unripe",
+   "value": {
+    "fruit": "mango",
+    "fruit_th": "มะม่วงน้ำดอกไม้",
+    "index": 0.045,
+    "score": 4,
+    "stage": "unripe",
+    "stage_th": "ยังดิบ",
+    "ripens_after_pick": true,
+    "days_to_perfect": 5,
+    "eat_within_days": 7,
+    "cues_used": [
+     "color",
+     "spots",
+     "firmness",
+     "aroma"
+    ],
+    "confidence": 0.95,
+    "headline_th": "มะม่วงน้ำดอกไม้ ยังดิบ รออีกประมาณ 5 วัน",
+    "disclaimer_th": "ผลเป็นค่าประมาณจากรูปและคำตอบของคุณ ไม่ใช่การรับรองความปลอดภัยของอาหาร ถ้ามีรา กลิ่นบูด หรือเนื้อเละผิดปกติ ห้ามกิน"
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "mango unripe speed_up",
+   "value": {
+    "fruit": "mango",
+    "goal": "speed_up",
+    "where": "paper_bag",
+    "speed_factor": 0.7,
+    "steps_th": [
+     "ใส่ถุงกระดาษพร้อมกล้วยสุก 1 ลูก",
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "mango unripe keep",
+   "value": {
+    "fruit": "mango",
+    "goal": "keep",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "mango unripe slow_down",
+   "value": {
+    "fruit": "mango",
+    "goal": "slow_down",
+    "where": "counter",
+    "speed_factor": 1.2,
+    "steps_th": [
+     "ยังไม่สุก อย่าเพิ่งแช่เย็น จะไม่สุกต่อ",
+     "วางในที่เย็น ลมผ่าน แยกจากกล้วย"
+    ]
+   }
+  },
+  {
+   "def": "RipenessInput",
+   "note": "banana almost",
+   "value": {
+    "fruit": "banana",
+    "color": 0.6,
+    "spots": 0.1,
+    "firmness": "firm"
+   }
+  },
+  {
+   "def": "RipenessResult",
+   "note": "banana almost",
+   "value": {
+    "fruit": "banana",
+    "fruit_th": "กล้วยหอม",
+    "index": 0.447,
+    "score": 45,
+    "stage": "almost",
+    "stage_th": "ใกล้สุก",
+    "ripens_after_pick": true,
+    "days_to_perfect": 1,
+    "eat_within_days": 3,
+    "cues_used": [
+     "color",
+     "spots",
+     "firmness"
+    ],
+    "confidence": 0.85,
+    "headline_th": "กล้วยหอม ใกล้สุก กินได้ในอีก 1 วัน",
+    "disclaimer_th": "ผลเป็นค่าประมาณจากรูปและคำตอบของคุณ ไม่ใช่การรับรองความปลอดภัยของอาหาร ถ้ามีรา กลิ่นบูด หรือเนื้อเละผิดปกติ ห้ามกิน"
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "banana almost speed_up",
+   "value": {
+    "fruit": "banana",
+    "goal": "speed_up",
+    "where": "paper_bag",
+    "speed_factor": 0.7,
+    "steps_th": [
+     "ใส่ถุงกระดาษพร้อมกล้วยสุก 1 ลูก",
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "banana almost keep",
+   "value": {
+    "fruit": "banana",
+    "goal": "keep",
+    "where": "counter",
+    "speed_factor": 1.0,
+    "steps_th": [
+     "วางที่อุณหภูมิห้อง ไม่โดนแดด"
+    ]
+   }
+  },
+  {
+   "def": "StoragePlan",
+   "note": "banana almost slow_down",
+   "value": {
+    "fruit": "banana",
+    "goal": "slow_down",
+    "where": "counter",
+    "speed_factor": 1.3,
+    "steps_th": [
+     "ห้ามแช่ตู้เย็นตอนยังไม่สุก เปลือกจะดำ",
+     "แยกหวี ห่อขั้วด้วยฟิล์ม"
+    ]
+   }
+  },
+  {
+   "def": "KnockInput",
+   "note": "watermelon 120Hz",
+   "value": {
+    "fruit": "watermelon",
+    "hz": 120,
+    "decay_ms": 180
+   }
+  },
+  {
+   "def": "KnockResult",
+   "note": "watermelon 120Hz",
+   "value": {
+    "fruit": "watermelon",
+    "hz": 120,
+    "decay_ms": 180,
+    "verdict": "ripe",
+    "verdict_th": "เสียงทุ้มก้อง สุกกำลังดี",
+    "cue": 0.75,
+    "tip_th": "เคาะ 3 ครั้งใกล้ไมค์ในที่เงียบ ใช้ข้อนิ้วกลาง"
+   }
+  },
+  {
+   "def": "KnockInput",
+   "note": "watermelon 300Hz",
+   "value": {
+    "fruit": "watermelon",
+    "hz": 300,
+    "decay_ms": 100
+   }
+  },
+  {
+   "def": "KnockResult",
+   "note": "watermelon 300Hz",
+   "value": {
+    "fruit": "watermelon",
+    "hz": 300,
+    "decay_ms": 100,
+    "verdict": "unripe",
+    "verdict_th": "เสียงแหลม แน่น ยังไม่สุก",
+    "cue": 0.2,
+    "tip_th": "เคาะ 3 ครั้งใกล้ไมค์ในที่เงียบ ใช้ข้อนิ้วกลาง"
+   }
+  },
+  {
+   "def": "KnockInput",
+   "note": "watermelon 100Hz",
+   "value": {
+    "fruit": "watermelon",
+    "hz": 100,
+    "decay_ms": 90
+   }
+  },
+  {
+   "def": "KnockResult",
+   "note": "watermelon 100Hz",
+   "value": {
+    "fruit": "watermelon",
+    "hz": 100,
+    "decay_ms": 90,
+    "verdict": "almost",
+    "verdict_th": "เสียงทุ้มแต่สั้น ใกล้สุก",
+    "cue": 0.5,
+    "tip_th": "เคาะ 3 ครั้งใกล้ไมค์ในที่เงียบ ใช้ข้อนิ้วกลาง"
+   }
+  },
+  {
+   "def": "KnockInput",
+   "note": "watermelon 70Hz",
+   "value": {
+    "fruit": "watermelon",
+    "hz": 70,
+    "decay_ms": 50
+   }
+  },
+  {
+   "def": "KnockResult",
+   "note": "watermelon 70Hz",
+   "value": {
+    "fruit": "watermelon",
+    "hz": 70,
+    "decay_ms": 50,
+    "verdict": "overripe",
+    "verdict_th": "เสียงตื้อ ๆ ทึบ อาจสุกเกิน/เนื้อแป้ง",
+    "cue": 0.95,
+    "tip_th": "เคาะ 3 ครั้งใกล้ไมค์ในที่เงียบ ใช้ข้อนิ้วกลาง"
+   }
+  },
+  {
+   "def": "KnockInput",
+   "note": "durian 100Hz",
+   "value": {
+    "fruit": "durian",
+    "hz": 100,
+    "decay_ms": 150
+   }
+  },
+  {
+   "def": "KnockResult",
+   "note": "durian 100Hz",
+   "value": {
+    "fruit": "durian",
+    "hz": 100,
+    "decay_ms": 150,
+    "verdict": "ripe",
+    "verdict_th": "เสียงทุ้มก้อง สุกกำลังดี",
+    "cue": 0.75,
+    "tip_th": "เคาะ 3 ครั้งใกล้ไมค์ในที่เงียบ ใช้ข้อนิ้วกลาง"
+   }
+  },
+  {
+   "def": "KnockInput",
+   "note": "durian 75Hz",
+   "value": {
+    "fruit": "durian",
+    "hz": 75,
+    "decay_ms": 200
+   }
+  },
+  {
+   "def": "KnockResult",
+   "note": "durian 75Hz",
+   "value": {
+    "fruit": "durian",
+    "hz": 75,
+    "decay_ms": 200,
+    "verdict": "ripe",
+    "verdict_th": "เสียงทุ้มต่ำ สุกดี",
+    "cue": 0.8,
+    "tip_th": "เคาะ 3 ครั้งใกล้ไมค์ในที่เงียบ ใช้ข้อนิ้วกลาง"
+   }
+  },
+  {
+   "def": "PriceInput",
+   "note": "watermelon 80",
+   "value": {
+    "fruit": "watermelon",
+    "total_baht": 80,
+    "kg": 3.2,
+    "month": 12
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "watermelon 80",
+   "value": {
+    "fruit": "watermelon",
+    "per_kg": 25.0,
+    "ref_low": 15,
+    "ref_high": 30,
+    "in_season": true,
+    "verdict": "fair",
+    "verdict_th": "ราคาสมเหตุสมผล",
+    "diff_from_mid_pct": 11,
+    "disclaimer_th": "ช่วงราคาอ้างอิงเป็นค่าตัวอย่าง ไม่ใช่ราคาตลาดจริงวันนี้"
+   }
+  },
+  {
+   "def": "PriceInput",
+   "note": "watermelon 160",
+   "value": {
+    "fruit": "watermelon",
+    "total_baht": 160,
+    "kg": 3.0,
+    "month": 12
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "watermelon 160",
+   "value": {
+    "fruit": "watermelon",
+    "per_kg": 53.3,
+    "ref_low": 15,
+    "ref_high": 30,
+    "in_season": true,
+    "verdict": "very_pricey",
+    "verdict_th": "แพงมาก ลองร้านอื่น",
+    "diff_from_mid_pct": 137,
+    "disclaimer_th": "ช่วงราคาอ้างอิงเป็นค่าตัวอย่าง ไม่ใช่ราคาตลาดจริงวันนี้"
+   }
+  },
+  {
+   "def": "PriceInput",
+   "note": "durian 900",
+   "value": {
+    "fruit": "durian",
+    "total_baht": 900,
+    "kg": 3.0,
+    "month": 12
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "durian 900",
+   "value": {
+    "fruit": "durian",
+    "per_kg": 300.0,
+    "ref_low": 168,
+    "ref_high": 252,
+    "in_season": false,
+    "verdict": "pricey",
+    "verdict_th": "แพงไปหน่อย ลองต่อราคา",
+    "diff_from_mid_pct": 43,
+    "disclaimer_th": "ช่วงราคาอ้างอิงเป็นค่าตัวอย่าง ไม่ใช่ราคาตลาดจริงวันนี้"
+   }
+  },
+  {
+   "def": "PriceInput",
+   "note": "durian 450",
+   "value": {
+    "fruit": "durian",
+    "total_baht": 450,
+    "kg": 3.0,
+    "month": 5
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "durian 450",
+   "value": {
+    "fruit": "durian",
+    "per_kg": 150.0,
+    "ref_low": 120,
+    "ref_high": 180,
+    "in_season": true,
+    "verdict": "fair",
+    "verdict_th": "ราคาสมเหตุสมผล",
+    "diff_from_mid_pct": 0,
+    "disclaimer_th": "ช่วงราคาอ้างอิงเป็นค่าตัวอย่าง ไม่ใช่ราคาตลาดจริงวันนี้"
+   }
+  },
+  {
+   "def": "PriceInput",
+   "note": "mango 30",
+   "value": {
+    "fruit": "mango",
+    "total_baht": 30,
+    "kg": 1.0,
+    "month": 4
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "mango 30",
+   "value": {
+    "fruit": "mango",
+    "per_kg": 30.0,
+    "ref_low": 40,
+    "ref_high": 80,
+    "in_season": true,
+    "verdict": "cheap",
+    "verdict_th": "ถูก คุ้มเลย",
+    "diff_from_mid_pct": -50,
+    "disclaimer_th": "ช่วงราคาอ้างอิงเป็นค่าตัวอย่าง ไม่ใช่ราคาตลาดจริงวันนี้"
+   }
+  },
+  {
+   "def": "PriceInput",
+   "note": "avocado 120",
+   "value": {
+    "fruit": "avocado",
+    "total_baht": 120,
+    "kg": 0.8,
+    "month": 12
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "avocado 120",
+   "value": {
+    "fruit": "avocado",
+    "per_kg": 150.0,
+    "ref_low": 112,
+    "ref_high": 210,
+    "in_season": false,
+    "verdict": "fair",
+    "verdict_th": "ราคาสมเหตุสมผล",
+    "diff_from_mid_pct": -7,
+    "disclaimer_th": "ช่วงราคาอ้างอิงเป็นค่าตัวอย่าง ไม่ใช่ราคาตลาดจริงวันนี้"
+   }
+  },
+  {
+   "def": "PriceInput",
+   "note": "mangosteen 15",
+   "value": {
+    "fruit": "mangosteen",
+    "total_baht": 15,
+    "kg": 1.0,
+    "month": 6
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "mangosteen 15",
+   "value": {
+    "fruit": "mangosteen",
+    "per_kg": 15.0,
+    "ref_low": 40,
+    "ref_high": 90,
+    "in_season": true,
+    "verdict": "suspicious_low",
+    "verdict_th": "ถูกผิดปกติ เช็กสภาพ/น้ำหนักให้ดี",
+    "diff_from_mid_pct": -77,
+    "disclaimer_th": "ช่วงราคาอ้างอิงเป็นค่าตัวอย่าง ไม่ใช่ราคาตลาดจริงวันนี้"
+   }
+  },
+  {
+   "def": "PriceInput",
+   "note": "banana 35",
+   "value": {
+    "fruit": "banana",
+    "total_baht": 35,
+    "kg": 1.0,
+    "month": 12
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "banana 35",
+   "value": {
+    "fruit": "banana",
+    "per_kg": 35.0,
+    "ref_low": 25,
+    "ref_high": 45,
+    "in_season": true,
+    "verdict": "fair",
+    "verdict_th": "ราคาสมเหตุสมผล",
+    "diff_from_mid_pct": 0,
+    "disclaimer_th": "ช่วงราคาอ้างอิงเป็นค่าตัวอย่าง ไม่ใช่ราคาตลาดจริงวันนี้"
+   }
+  },
+  {
+   "def": "BasketItem",
+   "note": "อะโวคาโด",
+   "value": {
+    "label": "อะโวคาโด",
+    "fruit": "avocado",
+    "days_to_perfect": 3,
+    "eat_within_days": 5
+   }
+  },
+  {
+   "def": "BasketItem",
+   "note": "มะม่วง",
+   "value": {
+    "label": "มะม่วง",
+    "fruit": "mango",
+    "days_to_perfect": 0,
+    "eat_within_days": 2
+   }
+  },
+  {
+   "def": "BasketItem",
+   "note": "แตงโม",
+   "value": {
+    "label": "แตงโม",
+    "fruit": "watermelon",
+    "days_to_perfect": 0,
+    "eat_within_days": 2
+   }
+  },
+  {
+   "def": "EatPlan",
+   "note": "demo basket",
+   "value": {
+    "start": "2026-12-14",
+    "days": [
+     {
+      "date": "2026-12-14",
+      "eat": [
+       "มะม่วง",
+       "แตงโม"
+      ],
+      "waiting": [
+       "อะโวคาโด"
+      ],
+      "past_best": []
+     },
+     {
+      "date": "2026-12-15",
+      "eat": [
+       "มะม่วง",
+       "แตงโม"
+      ],
+      "waiting": [
+       "อะโวคาโด"
+      ],
+      "past_best": []
+     },
+     {
+      "date": "2026-12-16",
+      "eat": [],
+      "waiting": [
+       "อะโวคาโด"
+      ],
+      "past_best": [
+       "มะม่วง",
+       "แตงโม"
+      ]
+     },
+     {
+      "date": "2026-12-17",
+      "eat": [
+       "อะโวคาโด"
+      ],
+      "waiting": [],
+      "past_best": [
+       "มะม่วง",
+       "แตงโม"
+      ]
+     },
+     {
+      "date": "2026-12-18",
+      "eat": [
+       "อะโวคาโด"
+      ],
+      "waiting": [],
+      "past_best": [
+       "มะม่วง",
+       "แตงโม"
+      ]
+     }
+    ],
+    "eat_first": "มะม่วง",
+    "headline_th": "กินมะม่วงก่อน แล้วค่อยไล่ตามตาราง"
+   }
+  },
+  {
+   "def": "EatDay",
+   "note": "2026-12-14",
+   "value": {
+    "date": "2026-12-14",
+    "eat": [
+     "มะม่วง",
+     "แตงโม"
+    ],
+    "waiting": [
+     "อะโวคาโด"
+    ],
+    "past_best": []
+   }
+  },
+  {
+   "def": "EatDay",
+   "note": "2026-12-15",
+   "value": {
+    "date": "2026-12-15",
+    "eat": [
+     "มะม่วง",
+     "แตงโม"
+    ],
+    "waiting": [
+     "อะโวคาโด"
+    ],
+    "past_best": []
+   }
+  },
+  {
+   "def": "EatDay",
+   "note": "2026-12-16",
+   "value": {
+    "date": "2026-12-16",
+    "eat": [],
+    "waiting": [
+     "อะโวคาโด"
+    ],
+    "past_best": [
+     "มะม่วง",
+     "แตงโม"
+    ]
+   }
+  },
+  {
+   "def": "EatDay",
+   "note": "2026-12-17",
+   "value": {
+    "date": "2026-12-17",
+    "eat": [
+     "อะโวคาโด"
+    ],
+    "waiting": [],
+    "past_best": [
+     "มะม่วง",
+     "แตงโม"
+    ]
+   }
+  },
+  {
+   "def": "EatDay",
+   "note": "2026-12-18",
+   "value": {
+    "date": "2026-12-18",
+    "eat": [
+     "อะโวคาโด"
+    ],
+    "waiting": [],
+    "past_best": [
+     "มะม่วง",
+     "แตงโม"
+    ]
+   }
+  },
+  {
+   "def": "EatPlan",
+   "note": "banana+papaya 7d",
+   "value": {
+    "start": "2026-12-14",
+    "days": [
+     {
+      "date": "2026-12-14",
+      "eat": [
+       "กล้วย"
+      ],
+      "waiting": [
+       "มะละกอ"
+      ],
+      "past_best": []
+     },
+     {
+      "date": "2026-12-15",
+      "eat": [],
+      "waiting": [
+       "มะละกอ"
+      ],
+      "past_best": [
+       "กล้วย"
+      ]
+     },
+     {
+      "date": "2026-12-16",
+      "eat": [],
+      "waiting": [
+       "มะละกอ"
+      ],
+      "past_best": [
+       "กล้วย"
+      ]
+     },
+     {
+      "date": "2026-12-17",
+      "eat": [
+       "มะละกอ"
+      ],
+      "waiting": [],
+      "past_best": [
+       "กล้วย"
+      ]
+     },
+     {
+      "date": "2026-12-18",
+      "eat": [
+       "มะละกอ"
+      ],
+      "waiting": [],
+      "past_best": [
+       "กล้วย"
+      ]
+     },
+     {
+      "date": "2026-12-19",
+      "eat": [],
+      "waiting": [],
+      "past_best": [
+       "กล้วย",
+       "มะละกอ"
+      ]
+     },
+     {
+      "date": "2026-12-20",
+      "eat": [],
+      "waiting": [],
+      "past_best": [
+       "กล้วย",
+       "มะละกอ"
+      ]
+     }
+    ],
+    "eat_first": "กล้วย",
+    "headline_th": "กินกล้วยก่อน แล้วค่อยไล่ตามตาราง"
+   }
+  },
+  {
+   "def": "PickCheck",
+   "note": "watermelon",
+   "value": {
+    "fruit": "watermelon",
+    "questions_th": [
+     "มีจุดเหลืองตรงที่วางกับดิน",
+     "ลายเขียวเข้มชัด",
+     "เคาะแล้วเสียงทุ้มก้อง",
+     "หนักกว่าที่คิดเมื่อยก"
+    ],
+    "answers": [
+     true,
+     true,
+     true,
+     false
+    ],
+    "yes": 3,
+    "verdict": "pick",
+    "verdict_th": "เลือกลูกนี้ได้เลย"
+   }
+  },
+  {
+   "def": "PickCheck",
+   "note": "durian",
+   "value": {
+    "fruit": "durian",
+    "questions_th": [
+     "ก้านยังเขียวสด ไม่เหี่ยว",
+     "บีบหนาม 2 อันเข้าหากันได้ (หนามอ่อน)",
+     "เคาะแล้วเสียงโปร่ง ๆ",
+     "ร่องพูชัด"
+    ],
+    "answers": [
+     true,
+     false,
+     true,
+     false
+    ],
+    "yes": 2,
+    "verdict": "maybe",
+    "verdict_th": "พอได้ ลองเทียบอีกลูก"
+   }
+  },
+  {
+   "def": "PickCheck",
+   "note": "mango",
+   "value": {
+    "fruit": "mango",
+    "questions_th": [
+     "ผิวเหลืองทั่วลูก",
+     "กดเบา ๆ แล้วนิ่มนิดหน่อย",
+     "ขั้วมีกลิ่นหอม",
+     "ไม่มีจุดช้ำดำ"
+    ],
+    "answers": [
+     false,
+     false,
+     true,
+     false
+    ],
+    "yes": 1,
+    "verdict": "skip",
+    "verdict_th": "ข้ามลูกนี้ไป"
+   }
+  },
+  {
+   "def": "PickCheck",
+   "note": "pineapple",
+   "value": {
+    "fruit": "pineapple",
+    "questions_th": [
+     "ตาผลใหญ่ เรียบ",
+     "ผิวเหลืองจากก้นขึ้นมา",
+     "ก้นมีกลิ่นหอมหวาน",
+     "ดึงใบกลางออกได้ง่าย"
+    ],
+    "answers": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "yes": 4,
+    "verdict": "pick",
+    "verdict_th": "เลือกลูกนี้ได้เลย"
+   }
+  },
+  {
+   "def": "SeasonCalendar",
+   "note": "1",
+   "value": {
+    "month": 1,
+    "fruits": [
+     "banana",
+     "watermelon",
+     "papaya",
+     "pineapple"
+    ],
+    "fruits_th": [
+     "กล้วยหอม",
+     "แตงโม",
+     "มะละกอฮอลแลนด์",
+     "สับปะรดภูแล"
+    ],
+    "tip_th": "เดือนนี้มีผลไม้ตามฤดู 4 ชนิด ราคามักถูกและหวานกว่า"
+   }
+  },
+  {
+   "def": "SeasonCalendar",
+   "note": "4",
+   "value": {
+    "month": 4,
+    "fruits": [
+     "durian",
+     "mango",
+     "banana",
+     "watermelon",
+     "papaya",
+     "pineapple"
+    ],
+    "fruits_th": [
+     "ทุเรียนหมอนทอง",
+     "มะม่วงน้ำดอกไม้",
+     "กล้วยหอม",
+     "แตงโม",
+     "มะละกอฮอลแลนด์",
+     "สับปะรดภูแล"
+    ],
+    "tip_th": "เดือนนี้มีผลไม้ตามฤดู 6 ชนิด ราคามักถูกและหวานกว่า"
+   }
+  },
+  {
+   "def": "SeasonCalendar",
+   "note": "6",
+   "value": {
+    "month": 6,
+    "fruits": [
+     "durian",
+     "banana",
+     "papaya",
+     "pineapple",
+     "mangosteen"
+    ],
+    "fruits_th": [
+     "ทุเรียนหมอนทอง",
+     "กล้วยหอม",
+     "มะละกอฮอลแลนด์",
+     "สับปะรดภูแล",
+     "มังคุด"
+    ],
+    "tip_th": "เดือนนี้มีผลไม้ตามฤดู 5 ชนิด ราคามักถูกและหวานกว่า"
+   }
+  },
+  {
+   "def": "SeasonCalendar",
+   "note": "9",
+   "value": {
+    "month": 9,
+    "fruits": [
+     "avocado",
+     "banana",
+     "papaya"
+    ],
+    "fruits_th": [
+     "อะโวคาโด",
+     "กล้วยหอม",
+     "มะละกอฮอลแลนด์"
+    ],
+    "tip_th": "เดือนนี้มีผลไม้ตามฤดู 3 ชนิด ราคามักถูกและหวานกว่า"
+   }
+  },
+  {
+   "def": "SeasonCalendar",
+   "note": "12",
+   "value": {
+    "month": 12,
+    "fruits": [
+     "banana",
+     "watermelon",
+     "papaya",
+     "pineapple"
+    ],
+    "fruits_th": [
+     "กล้วยหอม",
+     "แตงโม",
+     "มะละกอฮอลแลนด์",
+     "สับปะรดภูแล"
+    ],
+    "tip_th": "เดือนนี้มีผลไม้ตามฤดู 4 ชนิด ราคามักถูกและหวานกว่า"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "mango",
+   "value": {
+    "date": "2026-11-02",
+    "fruit": "mango",
+    "predicted": "perfect",
+    "result": "just_right",
+    "paid_baht": 120
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "avocado",
+   "value": {
+    "date": "2026-11-20",
+    "fruit": "avocado",
+    "predicted": "almost",
+    "result": "too_raw",
+    "paid_baht": 95
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "watermelon",
+   "value": {
+    "date": "2026-12-06",
+    "fruit": "watermelon",
+    "predicted": "perfect",
+    "result": "just_right",
+    "paid_baht": 80
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "avocado",
+   "value": {
+    "date": "2026-12-14",
+    "fruit": "avocado",
+    "predicted": "almost",
+    "result": "just_right",
+    "paid_baht": 110
+   }
+  },
+  {
+   "def": "DiarySummary",
+   "note": "tom",
+   "value": {
+    "count": 4,
+    "accuracy_pct": 75,
+    "spent_baht": 405,
+    "top_fruit": "avocado",
+    "headline_th": "ทายถูก 3/4 ครั้ง (75%) ซื้อผลไม้ไป ฿405"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "demo",
+   "value": {
+    "title_th": "อะโวคาโด ยังดิบ 32/100",
+    "hook_th": "ถ่ายปุ๊บ รู้เลยกินได้วันไหน",
+    "layout": "fruit_meter",
+    "sizes": [
+     "1080x1350",
+     "1080x1920"
+    ],
+    "watermark": "RipeRight · AI วันละแอป",
+    "cta_th": "คอมเมนต์ RIPE รับแพ็กฟรี",
+    "disclaimer_th": "ค่าประมาณ ไม่ใช่การรับรองความปลอดภัยอาหาร"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(0,)",
+   "value": {
+    "allowed": 1,
+    "left_after": 4,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(4,)",
+   "value": {
+    "allowed": 1,
+    "left_after": 0,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(5,)",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(9, 5, True)",
+   "value": {
+    "allowed": 1,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "None",
+   "value": {
+    "level": "ok",
+    "message_th": "ผลเป็นค่าประมาณ ใช้ตาและจมูกตัวเองยืนยันด้วย"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "mold",
+   "value": {
+    "level": "stop",
+    "message_th": "เห็นรา/จุดฟู ทิ้งทั้งลูก ห้ามตัดส่วนที่ขึ้นราแล้วกินต่อ"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "durian_alcohol",
+   "value": {
+    "level": "warn",
+    "message_th": "ทุเรียนกับแอลกอฮอล์ไม่ควรกินพร้อมกัน และคนเป็นเบาหวาน/โรคไตควรกินแต่น้อย"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "not_fruit",
+   "value": {
+    "level": "stop",
+    "message_th": "ไม่พบผลไม้ในรูป ลองถ่ายใหม่ให้เห็นทั้งลูก"
+   }
+  }
+ ]
+}
