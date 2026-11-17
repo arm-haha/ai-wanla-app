@@ -1,0 +1,860 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/wrapride.schema.json",
+ "title": "WrapRide",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age",
+    "vehicle"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "vehicle": {
+     "enum": [
+      "eco_car",
+      "sedan",
+      "suv",
+      "pickup",
+      "big_bike",
+      "scooter"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "VehiclePhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "px_w",
+    "px_h",
+    "glare",
+    "blur",
+    "crop"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^p[0-9]{2}$"
+    },
+    "px_w": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "px_h": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "glare": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "crop": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "VehicleScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "quality"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    }
+   },
+   "additionalProperties": false
+  },
+  "AiVehicleExtract": {
+   "type": "object",
+   "required": [
+    "is_vehicle",
+    "vehicle",
+    "original_family",
+    "angle",
+    "plate_visible",
+    "confidence"
+   ],
+   "properties": {
+    "is_vehicle": {
+     "type": "boolean"
+    },
+    "vehicle": {
+     "anyOf": [
+      {
+       "enum": [
+        "eco_car",
+        "sedan",
+        "suv",
+        "pickup",
+        "big_bike",
+        "scooter"
+       ]
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "original_family": {
+     "anyOf": [
+      {
+       "enum": [
+        "black",
+        "blue",
+        "gold",
+        "green",
+        "grey",
+        "orange",
+        "pink",
+        "purple",
+        "red",
+        "white"
+       ]
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "angle": {
+     "enum": [
+      "front_45",
+      "side",
+      "rear_45",
+      "front",
+      "rear",
+      "unknown"
+     ]
+    },
+    "plate_visible": {
+     "type": "boolean"
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "notes_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "FinishSwatch": {
+   "type": "object",
+   "required": [
+    "color",
+    "finish",
+    "base_hex",
+    "highlight_hex",
+    "shadow_hex",
+    "label_th"
+   ],
+   "properties": {
+    "color": {
+     "enum": [
+      "mint_green",
+      "army_green",
+      "midnight_blue",
+      "sky_blue",
+      "cement_grey",
+      "deep_black",
+      "pearl_white",
+      "candy_red",
+      "sunset_orange",
+      "lavender",
+      "hot_pink",
+      "champagne_gold"
+     ]
+    },
+    "finish": {
+     "enum": [
+      "gloss",
+      "satin",
+      "matte",
+      "chrome",
+      "color_shift"
+     ]
+    },
+    "base_hex": {
+     "type": "string",
+     "pattern": "^#[0-9A-F]{6}$"
+    },
+    "highlight_hex": {
+     "type": "string",
+     "pattern": "^#[0-9A-F]{6}$"
+    },
+    "shadow_hex": {
+     "type": "string",
+     "pattern": "^#[0-9A-F]{6}$"
+    },
+    "shift_hex": {
+     "type": "string",
+     "pattern": "^#[0-9A-F]{6}$"
+    },
+    "label_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "WrapSpec": {
+   "type": "object",
+   "required": [
+    "vehicle",
+    "color",
+    "finish",
+    "coverage",
+    "accent_color",
+    "swatch",
+    "main_color_change",
+    "image_prompt",
+    "title_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "vehicle": {
+     "enum": [
+      "eco_car",
+      "sedan",
+      "suv",
+      "pickup",
+      "big_bike",
+      "scooter"
+     ]
+    },
+    "color": {
+     "enum": [
+      "mint_green",
+      "army_green",
+      "midnight_blue",
+      "sky_blue",
+      "cement_grey",
+      "deep_black",
+      "pearl_white",
+      "candy_red",
+      "sunset_orange",
+      "lavender",
+      "hot_pink",
+      "champagne_gold"
+     ]
+    },
+    "finish": {
+     "enum": [
+      "gloss",
+      "satin",
+      "matte",
+      "chrome",
+      "color_shift"
+     ]
+    },
+    "coverage": {
+     "enum": [
+      "full",
+      "two_tone",
+      "roof",
+      "hood",
+      "stripes"
+     ]
+    },
+    "accent_color": {
+     "anyOf": [
+      {
+       "enum": [
+        "mint_green",
+        "army_green",
+        "midnight_blue",
+        "sky_blue",
+        "cement_grey",
+        "deep_black",
+        "pearl_white",
+        "candy_red",
+        "sunset_orange",
+        "lavender",
+        "hot_pink",
+        "champagne_gold"
+       ]
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "swatch": {
+     "$ref": "#/$defs/FinishSwatch"
+    },
+    "main_color_change": {
+     "type": "boolean"
+    },
+    "image_prompt": {
+     "type": "string"
+    },
+    "title_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "RimStickerSpec": {
+   "type": "object",
+   "required": [
+    "vehicle",
+    "rim_style",
+    "rim_color",
+    "rim_inch",
+    "stickers",
+    "blocked_areas",
+    "ok",
+    "image_prompt",
+    "note_th"
+   ],
+   "properties": {
+    "vehicle": {
+     "enum": [
+      "eco_car",
+      "sedan",
+      "suv",
+      "pickup",
+      "big_bike",
+      "scooter"
+     ]
+    },
+    "rim_style": {
+     "anyOf": [
+      {
+       "enum": [
+        "multi_spoke",
+        "five_spoke",
+        "mesh",
+        "deep_dish"
+       ]
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "rim_color": {
+     "anyOf": [
+      {
+       "enum": [
+        "black",
+        "gunmetal",
+        "silver",
+        "bronze",
+        "gold"
+       ]
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "rim_inch": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "stickers": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "side_stripe",
+       "hood_stripes",
+       "pinstripe",
+       "kanok",
+       "checker",
+       "race_number"
+      ]
+     },
+     "maxItems": 3
+    },
+    "blocked_areas": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "headlight",
+       "taillight",
+       "plate",
+       "windscreen"
+      ]
+     }
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "image_prompt": {
+     "type": "string"
+    },
+    "note_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PriceCheck": {
+   "type": "object",
+   "required": [
+    "vehicle",
+    "job",
+    "low_baht",
+    "high_baht",
+    "quote_baht",
+    "verdict",
+    "verdict_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "vehicle": {
+     "enum": [
+      "eco_car",
+      "sedan",
+      "suv",
+      "pickup",
+      "big_bike",
+      "scooter"
+     ]
+    },
+    "job": {
+     "enum": [
+      "wrap",
+      "paint",
+      "rims",
+      "stickers"
+     ]
+    },
+    "low_baht": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "high_baht": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "quote_baht": {
+     "anyOf": [
+      {
+       "type": "number",
+       "minimum": 1
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "verdict": {
+     "enum": [
+      "no_quote",
+      "suspicious_low",
+      "fair",
+      "high",
+      "too_high"
+     ]
+    },
+    "verdict_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShopBrief": {
+   "type": "object",
+   "required": [
+    "to_th",
+    "from_name_th",
+    "lines_th",
+    "text_th",
+    "attach",
+    "cta_th"
+   ],
+   "properties": {
+    "to_th": {
+     "type": "string"
+    },
+    "from_name_th": {
+     "type": "string"
+    },
+    "lines_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 3
+    },
+    "text_th": {
+     "type": "string"
+    },
+    "attach": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "before_photo",
+       "mockup_4x5",
+       "swatch"
+      ]
+     }
+    },
+    "cta_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "LegalItem": {
+   "type": "object",
+   "required": [
+    "code",
+    "level",
+    "text_th"
+   ],
+   "properties": {
+    "code": {
+     "enum": [
+      "dlt_color",
+      "insurance",
+      "reflective",
+      "lights_plate"
+     ]
+    },
+    "level": {
+     "enum": [
+      "info",
+      "warn",
+      "action"
+     ]
+    },
+    "text_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "LegalCheck": {
+   "type": "object",
+   "required": [
+    "level",
+    "items",
+    "note_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "info",
+      "warn",
+      "action"
+     ]
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/LegalItem"
+     },
+     "minItems": 1
+    },
+    "note_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ReelShot": {
+   "type": "object",
+   "required": [
+    "from_s",
+    "to_s",
+    "kind",
+    "text_th"
+   ],
+   "properties": {
+    "from_s": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "to_s": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "kind": {
+     "enum": [
+      "before",
+      "scan",
+      "swipe",
+      "compare",
+      "cta"
+     ]
+    },
+    "text_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ReelPlan": {
+   "type": "object",
+   "required": [
+    "seconds",
+    "ratio",
+    "music_bpm",
+    "shots",
+    "watermark"
+   ],
+   "properties": {
+    "seconds": {
+     "type": "integer",
+     "minimum": 15,
+     "maximum": 30
+    },
+    "ratio": {
+     "enum": [
+      "9:16"
+     ]
+    },
+    "music_bpm": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "shots": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ReelShot"
+     },
+     "minItems": 5,
+     "maxItems": 5
+    },
+    "watermark": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiaryEntry": {
+   "type": "object",
+   "required": [
+    "date",
+    "kind"
+   ],
+   "properties": {
+    "date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "kind": {
+     "enum": [
+      "wash",
+      "wrap",
+      "service",
+      "rim",
+      "photo",
+      "tire"
+     ]
+    },
+    "cost_baht": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "note_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiarySummary": {
+   "type": "object",
+   "required": [
+    "entries",
+    "wrap_age_days",
+    "next_wash",
+    "spend_baht",
+    "care_tip_th",
+    "headline_th"
+   ],
+   "properties": {
+    "entries": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "wrap_age_days": {
+     "anyOf": [
+      {
+       "type": "integer",
+       "minimum": 0
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "next_wash": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "spend_baht": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "care_tip_th": {
+     "type": "string"
+    },
+    "headline_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "hook_th",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "layout": {
+     "enum": [
+      "car_before_after"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}

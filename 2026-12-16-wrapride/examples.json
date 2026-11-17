@@ -1,0 +1,2081 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "Ton",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่ต้น",
+    "name_en": "Ton",
+    "age": 31,
+    "city_th": "กรุงเทพฯ (ลาดพร้าว)",
+    "vehicle": "eco_car"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Mind",
+   "value": {
+    "id": "u02",
+    "name_th": "น้องมายด์",
+    "name_en": "Mind",
+    "age": 22,
+    "city_th": "เชียงใหม่",
+    "vehicle": "scooter"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Boy",
+   "value": {
+    "id": "u03",
+    "name_th": "ช่างบอย",
+    "name_en": "Boy",
+    "age": 38,
+    "city_th": "ชลบุรี",
+    "vehicle": "pickup"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Jae Nok",
+   "value": {
+    "id": "u04",
+    "name_th": "เจ๊นก",
+    "name_en": "Jae Nok",
+    "age": 47,
+    "city_th": "นครราชสีมา",
+    "vehicle": "suv"
+   }
+  },
+  {
+   "def": "VehiclePhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "px_w": 1080,
+    "px_h": 1350,
+    "glare": 0.1,
+    "blur": 0.05,
+    "crop": 0.0
+   }
+  },
+  {
+   "def": "VehicleScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "quality": {
+     "score": 94,
+     "ok": true,
+     "tips_th": []
+    }
+   }
+  },
+  {
+   "def": "VehiclePhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "px_w": 720,
+    "px_h": 960,
+    "glare": 0.4,
+    "blur": 0.2,
+    "crop": 0.1
+   }
+  },
+  {
+   "def": "VehicleScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "quality": {
+     "score": 76,
+     "ok": true,
+     "tips_th": [
+      "แสงสะท้อนบนตัวรถเยอะ ถ่ายในร่มหรือช่วงเช้า/เย็น"
+     ]
+    }
+   }
+  },
+  {
+   "def": "VehiclePhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "px_w": 640,
+    "px_h": 640,
+    "glare": 0.6,
+    "blur": 0.5,
+    "crop": 0.4
+   }
+  },
+  {
+   "def": "VehicleScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "quality": {
+     "score": 49,
+     "ok": false,
+     "tips_th": [
+      "แสงสะท้อนบนตัวรถเยอะ ถ่ายในร่มหรือช่วงเช้า/เย็น",
+      "ภาพเบลอ ถือนิ่ง ๆ แล้วถ่ายใหม่",
+      "ถอยออกให้เห็นรถทั้งคัน มุมเฉียงหน้า 45° ดีที่สุด"
+     ]
+    }
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "mid",
+   "value": {
+    "score": 80,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "AiVehicleExtract",
+   "note": "demo",
+   "value": {
+    "is_vehicle": true,
+    "vehicle": "eco_car",
+    "original_family": "white",
+    "angle": "front_45",
+    "plate_visible": true,
+    "confidence": 0.88,
+    "notes_th": "รถอีโคคาร์สีขาว มุมเฉียงหน้า"
+   }
+  },
+  {
+   "def": "AiVehicleExtract",
+   "note": "scooter",
+   "value": {
+    "is_vehicle": true,
+    "vehicle": "scooter",
+    "original_family": "black",
+    "angle": "side",
+    "plate_visible": false,
+    "confidence": 0.81
+   }
+  },
+  {
+   "def": "AiVehicleExtract",
+   "note": "not vehicle",
+   "value": {
+    "is_vehicle": false,
+    "vehicle": null,
+    "original_family": null,
+    "angle": "unknown",
+    "plate_visible": false,
+    "confidence": 0.93,
+    "notes_th": "รูปนี้เป็นจักรยาน"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "mint_green gloss",
+   "value": {
+    "color": "mint_green",
+    "finish": "gloss",
+    "base_hex": "#7FD1AE",
+    "highlight_hex": "#B9E6D2",
+    "shadow_hex": "#538871",
+    "label_th": "เขียวมิ้นต์ เงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "mint_green satin",
+   "value": {
+    "color": "mint_green",
+    "finish": "satin",
+    "base_hex": "#7FD1AE",
+    "highlight_hex": "#9FDCC2",
+    "shadow_hex": "#5B967D",
+    "label_th": "เขียวมิ้นต์ กึ่งเงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "mint_green matte",
+   "value": {
+    "color": "mint_green",
+    "finish": "matte",
+    "base_hex": "#7FD1AE",
+    "highlight_hex": "#8ED7B8",
+    "shadow_hex": "#66A78B",
+    "label_th": "เขียวมิ้นต์ ด้าน"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "mint_green chrome",
+   "value": {
+    "color": "mint_green",
+    "finish": "chrome",
+    "base_hex": "#7FD1AE",
+    "highlight_hex": "#D9F1E7",
+    "shadow_hex": "#395E4E",
+    "label_th": "เขียวมิ้นต์ โครเมียม"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "mint_green color_shift",
+   "value": {
+    "color": "mint_green",
+    "finish": "color_shift",
+    "base_hex": "#7FD1AE",
+    "highlight_hex": "#B2E3CE",
+    "shadow_hex": "#538871",
+    "label_th": "เขียวมิ้นต์ เปลี่ยนสีตามมุม",
+    "shift_hex": "#7C7FDB"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "army_green gloss",
+   "value": {
+    "color": "army_green",
+    "finish": "gloss",
+    "base_hex": "#4B5320",
+    "highlight_hex": "#9CA084",
+    "shadow_hex": "#313615",
+    "label_th": "เขียวทหาร เงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "army_green satin",
+   "value": {
+    "color": "army_green",
+    "finish": "satin",
+    "base_hex": "#4B5320",
+    "highlight_hex": "#787E58",
+    "shadow_hex": "#363C17",
+    "label_th": "เขียวทหาร กึ่งเงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "army_green matte",
+   "value": {
+    "color": "army_green",
+    "finish": "matte",
+    "base_hex": "#4B5320",
+    "highlight_hex": "#61683B",
+    "shadow_hex": "#3C421A",
+    "label_th": "เขียวทหาร ด้าน"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "army_green chrome",
+   "value": {
+    "color": "army_green",
+    "finish": "chrome",
+    "base_hex": "#4B5320",
+    "highlight_hex": "#C9CBBC",
+    "shadow_hex": "#22250E",
+    "label_th": "เขียวทหาร โครเมียม"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "army_green color_shift",
+   "value": {
+    "color": "army_green",
+    "finish": "color_shift",
+    "base_hex": "#4B5320",
+    "highlight_hex": "#939879",
+    "shadow_hex": "#313615",
+    "label_th": "เขียวทหาร เปลี่ยนสีตามมุม",
+    "shift_hex": "#65469B"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "midnight_blue gloss",
+   "value": {
+    "color": "midnight_blue",
+    "finish": "gloss",
+    "base_hex": "#1E2A4A",
+    "highlight_hex": "#838A9B",
+    "shadow_hex": "#141B30",
+    "label_th": "น้ำเงินเที่ยงคืน เงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "midnight_blue satin",
+   "value": {
+    "color": "midnight_blue",
+    "finish": "satin",
+    "base_hex": "#1E2A4A",
+    "highlight_hex": "#565F77",
+    "shadow_hex": "#161E35",
+    "label_th": "น้ำเงินเที่ยงคืน กึ่งเงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "midnight_blue matte",
+   "value": {
+    "color": "midnight_blue",
+    "finish": "matte",
+    "base_hex": "#1E2A4A",
+    "highlight_hex": "#394460",
+    "shadow_hex": "#18223B",
+    "label_th": "น้ำเงินเที่ยงคืน ด้าน"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "midnight_blue chrome",
+   "value": {
+    "color": "midnight_blue",
+    "finish": "chrome",
+    "base_hex": "#1E2A4A",
+    "highlight_hex": "#BCBFC9",
+    "shadow_hex": "#0E1321",
+    "label_th": "น้ำเงินเที่ยงคืน โครเมียม"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "midnight_blue color_shift",
+   "value": {
+    "color": "midnight_blue",
+    "finish": "color_shift",
+    "base_hex": "#1E2A4A",
+    "highlight_hex": "#787F92",
+    "shadow_hex": "#141B30",
+    "label_th": "น้ำเงินเที่ยงคืน เปลี่ยนสีตามมุม",
+    "shift_hex": "#5134AE"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "sky_blue gloss",
+   "value": {
+    "color": "sky_blue",
+    "finish": "gloss",
+    "base_hex": "#7EC8F2",
+    "highlight_hex": "#B8E1F8",
+    "shadow_hex": "#52829D",
+    "label_th": "ฟ้าพาสเทล เงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "sky_blue satin",
+   "value": {
+    "color": "sky_blue",
+    "finish": "satin",
+    "base_hex": "#7EC8F2",
+    "highlight_hex": "#9ED6F5",
+    "shadow_hex": "#5B90AE",
+    "label_th": "ฟ้าพาสเทล กึ่งเงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "sky_blue matte",
+   "value": {
+    "color": "sky_blue",
+    "finish": "matte",
+    "base_hex": "#7EC8F2",
+    "highlight_hex": "#8DCFF4",
+    "shadow_hex": "#65A0C2",
+    "label_th": "ฟ้าพาสเทล ด้าน"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "sky_blue chrome",
+   "value": {
+    "color": "sky_blue",
+    "finish": "chrome",
+    "base_hex": "#7EC8F2",
+    "highlight_hex": "#D8EEFB",
+    "shadow_hex": "#395A6D",
+    "label_th": "ฟ้าพาสเทล โครเมียม"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "sky_blue color_shift",
+   "value": {
+    "color": "sky_blue",
+    "finish": "color_shift",
+    "base_hex": "#7EC8F2",
+    "highlight_hex": "#B2DEF7",
+    "shadow_hex": "#52829D",
+    "label_th": "ฟ้าพาสเทล เปลี่ยนสีตามมุม",
+    "shift_hex": "#7C7BF9"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "cement_grey gloss",
+   "value": {
+    "color": "cement_grey",
+    "finish": "gloss",
+    "base_hex": "#8A8D8F",
+    "highlight_hex": "#BFC0C1",
+    "shadow_hex": "#5A5C5D",
+    "label_th": "เทาซีเมนต์ เงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "cement_grey satin",
+   "value": {
+    "color": "cement_grey",
+    "finish": "satin",
+    "base_hex": "#8A8D8F",
+    "highlight_hex": "#A7AAAB",
+    "shadow_hex": "#636667",
+    "label_th": "เทาซีเมนต์ กึ่งเงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "cement_grey matte",
+   "value": {
+    "color": "cement_grey",
+    "finish": "matte",
+    "base_hex": "#8A8D8F",
+    "highlight_hex": "#989B9C",
+    "shadow_hex": "#6E7172",
+    "label_th": "เทาซีเมนต์ ด้าน"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "cement_grey chrome",
+   "value": {
+    "color": "cement_grey",
+    "finish": "chrome",
+    "base_hex": "#8A8D8F",
+    "highlight_hex": "#DCDDDD",
+    "shadow_hex": "#3E3F40",
+    "label_th": "เทาซีเมนต์ โครเมียม"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "cement_grey color_shift",
+   "value": {
+    "color": "cement_grey",
+    "finish": "color_shift",
+    "base_hex": "#8A8D8F",
+    "highlight_hex": "#B9BBBC",
+    "shadow_hex": "#5A5C5D",
+    "label_th": "เทาซีเมนต์ เปลี่ยนสีตามมุม",
+    "shift_hex": "#8160CD"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "deep_black gloss",
+   "value": {
+    "color": "deep_black",
+    "finish": "gloss",
+    "base_hex": "#1B1B1B",
+    "highlight_hex": "#828282",
+    "shadow_hex": "#121212",
+    "label_th": "ดำ เงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "deep_black satin",
+   "value": {
+    "color": "deep_black",
+    "finish": "satin",
+    "base_hex": "#1B1B1B",
+    "highlight_hex": "#545454",
+    "shadow_hex": "#131313",
+    "label_th": "ดำ กึ่งเงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "deep_black matte",
+   "value": {
+    "color": "deep_black",
+    "finish": "matte",
+    "base_hex": "#1B1B1B",
+    "highlight_hex": "#363636",
+    "shadow_hex": "#161616",
+    "label_th": "ดำ ด้าน"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "deep_black chrome",
+   "value": {
+    "color": "deep_black",
+    "finish": "chrome",
+    "base_hex": "#1B1B1B",
+    "highlight_hex": "#BBBBBB",
+    "shadow_hex": "#0C0C0C",
+    "label_th": "ดำ โครเมียม"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "deep_black color_shift",
+   "value": {
+    "color": "deep_black",
+    "finish": "color_shift",
+    "base_hex": "#1B1B1B",
+    "highlight_hex": "#767676",
+    "shadow_hex": "#121212",
+    "label_th": "ดำ เปลี่ยนสีตามมุม",
+    "shift_hex": "#4F2D98"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "pearl_white gloss",
+   "value": {
+    "color": "pearl_white",
+    "finish": "gloss",
+    "base_hex": "#F2F0EA",
+    "highlight_hex": "#F8F7F3",
+    "shadow_hex": "#9D9C98",
+    "label_th": "ขาวมุก เงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "pearl_white satin",
+   "value": {
+    "color": "pearl_white",
+    "finish": "satin",
+    "base_hex": "#F2F0EA",
+    "highlight_hex": "#F5F4EF",
+    "shadow_hex": "#AEADA8",
+    "label_th": "ขาวมุก กึ่งเงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "pearl_white matte",
+   "value": {
+    "color": "pearl_white",
+    "finish": "matte",
+    "base_hex": "#F2F0EA",
+    "highlight_hex": "#F4F2ED",
+    "shadow_hex": "#C2C0BB",
+    "label_th": "ขาวมุก ด้าน"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "pearl_white chrome",
+   "value": {
+    "color": "pearl_white",
+    "finish": "chrome",
+    "base_hex": "#F2F0EA",
+    "highlight_hex": "#FBFAF9",
+    "shadow_hex": "#6D6C69",
+    "label_th": "ขาวมุก โครเมียม"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "pearl_white color_shift",
+   "value": {
+    "color": "pearl_white",
+    "finish": "color_shift",
+    "base_hex": "#F2F0EA",
+    "highlight_hex": "#F7F6F2",
+    "shadow_hex": "#9D9C98",
+    "label_th": "ขาวมุก เปลี่ยนสีตามมุม",
+    "shift_hex": "#B08DF6"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "candy_red gloss",
+   "value": {
+    "color": "candy_red",
+    "finish": "gloss",
+    "base_hex": "#C8102E",
+    "highlight_hex": "#E17C8C",
+    "shadow_hex": "#820A1E",
+    "label_th": "แดงแคนดี้ เงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "candy_red satin",
+   "value": {
+    "color": "candy_red",
+    "finish": "satin",
+    "base_hex": "#C8102E",
+    "highlight_hex": "#D64C62",
+    "shadow_hex": "#900C21",
+    "label_th": "แดงแคนดี้ กึ่งเงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "candy_red matte",
+   "value": {
+    "color": "candy_red",
+    "finish": "matte",
+    "base_hex": "#C8102E",
+    "highlight_hex": "#CF2D47",
+    "shadow_hex": "#A00D25",
+    "label_th": "แดงแคนดี้ ด้าน"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "candy_red chrome",
+   "value": {
+    "color": "candy_red",
+    "finish": "chrome",
+    "base_hex": "#C8102E",
+    "highlight_hex": "#EEB7C0",
+    "shadow_hex": "#5A0715",
+    "label_th": "แดงแคนดี้ โครเมียม"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "candy_red color_shift",
+   "value": {
+    "color": "candy_red",
+    "finish": "color_shift",
+    "base_hex": "#C8102E",
+    "highlight_hex": "#DE7082",
+    "shadow_hex": "#820A1E",
+    "label_th": "แดงแคนดี้ เปลี่ยนสีตามมุม",
+    "shift_hex": "#9D28A1"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "sunset_orange gloss",
+   "value": {
+    "color": "sunset_orange",
+    "finish": "gloss",
+    "base_hex": "#FF7A1A",
+    "highlight_hex": "#FFB681",
+    "shadow_hex": "#A64F11",
+    "label_th": "ส้มซันเซ็ต เงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "sunset_orange satin",
+   "value": {
+    "color": "sunset_orange",
+    "finish": "satin",
+    "base_hex": "#FF7A1A",
+    "highlight_hex": "#FF9B53",
+    "shadow_hex": "#B85813",
+    "label_th": "ส้มซันเซ็ต กึ่งเงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "sunset_orange matte",
+   "value": {
+    "color": "sunset_orange",
+    "finish": "matte",
+    "base_hex": "#FF7A1A",
+    "highlight_hex": "#FF8A35",
+    "shadow_hex": "#CC6215",
+    "label_th": "ส้มซันเซ็ต ด้าน"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "sunset_orange chrome",
+   "value": {
+    "color": "sunset_orange",
+    "finish": "chrome",
+    "base_hex": "#FF7A1A",
+    "highlight_hex": "#FFD7BA",
+    "shadow_hex": "#73370C",
+    "label_th": "ส้มซันเซ็ต โครเมียม"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "sunset_orange color_shift",
+   "value": {
+    "color": "sunset_orange",
+    "finish": "color_shift",
+    "base_hex": "#FF7A1A",
+    "highlight_hex": "#FFAF76",
+    "shadow_hex": "#A64F11",
+    "label_th": "ส้มซันเซ็ต เปลี่ยนสีตามมุม",
+    "shift_hex": "#B65898"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "lavender gloss",
+   "value": {
+    "color": "lavender",
+    "finish": "gloss",
+    "base_hex": "#B9A6E8",
+    "highlight_hex": "#D8CEF2",
+    "shadow_hex": "#786C97",
+    "label_th": "ม่วงลาเวนเดอร์ เงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "lavender satin",
+   "value": {
+    "color": "lavender",
+    "finish": "satin",
+    "base_hex": "#B9A6E8",
+    "highlight_hex": "#CABCEE",
+    "shadow_hex": "#8578A7",
+    "label_th": "ม่วงลาเวนเดอร์ กึ่งเงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "lavender matte",
+   "value": {
+    "color": "lavender",
+    "finish": "matte",
+    "base_hex": "#B9A6E8",
+    "highlight_hex": "#C1B1EB",
+    "shadow_hex": "#9485BA",
+    "label_th": "ม่วงลาเวนเดอร์ ด้าน"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "lavender chrome",
+   "value": {
+    "color": "lavender",
+    "finish": "chrome",
+    "base_hex": "#B9A6E8",
+    "highlight_hex": "#EAE4F8",
+    "shadow_hex": "#534B68",
+    "label_th": "ม่วงลาเวนเดอร์ โครเมียม"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "lavender color_shift",
+   "value": {
+    "color": "lavender",
+    "finish": "color_shift",
+    "base_hex": "#B9A6E8",
+    "highlight_hex": "#D5CAF1",
+    "shadow_hex": "#786C97",
+    "label_th": "ม่วงลาเวนเดอร์ เปลี่ยนสีตามมุม",
+    "shift_hex": "#966CF5"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "hot_pink gloss",
+   "value": {
+    "color": "hot_pink",
+    "finish": "gloss",
+    "base_hex": "#FF4FA3",
+    "highlight_hex": "#FF9ECC",
+    "shadow_hex": "#A6336A",
+    "label_th": "ชมพูช็อก เงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "hot_pink satin",
+   "value": {
+    "color": "hot_pink",
+    "finish": "satin",
+    "base_hex": "#FF4FA3",
+    "highlight_hex": "#FF7BBA",
+    "shadow_hex": "#B83975",
+    "label_th": "ชมพูช็อก กึ่งเงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "hot_pink matte",
+   "value": {
+    "color": "hot_pink",
+    "finish": "matte",
+    "base_hex": "#FF4FA3",
+    "highlight_hex": "#FF64AE",
+    "shadow_hex": "#CC3F82",
+    "label_th": "ชมพูช็อก ด้าน"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "hot_pink chrome",
+   "value": {
+    "color": "hot_pink",
+    "finish": "chrome",
+    "base_hex": "#FF4FA3",
+    "highlight_hex": "#FFCAE3",
+    "shadow_hex": "#732449",
+    "label_th": "ชมพูช็อก โครเมียม"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "hot_pink color_shift",
+   "value": {
+    "color": "hot_pink",
+    "finish": "color_shift",
+    "base_hex": "#FF4FA3",
+    "highlight_hex": "#FF95C8",
+    "shadow_hex": "#A6336A",
+    "label_th": "ชมพูช็อก เปลี่ยนสีตามมุม",
+    "shift_hex": "#B645D6"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "champagne_gold gloss",
+   "value": {
+    "color": "champagne_gold",
+    "finish": "gloss",
+    "base_hex": "#D4B483",
+    "highlight_hex": "#E7D6BB",
+    "shadow_hex": "#8A7555",
+    "label_th": "ทองแชมเปญ เงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "champagne_gold satin",
+   "value": {
+    "color": "champagne_gold",
+    "finish": "satin",
+    "base_hex": "#D4B483",
+    "highlight_hex": "#DFC7A2",
+    "shadow_hex": "#99825E",
+    "label_th": "ทองแชมเปญ กึ่งเงา"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "champagne_gold matte",
+   "value": {
+    "color": "champagne_gold",
+    "finish": "matte",
+    "base_hex": "#D4B483",
+    "highlight_hex": "#D9BD92",
+    "shadow_hex": "#AA9069",
+    "label_th": "ทองแชมเปญ ด้าน"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "champagne_gold chrome",
+   "value": {
+    "color": "champagne_gold",
+    "finish": "chrome",
+    "base_hex": "#D4B483",
+    "highlight_hex": "#F2E8DA",
+    "shadow_hex": "#5F513B",
+    "label_th": "ทองแชมเปญ โครเมียม"
+   }
+  },
+  {
+   "def": "FinishSwatch",
+   "note": "champagne_gold color_shift",
+   "value": {
+    "color": "champagne_gold",
+    "finish": "color_shift",
+    "base_hex": "#D4B483",
+    "highlight_hex": "#E5D2B5",
+    "shadow_hex": "#8A7555",
+    "label_th": "ทองแชมเปญ เปลี่ยนสีตามมุม",
+    "shift_hex": "#A272C7"
+   }
+  },
+  {
+   "def": "WrapSpec",
+   "note": "eco_car mint_green matte two_tone",
+   "value": {
+    "vehicle": "eco_car",
+    "color": "mint_green",
+    "finish": "matte",
+    "coverage": "two_tone",
+    "accent_color": "deep_black",
+    "swatch": {
+     "color": "mint_green",
+     "finish": "matte",
+     "base_hex": "#7FD1AE",
+     "highlight_hex": "#8ED7B8",
+     "shadow_hex": "#66A78B",
+     "label_th": "เขียวมิ้นต์ ด้าน"
+    },
+    "main_color_change": true,
+    "image_prompt": "same car from the photo, same angle and background; body panels, with roof and mirror caps in the accent colour wrapped in mint green matte vinyl, accent deep black gloss; keep headlights, taillights, windows and licence plate area unchanged and uncovered; plate blurred; photorealistic 4:5; no people, no logos, no brand badges added",
+    "title_th": "อีโคคาร์ เขียวมิ้นต์ ด้าน + ดำ",
+    "disclaimer_th": "ภาพเป็นภาพจำลอง สีจริงต่างตามแสงและเกรดฟิล์ม ราคาเป็นช่วงประมาณ ไม่ใช่ใบเสนอราคา"
+   }
+  },
+  {
+   "def": "LegalCheck",
+   "note": "eco_car mint_green matte two_tone",
+   "value": {
+    "level": "action",
+    "items": [
+     {
+      "code": "dlt_color",
+      "level": "action",
+      "text_th": "เปลี่ยนสีหลักของรถ โดยทั่วไปต้องแจ้งเปลี่ยนสีในเล่มทะเบียนกับกรมการขนส่งทางบก ตรวจเอกสาร ค่าธรรมเนียม และกำหนดเวลาล่าสุดกับสำนักงานขนส่งก่อนทำ"
+     },
+     {
+      "code": "insurance",
+      "level": "action",
+      "text_th": "แจ้งบริษัทประกันเรื่องเปลี่ยนสี/ติดฟิล์ม เพื่อไม่ให้มีปัญหาตอนเคลม"
+     },
+     {
+      "code": "lights_plate",
+      "level": "info",
+      "text_th": "ห้ามติดฟิล์มทับไฟหน้า ไฟท้าย ไฟเลี้ยว และป้ายทะเบียน"
+     }
+    ],
+    "note_th": "ข้อมูลทั่วไป ไม่ใช่คำแนะนำทางกฎหมาย ตรวจขั้นตอนล่าสุดกับสำนักงานขนส่งและบริษัทประกันก่อนทำ"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "eco_car mint_green matte two_tone",
+   "value": {
+    "vehicle": "eco_car",
+    "job": "wrap",
+    "low_baht": 19000,
+    "high_baht": 38000,
+    "quote_baht": null,
+    "verdict": "no_quote",
+    "verdict_th": "ช่วงราคาประมาณ ฿19,000–฿38,000",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "WrapSpec",
+   "note": "sedan midnight_blue satin full",
+   "value": {
+    "vehicle": "sedan",
+    "color": "midnight_blue",
+    "finish": "satin",
+    "coverage": "full",
+    "accent_color": null,
+    "swatch": {
+     "color": "midnight_blue",
+     "finish": "satin",
+     "base_hex": "#1E2A4A",
+     "highlight_hex": "#565F77",
+     "shadow_hex": "#161E35",
+     "label_th": "น้ำเงินเที่ยงคืน กึ่งเงา"
+    },
+    "main_color_change": true,
+    "image_prompt": "same car from the photo, same angle and background; entire body panels wrapped in midnight blue satin vinyl; keep headlights, taillights, windows and licence plate area unchanged and uncovered; plate blurred; photorealistic 4:5; no people, no logos, no brand badges added",
+    "title_th": "รถเก๋ง น้ำเงินเที่ยงคืน กึ่งเงา",
+    "disclaimer_th": "ภาพเป็นภาพจำลอง สีจริงต่างตามแสงและเกรดฟิล์ม ราคาเป็นช่วงประมาณ ไม่ใช่ใบเสนอราคา"
+   }
+  },
+  {
+   "def": "LegalCheck",
+   "note": "sedan midnight_blue satin full",
+   "value": {
+    "level": "action",
+    "items": [
+     {
+      "code": "dlt_color",
+      "level": "action",
+      "text_th": "เปลี่ยนสีหลักของรถ โดยทั่วไปต้องแจ้งเปลี่ยนสีในเล่มทะเบียนกับกรมการขนส่งทางบก ตรวจเอกสาร ค่าธรรมเนียม และกำหนดเวลาล่าสุดกับสำนักงานขนส่งก่อนทำ"
+     },
+     {
+      "code": "insurance",
+      "level": "action",
+      "text_th": "แจ้งบริษัทประกันเรื่องเปลี่ยนสี/ติดฟิล์ม เพื่อไม่ให้มีปัญหาตอนเคลม"
+     },
+     {
+      "code": "lights_plate",
+      "level": "info",
+      "text_th": "ห้ามติดฟิล์มทับไฟหน้า ไฟท้าย ไฟเลี้ยว และป้ายทะเบียน"
+     }
+    ],
+    "note_th": "ข้อมูลทั่วไป ไม่ใช่คำแนะนำทางกฎหมาย ตรวจขั้นตอนล่าสุดกับสำนักงานขนส่งและบริษัทประกันก่อนทำ"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "sedan midnight_blue satin full",
+   "value": {
+    "vehicle": "sedan",
+    "job": "wrap",
+    "low_baht": 22000,
+    "high_baht": 44000,
+    "quote_baht": null,
+    "verdict": "no_quote",
+    "verdict_th": "ช่วงราคาประมาณ ฿22,000–฿44,000",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "WrapSpec",
+   "note": "suv army_green matte full",
+   "value": {
+    "vehicle": "suv",
+    "color": "army_green",
+    "finish": "matte",
+    "coverage": "full",
+    "accent_color": null,
+    "swatch": {
+     "color": "army_green",
+     "finish": "matte",
+     "base_hex": "#4B5320",
+     "highlight_hex": "#61683B",
+     "shadow_hex": "#3C421A",
+     "label_th": "เขียวทหาร ด้าน"
+    },
+    "main_color_change": true,
+    "image_prompt": "same car from the photo, same angle and background; entire body panels wrapped in army green matte vinyl; keep headlights, taillights, windows and licence plate area unchanged and uncovered; plate blurred; photorealistic 4:5; no people, no logos, no brand badges added",
+    "title_th": "SUV / PPV เขียวทหาร ด้าน",
+    "disclaimer_th": "ภาพเป็นภาพจำลอง สีจริงต่างตามแสงและเกรดฟิล์ม ราคาเป็นช่วงประมาณ ไม่ใช่ใบเสนอราคา"
+   }
+  },
+  {
+   "def": "LegalCheck",
+   "note": "suv army_green matte full",
+   "value": {
+    "level": "action",
+    "items": [
+     {
+      "code": "dlt_color",
+      "level": "action",
+      "text_th": "เปลี่ยนสีหลักของรถ โดยทั่วไปต้องแจ้งเปลี่ยนสีในเล่มทะเบียนกับกรมการขนส่งทางบก ตรวจเอกสาร ค่าธรรมเนียม และกำหนดเวลาล่าสุดกับสำนักงานขนส่งก่อนทำ"
+     },
+     {
+      "code": "insurance",
+      "level": "action",
+      "text_th": "แจ้งบริษัทประกันเรื่องเปลี่ยนสี/ติดฟิล์ม เพื่อไม่ให้มีปัญหาตอนเคลม"
+     },
+     {
+      "code": "lights_plate",
+      "level": "info",
+      "text_th": "ห้ามติดฟิล์มทับไฟหน้า ไฟท้าย ไฟเลี้ยว และป้ายทะเบียน"
+     }
+    ],
+    "note_th": "ข้อมูลทั่วไป ไม่ใช่คำแนะนำทางกฎหมาย ตรวจขั้นตอนล่าสุดกับสำนักงานขนส่งและบริษัทประกันก่อนทำ"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "suv army_green matte full",
+   "value": {
+    "vehicle": "suv",
+    "job": "wrap",
+    "low_baht": 28700,
+    "high_baht": 57500,
+    "quote_baht": null,
+    "verdict": "no_quote",
+    "verdict_th": "ช่วงราคาประมาณ ฿28,700–฿57,500",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "WrapSpec",
+   "note": "pickup sunset_orange gloss stripes",
+   "value": {
+    "vehicle": "pickup",
+    "color": "sunset_orange",
+    "finish": "gloss",
+    "coverage": "stripes",
+    "accent_color": null,
+    "swatch": {
+     "color": "sunset_orange",
+     "finish": "gloss",
+     "base_hex": "#FF7A1A",
+     "highlight_hex": "#FFB681",
+     "shadow_hex": "#A64F11",
+     "label_th": "ส้มซันเซ็ต เงา"
+    },
+    "main_color_change": false,
+    "image_prompt": "same car from the photo, same angle and background; two racing stripes over hood and roof wrapped in sunset orange gloss vinyl; keep headlights, taillights, windows and licence plate area unchanged and uncovered; plate blurred; photorealistic 4:5; no people, no logos, no brand badges added",
+    "title_th": "กระบะ ส้มซันเซ็ต เงา",
+    "disclaimer_th": "ภาพเป็นภาพจำลอง สีจริงต่างตามแสงและเกรดฟิล์ม ราคาเป็นช่วงประมาณ ไม่ใช่ใบเสนอราคา"
+   }
+  },
+  {
+   "def": "LegalCheck",
+   "note": "pickup sunset_orange gloss stripes",
+   "value": {
+    "level": "info",
+    "items": [
+     {
+      "code": "dlt_color",
+      "level": "info",
+      "text_th": "ตกแต่งบางส่วน สีหลักไม่เปลี่ยน มักไม่ต้องแก้เล่ม แต่ถ้าไม่แน่ใจสอบถามสำนักงานขนส่ง"
+     },
+     {
+      "code": "lights_plate",
+      "level": "info",
+      "text_th": "ห้ามติดฟิล์มทับไฟหน้า ไฟท้าย ไฟเลี้ยว และป้ายทะเบียน"
+     }
+    ],
+    "note_th": "ข้อมูลทั่วไป ไม่ใช่คำแนะนำทางกฎหมาย ตรวจขั้นตอนล่าสุดกับสำนักงานขนส่งและบริษัทประกันก่อนทำ"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "pickup sunset_orange gloss stripes",
+   "value": {
+    "vehicle": "pickup",
+    "job": "wrap",
+    "low_baht": 2200,
+    "high_baht": 4500,
+    "quote_baht": null,
+    "verdict": "no_quote",
+    "verdict_th": "ช่วงราคาประมาณ ฿2,200–฿4,500",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "WrapSpec",
+   "note": "big_bike candy_red gloss full",
+   "value": {
+    "vehicle": "big_bike",
+    "color": "candy_red",
+    "finish": "gloss",
+    "coverage": "full",
+    "accent_color": null,
+    "swatch": {
+     "color": "candy_red",
+     "finish": "gloss",
+     "base_hex": "#C8102E",
+     "highlight_hex": "#E17C8C",
+     "shadow_hex": "#820A1E",
+     "label_th": "แดงแคนดี้ เงา"
+    },
+    "main_color_change": true,
+    "image_prompt": "same bike from the photo, same angle and background; entire body panels wrapped in candy red gloss vinyl; keep headlights, taillights, windows and licence plate area unchanged and uncovered; plate blurred; photorealistic 4:5; no people, no logos, no brand badges added",
+    "title_th": "บิ๊กไบค์ แดงแคนดี้ เงา",
+    "disclaimer_th": "ภาพเป็นภาพจำลอง สีจริงต่างตามแสงและเกรดฟิล์ม ราคาเป็นช่วงประมาณ ไม่ใช่ใบเสนอราคา"
+   }
+  },
+  {
+   "def": "LegalCheck",
+   "note": "big_bike candy_red gloss full",
+   "value": {
+    "level": "action",
+    "items": [
+     {
+      "code": "dlt_color",
+      "level": "action",
+      "text_th": "เปลี่ยนสีหลักของรถ โดยทั่วไปต้องแจ้งเปลี่ยนสีในเล่มทะเบียนกับกรมการขนส่งทางบก ตรวจเอกสาร ค่าธรรมเนียม และกำหนดเวลาล่าสุดกับสำนักงานขนส่งก่อนทำ"
+     },
+     {
+      "code": "insurance",
+      "level": "action",
+      "text_th": "แจ้งบริษัทประกันเรื่องเปลี่ยนสี/ติดฟิล์ม เพื่อไม่ให้มีปัญหาตอนเคลม"
+     },
+     {
+      "code": "lights_plate",
+      "level": "info",
+      "text_th": "ห้ามติดฟิล์มทับไฟหน้า ไฟท้าย ไฟเลี้ยว และป้ายทะเบียน"
+     }
+    ],
+    "note_th": "ข้อมูลทั่วไป ไม่ใช่คำแนะนำทางกฎหมาย ตรวจขั้นตอนล่าสุดกับสำนักงานขนส่งและบริษัทประกันก่อนทำ"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "big_bike candy_red gloss full",
+   "value": {
+    "vehicle": "big_bike",
+    "job": "wrap",
+    "low_baht": 5000,
+    "high_baht": 12000,
+    "quote_baht": null,
+    "verdict": "no_quote",
+    "verdict_th": "ช่วงราคาประมาณ ฿5,000–฿12,000",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "WrapSpec",
+   "note": "scooter lavender gloss full",
+   "value": {
+    "vehicle": "scooter",
+    "color": "lavender",
+    "finish": "gloss",
+    "coverage": "full",
+    "accent_color": null,
+    "swatch": {
+     "color": "lavender",
+     "finish": "gloss",
+     "base_hex": "#B9A6E8",
+     "highlight_hex": "#D8CEF2",
+     "shadow_hex": "#786C97",
+     "label_th": "ม่วงลาเวนเดอร์ เงา"
+    },
+    "main_color_change": true,
+    "image_prompt": "same bike from the photo, same angle and background; entire body panels wrapped in lavender gloss vinyl; keep headlights, taillights, windows and licence plate area unchanged and uncovered; plate blurred; photorealistic 4:5; no people, no logos, no brand badges added",
+    "title_th": "สกู๊ตเตอร์ / ออโต้ ม่วงลาเวนเดอร์ เงา",
+    "disclaimer_th": "ภาพเป็นภาพจำลอง สีจริงต่างตามแสงและเกรดฟิล์ม ราคาเป็นช่วงประมาณ ไม่ใช่ใบเสนอราคา"
+   }
+  },
+  {
+   "def": "LegalCheck",
+   "note": "scooter lavender gloss full",
+   "value": {
+    "level": "action",
+    "items": [
+     {
+      "code": "dlt_color",
+      "level": "action",
+      "text_th": "เปลี่ยนสีหลักของรถ โดยทั่วไปต้องแจ้งเปลี่ยนสีในเล่มทะเบียนกับกรมการขนส่งทางบก ตรวจเอกสาร ค่าธรรมเนียม และกำหนดเวลาล่าสุดกับสำนักงานขนส่งก่อนทำ"
+     },
+     {
+      "code": "insurance",
+      "level": "action",
+      "text_th": "แจ้งบริษัทประกันเรื่องเปลี่ยนสี/ติดฟิล์ม เพื่อไม่ให้มีปัญหาตอนเคลม"
+     },
+     {
+      "code": "lights_plate",
+      "level": "info",
+      "text_th": "ห้ามติดฟิล์มทับไฟหน้า ไฟท้าย ไฟเลี้ยว และป้ายทะเบียน"
+     }
+    ],
+    "note_th": "ข้อมูลทั่วไป ไม่ใช่คำแนะนำทางกฎหมาย ตรวจขั้นตอนล่าสุดกับสำนักงานขนส่งและบริษัทประกันก่อนทำ"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "scooter lavender gloss full",
+   "value": {
+    "vehicle": "scooter",
+    "job": "wrap",
+    "low_baht": 2500,
+    "high_baht": 6000,
+    "quote_baht": null,
+    "verdict": "no_quote",
+    "verdict_th": "ช่วงราคาประมาณ ฿2,500–฿6,000",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "WrapSpec",
+   "note": "sedan cement_grey chrome full",
+   "value": {
+    "vehicle": "sedan",
+    "color": "cement_grey",
+    "finish": "chrome",
+    "coverage": "full",
+    "accent_color": null,
+    "swatch": {
+     "color": "cement_grey",
+     "finish": "chrome",
+     "base_hex": "#8A8D8F",
+     "highlight_hex": "#DCDDDD",
+     "shadow_hex": "#3E3F40",
+     "label_th": "เทาซีเมนต์ โครเมียม"
+    },
+    "main_color_change": false,
+    "image_prompt": "same car from the photo, same angle and background; entire body panels wrapped in cement grey chrome vinyl; keep headlights, taillights, windows and licence plate area unchanged and uncovered; plate blurred; photorealistic 4:5; no people, no logos, no brand badges added",
+    "title_th": "รถเก๋ง เทาซีเมนต์ โครเมียม",
+    "disclaimer_th": "ภาพเป็นภาพจำลอง สีจริงต่างตามแสงและเกรดฟิล์ม ราคาเป็นช่วงประมาณ ไม่ใช่ใบเสนอราคา"
+   }
+  },
+  {
+   "def": "LegalCheck",
+   "note": "sedan cement_grey chrome full",
+   "value": {
+    "level": "warn",
+    "items": [
+     {
+      "code": "dlt_color",
+      "level": "info",
+      "text_th": "ตกแต่งบางส่วน สีหลักไม่เปลี่ยน มักไม่ต้องแก้เล่ม แต่ถ้าไม่แน่ใจสอบถามสำนักงานขนส่ง"
+     },
+     {
+      "code": "reflective",
+      "level": "warn",
+      "text_th": "ผิวโครเมียม/สะท้อนแสงมากอาจแยงตาผู้อื่นและอาจติดข้อจำกัด ตรวจกับขนส่งก่อนทำทั้งคัน"
+     },
+     {
+      "code": "lights_plate",
+      "level": "info",
+      "text_th": "ห้ามติดฟิล์มทับไฟหน้า ไฟท้าย ไฟเลี้ยว และป้ายทะเบียน"
+     }
+    ],
+    "note_th": "ข้อมูลทั่วไป ไม่ใช่คำแนะนำทางกฎหมาย ตรวจขั้นตอนล่าสุดกับสำนักงานขนส่งและบริษัทประกันก่อนทำ"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "sedan cement_grey chrome full",
+   "value": {
+    "vehicle": "sedan",
+    "job": "wrap",
+    "low_baht": 44000,
+    "high_baht": 88000,
+    "quote_baht": null,
+    "verdict": "no_quote",
+    "verdict_th": "ช่วงราคาประมาณ ฿44,000–฿88,000",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "WrapSpec",
+   "note": "eco_car hot_pink color_shift roof",
+   "value": {
+    "vehicle": "eco_car",
+    "color": "hot_pink",
+    "finish": "color_shift",
+    "coverage": "roof",
+    "accent_color": null,
+    "swatch": {
+     "color": "hot_pink",
+     "finish": "color_shift",
+     "base_hex": "#FF4FA3",
+     "highlight_hex": "#FF95C8",
+     "shadow_hex": "#A6336A",
+     "label_th": "ชมพูช็อก เปลี่ยนสีตามมุม",
+     "shift_hex": "#B645D6"
+    },
+    "main_color_change": false,
+    "image_prompt": "same car from the photo, same angle and background; roof only wrapped in hot pink color shift vinyl; keep headlights, taillights, windows and licence plate area unchanged and uncovered; plate blurred; photorealistic 4:5; no people, no logos, no brand badges added",
+    "title_th": "อีโคคาร์ ชมพูช็อก เปลี่ยนสีตามมุม",
+    "disclaimer_th": "ภาพเป็นภาพจำลอง สีจริงต่างตามแสงและเกรดฟิล์ม ราคาเป็นช่วงประมาณ ไม่ใช่ใบเสนอราคา"
+   }
+  },
+  {
+   "def": "LegalCheck",
+   "note": "eco_car hot_pink color_shift roof",
+   "value": {
+    "level": "info",
+    "items": [
+     {
+      "code": "dlt_color",
+      "level": "info",
+      "text_th": "ตกแต่งบางส่วน สีหลักไม่เปลี่ยน มักไม่ต้องแก้เล่ม แต่ถ้าไม่แน่ใจสอบถามสำนักงานขนส่ง"
+     },
+     {
+      "code": "lights_plate",
+      "level": "info",
+      "text_th": "ห้ามติดฟิล์มทับไฟหน้า ไฟท้าย ไฟเลี้ยว และป้ายทะเบียน"
+     }
+    ],
+    "note_th": "ข้อมูลทั่วไป ไม่ใช่คำแนะนำทางกฎหมาย ตรวจขั้นตอนล่าสุดกับสำนักงานขนส่งและบริษัทประกันก่อนทำ"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "eco_car hot_pink color_shift roof",
+   "value": {
+    "vehicle": "eco_car",
+    "job": "wrap",
+    "low_baht": 3400,
+    "high_baht": 6800,
+    "quote_baht": null,
+    "verdict": "no_quote",
+    "verdict_th": "ช่วงราคาประมาณ ฿3,400–฿6,800",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "WrapSpec",
+   "note": "suv pearl_white satin two_tone",
+   "value": {
+    "vehicle": "suv",
+    "color": "pearl_white",
+    "finish": "satin",
+    "coverage": "two_tone",
+    "accent_color": "champagne_gold",
+    "swatch": {
+     "color": "pearl_white",
+     "finish": "satin",
+     "base_hex": "#F2F0EA",
+     "highlight_hex": "#F5F4EF",
+     "shadow_hex": "#AEADA8",
+     "label_th": "ขาวมุก กึ่งเงา"
+    },
+    "main_color_change": false,
+    "image_prompt": "same car from the photo, same angle and background; body panels, with roof and mirror caps in the accent colour wrapped in pearl white satin vinyl, accent champagne gold gloss; keep headlights, taillights, windows and licence plate area unchanged and uncovered; plate blurred; photorealistic 4:5; no people, no logos, no brand badges added",
+    "title_th": "SUV / PPV ขาวมุก กึ่งเงา + ทองแชมเปญ",
+    "disclaimer_th": "ภาพเป็นภาพจำลอง สีจริงต่างตามแสงและเกรดฟิล์ม ราคาเป็นช่วงประมาณ ไม่ใช่ใบเสนอราคา"
+   }
+  },
+  {
+   "def": "LegalCheck",
+   "note": "suv pearl_white satin two_tone",
+   "value": {
+    "level": "info",
+    "items": [
+     {
+      "code": "dlt_color",
+      "level": "info",
+      "text_th": "ตกแต่งบางส่วน สีหลักไม่เปลี่ยน มักไม่ต้องแก้เล่ม แต่ถ้าไม่แน่ใจสอบถามสำนักงานขนส่ง"
+     },
+     {
+      "code": "lights_plate",
+      "level": "info",
+      "text_th": "ห้ามติดฟิล์มทับไฟหน้า ไฟท้าย ไฟเลี้ยว และป้ายทะเบียน"
+     }
+    ],
+    "note_th": "ข้อมูลทั่วไป ไม่ใช่คำแนะนำทางกฎหมาย ตรวจขั้นตอนล่าสุดกับสำนักงานขนส่งและบริษัทประกันก่อนทำ"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "suv pearl_white satin two_tone",
+   "value": {
+    "vehicle": "suv",
+    "job": "wrap",
+    "low_baht": 30300,
+    "high_baht": 60500,
+    "quote_baht": null,
+    "verdict": "no_quote",
+    "verdict_th": "ช่วงราคาประมาณ ฿30,300–฿60,500",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "LegalItem",
+   "note": "dlt_color",
+   "value": {
+    "code": "dlt_color",
+    "level": "action",
+    "text_th": "เปลี่ยนสีหลักของรถ โดยทั่วไปต้องแจ้งเปลี่ยนสีในเล่มทะเบียนกับกรมการขนส่งทางบก ตรวจเอกสาร ค่าธรรมเนียม และกำหนดเวลาล่าสุดกับสำนักงานขนส่งก่อนทำ"
+   }
+  },
+  {
+   "def": "LegalItem",
+   "note": "insurance",
+   "value": {
+    "code": "insurance",
+    "level": "action",
+    "text_th": "แจ้งบริษัทประกันเรื่องเปลี่ยนสี/ติดฟิล์ม เพื่อไม่ให้มีปัญหาตอนเคลม"
+   }
+  },
+  {
+   "def": "LegalItem",
+   "note": "lights_plate",
+   "value": {
+    "code": "lights_plate",
+    "level": "info",
+    "text_th": "ห้ามติดฟิล์มทับไฟหน้า ไฟท้าย ไฟเลี้ยว และป้ายทะเบียน"
+   }
+  },
+  {
+   "def": "RimStickerSpec",
+   "note": "eco_car",
+   "value": {
+    "vehicle": "eco_car",
+    "rim_style": "five_spoke",
+    "rim_color": "black",
+    "rim_inch": 15,
+    "stickers": [
+     "side_stripe"
+    ],
+    "blocked_areas": [],
+    "ok": true,
+    "image_prompt": "same vehicle and angle; 15-inch five spoke rims in black; decals: side stripe; nothing over lights, windows or licence plate; no brand logos",
+    "note_th": "ตำแหน่งติดตั้งปลอดภัย"
+   }
+  },
+  {
+   "def": "RimStickerSpec",
+   "note": "pickup",
+   "value": {
+    "vehicle": "pickup",
+    "rim_style": "deep_dish",
+    "rim_color": "bronze",
+    "rim_inch": 17,
+    "stickers": [
+     "hood_stripes",
+     "kanok"
+    ],
+    "blocked_areas": [],
+    "ok": true,
+    "image_prompt": "same vehicle and angle; 17-inch deep dish rims in bronze; decals: hood stripes, kanok; nothing over lights, windows or licence plate; no brand logos",
+    "note_th": "ตำแหน่งติดตั้งปลอดภัย"
+   }
+  },
+  {
+   "def": "RimStickerSpec",
+   "note": "scooter",
+   "value": {
+    "vehicle": "scooter",
+    "rim_style": "mesh",
+    "rim_color": "gold",
+    "rim_inch": 14,
+    "stickers": [
+     "race_number"
+    ],
+    "blocked_areas": [],
+    "ok": true,
+    "image_prompt": "same vehicle and angle; 14-inch mesh rims in gold; decals: race number; nothing over lights, windows or licence plate; no brand logos",
+    "note_th": "ตำแหน่งติดตั้งปลอดภัย"
+   }
+  },
+  {
+   "def": "RimStickerSpec",
+   "note": "sedan",
+   "value": {
+    "vehicle": "sedan",
+    "rim_style": null,
+    "rim_color": null,
+    "rim_inch": 17,
+    "stickers": [
+     "checker"
+    ],
+    "blocked_areas": [
+     "headlight",
+     "plate"
+    ],
+    "ok": false,
+    "image_prompt": "same vehicle and angle; decals: checker; nothing over lights, windows or licence plate; no brand logos",
+    "note_th": "ห้ามติดทับไฟหน้า/ไฟท้าย/ป้ายทะเบียน/กระจกหน้า"
+   }
+  },
+  {
+   "def": "RimStickerSpec",
+   "note": "suv",
+   "value": {
+    "vehicle": "suv",
+    "rim_style": "multi_spoke",
+    "rim_color": "gunmetal",
+    "rim_inch": 18,
+    "stickers": [],
+    "blocked_areas": [],
+    "ok": true,
+    "image_prompt": "same vehicle and angle; 18-inch multi spoke rims in gunmetal; nothing over lights, windows or licence plate; no brand logos",
+    "note_th": "ตำแหน่งติดตั้งปลอดภัย"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "demo quote 24k",
+   "value": {
+    "vehicle": "eco_car",
+    "job": "wrap",
+    "low_baht": 19000,
+    "high_baht": 38000,
+    "quote_baht": 24000,
+    "verdict": "fair",
+    "verdict_th": "฿24,000 → อยู่ในช่วงราคาประมาณ สมเหตุสมผล",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "demo rims",
+   "value": {
+    "vehicle": "eco_car",
+    "job": "rims",
+    "low_baht": 9000,
+    "high_baht": 27000,
+    "quote_baht": null,
+    "verdict": "no_quote",
+    "verdict_th": "ช่วงราคาประมาณ ฿9,000–฿27,000",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "sedan wrap 12000",
+   "value": {
+    "vehicle": "sedan",
+    "job": "wrap",
+    "low_baht": 20000,
+    "high_baht": 40000,
+    "quote_baht": 12000,
+    "verdict": "suspicious_low",
+    "verdict_th": "฿12,000 → ถูกผิดปกติ ถามเกรดฟิล์ม การรับประกัน และการลอกออกให้ชัด",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "sedan wrap 44000",
+   "value": {
+    "vehicle": "sedan",
+    "job": "wrap",
+    "low_baht": 20000,
+    "high_baht": 40000,
+    "quote_baht": 44000,
+    "verdict": "high",
+    "verdict_th": "฿44,000 → สูงกว่าช่วงนิดหน่อย ลองขอใบเสนอราคาเทียบ",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "scooter wrap 9000",
+   "value": {
+    "vehicle": "scooter",
+    "job": "wrap",
+    "low_baht": 2500,
+    "high_baht": 6000,
+    "quote_baht": 9000,
+    "verdict": "too_high",
+    "verdict_th": "฿9,000 → แพงกว่าช่วงปกติมาก ขอใบเสนอราคาเทียบ 2–3 ร้าน",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "sedan paint 38000",
+   "value": {
+    "vehicle": "sedan",
+    "job": "paint",
+    "low_baht": 25000,
+    "high_baht": 60000,
+    "quote_baht": 38000,
+    "verdict": "fair",
+    "verdict_th": "฿38,000 → อยู่ในช่วงราคาประมาณ สมเหตุสมผล",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "big_bike rims None",
+   "value": {
+    "vehicle": "big_bike",
+    "job": "rims",
+    "low_baht": 2000,
+    "high_baht": 6800,
+    "quote_baht": null,
+    "verdict": "no_quote",
+    "verdict_th": "ช่วงราคาประมาณ ฿2,000–฿6,800",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "PriceCheck",
+   "note": "eco_car stickers 2500",
+   "value": {
+    "vehicle": "eco_car",
+    "job": "stickers",
+    "low_baht": 1800,
+    "high_baht": 4800,
+    "quote_baht": 2500,
+    "verdict": "fair",
+    "verdict_th": "฿2,500 → อยู่ในช่วงราคาประมาณ สมเหตุสมผล",
+    "disclaimer_th": "ช่วงราคาตัวอย่างโดยประมาณ ราคาจริงขึ้นกับร้าน เกรดฟิล์ม และสภาพสีเดิม"
+   }
+  },
+  {
+   "def": "ShopBrief",
+   "note": "demo",
+   "value": {
+    "to_th": "ร้านทำ wrap",
+    "from_name_th": "พี่ต้น",
+    "lines_th": [
+     "รถ: อีโคคาร์",
+     "งาน: wrap ทูโทน (ทั้งคัน + หลังคา/กระจกมองข้างสีคู่)",
+     "สี: เขียวมิ้นต์ (#7FD1AE) ผิวด้าน",
+     "สีคู่: ดำ (#1B1B1B)",
+     "ล้อ: 15\" 5 ก้าน สีดำ",
+     "สติกเกอร์: เส้นข้างตัวรถ",
+     "งบที่ตั้งไว้: ฿19,000–฿38,000",
+     "ขอ: เกรด/ยี่ห้อฟิล์ม, ระยะรับประกัน, ระยะเวลาทำ, ค่าลอกออก",
+     "ไม่ติดทับไฟ ป้ายทะเบียน และกระจก",
+     "หมายเหตุ: อยากได้ก่อนปีใหม่"
+    ],
+    "text_th": "รถ: อีโคคาร์\nงาน: wrap ทูโทน (ทั้งคัน + หลังคา/กระจกมองข้างสีคู่)\nสี: เขียวมิ้นต์ (#7FD1AE) ผิวด้าน\nสีคู่: ดำ (#1B1B1B)\nล้อ: 15\" 5 ก้าน สีดำ\nสติกเกอร์: เส้นข้างตัวรถ\nงบที่ตั้งไว้: ฿19,000–฿38,000\nขอ: เกรด/ยี่ห้อฟิล์ม, ระยะรับประกัน, ระยะเวลาทำ, ค่าลอกออก\nไม่ติดทับไฟ ป้ายทะเบียน และกระจก\nหมายเหตุ: อยากได้ก่อนปีใหม่",
+    "attach": [
+     "before_photo",
+     "mockup_4x5",
+     "swatch"
+    ],
+    "cta_th": "คัดลอกส่ง LINE ร้านได้เลย"
+   }
+  },
+  {
+   "def": "ShopBrief",
+   "note": "scooter",
+   "value": {
+    "to_th": "ร้านทำ wrap",
+    "from_name_th": "น้องมายด์",
+    "lines_th": [
+     "รถ: สกู๊ตเตอร์ / ออโต้",
+     "งาน: wrap ทั้งคัน",
+     "สี: ม่วงลาเวนเดอร์ (#B9A6E8) ผิวเงา",
+     "ล้อ: 14\" ลายตาข่าย สีทอง",
+     "งบที่ตั้งไว้: ฿2,500–฿6,000",
+     "ขอ: เกรด/ยี่ห้อฟิล์ม, ระยะรับประกัน, ระยะเวลาทำ, ค่าลอกออก",
+     "ไม่ติดทับไฟ ป้ายทะเบียน และกระจก"
+    ],
+    "text_th": "รถ: สกู๊ตเตอร์ / ออโต้\nงาน: wrap ทั้งคัน\nสี: ม่วงลาเวนเดอร์ (#B9A6E8) ผิวเงา\nล้อ: 14\" ลายตาข่าย สีทอง\nงบที่ตั้งไว้: ฿2,500–฿6,000\nขอ: เกรด/ยี่ห้อฟิล์ม, ระยะรับประกัน, ระยะเวลาทำ, ค่าลอกออก\nไม่ติดทับไฟ ป้ายทะเบียน และกระจก",
+    "attach": [
+     "before_photo",
+     "mockup_4x5",
+     "swatch"
+    ],
+    "cta_th": "คัดลอกส่ง LINE ร้านได้เลย"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "20s",
+   "value": {
+    "seconds": 20,
+    "ratio": "9:16",
+    "music_bpm": 120,
+    "shots": [
+     {
+      "from_s": 0,
+      "to_s": 3,
+      "kind": "before",
+      "text_th": "ภาพรถเดิม + ข้อความ 'เบื่อสีรถเดิม?'"
+     },
+     {
+      "from_s": 3,
+      "to_s": 7,
+      "kind": "scan",
+      "text_th": "สแกนรถ เส้นเลเซอร์วิ่งผ่าน"
+     },
+     {
+      "from_s": 7,
+      "to_s": 14,
+      "kind": "swipe",
+      "text_th": "ปัดเปลี่ยนสี → อีโคคาร์ เขียวมิ้นต์ ด้าน + ดำ"
+     },
+     {
+      "from_s": 14,
+      "to_s": 17,
+      "kind": "compare",
+      "text_th": "สไลเดอร์ ก่อน/หลัง + ราคาประมาณ"
+     },
+     {
+      "from_s": 17,
+      "to_s": 20,
+      "kind": "cta",
+      "text_th": "คอมเมนต์ WRAP รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "WrapRide · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "15s bike",
+   "value": {
+    "seconds": 15,
+    "ratio": "9:16",
+    "music_bpm": 120,
+    "shots": [
+     {
+      "from_s": 0,
+      "to_s": 3,
+      "kind": "before",
+      "text_th": "ภาพรถเดิม + ข้อความ 'เบื่อสีรถเดิม?'"
+     },
+     {
+      "from_s": 3,
+      "to_s": 5,
+      "kind": "scan",
+      "text_th": "สแกนรถ เส้นเลเซอร์วิ่งผ่าน"
+     },
+     {
+      "from_s": 5,
+      "to_s": 10,
+      "kind": "swipe",
+      "text_th": "ปัดเปลี่ยนสี → บิ๊กไบค์ แดงแคนดี้ เงา"
+     },
+     {
+      "from_s": 10,
+      "to_s": 12,
+      "kind": "compare",
+      "text_th": "สไลเดอร์ ก่อน/หลัง + ราคาประมาณ"
+     },
+     {
+      "from_s": 12,
+      "to_s": 15,
+      "kind": "cta",
+      "text_th": "คอมเมนต์ WRAP รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "WrapRide · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "30s sedan",
+   "value": {
+    "seconds": 30,
+    "ratio": "9:16",
+    "music_bpm": 120,
+    "shots": [
+     {
+      "from_s": 0,
+      "to_s": 3,
+      "kind": "before",
+      "text_th": "ภาพรถเดิม + ข้อความ 'เบื่อสีรถเดิม?'"
+     },
+     {
+      "from_s": 3,
+      "to_s": 10,
+      "kind": "scan",
+      "text_th": "สแกนรถ เส้นเลเซอร์วิ่งผ่าน"
+     },
+     {
+      "from_s": 10,
+      "to_s": 21,
+      "kind": "swipe",
+      "text_th": "ปัดเปลี่ยนสี → รถเก๋ง น้ำเงินเที่ยงคืน กึ่งเงา"
+     },
+     {
+      "from_s": 21,
+      "to_s": 27,
+      "kind": "compare",
+      "text_th": "สไลเดอร์ ก่อน/หลัง + ราคาประมาณ"
+     },
+     {
+      "from_s": 27,
+      "to_s": 30,
+      "kind": "cta",
+      "text_th": "คอมเมนต์ WRAP รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "WrapRide · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "before",
+   "value": {
+    "from_s": 0,
+    "to_s": 3,
+    "kind": "before",
+    "text_th": "ภาพรถเดิม + ข้อความ 'เบื่อสีรถเดิม?'"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "scan",
+   "value": {
+    "from_s": 3,
+    "to_s": 7,
+    "kind": "scan",
+    "text_th": "สแกนรถ เส้นเลเซอร์วิ่งผ่าน"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "swipe",
+   "value": {
+    "from_s": 7,
+    "to_s": 14,
+    "kind": "swipe",
+    "text_th": "ปัดเปลี่ยนสี → อีโคคาร์ เขียวมิ้นต์ ด้าน + ดำ"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "compare",
+   "value": {
+    "from_s": 14,
+    "to_s": 17,
+    "kind": "compare",
+    "text_th": "สไลเดอร์ ก่อน/หลัง + ราคาประมาณ"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "cta",
+   "value": {
+    "from_s": 17,
+    "to_s": 20,
+    "kind": "cta",
+    "text_th": "คอมเมนต์ WRAP รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "photo",
+   "value": {
+    "date": "2026-12-01",
+    "kind": "photo"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "wrap",
+   "value": {
+    "date": "2026-12-10",
+    "kind": "wrap",
+    "cost_baht": 24000
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "rim",
+   "value": {
+    "date": "2026-12-10",
+    "kind": "rim",
+    "cost_baht": 14500
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "wash",
+   "value": {
+    "date": "2026-12-14",
+    "kind": "wash",
+    "cost_baht": 150
+   }
+  },
+  {
+   "def": "DiarySummary",
+   "note": "ton",
+   "value": {
+    "entries": 4,
+    "wrap_age_days": 6,
+    "next_wash": "2026-12-28",
+    "spend_baht": 38650,
+    "care_tip_th": "สัปดาห์แรกหลังติดฟิล์ม เลี่ยงฉีดน้ำแรงดันสูงใกล้ขอบฟิล์ม",
+    "headline_th": "ฟิล์มอายุ 6 วัน · ล้างครั้งต่อไป 2026-12-28 · ใช้ไป ฿38,650"
+   }
+  },
+  {
+   "def": "DiarySummary",
+   "note": "no wrap",
+   "value": {
+    "entries": 2,
+    "wrap_age_days": null,
+    "next_wash": "2026-11-15",
+    "spend_baht": 2010,
+    "care_tip_th": "ล้างมือด้วยแชมพูค่า pH กลาง เลี่ยงขัดแรงบนผิวด้าน",
+    "headline_th": "ฟิล์มอายุ - วัน · ล้างครั้งต่อไป 2026-11-15 · ใช้ไป ฿2,010"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "demo",
+   "value": {
+    "title_th": "อีโคคาร์ เขียวมิ้นต์ ด้าน + ดำ",
+    "hook_th": "เบื่อสีรถเดิม? ลองสีใหม่ใน 10 วิ",
+    "layout": "car_before_after",
+    "sizes": [
+     "1080x1350",
+     "1080x1920"
+    ],
+    "watermark": "WrapRide · AI วันละแอป",
+    "cta_th": "คอมเมนต์ WRAP รับแพ็กฟรี",
+    "disclaimer_th": "ภาพจำลอง ราคาโดยประมาณ"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "scooter",
+   "value": {
+    "title_th": "สกู๊ตเตอร์ / ออโต้ ม่วงลาเวนเดอร์ เงา",
+    "hook_th": "สกู๊ตเตอร์สีเดิม ๆ → ม่วงลาเวนเดอร์",
+    "layout": "car_before_after",
+    "sizes": [
+     "1080x1350",
+     "1080x1920"
+    ],
+    "watermark": "WrapRide · AI วันละแอป",
+    "cta_th": "คอมเมนต์ WRAP รับแพ็กฟรี",
+    "disclaimer_th": "ภาพจำลอง ราคาโดยประมาณ"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(0,)",
+   "value": {
+    "allowed": 1,
+    "left_after": 4,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(4,)",
+   "value": {
+    "allowed": 1,
+    "left_after": 0,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(5,)",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(9, 5, True)",
+   "value": {
+    "allowed": 1,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "None",
+   "value": {
+    "level": "ok",
+    "message_th": "ภาพจำลองเพื่อดูไอเดีย ตัดสินใจกับร้านจริงอีกครั้ง"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "plate_visible",
+   "value": {
+    "level": "warn",
+    "message_th": "เห็นป้ายทะเบียน ระบบเบลอให้อัตโนมัติก่อนแชร์"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "covers_lights",
+   "value": {
+    "level": "stop",
+    "message_th": "ห้ามติดฟิล์ม/สติกเกอร์ทับไฟหรือป้ายทะเบียน"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "not_vehicle",
+   "value": {
+    "level": "stop",
+    "message_th": "ไม่พบรถในรูป ถ่ายใหม่ให้เห็นรถทั้งคัน"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "someone_elses_car",
+   "value": {
+    "level": "warn",
+    "message_th": "ใช้รูปรถของคุณเอง หรือได้รับอนุญาตจากเจ้าของ"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "brand_logo",
+   "value": {
+    "level": "stop",
+    "message_th": "ไม่สร้างโลโก้/ลายลิขสิทธิ์ของแบรนด์อื่น ใช้ลายของคุณเอง"
+   }
+  }
+ ]
+}
