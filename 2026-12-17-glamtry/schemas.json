@@ -1,0 +1,1158 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://example.com/glamtry.schema.json",
+ "title": "GlamTry",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "age",
+    "skill"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^u[0-9]{2}$"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 13
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "skill": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 3
+    }
+   },
+   "additionalProperties": false
+  },
+  "SelfiePhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "light",
+    "blur",
+    "tilt"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^p[0-9]{2}$"
+    },
+    "light": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "tilt": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "filter_on": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "SelfieScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "quality"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    }
+   },
+   "additionalProperties": false
+  },
+  "AiFaceExtract": {
+   "type": "object",
+   "required": [
+    "is_face",
+    "faces",
+    "cheek_rgb",
+    "eye_shape",
+    "filter_detected",
+    "celebrity_like",
+    "confidence"
+   ],
+   "properties": {
+    "is_face": {
+     "type": "boolean"
+    },
+    "faces": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "cheek_rgb": {
+     "anyOf": [
+      {
+       "type": "array",
+       "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 255
+       },
+       "minItems": 3,
+       "maxItems": 3
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "eye_shape": {
+     "enum": [
+      "monolid",
+      "hooded",
+      "double",
+      "round",
+      "almond",
+      "unknown"
+     ]
+    },
+    "filter_detected": {
+     "type": "boolean"
+    },
+    "celebrity_like": {
+     "type": "boolean"
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "notes_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ConsentCheck": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "level",
+    "flags",
+    "messages_th"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "boolean"
+    },
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "flags": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "not_own_photo",
+       "celebrity",
+       "under_13",
+       "multiple_faces",
+       "no_face",
+       "filter_on",
+       "whitening_request"
+      ]
+     }
+    },
+    "messages_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShadeMatch": {
+   "type": "object",
+   "required": [
+    "skin_hex",
+    "depth",
+    "undertone",
+    "shade_code",
+    "label_th",
+    "lip_suggestions_hex",
+    "confidence",
+    "is_estimate",
+    "tip_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "skin_hex": {
+     "type": "string",
+     "pattern": "^#[0-9A-F]{6}$"
+    },
+    "depth": {
+     "enum": [
+      "fair",
+      "light",
+      "medium",
+      "tan",
+      "deep"
+     ]
+    },
+    "undertone": {
+     "enum": [
+      "cool",
+      "neutral",
+      "warm",
+      "olive"
+     ]
+    },
+    "shade_code": {
+     "type": "string",
+     "pattern": "^[1-5][CNWO]$"
+    },
+    "label_th": {
+     "type": "string"
+    },
+    "lip_suggestions_hex": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "pattern": "^#[0-9A-F]{6}$"
+     },
+     "minItems": 3,
+     "maxItems": 3
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "is_estimate": {
+     "const": true
+    },
+    "tip_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "LookPalette": {
+   "type": "object",
+   "required": [
+    "look",
+    "undertone",
+    "intensity",
+    "lip_hex",
+    "blush_hex",
+    "eye_hex",
+    "liner_hex",
+    "opacity",
+    "finish"
+   ],
+   "properties": {
+    "look": {
+     "enum": [
+      "natural",
+      "korean_glass",
+      "thai_bride",
+      "party_glam",
+      "office",
+      "y2k"
+     ]
+    },
+    "undertone": {
+     "enum": [
+      "cool",
+      "neutral",
+      "warm",
+      "olive"
+     ]
+    },
+    "intensity": {
+     "enum": [
+      "soft",
+      "medium",
+      "full"
+     ]
+    },
+    "lip_hex": {
+     "type": "string",
+     "pattern": "^#[0-9A-F]{6}$"
+    },
+    "blush_hex": {
+     "type": "string",
+     "pattern": "^#[0-9A-F]{6}$"
+    },
+    "eye_hex": {
+     "type": "string",
+     "pattern": "^#[0-9A-F]{6}$"
+    },
+    "liner_hex": {
+     "anyOf": [
+      {
+       "type": "string",
+       "pattern": "^#[0-9A-F]{6}$"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "opacity": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "finish": {
+     "enum": [
+      "satin",
+      "dewy",
+      "matte",
+      "glossy"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "LookSpec": {
+   "type": "object",
+   "required": [
+    "look",
+    "depth",
+    "undertone",
+    "intensity",
+    "palette",
+    "minutes",
+    "skill",
+    "image_prompt",
+    "title_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "look": {
+     "enum": [
+      "natural",
+      "korean_glass",
+      "thai_bride",
+      "party_glam",
+      "office",
+      "y2k"
+     ]
+    },
+    "depth": {
+     "enum": [
+      "fair",
+      "light",
+      "medium",
+      "tan",
+      "deep"
+     ]
+    },
+    "undertone": {
+     "enum": [
+      "cool",
+      "neutral",
+      "warm",
+      "olive"
+     ]
+    },
+    "intensity": {
+     "enum": [
+      "soft",
+      "medium",
+      "full"
+     ]
+    },
+    "palette": {
+     "$ref": "#/$defs/LookPalette"
+    },
+    "minutes": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "skill": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 3
+    },
+    "image_prompt": {
+     "type": "string"
+    },
+    "title_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "TutorialStep": {
+   "type": "object",
+   "required": [
+    "n",
+    "item",
+    "area",
+    "item_th",
+    "tip_th",
+    "color_hex",
+    "minutes"
+   ],
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "item": {
+     "enum": [
+      "primer",
+      "skin_tint",
+      "cushion",
+      "foundation",
+      "concealer",
+      "powder",
+      "brow",
+      "eyeshadow",
+      "eyeliner",
+      "mascara",
+      "false_lashes",
+      "blush",
+      "highlighter",
+      "lip_tint",
+      "lipstick",
+      "lip_gloss",
+      "glitter",
+      "setting_spray"
+     ]
+    },
+    "area": {
+     "enum": [
+      "base",
+      "brow",
+      "eye",
+      "cheek",
+      "lip",
+      "finish"
+     ]
+    },
+    "item_th": {
+     "type": "string"
+    },
+    "tip_th": {
+     "type": "string"
+    },
+    "color_hex": {
+     "anyOf": [
+      {
+       "type": "string",
+       "pattern": "^#[0-9A-F]{6}$"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "minutes": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "Tutorial": {
+   "type": "object",
+   "required": [
+    "look",
+    "steps",
+    "total_minutes",
+    "simplified",
+    "note_th"
+   ],
+   "properties": {
+    "look": {
+     "enum": [
+      "natural",
+      "korean_glass",
+      "thai_bride",
+      "party_glam",
+      "office",
+      "y2k"
+     ]
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/TutorialStep"
+     },
+     "minItems": 1
+    },
+    "total_minutes": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "simplified": {
+     "type": "boolean"
+    },
+    "note_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "KitItem": {
+   "type": "object",
+   "required": [
+    "item",
+    "item_th",
+    "tier",
+    "low_baht",
+    "high_baht"
+   ],
+   "properties": {
+    "item": {
+     "enum": [
+      "primer",
+      "skin_tint",
+      "cushion",
+      "foundation",
+      "concealer",
+      "powder",
+      "brow",
+      "eyeshadow",
+      "eyeliner",
+      "mascara",
+      "false_lashes",
+      "blush",
+      "highlighter",
+      "lip_tint",
+      "lipstick",
+      "lip_gloss",
+      "glitter",
+      "setting_spray"
+     ]
+    },
+    "item_th": {
+     "type": "string"
+    },
+    "tier": {
+     "enum": [
+      "budget",
+      "mid",
+      "premium"
+     ]
+    },
+    "low_baht": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "high_baht": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "BudgetKit": {
+   "type": "object",
+   "required": [
+    "look",
+    "tier",
+    "tier_th",
+    "items",
+    "skipped_owned",
+    "low_baht",
+    "high_baht",
+    "save_vs_premium_baht",
+    "dupe_tip_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "look": {
+     "enum": [
+      "natural",
+      "korean_glass",
+      "thai_bride",
+      "party_glam",
+      "office",
+      "y2k"
+     ]
+    },
+    "tier": {
+     "enum": [
+      "budget",
+      "mid",
+      "premium"
+     ]
+    },
+    "tier_th": {
+     "type": "string"
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/KitItem"
+     }
+    },
+    "skipped_owned": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "primer",
+       "skin_tint",
+       "cushion",
+       "foundation",
+       "concealer",
+       "powder",
+       "brow",
+       "eyeshadow",
+       "eyeliner",
+       "mascara",
+       "false_lashes",
+       "blush",
+       "highlighter",
+       "lip_tint",
+       "lipstick",
+       "lip_gloss",
+       "glitter",
+       "setting_spray"
+      ]
+     }
+    },
+    "low_baht": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "high_baht": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "save_vs_premium_baht": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "dupe_tip_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "OccasionPlan": {
+   "type": "object",
+   "required": [
+    "event",
+    "event_th",
+    "event_date",
+    "days_left",
+    "look",
+    "hours_worn",
+    "touch_up_kit",
+    "timeline",
+    "warning_th"
+   ],
+   "properties": {
+    "event": {
+     "enum": [
+      "office_day",
+      "interview",
+      "date",
+      "wedding_guest",
+      "own_wedding",
+      "party",
+      "concert",
+      "graduation"
+     ]
+    },
+    "event_th": {
+     "type": "string"
+    },
+    "event_date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "days_left": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "look": {
+     "enum": [
+      "natural",
+      "korean_glass",
+      "thai_bride",
+      "party_glam",
+      "office",
+      "y2k"
+     ]
+    },
+    "hours_worn": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "touch_up_kit": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "setting_spray",
+       "blotting_paper",
+       "touch_up_lip"
+      ]
+     }
+    },
+    "timeline": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "days_before",
+       "task_th"
+      ],
+      "properties": {
+       "days_before": {
+        "type": "integer",
+        "minimum": 0
+       },
+       "task_th": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": false
+     },
+     "minItems": 1
+    },
+    "warning_th": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "PatchTest": {
+   "type": "object",
+   "required": [
+    "level",
+    "items",
+    "steps_th",
+    "note_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "info",
+      "warn"
+     ]
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "primer",
+       "skin_tint",
+       "cushion",
+       "foundation",
+       "concealer",
+       "powder",
+       "brow",
+       "eyeshadow",
+       "eyeliner",
+       "mascara",
+       "false_lashes",
+       "blush",
+       "highlighter",
+       "lip_tint",
+       "lipstick",
+       "lip_gloss",
+       "glitter",
+       "setting_spray"
+      ]
+     }
+    },
+    "steps_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 3
+    },
+    "note_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ReelShot": {
+   "type": "object",
+   "required": [
+    "from_s",
+    "to_s",
+    "kind",
+    "text_th"
+   ],
+   "properties": {
+    "from_s": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "to_s": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "kind": {
+     "enum": [
+      "before",
+      "scan",
+      "swipe",
+      "compare",
+      "cta"
+     ]
+    },
+    "text_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ReelPlan": {
+   "type": "object",
+   "required": [
+    "seconds",
+    "ratio",
+    "music_bpm",
+    "shots",
+    "watermark"
+   ],
+   "properties": {
+    "seconds": {
+     "type": "integer",
+     "minimum": 15,
+     "maximum": 30
+    },
+    "ratio": {
+     "enum": [
+      "9:16"
+     ]
+    },
+    "music_bpm": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "shots": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ReelShot"
+     },
+     "minItems": 5,
+     "maxItems": 5
+    },
+    "watermark": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiaryEntry": {
+   "type": "object",
+   "required": [
+    "date",
+    "kind"
+   ],
+   "properties": {
+    "date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "kind": {
+     "enum": [
+      "try",
+      "wear",
+      "buy",
+      "open",
+      "photo"
+     ]
+    },
+    "look": {
+     "enum": [
+      "natural",
+      "korean_glass",
+      "thai_bride",
+      "party_glam",
+      "office",
+      "y2k"
+     ]
+    },
+    "item": {
+     "enum": [
+      "primer",
+      "skin_tint",
+      "cushion",
+      "foundation",
+      "concealer",
+      "powder",
+      "brow",
+      "eyeshadow",
+      "eyeliner",
+      "mascara",
+      "false_lashes",
+      "blush",
+      "highlighter",
+      "lip_tint",
+      "lipstick",
+      "lip_gloss",
+      "glitter",
+      "setting_spray"
+     ]
+    },
+    "cost_baht": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "note_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiarySummary": {
+   "type": "object",
+   "required": [
+    "entries",
+    "looks_saved",
+    "top_look",
+    "spend_baht",
+    "replace_soon",
+    "headline_th",
+    "note_th"
+   ],
+   "properties": {
+    "entries": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "looks_saved": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "top_look": {
+     "anyOf": [
+      {
+       "enum": [
+        "natural",
+        "korean_glass",
+        "thai_bride",
+        "party_glam",
+        "office",
+        "y2k"
+       ]
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "spend_baht": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "replace_soon": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "item",
+       "replace_by",
+       "days_left"
+      ],
+      "properties": {
+       "item": {
+        "enum": [
+         "primer",
+         "skin_tint",
+         "cushion",
+         "foundation",
+         "concealer",
+         "powder",
+         "brow",
+         "eyeshadow",
+         "eyeliner",
+         "mascara",
+         "false_lashes",
+         "blush",
+         "highlighter",
+         "lip_tint",
+         "lipstick",
+         "lip_gloss",
+         "glitter",
+         "setting_spray"
+        ]
+       },
+       "replace_by": {
+        "type": "string",
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+       },
+       "days_left": {
+        "type": "integer"
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "headline_th": {
+     "type": "string"
+    },
+    "note_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "title_th",
+    "hook_th",
+    "layout",
+    "sizes",
+    "watermark",
+    "cta_th",
+    "disclaimer_th"
+   ],
+   "properties": {
+    "title_th": {
+     "type": "string"
+    },
+    "hook_th": {
+     "type": "string"
+    },
+    "layout": {
+     "enum": [
+      "selfie_before_after",
+      "six_look_grid"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "1080x1350",
+       "1080x1920",
+       "1080x1080"
+      ]
+     }
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "cta_th": {
+     "type": "string"
+    },
+    "disclaimer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "left_after",
+    "paywall"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left_after": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "paywall": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "level",
+    "message_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}

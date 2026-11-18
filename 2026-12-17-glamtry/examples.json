@@ -1,0 +1,3917 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "Fern",
+   "value": {
+    "id": "u01",
+    "name_th": "น้องเฟิร์น",
+    "name_en": "Fern",
+    "age": 24,
+    "city_th": "กรุงเทพฯ (อารีย์)",
+    "skill": 1
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Prae",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่แพร",
+    "name_en": "Prae",
+    "age": 29,
+    "city_th": "ขอนแก่น",
+    "skill": 2
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Namwan",
+   "value": {
+    "id": "u03",
+    "name_th": "น้ำหวาน",
+    "name_en": "Namwan",
+    "age": 17,
+    "city_th": "เชียงใหม่",
+    "skill": 1
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Jae Noi",
+   "value": {
+    "id": "u04",
+    "name_th": "เจ๊หน่อย",
+    "name_en": "Jae Noi",
+    "age": 45,
+    "city_th": "หาดใหญ่",
+    "skill": 3
+   }
+  },
+  {
+   "def": "SelfiePhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "light": 0.9,
+    "blur": 0.05,
+    "tilt": 0.1,
+    "filter_on": false
+   }
+  },
+  {
+   "def": "SelfieScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "quality": {
+     "score": 92,
+     "ok": true,
+     "tips_th": []
+    }
+   }
+  },
+  {
+   "def": "SelfiePhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "light": 0.5,
+    "blur": 0.2,
+    "tilt": 0.2,
+    "filter_on": true
+   }
+  },
+  {
+   "def": "SelfieScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "quality": {
+     "score": 53,
+     "ok": false,
+     "tips_th": [
+      "แสงน้อย/ไม่เท่ากัน หันหน้าเข้าหน้าต่าง แสงธรรมชาติดีที่สุด",
+      "ปิดฟิลเตอร์/บิวตี้โหมดก่อนถ่าย"
+     ]
+    }
+   }
+  },
+  {
+   "def": "SelfiePhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "light": 0.3,
+    "blur": 0.6,
+    "tilt": 0.5,
+    "filter_on": false
+   }
+  },
+  {
+   "def": "SelfieScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "quality": {
+     "score": 38,
+     "ok": false,
+     "tips_th": [
+      "แสงน้อย/ไม่เท่ากัน หันหน้าเข้าหน้าต่าง แสงธรรมชาติดีที่สุด",
+      "ภาพเบลอ ถือมือถือนิ่ง ๆ แล้วถ่ายใหม่",
+      "หน้าเอียง มองกล้องตรง ๆ ระดับสายตา"
+     ]
+    }
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "mid",
+   "value": {
+    "score": 76,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "AiFaceExtract",
+   "note": "demo Fern",
+   "value": {
+    "is_face": true,
+    "faces": 1,
+    "cheek_rgb": [
+     214,
+     170,
+     140
+    ],
+    "eye_shape": "hooded",
+    "filter_detected": false,
+    "celebrity_like": false,
+    "confidence": 0.91,
+    "notes_th": "หน้าตรง แสงหน้าต่าง"
+   }
+  },
+  {
+   "def": "AiFaceExtract",
+   "note": "group + filter",
+   "value": {
+    "is_face": true,
+    "faces": 3,
+    "cheek_rgb": [
+     180,
+     150,
+     95
+    ],
+    "eye_shape": "monolid",
+    "filter_detected": true,
+    "celebrity_like": false,
+    "confidence": 0.72
+   }
+  },
+  {
+   "def": "AiFaceExtract",
+   "note": "no face",
+   "value": {
+    "is_face": false,
+    "faces": 0,
+    "cheek_rgb": null,
+    "eye_shape": "unknown",
+    "filter_detected": false,
+    "celebrity_like": false,
+    "confidence": 0.95,
+    "notes_th": "รูปนี้เป็นตุ๊กตา"
+   }
+  },
+  {
+   "def": "ConsentCheck",
+   "note": "(24, True)",
+   "value": {
+    "allowed": true,
+    "level": "ok",
+    "flags": [],
+    "messages_th": [
+     "ภาพลองแต่งหน้าเป็นภาพจำลอง สีจริงต่างตามผิว แสง และผลิตภัณฑ์"
+    ]
+   }
+  },
+  {
+   "def": "ConsentCheck",
+   "note": "(12, True)",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "under_13"
+    ],
+    "messages_th": [
+     "แอปนี้สำหรับอายุ 13 ปีขึ้นไป"
+    ]
+   }
+  },
+  {
+   "def": "ConsentCheck",
+   "note": "(25, False, 1, True)",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "not_own_photo",
+     "celebrity"
+    ],
+    "messages_th": [
+     "ใช้ได้เฉพาะเซลฟี่ของคุณเองเท่านั้น ห้ามใช้รูปคนอื่น",
+     "ไม่รองรับรูปดารา/คนดัง หรือการแต่งให้เหมือนใคร ใช้หน้าตัวเองเท่านั้น"
+    ]
+   }
+  },
+  {
+   "def": "ConsentCheck",
+   "note": "(20, True, 3)",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "multiple_faces"
+    ],
+    "messages_th": [
+     "เจอหลายใบหน้า ครอปให้เหลือหน้าคุณคนเดียว"
+    ]
+   }
+  },
+  {
+   "def": "ConsentCheck",
+   "note": "(20, True, 0)",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "no_face"
+    ],
+    "messages_th": [
+     "ไม่พบใบหน้าในรูป ถ่ายหน้าตรงใหม่อีกครั้ง"
+    ]
+   }
+  },
+  {
+   "def": "ConsentCheck",
+   "note": "(19, True, 1, False, True)",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "whitening_request"
+    ],
+    "messages_th": [
+     "GlamTry ไม่ปรับผิวให้ขาวขึ้นหรือดัดรูปหน้า ทุกสีผิวสวยในแบบของตัวเอง"
+    ]
+   }
+  },
+  {
+   "def": "ShadeMatch",
+   "note": "(214, 170, 140) q94",
+   "value": {
+    "skin_hex": "#D6AA8C",
+    "depth": "light",
+    "undertone": "warm",
+    "shade_code": "2W",
+    "label_th": "ผิวขาว-ขาวเหลือง · อันเดอร์โทนอุ่น (โค้ดเฉด 2W)",
+    "lip_suggestions_hex": [
+     "#CC7B67",
+     "#E06C71",
+     "#BE6756"
+    ],
+    "confidence": 0.85,
+    "is_estimate": true,
+    "tip_th": "ทาเทสต์ที่กรอบหน้า/ขากรรไกร ดูใต้แสงธรรมชาติก่อนซื้อ",
+    "disclaimer_th": "เฉดผิวเป็นค่าประมาณจากรูป ไม่ใช่การวัดจริง"
+   }
+  },
+  {
+   "def": "ShadeMatch",
+   "note": "(240, 215, 200) q90",
+   "value": {
+    "skin_hex": "#F0D7C8",
+    "depth": "fair",
+    "undertone": "cool",
+    "shade_code": "1C",
+    "label_th": "ผิวขาวมาก · อันเดอร์โทนเย็น (โค้ดเฉด 1C)",
+    "lip_suggestions_hex": [
+     "#C86C6B",
+     "#DC5E75",
+     "#BA595A"
+    ],
+    "confidence": 0.81,
+    "is_estimate": true,
+    "tip_th": "ทาเทสต์ที่กรอบหน้า/ขากรรไกร ดูใต้แสงธรรมชาติก่อนซื้อ",
+    "disclaimer_th": "เฉดผิวเป็นค่าประมาณจากรูป ไม่ใช่การวัดจริง"
+   }
+  },
+  {
+   "def": "ShadeMatch",
+   "note": "(205, 170, 150) q88",
+   "value": {
+    "skin_hex": "#CDAA96",
+    "depth": "light",
+    "undertone": "neutral",
+    "shade_code": "2N",
+    "label_th": "ผิวขาว-ขาวเหลือง · อันเดอร์โทนกลาง (โค้ดเฉด 2N)",
+    "lip_suggestions_hex": [
+     "#C97B6E",
+     "#E06A7A",
+     "#B8645A"
+    ],
+    "confidence": 0.79,
+    "is_estimate": true,
+    "tip_th": "ทาเทสต์ที่กรอบหน้า/ขากรรไกร ดูใต้แสงธรรมชาติก่อนซื้อ",
+    "disclaimer_th": "เฉดผิวเป็นค่าประมาณจากรูป ไม่ใช่การวัดจริง"
+   }
+  },
+  {
+   "def": "ShadeMatch",
+   "note": "(180, 150, 95) q85",
+   "value": {
+    "skin_hex": "#B4965F",
+    "depth": "medium",
+    "undertone": "warm",
+    "shade_code": "3W",
+    "label_th": "ผิวสองสี · อันเดอร์โทนอุ่น (โค้ดเฉด 3W)",
+    "lip_suggestions_hex": [
+     "#CC7B67",
+     "#E06C71",
+     "#BE6756"
+    ],
+    "confidence": 0.77,
+    "is_estimate": true,
+    "tip_th": "ทาเทสต์ที่กรอบหน้า/ขากรรไกร ดูใต้แสงธรรมชาติก่อนซื้อ",
+    "disclaimer_th": "เฉดผิวเป็นค่าประมาณจากรูป ไม่ใช่การวัดจริง"
+   }
+  },
+  {
+   "def": "ShadeMatch",
+   "note": "(150, 110, 85) q92",
+   "value": {
+    "skin_hex": "#966E55",
+    "depth": "tan",
+    "undertone": "neutral",
+    "shade_code": "4N",
+    "label_th": "ผิวแทน · อันเดอร์โทนกลาง (โค้ดเฉด 4N)",
+    "lip_suggestions_hex": [
+     "#C97B6E",
+     "#E06A7A",
+     "#B8645A"
+    ],
+    "confidence": 0.83,
+    "is_estimate": true,
+    "tip_th": "ทาเทสต์ที่กรอบหน้า/ขากรรไกร ดูใต้แสงธรรมชาติก่อนซื้อ",
+    "disclaimer_th": "เฉดผิวเป็นค่าประมาณจากรูป ไม่ใช่การวัดจริง"
+   }
+  },
+  {
+   "def": "ShadeMatch",
+   "note": "(110, 75, 60) q90",
+   "value": {
+    "skin_hex": "#6E4B3C",
+    "depth": "deep",
+    "undertone": "neutral",
+    "shade_code": "5N",
+    "label_th": "ผิวเข้ม · อันเดอร์โทนกลาง (โค้ดเฉด 5N)",
+    "lip_suggestions_hex": [
+     "#C97B6E",
+     "#E06A7A",
+     "#B8645A"
+    ],
+    "confidence": 0.81,
+    "is_estimate": true,
+    "tip_th": "ทาเทสต์ที่กรอบหน้า/ขากรรไกร ดูใต้แสงธรรมชาติก่อนซื้อ",
+    "disclaimer_th": "เฉดผิวเป็นค่าประมาณจากรูป ไม่ใช่การวัดจริง"
+   }
+  },
+  {
+   "def": "ShadeMatch",
+   "note": "(200, 190, 150) q80",
+   "value": {
+    "skin_hex": "#C8BE96",
+    "depth": "light",
+    "undertone": "olive",
+    "shade_code": "2O",
+    "label_th": "ผิวขาว-ขาวเหลือง · อันเดอร์โทนมะกอก (โค้ดเฉด 2O)",
+    "lip_suggestions_hex": [
+     "#C77864",
+     "#DB696F",
+     "#B86453"
+    ],
+    "confidence": 0.72,
+    "is_estimate": true,
+    "tip_th": "ทาเทสต์ที่กรอบหน้า/ขากรรไกร ดูใต้แสงธรรมชาติก่อนซื้อ",
+    "disclaimer_th": "เฉดผิวเป็นค่าประมาณจากรูป ไม่ใช่การวัดจริง"
+   }
+  },
+  {
+   "def": "ShadeMatch",
+   "note": "(205, 170, 150) q40",
+   "value": {
+    "skin_hex": "#CDAA96",
+    "depth": "light",
+    "undertone": "neutral",
+    "shade_code": "2N",
+    "label_th": "ผิวขาว-ขาวเหลือง · อันเดอร์โทนกลาง (โค้ดเฉด 2N)",
+    "lip_suggestions_hex": [
+     "#C97B6E",
+     "#E06A7A",
+     "#B8645A"
+    ],
+    "confidence": 0.36,
+    "is_estimate": true,
+    "tip_th": "แสงยังไม่ดี ผลอาจคลาด ถ่ายใหม่ใกล้หน้าต่าง",
+    "disclaimer_th": "เฉดผิวเป็นค่าประมาณจากรูป ไม่ใช่การวัดจริง"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "natural cool",
+   "value": {
+    "look": "natural",
+    "undertone": "cool",
+    "intensity": "medium",
+    "lip_hex": "#C86C6B",
+    "blush_hex": "#E2908F",
+    "eye_hex": "#B89580",
+    "liner_hex": null,
+    "opacity": 0.55,
+    "finish": "satin"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "natural neutral",
+   "value": {
+    "look": "natural",
+    "undertone": "neutral",
+    "intensity": "medium",
+    "lip_hex": "#C97B6E",
+    "blush_hex": "#E8A598",
+    "eye_hex": "#B89580",
+    "liner_hex": null,
+    "opacity": 0.55,
+    "finish": "satin"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "natural warm",
+   "value": {
+    "look": "natural",
+    "undertone": "warm",
+    "intensity": "medium",
+    "lip_hex": "#CC7B67",
+    "blush_hex": "#E79F8B",
+    "eye_hex": "#B89580",
+    "liner_hex": null,
+    "opacity": 0.55,
+    "finish": "satin"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "natural olive",
+   "value": {
+    "look": "natural",
+    "undertone": "olive",
+    "intensity": "medium",
+    "lip_hex": "#C77864",
+    "blush_hex": "#E29D89",
+    "eye_hex": "#B89580",
+    "liner_hex": null,
+    "opacity": 0.55,
+    "finish": "satin"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "korean_glass cool",
+   "value": {
+    "look": "korean_glass",
+    "undertone": "cool",
+    "intensity": "medium",
+    "lip_hex": "#DC5E75",
+    "blush_hex": "#EC92A3",
+    "eye_hex": "#E9B7A6",
+    "liner_hex": "#5A3A2E",
+    "opacity": 0.55,
+    "finish": "dewy"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "korean_glass neutral",
+   "value": {
+    "look": "korean_glass",
+    "undertone": "neutral",
+    "intensity": "medium",
+    "lip_hex": "#E06A7A",
+    "blush_hex": "#F4A7B0",
+    "eye_hex": "#E9B7A6",
+    "liner_hex": "#5A3A2E",
+    "opacity": 0.55,
+    "finish": "dewy"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "korean_glass warm",
+   "value": {
+    "look": "korean_glass",
+    "undertone": "warm",
+    "intensity": "medium",
+    "lip_hex": "#E06C71",
+    "blush_hex": "#F1A09F",
+    "eye_hex": "#E9B7A6",
+    "liner_hex": "#5A3A2E",
+    "opacity": 0.55,
+    "finish": "dewy"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "korean_glass olive",
+   "value": {
+    "look": "korean_glass",
+    "undertone": "olive",
+    "intensity": "medium",
+    "lip_hex": "#DB696F",
+    "blush_hex": "#EC9F9E",
+    "eye_hex": "#E9B7A6",
+    "liner_hex": "#5A3A2E",
+    "opacity": 0.55,
+    "finish": "dewy"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "thai_bride cool",
+   "value": {
+    "look": "thai_bride",
+    "undertone": "cool",
+    "intensity": "medium",
+    "lip_hex": "#B7415A",
+    "blush_hex": "#DE8685",
+    "eye_hex": "#A8745A",
+    "liner_hex": "#1E1414",
+    "opacity": 0.55,
+    "finish": "satin"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "thai_bride neutral",
+   "value": {
+    "look": "thai_bride",
+    "undertone": "neutral",
+    "intensity": "medium",
+    "lip_hex": "#B5485A",
+    "blush_hex": "#E39A8C",
+    "eye_hex": "#A8745A",
+    "liner_hex": "#1E1414",
+    "opacity": 0.55,
+    "finish": "satin"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "thai_bride warm",
+   "value": {
+    "look": "thai_bride",
+    "undertone": "warm",
+    "intensity": "medium",
+    "lip_hex": "#BB5056",
+    "blush_hex": "#E39580",
+    "eye_hex": "#A8745A",
+    "liner_hex": "#1E1414",
+    "opacity": 0.55,
+    "finish": "satin"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "thai_bride olive",
+   "value": {
+    "look": "thai_bride",
+    "undertone": "olive",
+    "intensity": "medium",
+    "lip_hex": "#B54B53",
+    "blush_hex": "#DD947F",
+    "eye_hex": "#A8745A",
+    "liner_hex": "#1E1414",
+    "opacity": 0.55,
+    "finish": "satin"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "party_glam cool",
+   "value": {
+    "look": "party_glam",
+    "undertone": "cool",
+    "intensity": "medium",
+    "lip_hex": "#961E36",
+    "blush_hex": "#D6726B",
+    "eye_hex": "#5B3A4E",
+    "liner_hex": "#111111",
+    "opacity": 0.55,
+    "finish": "matte"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "party_glam neutral",
+   "value": {
+    "look": "party_glam",
+    "undertone": "neutral",
+    "intensity": "medium",
+    "lip_hex": "#8E1F2F",
+    "blush_hex": "#D9826E",
+    "eye_hex": "#5B3A4E",
+    "liner_hex": "#111111",
+    "opacity": 0.55,
+    "finish": "matte"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "party_glam warm",
+   "value": {
+    "look": "party_glam",
+    "undertone": "warm",
+    "intensity": "medium",
+    "lip_hex": "#9A2D31",
+    "blush_hex": "#DA8167",
+    "eye_hex": "#5B3A4E",
+    "liner_hex": "#111111",
+    "opacity": 0.55,
+    "finish": "matte"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "party_glam olive",
+   "value": {
+    "look": "party_glam",
+    "undertone": "olive",
+    "intensity": "medium",
+    "lip_hex": "#93272D",
+    "blush_hex": "#D57F64",
+    "eye_hex": "#5B3A4E",
+    "liner_hex": "#111111",
+    "opacity": 0.55,
+    "finish": "matte"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "office cool",
+   "value": {
+    "look": "office",
+    "undertone": "cool",
+    "intensity": "medium",
+    "lip_hex": "#BA595A",
+    "blush_hex": "#DB8C86",
+    "eye_hex": "#9C7B66",
+    "liner_hex": "#3A2A22",
+    "opacity": 0.55,
+    "finish": "satin"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "office neutral",
+   "value": {
+    "look": "office",
+    "undertone": "neutral",
+    "intensity": "medium",
+    "lip_hex": "#B8645A",
+    "blush_hex": "#DFA08E",
+    "eye_hex": "#9C7B66",
+    "liner_hex": "#3A2A22",
+    "opacity": 0.55,
+    "finish": "satin"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "office warm",
+   "value": {
+    "look": "office",
+    "undertone": "warm",
+    "intensity": "medium",
+    "lip_hex": "#BE6756",
+    "blush_hex": "#DF9A82",
+    "eye_hex": "#9C7B66",
+    "liner_hex": "#3A2A22",
+    "opacity": 0.55,
+    "finish": "satin"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "office olive",
+   "value": {
+    "look": "office",
+    "undertone": "olive",
+    "intensity": "medium",
+    "lip_hex": "#B86453",
+    "blush_hex": "#DA9980",
+    "eye_hex": "#9C7B66",
+    "liner_hex": "#3A2A22",
+    "opacity": 0.55,
+    "finish": "satin"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "y2k cool",
+   "value": {
+    "look": "y2k",
+    "undertone": "cool",
+    "intensity": "medium",
+    "lip_hex": "#E07DA3",
+    "blush_hex": "#EF8CB4",
+    "eye_hex": "#9FC3F0",
+    "liner_hex": "#2B2B6E",
+    "opacity": 0.55,
+    "finish": "glossy"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "y2k neutral",
+   "value": {
+    "look": "y2k",
+    "undertone": "neutral",
+    "intensity": "medium",
+    "lip_hex": "#E58FB0",
+    "blush_hex": "#F7A1C4",
+    "eye_hex": "#9FC3F0",
+    "liner_hex": "#2B2B6E",
+    "opacity": 0.55,
+    "finish": "glossy"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "y2k warm",
+   "value": {
+    "look": "y2k",
+    "undertone": "warm",
+    "intensity": "medium",
+    "lip_hex": "#E48C9F",
+    "blush_hex": "#F49BB0",
+    "eye_hex": "#9FC3F0",
+    "liner_hex": "#2B2B6E",
+    "opacity": 0.55,
+    "finish": "glossy"
+   }
+  },
+  {
+   "def": "LookPalette",
+   "note": "y2k olive",
+   "value": {
+    "look": "y2k",
+    "undertone": "olive",
+    "intensity": "medium",
+    "lip_hex": "#DF8A9E",
+    "blush_hex": "#EF9AB0",
+    "eye_hex": "#9FC3F0",
+    "liner_hex": "#2B2B6E",
+    "opacity": 0.55,
+    "finish": "glossy"
+   }
+  },
+  {
+   "def": "LookSpec",
+   "note": "demo natural",
+   "value": {
+    "look": "natural",
+    "depth": "light",
+    "undertone": "warm",
+    "intensity": "medium",
+    "palette": {
+     "look": "natural",
+     "undertone": "warm",
+     "intensity": "medium",
+     "lip_hex": "#CC7B67",
+     "blush_hex": "#E79F8B",
+     "eye_hex": "#B89580",
+     "liner_hex": null,
+     "opacity": 0.55,
+     "finish": "satin"
+    },
+    "minutes": 10,
+    "skill": 1,
+    "image_prompt": "Apply a realistic 'Natural no-makeup' makeup look to this exact person's own selfie: lips #CC7B67, blush #E79F8B, eyeshadow #B89580, satin finish, opacity 0.55. Keep identity, face shape, skin tone, skin depth and texture unchanged; no skin whitening, no face slimming, no reshaping; no celebrity likeness; keep hair, background and lighting; output 4:5.",
+    "title_th": "เนเชอรัลหน้าสด · 10 นาที",
+    "disclaimer_th": "ภาพจำลอง ไม่ใช่ผลจริง สีจริงต่างตามผิว แสง และผลิตภัณฑ์ · เฉดผิวและราคาเป็นค่าประมาณ"
+   }
+  },
+  {
+   "def": "LookSpec",
+   "note": "demo korean_glass",
+   "value": {
+    "look": "korean_glass",
+    "depth": "light",
+    "undertone": "warm",
+    "intensity": "medium",
+    "palette": {
+     "look": "korean_glass",
+     "undertone": "warm",
+     "intensity": "medium",
+     "lip_hex": "#E06C71",
+     "blush_hex": "#F1A09F",
+     "eye_hex": "#E9B7A6",
+     "liner_hex": "#5A3A2E",
+     "opacity": 0.55,
+     "finish": "dewy"
+    },
+    "minutes": 15,
+    "skill": 1,
+    "image_prompt": "Apply a realistic 'Korean glass skin' makeup look to this exact person's own selfie: lips #E06C71, blush #F1A09F, eyeshadow #E9B7A6, dewy finish, opacity 0.55. Keep identity, face shape, skin tone, skin depth and texture unchanged; no skin whitening, no face slimming, no reshaping; no celebrity likeness; keep hair, background and lighting; output 4:5.",
+    "title_th": "เกาหลีผิวฉ่ำ · 15 นาที",
+    "disclaimer_th": "ภาพจำลอง ไม่ใช่ผลจริง สีจริงต่างตามผิว แสง และผลิตภัณฑ์ · เฉดผิวและราคาเป็นค่าประมาณ"
+   }
+  },
+  {
+   "def": "LookSpec",
+   "note": "demo thai_bride",
+   "value": {
+    "look": "thai_bride",
+    "depth": "light",
+    "undertone": "warm",
+    "intensity": "medium",
+    "palette": {
+     "look": "thai_bride",
+     "undertone": "warm",
+     "intensity": "medium",
+     "lip_hex": "#BB5056",
+     "blush_hex": "#E39580",
+     "eye_hex": "#A8745A",
+     "liner_hex": "#1E1414",
+     "opacity": 0.55,
+     "finish": "satin"
+    },
+    "minutes": 45,
+    "skill": 3,
+    "image_prompt": "Apply a realistic 'Thai bride' makeup look to this exact person's own selfie: lips #BB5056, blush #E39580, eyeshadow #A8745A, satin finish, opacity 0.55. Keep identity, face shape, skin tone, skin depth and texture unchanged; no skin whitening, no face slimming, no reshaping; no celebrity likeness; keep hair, background and lighting; output 4:5.",
+    "title_th": "เจ้าสาวไทย · 45 นาที",
+    "disclaimer_th": "ภาพจำลอง ไม่ใช่ผลจริง สีจริงต่างตามผิว แสง และผลิตภัณฑ์ · เฉดผิวและราคาเป็นค่าประมาณ"
+   }
+  },
+  {
+   "def": "LookSpec",
+   "note": "demo party_glam",
+   "value": {
+    "look": "party_glam",
+    "depth": "light",
+    "undertone": "warm",
+    "intensity": "medium",
+    "palette": {
+     "look": "party_glam",
+     "undertone": "warm",
+     "intensity": "medium",
+     "lip_hex": "#9A2D31",
+     "blush_hex": "#DA8167",
+     "eye_hex": "#5B3A4E",
+     "liner_hex": "#111111",
+     "opacity": 0.55,
+     "finish": "matte"
+    },
+    "minutes": 35,
+    "skill": 3,
+    "image_prompt": "Apply a realistic 'Party glam' makeup look to this exact person's own selfie: lips #9A2D31, blush #DA8167, eyeshadow #5B3A4E, matte finish, opacity 0.55. Keep identity, face shape, skin tone, skin depth and texture unchanged; no skin whitening, no face slimming, no reshaping; no celebrity likeness; keep hair, background and lighting; output 4:5.",
+    "title_th": "ปาร์ตี้จัดเต็ม · 35 นาที",
+    "disclaimer_th": "ภาพจำลอง ไม่ใช่ผลจริง สีจริงต่างตามผิว แสง และผลิตภัณฑ์ · เฉดผิวและราคาเป็นค่าประมาณ"
+   }
+  },
+  {
+   "def": "LookSpec",
+   "note": "demo office",
+   "value": {
+    "look": "office",
+    "depth": "light",
+    "undertone": "warm",
+    "intensity": "medium",
+    "palette": {
+     "look": "office",
+     "undertone": "warm",
+     "intensity": "medium",
+     "lip_hex": "#BE6756",
+     "blush_hex": "#DF9A82",
+     "eye_hex": "#9C7B66",
+     "liner_hex": "#3A2A22",
+     "opacity": 0.55,
+     "finish": "satin"
+    },
+    "minutes": 15,
+    "skill": 2,
+    "image_prompt": "Apply a realistic 'Office polished' makeup look to this exact person's own selfie: lips #BE6756, blush #DF9A82, eyeshadow #9C7B66, satin finish, opacity 0.55. Keep identity, face shape, skin tone, skin depth and texture unchanged; no skin whitening, no face slimming, no reshaping; no celebrity likeness; keep hair, background and lighting; output 4:5.",
+    "title_th": "สาวออฟฟิศเรียบหรู · 15 นาที",
+    "disclaimer_th": "ภาพจำลอง ไม่ใช่ผลจริง สีจริงต่างตามผิว แสง และผลิตภัณฑ์ · เฉดผิวและราคาเป็นค่าประมาณ"
+   }
+  },
+  {
+   "def": "LookSpec",
+   "note": "demo y2k",
+   "value": {
+    "look": "y2k",
+    "depth": "light",
+    "undertone": "warm",
+    "intensity": "medium",
+    "palette": {
+     "look": "y2k",
+     "undertone": "warm",
+     "intensity": "medium",
+     "lip_hex": "#E48C9F",
+     "blush_hex": "#F49BB0",
+     "eye_hex": "#9FC3F0",
+     "liner_hex": "#2B2B6E",
+     "opacity": 0.55,
+     "finish": "glossy"
+    },
+    "minutes": 20,
+    "skill": 2,
+    "image_prompt": "Apply a realistic 'Y2K pop' makeup look to this exact person's own selfie: lips #E48C9F, blush #F49BB0, eyeshadow #9FC3F0, glossy finish, opacity 0.55. Keep identity, face shape, skin tone, skin depth and texture unchanged; no skin whitening, no face slimming, no reshaping; no celebrity likeness; keep hair, background and lighting; output 4:5.",
+    "title_th": "Y2K สายปั๊ว · 20 นาที",
+    "disclaimer_th": "ภาพจำลอง ไม่ใช่ผลจริง สีจริงต่างตามผิว แสง และผลิตภัณฑ์ · เฉดผิวและราคาเป็นค่าประมาณ"
+   }
+  },
+  {
+   "def": "LookSpec",
+   "note": "natural deep neutral soft",
+   "value": {
+    "look": "natural",
+    "depth": "deep",
+    "undertone": "neutral",
+    "intensity": "soft",
+    "palette": {
+     "look": "natural",
+     "undertone": "neutral",
+     "intensity": "soft",
+     "lip_hex": "#C97B6E",
+     "blush_hex": "#E8A598",
+     "eye_hex": "#B89580",
+     "liner_hex": null,
+     "opacity": 0.35,
+     "finish": "satin"
+    },
+    "minutes": 10,
+    "skill": 1,
+    "image_prompt": "Apply a realistic 'Natural no-makeup' makeup look to this exact person's own selfie: lips #C97B6E, blush #E8A598, eyeshadow #B89580, satin finish, opacity 0.35. Keep identity, face shape, skin tone, skin depth and texture unchanged; no skin whitening, no face slimming, no reshaping; no celebrity likeness; keep hair, background and lighting; output 4:5.",
+    "title_th": "เนเชอรัลหน้าสด · 10 นาที",
+    "disclaimer_th": "ภาพจำลอง ไม่ใช่ผลจริง สีจริงต่างตามผิว แสง และผลิตภัณฑ์ · เฉดผิวและราคาเป็นค่าประมาณ"
+   }
+  },
+  {
+   "def": "LookSpec",
+   "note": "thai_bride tan warm full",
+   "value": {
+    "look": "thai_bride",
+    "depth": "tan",
+    "undertone": "warm",
+    "intensity": "full",
+    "palette": {
+     "look": "thai_bride",
+     "undertone": "warm",
+     "intensity": "full",
+     "lip_hex": "#BB5056",
+     "blush_hex": "#E39580",
+     "eye_hex": "#A8745A",
+     "liner_hex": "#1E1414",
+     "opacity": 0.8,
+     "finish": "satin"
+    },
+    "minutes": 45,
+    "skill": 3,
+    "image_prompt": "Apply a realistic 'Thai bride' makeup look to this exact person's own selfie: lips #BB5056, blush #E39580, eyeshadow #A8745A, satin finish, opacity 0.8. Keep identity, face shape, skin tone, skin depth and texture unchanged; no skin whitening, no face slimming, no reshaping; no celebrity likeness; keep hair, background and lighting; output 4:5.",
+    "title_th": "เจ้าสาวไทย · 45 นาที",
+    "disclaimer_th": "ภาพจำลอง ไม่ใช่ผลจริง สีจริงต่างตามผิว แสง และผลิตภัณฑ์ · เฉดผิวและราคาเป็นค่าประมาณ"
+   }
+  },
+  {
+   "def": "LookSpec",
+   "note": "y2k fair cool full",
+   "value": {
+    "look": "y2k",
+    "depth": "fair",
+    "undertone": "cool",
+    "intensity": "full",
+    "palette": {
+     "look": "y2k",
+     "undertone": "cool",
+     "intensity": "full",
+     "lip_hex": "#E07DA3",
+     "blush_hex": "#EF8CB4",
+     "eye_hex": "#9FC3F0",
+     "liner_hex": "#2B2B6E",
+     "opacity": 0.8,
+     "finish": "glossy"
+    },
+    "minutes": 20,
+    "skill": 2,
+    "image_prompt": "Apply a realistic 'Y2K pop' makeup look to this exact person's own selfie: lips #E07DA3, blush #EF8CB4, eyeshadow #9FC3F0, glossy finish, opacity 0.8. Keep identity, face shape, skin tone, skin depth and texture unchanged; no skin whitening, no face slimming, no reshaping; no celebrity likeness; keep hair, background and lighting; output 4:5.",
+    "title_th": "Y2K สายปั๊ว · 20 นาที",
+    "disclaimer_th": "ภาพจำลอง ไม่ใช่ผลจริง สีจริงต่างตามผิว แสง และผลิตภัณฑ์ · เฉดผิวและราคาเป็นค่าประมาณ"
+   }
+  },
+  {
+   "def": "LookSpec",
+   "note": "office medium olive medium",
+   "value": {
+    "look": "office",
+    "depth": "medium",
+    "undertone": "olive",
+    "intensity": "medium",
+    "palette": {
+     "look": "office",
+     "undertone": "olive",
+     "intensity": "medium",
+     "lip_hex": "#B86453",
+     "blush_hex": "#DA9980",
+     "eye_hex": "#9C7B66",
+     "liner_hex": "#3A2A22",
+     "opacity": 0.55,
+     "finish": "satin"
+    },
+    "minutes": 15,
+    "skill": 2,
+    "image_prompt": "Apply a realistic 'Office polished' makeup look to this exact person's own selfie: lips #B86453, blush #DA9980, eyeshadow #9C7B66, satin finish, opacity 0.55. Keep identity, face shape, skin tone, skin depth and texture unchanged; no skin whitening, no face slimming, no reshaping; no celebrity likeness; keep hair, background and lighting; output 4:5.",
+    "title_th": "สาวออฟฟิศเรียบหรู · 15 นาที",
+    "disclaimer_th": "ภาพจำลอง ไม่ใช่ผลจริง สีจริงต่างตามผิว แสง และผลิตภัณฑ์ · เฉดผิวและราคาเป็นค่าประมาณ"
+   }
+  },
+  {
+   "def": "Tutorial",
+   "note": "natural",
+   "value": {
+    "look": "natural",
+    "steps": [
+     {
+      "n": 1,
+      "item": "skin_tint",
+      "area": "base",
+      "item_th": "สกินทินท์",
+      "tip_th": "ใช้นิ้วเกลี่ยบาง ๆ ให้เห็นผิวจริง",
+      "color_hex": null,
+      "minutes": 2
+     },
+     {
+      "n": 2,
+      "item": "concealer",
+      "area": "base",
+      "item_th": "คอนซีลเลอร์",
+      "tip_th": "แต้มเฉพาะใต้ตา/รอยสิว แล้วตบให้เนียน",
+      "color_hex": null,
+      "minutes": 2
+     },
+     {
+      "n": 3,
+      "item": "brow",
+      "area": "brow",
+      "item_th": "ดินสอเขียนคิ้ว",
+      "tip_th": "วาดตามทรงคิ้วจริง เริ่มจากหางคิ้ว",
+      "color_hex": null,
+      "minutes": 2
+     },
+     {
+      "n": 4,
+      "item": "lip_tint",
+      "area": "lip",
+      "item_th": "ลิปทินท์",
+      "tip_th": "ทาด้านในริมฝีปากแล้วเม้มให้ไล่สี",
+      "color_hex": "#CC7B67",
+      "minutes": 2
+     },
+     {
+      "n": 5,
+      "item": "mascara",
+      "area": "eye",
+      "item_th": "มาสคาร่า",
+      "tip_th": "ปัดจากโคนแล้วส่ายแปรงขึ้น",
+      "color_hex": "#B89580",
+      "minutes": 2
+     }
+    ],
+    "total_minutes": 10,
+    "simplified": false,
+    "note_th": "เริ่มจากผิวสะอาดและทาครีมกันแดดก่อนเสมอ"
+   }
+  },
+  {
+   "def": "Tutorial",
+   "note": "korean_glass",
+   "value": {
+    "look": "korean_glass",
+    "steps": [
+     {
+      "n": 1,
+      "item": "primer",
+      "area": "base",
+      "item_th": "ไพรเมอร์",
+      "tip_th": "บาง ๆ เฉพาะ T-zone ช่วยให้รองพื้นติดทน",
+      "color_hex": null,
+      "minutes": 2
+     },
+     {
+      "n": 2,
+      "item": "cushion",
+      "area": "base",
+      "item_th": "คุชชั่น",
+      "tip_th": "ตบเบา ๆ ทีละชั้น เน้นกลางหน้า",
+      "color_hex": null,
+      "minutes": 2
+     },
+     {
+      "n": 3,
+      "item": "concealer",
+      "area": "base",
+      "item_th": "คอนซีลเลอร์",
+      "tip_th": "แต้มเฉพาะใต้ตา/รอยสิว แล้วตบให้เนียน",
+      "color_hex": null,
+      "minutes": 2
+     },
+     {
+      "n": 4,
+      "item": "blush",
+      "area": "cheek",
+      "item_th": "บลัชออน",
+      "tip_th": "ยิ้มแล้วปัดที่โหนกแก้ม เกลี่ยขึ้นขมับ",
+      "color_hex": "#F1A09F",
+      "minutes": 2
+     },
+     {
+      "n": 5,
+      "item": "eyeshadow",
+      "area": "eye",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tip_th": "สีอ่อนทั่วเปลือกตา สีเข้มที่ร่องตา",
+      "color_hex": "#E9B7A6",
+      "minutes": 2
+     },
+     {
+      "n": 6,
+      "item": "lip_tint",
+      "area": "lip",
+      "item_th": "ลิปทินท์",
+      "tip_th": "ทาด้านในริมฝีปากแล้วเม้มให้ไล่สี",
+      "color_hex": "#E06C71",
+      "minutes": 2
+     },
+     {
+      "n": 7,
+      "item": "highlighter",
+      "area": "cheek",
+      "item_th": "ไฮไลต์",
+      "tip_th": "แตะสันจมูก โหนกแก้ม และคันศร",
+      "color_hex": "#F1A09F",
+      "minutes": 2
+     }
+    ],
+    "total_minutes": 14,
+    "simplified": false,
+    "note_th": "เริ่มจากผิวสะอาดและทาครีมกันแดดก่อนเสมอ"
+   }
+  },
+  {
+   "def": "Tutorial",
+   "note": "thai_bride",
+   "value": {
+    "look": "thai_bride",
+    "steps": [
+     {
+      "n": 1,
+      "item": "primer",
+      "area": "base",
+      "item_th": "ไพรเมอร์",
+      "tip_th": "บาง ๆ เฉพาะ T-zone ช่วยให้รองพื้นติดทน",
+      "color_hex": null,
+      "minutes": 3
+     },
+     {
+      "n": 2,
+      "item": "foundation",
+      "area": "base",
+      "item_th": "รองพื้น",
+      "tip_th": "ใช้เฉดตรงโค้ดของคุณ เกลี่ยลงคอให้กลืน",
+      "color_hex": null,
+      "minutes": 3
+     },
+     {
+      "n": 3,
+      "item": "concealer",
+      "area": "base",
+      "item_th": "คอนซีลเลอร์",
+      "tip_th": "แต้มเฉพาะใต้ตา/รอยสิว แล้วตบให้เนียน",
+      "color_hex": null,
+      "minutes": 3
+     },
+     {
+      "n": 4,
+      "item": "powder",
+      "area": "base",
+      "item_th": "แป้งฝุ่น/แป้งพัฟ",
+      "tip_th": "ปัดเฉพาะ T-zone กันมัน",
+      "color_hex": null,
+      "minutes": 3
+     },
+     {
+      "n": 5,
+      "item": "brow",
+      "area": "brow",
+      "item_th": "ดินสอเขียนคิ้ว",
+      "tip_th": "วาดตามทรงคิ้วจริง เริ่มจากหางคิ้ว",
+      "color_hex": null,
+      "minutes": 3
+     },
+     {
+      "n": 6,
+      "item": "eyeshadow",
+      "area": "eye",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tip_th": "สีอ่อนทั่วเปลือกตา สีเข้มที่ร่องตา",
+      "color_hex": "#A8745A",
+      "minutes": 3
+     },
+     {
+      "n": 7,
+      "item": "eyeliner",
+      "area": "eye",
+      "item_th": "อายไลเนอร์",
+      "tip_th": "ลากชิดโคนขนตา หางตายกขึ้นเล็กน้อย",
+      "color_hex": "#A8745A",
+      "minutes": 3
+     },
+     {
+      "n": 8,
+      "item": "false_lashes",
+      "area": "eye",
+      "item_th": "ขนตาปลอม",
+      "tip_th": "ตัดให้พอดีตา ติดห่างหัวตาเล็กน้อย",
+      "color_hex": "#A8745A",
+      "minutes": 3
+     },
+     {
+      "n": 9,
+      "item": "mascara",
+      "area": "eye",
+      "item_th": "มาสคาร่า",
+      "tip_th": "ปัดจากโคนแล้วส่ายแปรงขึ้น",
+      "color_hex": "#A8745A",
+      "minutes": 3
+     },
+     {
+      "n": 10,
+      "item": "blush",
+      "area": "cheek",
+      "item_th": "บลัชออน",
+      "tip_th": "ยิ้มแล้วปัดที่โหนกแก้ม เกลี่ยขึ้นขมับ",
+      "color_hex": "#E39580",
+      "minutes": 3
+     },
+     {
+      "n": 11,
+      "item": "highlighter",
+      "area": "cheek",
+      "item_th": "ไฮไลต์",
+      "tip_th": "แตะสันจมูก โหนกแก้ม และคันศร",
+      "color_hex": "#E39580",
+      "minutes": 3
+     },
+     {
+      "n": 12,
+      "item": "lipstick",
+      "area": "lip",
+      "item_th": "ลิปสติก",
+      "tip_th": "เขียนขอบปากก่อนแล้วเติมสี",
+      "color_hex": "#BB5056",
+      "minutes": 3
+     },
+     {
+      "n": 13,
+      "item": "setting_spray",
+      "area": "finish",
+      "item_th": "สเปรย์ล็อกเมคอัพ",
+      "tip_th": "ฉีดห่าง 20 ซม. เป็นรูปตัว X",
+      "color_hex": null,
+      "minutes": 3
+     }
+    ],
+    "total_minutes": 39,
+    "simplified": false,
+    "note_th": "เริ่มจากผิวสะอาดและทาครีมกันแดดก่อนเสมอ"
+   }
+  },
+  {
+   "def": "Tutorial",
+   "note": "party_glam",
+   "value": {
+    "look": "party_glam",
+    "steps": [
+     {
+      "n": 1,
+      "item": "primer",
+      "area": "base",
+      "item_th": "ไพรเมอร์",
+      "tip_th": "บาง ๆ เฉพาะ T-zone ช่วยให้รองพื้นติดทน",
+      "color_hex": null,
+      "minutes": 3
+     },
+     {
+      "n": 2,
+      "item": "foundation",
+      "area": "base",
+      "item_th": "รองพื้น",
+      "tip_th": "ใช้เฉดตรงโค้ดของคุณ เกลี่ยลงคอให้กลืน",
+      "color_hex": null,
+      "minutes": 3
+     },
+     {
+      "n": 3,
+      "item": "concealer",
+      "area": "base",
+      "item_th": "คอนซีลเลอร์",
+      "tip_th": "แต้มเฉพาะใต้ตา/รอยสิว แล้วตบให้เนียน",
+      "color_hex": null,
+      "minutes": 3
+     },
+     {
+      "n": 4,
+      "item": "powder",
+      "area": "base",
+      "item_th": "แป้งฝุ่น/แป้งพัฟ",
+      "tip_th": "ปัดเฉพาะ T-zone กันมัน",
+      "color_hex": null,
+      "minutes": 3
+     },
+     {
+      "n": 5,
+      "item": "eyeshadow",
+      "area": "eye",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tip_th": "สีอ่อนทั่วเปลือกตา สีเข้มที่ร่องตา",
+      "color_hex": "#5B3A4E",
+      "minutes": 3
+     },
+     {
+      "n": 6,
+      "item": "eyeliner",
+      "area": "eye",
+      "item_th": "อายไลเนอร์",
+      "tip_th": "ลากชิดโคนขนตา หางตายกขึ้นเล็กน้อย",
+      "color_hex": "#5B3A4E",
+      "minutes": 3
+     },
+     {
+      "n": 7,
+      "item": "false_lashes",
+      "area": "eye",
+      "item_th": "ขนตาปลอม",
+      "tip_th": "ตัดให้พอดีตา ติดห่างหัวตาเล็กน้อย",
+      "color_hex": "#5B3A4E",
+      "minutes": 3
+     },
+     {
+      "n": 8,
+      "item": "blush",
+      "area": "cheek",
+      "item_th": "บลัชออน",
+      "tip_th": "ยิ้มแล้วปัดที่โหนกแก้ม เกลี่ยขึ้นขมับ",
+      "color_hex": "#DA8167",
+      "minutes": 3
+     },
+     {
+      "n": 9,
+      "item": "highlighter",
+      "area": "cheek",
+      "item_th": "ไฮไลต์",
+      "tip_th": "แตะสันจมูก โหนกแก้ม และคันศร",
+      "color_hex": "#DA8167",
+      "minutes": 3
+     },
+     {
+      "n": 10,
+      "item": "lipstick",
+      "area": "lip",
+      "item_th": "ลิปสติก",
+      "tip_th": "เขียนขอบปากก่อนแล้วเติมสี",
+      "color_hex": "#9A2D31",
+      "minutes": 3
+     },
+     {
+      "n": 11,
+      "item": "setting_spray",
+      "area": "finish",
+      "item_th": "สเปรย์ล็อกเมคอัพ",
+      "tip_th": "ฉีดห่าง 20 ซม. เป็นรูปตัว X",
+      "color_hex": null,
+      "minutes": 3
+     }
+    ],
+    "total_minutes": 33,
+    "simplified": false,
+    "note_th": "เริ่มจากผิวสะอาดและทาครีมกันแดดก่อนเสมอ"
+   }
+  },
+  {
+   "def": "Tutorial",
+   "note": "office",
+   "value": {
+    "look": "office",
+    "steps": [
+     {
+      "n": 1,
+      "item": "primer",
+      "area": "base",
+      "item_th": "ไพรเมอร์",
+      "tip_th": "บาง ๆ เฉพาะ T-zone ช่วยให้รองพื้นติดทน",
+      "color_hex": null,
+      "minutes": 2
+     },
+     {
+      "n": 2,
+      "item": "foundation",
+      "area": "base",
+      "item_th": "รองพื้น",
+      "tip_th": "ใช้เฉดตรงโค้ดของคุณ เกลี่ยลงคอให้กลืน",
+      "color_hex": null,
+      "minutes": 2
+     },
+     {
+      "n": 3,
+      "item": "concealer",
+      "area": "base",
+      "item_th": "คอนซีลเลอร์",
+      "tip_th": "แต้มเฉพาะใต้ตา/รอยสิว แล้วตบให้เนียน",
+      "color_hex": null,
+      "minutes": 2
+     },
+     {
+      "n": 4,
+      "item": "powder",
+      "area": "base",
+      "item_th": "แป้งฝุ่น/แป้งพัฟ",
+      "tip_th": "ปัดเฉพาะ T-zone กันมัน",
+      "color_hex": null,
+      "minutes": 2
+     },
+     {
+      "n": 5,
+      "item": "brow",
+      "area": "brow",
+      "item_th": "ดินสอเขียนคิ้ว",
+      "tip_th": "วาดตามทรงคิ้วจริง เริ่มจากหางคิ้ว",
+      "color_hex": null,
+      "minutes": 2
+     },
+     {
+      "n": 6,
+      "item": "eyeshadow",
+      "area": "eye",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tip_th": "สีอ่อนทั่วเปลือกตา สีเข้มที่ร่องตา",
+      "color_hex": "#9C7B66",
+      "minutes": 2
+     },
+     {
+      "n": 7,
+      "item": "mascara",
+      "area": "eye",
+      "item_th": "มาสคาร่า",
+      "tip_th": "ปัดจากโคนแล้วส่ายแปรงขึ้น",
+      "color_hex": "#9C7B66",
+      "minutes": 2
+     },
+     {
+      "n": 8,
+      "item": "blush",
+      "area": "cheek",
+      "item_th": "บลัชออน",
+      "tip_th": "ยิ้มแล้วปัดที่โหนกแก้ม เกลี่ยขึ้นขมับ",
+      "color_hex": "#DF9A82",
+      "minutes": 2
+     },
+     {
+      "n": 9,
+      "item": "lipstick",
+      "area": "lip",
+      "item_th": "ลิปสติก",
+      "tip_th": "เขียนขอบปากก่อนแล้วเติมสี",
+      "color_hex": "#BE6756",
+      "minutes": 2
+     }
+    ],
+    "total_minutes": 18,
+    "simplified": false,
+    "note_th": "เริ่มจากผิวสะอาดและทาครีมกันแดดก่อนเสมอ"
+   }
+  },
+  {
+   "def": "Tutorial",
+   "note": "y2k",
+   "value": {
+    "look": "y2k",
+    "steps": [
+     {
+      "n": 1,
+      "item": "skin_tint",
+      "area": "base",
+      "item_th": "สกินทินท์",
+      "tip_th": "ใช้นิ้วเกลี่ยบาง ๆ ให้เห็นผิวจริง",
+      "color_hex": null,
+      "minutes": 2
+     },
+     {
+      "n": 2,
+      "item": "concealer",
+      "area": "base",
+      "item_th": "คอนซีลเลอร์",
+      "tip_th": "แต้มเฉพาะใต้ตา/รอยสิว แล้วตบให้เนียน",
+      "color_hex": null,
+      "minutes": 2
+     },
+     {
+      "n": 3,
+      "item": "eyeshadow",
+      "area": "eye",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tip_th": "สีอ่อนทั่วเปลือกตา สีเข้มที่ร่องตา",
+      "color_hex": "#9FC3F0",
+      "minutes": 2
+     },
+     {
+      "n": 4,
+      "item": "eyeliner",
+      "area": "eye",
+      "item_th": "อายไลเนอร์",
+      "tip_th": "ลากชิดโคนขนตา หางตายกขึ้นเล็กน้อย",
+      "color_hex": "#9FC3F0",
+      "minutes": 2
+     },
+     {
+      "n": 5,
+      "item": "mascara",
+      "area": "eye",
+      "item_th": "มาสคาร่า",
+      "tip_th": "ปัดจากโคนแล้วส่ายแปรงขึ้น",
+      "color_hex": "#9FC3F0",
+      "minutes": 2
+     },
+     {
+      "n": 6,
+      "item": "blush",
+      "area": "cheek",
+      "item_th": "บลัชออน",
+      "tip_th": "ยิ้มแล้วปัดที่โหนกแก้ม เกลี่ยขึ้นขมับ",
+      "color_hex": "#F49BB0",
+      "minutes": 2
+     },
+     {
+      "n": 7,
+      "item": "lip_gloss",
+      "area": "lip",
+      "item_th": "ลิปกลอส",
+      "tip_th": "ทากลางปากให้ดูอวบอิ่ม",
+      "color_hex": "#E48C9F",
+      "minutes": 2
+     },
+     {
+      "n": 8,
+      "item": "glitter",
+      "area": "eye",
+      "item_th": "กลิตเตอร์ทาตา",
+      "tip_th": "แตะกลางเปลือกตา/หัวตา ระวังเข้าตา",
+      "color_hex": "#9FC3F0",
+      "minutes": 2
+     }
+    ],
+    "total_minutes": 16,
+    "simplified": false,
+    "note_th": "เริ่มจากผิวสะอาดและทาครีมกันแดดก่อนเสมอ"
+   }
+  },
+  {
+   "def": "Tutorial",
+   "note": "party simplified",
+   "value": {
+    "look": "party_glam",
+    "steps": [
+     {
+      "n": 1,
+      "item": "primer",
+      "area": "base",
+      "item_th": "ไพรเมอร์",
+      "tip_th": "บาง ๆ เฉพาะ T-zone ช่วยให้รองพื้นติดทน",
+      "color_hex": null,
+      "minutes": 4
+     },
+     {
+      "n": 2,
+      "item": "foundation",
+      "area": "base",
+      "item_th": "รองพื้น",
+      "tip_th": "ใช้เฉดตรงโค้ดของคุณ เกลี่ยลงคอให้กลืน",
+      "color_hex": null,
+      "minutes": 4
+     },
+     {
+      "n": 3,
+      "item": "concealer",
+      "area": "base",
+      "item_th": "คอนซีลเลอร์",
+      "tip_th": "แต้มเฉพาะใต้ตา/รอยสิว แล้วตบให้เนียน",
+      "color_hex": null,
+      "minutes": 4
+     },
+     {
+      "n": 4,
+      "item": "powder",
+      "area": "base",
+      "item_th": "แป้งฝุ่น/แป้งพัฟ",
+      "tip_th": "ปัดเฉพาะ T-zone กันมัน",
+      "color_hex": null,
+      "minutes": 4
+     },
+     {
+      "n": 5,
+      "item": "eyeshadow",
+      "area": "eye",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tip_th": "สีอ่อนทั่วเปลือกตา สีเข้มที่ร่องตา",
+      "color_hex": "#5B3A4E",
+      "minutes": 4
+     },
+     {
+      "n": 6,
+      "item": "blush",
+      "area": "cheek",
+      "item_th": "บลัชออน",
+      "tip_th": "ยิ้มแล้วปัดที่โหนกแก้ม เกลี่ยขึ้นขมับ",
+      "color_hex": "#D9826E",
+      "minutes": 4
+     },
+     {
+      "n": 7,
+      "item": "highlighter",
+      "area": "cheek",
+      "item_th": "ไฮไลต์",
+      "tip_th": "แตะสันจมูก โหนกแก้ม และคันศร",
+      "color_hex": "#D9826E",
+      "minutes": 4
+     },
+     {
+      "n": 8,
+      "item": "lipstick",
+      "area": "lip",
+      "item_th": "ลิปสติก",
+      "tip_th": "เขียนขอบปากก่อนแล้วเติมสี",
+      "color_hex": "#8E1F2F",
+      "minutes": 4
+     },
+     {
+      "n": 9,
+      "item": "setting_spray",
+      "area": "finish",
+      "item_th": "สเปรย์ล็อกเมคอัพ",
+      "tip_th": "ฉีดห่าง 20 ซม. เป็นรูปตัว X",
+      "color_hex": null,
+      "minutes": 4
+     }
+    ],
+    "total_minutes": 36,
+    "simplified": true,
+    "note_th": "เริ่มจากผิวสะอาดและทาครีมกันแดดก่อนเสมอ"
+   }
+  },
+  {
+   "def": "TutorialStep",
+   "note": "primer",
+   "value": {
+    "n": 1,
+    "item": "primer",
+    "area": "base",
+    "item_th": "ไพรเมอร์",
+    "tip_th": "บาง ๆ เฉพาะ T-zone ช่วยให้รองพื้นติดทน",
+    "color_hex": null,
+    "minutes": 2
+   }
+  },
+  {
+   "def": "TutorialStep",
+   "note": "cushion",
+   "value": {
+    "n": 2,
+    "item": "cushion",
+    "area": "base",
+    "item_th": "คุชชั่น",
+    "tip_th": "ตบเบา ๆ ทีละชั้น เน้นกลางหน้า",
+    "color_hex": null,
+    "minutes": 2
+   }
+  },
+  {
+   "def": "TutorialStep",
+   "note": "concealer",
+   "value": {
+    "n": 3,
+    "item": "concealer",
+    "area": "base",
+    "item_th": "คอนซีลเลอร์",
+    "tip_th": "แต้มเฉพาะใต้ตา/รอยสิว แล้วตบให้เนียน",
+    "color_hex": null,
+    "minutes": 2
+   }
+  },
+  {
+   "def": "TutorialStep",
+   "note": "blush",
+   "value": {
+    "n": 4,
+    "item": "blush",
+    "area": "cheek",
+    "item_th": "บลัชออน",
+    "tip_th": "ยิ้มแล้วปัดที่โหนกแก้ม เกลี่ยขึ้นขมับ",
+    "color_hex": "#F1A09F",
+    "minutes": 2
+   }
+  },
+  {
+   "def": "TutorialStep",
+   "note": "eyeshadow",
+   "value": {
+    "n": 5,
+    "item": "eyeshadow",
+    "area": "eye",
+    "item_th": "พาเลตต์อายแชโดว์",
+    "tip_th": "สีอ่อนทั่วเปลือกตา สีเข้มที่ร่องตา",
+    "color_hex": "#E9B7A6",
+    "minutes": 2
+   }
+  },
+  {
+   "def": "TutorialStep",
+   "note": "lip_tint",
+   "value": {
+    "n": 6,
+    "item": "lip_tint",
+    "area": "lip",
+    "item_th": "ลิปทินท์",
+    "tip_th": "ทาด้านในริมฝีปากแล้วเม้มให้ไล่สี",
+    "color_hex": "#E06C71",
+    "minutes": 2
+   }
+  },
+  {
+   "def": "TutorialStep",
+   "note": "highlighter",
+   "value": {
+    "n": 7,
+    "item": "highlighter",
+    "area": "cheek",
+    "item_th": "ไฮไลต์",
+    "tip_th": "แตะสันจมูก โหนกแก้ม และคันศร",
+    "color_hex": "#F1A09F",
+    "minutes": 2
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "natural budget",
+   "value": {
+    "look": "natural",
+    "tier": "budget",
+    "tier_th": "สายประหยัด (ร้านสะดวกซื้อ/ดรักสโตร์)",
+    "items": [
+     {
+      "item": "skin_tint",
+      "item_th": "สกินทินท์",
+      "tier": "budget",
+      "low_baht": 129,
+      "high_baht": 259
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "budget",
+      "low_baht": 89,
+      "high_baht": 199
+     },
+     {
+      "item": "brow",
+      "item_th": "ดินสอเขียนคิ้ว",
+      "tier": "budget",
+      "low_baht": 59,
+      "high_baht": 129
+     },
+     {
+      "item": "lip_tint",
+      "item_th": "ลิปทินท์",
+      "tier": "budget",
+      "low_baht": 59,
+      "high_baht": 159
+     },
+     {
+      "item": "mascara",
+      "item_th": "มาสคาร่า",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 179
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 415,
+    "high_baht": 925,
+    "save_vs_premium_baht": 6575,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "natural mid",
+   "value": {
+    "look": "natural",
+    "tier": "mid",
+    "tier_th": "กลาง ๆ (เคาน์เตอร์ห้าง)",
+    "items": [
+     {
+      "item": "skin_tint",
+      "item_th": "สกินทินท์",
+      "tier": "mid",
+      "low_baht": 350,
+      "high_baht": 690
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "brow",
+      "item_th": "ดินสอเขียนคิ้ว",
+      "tier": "mid",
+      "low_baht": 190,
+      "high_baht": 390
+     },
+     {
+      "item": "lip_tint",
+      "item_th": "ลิปทินท์",
+      "tier": "mid",
+      "low_baht": 250,
+      "high_baht": 450
+     },
+     {
+      "item": "mascara",
+      "item_th": "มาสคาร่า",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 490
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 1370,
+    "high_baht": 2610,
+    "save_vs_premium_baht": 4890,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "natural premium",
+   "value": {
+    "look": "natural",
+    "tier": "premium",
+    "tier_th": "จัดเต็ม (ไฮเอนด์)",
+    "items": [
+     {
+      "item": "skin_tint",
+      "item_th": "สกินทินท์",
+      "tier": "premium",
+      "low_baht": 1100,
+      "high_baht": 2100
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "premium",
+      "low_baht": 900,
+      "high_baht": 1500
+     },
+     {
+      "item": "brow",
+      "item_th": "ดินสอเขียนคิ้ว",
+      "tier": "premium",
+      "low_baht": 700,
+      "high_baht": 1200
+     },
+     {
+      "item": "lip_tint",
+      "item_th": "ลิปทินท์",
+      "tier": "premium",
+      "low_baht": 800,
+      "high_baht": 1300
+     },
+     {
+      "item": "mascara",
+      "item_th": "มาสคาร่า",
+      "tier": "premium",
+      "low_baht": 900,
+      "high_baht": 1400
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 4400,
+    "high_baht": 7500,
+    "save_vs_premium_baht": 0,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "korean_glass budget",
+   "value": {
+    "look": "korean_glass",
+    "tier": "budget",
+    "tier_th": "สายประหยัด (ร้านสะดวกซื้อ/ดรักสโตร์)",
+    "items": [
+     {
+      "item": "primer",
+      "item_th": "ไพรเมอร์",
+      "tier": "budget",
+      "low_baht": 99,
+      "high_baht": 199
+     },
+     {
+      "item": "cushion",
+      "item_th": "คุชชั่น",
+      "tier": "budget",
+      "low_baht": 159,
+      "high_baht": 299
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "budget",
+      "low_baht": 89,
+      "high_baht": 199
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 179
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "budget",
+      "low_baht": 99,
+      "high_baht": 249
+     },
+     {
+      "item": "lip_tint",
+      "item_th": "ลิปทินท์",
+      "tier": "budget",
+      "low_baht": 59,
+      "high_baht": 159
+     },
+     {
+      "item": "highlighter",
+      "item_th": "ไฮไลต์",
+      "tier": "budget",
+      "low_baht": 89,
+      "high_baht": 199
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 673,
+    "high_baht": 1483,
+    "save_vs_premium_baht": 12817,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "korean_glass mid",
+   "value": {
+    "look": "korean_glass",
+    "tier": "mid",
+    "tier_th": "กลาง ๆ (เคาน์เตอร์ห้าง)",
+    "items": [
+     {
+      "item": "primer",
+      "item_th": "ไพรเมอร์",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "cushion",
+      "item_th": "คุชชั่น",
+      "tier": "mid",
+      "low_baht": 450,
+      "high_baht": 890
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "mid",
+      "low_baht": 390,
+      "high_baht": 890
+     },
+     {
+      "item": "lip_tint",
+      "item_th": "ลิปทินท์",
+      "tier": "mid",
+      "low_baht": 250,
+      "high_baht": 450
+     },
+     {
+      "item": "highlighter",
+      "item_th": "ไฮไลต์",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 2250,
+    "high_baht": 4590,
+    "save_vs_premium_baht": 9710,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "korean_glass premium",
+   "value": {
+    "look": "korean_glass",
+    "tier": "premium",
+    "tier_th": "จัดเต็ม (ไฮเอนด์)",
+    "items": [
+     {
+      "item": "primer",
+      "item_th": "ไพรเมอร์",
+      "tier": "premium",
+      "low_baht": 990,
+      "high_baht": 1900
+     },
+     {
+      "item": "cushion",
+      "item_th": "คุชชั่น",
+      "tier": "premium",
+      "low_baht": 1500,
+      "high_baht": 2600
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "premium",
+      "low_baht": 900,
+      "high_baht": 1500
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "premium",
+      "low_baht": 1000,
+      "high_baht": 1900
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "premium",
+      "low_baht": 1500,
+      "high_baht": 3200
+     },
+     {
+      "item": "lip_tint",
+      "item_th": "ลิปทินท์",
+      "tier": "premium",
+      "low_baht": 800,
+      "high_baht": 1300
+     },
+     {
+      "item": "highlighter",
+      "item_th": "ไฮไลต์",
+      "tier": "premium",
+      "low_baht": 1000,
+      "high_baht": 1900
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 7690,
+    "high_baht": 14300,
+    "save_vs_premium_baht": 0,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "thai_bride budget",
+   "value": {
+    "look": "thai_bride",
+    "tier": "budget",
+    "tier_th": "สายประหยัด (ร้านสะดวกซื้อ/ดรักสโตร์)",
+    "items": [
+     {
+      "item": "primer",
+      "item_th": "ไพรเมอร์",
+      "tier": "budget",
+      "low_baht": 99,
+      "high_baht": 199
+     },
+     {
+      "item": "foundation",
+      "item_th": "รองพื้น",
+      "tier": "budget",
+      "low_baht": 149,
+      "high_baht": 299
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "budget",
+      "low_baht": 89,
+      "high_baht": 199
+     },
+     {
+      "item": "powder",
+      "item_th": "แป้งฝุ่น/แป้งพัฟ",
+      "tier": "budget",
+      "low_baht": 89,
+      "high_baht": 199
+     },
+     {
+      "item": "brow",
+      "item_th": "ดินสอเขียนคิ้ว",
+      "tier": "budget",
+      "low_baht": 59,
+      "high_baht": 129
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "budget",
+      "low_baht": 99,
+      "high_baht": 249
+     },
+     {
+      "item": "eyeliner",
+      "item_th": "อายไลเนอร์",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 159
+     },
+     {
+      "item": "false_lashes",
+      "item_th": "ขนตาปลอม",
+      "tier": "budget",
+      "low_baht": 39,
+      "high_baht": 99
+     },
+     {
+      "item": "mascara",
+      "item_th": "มาสคาร่า",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 179
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 179
+     },
+     {
+      "item": "highlighter",
+      "item_th": "ไฮไลต์",
+      "tier": "budget",
+      "low_baht": 89,
+      "high_baht": 199
+     },
+     {
+      "item": "lipstick",
+      "item_th": "ลิปสติก",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 199
+     },
+     {
+      "item": "setting_spray",
+      "item_th": "สเปรย์ล็อกเมคอัพ",
+      "tier": "budget",
+      "low_baht": 99,
+      "high_baht": 199
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 1127,
+    "high_baht": 2487,
+    "save_vs_premium_baht": 20813,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "thai_bride mid",
+   "value": {
+    "look": "thai_bride",
+    "tier": "mid",
+    "tier_th": "กลาง ๆ (เคาน์เตอร์ห้าง)",
+    "items": [
+     {
+      "item": "primer",
+      "item_th": "ไพรเมอร์",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "foundation",
+      "item_th": "รองพื้น",
+      "tier": "mid",
+      "low_baht": 450,
+      "high_baht": 990
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "powder",
+      "item_th": "แป้งฝุ่น/แป้งพัฟ",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "brow",
+      "item_th": "ดินสอเขียนคิ้ว",
+      "tier": "mid",
+      "low_baht": 190,
+      "high_baht": 390
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "mid",
+      "low_baht": 390,
+      "high_baht": 890
+     },
+     {
+      "item": "eyeliner",
+      "item_th": "อายไลเนอร์",
+      "tier": "mid",
+      "low_baht": 250,
+      "high_baht": 450
+     },
+     {
+      "item": "false_lashes",
+      "item_th": "ขนตาปลอม",
+      "tier": "mid",
+      "low_baht": 150,
+      "high_baht": 290
+     },
+     {
+      "item": "mascara",
+      "item_th": "มาสคาร่า",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 490
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "highlighter",
+      "item_th": "ไฮไลต์",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "lipstick",
+      "item_th": "ลิปสติก",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "setting_spray",
+      "item_th": "สเปรย์ล็อกเมคอัพ",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 3750,
+    "high_baht": 7630,
+    "save_vs_premium_baht": 15670,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "thai_bride premium",
+   "value": {
+    "look": "thai_bride",
+    "tier": "premium",
+    "tier_th": "จัดเต็ม (ไฮเอนด์)",
+    "items": [
+     {
+      "item": "primer",
+      "item_th": "ไพรเมอร์",
+      "tier": "premium",
+      "low_baht": 990,
+      "high_baht": 1900
+     },
+     {
+      "item": "foundation",
+      "item_th": "รองพื้น",
+      "tier": "premium",
+      "low_baht": 1500,
+      "high_baht": 2800
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "premium",
+      "low_baht": 900,
+      "high_baht": 1500
+     },
+     {
+      "item": "powder",
+      "item_th": "แป้งฝุ่น/แป้งพัฟ",
+      "tier": "premium",
+      "low_baht": 1000,
+      "high_baht": 1900
+     },
+     {
+      "item": "brow",
+      "item_th": "ดินสอเขียนคิ้ว",
+      "tier": "premium",
+      "low_baht": 700,
+      "high_baht": 1200
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "premium",
+      "low_baht": 1500,
+      "high_baht": 3200
+     },
+     {
+      "item": "eyeliner",
+      "item_th": "อายไลเนอร์",
+      "tier": "premium",
+      "low_baht": 800,
+      "high_baht": 1300
+     },
+     {
+      "item": "false_lashes",
+      "item_th": "ขนตาปลอม",
+      "tier": "premium",
+      "low_baht": 450,
+      "high_baht": 900
+     },
+     {
+      "item": "mascara",
+      "item_th": "มาสคาร่า",
+      "tier": "premium",
+      "low_baht": 900,
+      "high_baht": 1400
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "premium",
+      "low_baht": 1000,
+      "high_baht": 1900
+     },
+     {
+      "item": "highlighter",
+      "item_th": "ไฮไลต์",
+      "tier": "premium",
+      "low_baht": 1000,
+      "high_baht": 1900
+     },
+     {
+      "item": "lipstick",
+      "item_th": "ลิปสติก",
+      "tier": "premium",
+      "low_baht": 1100,
+      "high_baht": 1700
+     },
+     {
+      "item": "setting_spray",
+      "item_th": "สเปรย์ล็อกเมคอัพ",
+      "tier": "premium",
+      "low_baht": 1000,
+      "high_baht": 1700
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 12840,
+    "high_baht": 23300,
+    "save_vs_premium_baht": 0,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "party_glam budget",
+   "value": {
+    "look": "party_glam",
+    "tier": "budget",
+    "tier_th": "สายประหยัด (ร้านสะดวกซื้อ/ดรักสโตร์)",
+    "items": [
+     {
+      "item": "primer",
+      "item_th": "ไพรเมอร์",
+      "tier": "budget",
+      "low_baht": 99,
+      "high_baht": 199
+     },
+     {
+      "item": "foundation",
+      "item_th": "รองพื้น",
+      "tier": "budget",
+      "low_baht": 149,
+      "high_baht": 299
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "budget",
+      "low_baht": 89,
+      "high_baht": 199
+     },
+     {
+      "item": "powder",
+      "item_th": "แป้งฝุ่น/แป้งพัฟ",
+      "tier": "budget",
+      "low_baht": 89,
+      "high_baht": 199
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "budget",
+      "low_baht": 99,
+      "high_baht": 249
+     },
+     {
+      "item": "eyeliner",
+      "item_th": "อายไลเนอร์",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 159
+     },
+     {
+      "item": "false_lashes",
+      "item_th": "ขนตาปลอม",
+      "tier": "budget",
+      "low_baht": 39,
+      "high_baht": 99
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 179
+     },
+     {
+      "item": "highlighter",
+      "item_th": "ไฮไลต์",
+      "tier": "budget",
+      "low_baht": 89,
+      "high_baht": 199
+     },
+     {
+      "item": "lipstick",
+      "item_th": "ลิปสติก",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 199
+     },
+     {
+      "item": "setting_spray",
+      "item_th": "สเปรย์ล็อกเมคอัพ",
+      "tier": "budget",
+      "low_baht": 99,
+      "high_baht": 199
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 989,
+    "high_baht": 2179,
+    "save_vs_premium_baht": 18521,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "party_glam mid",
+   "value": {
+    "look": "party_glam",
+    "tier": "mid",
+    "tier_th": "กลาง ๆ (เคาน์เตอร์ห้าง)",
+    "items": [
+     {
+      "item": "primer",
+      "item_th": "ไพรเมอร์",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "foundation",
+      "item_th": "รองพื้น",
+      "tier": "mid",
+      "low_baht": 450,
+      "high_baht": 990
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "powder",
+      "item_th": "แป้งฝุ่น/แป้งพัฟ",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "mid",
+      "low_baht": 390,
+      "high_baht": 890
+     },
+     {
+      "item": "eyeliner",
+      "item_th": "อายไลเนอร์",
+      "tier": "mid",
+      "low_baht": 250,
+      "high_baht": 450
+     },
+     {
+      "item": "false_lashes",
+      "item_th": "ขนตาปลอม",
+      "tier": "mid",
+      "low_baht": 150,
+      "high_baht": 290
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "highlighter",
+      "item_th": "ไฮไลต์",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "lipstick",
+      "item_th": "ลิปสติก",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "setting_spray",
+      "item_th": "สเปรย์ล็อกเมคอัพ",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 3270,
+    "high_baht": 6750,
+    "save_vs_premium_baht": 13950,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "party_glam premium",
+   "value": {
+    "look": "party_glam",
+    "tier": "premium",
+    "tier_th": "จัดเต็ม (ไฮเอนด์)",
+    "items": [
+     {
+      "item": "primer",
+      "item_th": "ไพรเมอร์",
+      "tier": "premium",
+      "low_baht": 990,
+      "high_baht": 1900
+     },
+     {
+      "item": "foundation",
+      "item_th": "รองพื้น",
+      "tier": "premium",
+      "low_baht": 1500,
+      "high_baht": 2800
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "premium",
+      "low_baht": 900,
+      "high_baht": 1500
+     },
+     {
+      "item": "powder",
+      "item_th": "แป้งฝุ่น/แป้งพัฟ",
+      "tier": "premium",
+      "low_baht": 1000,
+      "high_baht": 1900
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "premium",
+      "low_baht": 1500,
+      "high_baht": 3200
+     },
+     {
+      "item": "eyeliner",
+      "item_th": "อายไลเนอร์",
+      "tier": "premium",
+      "low_baht": 800,
+      "high_baht": 1300
+     },
+     {
+      "item": "false_lashes",
+      "item_th": "ขนตาปลอม",
+      "tier": "premium",
+      "low_baht": 450,
+      "high_baht": 900
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "premium",
+      "low_baht": 1000,
+      "high_baht": 1900
+     },
+     {
+      "item": "highlighter",
+      "item_th": "ไฮไลต์",
+      "tier": "premium",
+      "low_baht": 1000,
+      "high_baht": 1900
+     },
+     {
+      "item": "lipstick",
+      "item_th": "ลิปสติก",
+      "tier": "premium",
+      "low_baht": 1100,
+      "high_baht": 1700
+     },
+     {
+      "item": "setting_spray",
+      "item_th": "สเปรย์ล็อกเมคอัพ",
+      "tier": "premium",
+      "low_baht": 1000,
+      "high_baht": 1700
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 11240,
+    "high_baht": 20700,
+    "save_vs_premium_baht": 0,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "office budget",
+   "value": {
+    "look": "office",
+    "tier": "budget",
+    "tier_th": "สายประหยัด (ร้านสะดวกซื้อ/ดรักสโตร์)",
+    "items": [
+     {
+      "item": "primer",
+      "item_th": "ไพรเมอร์",
+      "tier": "budget",
+      "low_baht": 99,
+      "high_baht": 199
+     },
+     {
+      "item": "foundation",
+      "item_th": "รองพื้น",
+      "tier": "budget",
+      "low_baht": 149,
+      "high_baht": 299
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "budget",
+      "low_baht": 89,
+      "high_baht": 199
+     },
+     {
+      "item": "powder",
+      "item_th": "แป้งฝุ่น/แป้งพัฟ",
+      "tier": "budget",
+      "low_baht": 89,
+      "high_baht": 199
+     },
+     {
+      "item": "brow",
+      "item_th": "ดินสอเขียนคิ้ว",
+      "tier": "budget",
+      "low_baht": 59,
+      "high_baht": 129
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "budget",
+      "low_baht": 99,
+      "high_baht": 249
+     },
+     {
+      "item": "mascara",
+      "item_th": "มาสคาร่า",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 179
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 179
+     },
+     {
+      "item": "lipstick",
+      "item_th": "ลิปสติก",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 199
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 821,
+    "high_baht": 1831,
+    "save_vs_premium_baht": 15669,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "office mid",
+   "value": {
+    "look": "office",
+    "tier": "mid",
+    "tier_th": "กลาง ๆ (เคาน์เตอร์ห้าง)",
+    "items": [
+     {
+      "item": "primer",
+      "item_th": "ไพรเมอร์",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "foundation",
+      "item_th": "รองพื้น",
+      "tier": "mid",
+      "low_baht": 450,
+      "high_baht": 990
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "powder",
+      "item_th": "แป้งฝุ่น/แป้งพัฟ",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "brow",
+      "item_th": "ดินสอเขียนคิ้ว",
+      "tier": "mid",
+      "low_baht": 190,
+      "high_baht": 390
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "mid",
+      "low_baht": 390,
+      "high_baht": 890
+     },
+     {
+      "item": "mascara",
+      "item_th": "มาสคาร่า",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 490
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "lipstick",
+      "item_th": "ลิปสติก",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 2770,
+    "high_baht": 5710,
+    "save_vs_premium_baht": 11790,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "office premium",
+   "value": {
+    "look": "office",
+    "tier": "premium",
+    "tier_th": "จัดเต็ม (ไฮเอนด์)",
+    "items": [
+     {
+      "item": "primer",
+      "item_th": "ไพรเมอร์",
+      "tier": "premium",
+      "low_baht": 990,
+      "high_baht": 1900
+     },
+     {
+      "item": "foundation",
+      "item_th": "รองพื้น",
+      "tier": "premium",
+      "low_baht": 1500,
+      "high_baht": 2800
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "premium",
+      "low_baht": 900,
+      "high_baht": 1500
+     },
+     {
+      "item": "powder",
+      "item_th": "แป้งฝุ่น/แป้งพัฟ",
+      "tier": "premium",
+      "low_baht": 1000,
+      "high_baht": 1900
+     },
+     {
+      "item": "brow",
+      "item_th": "ดินสอเขียนคิ้ว",
+      "tier": "premium",
+      "low_baht": 700,
+      "high_baht": 1200
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "premium",
+      "low_baht": 1500,
+      "high_baht": 3200
+     },
+     {
+      "item": "mascara",
+      "item_th": "มาสคาร่า",
+      "tier": "premium",
+      "low_baht": 900,
+      "high_baht": 1400
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "premium",
+      "low_baht": 1000,
+      "high_baht": 1900
+     },
+     {
+      "item": "lipstick",
+      "item_th": "ลิปสติก",
+      "tier": "premium",
+      "low_baht": 1100,
+      "high_baht": 1700
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 9590,
+    "high_baht": 17500,
+    "save_vs_premium_baht": 0,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "y2k budget",
+   "value": {
+    "look": "y2k",
+    "tier": "budget",
+    "tier_th": "สายประหยัด (ร้านสะดวกซื้อ/ดรักสโตร์)",
+    "items": [
+     {
+      "item": "skin_tint",
+      "item_th": "สกินทินท์",
+      "tier": "budget",
+      "low_baht": 129,
+      "high_baht": 259
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "budget",
+      "low_baht": 89,
+      "high_baht": 199
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "budget",
+      "low_baht": 99,
+      "high_baht": 249
+     },
+     {
+      "item": "eyeliner",
+      "item_th": "อายไลเนอร์",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 159
+     },
+     {
+      "item": "mascara",
+      "item_th": "มาสคาร่า",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 179
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 179
+     },
+     {
+      "item": "lip_gloss",
+      "item_th": "ลิปกลอส",
+      "tier": "budget",
+      "low_baht": 59,
+      "high_baht": 149
+     },
+     {
+      "item": "glitter",
+      "item_th": "กลิตเตอร์ทาตา",
+      "tier": "budget",
+      "low_baht": 49,
+      "high_baht": 129
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 662,
+    "high_baht": 1502,
+    "save_vs_premium_baht": 12298,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "y2k mid",
+   "value": {
+    "look": "y2k",
+    "tier": "mid",
+    "tier_th": "กลาง ๆ (เคาน์เตอร์ห้าง)",
+    "items": [
+     {
+      "item": "skin_tint",
+      "item_th": "สกินทินท์",
+      "tier": "mid",
+      "low_baht": 350,
+      "high_baht": 690
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "mid",
+      "low_baht": 390,
+      "high_baht": 890
+     },
+     {
+      "item": "eyeliner",
+      "item_th": "อายไลเนอร์",
+      "tier": "mid",
+      "low_baht": 250,
+      "high_baht": 450
+     },
+     {
+      "item": "mascara",
+      "item_th": "มาสคาร่า",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 490
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "mid",
+      "low_baht": 290,
+      "high_baht": 590
+     },
+     {
+      "item": "lip_gloss",
+      "item_th": "ลิปกลอส",
+      "tier": "mid",
+      "low_baht": 250,
+      "high_baht": 450
+     },
+     {
+      "item": "glitter",
+      "item_th": "กลิตเตอร์ทาตา",
+      "tier": "mid",
+      "low_baht": 190,
+      "high_baht": 350
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 2300,
+    "high_baht": 4500,
+    "save_vs_premium_baht": 9300,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "y2k premium",
+   "value": {
+    "look": "y2k",
+    "tier": "premium",
+    "tier_th": "จัดเต็ม (ไฮเอนด์)",
+    "items": [
+     {
+      "item": "skin_tint",
+      "item_th": "สกินทินท์",
+      "tier": "premium",
+      "low_baht": 1100,
+      "high_baht": 2100
+     },
+     {
+      "item": "concealer",
+      "item_th": "คอนซีลเลอร์",
+      "tier": "premium",
+      "low_baht": 900,
+      "high_baht": 1500
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "premium",
+      "low_baht": 1500,
+      "high_baht": 3200
+     },
+     {
+      "item": "eyeliner",
+      "item_th": "อายไลเนอร์",
+      "tier": "premium",
+      "low_baht": 800,
+      "high_baht": 1300
+     },
+     {
+      "item": "mascara",
+      "item_th": "มาสคาร่า",
+      "tier": "premium",
+      "low_baht": 900,
+      "high_baht": 1400
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "premium",
+      "low_baht": 1000,
+      "high_baht": 1900
+     },
+     {
+      "item": "lip_gloss",
+      "item_th": "ลิปกลอส",
+      "tier": "premium",
+      "low_baht": 850,
+      "high_baht": 1300
+     },
+     {
+      "item": "glitter",
+      "item_th": "กลิตเตอร์ทาตา",
+      "tier": "premium",
+      "low_baht": 600,
+      "high_baht": 1100
+     }
+    ],
+    "skipped_owned": [],
+    "low_baht": 7650,
+    "high_baht": 13800,
+    "save_vs_premium_baht": 0,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "BudgetKit",
+   "note": "demo owned concealer",
+   "value": {
+    "look": "korean_glass",
+    "tier": "budget",
+    "tier_th": "สายประหยัด (ร้านสะดวกซื้อ/ดรักสโตร์)",
+    "items": [
+     {
+      "item": "primer",
+      "item_th": "ไพรเมอร์",
+      "tier": "budget",
+      "low_baht": 99,
+      "high_baht": 199
+     },
+     {
+      "item": "cushion",
+      "item_th": "คุชชั่น",
+      "tier": "budget",
+      "low_baht": 159,
+      "high_baht": 299
+     },
+     {
+      "item": "blush",
+      "item_th": "บลัชออน",
+      "tier": "budget",
+      "low_baht": 79,
+      "high_baht": 179
+     },
+     {
+      "item": "eyeshadow",
+      "item_th": "พาเลตต์อายแชโดว์",
+      "tier": "budget",
+      "low_baht": 99,
+      "high_baht": 249
+     },
+     {
+      "item": "lip_tint",
+      "item_th": "ลิปทินท์",
+      "tier": "budget",
+      "low_baht": 59,
+      "high_baht": 159
+     },
+     {
+      "item": "highlighter",
+      "item_th": "ไฮไลต์",
+      "tier": "budget",
+      "low_baht": 89,
+      "high_baht": 199
+     }
+    ],
+    "skipped_owned": [
+     "concealer"
+    ],
+    "low_baht": 584,
+    "high_baht": 1284,
+    "save_vs_premium_baht": 11516,
+    "dupe_tip_th": "เลือกของเนื้อสัมผัส/โทนสีใกล้กันแทนได้ ดูรหัสสี HEX เทียบที่ร้าน",
+    "disclaimer_th": "ราคาเป็นช่วงประมาณของสินค้าประเภทเดียวกัน ไม่ได้อ้างอิงแบรนด์ใด"
+   }
+  },
+  {
+   "def": "KitItem",
+   "note": "primer",
+   "value": {
+    "item": "primer",
+    "item_th": "ไพรเมอร์",
+    "tier": "budget",
+    "low_baht": 99,
+    "high_baht": 199
+   }
+  },
+  {
+   "def": "KitItem",
+   "note": "cushion",
+   "value": {
+    "item": "cushion",
+    "item_th": "คุชชั่น",
+    "tier": "budget",
+    "low_baht": 159,
+    "high_baht": 299
+   }
+  },
+  {
+   "def": "KitItem",
+   "note": "blush",
+   "value": {
+    "item": "blush",
+    "item_th": "บลัชออน",
+    "tier": "budget",
+    "low_baht": 79,
+    "high_baht": 179
+   }
+  },
+  {
+   "def": "KitItem",
+   "note": "eyeshadow",
+   "value": {
+    "item": "eyeshadow",
+    "item_th": "พาเลตต์อายแชโดว์",
+    "tier": "budget",
+    "low_baht": 99,
+    "high_baht": 249
+   }
+  },
+  {
+   "def": "KitItem",
+   "note": "lip_tint",
+   "value": {
+    "item": "lip_tint",
+    "item_th": "ลิปทินท์",
+    "tier": "budget",
+    "low_baht": 59,
+    "high_baht": 159
+   }
+  },
+  {
+   "def": "KitItem",
+   "note": "highlighter",
+   "value": {
+    "item": "highlighter",
+    "item_th": "ไฮไลต์",
+    "tier": "budget",
+    "low_baht": 89,
+    "high_baht": 199
+   }
+  },
+  {
+   "def": "OccasionPlan",
+   "note": "demo wedding guest",
+   "value": {
+    "event": "wedding_guest",
+    "event_th": "ไปงานแต่งเพื่อน",
+    "event_date": "2026-12-27",
+    "days_left": 10,
+    "look": "korean_glass",
+    "hours_worn": 6,
+    "touch_up_kit": [
+     "setting_spray",
+     "blotting_paper",
+     "touch_up_lip"
+    ],
+    "timeline": [
+     {
+      "days_before": 7,
+      "task_th": "ลองลุคใน GlamTry แล้วลองแต่งจริง 1 รอบ"
+     },
+     {
+      "days_before": 2,
+      "task_th": "ทำ patch test ของใหม่ทุกชิ้น ดูผลอย่างน้อย 24–48 ชม."
+     },
+     {
+      "days_before": 0,
+      "task_th": "เริ่มแต่งก่อนออกจากบ้าน 25 นาที"
+     }
+    ],
+    "warning_th": null
+   }
+  },
+  {
+   "def": "OccasionPlan",
+   "note": "own_wedding",
+   "value": {
+    "event": "own_wedding",
+    "event_th": "งานแต่งตัวเอง",
+    "event_date": "2027-02-14",
+    "days_left": 59,
+    "look": "thai_bride",
+    "hours_worn": 12,
+    "touch_up_kit": [
+     "setting_spray",
+     "blotting_paper",
+     "touch_up_lip"
+    ],
+    "timeline": [
+     {
+      "days_before": 7,
+      "task_th": "ลองลุคใน GlamTry แล้วลองแต่งจริง 1 รอบ"
+     },
+     {
+      "days_before": 2,
+      "task_th": "ทำ patch test ของใหม่ทุกชิ้น ดูผลอย่างน้อย 24–48 ชม."
+     },
+     {
+      "days_before": 0,
+      "task_th": "เริ่มแต่งก่อนออกจากบ้าน 55 นาที"
+     }
+    ],
+    "warning_th": null
+   }
+  },
+  {
+   "def": "OccasionPlan",
+   "note": "interview",
+   "value": {
+    "event": "interview",
+    "event_th": "สัมภาษณ์งาน",
+    "event_date": "2026-12-17",
+    "days_left": 0,
+    "look": "office",
+    "hours_worn": 3,
+    "touch_up_kit": [],
+    "timeline": [
+     {
+      "days_before": 0,
+      "task_th": "เริ่มแต่งก่อนออกจากบ้าน 25 นาที"
+     }
+    ],
+    "warning_th": "เหลือเวลาน้อย ใช้ของที่เคยใช้แล้วไม่แพ้ อย่าลองของใหม่วันงาน"
+   }
+  },
+  {
+   "def": "OccasionPlan",
+   "note": "concert",
+   "value": {
+    "event": "concert",
+    "event_th": "คอนเสิร์ต/เฟส",
+    "event_date": "2026-12-31",
+    "days_left": 14,
+    "look": "y2k",
+    "hours_worn": 7,
+    "touch_up_kit": [
+     "setting_spray",
+     "blotting_paper",
+     "touch_up_lip"
+    ],
+    "timeline": [
+     {
+      "days_before": 7,
+      "task_th": "ลองลุคใน GlamTry แล้วลองแต่งจริง 1 รอบ"
+     },
+     {
+      "days_before": 2,
+      "task_th": "ทำ patch test ของใหม่ทุกชิ้น ดูผลอย่างน้อย 24–48 ชม."
+     },
+     {
+      "days_before": 0,
+      "task_th": "เริ่มแต่งก่อนออกจากบ้าน 30 นาที"
+     }
+    ],
+    "warning_th": null
+   }
+  },
+  {
+   "def": "OccasionPlan",
+   "note": "office_day",
+   "value": {
+    "event": "office_day",
+    "event_th": "ไปทำงาน",
+    "event_date": "2026-12-18",
+    "days_left": 1,
+    "look": "office",
+    "hours_worn": 9,
+    "touch_up_kit": [
+     "setting_spray",
+     "blotting_paper",
+     "touch_up_lip"
+    ],
+    "timeline": [
+     {
+      "days_before": 0,
+      "task_th": "เริ่มแต่งก่อนออกจากบ้าน 25 นาที"
+     }
+    ],
+    "warning_th": "เหลือเวลาน้อย ใช้ของที่เคยใช้แล้วไม่แพ้ อย่าลองของใหม่วันงาน"
+   }
+  },
+  {
+   "def": "PatchTest",
+   "note": "demo",
+   "value": {
+    "level": "warn",
+    "items": [
+     "cushion",
+     "lip_tint",
+     "eyeshadow"
+    ],
+    "steps_th": [
+     "แต้มผลิตภัณฑ์เล็กน้อยที่หลังหูหรือท้องแขน",
+     "ทิ้งไว้และสังเกตอย่างน้อย 24–48 ชม.",
+     "ถ้าคัน แดง บวม ห้ามใช้ต่อ",
+     "ของรอบดวงตา: ห้ามใช้ร่วมกับคนอื่น และไม่ใช้กลิตเตอร์ที่ไม่ใช่สำหรับตา"
+    ],
+    "note_th": "ข้อมูลทั่วไป ไม่ใช่คำแนะนำทางการแพทย์ ถ้ามีอาการแพ้ (คัน บวม แดงมาก) ให้หยุดใช้และปรึกษาแพทย์/เภสัชกร"
+   }
+  },
+  {
+   "def": "PatchTest",
+   "note": "info",
+   "value": {
+    "level": "info",
+    "items": [
+     "lip_tint"
+    ],
+    "steps_th": [
+     "แต้มผลิตภัณฑ์เล็กน้อยที่หลังหูหรือท้องแขน",
+     "ทิ้งไว้และสังเกตอย่างน้อย 24–48 ชม.",
+     "ถ้าคัน แดง บวม ห้ามใช้ต่อ"
+    ],
+    "note_th": "ข้อมูลทั่วไป ไม่ใช่คำแนะนำทางการแพทย์ ถ้ามีอาการแพ้ (คัน บวม แดงมาก) ให้หยุดใช้และปรึกษาแพทย์/เภสัชกร"
+   }
+  },
+  {
+   "def": "PatchTest",
+   "note": "allergy",
+   "value": {
+    "level": "warn",
+    "items": [
+     "lipstick"
+    ],
+    "steps_th": [
+     "แต้มผลิตภัณฑ์เล็กน้อยที่หลังหูหรือท้องแขน",
+     "ทิ้งไว้และสังเกตอย่างน้อย 24–48 ชม.",
+     "ถ้าคัน แดง บวม ห้ามใช้ต่อ",
+     "อ่านส่วนผสมบนฉลากเทียบกับสิ่งที่เคยแพ้: น้ำหอม"
+    ],
+    "note_th": "ข้อมูลทั่วไป ไม่ใช่คำแนะนำทางการแพทย์ ถ้ามีอาการแพ้ (คัน บวม แดงมาก) ให้หยุดใช้และปรึกษาแพทย์/เภสัชกร"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "20s",
+   "value": {
+    "seconds": 20,
+    "ratio": "9:16",
+    "music_bpm": 118,
+    "shots": [
+     {
+      "from_s": 0,
+      "to_s": 3,
+      "kind": "before",
+      "text_th": "หน้าสด ๆ ไม่รู้จะแต่งลุคไหน? อย่าเพิ่งซื้อ"
+     },
+     {
+      "from_s": 3,
+      "to_s": 7,
+      "kind": "scan",
+      "text_th": "เซลฟี่ 1 รูป → AI สแกนเฉดผิว"
+     },
+     {
+      "from_s": 7,
+      "to_s": 14,
+      "kind": "swipe",
+      "text_th": "ปัด 6 ลุค: เนเชอรัล · เกาหลี · เจ้าสาว · ปาร์ตี้ · ออฟฟิศ · Y2K"
+     },
+     {
+      "from_s": 14,
+      "to_s": 17,
+      "kind": "compare",
+      "text_th": "เลื่อนดู ก่อน/หลัง · เกาหลีผิวฉ่ำ + ชุดของงบประมาณ"
+     },
+     {
+      "from_s": 17,
+      "to_s": 20,
+      "kind": "cta",
+      "text_th": "คอมเมนต์ GLAM รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "GlamTry · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "15s bride",
+   "value": {
+    "seconds": 15,
+    "ratio": "9:16",
+    "music_bpm": 118,
+    "shots": [
+     {
+      "from_s": 0,
+      "to_s": 2,
+      "kind": "before",
+      "text_th": "หน้าสด ๆ ไม่รู้จะแต่งลุคไหน? อย่าเพิ่งซื้อ"
+     },
+     {
+      "from_s": 2,
+      "to_s": 5,
+      "kind": "scan",
+      "text_th": "เซลฟี่ 1 รูป → AI สแกนเฉดผิว"
+     },
+     {
+      "from_s": 5,
+      "to_s": 10,
+      "kind": "swipe",
+      "text_th": "ปัด 6 ลุค: เนเชอรัล · เกาหลี · เจ้าสาว · ปาร์ตี้ · ออฟฟิศ · Y2K"
+     },
+     {
+      "from_s": 10,
+      "to_s": 13,
+      "kind": "compare",
+      "text_th": "เลื่อนดู ก่อน/หลัง · เจ้าสาวไทย + ชุดของงบประมาณ"
+     },
+     {
+      "from_s": 13,
+      "to_s": 15,
+      "kind": "cta",
+      "text_th": "คอมเมนต์ GLAM รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "GlamTry · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "30s y2k",
+   "value": {
+    "seconds": 30,
+    "ratio": "9:16",
+    "music_bpm": 118,
+    "shots": [
+     {
+      "from_s": 0,
+      "to_s": 4,
+      "kind": "before",
+      "text_th": "หน้าสด ๆ ไม่รู้จะแต่งลุคไหน? อย่าเพิ่งซื้อ"
+     },
+     {
+      "from_s": 4,
+      "to_s": 10,
+      "kind": "scan",
+      "text_th": "เซลฟี่ 1 รูป → AI สแกนเฉดผิว"
+     },
+     {
+      "from_s": 10,
+      "to_s": 21,
+      "kind": "swipe",
+      "text_th": "ปัด 6 ลุค: เนเชอรัล · เกาหลี · เจ้าสาว · ปาร์ตี้ · ออฟฟิศ · Y2K"
+     },
+     {
+      "from_s": 21,
+      "to_s": 26,
+      "kind": "compare",
+      "text_th": "เลื่อนดู ก่อน/หลัง · Y2K สายปั๊ว + ชุดของงบประมาณ"
+     },
+     {
+      "from_s": 26,
+      "to_s": 30,
+      "kind": "cta",
+      "text_th": "คอมเมนต์ GLAM รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "GlamTry · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "before",
+   "value": {
+    "from_s": 0,
+    "to_s": 3,
+    "kind": "before",
+    "text_th": "หน้าสด ๆ ไม่รู้จะแต่งลุคไหน? อย่าเพิ่งซื้อ"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "scan",
+   "value": {
+    "from_s": 3,
+    "to_s": 7,
+    "kind": "scan",
+    "text_th": "เซลฟี่ 1 รูป → AI สแกนเฉดผิว"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "swipe",
+   "value": {
+    "from_s": 7,
+    "to_s": 14,
+    "kind": "swipe",
+    "text_th": "ปัด 6 ลุค: เนเชอรัล · เกาหลี · เจ้าสาว · ปาร์ตี้ · ออฟฟิศ · Y2K"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "compare",
+   "value": {
+    "from_s": 14,
+    "to_s": 17,
+    "kind": "compare",
+    "text_th": "เลื่อนดู ก่อน/หลัง · เกาหลีผิวฉ่ำ + ชุดของงบประมาณ"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "cta",
+   "value": {
+    "from_s": 17,
+    "to_s": 20,
+    "kind": "cta",
+    "text_th": "คอมเมนต์ GLAM รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "try",
+   "value": {
+    "date": "2026-12-17",
+    "kind": "try",
+    "look": "korean_glass"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "try",
+   "value": {
+    "date": "2026-12-17",
+    "kind": "try",
+    "look": "y2k"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "buy",
+   "value": {
+    "date": "2026-12-18",
+    "kind": "buy",
+    "item": "cushion",
+    "cost_baht": 259
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "buy",
+   "value": {
+    "date": "2026-12-18",
+    "kind": "buy",
+    "item": "lip_tint",
+    "cost_baht": 129
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "open",
+   "value": {
+    "date": "2026-12-19",
+    "kind": "open",
+    "item": "mascara"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "wear",
+   "value": {
+    "date": "2026-12-27",
+    "kind": "wear",
+    "look": "korean_glass"
+   }
+  },
+  {
+   "def": "DiarySummary",
+   "note": "fern",
+   "value": {
+    "entries": 6,
+    "looks_saved": 2,
+    "top_look": "korean_glass",
+    "spend_baht": 388,
+    "replace_soon": [
+     {
+      "item": "mascara",
+      "replace_by": "2027-03-19",
+      "days_left": 73
+     }
+    ],
+    "headline_th": "ลองไป 2 ลุค · ชอบสุด เกาหลีผิวฉ่ำ · ใช้ไป ฿388 · มาสคาร่า ควรเปลี่ยนภายใน 2027-03-19",
+    "note_th": "อายุหลังเปิดใช้เป็นค่าประมาณทั่วไป ดูสัญลักษณ์บนฉลากของแต่ละชิ้น"
+   }
+  },
+  {
+   "def": "DiarySummary",
+   "note": "empty-ish",
+   "value": {
+    "entries": 1,
+    "looks_saved": 0,
+    "top_look": null,
+    "spend_baht": 0,
+    "replace_soon": [],
+    "headline_th": "ลองไป 0 ลุค · ชอบสุด - · ใช้ไป ฿0",
+    "note_th": "อายุหลังเปิดใช้เป็นค่าประมาณทั่วไป ดูสัญลักษณ์บนฉลากของแต่ละชิ้น"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "demo",
+   "value": {
+    "title_th": "เกาหลีผิวฉ่ำ · 15 นาที",
+    "hook_th": "เซลฟี่เดียว ลองแต่งหน้าก่อนซื้อ",
+    "layout": "selfie_before_after",
+    "sizes": [
+     "1080x1350",
+     "1080x1920"
+    ],
+    "watermark": "GlamTry · AI วันละแอป",
+    "cta_th": "คอมเมนต์ GLAM รับแพ็กฟรี",
+    "disclaimer_th": "ภาพจำลอง · เฉดและราคาโดยประมาณ"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "grid",
+   "value": {
+    "title_th": "เนเชอรัลหน้าสด · 10 นาที",
+    "hook_th": "6 ลุคจากเซลฟี่เดียว",
+    "layout": "six_look_grid",
+    "sizes": [
+     "1080x1350",
+     "1080x1920"
+    ],
+    "watermark": "GlamTry · AI วันละแอป",
+    "cta_th": "คอมเมนต์ GLAM รับแพ็กฟรี",
+    "disclaimer_th": "ภาพจำลอง · เฉดและราคาโดยประมาณ"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(0,)",
+   "value": {
+    "allowed": 1,
+    "left_after": 2,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(2,)",
+   "value": {
+    "allowed": 1,
+    "left_after": 0,
+    "paywall": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(3,)",
+   "value": {
+    "allowed": 0,
+    "left_after": 0,
+    "paywall": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(9, 3, True)",
+   "value": {
+    "allowed": 1,
+    "left_after": null,
+    "paywall": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "None",
+   "value": {
+    "level": "ok",
+    "message_th": "ภาพลองแต่งหน้าเป็นภาพจำลอง สีจริงต่างตามผิว แสง และผลิตภัณฑ์"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "not_own_photo",
+   "value": {
+    "level": "stop",
+    "message_th": "ใช้ได้เฉพาะเซลฟี่ของคุณเองเท่านั้น ห้ามใช้รูปคนอื่น"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "celebrity",
+   "value": {
+    "level": "stop",
+    "message_th": "ไม่รองรับรูปดารา/คนดัง หรือการแต่งให้เหมือนใคร ใช้หน้าตัวเองเท่านั้น"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "under_13",
+   "value": {
+    "level": "stop",
+    "message_th": "แอปนี้สำหรับอายุ 13 ปีขึ้นไป"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "multiple_faces",
+   "value": {
+    "level": "warn",
+    "message_th": "เจอหลายใบหน้า ครอปให้เหลือหน้าคุณคนเดียว"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "no_face",
+   "value": {
+    "level": "stop",
+    "message_th": "ไม่พบใบหน้าในรูป ถ่ายหน้าตรงใหม่อีกครั้ง"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "filter_on",
+   "value": {
+    "level": "warn",
+    "message_th": "ดูเหมือนเปิดฟิลเตอร์อยู่ ปิดฟิลเตอร์ก่อนเพื่อให้สีแม่นขึ้น"
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "whitening_request",
+   "value": {
+    "level": "stop",
+    "message_th": "GlamTry ไม่ปรับผิวให้ขาวขึ้นหรือดัดรูปหน้า ทุกสีผิวสวยในแบบของตัวเอง"
+   }
+  }
+ ]
+}
