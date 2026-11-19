@@ -1,0 +1,1094 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://github.com/arm-haha/ai-wanla-app/2026-12-18-handfont/schemas.json",
+ "title": "HandFont",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "name_en",
+    "age",
+    "city_th",
+    "use_th"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 5,
+     "maximum": 110
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "use_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SheetPhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "light",
+    "blur",
+    "skew_deg",
+    "ink_contrast"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "light": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "skew_deg": {
+     "type": "number",
+     "minimum": -45,
+     "maximum": 45
+    },
+    "ink_contrast": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "SheetScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "quality"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    }
+   },
+   "additionalProperties": false
+  },
+  "TemplateSheet": {
+   "type": "object",
+   "required": [
+    "template",
+    "name_th",
+    "cells",
+    "pages",
+    "sets",
+    "guide",
+    "tips_th"
+   ],
+   "properties": {
+    "template": {
+     "enum": [
+      "thai_quick",
+      "thai_full",
+      "english",
+      "bilingual"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "cells": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "pages": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "sets": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "TH_CONS",
+       "TH_UPPER",
+       "TH_LOWER",
+       "TH_TONE",
+       "TH_SPACING",
+       "TH_DIGITS",
+       "LAT_UPPER",
+       "LAT_LOWER",
+       "DIGITS",
+       "PUNCT"
+      ]
+     },
+     "minItems": 1
+    },
+    "guide": {
+     "type": "string"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "AiGlyphExtract": {
+   "type": "object",
+   "required": [
+    "sheet_id",
+    "corners_found",
+    "cells",
+    "signature_like",
+    "personal_data",
+    "handwriting_style",
+    "confidence"
+   ],
+   "properties": {
+    "sheet_id": {
+     "type": "string"
+    },
+    "corners_found": {
+     "type": "boolean"
+    },
+    "cells": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/GlyphCell"
+     }
+    },
+    "signature_like": {
+     "type": "boolean"
+    },
+    "personal_data": {
+     "type": "boolean"
+    },
+    "handwriting_style": {
+     "enum": [
+      "round",
+      "loopless",
+      "cursive",
+      "print",
+      "mixed"
+     ]
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "notes_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "GlyphCell": {
+   "type": "object",
+   "required": [
+    "char",
+    "ink",
+    "touches_border",
+    "extra_blobs"
+   ],
+   "properties": {
+    "char": {
+     "type": "string",
+     "minLength": 1,
+     "maxLength": 1
+    },
+    "ink": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "touches_border": {
+     "type": "boolean"
+    },
+    "extra_blobs": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "GlyphCheck": {
+   "type": "object",
+   "required": [
+    "char",
+    "status",
+    "usable",
+    "fix_th"
+   ],
+   "properties": {
+    "char": {
+     "type": "string"
+    },
+    "status": {
+     "enum": [
+      "ok",
+      "empty",
+      "too_faint",
+      "overflow",
+      "messy"
+     ]
+    },
+    "usable": {
+     "type": "boolean"
+    },
+    "fix_th": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "Coverage": {
+   "type": "object",
+   "required": [
+    "template",
+    "total",
+    "usable",
+    "percent",
+    "core_percent",
+    "missing",
+    "can_build",
+    "fallback_th"
+   ],
+   "properties": {
+    "template": {
+     "enum": [
+      "thai_quick",
+      "thai_full",
+      "english",
+      "bilingual"
+     ]
+    },
+    "total": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "usable": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "percent": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "core_percent": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "missing": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "maxItems": 40
+    },
+    "can_build": {
+     "type": "boolean"
+    },
+    "fallback_th": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "ConsentCheck": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "level",
+    "flags",
+    "messages_th"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "boolean"
+    },
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "flags": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "not_own_handwriting",
+       "signature_detected",
+       "document_forgery",
+       "under_13_no_parent",
+       "personal_data_on_sheet",
+       "low_coverage",
+       "commercial_resale"
+      ]
+     }
+    },
+    "messages_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "MarkPlacement": {
+   "type": "object",
+   "required": [
+    "base",
+    "cut_descender",
+    "marks"
+   ],
+   "properties": {
+    "base": {
+     "type": "string"
+    },
+    "cut_descender": {
+     "type": "boolean"
+    },
+    "marks": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "mark",
+       "kind",
+       "dx",
+       "dy",
+       "note_th"
+      ],
+      "properties": {
+       "mark": {
+        "type": "string"
+       },
+       "kind": {
+        "enum": [
+         "upper_vowel",
+         "lower_vowel",
+         "tone"
+        ]
+       },
+       "dx": {
+        "type": "integer"
+       },
+       "dy": {
+        "type": "integer"
+       },
+       "note_th": {
+        "type": [
+         "string",
+         "null"
+        ]
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "StyleParams": {
+   "type": "object",
+   "required": [
+    "weight",
+    "stroke",
+    "slant",
+    "roughness",
+    "rough",
+    "tracking",
+    "baseline_jitter",
+    "alternates"
+   ],
+   "properties": {
+    "weight": {
+     "enum": [
+      "thin",
+      "regular",
+      "bold"
+     ]
+    },
+    "stroke": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "slant": {
+     "type": "number",
+     "minimum": -15,
+     "maximum": 15
+    },
+    "roughness": {
+     "enum": [
+      "clean",
+      "natural",
+      "sketchy"
+     ]
+    },
+    "rough": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "tracking": {
+     "type": "number",
+     "minimum": -50,
+     "maximum": 100
+    },
+    "baseline_jitter": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "alternates": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 3
+    }
+   },
+   "additionalProperties": false
+  },
+  "FontBuild": {
+   "type": "object",
+   "required": [
+    "ok",
+    "family",
+    "format",
+    "glyphs",
+    "alternates",
+    "size_kb",
+    "reason_th"
+   ],
+   "properties": {
+    "ok": {
+     "type": "boolean"
+    },
+    "family": {
+     "type": "string",
+     "pattern": "^HandFont-[A-Za-z0-9]+$"
+    },
+    "format": {
+     "enum": [
+      "ttf",
+      "otf",
+      "woff2",
+      "png_sticker",
+      "pdf_card",
+      "pdf_practice"
+     ]
+    },
+    "glyphs": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "alternates": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "size_kb": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "reason_th": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "TextPreview": {
+   "type": "object",
+   "required": [
+    "text",
+    "size_pt",
+    "lines",
+    "line_count",
+    "clusters",
+    "alternates_used"
+   ],
+   "properties": {
+    "text": {
+     "type": "string"
+    },
+    "size_pt": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "lines": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "line_count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "clusters": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "alternates_used": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "CardLayout": {
+   "type": "object",
+   "required": [
+    "kind",
+    "name_th",
+    "size",
+    "paper",
+    "paper_hex",
+    "ink",
+    "ink_hex",
+    "chars",
+    "max_chars",
+    "fits",
+    "font_pt",
+    "warning_th"
+   ],
+   "properties": {
+    "kind": {
+     "enum": [
+      "birthday",
+      "thank_you",
+      "love_note",
+      "wedding",
+      "new_year",
+      "teacher",
+      "shop_note"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "size": {
+     "enum": [
+      "A5",
+      "A6",
+      "A7"
+     ]
+    },
+    "paper": {
+     "enum": [
+      "plain",
+      "lined",
+      "grid",
+      "kraft",
+      "pastel_pink",
+      "notebook_blue"
+     ]
+    },
+    "paper_hex": {
+     "type": "string",
+     "pattern": "^#[0-9A-F]{6}$"
+    },
+    "ink": {
+     "enum": [
+      "black",
+      "blue_pen",
+      "red_pen",
+      "pencil",
+      "brown",
+      "white_on_dark"
+     ]
+    },
+    "ink_hex": {
+     "type": "string",
+     "pattern": "^#[0-9A-F]{6}$"
+    },
+    "chars": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "max_chars": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "fits": {
+     "type": "boolean"
+    },
+    "font_pt": {
+     "enum": [
+      18,
+      22,
+      28
+     ]
+    },
+    "warning_th": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "StickerExport": {
+   "type": "object",
+   "required": [
+    "text",
+    "format",
+    "ink_hex",
+    "outline",
+    "width_px",
+    "height_px",
+    "transparent"
+   ],
+   "properties": {
+    "text": {
+     "type": "string"
+    },
+    "format": {
+     "const": "png_sticker"
+    },
+    "ink_hex": {
+     "type": "string",
+     "pattern": "^#[0-9A-F]{6}$"
+    },
+    "outline": {
+     "type": "boolean"
+    },
+    "width_px": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "height_px": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "transparent": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PracticeSheet": {
+   "type": "object",
+   "required": [
+    "text",
+    "rows",
+    "mode",
+    "guide_lines",
+    "opacity",
+    "paper"
+   ],
+   "properties": {
+    "text": {
+     "type": "string"
+    },
+    "rows": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 12
+    },
+    "mode": {
+     "enum": [
+      "trace",
+      "copy",
+      "free"
+     ]
+    },
+    "guide_lines": {
+     "enum": [
+      3,
+      4
+     ]
+    },
+    "opacity": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "paper": {
+     "const": "A4"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PracticeSample": {
+   "type": "object",
+   "required": [
+    "height_var",
+    "baseline_var",
+    "spacing_var",
+    "slant_var"
+   ],
+   "properties": {
+    "height_var": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "baseline_var": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "spacing_var": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "slant_var": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "PracticeScore": {
+   "type": "object",
+   "required": [
+    "samples",
+    "score",
+    "grade",
+    "focus",
+    "tip_th"
+   ],
+   "properties": {
+    "samples": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "grade": {
+     "enum": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ]
+    },
+    "focus": {
+     "enum": [
+      "height_var",
+      "baseline_var",
+      "spacing_var",
+      "slant_var"
+     ]
+    },
+    "tip_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ReelShot": {
+   "type": "object",
+   "required": [
+    "kind",
+    "start",
+    "end",
+    "caption_th"
+   ],
+   "properties": {
+    "kind": {
+     "enum": [
+      "blank_sheet",
+      "writing",
+      "scan",
+      "typing",
+      "card",
+      "cta"
+     ]
+    },
+    "start": {
+     "type": "number",
+     "minimum": 0
+    },
+    "end": {
+     "type": "number"
+    },
+    "caption_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ReelPlan": {
+   "type": "object",
+   "required": [
+    "family",
+    "seconds",
+    "ratio",
+    "bpm",
+    "shots",
+    "watermark"
+   ],
+   "properties": {
+    "family": {
+     "type": "string"
+    },
+    "seconds": {
+     "type": "integer",
+     "minimum": 15,
+     "maximum": 30
+    },
+    "ratio": {
+     "const": "9:16"
+    },
+    "bpm": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "shots": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ReelShot"
+     },
+     "minItems": 3
+    },
+    "watermark": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiaryEntry": {
+   "type": "object",
+   "required": [
+    "date",
+    "kind"
+   ],
+   "properties": {
+    "date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "kind": {
+     "enum": [
+      "build",
+      "card",
+      "sticker",
+      "practice"
+     ]
+    },
+    "version": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiarySummary": {
+   "type": "object",
+   "required": [
+    "today",
+    "fonts_built",
+    "cards_made",
+    "stickers_made",
+    "practice_streak",
+    "best_score",
+    "improvement",
+    "latest_version"
+   ],
+   "properties": {
+    "today": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "fonts_built": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "cards_made": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "stickers_made": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "practice_streak": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "best_score": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "improvement": {
+     "type": "integer"
+    },
+    "latest_version": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "family",
+    "sample_text",
+    "layout",
+    "size",
+    "watermark",
+    "badge_th"
+   ],
+   "properties": {
+    "family": {
+     "type": "string"
+    },
+    "sample_text": {
+     "type": "string"
+    },
+    "layout": {
+     "enum": [
+      "before_after",
+      "alphabet_grid",
+      "typed_note"
+     ]
+    },
+    "size": {
+     "const": "1080x1350"
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "badge_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "plan",
+    "builds_per_day",
+    "used",
+    "left",
+    "blocked"
+   ],
+   "properties": {
+    "plan": {
+     "enum": [
+      "free",
+      "plus"
+     ]
+    },
+    "builds_per_day": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "used": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "blocked": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "flag",
+    "level",
+    "message_th",
+    "block"
+   ],
+   "properties": {
+    "flag": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "block": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}

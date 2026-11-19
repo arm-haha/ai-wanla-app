@@ -1,0 +1,2053 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "Mint",
+   "value": {
+    "id": "u01",
+    "name_th": "ครูมิ้นท์",
+    "name_en": "Mint",
+    "age": 27,
+    "city_th": "นนทบุรี",
+    "use_th": "ทำใบงาน/การ์ดให้นักเรียน"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Boss",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่บอส",
+    "name_en": "Boss",
+    "age": 33,
+    "city_th": "เชียงใหม่",
+    "use_th": "โน้ตขอบคุณลูกค้าร้านออนไลน์"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Baitoey",
+   "value": {
+    "id": "u03",
+    "name_th": "น้องใบเตย",
+    "name_en": "Baitoey",
+    "age": 11,
+    "city_th": "ขอนแก่น",
+    "use_th": "ฝึกคัดลายมือ (ผู้ปกครองดูแล)"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Somjai",
+   "value": {
+    "id": "u04",
+    "name_th": "คุณยายสมใจ",
+    "name_en": "Somjai",
+    "age": 68,
+    "city_th": "สุพรรณบุรี",
+    "use_th": "ส.ค.ส. ลายมือยายให้หลาน"
+   }
+  },
+  {
+   "def": "SheetPhoto",
+   "note": "s01",
+   "value": {
+    "id": "s01",
+    "light": 0.85,
+    "blur": 0.05,
+    "skew_deg": 2,
+    "ink_contrast": 0.9
+   }
+  },
+  {
+   "def": "SheetScan",
+   "note": "s01",
+   "value": {
+    "photo_id": "s01",
+    "quality": {
+     "score": 94,
+     "ok": true,
+     "tips_th": []
+    }
+   }
+  },
+  {
+   "def": "SheetPhoto",
+   "note": "s02",
+   "value": {
+    "id": "s02",
+    "light": 0.5,
+    "blur": 0.2,
+    "skew_deg": 10,
+    "ink_contrast": 0.7
+   }
+  },
+  {
+   "def": "SheetScan",
+   "note": "s02",
+   "value": {
+    "photo_id": "s02",
+    "quality": {
+     "score": 58,
+     "ok": false,
+     "tips_th": [
+      "แสงน้อย/มีเงา ถ่ายใกล้หน้าต่าง หรือเปิดไฟเพดาน ไม่ใช้แฟลช",
+      "กระดาษเอียง ให้มุมทั้ง 4 อยู่ในกรอบ (มีตัวช่วยจัดมุมอัตโนมัติ)"
+     ]
+    }
+   }
+  },
+  {
+   "def": "SheetPhoto",
+   "note": "s03",
+   "value": {
+    "id": "s03",
+    "light": 0.3,
+    "blur": 0.5,
+    "skew_deg": 15,
+    "ink_contrast": 0.4
+   }
+  },
+  {
+   "def": "SheetScan",
+   "note": "s03",
+   "value": {
+    "photo_id": "s03",
+    "quality": {
+     "score": 4,
+     "ok": false,
+     "tips_th": [
+      "แสงน้อย/มีเงา ถ่ายใกล้หน้าต่าง หรือเปิดไฟเพดาน ไม่ใช้แฟลช",
+      "ภาพเบลอ วางกระดาษบนโต๊ะ ถือมือถือให้นิ่ง แตะโฟกัสก่อนถ่าย",
+      "กระดาษเอียง ให้มุมทั้ง 4 อยู่ในกรอบ (มีตัวช่วยจัดมุมอัตโนมัติ)",
+      "หมึกจางไป ใช้ปากกาหมึกดำเข้ม ไม่ใช้ดินสอ"
+     ]
+    }
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "0.9,0.0,0,1.0",
+   "value": {
+    "score": 100,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "0.65,0.35,-9,0.55",
+   "value": {
+    "score": 60,
+    "ok": false,
+    "tips_th": [
+     "ภาพเบลอ วางกระดาษบนโต๊ะ ถือมือถือให้นิ่ง แตะโฟกัสก่อนถ่าย",
+     "กระดาษเอียง ให้มุมทั้ง 4 อยู่ในกรอบ (มีตัวช่วยจัดมุมอัตโนมัติ)"
+    ]
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "0.75,0.1,5,0.3",
+   "value": {
+    "score": 66,
+    "ok": false,
+    "tips_th": [
+     "หมึกจางไป ใช้ปากกาหมึกดำเข้ม ไม่ใช้ดินสอ"
+    ]
+   }
+  },
+  {
+   "def": "TemplateSheet",
+   "note": "thai_quick",
+   "value": {
+    "template": "thai_quick",
+    "name_th": "ไทยด่วน (1 แผ่น)",
+    "cells": 72,
+    "pages": 1,
+    "sets": [
+     "TH_CONS",
+     "TH_UPPER",
+     "TH_LOWER",
+     "TH_TONE",
+     "TH_SPACING"
+    ],
+    "guide": "baseline+xheight+ascender",
+    "tips_th": [
+     "ใช้ปากกาหมึกดำหัว 0.5–0.7 มม.",
+     "เขียนกลางช่อง ไม่ล้นเส้นกรอบ",
+     "สระ/วรรณยุกต์เขียนในช่องของตัวเองตามเส้นไกด์"
+    ]
+   }
+  },
+  {
+   "def": "TemplateSheet",
+   "note": "thai_full",
+   "value": {
+    "template": "thai_full",
+    "name_th": "ไทยครบ + เลข + เครื่องหมาย",
+    "cells": 109,
+    "pages": 2,
+    "sets": [
+     "TH_CONS",
+     "TH_UPPER",
+     "TH_LOWER",
+     "TH_TONE",
+     "TH_SPACING",
+     "TH_DIGITS",
+     "DIGITS",
+     "PUNCT"
+    ],
+    "guide": "baseline+xheight+ascender",
+    "tips_th": [
+     "ใช้ปากกาหมึกดำหัว 0.5–0.7 มม.",
+     "เขียนกลางช่อง ไม่ล้นเส้นกรอบ",
+     "สระ/วรรณยุกต์เขียนในช่องของตัวเองตามเส้นไกด์"
+    ]
+   }
+  },
+  {
+   "def": "TemplateSheet",
+   "note": "english",
+   "value": {
+    "template": "english",
+    "name_th": "อังกฤษ",
+    "cells": 79,
+    "pages": 1,
+    "sets": [
+     "LAT_UPPER",
+     "LAT_LOWER",
+     "DIGITS",
+     "PUNCT"
+    ],
+    "guide": "baseline+xheight+ascender",
+    "tips_th": [
+     "ใช้ปากกาหมึกดำหัว 0.5–0.7 มม.",
+     "เขียนกลางช่อง ไม่ล้นเส้นกรอบ",
+     "สระ/วรรณยุกต์เขียนในช่องของตัวเองตามเส้นไกด์"
+    ]
+   }
+  },
+  {
+   "def": "TemplateSheet",
+   "note": "bilingual",
+   "value": {
+    "template": "bilingual",
+    "name_th": "ไทย + อังกฤษ ครบชุด",
+    "cells": 161,
+    "pages": 3,
+    "sets": [
+     "TH_CONS",
+     "TH_UPPER",
+     "TH_LOWER",
+     "TH_TONE",
+     "TH_SPACING",
+     "TH_DIGITS",
+     "LAT_UPPER",
+     "LAT_LOWER",
+     "DIGITS",
+     "PUNCT"
+    ],
+    "guide": "baseline+xheight+ascender",
+    "tips_th": [
+     "ใช้ปากกาหมึกดำหัว 0.5–0.7 มม.",
+     "เขียนกลางช่อง ไม่ล้นเส้นกรอบ",
+     "สระ/วรรณยุกต์เขียนในช่องของตัวเองตามเส้นไกด์"
+    ]
+   }
+  },
+  {
+   "def": "AiGlyphExtract",
+   "note": "mint",
+   "value": {
+    "sheet_id": "s01",
+    "corners_found": true,
+    "cells": [
+     {
+      "char": "ก",
+      "ink": 0.11,
+      "touches_border": false,
+      "extra_blobs": 0
+     },
+     {
+      "char": "ข",
+      "ink": 0.11,
+      "touches_border": false,
+      "extra_blobs": 0
+     },
+     {
+      "char": "ฃ",
+      "ink": 0.0,
+      "touches_border": false,
+      "extra_blobs": 0
+     },
+     {
+      "char": "ค",
+      "ink": 0.11,
+      "touches_border": false,
+      "extra_blobs": 0
+     },
+     {
+      "char": "ฅ",
+      "ink": 0.11,
+      "touches_border": false,
+      "extra_blobs": 0
+     },
+     {
+      "char": "ฆ",
+      "ink": 0.11,
+      "touches_border": false,
+      "extra_blobs": 0
+     }
+    ],
+    "signature_like": false,
+    "personal_data": false,
+    "handwriting_style": "round",
+    "confidence": 0.93,
+    "notes_th": "ลายมือกลมมน เส้นสม่ำเสมอ"
+   }
+  },
+  {
+   "def": "AiGlyphExtract",
+   "note": "signature-ish",
+   "value": {
+    "sheet_id": "s09",
+    "corners_found": false,
+    "cells": [],
+    "signature_like": true,
+    "personal_data": true,
+    "handwriting_style": "cursive",
+    "confidence": 0.41
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "ก",
+   "value": {
+    "char": "ก",
+    "ink": 0.11,
+    "touches_border": false,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "ข",
+   "value": {
+    "char": "ข",
+    "ink": 0.11,
+    "touches_border": false,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "ฃ",
+   "value": {
+    "char": "ฃ",
+    "ink": 0.0,
+    "touches_border": false,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "ค",
+   "value": {
+    "char": "ค",
+    "ink": 0.11,
+    "touches_border": false,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "ฅ",
+   "value": {
+    "char": "ฅ",
+    "ink": 0.11,
+    "touches_border": false,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "ฆ",
+   "value": {
+    "char": "ฆ",
+    "ink": 0.11,
+    "touches_border": false,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "ง",
+   "value": {
+    "char": "ง",
+    "ink": 0.11,
+    "touches_border": false,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "จ",
+   "value": {
+    "char": "จ",
+    "ink": 0.11,
+    "touches_border": false,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "ฉ",
+   "value": {
+    "char": "ฉ",
+    "ink": 0.11,
+    "touches_border": false,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "ช",
+   "value": {
+    "char": "ช",
+    "ink": 0.11,
+    "touches_border": false,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "ซ",
+   "value": {
+    "char": "ซ",
+    "ink": 0.11,
+    "touches_border": false,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "ฌ",
+   "value": {
+    "char": "ฌ",
+    "ink": 0.11,
+    "touches_border": false,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "ฃ",
+   "value": {
+    "char": "ฃ",
+    "ink": 0.0,
+    "touches_border": false,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "ฬ",
+   "value": {
+    "char": "ฬ",
+    "ink": 0.12,
+    "touches_border": true,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCell",
+   "note": "ๆ",
+   "value": {
+    "char": "ๆ",
+    "ink": 0.02,
+    "touches_border": false,
+    "extra_blobs": 0
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "ก",
+   "value": {
+    "char": "ก",
+    "status": "ok",
+    "usable": true,
+    "fix_th": null
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "ข",
+   "value": {
+    "char": "ข",
+    "status": "ok",
+    "usable": true,
+    "fix_th": null
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "ฃ",
+   "value": {
+    "char": "ฃ",
+    "status": "empty",
+    "usable": false,
+    "fix_th": "ยังไม่ได้เขียนช่องนี้"
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "ค",
+   "value": {
+    "char": "ค",
+    "status": "ok",
+    "usable": true,
+    "fix_th": null
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "ฅ",
+   "value": {
+    "char": "ฅ",
+    "status": "ok",
+    "usable": true,
+    "fix_th": null
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "ฆ",
+   "value": {
+    "char": "ฆ",
+    "status": "ok",
+    "usable": true,
+    "fix_th": null
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "ง",
+   "value": {
+    "char": "ง",
+    "status": "ok",
+    "usable": true,
+    "fix_th": null
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "จ",
+   "value": {
+    "char": "จ",
+    "status": "ok",
+    "usable": true,
+    "fix_th": null
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "ฉ",
+   "value": {
+    "char": "ฉ",
+    "status": "ok",
+    "usable": true,
+    "fix_th": null
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "ช",
+   "value": {
+    "char": "ช",
+    "status": "ok",
+    "usable": true,
+    "fix_th": null
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "ซ",
+   "value": {
+    "char": "ซ",
+    "status": "ok",
+    "usable": true,
+    "fix_th": null
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "ฌ",
+   "value": {
+    "char": "ฌ",
+    "status": "ok",
+    "usable": true,
+    "fix_th": null
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "ฃ",
+   "value": {
+    "char": "ฃ",
+    "status": "empty",
+    "usable": false,
+    "fix_th": "ยังไม่ได้เขียนช่องนี้"
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "ฬ",
+   "value": {
+    "char": "ฬ",
+    "status": "overflow",
+    "usable": false,
+    "fix_th": "ตัวอักษรล้นกรอบ เขียนเล็กลงแล้วถ่ายใหม่เฉพาะช่องนี้"
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "ๆ",
+   "value": {
+    "char": "ๆ",
+    "status": "too_faint",
+    "usable": false,
+    "fix_th": "เส้นจางไป เขียนทับให้เข้มขึ้น"
+   }
+  },
+  {
+   "def": "GlyphCheck",
+   "note": "messy-ink",
+   "value": {
+    "char": "A",
+    "status": "messy",
+    "usable": false,
+    "fix_th": "มีรอยเลอะ/ขีดฆ่า เขียนใหม่ในช่องสำรอง"
+   }
+  },
+  {
+   "def": "Coverage",
+   "note": "mint quick",
+   "value": {
+    "template": "thai_quick",
+    "total": 72,
+    "usable": 69,
+    "percent": 96,
+    "core_percent": 96,
+    "missing": [
+     "ฃ",
+     "ฬ",
+     "ๆ"
+    ],
+    "can_build": true,
+    "fallback_th": "ช่องที่ขาดจะใช้ตัวอักษรสำรองสไตล์ใกล้เคียงชั่วคราว ถ่ายเพิ่มทีหลังได้"
+   }
+  },
+  {
+   "def": "Coverage",
+   "note": "english no digits",
+   "value": {
+    "template": "english",
+    "total": 79,
+    "usable": 52,
+    "percent": 66,
+    "core_percent": 100,
+    "missing": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     ".",
+     ",",
+     "!",
+     "?",
+     ":",
+     ";",
+     "'",
+     "\"",
+     "(",
+     ")",
+     "-",
+     "/",
+     "@",
+     "#",
+     "&",
+     "฿",
+     "%"
+    ],
+    "can_build": true,
+    "fallback_th": "ช่องที่ขาดจะใช้ตัวอักษรสำรองสไตล์ใกล้เคียงชั่วคราว ถ่ายเพิ่มทีหลังได้"
+   }
+  },
+  {
+   "def": "Coverage",
+   "note": "half",
+   "value": {
+    "template": "thai_quick",
+    "total": 72,
+    "usable": 34,
+    "percent": 47,
+    "core_percent": 47,
+    "missing": [
+     "ข",
+     "ฃ",
+     "ค",
+     "ฆ",
+     "จ",
+     "ช",
+     "ฌ",
+     "ฎ",
+     "ฐ",
+     "ฒ",
+     "ด",
+     "ถ",
+     "ธ",
+     "บ",
+     "ผ",
+     "พ",
+     "ภ",
+     "ย",
+     "ล",
+     "ศ",
+     "ส",
+     "ฬ",
+     "ฮ",
+     "ิ",
+     "ึ",
+     "็",
+     "ํ",
+     "ู",
+     "่",
+     "๊",
+     "ะ",
+     "ำ",
+     "แ",
+     "ใ",
+     "ๅ",
+     "ๆ",
+     "ฯ",
+     "ฦ"
+    ],
+    "can_build": false,
+    "fallback_th": "ช่องที่ขาดจะใช้ตัวอักษรสำรองสไตล์ใกล้เคียงชั่วคราว ถ่ายเพิ่มทีหลังได้"
+   }
+  },
+  {
+   "def": "ConsentCheck",
+   "note": "27 {}",
+   "value": {
+    "allowed": true,
+    "level": "ok",
+    "flags": [],
+    "messages_th": [
+     "ฟอนต์ลายมือนี้เพื่อใช้ส่วนตัว/งานสร้างสรรค์ ไม่ใช่ลายเซ็นและไม่ใช้แทนการเซ็นเอกสาร"
+    ]
+   }
+  },
+  {
+   "def": "ConsentCheck",
+   "note": "11 {}",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "under_13_no_parent"
+    ],
+    "messages_th": [
+     "อายุต่ำกว่า 13 ปี ต้องให้ผู้ปกครองยืนยันก่อนใช้"
+    ]
+   }
+  },
+  {
+   "def": "ConsentCheck",
+   "note": "11 {'parent_ok': True}",
+   "value": {
+    "allowed": true,
+    "level": "ok",
+    "flags": [],
+    "messages_th": [
+     "ฟอนต์ลายมือนี้เพื่อใช้ส่วนตัว/งานสร้างสรรค์ ไม่ใช่ลายเซ็นและไม่ใช้แทนการเซ็นเอกสาร"
+    ]
+   }
+  },
+  {
+   "def": "ConsentCheck",
+   "note": "30 {'signature': True}",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "signature_detected"
+    ],
+    "messages_th": [
+     "ตรวจพบลายเซ็น — แอปไม่ทำฟอนต์/สติกเกอร์จากลายเซ็นเพื่อป้องกันการปลอมแปลง"
+    ]
+   }
+  },
+  {
+   "def": "ConsentCheck",
+   "note": "25 {'purpose': 'forgery'}",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "document_forgery"
+    ],
+    "messages_th": [
+     "ห้ามใช้ฟอนต์ลายมือปลอมเอกสาร ใบรับรอง ใบลา หรือข้อความแทนผู้อื่น"
+    ]
+   }
+  },
+  {
+   "def": "ConsentCheck",
+   "note": "33 {'purpose': 'resale'}",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "commercial_resale"
+    ],
+    "messages_th": [
+     "ขายฟอนต์ลายมือตัวเองได้ แต่ห้ามอ้างว่าเป็นลายมือคนอื่นหรือคนดัง"
+    ]
+   }
+  },
+  {
+   "def": "ConsentCheck",
+   "note": "someone else",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "not_own_handwriting"
+    ],
+    "messages_th": [
+     "ใช้ได้เฉพาะลายมือของคุณเอง ห้ามสแกนลายมือคนอื่นมาทำฟอนต์"
+    ]
+   }
+  },
+  {
+   "def": "MarkPlacement",
+   "note": "ก่",
+   "value": {
+    "base": "ก",
+    "cut_descender": false,
+    "marks": [
+     {
+      "mark": "่",
+      "kind": "tone",
+      "dx": 0,
+      "dy": 0,
+      "note_th": "วรรณยุกต์วางต่ำชิดตัวอักษร"
+     }
+    ]
+   }
+  },
+  {
+   "def": "MarkPlacement",
+   "note": "ที่",
+   "value": {
+    "base": "ท",
+    "cut_descender": false,
+    "marks": [
+     {
+      "mark": "ี",
+      "kind": "upper_vowel",
+      "dx": 0,
+      "dy": 0,
+      "note_th": null
+     },
+     {
+      "mark": "่",
+      "kind": "tone",
+      "dx": 0,
+      "dy": 18,
+      "note_th": "วรรณยุกต์ลอยเหนือสระบน"
+     }
+    ]
+   }
+  },
+  {
+   "def": "MarkPlacement",
+   "note": "ปี่",
+   "value": {
+    "base": "ป",
+    "cut_descender": false,
+    "marks": [
+     {
+      "mark": "ี",
+      "kind": "upper_vowel",
+      "dx": -12,
+      "dy": 0,
+      "note_th": "หลบหางตัวสูง (ป ฝ ฟ ฬ)"
+     },
+     {
+      "mark": "่",
+      "kind": "tone",
+      "dx": -12,
+      "dy": 18,
+      "note_th": "หลบหางตัวสูง (ป ฝ ฟ ฬ) · วรรณยุกต์ลอยเหนือสระบน"
+     }
+    ]
+   }
+  },
+  {
+   "def": "MarkPlacement",
+   "note": "ฟื้",
+   "value": {
+    "base": "ฟ",
+    "cut_descender": false,
+    "marks": [
+     {
+      "mark": "ื",
+      "kind": "upper_vowel",
+      "dx": -12,
+      "dy": 0,
+      "note_th": "หลบหางตัวสูง (ป ฝ ฟ ฬ)"
+     },
+     {
+      "mark": "้",
+      "kind": "tone",
+      "dx": -12,
+      "dy": 18,
+      "note_th": "หลบหางตัวสูง (ป ฝ ฟ ฬ) · วรรณยุกต์ลอยเหนือสระบน"
+     }
+    ]
+   }
+  },
+  {
+   "def": "MarkPlacement",
+   "note": "ฎุ",
+   "value": {
+    "base": "ฎ",
+    "cut_descender": false,
+    "marks": [
+     {
+      "mark": "ุ",
+      "kind": "lower_vowel",
+      "dx": 0,
+      "dy": -10,
+      "note_th": "เลื่อนสระล่างลงให้พ้นหาง (ฎ ฏ)"
+     }
+    ]
+   }
+  },
+  {
+   "def": "MarkPlacement",
+   "note": "ญู",
+   "value": {
+    "base": "ญ",
+    "cut_descender": true,
+    "marks": [
+     {
+      "mark": "ู",
+      "kind": "lower_vowel",
+      "dx": 0,
+      "dy": 0,
+      "note_th": "ตัดเชิงล่างของ ญ/ฐ เมื่อมีสระล่าง"
+     }
+    ]
+   }
+  },
+  {
+   "def": "MarkPlacement",
+   "note": "ฐุ",
+   "value": {
+    "base": "ฐ",
+    "cut_descender": true,
+    "marks": [
+     {
+      "mark": "ุ",
+      "kind": "lower_vowel",
+      "dx": 0,
+      "dy": 0,
+      "note_th": "ตัดเชิงล่างของ ญ/ฐ เมื่อมีสระล่าง"
+     }
+    ]
+   }
+  },
+  {
+   "def": "MarkPlacement",
+   "note": "ป๋",
+   "value": {
+    "base": "ป",
+    "cut_descender": false,
+    "marks": [
+     {
+      "mark": "๋",
+      "kind": "tone",
+      "dx": -12,
+      "dy": 0,
+      "note_th": "หลบหางตัวสูง (ป ฝ ฟ ฬ) · วรรณยุกต์วางต่ำชิดตัวอักษร"
+     }
+    ]
+   }
+  },
+  {
+   "def": "MarkPlacement",
+   "note": "สั้",
+   "value": {
+    "base": "ส",
+    "cut_descender": false,
+    "marks": [
+     {
+      "mark": "ั",
+      "kind": "upper_vowel",
+      "dx": 0,
+      "dy": 0,
+      "note_th": null
+     },
+     {
+      "mark": "้",
+      "kind": "tone",
+      "dx": 0,
+      "dy": 18,
+      "note_th": "วรรณยุกต์ลอยเหนือสระบน"
+     }
+    ]
+   }
+  },
+  {
+   "def": "MarkPlacement",
+   "note": "กึ๋",
+   "value": {
+    "base": "ก",
+    "cut_descender": false,
+    "marks": [
+     {
+      "mark": "ึ",
+      "kind": "upper_vowel",
+      "dx": 0,
+      "dy": 0,
+      "note_th": null
+     },
+     {
+      "mark": "๋",
+      "kind": "tone",
+      "dx": 0,
+      "dy": 18,
+      "note_th": "วรรณยุกต์ลอยเหนือสระบน"
+     }
+    ]
+   }
+  },
+  {
+   "def": "StyleParams",
+   "note": "('thin', 0, 'clean', 0)",
+   "value": {
+    "weight": "thin",
+    "stroke": 2,
+    "slant": 0,
+    "roughness": "clean",
+    "rough": 0.0,
+    "tracking": 0,
+    "baseline_jitter": 0,
+    "alternates": 1
+   }
+  },
+  {
+   "def": "StyleParams",
+   "note": "('regular', 4, 'natural', 10)",
+   "value": {
+    "weight": "regular",
+    "stroke": 4,
+    "slant": 4,
+    "roughness": "natural",
+    "rough": 0.35,
+    "tracking": 10,
+    "baseline_jitter": 3,
+    "alternates": 3
+   }
+  },
+  {
+   "def": "StyleParams",
+   "note": "('bold', -6, 'sketchy', 30)",
+   "value": {
+    "weight": "bold",
+    "stroke": 7,
+    "slant": -6,
+    "roughness": "sketchy",
+    "rough": 0.7,
+    "tracking": 30,
+    "baseline_jitter": 6,
+    "alternates": 3
+   }
+  },
+  {
+   "def": "StyleParams",
+   "note": "('regular', 12, 'natural', -20)",
+   "value": {
+    "weight": "regular",
+    "stroke": 4,
+    "slant": 12,
+    "roughness": "natural",
+    "rough": 0.35,
+    "tracking": -20,
+    "baseline_jitter": 3,
+    "alternates": 3
+   }
+  },
+  {
+   "def": "FontBuild",
+   "note": "mint ttf",
+   "value": {
+    "ok": true,
+    "family": "HandFont-Mint",
+    "format": "ttf",
+    "glyphs": 69,
+    "alternates": 138,
+    "size_kb": 256,
+    "reason_th": null
+   }
+  },
+  {
+   "def": "FontBuild",
+   "note": "otf",
+   "value": {
+    "ok": true,
+    "family": "HandFont-Mint",
+    "format": "otf",
+    "glyphs": 69,
+    "alternates": 138,
+    "size_kb": 339,
+    "reason_th": null
+   }
+  },
+  {
+   "def": "FontBuild",
+   "note": "woff2",
+   "value": {
+    "ok": true,
+    "family": "HandFont-Mint",
+    "format": "woff2",
+    "glyphs": 69,
+    "alternates": 138,
+    "size_kb": 152,
+    "reason_th": null
+   }
+  },
+  {
+   "def": "FontBuild",
+   "note": "boss clean",
+   "value": {
+    "ok": true,
+    "family": "HandFont-Boss",
+    "format": "ttf",
+    "glyphs": 69,
+    "alternates": 0,
+    "size_kb": 90,
+    "reason_th": null
+   }
+  },
+  {
+   "def": "FontBuild",
+   "note": "blocked",
+   "value": {
+    "ok": false,
+    "family": "HandFont-Baitoey",
+    "format": "ttf",
+    "glyphs": 34,
+    "alternates": 0,
+    "size_kb": 0,
+    "reason_th": "ตัวหลักยังไม่ถึง 90% เขียนช่องที่ขาดเพิ่มก่อน"
+   }
+  },
+  {
+   "def": "TextPreview",
+   "note": "สุขสันต์วันครูนะ",
+   "value": {
+    "text": "สุขสันต์วันครูนะคะ ขอบคุณที่ตั้งใจสอนทุกวัน",
+    "size_pt": 24,
+    "lines": [
+     "สุขสันต์วันครูนะคะ",
+     "ขอบคุณที่ตั้งใจสอนทุกวัน"
+    ],
+    "line_count": 2,
+    "clusters": 31,
+    "alternates_used": 3
+   }
+  },
+  {
+   "def": "TextPreview",
+   "note": "สุขสันต์วันเกิดน",
+   "value": {
+    "text": "สุขสันต์วันเกิดนะเพื่อนรัก",
+    "size_pt": 24,
+    "lines": [
+     "สุขสันต์วันเกิดนะเพื่อนรัก"
+    ],
+    "line_count": 1,
+    "clusters": 18,
+    "alternates_used": 3
+   }
+  },
+  {
+   "def": "TextPreview",
+   "note": "Happy birthday m",
+   "value": {
+    "text": "Happy birthday my dear friend see you soon",
+    "size_pt": 24,
+    "lines": [
+     "Happy birthday",
+     "my dear friend",
+     "see you soon"
+    ],
+    "line_count": 3,
+    "clusters": 42,
+    "alternates_used": 3
+   }
+  },
+  {
+   "def": "TextPreview",
+   "note": "ขอบคุณที่อุดหนุน",
+   "value": {
+    "text": "ขอบคุณที่อุดหนุนนะคะ 🙏",
+    "size_pt": 24,
+    "lines": [
+     "ขอบคุณที่อุดหนุนนะคะ",
+     "🙏"
+    ],
+    "line_count": 2,
+    "clusters": 17,
+    "alternates_used": 3
+   }
+  },
+  {
+   "def": "TextPreview",
+   "note": "รักนะ",
+   "value": {
+    "text": "รักนะ",
+    "size_pt": 24,
+    "lines": [
+     "รักนะ"
+    ],
+    "line_count": 1,
+    "clusters": 4,
+    "alternates_used": 1
+   }
+  },
+  {
+   "def": "TextPreview",
+   "note": "Thank you for yo",
+   "value": {
+    "text": "Thank you for your order!",
+    "size_pt": 24,
+    "lines": [
+     "Thank you",
+     "for your",
+     "order!"
+    ],
+    "line_count": 3,
+    "clusters": 25,
+    "alternates_used": 3
+   }
+  },
+  {
+   "def": "CardLayout",
+   "note": "birthday",
+   "value": {
+    "kind": "birthday",
+    "name_th": "การ์ดวันเกิด",
+    "size": "A6",
+    "paper": "pastel_pink",
+    "paper_hex": "#FDE7EC",
+    "ink": "black",
+    "ink_hex": "#1F1F1F",
+    "chars": 42,
+    "max_chars": 160,
+    "fits": true,
+    "font_pt": 28,
+    "warning_th": null
+   }
+  },
+  {
+   "def": "CardLayout",
+   "note": "thank_you",
+   "value": {
+    "kind": "thank_you",
+    "name_th": "การ์ดขอบคุณ",
+    "size": "A6",
+    "paper": "kraft",
+    "paper_hex": "#E9D6B8",
+    "ink": "brown",
+    "ink_hex": "#5D4037",
+    "chars": 33,
+    "max_chars": 140,
+    "fits": true,
+    "font_pt": 28,
+    "warning_th": null
+   }
+  },
+  {
+   "def": "CardLayout",
+   "note": "love_note",
+   "value": {
+    "kind": "love_note",
+    "name_th": "โน้ตบอกรัก",
+    "size": "A6",
+    "paper": "pastel_pink",
+    "paper_hex": "#FDE7EC",
+    "ink": "red_pen",
+    "ink_hex": "#C62828",
+    "chars": 24,
+    "max_chars": 120,
+    "fits": true,
+    "font_pt": 28,
+    "warning_th": null
+   }
+  },
+  {
+   "def": "CardLayout",
+   "note": "wedding",
+   "value": {
+    "kind": "wedding",
+    "name_th": "การ์ดอวยพรงานแต่ง",
+    "size": "A5",
+    "paper": "plain",
+    "paper_hex": "#FFFFFF",
+    "ink": "black",
+    "ink_hex": "#1F1F1F",
+    "chars": 59,
+    "max_chars": 220,
+    "fits": true,
+    "font_pt": 28,
+    "warning_th": null
+   }
+  },
+  {
+   "def": "CardLayout",
+   "note": "new_year",
+   "value": {
+    "kind": "new_year",
+    "name_th": "ส.ค.ส. ปีใหม่",
+    "size": "A6",
+    "paper": "kraft",
+    "paper_hex": "#E9D6B8",
+    "ink": "black",
+    "ink_hex": "#1F1F1F",
+    "chars": 42,
+    "max_chars": 160,
+    "fits": true,
+    "font_pt": 28,
+    "warning_th": null
+   }
+  },
+  {
+   "def": "CardLayout",
+   "note": "teacher",
+   "value": {
+    "kind": "teacher",
+    "name_th": "การ์ดวันครู",
+    "size": "A6",
+    "paper": "lined",
+    "paper_hex": "#FFFDF5",
+    "ink": "blue_pen",
+    "ink_hex": "#1F3FBF",
+    "chars": 43,
+    "max_chars": 140,
+    "fits": true,
+    "font_pt": 28,
+    "warning_th": null
+   }
+  },
+  {
+   "def": "CardLayout",
+   "note": "shop_note",
+   "value": {
+    "kind": "shop_note",
+    "name_th": "โน้ตขอบคุณลูกค้า (ร้านออนไลน์)",
+    "size": "A7",
+    "paper": "kraft",
+    "paper_hex": "#E9D6B8",
+    "ink": "black",
+    "ink_hex": "#1F1F1F",
+    "chars": 40,
+    "max_chars": 90,
+    "fits": true,
+    "font_pt": 22,
+    "warning_th": null
+   }
+  },
+  {
+   "def": "CardLayout",
+   "note": "too long",
+   "value": {
+    "kind": "shop_note",
+    "name_th": "โน้ตขอบคุณลูกค้า (ร้านออนไลน์)",
+    "size": "A7",
+    "paper": "kraft",
+    "paper_hex": "#E9D6B8",
+    "ink": "black",
+    "ink_hex": "#1F1F1F",
+    "chars": 120,
+    "max_chars": 90,
+    "fits": false,
+    "font_pt": 18,
+    "warning_th": "ข้อความยาวเกิน ตัดให้สั้นลงหรือเปลี่ยนเป็นขนาด A5"
+   }
+  },
+  {
+   "def": "CardLayout",
+   "note": "custom",
+   "value": {
+    "kind": "birthday",
+    "name_th": "การ์ดวันเกิด",
+    "size": "A6",
+    "paper": "notebook_blue",
+    "paper_hex": "#EEF4FF",
+    "ink": "white_on_dark",
+    "ink_hex": "#FFFFFF",
+    "chars": 4,
+    "max_chars": 160,
+    "fits": true,
+    "font_pt": 28,
+    "warning_th": null
+   }
+  },
+  {
+   "def": "StickerExport",
+   "note": "555 ขำมาก",
+   "value": {
+    "text": "555 ขำมาก",
+    "format": "png_sticker",
+    "ink_hex": "#1F1F1F",
+    "outline": true,
+    "width_px": 1600,
+    "height_px": 360,
+    "transparent": true
+   }
+  },
+  {
+   "def": "StickerExport",
+   "note": "ฝันดีนะ",
+   "value": {
+    "text": "ฝันดีนะ",
+    "format": "png_sticker",
+    "ink_hex": "#1F3FBF",
+    "outline": true,
+    "width_px": 1200,
+    "height_px": 360,
+    "transparent": true
+   }
+  },
+  {
+   "def": "StickerExport",
+   "note": "SALE วันนี้วันเดียว ลด 50% ทั้งร้าน",
+   "value": {
+    "text": "SALE วันนี้วันเดียว ลด 50% ทั้งร้าน",
+    "format": "png_sticker",
+    "ink_hex": "#C62828",
+    "outline": true,
+    "width_px": 1600,
+    "height_px": 560,
+    "transparent": true
+   }
+  },
+  {
+   "def": "StickerExport",
+   "note": "ok",
+   "value": {
+    "text": "ok",
+    "format": "png_sticker",
+    "ink_hex": "#6B6B6B",
+    "outline": true,
+    "width_px": 464,
+    "height_px": 360,
+    "transparent": true
+   }
+  },
+  {
+   "def": "PracticeSheet",
+   "note": "กขค",
+   "value": {
+    "text": "กขค",
+    "rows": 6,
+    "mode": "trace",
+    "guide_lines": 4,
+    "opacity": 0.25,
+    "paper": "A4"
+   }
+  },
+  {
+   "def": "PracticeSheet",
+   "note": "สวัสดีครับ",
+   "value": {
+    "text": "สวัสดีครับ",
+    "rows": 8,
+    "mode": "copy",
+    "guide_lines": 4,
+    "opacity": 0.0,
+    "paper": "A4"
+   }
+  },
+  {
+   "def": "PracticeSheet",
+   "note": "abc",
+   "value": {
+    "text": "abc",
+    "rows": 4,
+    "mode": "free",
+    "guide_lines": 3,
+    "opacity": 0.0,
+    "paper": "A4"
+   }
+  },
+  {
+   "def": "PracticeSheet",
+   "note": "ก ไก่ ข ไข่",
+   "value": {
+    "text": "ก ไก่ ข ไข่",
+    "rows": 12,
+    "mode": "trace",
+    "guide_lines": 4,
+    "opacity": 0.25,
+    "paper": "A4"
+   }
+  },
+  {
+   "def": "PracticeSample",
+   "note": "",
+   "value": {
+    "height_var": 0.2,
+    "baseline_var": 0.15,
+    "spacing_var": 0.3,
+    "slant_var": 0.1
+   }
+  },
+  {
+   "def": "PracticeSample",
+   "note": "",
+   "value": {
+    "height_var": 0.16,
+    "baseline_var": 0.12,
+    "spacing_var": 0.24,
+    "slant_var": 0.1
+   }
+  },
+  {
+   "def": "PracticeScore",
+   "note": "",
+   "value": {
+    "samples": 2,
+    "score": 83,
+    "grade": "B",
+    "focus": "spacing_var",
+    "tip_th": "ช่องไฟไม่สม่ำเสมอ เว้นระยะเท่ากับความกว้างหัวตัว ก"
+   }
+  },
+  {
+   "def": "PracticeScore",
+   "note": "",
+   "value": {
+    "samples": 1,
+    "score": 94,
+    "grade": "A",
+    "focus": "spacing_var",
+    "tip_th": "ช่องไฟไม่สม่ำเสมอ เว้นระยะเท่ากับความกว้างหัวตัว ก"
+   }
+  },
+  {
+   "def": "PracticeScore",
+   "note": "",
+   "value": {
+    "samples": 1,
+    "score": 55,
+    "grade": "C",
+    "focus": "height_var",
+    "tip_th": "ขนาดตัวไม่เท่ากัน ลองให้หัวตัวอักษรแตะเส้นกลางทุกตัว"
+   }
+  },
+  {
+   "def": "PracticeScore",
+   "note": "",
+   "value": {
+    "samples": 1,
+    "score": 60,
+    "grade": "C",
+    "focus": "baseline_var",
+    "tip_th": "ตัวอักษรลอย/จม เขียนให้ฐานวางบนเส้นบรรทัด"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "15",
+   "value": {
+    "family": "HandFont-Mint",
+    "seconds": 15,
+    "ratio": "9:16",
+    "bpm": 112,
+    "shots": [
+     {
+      "kind": "blank_sheet",
+      "start": 0.0,
+      "end": 2.5,
+      "caption_th": "แผ่นเปล่า + ปากกา \"ลายมือเราเป็นฟอนต์ได้ไหม?\""
+     },
+     {
+      "kind": "writing",
+      "start": 2.5,
+      "end": 5.0,
+      "caption_th": "เขียนเร่งสปีด 44 พยัญชนะ"
+     },
+     {
+      "kind": "scan",
+      "start": 5.0,
+      "end": 7.5,
+      "caption_th": "ถ่ายรูป ประกายสแกนทีละช่อง"
+     },
+     {
+      "kind": "typing",
+      "start": 7.5,
+      "end": 10.0,
+      "caption_th": "พิมพ์ในมือถือ ออกมาเป็นลายมือเรา"
+     },
+     {
+      "kind": "card",
+      "start": 10.0,
+      "end": 12.5,
+      "caption_th": "การ์ดวันเกิด + สติกเกอร์ IG Story"
+     },
+     {
+      "kind": "cta",
+      "start": 12.5,
+      "end": 15.0,
+      "caption_th": "คอมเมนต์ FONT รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "HandFont · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "20",
+   "value": {
+    "family": "HandFont-Mint",
+    "seconds": 20,
+    "ratio": "9:16",
+    "bpm": 112,
+    "shots": [
+     {
+      "kind": "blank_sheet",
+      "start": 0.0,
+      "end": 3.3,
+      "caption_th": "แผ่นเปล่า + ปากกา \"ลายมือเราเป็นฟอนต์ได้ไหม?\""
+     },
+     {
+      "kind": "writing",
+      "start": 3.3,
+      "end": 6.7,
+      "caption_th": "เขียนเร่งสปีด 44 พยัญชนะ"
+     },
+     {
+      "kind": "scan",
+      "start": 6.7,
+      "end": 10.0,
+      "caption_th": "ถ่ายรูป ประกายสแกนทีละช่อง"
+     },
+     {
+      "kind": "typing",
+      "start": 10.0,
+      "end": 13.3,
+      "caption_th": "พิมพ์ในมือถือ ออกมาเป็นลายมือเรา"
+     },
+     {
+      "kind": "card",
+      "start": 13.3,
+      "end": 16.7,
+      "caption_th": "การ์ดวันเกิด + สติกเกอร์ IG Story"
+     },
+     {
+      "kind": "cta",
+      "start": 16.7,
+      "end": 20.0,
+      "caption_th": "คอมเมนต์ FONT รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "HandFont · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "30",
+   "value": {
+    "family": "HandFont-Mint",
+    "seconds": 30,
+    "ratio": "9:16",
+    "bpm": 112,
+    "shots": [
+     {
+      "kind": "blank_sheet",
+      "start": 0.0,
+      "end": 5.0,
+      "caption_th": "แผ่นเปล่า + ปากกา \"ลายมือเราเป็นฟอนต์ได้ไหม?\""
+     },
+     {
+      "kind": "writing",
+      "start": 5.0,
+      "end": 10.0,
+      "caption_th": "เขียนเร่งสปีด 44 พยัญชนะ"
+     },
+     {
+      "kind": "scan",
+      "start": 10.0,
+      "end": 15.0,
+      "caption_th": "ถ่ายรูป ประกายสแกนทีละช่อง"
+     },
+     {
+      "kind": "typing",
+      "start": 15.0,
+      "end": 20.0,
+      "caption_th": "พิมพ์ในมือถือ ออกมาเป็นลายมือเรา"
+     },
+     {
+      "kind": "card",
+      "start": 20.0,
+      "end": 25.0,
+      "caption_th": "การ์ดวันเกิด + สติกเกอร์ IG Story"
+     },
+     {
+      "kind": "cta",
+      "start": 25.0,
+      "end": 30.0,
+      "caption_th": "คอมเมนต์ FONT รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "HandFont · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "blank_sheet",
+   "value": {
+    "kind": "blank_sheet",
+    "start": 0.0,
+    "end": 4.0,
+    "caption_th": "แผ่นเปล่า + ปากกา \"ลายมือเราเป็นฟอนต์ได้ไหม?\""
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "writing",
+   "value": {
+    "kind": "writing",
+    "start": 4.0,
+    "end": 8.0,
+    "caption_th": "เขียนเร่งสปีด 44 พยัญชนะ"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "scan",
+   "value": {
+    "kind": "scan",
+    "start": 8.0,
+    "end": 12.0,
+    "caption_th": "ถ่ายรูป ประกายสแกนทีละช่อง"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "typing",
+   "value": {
+    "kind": "typing",
+    "start": 12.0,
+    "end": 16.0,
+    "caption_th": "พิมพ์ในมือถือ ออกมาเป็นลายมือเรา"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "card",
+   "value": {
+    "kind": "card",
+    "start": 16.0,
+    "end": 20.0,
+    "caption_th": "การ์ดวันเกิด + สติกเกอร์ IG Story"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "cta",
+   "value": {
+    "kind": "cta",
+    "start": 20.0,
+    "end": 24.0,
+    "caption_th": "คอมเมนต์ FONT รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "build",
+   "value": {
+    "date": "2026-12-18",
+    "kind": "build",
+    "version": 1
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "card",
+   "value": {
+    "date": "2026-12-18",
+    "kind": "card"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "sticker",
+   "value": {
+    "date": "2026-12-19",
+    "kind": "sticker"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "practice",
+   "value": {
+    "date": "2026-12-20",
+    "kind": "practice",
+    "score": 72
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "practice",
+   "value": {
+    "date": "2026-12-21",
+    "kind": "practice",
+    "score": 78
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "practice",
+   "value": {
+    "date": "2026-12-22",
+    "kind": "practice",
+    "score": 83
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "build",
+   "value": {
+    "date": "2026-12-22",
+    "kind": "build",
+    "version": 2
+   }
+  },
+  {
+   "def": "DiarySummary",
+   "note": "2026-12-22",
+   "value": {
+    "today": "2026-12-22",
+    "fonts_built": 2,
+    "cards_made": 1,
+    "stickers_made": 1,
+    "practice_streak": 3,
+    "best_score": 83,
+    "improvement": 11,
+    "latest_version": 2
+   }
+  },
+  {
+   "def": "DiarySummary",
+   "note": "2026-12-24",
+   "value": {
+    "today": "2026-12-24",
+    "fonts_built": 2,
+    "cards_made": 1,
+    "stickers_made": 1,
+    "practice_streak": 0,
+    "best_score": 83,
+    "improvement": 11,
+    "latest_version": 2
+   }
+  },
+  {
+   "def": "DiarySummary",
+   "note": "first day",
+   "value": {
+    "today": "2026-12-18",
+    "fonts_built": 1,
+    "cards_made": 0,
+    "stickers_made": 0,
+    "practice_streak": 0,
+    "best_score": null,
+    "improvement": 0,
+    "latest_version": 1
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "before_after",
+   "value": {
+    "family": "HandFont-Mint",
+    "sample_text": "สุขสันต์วันครูนะคะ ขอบคุณที่ตั้งใจสอนทุกวัน",
+    "layout": "before_after",
+    "size": "1080x1350",
+    "watermark": "HandFont · AI วันละแอป",
+    "badge_th": "ลายมือจริงของเจ้าของ แปลงเป็นฟอนต์"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "alphabet_grid",
+   "value": {
+    "family": "HandFont-Mint",
+    "sample_text": "สุขสันต์วันครูนะคะ ขอบคุณที่ตั้งใจสอนทุกวัน",
+    "layout": "alphabet_grid",
+    "size": "1080x1350",
+    "watermark": "HandFont · AI วันละแอป",
+    "badge_th": "ลายมือจริงของเจ้าของ แปลงเป็นฟอนต์"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "typed_note",
+   "value": {
+    "family": "HandFont-Mint",
+    "sample_text": "สุขสันต์วันครูนะคะ ขอบคุณที่ตั้งใจสอนทุกวัน",
+    "layout": "typed_note",
+    "size": "1080x1350",
+    "watermark": "HandFont · AI วันละแอป",
+    "badge_th": "ลายมือจริงของเจ้าของ แปลงเป็นฟอนต์"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(0,)",
+   "value": {
+    "plan": "free",
+    "builds_per_day": 2,
+    "used": 0,
+    "left": 2,
+    "blocked": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(1,)",
+   "value": {
+    "plan": "free",
+    "builds_per_day": 2,
+    "used": 1,
+    "left": 1,
+    "blocked": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(2,)",
+   "value": {
+    "plan": "free",
+    "builds_per_day": 2,
+    "used": 2,
+    "left": 0,
+    "blocked": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(5, 'plus')",
+   "value": {
+    "plan": "plus",
+    "builds_per_day": 20,
+    "used": 5,
+    "left": 15,
+    "blocked": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "None",
+   "value": {
+    "flag": null,
+    "level": "ok",
+    "message_th": "ฟอนต์ลายมือนี้เพื่อใช้ส่วนตัว/งานสร้างสรรค์ ไม่ใช่ลายเซ็นและไม่ใช้แทนการเซ็นเอกสาร",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "not_own_handwriting",
+   "value": {
+    "flag": "not_own_handwriting",
+    "level": "stop",
+    "message_th": "ใช้ได้เฉพาะลายมือของคุณเอง ห้ามสแกนลายมือคนอื่นมาทำฟอนต์",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "signature_detected",
+   "value": {
+    "flag": "signature_detected",
+    "level": "stop",
+    "message_th": "ตรวจพบลายเซ็น — แอปไม่ทำฟอนต์/สติกเกอร์จากลายเซ็นเพื่อป้องกันการปลอมแปลง",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "document_forgery",
+   "value": {
+    "flag": "document_forgery",
+    "level": "stop",
+    "message_th": "ห้ามใช้ฟอนต์ลายมือปลอมเอกสาร ใบรับรอง ใบลา หรือข้อความแทนผู้อื่น",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "under_13_no_parent",
+   "value": {
+    "flag": "under_13_no_parent",
+    "level": "stop",
+    "message_th": "อายุต่ำกว่า 13 ปี ต้องให้ผู้ปกครองยืนยันก่อนใช้",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "personal_data_on_sheet",
+   "value": {
+    "flag": "personal_data_on_sheet",
+    "level": "warn",
+    "message_th": "มีเลขบัตร/เบอร์โทร/ที่อยู่บนแผ่น ระบบจะเบลอก่อนประมวลผล",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "low_coverage",
+   "value": {
+    "flag": "low_coverage",
+    "level": "warn",
+    "message_th": "ตัวอักษรยังไม่ครบ ฟอนต์จะใช้ตัวสำรองแทนช่องที่ขาด",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "commercial_resale",
+   "value": {
+    "flag": "commercial_resale",
+    "level": "warn",
+    "message_th": "ขายฟอนต์ลายมือตัวเองได้ แต่ห้ามอ้างว่าเป็นลายมือคนอื่นหรือคนดัง",
+    "block": false
+   }
+  }
+ ]
+}
