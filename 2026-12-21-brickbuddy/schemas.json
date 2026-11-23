@@ -1,0 +1,1290 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://github.com/arm-haha/ai-wanla-app/2026-12-21-brickbuddy/schemas.json",
+ "title": "BrickBuddy",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "name_en",
+    "age",
+    "city_th",
+    "role_th"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 110
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "role_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PilePhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "light",
+    "blur",
+    "spread",
+    "overlap"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "light": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "blur": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "spread": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "overlap": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ScanQuality": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "PileScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "quality"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "quality": {
+     "$ref": "#/$defs/ScanQuality"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PieceDetection": {
+   "type": "object",
+   "required": [
+    "part",
+    "color",
+    "count"
+   ],
+   "properties": {
+    "part": {
+     "enum": [
+      "brick_2x4",
+      "brick_2x2",
+      "brick_1x4",
+      "brick_1x2",
+      "brick_1x1",
+      "plate_2x4",
+      "plate_2x2",
+      "plate_1x2",
+      "slope_2x2",
+      "tile_1x2",
+      "round_1x1",
+      "wheel",
+      "window",
+      "eye_1x1"
+     ]
+    },
+    "color": {
+     "enum": [
+      "red",
+      "blue",
+      "yellow",
+      "green",
+      "white",
+      "black",
+      "gray",
+      "orange",
+      "brown",
+      "pink",
+      "tan",
+      "trans_clear"
+     ]
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "positions": {
+     "type": "array",
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "minItems": 2,
+      "maxItems": 2
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "AiPileScan": {
+   "type": "object",
+   "required": [
+    "photo_id",
+    "pieces",
+    "hazards",
+    "confidence"
+   ],
+   "properties": {
+    "photo_id": {
+     "type": "string"
+    },
+    "pieces": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/PieceDetection"
+     }
+    },
+    "hazards": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "battery",
+       "magnet",
+       "coin",
+       "face",
+       "sharp"
+      ]
+     }
+    },
+    "connected_clumps": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "notes_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Inventory": {
+   "type": "object",
+   "required": [
+    "total",
+    "studs",
+    "by_part",
+    "by_color",
+    "top_colors",
+    "kinds"
+   ],
+   "properties": {
+    "total": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "studs": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "by_part": {
+     "type": "object",
+     "propertyNames": {
+      "enum": [
+       "brick_2x4",
+       "brick_2x2",
+       "brick_1x4",
+       "brick_1x2",
+       "brick_1x1",
+       "plate_2x4",
+       "plate_2x2",
+       "plate_1x2",
+       "slope_2x2",
+       "tile_1x2",
+       "round_1x1",
+       "wheel",
+       "window",
+       "eye_1x1"
+      ]
+     },
+     "additionalProperties": {
+      "type": "integer",
+      "minimum": 1
+     }
+    },
+    "by_color": {
+     "type": "object",
+     "propertyNames": {
+      "enum": [
+       "red",
+       "blue",
+       "yellow",
+       "green",
+       "white",
+       "black",
+       "gray",
+       "orange",
+       "brown",
+       "pink",
+       "tan",
+       "trans_clear"
+      ]
+     },
+     "additionalProperties": {
+      "type": "integer",
+      "minimum": 1
+     }
+    },
+    "top_colors": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "red",
+       "blue",
+       "yellow",
+       "green",
+       "white",
+       "black",
+       "gray",
+       "orange",
+       "brown",
+       "pink",
+       "tan",
+       "trans_clear"
+      ]
+     },
+     "maxItems": 3
+    },
+    "kinds": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "BuildIdea": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "category",
+    "minutes",
+    "level",
+    "age_min",
+    "need"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "race_car",
+      "duck",
+      "house",
+      "rocket",
+      "robot",
+      "dino",
+      "phone_stand",
+      "pencil_cup",
+      "xmas_tree",
+      "snowman",
+      "ny_2027",
+      "boat",
+      "flower",
+      "castle_tower"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "category": {
+     "enum": [
+      "animal",
+      "character",
+      "home",
+      "seasonal",
+      "useful",
+      "vehicle"
+     ]
+    },
+    "minutes": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "level": {
+     "enum": [
+      1,
+      2,
+      3
+     ]
+    },
+    "age_min": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "need": {
+     "type": "object",
+     "propertyNames": {
+      "enum": [
+       "brick_2x4",
+       "brick_2x2",
+       "brick_1x4",
+       "brick_1x2",
+       "brick_1x1",
+       "plate_2x4",
+       "plate_2x2",
+       "plate_1x2",
+       "slope_2x2",
+       "tile_1x2",
+       "round_1x1",
+       "wheel",
+       "window",
+       "eye_1x1"
+      ]
+     },
+     "additionalProperties": {
+      "type": "integer",
+      "minimum": 1
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "Substitution": {
+   "type": "object",
+   "required": [
+    "need",
+    "use",
+    "per",
+    "count"
+   ],
+   "properties": {
+    "need": {
+     "enum": [
+      "brick_2x4",
+      "brick_2x2",
+      "brick_1x4",
+      "brick_1x2",
+      "brick_1x1",
+      "plate_2x4",
+      "plate_2x2",
+      "plate_1x2",
+      "slope_2x2",
+      "tile_1x2",
+      "round_1x1",
+      "wheel",
+      "window",
+      "eye_1x1"
+     ]
+    },
+    "use": {
+     "enum": [
+      "brick_2x4",
+      "brick_2x2",
+      "brick_1x4",
+      "brick_1x2",
+      "brick_1x1",
+      "plate_2x4",
+      "plate_2x2",
+      "plate_1x2",
+      "slope_2x2",
+      "tile_1x2",
+      "round_1x1",
+      "wheel",
+      "window",
+      "eye_1x1"
+     ]
+    },
+    "per": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "BuildMatch": {
+   "type": "object",
+   "required": [
+    "build",
+    "name_th",
+    "category",
+    "minutes",
+    "level",
+    "match_pct",
+    "can_build",
+    "missing",
+    "substitutions",
+    "pieces"
+   ],
+   "properties": {
+    "build": {
+     "enum": [
+      "race_car",
+      "duck",
+      "house",
+      "rocket",
+      "robot",
+      "dino",
+      "phone_stand",
+      "pencil_cup",
+      "xmas_tree",
+      "snowman",
+      "ny_2027",
+      "boat",
+      "flower",
+      "castle_tower"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "category": {
+     "type": "string"
+    },
+    "minutes": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "level": {
+     "enum": [
+      1,
+      2,
+      3
+     ]
+    },
+    "match_pct": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "can_build": {
+     "type": "boolean"
+    },
+    "missing": {
+     "type": "object",
+     "propertyNames": {
+      "enum": [
+       "brick_2x4",
+       "brick_2x2",
+       "brick_1x4",
+       "brick_1x2",
+       "brick_1x1",
+       "plate_2x4",
+       "plate_2x2",
+       "plate_1x2",
+       "slope_2x2",
+       "tile_1x2",
+       "round_1x1",
+       "wheel",
+       "window",
+       "eye_1x1"
+      ]
+     },
+     "additionalProperties": {
+      "type": "integer",
+      "minimum": 1
+     }
+    },
+    "substitutions": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Substitution"
+     }
+    },
+    "pieces": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "ColorAssignment": {
+   "type": "object",
+   "required": [
+    "build",
+    "roles",
+    "hex"
+   ],
+   "properties": {
+    "build": {
+     "enum": [
+      "race_car",
+      "duck",
+      "house",
+      "rocket",
+      "robot",
+      "dino",
+      "phone_stand",
+      "pencil_cup",
+      "xmas_tree",
+      "snowman",
+      "ny_2027",
+      "boat",
+      "flower",
+      "castle_tower"
+     ]
+    },
+    "roles": {
+     "type": "object",
+     "propertyNames": {
+      "enum": [
+       "main",
+       "accent",
+       "base",
+       "detail"
+      ]
+     },
+     "additionalProperties": {
+      "enum": [
+       "red",
+       "blue",
+       "yellow",
+       "green",
+       "white",
+       "black",
+       "gray",
+       "orange",
+       "brown",
+       "pink",
+       "tan",
+       "trans_clear"
+      ]
+     }
+    },
+    "hex": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "string",
+      "pattern": "^#[0-9A-F]{6}$"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "BuildStep": {
+   "type": "object",
+   "required": [
+    "n",
+    "part",
+    "name_th",
+    "color",
+    "count",
+    "tip_th"
+   ],
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "part": {
+     "enum": [
+      "brick_2x4",
+      "brick_2x2",
+      "brick_1x4",
+      "brick_1x2",
+      "brick_1x1",
+      "plate_2x4",
+      "plate_2x2",
+      "plate_1x2",
+      "slope_2x2",
+      "tile_1x2",
+      "round_1x1",
+      "wheel",
+      "window",
+      "eye_1x1"
+     ]
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "color": {
+     "enum": [
+      "red",
+      "blue",
+      "yellow",
+      "green",
+      "white",
+      "black",
+      "gray",
+      "orange",
+      "brown",
+      "pink",
+      "tan",
+      "trans_clear",
+      null
+     ]
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "tip_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "BuildSteps": {
+   "type": "object",
+   "required": [
+    "build",
+    "steps",
+    "step_count",
+    "minutes"
+   ],
+   "properties": {
+    "build": {
+     "enum": [
+      "race_car",
+      "duck",
+      "house",
+      "rocket",
+      "robot",
+      "dino",
+      "phone_stand",
+      "pencil_cup",
+      "xmas_tree",
+      "snowman",
+      "ny_2027",
+      "boat",
+      "flower",
+      "castle_tower"
+     ]
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/BuildStep"
+     },
+     "minItems": 1
+    },
+    "step_count": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "minutes": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "FindIt": {
+   "type": "object",
+   "required": [
+    "part",
+    "color",
+    "found",
+    "cells",
+    "hint_th"
+   ],
+   "properties": {
+    "part": {
+     "enum": [
+      "brick_2x4",
+      "brick_2x2",
+      "brick_1x4",
+      "brick_1x2",
+      "brick_1x1",
+      "plate_2x4",
+      "plate_2x2",
+      "plate_1x2",
+      "slope_2x2",
+      "tile_1x2",
+      "round_1x1",
+      "wheel",
+      "window",
+      "eye_1x1"
+     ]
+    },
+    "color": {
+     "enum": [
+      "red",
+      "blue",
+      "yellow",
+      "green",
+      "white",
+      "black",
+      "gray",
+      "orange",
+      "brown",
+      "pink",
+      "tan",
+      "trans_clear"
+     ]
+    },
+    "found": {
+     "type": "boolean"
+    },
+    "cells": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "pattern": "^[A-F][1-4]$"
+     }
+    },
+    "hint_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SortPlan": {
+   "type": "object",
+   "required": [
+    "by",
+    "bins",
+    "boxes",
+    "balance_gap"
+   ],
+   "properties": {
+    "by": {
+     "enum": [
+      "color",
+      "size"
+     ]
+    },
+    "bins": {
+     "type": "integer",
+     "minimum": 2,
+     "maximum": 12
+    },
+    "boxes": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "box",
+       "groups",
+       "count"
+      ],
+      "properties": {
+       "box": {
+        "type": "integer",
+        "minimum": 1
+       },
+       "groups": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "count": {
+        "type": "integer",
+        "minimum": 0
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "balance_gap": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "additionalProperties": false
+  },
+  "Stability": {
+   "type": "object",
+   "required": [
+    "layers",
+    "base_studs",
+    "stagger_pct",
+    "score",
+    "level",
+    "tip_th"
+   ],
+   "properties": {
+    "layers": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "base_studs": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "stagger_pct": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "level": {
+     "enum": [
+      "solid",
+      "wobbly",
+      "will_fall"
+     ]
+    },
+    "tip_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DailyChallenge": {
+   "type": "object",
+   "required": [
+    "date",
+    "theme",
+    "title_th",
+    "max_pieces",
+    "minutes",
+    "badge"
+   ],
+   "properties": {
+    "date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "theme": {
+     "enum": [
+      "animal",
+      "vehicle",
+      "tall",
+      "color",
+      "tiny",
+      "seasonal",
+      "face"
+     ]
+    },
+    "title_th": {
+     "type": "string"
+    },
+    "max_pieces": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "minutes": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "badge": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "CreationScore": {
+   "type": "object",
+   "required": [
+    "points",
+    "stars",
+    "badges",
+    "over_limit",
+    "cheer_th"
+   ],
+   "properties": {
+    "points": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "stars": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 5
+    },
+    "badges": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "rainbow",
+       "symmetry_star",
+       "sky_high",
+       "challenge_done"
+      ]
+     }
+    },
+    "over_limit": {
+     "type": "boolean"
+    },
+    "cheer_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiaryEntry": {
+   "type": "object",
+   "required": [
+    "date",
+    "kind"
+   ],
+   "properties": {
+    "date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "kind": {
+     "enum": [
+      "build",
+      "challenge",
+      "sort"
+     ]
+    },
+    "build": {
+     "enum": [
+      "race_car",
+      "duck",
+      "house",
+      "rocket",
+      "robot",
+      "dino",
+      "phone_stand",
+      "pencil_cup",
+      "xmas_tree",
+      "snowman",
+      "ny_2027",
+      "boat",
+      "flower",
+      "castle_tower"
+     ]
+    },
+    "pieces": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "stars": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 5
+    },
+    "badges": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "DiarySummary": {
+   "type": "object",
+   "required": [
+    "today",
+    "builds",
+    "challenges",
+    "pieces_used",
+    "streak",
+    "best_stars",
+    "badges"
+   ],
+   "properties": {
+    "today": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "builds": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "challenges": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "pieces_used": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "streak": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "best_stars": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 5
+    },
+    "badges": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "ReelShot": {
+   "type": "object",
+   "required": [
+    "kind",
+    "start",
+    "end",
+    "caption_th"
+   ],
+   "properties": {
+    "kind": {
+     "enum": [
+      "pile",
+      "scan",
+      "ideas",
+      "steps",
+      "reveal",
+      "cta"
+     ]
+    },
+    "start": {
+     "type": "number",
+     "minimum": 0
+    },
+    "end": {
+     "type": "number"
+    },
+    "caption_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ReelPlan": {
+   "type": "object",
+   "required": [
+    "build",
+    "seconds",
+    "ratio",
+    "bpm",
+    "shots",
+    "watermark"
+   ],
+   "properties": {
+    "build": {
+     "type": "string"
+    },
+    "seconds": {
+     "type": "integer",
+     "minimum": 15,
+     "maximum": 30
+    },
+    "ratio": {
+     "const": "9:16"
+    },
+    "bpm": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "shots": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ReelShot"
+     },
+     "minItems": 3
+    },
+    "watermark": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "name_th",
+    "stars",
+    "layout",
+    "size",
+    "watermark",
+    "badge_th"
+   ],
+   "properties": {
+    "name_th": {
+     "type": "string"
+    },
+    "stars": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 5
+    },
+    "layout": {
+     "enum": [
+      "before_after",
+      "steps_grid",
+      "badge"
+     ]
+    },
+    "size": {
+     "const": "1080x1350"
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "badge_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "plan",
+    "scans_per_day",
+    "used",
+    "left",
+    "blocked"
+   ],
+   "properties": {
+    "plan": {
+     "enum": [
+      "free",
+      "plus"
+     ]
+    },
+    "scans_per_day": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "used": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "blocked": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "AgeCheck": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "level",
+    "flags",
+    "messages_th"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "boolean"
+    },
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "flags": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "toddler_small_parts",
+       "swallowed_part",
+       "under_13_no_parent",
+       "face_in_photo",
+       "official_set_copy",
+       "not_bricks",
+       "battery_or_magnet"
+      ]
+     }
+    },
+    "messages_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "flag",
+    "level",
+    "message_th",
+    "block"
+   ],
+   "properties": {
+    "flag": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "block": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}

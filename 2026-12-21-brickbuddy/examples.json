@@ -1,0 +1,2800 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "Phum",
+   "value": {
+    "id": "u01",
+    "name_th": "น้องภูมิ",
+    "name_en": "Phum",
+    "age": 7,
+    "city_th": "นนทบุรี",
+    "role_th": "นักสร้างตัวจิ๋ว (แม่เปิดกล้องให้)"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Fon",
+   "value": {
+    "id": "u02",
+    "name_th": "คุณแม่ฝน",
+    "name_en": "Fon",
+    "age": 36,
+    "city_th": "นนทบุรี",
+    "role_th": "ผู้ปกครอง ถ่ายรูปกอง"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Khaopun",
+   "value": {
+    "id": "u03",
+    "name_th": "น้องข้าวปุ้น",
+    "name_en": "Khaopun",
+    "age": 4,
+    "city_th": "ลำปาง",
+    "role_th": "ต่อกับพี่สาว"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Ta",
+   "value": {
+    "id": "u04",
+    "name_th": "พี่ต้า",
+    "name_en": "Ta",
+    "age": 29,
+    "city_th": "กรุงเทพฯ",
+    "role_th": "สายของแต่งโต๊ะทำงาน"
+   }
+  },
+  {
+   "def": "PilePhoto",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "light": 0.9,
+    "blur": 0.05,
+    "spread": 0.85,
+    "overlap": 0.1
+   }
+  },
+  {
+   "def": "PileScan",
+   "note": "p01",
+   "value": {
+    "photo_id": "p01",
+    "quality": {
+     "score": 90,
+     "ok": true,
+     "tips_th": []
+    }
+   }
+  },
+  {
+   "def": "PilePhoto",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "light": 0.55,
+    "blur": 0.2,
+    "spread": 0.5,
+    "overlap": 0.3
+   }
+  },
+  {
+   "def": "PileScan",
+   "note": "p02",
+   "value": {
+    "photo_id": "p02",
+    "quality": {
+     "score": 63,
+     "ok": false,
+     "tips_th": [
+      "เปิดไฟหรือย้ายไปใกล้หน้าต่าง",
+      "เกลี่ยตัวต่อให้เป็นชั้นเดียวบนพื้นสีพื้น ๆ"
+     ]
+    }
+   }
+  },
+  {
+   "def": "PilePhoto",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "light": 0.4,
+    "blur": 0.5,
+    "spread": 0.3,
+    "overlap": 0.6
+   }
+  },
+  {
+   "def": "PileScan",
+   "note": "p03",
+   "value": {
+    "photo_id": "p03",
+    "quality": {
+     "score": 40,
+     "ok": false,
+     "tips_th": [
+      "เปิดไฟหรือย้ายไปใกล้หน้าต่าง",
+      "ถือมือถือนิ่ง ๆ แตะจอให้โฟกัส",
+      "เกลี่ยตัวต่อให้เป็นชั้นเดียวบนพื้นสีพื้น ๆ",
+      "แยกชิ้นที่ต่อติดกันหรือทับกันออกก่อน"
+     ]
+    }
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "(0.95, 0.0, 1.0, 0.0)",
+   "value": {
+    "score": 98,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "(0.5, 0.4, 0.4, 0.5)",
+   "value": {
+    "score": 50,
+    "ok": false,
+    "tips_th": [
+     "เปิดไฟหรือย้ายไปใกล้หน้าต่าง",
+     "ถือมือถือนิ่ง ๆ แตะจอให้โฟกัส",
+     "เกลี่ยตัวต่อให้เป็นชั้นเดียวบนพื้นสีพื้น ๆ",
+     "แยกชิ้นที่ต่อติดกันหรือทับกันออกก่อน"
+    ]
+   }
+  },
+  {
+   "def": "ScanQuality",
+   "note": "(0.7, 0.1, 0.9, 0.2)",
+   "value": {
+    "score": 82,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "brick_2x4/red",
+   "value": {
+    "part": "brick_2x4",
+    "color": "red",
+    "count": 3,
+    "confidence": 0.95,
+    "positions": [
+     [
+      0.12,
+      0.2
+     ],
+     [
+      0.55,
+      0.7
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "brick_2x4/blue",
+   "value": {
+    "part": "brick_2x4",
+    "color": "blue",
+    "count": 3,
+    "confidence": 0.93,
+    "positions": [
+     [
+      0.8,
+      0.15
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "brick_2x2/yellow",
+   "value": {
+    "part": "brick_2x2",
+    "color": "yellow",
+    "count": 6,
+    "confidence": 0.92,
+    "positions": [
+     [
+      0.3,
+      0.4
+     ],
+     [
+      0.62,
+      0.3
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "brick_2x2/white",
+   "value": {
+    "part": "brick_2x2",
+    "color": "white",
+    "count": 5,
+    "confidence": 0.9,
+    "positions": [
+     [
+      0.45,
+      0.85
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "brick_1x2/blue",
+   "value": {
+    "part": "brick_1x2",
+    "color": "blue",
+    "count": 8,
+    "confidence": 0.9,
+    "positions": [
+     [
+      0.2,
+      0.6
+     ],
+     [
+      0.9,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "brick_1x2/red",
+   "value": {
+    "part": "brick_1x2",
+    "color": "red",
+    "count": 4,
+    "confidence": 0.88,
+    "positions": [
+     [
+      0.7,
+      0.9
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "brick_1x1/yellow",
+   "value": {
+    "part": "brick_1x1",
+    "color": "yellow",
+    "count": 6,
+    "confidence": 0.85,
+    "positions": [
+     [
+      0.35,
+      0.1
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "plate_2x4/green",
+   "value": {
+    "part": "plate_2x4",
+    "color": "green",
+    "count": 3,
+    "confidence": 0.9,
+    "positions": [
+     [
+      0.05,
+      0.9
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "plate_2x2/green",
+   "value": {
+    "part": "plate_2x2",
+    "color": "green",
+    "count": 4,
+    "confidence": 0.86,
+    "positions": [
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "plate_1x2/black",
+   "value": {
+    "part": "plate_1x2",
+    "color": "black",
+    "count": 4,
+    "confidence": 0.8,
+    "positions": [
+     [
+      0.95,
+      0.95
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "slope_2x2/red",
+   "value": {
+    "part": "slope_2x2",
+    "color": "red",
+    "count": 4,
+    "confidence": 0.9,
+    "positions": [
+     [
+      0.25,
+      0.3
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "wheel/black",
+   "value": {
+    "part": "wheel",
+    "color": "black",
+    "count": 4,
+    "confidence": 0.97,
+    "positions": [
+     [
+      0.75,
+      0.6
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "eye_1x1/white",
+   "value": {
+    "part": "eye_1x1",
+    "color": "white",
+    "count": 2,
+    "confidence": 0.8,
+    "positions": [
+     [
+      0.6,
+      0.05
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "round_1x1/orange",
+   "value": {
+    "part": "round_1x1",
+    "color": "orange",
+    "count": 3,
+    "confidence": 0.75,
+    "positions": [
+     [
+      0.15,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "tile_1x2/gray",
+   "value": {
+    "part": "tile_1x2",
+    "color": "gray",
+    "count": 2,
+    "confidence": 0.7,
+    "positions": [
+     [
+      0.85,
+      0.8
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "window/trans_clear",
+   "value": {
+    "part": "window",
+    "color": "trans_clear",
+    "count": 1,
+    "confidence": 0.45,
+    "positions": [
+     [
+      0.4,
+      0.6
+     ]
+    ]
+   }
+  },
+  {
+   "def": "PieceDetection",
+   "note": "brick_1x1/green",
+   "value": {
+    "part": "brick_1x1",
+    "color": "green",
+    "count": 2,
+    "confidence": 0.4,
+    "positions": [
+     [
+      0.98,
+      0.02
+     ]
+    ]
+   }
+  },
+  {
+   "def": "AiPileScan",
+   "note": "phum",
+   "value": {
+    "photo_id": "p01",
+    "pieces": [
+     {
+      "part": "brick_2x4",
+      "color": "red",
+      "count": 3,
+      "confidence": 0.95,
+      "positions": [
+       [
+        0.12,
+        0.2
+       ],
+       [
+        0.55,
+        0.7
+       ]
+      ]
+     },
+     {
+      "part": "brick_2x4",
+      "color": "blue",
+      "count": 3,
+      "confidence": 0.93,
+      "positions": [
+       [
+        0.8,
+        0.15
+       ]
+      ]
+     },
+     {
+      "part": "brick_2x2",
+      "color": "yellow",
+      "count": 6,
+      "confidence": 0.92,
+      "positions": [
+       [
+        0.3,
+        0.4
+       ],
+       [
+        0.62,
+        0.3
+       ]
+      ]
+     },
+     {
+      "part": "brick_2x2",
+      "color": "white",
+      "count": 5,
+      "confidence": 0.9,
+      "positions": [
+       [
+        0.45,
+        0.85
+       ]
+      ]
+     },
+     {
+      "part": "brick_1x2",
+      "color": "blue",
+      "count": 8,
+      "confidence": 0.9,
+      "positions": [
+       [
+        0.2,
+        0.6
+       ],
+       [
+        0.9,
+        0.5
+       ]
+      ]
+     },
+     {
+      "part": "brick_1x2",
+      "color": "red",
+      "count": 4,
+      "confidence": 0.88,
+      "positions": [
+       [
+        0.7,
+        0.9
+       ]
+      ]
+     },
+     {
+      "part": "brick_1x1",
+      "color": "yellow",
+      "count": 6,
+      "confidence": 0.85,
+      "positions": [
+       [
+        0.35,
+        0.1
+       ]
+      ]
+     },
+     {
+      "part": "plate_2x4",
+      "color": "green",
+      "count": 3,
+      "confidence": 0.9,
+      "positions": [
+       [
+        0.05,
+        0.9
+       ]
+      ]
+     },
+     {
+      "part": "plate_2x2",
+      "color": "green",
+      "count": 4,
+      "confidence": 0.86,
+      "positions": [
+       [
+        0.5,
+        0.5
+       ]
+      ]
+     },
+     {
+      "part": "plate_1x2",
+      "color": "black",
+      "count": 4,
+      "confidence": 0.8,
+      "positions": [
+       [
+        0.95,
+        0.95
+       ]
+      ]
+     },
+     {
+      "part": "slope_2x2",
+      "color": "red",
+      "count": 4,
+      "confidence": 0.9,
+      "positions": [
+       [
+        0.25,
+        0.3
+       ]
+      ]
+     },
+     {
+      "part": "wheel",
+      "color": "black",
+      "count": 4,
+      "confidence": 0.97,
+      "positions": [
+       [
+        0.75,
+        0.6
+       ]
+      ]
+     },
+     {
+      "part": "eye_1x1",
+      "color": "white",
+      "count": 2,
+      "confidence": 0.8,
+      "positions": [
+       [
+        0.6,
+        0.05
+       ]
+      ]
+     },
+     {
+      "part": "round_1x1",
+      "color": "orange",
+      "count": 3,
+      "confidence": 0.75,
+      "positions": [
+       [
+        0.15,
+        0.45
+       ]
+      ]
+     },
+     {
+      "part": "tile_1x2",
+      "color": "gray",
+      "count": 2,
+      "confidence": 0.7,
+      "positions": [
+       [
+        0.85,
+        0.8
+       ]
+      ]
+     },
+     {
+      "part": "window",
+      "color": "trans_clear",
+      "count": 1,
+      "confidence": 0.45,
+      "positions": [
+       [
+        0.4,
+        0.6
+       ]
+      ]
+     },
+     {
+      "part": "brick_1x1",
+      "color": "green",
+      "count": 2,
+      "confidence": 0.4,
+      "positions": [
+       [
+        0.98,
+        0.02
+       ]
+      ]
+     }
+    ],
+    "hazards": [],
+    "connected_clumps": 1,
+    "confidence": 0.88,
+    "notes_th": "กองเกลี่ยดี มีชิ้นต่อติดกัน 1 กอง"
+   }
+  },
+  {
+   "def": "AiPileScan",
+   "note": "messy + magnet",
+   "value": {
+    "photo_id": "p03",
+    "pieces": [
+     {
+      "part": "brick_2x4",
+      "color": "red",
+      "count": 3,
+      "confidence": 0.95,
+      "positions": [
+       [
+        0.12,
+        0.2
+       ],
+       [
+        0.55,
+        0.7
+       ]
+      ]
+     },
+     {
+      "part": "brick_2x4",
+      "color": "blue",
+      "count": 3,
+      "confidence": 0.93,
+      "positions": [
+       [
+        0.8,
+        0.15
+       ]
+      ]
+     },
+     {
+      "part": "brick_2x2",
+      "color": "yellow",
+      "count": 6,
+      "confidence": 0.92,
+      "positions": [
+       [
+        0.3,
+        0.4
+       ],
+       [
+        0.62,
+        0.3
+       ]
+      ]
+     }
+    ],
+    "hazards": [
+     "coin",
+     "magnet"
+    ],
+    "connected_clumps": 6,
+    "confidence": 0.42
+   }
+  },
+  {
+   "def": "Inventory",
+   "note": "phum",
+   "value": {
+    "total": 61,
+    "studs": 183,
+    "by_part": {
+     "brick_1x1": 6,
+     "brick_1x2": 12,
+     "brick_2x2": 11,
+     "brick_2x4": 6,
+     "eye_1x1": 2,
+     "plate_1x2": 4,
+     "plate_2x2": 4,
+     "plate_2x4": 3,
+     "round_1x1": 3,
+     "slope_2x2": 4,
+     "tile_1x2": 2,
+     "wheel": 4
+    },
+    "by_color": {
+     "black": 8,
+     "blue": 11,
+     "gray": 2,
+     "green": 7,
+     "orange": 3,
+     "red": 11,
+     "white": 7,
+     "yellow": 12
+    },
+    "top_colors": [
+     "yellow",
+     "blue",
+     "red"
+    ],
+    "kinds": 12
+   }
+  },
+  {
+   "def": "Inventory",
+   "note": "small pile",
+   "value": {
+    "total": 17,
+    "studs": 92,
+    "by_part": {
+     "brick_2x2": 11,
+     "brick_2x4": 6
+    },
+    "by_color": {
+     "blue": 3,
+     "red": 3,
+     "white": 5,
+     "yellow": 6
+    },
+    "top_colors": [
+     "yellow",
+     "white",
+     "blue"
+    ],
+    "kinds": 2
+   }
+  },
+  {
+   "def": "Inventory",
+   "note": "empty",
+   "value": {
+    "total": 0,
+    "studs": 0,
+    "by_part": {},
+    "by_color": {},
+    "top_colors": [],
+    "kinds": 0
+   }
+  },
+  {
+   "def": "BuildIdea",
+   "note": "race_car",
+   "value": {
+    "id": "race_car",
+    "name_th": "รถแข่งจิ๋ว",
+    "category": "vehicle",
+    "minutes": 8,
+    "level": 1,
+    "age_min": 4,
+    "need": {
+     "plate_2x4": 2,
+     "brick_2x2": 2,
+     "brick_1x2": 2,
+     "slope_2x2": 1,
+     "wheel": 4,
+     "tile_1x2": 1
+    }
+   }
+  },
+  {
+   "def": "BuildIdea",
+   "note": "duck",
+   "value": {
+    "id": "duck",
+    "name_th": "เป็ดน้อย",
+    "category": "animal",
+    "minutes": 5,
+    "level": 1,
+    "age_min": 4,
+    "need": {
+     "brick_2x4": 1,
+     "brick_2x2": 2,
+     "brick_1x2": 1,
+     "slope_2x2": 1,
+     "eye_1x1": 2
+    }
+   }
+  },
+  {
+   "def": "BuildIdea",
+   "note": "house",
+   "value": {
+    "id": "house",
+    "name_th": "บ้านหลังคาแดง",
+    "category": "home",
+    "minutes": 15,
+    "level": 2,
+    "age_min": 5,
+    "need": {
+     "plate_2x4": 2,
+     "brick_2x4": 4,
+     "brick_1x2": 6,
+     "window": 1,
+     "slope_2x2": 4
+    }
+   }
+  },
+  {
+   "def": "BuildIdea",
+   "note": "rocket",
+   "value": {
+    "id": "rocket",
+    "name_th": "จรวดสู่ดวงจันทร์",
+    "category": "vehicle",
+    "minutes": 12,
+    "level": 2,
+    "age_min": 5,
+    "need": {
+     "brick_2x2": 6,
+     "slope_2x2": 2,
+     "brick_1x1": 4,
+     "round_1x1": 3,
+     "plate_2x2": 2
+    }
+   }
+  },
+  {
+   "def": "BuildIdea",
+   "note": "robot",
+   "value": {
+    "id": "robot",
+    "name_th": "หุ่นยนต์ยิ้มแป้น",
+    "category": "character",
+    "minutes": 10,
+    "level": 2,
+    "age_min": 5,
+    "need": {
+     "brick_2x4": 2,
+     "brick_2x2": 2,
+     "brick_1x2": 4,
+     "eye_1x1": 2,
+     "plate_1x2": 2,
+     "brick_1x1": 2
+    }
+   }
+  },
+  {
+   "def": "BuildIdea",
+   "note": "dino",
+   "value": {
+    "id": "dino",
+    "name_th": "ไดโนเสาร์ทีเร็กซ์",
+    "category": "animal",
+    "minutes": 18,
+    "level": 3,
+    "age_min": 7,
+    "need": {
+     "brick_2x4": 3,
+     "brick_2x2": 4,
+     "brick_1x4": 2,
+     "brick_1x2": 4,
+     "slope_2x2": 3,
+     "eye_1x1": 2,
+     "plate_1x2": 2
+    }
+   }
+  },
+  {
+   "def": "BuildIdea",
+   "note": "phone_stand",
+   "value": {
+    "id": "phone_stand",
+    "name_th": "ที่วางมือถือ",
+    "category": "useful",
+    "minutes": 7,
+    "level": 1,
+    "age_min": 6,
+    "need": {
+     "plate_2x4": 2,
+     "brick_2x4": 3,
+     "brick_1x4": 2,
+     "slope_2x2": 2
+    }
+   }
+  },
+  {
+   "def": "BuildIdea",
+   "note": "pencil_cup",
+   "value": {
+    "id": "pencil_cup",
+    "name_th": "กล่องใส่ดินสอ",
+    "category": "useful",
+    "minutes": 14,
+    "level": 2,
+    "age_min": 6,
+    "need": {
+     "plate_2x4": 2,
+     "brick_2x4": 6,
+     "brick_2x2": 4,
+     "brick_1x2": 4
+    }
+   }
+  },
+  {
+   "def": "BuildIdea",
+   "note": "xmas_tree",
+   "value": {
+    "id": "xmas_tree",
+    "name_th": "ต้นคริสต์มาส",
+    "category": "seasonal",
+    "minutes": 10,
+    "level": 2,
+    "age_min": 5,
+    "need": {
+     "plate_2x4": 1,
+     "brick_2x4": 2,
+     "brick_2x2": 3,
+     "plate_2x2": 3,
+     "round_1x1": 6,
+     "brick_1x1": 1
+    }
+   }
+  },
+  {
+   "def": "BuildIdea",
+   "note": "snowman",
+   "value": {
+    "id": "snowman",
+    "name_th": "ตุ๊กตาหิมะ",
+    "category": "seasonal",
+    "minutes": 6,
+    "level": 1,
+    "age_min": 4,
+    "need": {
+     "brick_2x2": 4,
+     "brick_1x2": 2,
+     "eye_1x1": 2,
+     "round_1x1": 1,
+     "plate_2x2": 1
+    }
+   }
+  },
+  {
+   "def": "BuildIdea",
+   "note": "ny_2027",
+   "value": {
+    "id": "ny_2027",
+    "name_th": "ป้ายปีใหม่ 2027",
+    "category": "seasonal",
+    "minutes": 20,
+    "level": 3,
+    "age_min": 7,
+    "need": {
+     "plate_2x4": 4,
+     "brick_1x2": 14,
+     "brick_1x1": 8,
+     "tile_1x2": 4
+    }
+   }
+  },
+  {
+   "def": "BuildIdea",
+   "note": "boat",
+   "value": {
+    "id": "boat",
+    "name_th": "เรือใบ",
+    "category": "vehicle",
+    "minutes": 9,
+    "level": 1,
+    "age_min": 5,
+    "need": {
+     "plate_2x4": 2,
+     "brick_2x4": 2,
+     "slope_2x2": 2,
+     "brick_1x1": 3,
+     "tile_1x2": 2
+    }
+   }
+  },
+  {
+   "def": "BuildIdea",
+   "note": "flower",
+   "value": {
+    "id": "flower",
+    "name_th": "กระถางดอกไม้",
+    "category": "home",
+    "minutes": 6,
+    "level": 1,
+    "age_min": 4,
+    "need": {
+     "brick_2x2": 2,
+     "brick_1x1": 2,
+     "round_1x1": 4,
+     "plate_1x2": 2
+    }
+   }
+  },
+  {
+   "def": "BuildIdea",
+   "note": "castle_tower",
+   "value": {
+    "id": "castle_tower",
+    "name_th": "หอคอยปราสาท",
+    "category": "home",
+    "minutes": 25,
+    "level": 3,
+    "age_min": 8,
+    "need": {
+     "brick_2x4": 8,
+     "brick_2x2": 6,
+     "brick_1x2": 6,
+     "brick_1x1": 4,
+     "window": 1
+    }
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "race_car",
+   "value": {
+    "build": "race_car",
+    "name_th": "รถแข่งจิ๋ว",
+    "category": "vehicle",
+    "minutes": 8,
+    "level": 1,
+    "match_pct": 100,
+    "can_build": true,
+    "missing": {},
+    "substitutions": [],
+    "pieces": 12
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "duck",
+   "value": {
+    "build": "duck",
+    "name_th": "เป็ดน้อย",
+    "category": "animal",
+    "minutes": 5,
+    "level": 1,
+    "match_pct": 100,
+    "can_build": true,
+    "missing": {},
+    "substitutions": [],
+    "pieces": 7
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "house",
+   "value": {
+    "build": "house",
+    "name_th": "บ้านหลังคาแดง",
+    "category": "home",
+    "minutes": 15,
+    "level": 2,
+    "match_pct": 94,
+    "can_build": false,
+    "missing": {
+     "window": 1
+    },
+    "substitutions": [],
+    "pieces": 17
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "rocket",
+   "value": {
+    "build": "rocket",
+    "name_th": "จรวดสู่ดวงจันทร์",
+    "category": "vehicle",
+    "minutes": 12,
+    "level": 2,
+    "match_pct": 100,
+    "can_build": true,
+    "missing": {},
+    "substitutions": [],
+    "pieces": 17
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "robot",
+   "value": {
+    "build": "robot",
+    "name_th": "หุ่นยนต์ยิ้มแป้น",
+    "category": "character",
+    "minutes": 10,
+    "level": 2,
+    "match_pct": 100,
+    "can_build": true,
+    "missing": {},
+    "substitutions": [],
+    "pieces": 14
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "dino",
+   "value": {
+    "build": "dino",
+    "name_th": "ไดโนเสาร์ทีเร็กซ์",
+    "category": "animal",
+    "minutes": 18,
+    "level": 3,
+    "match_pct": 100,
+    "can_build": true,
+    "missing": {},
+    "substitutions": [
+     {
+      "need": "brick_1x4",
+      "use": "brick_1x2",
+      "per": 2,
+      "count": 2
+     }
+    ],
+    "pieces": 20
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "phone_stand",
+   "value": {
+    "build": "phone_stand",
+    "name_th": "ที่วางมือถือ",
+    "category": "useful",
+    "minutes": 7,
+    "level": 1,
+    "match_pct": 100,
+    "can_build": true,
+    "missing": {},
+    "substitutions": [
+     {
+      "need": "brick_1x4",
+      "use": "brick_1x2",
+      "per": 2,
+      "count": 2
+     }
+    ],
+    "pieces": 9
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "pencil_cup",
+   "value": {
+    "build": "pencil_cup",
+    "name_th": "กล่องใส่ดินสอ",
+    "category": "useful",
+    "minutes": 14,
+    "level": 2,
+    "match_pct": 100,
+    "can_build": true,
+    "missing": {},
+    "substitutions": [],
+    "pieces": 16
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "xmas_tree",
+   "value": {
+    "build": "xmas_tree",
+    "name_th": "ต้นคริสต์มาส",
+    "category": "seasonal",
+    "minutes": 10,
+    "level": 2,
+    "match_pct": 100,
+    "can_build": true,
+    "missing": {},
+    "substitutions": [
+     {
+      "need": "round_1x1",
+      "use": "brick_1x1",
+      "per": 1,
+      "count": 3
+     }
+    ],
+    "pieces": 16
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "snowman",
+   "value": {
+    "build": "snowman",
+    "name_th": "ตุ๊กตาหิมะ",
+    "category": "seasonal",
+    "minutes": 6,
+    "level": 1,
+    "match_pct": 100,
+    "can_build": true,
+    "missing": {},
+    "substitutions": [],
+    "pieces": 10
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "ny_2027",
+   "value": {
+    "build": "ny_2027",
+    "name_th": "ป้ายปีใหม่ 2027",
+    "category": "seasonal",
+    "minutes": 20,
+    "level": 3,
+    "match_pct": 87,
+    "can_build": false,
+    "missing": {
+     "brick_1x2": 2,
+     "brick_1x1": 2
+    },
+    "substitutions": [
+     {
+      "need": "plate_2x4",
+      "use": "plate_2x2",
+      "per": 2,
+      "count": 1
+     },
+     {
+      "need": "tile_1x2",
+      "use": "plate_1x2",
+      "per": 1,
+      "count": 2
+     }
+    ],
+    "pieces": 30
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "boat",
+   "value": {
+    "build": "boat",
+    "name_th": "เรือใบ",
+    "category": "vehicle",
+    "minutes": 9,
+    "level": 1,
+    "match_pct": 100,
+    "can_build": true,
+    "missing": {},
+    "substitutions": [],
+    "pieces": 11
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "flower",
+   "value": {
+    "build": "flower",
+    "name_th": "กระถางดอกไม้",
+    "category": "home",
+    "minutes": 6,
+    "level": 1,
+    "match_pct": 100,
+    "can_build": true,
+    "missing": {},
+    "substitutions": [
+     {
+      "need": "round_1x1",
+      "use": "brick_1x1",
+      "per": 1,
+      "count": 1
+     }
+    ],
+    "pieces": 10
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "castle_tower",
+   "value": {
+    "build": "castle_tower",
+    "name_th": "หอคอยปราสาท",
+    "category": "home",
+    "minutes": 25,
+    "level": 3,
+    "match_pct": 96,
+    "can_build": false,
+    "missing": {
+     "window": 1
+    },
+    "substitutions": [
+     {
+      "need": "brick_2x4",
+      "use": "brick_2x2",
+      "per": 2,
+      "count": 2
+     }
+    ],
+    "pieces": 25
+   }
+  },
+  {
+   "def": "BuildMatch",
+   "note": "castle small pile",
+   "value": {
+    "build": "castle_tower",
+    "name_th": "หอคอยปราสาท",
+    "category": "home",
+    "minutes": 25,
+    "level": 3,
+    "match_pct": 56,
+    "can_build": false,
+    "missing": {
+     "brick_1x2": 6,
+     "brick_1x1": 4,
+     "window": 1
+    },
+    "substitutions": [
+     {
+      "need": "brick_2x4",
+      "use": "brick_2x2",
+      "per": 2,
+      "count": 2
+     }
+    ],
+    "pieces": 25
+   }
+  },
+  {
+   "def": "Substitution",
+   "note": "dino",
+   "value": {
+    "need": "brick_1x4",
+    "use": "brick_1x2",
+    "per": 2,
+    "count": 2
+   }
+  },
+  {
+   "def": "Substitution",
+   "note": "xmas_tree",
+   "value": {
+    "need": "round_1x1",
+    "use": "brick_1x1",
+    "per": 1,
+    "count": 3
+   }
+  },
+  {
+   "def": "Substitution",
+   "note": "ny_2027",
+   "value": {
+    "need": "plate_2x4",
+    "use": "plate_2x2",
+    "per": 2,
+    "count": 1
+   }
+  },
+  {
+   "def": "Substitution",
+   "note": "ny_2027",
+   "value": {
+    "need": "tile_1x2",
+    "use": "plate_1x2",
+    "per": 1,
+    "count": 2
+   }
+  },
+  {
+   "def": "ColorAssignment",
+   "note": "duck",
+   "value": {
+    "build": "duck",
+    "roles": {
+     "main": "yellow",
+     "accent": "red"
+    },
+    "hex": {
+     "main": "#F6C21C",
+     "accent": "#D0312D"
+    }
+   }
+  },
+  {
+   "def": "ColorAssignment",
+   "note": "snowman",
+   "value": {
+    "build": "snowman",
+    "roles": {
+     "main": "yellow",
+     "detail": "orange",
+     "base": "green"
+    },
+    "hex": {
+     "main": "#F6C21C",
+     "detail": "#F07F1D",
+     "base": "#2E8B3E"
+    }
+   }
+  },
+  {
+   "def": "ColorAssignment",
+   "note": "race_car",
+   "value": {
+    "build": "race_car",
+    "roles": {
+     "base": "green",
+     "main": "yellow",
+     "accent": "red",
+     "detail": "orange"
+    },
+    "hex": {
+     "base": "#2E8B3E",
+     "main": "#F6C21C",
+     "accent": "#D0312D",
+     "detail": "#F07F1D"
+    }
+   }
+  },
+  {
+   "def": "ColorAssignment",
+   "note": "house",
+   "value": {
+    "build": "house",
+    "roles": {
+     "base": "green",
+     "main": "yellow",
+     "accent": "red"
+    },
+    "hex": {
+     "base": "#2E8B3E",
+     "main": "#F6C21C",
+     "accent": "#D0312D"
+    }
+   }
+  },
+  {
+   "def": "ColorAssignment",
+   "note": "xmas_tree",
+   "value": {
+    "build": "xmas_tree",
+    "roles": {
+     "base": "green",
+     "main": "green",
+     "detail": "orange"
+    },
+    "hex": {
+     "base": "#2E8B3E",
+     "main": "#2E8B3E",
+     "detail": "#F07F1D"
+    }
+   }
+  },
+  {
+   "def": "ColorAssignment",
+   "note": "robot",
+   "value": {
+    "build": "robot",
+    "roles": {
+     "main": "yellow",
+     "base": "green"
+    },
+    "hex": {
+     "main": "#F6C21C",
+     "base": "#2E8B3E"
+    }
+   }
+  },
+  {
+   "def": "BuildSteps",
+   "note": "duck",
+   "value": {
+    "build": "duck",
+    "steps": [
+     {
+      "n": 1,
+      "part": "brick_2x4",
+      "name_th": "อิฐ 2×4",
+      "color": "yellow",
+      "count": 1,
+      "tip_th": "วางเหลื่อมรอยต่อกับชั้นล่าง จะไม่ล้ม"
+     },
+     {
+      "n": 2,
+      "part": "brick_2x2",
+      "name_th": "อิฐ 2×2",
+      "color": "yellow",
+      "count": 2,
+      "tip_th": "วางเหลื่อมรอยต่อกับชั้นล่าง จะไม่ล้ม"
+     },
+     {
+      "n": 3,
+      "part": "brick_1x2",
+      "name_th": "อิฐ 1×2",
+      "color": "yellow",
+      "count": 1,
+      "tip_th": "วางเหลื่อมรอยต่อกับชั้นล่าง จะไม่ล้ม"
+     },
+     {
+      "n": 4,
+      "part": "slope_2x2",
+      "name_th": "หลังคาเอียง 2×2",
+      "color": "red",
+      "count": 1,
+      "tip_th": "ด้านเอียงหันออกด้านนอก"
+     },
+     {
+      "n": 5,
+      "part": "eye_1x1",
+      "name_th": "ปุ่มตา 1×1",
+      "color": null,
+      "count": 2,
+      "tip_th": "ใส่ให้ตรงปุ่ม หมุนดูว่าคล่อง"
+     }
+    ],
+    "step_count": 5,
+    "minutes": 5
+   }
+  },
+  {
+   "def": "BuildSteps",
+   "note": "snowman",
+   "value": {
+    "build": "snowman",
+    "steps": [
+     {
+      "n": 1,
+      "part": "plate_2x2",
+      "name_th": "แผ่น 2×2",
+      "color": "green",
+      "count": 1,
+      "tip_th": "วางเป็นฐานให้แน่น กดให้ได้ยินเสียงคลิก"
+     },
+     {
+      "n": 2,
+      "part": "brick_2x2",
+      "name_th": "อิฐ 2×2",
+      "color": "yellow",
+      "count": 4,
+      "tip_th": "วางเหลื่อมรอยต่อกับชั้นล่าง จะไม่ล้ม"
+     },
+     {
+      "n": 3,
+      "part": "brick_1x2",
+      "name_th": "อิฐ 1×2",
+      "color": "yellow",
+      "count": 2,
+      "tip_th": "วางเหลื่อมรอยต่อกับชั้นล่าง จะไม่ล้ม"
+     },
+     {
+      "n": 4,
+      "part": "eye_1x1",
+      "name_th": "ปุ่มตา 1×1",
+      "color": null,
+      "count": 2,
+      "tip_th": "ใส่ให้ตรงปุ่ม หมุนดูว่าคล่อง"
+     },
+     {
+      "n": 5,
+      "part": "round_1x1",
+      "name_th": "ปุ่มกลม 1×1",
+      "color": "orange",
+      "count": 1,
+      "tip_th": "เติมรายละเอียดสุดท้าย"
+     }
+    ],
+    "step_count": 5,
+    "minutes": 6
+   }
+  },
+  {
+   "def": "BuildSteps",
+   "note": "race_car",
+   "value": {
+    "build": "race_car",
+    "steps": [
+     {
+      "n": 1,
+      "part": "plate_2x4",
+      "name_th": "แผ่น 2×4",
+      "color": "green",
+      "count": 2,
+      "tip_th": "วางเป็นฐานให้แน่น กดให้ได้ยินเสียงคลิก"
+     },
+     {
+      "n": 2,
+      "part": "brick_2x2",
+      "name_th": "อิฐ 2×2",
+      "color": "yellow",
+      "count": 2,
+      "tip_th": "วางเหลื่อมรอยต่อกับชั้นล่าง จะไม่ล้ม"
+     },
+     {
+      "n": 3,
+      "part": "brick_1x2",
+      "name_th": "อิฐ 1×2",
+      "color": "yellow",
+      "count": 2,
+      "tip_th": "วางเหลื่อมรอยต่อกับชั้นล่าง จะไม่ล้ม"
+     },
+     {
+      "n": 4,
+      "part": "slope_2x2",
+      "name_th": "หลังคาเอียง 2×2",
+      "color": "red",
+      "count": 1,
+      "tip_th": "ด้านเอียงหันออกด้านนอก"
+     },
+     {
+      "n": 5,
+      "part": "wheel",
+      "name_th": "ล้อ",
+      "color": null,
+      "count": 4,
+      "tip_th": "ใส่ให้ตรงปุ่ม หมุนดูว่าคล่อง"
+     },
+     {
+      "n": 6,
+      "part": "tile_1x2",
+      "name_th": "แผ่นเรียบ 1×2",
+      "color": "orange",
+      "count": 1,
+      "tip_th": "ปิดผิวด้านบนให้เรียบ"
+     }
+    ],
+    "step_count": 6,
+    "minutes": 8
+   }
+  },
+  {
+   "def": "BuildSteps",
+   "note": "rocket",
+   "value": {
+    "build": "rocket",
+    "steps": [
+     {
+      "n": 1,
+      "part": "plate_2x2",
+      "name_th": "แผ่น 2×2",
+      "color": "green",
+      "count": 2,
+      "tip_th": "วางเป็นฐานให้แน่น กดให้ได้ยินเสียงคลิก"
+     },
+     {
+      "n": 2,
+      "part": "brick_2x2",
+      "name_th": "อิฐ 2×2",
+      "color": "yellow",
+      "count": 4,
+      "tip_th": "วางเหลื่อมรอยต่อกับชั้นล่าง จะไม่ล้ม"
+     },
+     {
+      "n": 3,
+      "part": "brick_2x2",
+      "name_th": "อิฐ 2×2",
+      "color": "yellow",
+      "count": 2,
+      "tip_th": "วางเหลื่อมรอยต่อกับชั้นล่าง จะไม่ล้ม"
+     },
+     {
+      "n": 4,
+      "part": "brick_1x1",
+      "name_th": "อิฐ 1×1",
+      "color": "yellow",
+      "count": 4,
+      "tip_th": "วางเหลื่อมรอยต่อกับชั้นล่าง จะไม่ล้ม"
+     },
+     {
+      "n": 5,
+      "part": "slope_2x2",
+      "name_th": "หลังคาเอียง 2×2",
+      "color": "red",
+      "count": 2,
+      "tip_th": "ด้านเอียงหันออกด้านนอก"
+     },
+     {
+      "n": 6,
+      "part": "round_1x1",
+      "name_th": "ปุ่มกลม 1×1",
+      "color": "orange",
+      "count": 3,
+      "tip_th": "เติมรายละเอียดสุดท้าย"
+     }
+    ],
+    "step_count": 6,
+    "minutes": 12
+   }
+  },
+  {
+   "def": "BuildStep",
+   "note": "duck",
+   "value": {
+    "n": 1,
+    "part": "brick_2x4",
+    "name_th": "อิฐ 2×4",
+    "color": "yellow",
+    "count": 1,
+    "tip_th": "วางเหลื่อมรอยต่อกับชั้นล่าง จะไม่ล้ม"
+   }
+  },
+  {
+   "def": "BuildStep",
+   "note": "duck",
+   "value": {
+    "n": 2,
+    "part": "brick_2x2",
+    "name_th": "อิฐ 2×2",
+    "color": "yellow",
+    "count": 2,
+    "tip_th": "วางเหลื่อมรอยต่อกับชั้นล่าง จะไม่ล้ม"
+   }
+  },
+  {
+   "def": "BuildStep",
+   "note": "duck",
+   "value": {
+    "n": 3,
+    "part": "brick_1x2",
+    "name_th": "อิฐ 1×2",
+    "color": "yellow",
+    "count": 1,
+    "tip_th": "วางเหลื่อมรอยต่อกับชั้นล่าง จะไม่ล้ม"
+   }
+  },
+  {
+   "def": "BuildStep",
+   "note": "duck",
+   "value": {
+    "n": 4,
+    "part": "slope_2x2",
+    "name_th": "หลังคาเอียง 2×2",
+    "color": "red",
+    "count": 1,
+    "tip_th": "ด้านเอียงหันออกด้านนอก"
+   }
+  },
+  {
+   "def": "BuildStep",
+   "note": "duck",
+   "value": {
+    "n": 5,
+    "part": "eye_1x1",
+    "name_th": "ปุ่มตา 1×1",
+    "color": null,
+    "count": 2,
+    "tip_th": "ใส่ให้ตรงปุ่ม หมุนดูว่าคล่อง"
+   }
+  },
+  {
+   "def": "FindIt",
+   "note": "brick_2x4/red",
+   "value": {
+    "part": "brick_2x4",
+    "color": "red",
+    "found": true,
+    "cells": [
+     "A1",
+     "D3"
+    ],
+    "hint_th": "ดูช่อง A1, D3"
+   }
+  },
+  {
+   "def": "FindIt",
+   "note": "slope_2x2/red",
+   "value": {
+    "part": "slope_2x2",
+    "color": "red",
+    "found": true,
+    "cells": [
+     "B2"
+    ],
+    "hint_th": "ดูช่อง B2"
+   }
+  },
+  {
+   "def": "FindIt",
+   "note": "wheel/black",
+   "value": {
+    "part": "wheel",
+    "color": "black",
+    "found": true,
+    "cells": [
+     "E3"
+    ],
+    "hint_th": "ดูช่อง E3"
+   }
+  },
+  {
+   "def": "FindIt",
+   "note": "eye_1x1/white",
+   "value": {
+    "part": "eye_1x1",
+    "color": "white",
+    "found": true,
+    "cells": [
+     "D1"
+    ],
+    "hint_th": "ดูช่อง D1"
+   }
+  },
+  {
+   "def": "FindIt",
+   "note": "brick_2x4/pink",
+   "value": {
+    "part": "brick_2x4",
+    "color": "pink",
+    "found": false,
+    "cells": [],
+    "hint_th": "ไม่เจอในรูป ลองใช้ชิ้นทดแทนหรือเกลี่ยกองแล้วถ่ายใหม่"
+   }
+  },
+  {
+   "def": "FindIt",
+   "note": "window/trans_clear",
+   "value": {
+    "part": "window",
+    "color": "trans_clear",
+    "found": true,
+    "cells": [
+     "C3"
+    ],
+    "hint_th": "ดูช่อง C3"
+   }
+  },
+  {
+   "def": "SortPlan",
+   "note": "(4, 'color')",
+   "value": {
+    "by": "color",
+    "bins": 4,
+    "boxes": [
+     {
+      "box": 1,
+      "groups": [
+       "yellow",
+       "gray"
+      ],
+      "count": 14
+     },
+     {
+      "box": 2,
+      "groups": [
+       "blue",
+       "white"
+      ],
+      "count": 18
+     },
+     {
+      "box": 3,
+      "groups": [
+       "red",
+       "orange"
+      ],
+      "count": 14
+     },
+     {
+      "box": 4,
+      "groups": [
+       "black",
+       "green"
+      ],
+      "count": 15
+     }
+    ],
+    "balance_gap": 4
+   }
+  },
+  {
+   "def": "SortPlan",
+   "note": "(3, 'color')",
+   "value": {
+    "by": "color",
+    "bins": 3,
+    "boxes": [
+     {
+      "box": 1,
+      "groups": [
+       "yellow",
+       "white",
+       "gray"
+      ],
+      "count": 21
+     },
+     {
+      "box": 2,
+      "groups": [
+       "blue",
+       "black"
+      ],
+      "count": 19
+     },
+     {
+      "box": 3,
+      "groups": [
+       "red",
+       "green",
+       "orange"
+      ],
+      "count": 21
+     }
+    ],
+    "balance_gap": 2
+   }
+  },
+  {
+   "def": "SortPlan",
+   "note": "(3, 'size')",
+   "value": {
+    "by": "size",
+    "bins": 3,
+    "boxes": [
+     {
+      "box": 1,
+      "groups": [
+       "S"
+      ],
+      "count": 33
+     },
+     {
+      "box": 2,
+      "groups": [
+       "M"
+      ],
+      "count": 22
+     },
+     {
+      "box": 3,
+      "groups": [
+       "L"
+      ],
+      "count": 6
+     }
+    ],
+    "balance_gap": 27
+   }
+  },
+  {
+   "def": "SortPlan",
+   "note": "(6, 'color')",
+   "value": {
+    "by": "color",
+    "bins": 6,
+    "boxes": [
+     {
+      "box": 1,
+      "groups": [
+       "yellow"
+      ],
+      "count": 12
+     },
+     {
+      "box": 2,
+      "groups": [
+       "blue"
+      ],
+      "count": 11
+     },
+     {
+      "box": 3,
+      "groups": [
+       "red"
+      ],
+      "count": 11
+     },
+     {
+      "box": 4,
+      "groups": [
+       "black"
+      ],
+      "count": 8
+     },
+     {
+      "box": 5,
+      "groups": [
+       "green",
+       "orange"
+      ],
+      "count": 10
+     },
+     {
+      "box": 6,
+      "groups": [
+       "white",
+       "gray"
+      ],
+      "count": 9
+     }
+    ],
+    "balance_gap": 4
+   }
+  },
+  {
+   "def": "Stability",
+   "note": "(6, 8, 100)",
+   "value": {
+    "layers": 6,
+    "base_studs": 8,
+    "stagger_pct": 100,
+    "score": 98,
+    "level": "solid",
+    "tip_th": "แข็งแรงดี ต่อได้อีก"
+   }
+  },
+  {
+   "def": "Stability",
+   "note": "(12, 4, 50)",
+   "value": {
+    "layers": 12,
+    "base_studs": 4,
+    "stagger_pct": 50,
+    "score": 10,
+    "level": "will_fall",
+    "tip_th": "ฐานเล็กเกินไปสำหรับความสูงนี้ ขยายฐานเป็น 2 เท่าก่อนต่อขึ้น"
+   }
+  },
+  {
+   "def": "Stability",
+   "note": "(6, 4, 40)",
+   "value": {
+    "layers": 6,
+    "base_studs": 4,
+    "stagger_pct": 40,
+    "score": 58,
+    "level": "wobbly",
+    "tip_th": "เพิ่มฐานให้กว้างขึ้น หรือวางเหลื่อมรอยต่อให้มากขึ้น"
+   }
+  },
+  {
+   "def": "Stability",
+   "note": "(20, 2, 0)",
+   "value": {
+    "layers": 20,
+    "base_studs": 2,
+    "stagger_pct": 0,
+    "score": 0,
+    "level": "will_fall",
+    "tip_th": "ฐานเล็กเกินไปสำหรับความสูงนี้ ขยายฐานเป็น 2 เท่าก่อนต่อขึ้น"
+   }
+  },
+  {
+   "def": "Stability",
+   "note": "(10, 16, 80)",
+   "value": {
+    "layers": 10,
+    "base_studs": 16,
+    "stagger_pct": 80,
+    "score": 83,
+    "level": "solid",
+    "tip_th": "แข็งแรงดี ต่อได้อีก"
+   }
+  },
+  {
+   "def": "DailyChallenge",
+   "note": "2026-11-23",
+   "value": {
+    "date": "2026-11-23",
+    "theme": "vehicle",
+    "title_th": "ยานพาหนะที่วิ่งได้จริง",
+    "max_pieces": 25,
+    "minutes": 12,
+    "badge": "challenge_vehicle"
+   }
+  },
+  {
+   "def": "DailyChallenge",
+   "note": "2026-11-24",
+   "value": {
+    "date": "2026-11-24",
+    "theme": "tall",
+    "title_th": "ตึกให้สูงที่สุดไม่ล้ม",
+    "max_pieces": 40,
+    "minutes": 8,
+    "badge": "challenge_tall"
+   }
+  },
+  {
+   "def": "DailyChallenge",
+   "note": "2026-11-25",
+   "value": {
+    "date": "2026-11-25",
+    "theme": "color",
+    "title_th": "ใช้แค่ 2 สี",
+    "max_pieces": 20,
+    "minutes": 10,
+    "badge": "challenge_color"
+   }
+  },
+  {
+   "def": "DailyChallenge",
+   "note": "2026-11-26",
+   "value": {
+    "date": "2026-11-26",
+    "theme": "tiny",
+    "title_th": "ของจิ๋วไม่เกิน 10 ชิ้น",
+    "max_pieces": 10,
+    "minutes": 5,
+    "badge": "challenge_tiny"
+   }
+  },
+  {
+   "def": "DailyChallenge",
+   "note": "2026-12-21",
+   "value": {
+    "date": "2026-12-21",
+    "theme": "seasonal",
+    "title_th": "ของขวัญปีใหม่",
+    "max_pieces": 30,
+    "minutes": 15,
+    "badge": "challenge_seasonal"
+   }
+  },
+  {
+   "def": "DailyChallenge",
+   "note": "2027-01-02",
+   "value": {
+    "date": "2027-01-02",
+    "theme": "seasonal",
+    "title_th": "ของขวัญปีใหม่",
+    "max_pieces": 30,
+    "minutes": 15,
+    "badge": "challenge_seasonal"
+   }
+  },
+  {
+   "def": "CreationScore",
+   "note": "(7, 3, 0.9, 5, True, 10)",
+   "value": {
+    "points": 62,
+    "stars": 4,
+    "badges": [
+     "symmetry_star",
+     "challenge_done"
+    ],
+    "over_limit": false,
+    "cheer_th": "สุดยอดนักสร้าง!"
+   }
+  },
+  {
+   "def": "CreationScore",
+   "note": "(40, 6, 0.5, 12, True, 30)",
+   "value": {
+    "points": 85,
+    "stars": 5,
+    "badges": [
+     "rainbow",
+     "sky_high"
+    ],
+    "over_limit": true,
+    "cheer_th": "ระดับมาสเตอร์บิลเดอร์!"
+   }
+  },
+  {
+   "def": "CreationScore",
+   "note": "(0, 0, 0, 0, False, None)",
+   "value": {
+    "points": 5,
+    "stars": 1,
+    "badges": [],
+    "over_limit": false,
+    "cheer_th": "เริ่มต้นได้ดีมาก!"
+   }
+  },
+  {
+   "def": "CreationScore",
+   "note": "(16, 5, 0.85, 10, True, 30)",
+   "value": {
+    "points": 88,
+    "stars": 5,
+    "badges": [
+     "rainbow",
+     "symmetry_star",
+     "sky_high",
+     "challenge_done"
+    ],
+    "over_limit": false,
+    "cheer_th": "ระดับมาสเตอร์บิลเดอร์!"
+   }
+  },
+  {
+   "def": "CreationScore",
+   "note": "(12, 2, 0.3, 3, False, None)",
+   "value": {
+    "points": 32,
+    "stars": 2,
+    "badges": [],
+    "over_limit": false,
+    "cheer_th": "เยี่ยมเลย ลองเพิ่มสีอีกนิด"
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "build",
+   "value": {
+    "date": "2026-12-19",
+    "kind": "build",
+    "build": "snowman",
+    "pieces": 10,
+    "stars": 3,
+    "badges": []
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "challenge",
+   "value": {
+    "date": "2026-12-20",
+    "kind": "challenge",
+    "build": "xmas_tree",
+    "pieces": 16,
+    "stars": 4,
+    "badges": [
+     "challenge_done"
+    ]
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "build",
+   "value": {
+    "date": "2026-12-20",
+    "kind": "build",
+    "build": "xmas_tree",
+    "pieces": 16,
+    "stars": 4,
+    "badges": [
+     "challenge_done",
+     "symmetry_star"
+    ]
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "build",
+   "value": {
+    "date": "2026-12-21",
+    "kind": "build",
+    "build": "duck",
+    "pieces": 7,
+    "stars": 3,
+    "badges": []
+   }
+  },
+  {
+   "def": "DiaryEntry",
+   "note": "sort",
+   "value": {
+    "date": "2026-12-21",
+    "kind": "sort"
+   }
+  },
+  {
+   "def": "DiarySummary",
+   "note": "2026-12-20",
+   "value": {
+    "today": "2026-12-20",
+    "builds": 3,
+    "challenges": 1,
+    "pieces_used": 33,
+    "streak": 2,
+    "best_stars": 4,
+    "badges": [
+     "challenge_done",
+     "symmetry_star"
+    ]
+   }
+  },
+  {
+   "def": "DiarySummary",
+   "note": "2026-12-21",
+   "value": {
+    "today": "2026-12-21",
+    "builds": 3,
+    "challenges": 1,
+    "pieces_used": 33,
+    "streak": 3,
+    "best_stars": 4,
+    "badges": [
+     "challenge_done",
+     "symmetry_star"
+    ]
+   }
+  },
+  {
+   "def": "DiarySummary",
+   "note": "2026-12-23",
+   "value": {
+    "today": "2026-12-23",
+    "builds": 3,
+    "challenges": 1,
+    "pieces_used": 33,
+    "streak": 0,
+    "best_stars": 4,
+    "badges": [
+     "challenge_done",
+     "symmetry_star"
+    ]
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "15",
+   "value": {
+    "build": "เป็ดน้อย",
+    "seconds": 15,
+    "ratio": "9:16",
+    "bpm": 118,
+    "shots": [
+     {
+      "kind": "pile",
+      "start": 0.0,
+      "end": 2.5,
+      "caption_th": "เทตัวต่อกองใหญ่ \"กองนี้ต่ออะไรได้?\""
+     },
+     {
+      "kind": "scan",
+      "start": 2.5,
+      "end": 5.0,
+      "caption_th": "ถ่ายรูป ประกายสแกนนับชิ้น"
+     },
+     {
+      "kind": "ideas",
+      "start": 5.0,
+      "end": 7.5,
+      "caption_th": "การ์ดไอเดีย 6 แบบเด้งขึ้น"
+     },
+     {
+      "kind": "steps",
+      "start": 7.5,
+      "end": 10.0,
+      "caption_th": "ทำตามทีละขั้น ไฮไลต์ชิ้นในกอง"
+     },
+     {
+      "kind": "reveal",
+      "start": 10.0,
+      "end": 12.5,
+      "caption_th": "ของเสร็จหมุนโชว์ + คะแนนดาว"
+     },
+     {
+      "kind": "cta",
+      "start": 12.5,
+      "end": 15.0,
+      "caption_th": "คอมเมนต์ BRICK รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "BrickBuddy · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "20",
+   "value": {
+    "build": "เป็ดน้อย",
+    "seconds": 20,
+    "ratio": "9:16",
+    "bpm": 118,
+    "shots": [
+     {
+      "kind": "pile",
+      "start": 0.0,
+      "end": 3.3,
+      "caption_th": "เทตัวต่อกองใหญ่ \"กองนี้ต่ออะไรได้?\""
+     },
+     {
+      "kind": "scan",
+      "start": 3.3,
+      "end": 6.7,
+      "caption_th": "ถ่ายรูป ประกายสแกนนับชิ้น"
+     },
+     {
+      "kind": "ideas",
+      "start": 6.7,
+      "end": 10.0,
+      "caption_th": "การ์ดไอเดีย 6 แบบเด้งขึ้น"
+     },
+     {
+      "kind": "steps",
+      "start": 10.0,
+      "end": 13.3,
+      "caption_th": "ทำตามทีละขั้น ไฮไลต์ชิ้นในกอง"
+     },
+     {
+      "kind": "reveal",
+      "start": 13.3,
+      "end": 16.7,
+      "caption_th": "ของเสร็จหมุนโชว์ + คะแนนดาว"
+     },
+     {
+      "kind": "cta",
+      "start": 16.7,
+      "end": 20.0,
+      "caption_th": "คอมเมนต์ BRICK รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "BrickBuddy · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "30",
+   "value": {
+    "build": "เป็ดน้อย",
+    "seconds": 30,
+    "ratio": "9:16",
+    "bpm": 118,
+    "shots": [
+     {
+      "kind": "pile",
+      "start": 0.0,
+      "end": 5.0,
+      "caption_th": "เทตัวต่อกองใหญ่ \"กองนี้ต่ออะไรได้?\""
+     },
+     {
+      "kind": "scan",
+      "start": 5.0,
+      "end": 10.0,
+      "caption_th": "ถ่ายรูป ประกายสแกนนับชิ้น"
+     },
+     {
+      "kind": "ideas",
+      "start": 10.0,
+      "end": 15.0,
+      "caption_th": "การ์ดไอเดีย 6 แบบเด้งขึ้น"
+     },
+     {
+      "kind": "steps",
+      "start": 15.0,
+      "end": 20.0,
+      "caption_th": "ทำตามทีละขั้น ไฮไลต์ชิ้นในกอง"
+     },
+     {
+      "kind": "reveal",
+      "start": 20.0,
+      "end": 25.0,
+      "caption_th": "ของเสร็จหมุนโชว์ + คะแนนดาว"
+     },
+     {
+      "kind": "cta",
+      "start": 25.0,
+      "end": 30.0,
+      "caption_th": "คอมเมนต์ BRICK รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "BrickBuddy · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "pile",
+   "value": {
+    "kind": "pile",
+    "start": 0.0,
+    "end": 4.0,
+    "caption_th": "เทตัวต่อกองใหญ่ \"กองนี้ต่ออะไรได้?\""
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "scan",
+   "value": {
+    "kind": "scan",
+    "start": 4.0,
+    "end": 8.0,
+    "caption_th": "ถ่ายรูป ประกายสแกนนับชิ้น"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "ideas",
+   "value": {
+    "kind": "ideas",
+    "start": 8.0,
+    "end": 12.0,
+    "caption_th": "การ์ดไอเดีย 6 แบบเด้งขึ้น"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "steps",
+   "value": {
+    "kind": "steps",
+    "start": 12.0,
+    "end": 16.0,
+    "caption_th": "ทำตามทีละขั้น ไฮไลต์ชิ้นในกอง"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "reveal",
+   "value": {
+    "kind": "reveal",
+    "start": 16.0,
+    "end": 20.0,
+    "caption_th": "ของเสร็จหมุนโชว์ + คะแนนดาว"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "cta",
+   "value": {
+    "kind": "cta",
+    "start": 20.0,
+    "end": 24.0,
+    "caption_th": "คอมเมนต์ BRICK รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "before_after",
+   "value": {
+    "name_th": "เป็ดน้อย",
+    "stars": 4,
+    "layout": "before_after",
+    "size": "1080x1350",
+    "watermark": "BrickBuddy · AI วันละแอป",
+    "badge_th": "ต่อจากกองเดิมที่บ้าน ไม่ต้องซื้อเพิ่ม"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "steps_grid",
+   "value": {
+    "name_th": "เป็ดน้อย",
+    "stars": 4,
+    "layout": "steps_grid",
+    "size": "1080x1350",
+    "watermark": "BrickBuddy · AI วันละแอป",
+    "badge_th": "ต่อจากกองเดิมที่บ้าน ไม่ต้องซื้อเพิ่ม"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "badge",
+   "value": {
+    "name_th": "เป็ดน้อย",
+    "stars": 4,
+    "layout": "badge",
+    "size": "1080x1350",
+    "watermark": "BrickBuddy · AI วันละแอป",
+    "badge_th": "ต่อจากกองเดิมที่บ้าน ไม่ต้องซื้อเพิ่ม"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(0,)",
+   "value": {
+    "plan": "free",
+    "scans_per_day": 3,
+    "used": 0,
+    "left": 3,
+    "blocked": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(2,)",
+   "value": {
+    "plan": "free",
+    "scans_per_day": 3,
+    "used": 2,
+    "left": 1,
+    "blocked": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(3,)",
+   "value": {
+    "plan": "free",
+    "scans_per_day": 3,
+    "used": 3,
+    "left": 0,
+    "blocked": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(12, 'plus')",
+   "value": {
+    "plan": "plus",
+    "scans_per_day": 30,
+    "used": 12,
+    "left": 18,
+    "blocked": false
+   }
+  },
+  {
+   "def": "AgeCheck",
+   "note": "7 {}",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "under_13_no_parent"
+    ],
+    "messages_th": [
+     "อายุต่ำกว่า 13 ปี ให้ผู้ปกครองเปิดกล้องและยืนยันก่อนใช้"
+    ]
+   }
+  },
+  {
+   "def": "AgeCheck",
+   "note": "7 {'parent_ok': True}",
+   "value": {
+    "allowed": true,
+    "level": "ok",
+    "flags": [],
+    "messages_th": [
+     "เล่นให้สนุก! ตัวต่อชิ้นเล็กไม่เหมาะกับเด็กต่ำกว่า 3 ปี"
+    ]
+   }
+  },
+  {
+   "def": "AgeCheck",
+   "note": "2 {'parent_ok': True}",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "toddler_small_parts"
+    ],
+    "messages_th": [
+     "เด็กต่ำกว่า 3 ปีห้ามเล่นชิ้นเล็ก (เสี่ยงติดคอ) — เปลี่ยนเป็นตัวต่อชิ้นใหญ่สำหรับเด็กเล็ก"
+    ]
+   }
+  },
+  {
+   "def": "AgeCheck",
+   "note": "36 {'found': ('magnet',)}",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "battery_or_magnet"
+    ],
+    "messages_th": [
+     "เห็นถ่านกระดุมหรือแม่เหล็กในกอง อันตรายมากถ้ากลืน — เก็บออกก่อนเล่น"
+    ]
+   }
+  },
+  {
+   "def": "AgeCheck",
+   "note": "29 {'found': ('coin', 'face')}",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "not_bricks",
+     "face_in_photo"
+    ],
+    "messages_th": [
+     "มีของที่ไม่ใช่ตัวต่อในรูป (เหรียญ/ถ่าน/แม่เหล็ก) เก็บให้พ้นมือเด็กก่อน",
+     "เห็นหน้าคนในรูป ระบบจะเบลออัตโนมัติก่อนส่ง AI"
+    ]
+   }
+  },
+  {
+   "def": "AgeCheck",
+   "note": "4 {'parent_ok': True}",
+   "value": {
+    "allowed": true,
+    "level": "ok",
+    "flags": [],
+    "messages_th": [
+     "เล่นให้สนุก! ตัวต่อชิ้นเล็กไม่เหมาะกับเด็กต่ำกว่า 3 ปี"
+    ]
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "None",
+   "value": {
+    "flag": null,
+    "level": "ok",
+    "message_th": "เล่นให้สนุก! ตัวต่อชิ้นเล็กไม่เหมาะกับเด็กต่ำกว่า 3 ปี",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "toddler_small_parts",
+   "value": {
+    "flag": "toddler_small_parts",
+    "level": "stop",
+    "message_th": "เด็กต่ำกว่า 3 ปีห้ามเล่นชิ้นเล็ก (เสี่ยงติดคอ) — เปลี่ยนเป็นตัวต่อชิ้นใหญ่สำหรับเด็กเล็ก",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "swallowed_part",
+   "value": {
+    "flag": "swallowed_part",
+    "level": "stop",
+    "message_th": "ถ้าเด็กกลืนชิ้นส่วน/หายใจลำบาก โทร 1669 หรือไปโรงพยาบาลทันที ห้ามล้วงคอ",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "under_13_no_parent",
+   "value": {
+    "flag": "under_13_no_parent",
+    "level": "stop",
+    "message_th": "อายุต่ำกว่า 13 ปี ให้ผู้ปกครองเปิดกล้องและยืนยันก่อนใช้",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "face_in_photo",
+   "value": {
+    "flag": "face_in_photo",
+    "level": "warn",
+    "message_th": "เห็นหน้าคนในรูป ระบบจะเบลออัตโนมัติก่อนส่ง AI",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "official_set_copy",
+   "value": {
+    "flag": "official_set_copy",
+    "level": "stop",
+    "message_th": "แอปไม่คัดลอกคู่มือชุดลิขสิทธิ์ของแบรนด์ — สร้างได้เฉพาะไอเดียต้นฉบับจากกองของคุณ",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "not_bricks",
+   "value": {
+    "flag": "not_bricks",
+    "level": "warn",
+    "message_th": "มีของที่ไม่ใช่ตัวต่อในรูป (เหรียญ/ถ่าน/แม่เหล็ก) เก็บให้พ้นมือเด็กก่อน",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "battery_or_magnet",
+   "value": {
+    "flag": "battery_or_magnet",
+    "level": "stop",
+    "message_th": "เห็นถ่านกระดุมหรือแม่เหล็กในกอง อันตรายมากถ้ากลืน — เก็บออกก่อนเล่น",
+    "block": true
+   }
+  }
+ ]
+}
