@@ -1,0 +1,2388 @@
+{
+ "examples": [
+  {
+   "def": "Person",
+   "note": "Praew",
+   "value": {
+    "id": "u01",
+    "name_th": "พี่แพรว",
+    "name_en": "Praew",
+    "age": 28,
+    "height_cm": 160,
+    "city_th": "กรุงเทพฯ",
+    "updated": "2026-12-22"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Oat",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่โอ๊ต",
+    "name_en": "Oat",
+    "age": 34,
+    "height_cm": 176,
+    "city_th": "ขอนแก่น",
+    "updated": "2026-12-20"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Nuan",
+   "value": {
+    "id": "u03",
+    "name_th": "คุณแม่นวล",
+    "name_en": "Nuan",
+    "age": 61,
+    "height_cm": 154,
+    "city_th": "ราชบุรี",
+    "updated": "2026-12-22"
+   }
+  },
+  {
+   "def": "Person",
+   "note": "Mind",
+   "value": {
+    "id": "u04",
+    "name_th": "น้องมายด์",
+    "name_en": "Mind",
+    "age": 15,
+    "height_cm": 158,
+    "city_th": "เชียงราย",
+    "updated": "2026-12-22"
+   }
+  },
+  {
+   "def": "BodyPhoto",
+   "note": "f01",
+   "value": {
+    "id": "f01",
+    "light": 0.9,
+    "full_body": 1,
+    "pose_ok": 1,
+    "clothing": "fitted",
+    "ref_visible": 1
+   }
+  },
+  {
+   "def": "PhotoCheck",
+   "note": "f01",
+   "value": {
+    "score": 97,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "BodyPhoto",
+   "note": "f02",
+   "value": {
+    "id": "f02",
+    "light": 0.7,
+    "full_body": 1,
+    "pose_ok": 0,
+    "clothing": "normal",
+    "ref_visible": 0
+   }
+  },
+  {
+   "def": "PhotoCheck",
+   "note": "f02",
+   "value": {
+    "score": 56,
+    "ok": false,
+    "tips_th": [
+     "ยืนตรง แขนกางออกเล็กน้อย เท้าห่างกันราวช่วงไหล่",
+     "แปะกระดาษ A4 ไว้ที่ผนังข้างตัวเพื่อช่วยเช็กสเกล"
+    ]
+   }
+  },
+  {
+   "def": "BodyPhoto",
+   "note": "f03",
+   "value": {
+    "id": "f03",
+    "light": 0.4,
+    "full_body": 0,
+    "pose_ok": 0,
+    "clothing": "bulky",
+    "ref_visible": 0
+   }
+  },
+  {
+   "def": "PhotoCheck",
+   "note": "f03",
+   "value": {
+    "score": 12,
+    "ok": false,
+    "tips_th": [
+     "ยืนหันหน้าเข้าหาแสง เปิดไฟให้สว่าง",
+     "ถอยให้เห็นตั้งแต่หัวจรดเท้า วางมือถือระดับเอว",
+     "ยืนตรง แขนกางออกเล็กน้อย เท้าห่างกันราวช่วงไหล่",
+     "เปลี่ยนเป็นเสื้อยืดพอดีตัว + เลกกิ้ง/กางเกงรัดรูป",
+     "แปะกระดาษ A4 ไว้ที่ผนังข้างตัวเพื่อช่วยเช็กสเกล"
+    ]
+   }
+  },
+  {
+   "def": "PhotoCheck",
+   "note": "(0.8, 1, 1, 'normal', 1)",
+   "value": {
+    "score": 89,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "PhotoCheck",
+   "note": "(0.95, 1, 0, 'fitted', 1)",
+   "value": {
+    "score": 78,
+    "ok": false,
+    "tips_th": [
+     "ยืนตรง แขนกางออกเล็กน้อย เท้าห่างกันราวช่วงไหล่"
+    ]
+   }
+  },
+  {
+   "def": "PhotoCheck",
+   "note": "(0.5, 1, 1, 'loose', 1)",
+   "value": {
+    "score": 75,
+    "ok": false,
+    "tips_th": [
+     "ยืนหันหน้าเข้าหาแสง เปิดไฟให้สว่าง",
+     "เปลี่ยนเป็นเสื้อยืดพอดีตัว + เลกกิ้ง/กางเกงรัดรูป"
+    ]
+   }
+  },
+  {
+   "def": "AiBodyMeasure",
+   "note": "praew",
+   "value": {
+    "front": {
+     "height_px": 1600,
+     "shoulder_px": 370,
+     "chest_px": 300,
+     "waist_px": 250,
+     "hip_px": 340,
+     "inseam_px": 720,
+     "arm_px": 540
+    },
+    "side": {
+     "height_px": 1600,
+     "chest_px": 220,
+     "waist_px": 180,
+     "hip_px": 240
+    },
+    "a4_px": 298,
+    "clothing": "fitted",
+    "people": 1,
+    "nudity": false,
+    "pose_ok": true,
+    "confidence": 0.9
+   }
+  },
+  {
+   "def": "AiBodyMeasure",
+   "note": "oat loose",
+   "value": {
+    "front": {
+     "height_px": 1408,
+     "shoulder_px": 368,
+     "chest_px": 280,
+     "waist_px": 248,
+     "hip_px": 272,
+     "inseam_px": 640,
+     "arm_px": 488
+    },
+    "side": {
+     "height_px": 1408,
+     "chest_px": 208,
+     "waist_px": 200,
+     "hip_px": 200
+    },
+    "a4_px": 260,
+    "clothing": "loose",
+    "people": 1,
+    "nudity": false,
+    "pose_ok": true,
+    "confidence": 0.74
+   }
+  },
+  {
+   "def": "AiBodyMeasure",
+   "note": "no A4",
+   "value": {
+    "front": {
+     "height_px": 1600,
+     "shoulder_px": 370,
+     "chest_px": 300,
+     "waist_px": 250,
+     "hip_px": 340,
+     "inseam_px": 720,
+     "arm_px": 540
+    },
+    "side": {
+     "height_px": 1600,
+     "chest_px": 220,
+     "waist_px": 180,
+     "hip_px": 240
+    },
+    "a4_px": null,
+    "clothing": "fitted",
+    "people": 1,
+    "nudity": false,
+    "pose_ok": true,
+    "confidence": 0.9
+   }
+  },
+  {
+   "def": "Measurements",
+   "note": "praew",
+   "value": {
+    "height_cm": 160,
+    "cm": {
+     "chest": 84.6,
+     "waist": 68.0,
+     "hip": 93.6,
+     "shoulder": 37.0,
+     "inseam": 72.0,
+     "sleeve": 54.0
+    },
+    "margin_cm": 2.0,
+    "clothing": "fitted",
+    "warnings": [],
+    "scale_note_th": null,
+    "source": "photo"
+   }
+  },
+  {
+   "def": "Measurements",
+   "note": "oat",
+   "value": {
+    "height_cm": 176,
+    "cm": {
+     "chest": 91.6,
+     "waist": 81.0,
+     "hip": 87.6,
+     "shoulder": 44.0,
+     "inseam": 76.6,
+     "sleeve": 58.4
+    },
+    "margin_cm": 5.0,
+    "clothing": "loose",
+    "warnings": [
+     "scale_mismatch",
+     "loose_clothes"
+    ],
+    "scale_note_th": "สเกลจาก A4 ต่างจากส่วนสูง 9% ใช้ค่าเฉลี่ย",
+    "source": "photo"
+   }
+  },
+  {
+   "def": "Measurements",
+   "note": "praew normal clothes",
+   "value": {
+    "height_cm": 160,
+    "cm": {
+     "chest": 82.6,
+     "waist": 66.0,
+     "hip": 91.6,
+     "shoulder": 37.0,
+     "inseam": 72.0,
+     "sleeve": 54.0
+    },
+    "margin_cm": 3.0,
+    "clothing": "normal",
+    "warnings": [],
+    "scale_note_th": null,
+    "source": "photo"
+   }
+  },
+  {
+   "def": "Measurements",
+   "note": "no A4",
+   "value": {
+    "height_cm": 160,
+    "cm": {
+     "chest": 84.6,
+     "waist": 68.0,
+     "hip": 93.6,
+     "shoulder": 37.0,
+     "inseam": 72.0,
+     "sleeve": 54.0
+    },
+    "margin_cm": 2.0,
+    "clothing": "fitted",
+    "warnings": [],
+    "scale_note_th": null,
+    "source": "photo"
+   }
+  },
+  {
+   "def": "Measurements",
+   "note": "tape",
+   "value": {
+    "height_cm": 160,
+    "cm": {
+     "chest": 85.0,
+     "waist": 68.5,
+     "hip": 94.0,
+     "shoulder": 37.0,
+     "inseam": 72.0,
+     "sleeve": 54.0
+    },
+    "margin_cm": 1.0,
+    "clothing": "fitted",
+    "warnings": [],
+    "scale_note_th": null,
+    "source": "tape"
+   }
+  },
+  {
+   "def": "Measurements",
+   "note": "mixed",
+   "value": {
+    "height_cm": 176,
+    "cm": {
+     "chest": 91.6,
+     "waist": 84.0,
+     "hip": 87.6,
+     "shoulder": 44.0,
+     "inseam": 76.6,
+     "sleeve": 58.4
+    },
+    "margin_cm": 5.0,
+    "clothing": "loose",
+    "warnings": [
+     "scale_mismatch",
+     "loose_clothes"
+    ],
+    "scale_note_th": "สเกลจาก A4 ต่างจากส่วนสูง 9% ใช้ค่าเฉลี่ย",
+    "source": "mixed"
+   }
+  },
+  {
+   "def": "AiChartRead",
+   "note": "ร้านเสื้อครอป (สมมติ)",
+   "value": {
+    "shop_th": "ร้านเสื้อครอป (สมมติ)",
+    "unit": "inch",
+    "method": "flat",
+    "rows": [
+     {
+      "label": "S",
+      "values": {
+       "chest": 17,
+       "length": 22
+      }
+     },
+     {
+      "label": "M",
+      "values": {
+       "chest": 18,
+       "length": 23
+      }
+     },
+     {
+      "label": "L",
+      "values": {
+       "chest": 19,
+       "length": 24
+      }
+     },
+     {
+      "label": "XL",
+      "values": {
+       "chest": 20,
+       "length": 25
+      }
+     }
+    ]
+   }
+  },
+  {
+   "def": "AiChartRead",
+   "note": "ร้านเดรสลินิน (สมมติ)",
+   "value": {
+    "shop_th": "ร้านเดรสลินิน (สมมติ)",
+    "unit": "cm",
+    "method": "body",
+    "rows": [
+     {
+      "label": "S",
+      "values": {
+       "chest": [
+        82,
+        86
+       ],
+       "waist": [
+        64,
+        68
+       ],
+       "hip": [
+        88,
+        92
+       ]
+      }
+     },
+     {
+      "label": "M",
+      "values": {
+       "chest": [
+        87,
+        91
+       ],
+       "waist": [
+        69,
+        73
+       ],
+       "hip": [
+        93,
+        97
+       ]
+      }
+     },
+     {
+      "label": "L",
+      "values": {
+       "chest": [
+        92,
+        96
+       ],
+       "waist": [
+        74,
+        78
+       ],
+       "hip": [
+        98,
+        102
+       ]
+      }
+     }
+    ]
+   }
+  },
+  {
+   "def": "AiChartRead",
+   "note": "ร้านยีนส์ (สมมติ)",
+   "value": {
+    "shop_th": "ร้านยีนส์ (สมมติ)",
+    "unit": "inch",
+    "method": "body",
+    "rows": [
+     {
+      "label": "24",
+      "values": {
+       "waist": 24,
+       "hip": 33
+      }
+     },
+     {
+      "label": "25",
+      "values": {
+       "waist": 25,
+       "hip": 34
+      }
+     },
+     {
+      "label": "26",
+      "values": {
+       "waist": 26,
+       "hip": 35
+      }
+     },
+     {
+      "label": "27",
+      "values": {
+       "waist": 27,
+       "hip": 36
+      }
+     },
+     {
+      "label": "28",
+      "values": {
+       "waist": 28,
+       "hip": 37
+      }
+     },
+     {
+      "label": "29",
+      "values": {
+       "waist": 29,
+       "hip": 38
+      }
+     },
+     {
+      "label": "30",
+      "values": {
+       "waist": 30,
+       "hip": 39
+      }
+     },
+     {
+      "label": "31",
+      "values": {
+       "waist": 31,
+       "hip": 40
+      }
+     },
+     {
+      "label": "32",
+      "values": {
+       "waist": 32,
+       "hip": 41
+      }
+     }
+    ]
+   }
+  },
+  {
+   "def": "AiChartRead",
+   "note": "garment cm",
+   "value": {
+    "shop_th": "ร้านชุดนอน (สมมติ)",
+    "unit": "cm",
+    "method": "garment",
+    "rows": [
+     {
+      "label": "F",
+      "values": {
+       "chest": 104,
+       "length": 66
+      }
+     },
+     {
+      "label": "XL",
+      "values": {
+       "chest": 112,
+       "length": 70
+      }
+     }
+    ]
+   }
+  },
+  {
+   "def": "SizeChart",
+   "note": "ร้านเสื้อครอป (สมมติ)",
+   "value": {
+    "shop_th": "ร้านเสื้อครอป (สมมติ)",
+    "kind": "garment",
+    "rows": [
+     {
+      "label": "S",
+      "cm": {
+       "chest": [
+        86.4,
+        86.4
+       ],
+       "length": [
+        55.9,
+        55.9
+       ]
+      }
+     },
+     {
+      "label": "M",
+      "cm": {
+       "chest": [
+        91.4,
+        91.4
+       ],
+       "length": [
+        58.4,
+        58.4
+       ]
+      }
+     },
+     {
+      "label": "L",
+      "cm": {
+       "chest": [
+        96.5,
+        96.5
+       ],
+       "length": [
+        61.0,
+        61.0
+       ]
+      }
+     },
+     {
+      "label": "XL",
+      "cm": {
+       "chest": [
+        101.6,
+        101.6
+       ],
+       "length": [
+        63.5,
+        63.5
+       ]
+      }
+     }
+    ],
+    "converted": true,
+    "note_th": "ตารางวัดแบบวางราบ คูณ 2 ให้แล้ว"
+   }
+  },
+  {
+   "def": "SizeChart",
+   "note": "ร้านเดรสลินิน (สมมติ)",
+   "value": {
+    "shop_th": "ร้านเดรสลินิน (สมมติ)",
+    "kind": "body",
+    "rows": [
+     {
+      "label": "S",
+      "cm": {
+       "chest": [
+        82.0,
+        86.0
+       ],
+       "waist": [
+        64.0,
+        68.0
+       ],
+       "hip": [
+        88.0,
+        92.0
+       ]
+      }
+     },
+     {
+      "label": "M",
+      "cm": {
+       "chest": [
+        87.0,
+        91.0
+       ],
+       "waist": [
+        69.0,
+        73.0
+       ],
+       "hip": [
+        93.0,
+        97.0
+       ]
+      }
+     },
+     {
+      "label": "L",
+      "cm": {
+       "chest": [
+        92.0,
+        96.0
+       ],
+       "waist": [
+        74.0,
+        78.0
+       ],
+       "hip": [
+        98.0,
+        102.0
+       ]
+      }
+     }
+    ],
+    "converted": false,
+    "note_th": null
+   }
+  },
+  {
+   "def": "SizeChart",
+   "note": "ร้านยีนส์ (สมมติ)",
+   "value": {
+    "shop_th": "ร้านยีนส์ (สมมติ)",
+    "kind": "body",
+    "rows": [
+     {
+      "label": "24",
+      "cm": {
+       "waist": [
+        61.0,
+        61.0
+       ],
+       "hip": [
+        83.8,
+        83.8
+       ]
+      }
+     },
+     {
+      "label": "25",
+      "cm": {
+       "waist": [
+        63.5,
+        63.5
+       ],
+       "hip": [
+        86.4,
+        86.4
+       ]
+      }
+     },
+     {
+      "label": "26",
+      "cm": {
+       "waist": [
+        66.0,
+        66.0
+       ],
+       "hip": [
+        88.9,
+        88.9
+       ]
+      }
+     },
+     {
+      "label": "27",
+      "cm": {
+       "waist": [
+        68.6,
+        68.6
+       ],
+       "hip": [
+        91.4,
+        91.4
+       ]
+      }
+     },
+     {
+      "label": "28",
+      "cm": {
+       "waist": [
+        71.1,
+        71.1
+       ],
+       "hip": [
+        94.0,
+        94.0
+       ]
+      }
+     },
+     {
+      "label": "29",
+      "cm": {
+       "waist": [
+        73.7,
+        73.7
+       ],
+       "hip": [
+        96.5,
+        96.5
+       ]
+      }
+     },
+     {
+      "label": "30",
+      "cm": {
+       "waist": [
+        76.2,
+        76.2
+       ],
+       "hip": [
+        99.1,
+        99.1
+       ]
+      }
+     },
+     {
+      "label": "31",
+      "cm": {
+       "waist": [
+        78.7,
+        78.7
+       ],
+       "hip": [
+        101.6,
+        101.6
+       ]
+      }
+     },
+     {
+      "label": "32",
+      "cm": {
+       "waist": [
+        81.3,
+        81.3
+       ],
+       "hip": [
+        104.1,
+        104.1
+       ]
+      }
+     }
+    ],
+    "converted": true,
+    "note_th": null
+   }
+  },
+  {
+   "def": "SizeChart",
+   "note": "ร้านชุดนอน (สมมติ)",
+   "value": {
+    "shop_th": "ร้านชุดนอน (สมมติ)",
+    "kind": "garment",
+    "rows": [
+     {
+      "label": "F",
+      "cm": {
+       "chest": [
+        104.0,
+        104.0
+       ],
+       "length": [
+        66.0,
+        66.0
+       ]
+      }
+     },
+     {
+      "label": "XL",
+      "cm": {
+       "chest": [
+        112.0,
+        112.0
+       ],
+       "length": [
+        70.0,
+        70.0
+       ]
+      }
+     }
+    ],
+    "converted": false,
+    "note_th": null
+   }
+  },
+  {
+   "def": "SizeChart",
+   "note": "generic",
+   "value": {
+    "shop_th": "ตารางมาตรฐานในแอป",
+    "kind": "body",
+    "rows": [
+     {
+      "label": "S",
+      "cm": {
+       "chest": [
+        84,
+        89
+       ],
+       "waist": [
+        68,
+        73
+       ],
+       "hip": [
+        88,
+        93
+       ]
+      }
+     },
+     {
+      "label": "M",
+      "cm": {
+       "chest": [
+        90,
+        95
+       ],
+       "waist": [
+        74,
+        79
+       ],
+       "hip": [
+        94,
+        99
+       ]
+      }
+     },
+     {
+      "label": "L",
+      "cm": {
+       "chest": [
+        96,
+        101
+       ],
+       "waist": [
+        80,
+        85
+       ],
+       "hip": [
+        100,
+        105
+       ]
+      }
+     },
+     {
+      "label": "XL",
+      "cm": {
+       "chest": [
+        102,
+        107
+       ],
+       "waist": [
+        86,
+        91
+       ],
+       "hip": [
+        106,
+        111
+       ]
+      }
+     },
+     {
+      "label": "2XL",
+      "cm": {
+       "chest": [
+        108,
+        113
+       ],
+       "waist": [
+        92,
+        97
+       ],
+       "hip": [
+        112,
+        117
+       ]
+      }
+     }
+    ],
+    "converted": false,
+    "note_th": null
+   }
+  },
+  {
+   "def": "SizeRecommendation",
+   "note": "shirt regular",
+   "value": {
+    "best": "M",
+    "second": "L",
+    "fit": [
+     {
+      "area": "chest",
+      "body_cm": 84.6,
+      "range_cm": [
+       91.4,
+       91.4
+      ],
+      "ease_cm": 6.8,
+      "label": "good"
+     }
+    ],
+    "between_sizes": false,
+    "confidence": "high",
+    "advice_th": "แนะนำไซซ์ M พอดีทุกจุดที่วัด",
+    "kind": "top",
+    "fit_pref": "regular",
+    "stretch": "none"
+   }
+  },
+  {
+   "def": "SizeRecommendation",
+   "note": "dress",
+   "value": {
+    "best": "M",
+    "second": "S",
+    "fit": [
+     {
+      "area": "chest",
+      "body_cm": 84.6,
+      "range_cm": [
+       87.0,
+       91.0
+      ],
+      "ease_cm": 4.4,
+      "label": "loose"
+     },
+     {
+      "area": "waist",
+      "body_cm": 68.0,
+      "range_cm": [
+       69.0,
+       73.0
+      ],
+      "ease_cm": 3.0,
+      "label": "good"
+     },
+     {
+      "area": "hip",
+      "body_cm": 93.6,
+      "range_cm": [
+       93.0,
+       97.0
+      ],
+      "ease_cm": 1.4,
+      "label": "good"
+     }
+    ],
+    "between_sizes": true,
+    "confidence": "medium",
+    "advice_th": "อยู่ระหว่าง M กับ S — แนะนำ M เพราะ S คับที่สะโพก",
+    "kind": "dress",
+    "fit_pref": "regular",
+    "stretch": "none"
+   }
+  },
+  {
+   "def": "SizeRecommendation",
+   "note": "jeans slim some-stretch",
+   "value": {
+    "best": "27",
+    "second": "28",
+    "fit": [
+     {
+      "area": "waist",
+      "body_cm": 68.0,
+      "range_cm": [
+       68.6,
+       68.6
+      ],
+      "ease_cm": 0.6,
+      "label": "good"
+     },
+     {
+      "area": "hip",
+      "body_cm": 93.6,
+      "range_cm": [
+       91.4,
+       91.4
+      ],
+      "ease_cm": -2.2,
+      "label": "good"
+     }
+    ],
+    "between_sizes": false,
+    "confidence": "high",
+    "advice_th": "แนะนำไซซ์ 27 พอดีทุกจุดที่วัด",
+    "kind": "bottom",
+    "fit_pref": "slim",
+    "stretch": "some"
+   }
+  },
+  {
+   "def": "SizeRecommendation",
+   "note": "shirt slim",
+   "value": {
+    "best": "S",
+    "second": "M",
+    "fit": [
+     {
+      "area": "chest",
+      "body_cm": 84.6,
+      "range_cm": [
+       86.4,
+       86.4
+      ],
+      "ease_cm": 1.8,
+      "label": "good"
+     }
+    ],
+    "between_sizes": true,
+    "confidence": "medium",
+    "advice_th": "อยู่ระหว่าง S กับ M — ชอบพอดีตัวเลือก S ชอบหลวมสบายเลือก M",
+    "kind": "top",
+    "fit_pref": "slim",
+    "stretch": "none"
+   }
+  },
+  {
+   "def": "SizeRecommendation",
+   "note": "shirt oversize",
+   "value": {
+    "best": "XL",
+    "second": "L",
+    "fit": [
+     {
+      "area": "chest",
+      "body_cm": 84.6,
+      "range_cm": [
+       101.6,
+       101.6
+      ],
+      "ease_cm": 17.0,
+      "label": "good"
+     }
+    ],
+    "between_sizes": false,
+    "confidence": "high",
+    "advice_th": "แนะนำไซซ์ XL พอดีทุกจุดที่วัด",
+    "kind": "top",
+    "fit_pref": "oversize",
+    "stretch": "none"
+   }
+  },
+  {
+   "def": "SizeRecommendation",
+   "note": "jeans no stretch",
+   "value": {
+    "best": "27",
+    "second": "28",
+    "fit": [
+     {
+      "area": "waist",
+      "body_cm": 68.0,
+      "range_cm": [
+       68.6,
+       68.6
+      ],
+      "ease_cm": 0.6,
+      "label": "good"
+     },
+     {
+      "area": "hip",
+      "body_cm": 93.6,
+      "range_cm": [
+       91.4,
+       91.4
+      ],
+      "ease_cm": -2.2,
+      "label": "tight"
+     }
+    ],
+    "between_sizes": true,
+    "confidence": "medium",
+    "advice_th": "ไซซ์ 27 ยังคับที่สะโพก ลองไซซ์ใหญ่ขึ้นหรือเลือกผ้ายืด",
+    "kind": "bottom",
+    "fit_pref": "slim",
+    "stretch": "none"
+   }
+  },
+  {
+   "def": "SizeRecommendation",
+   "note": "oat generic low conf",
+   "value": {
+    "best": "M",
+    "second": "S",
+    "fit": [
+     {
+      "area": "chest",
+      "body_cm": 91.6,
+      "range_cm": [
+       90,
+       95
+      ],
+      "ease_cm": 0.9,
+      "label": "good"
+     },
+     {
+      "area": "waist",
+      "body_cm": 81.0,
+      "range_cm": [
+       74,
+       79
+      ],
+      "ease_cm": -4.5,
+      "label": "tight"
+     },
+     {
+      "area": "hip",
+      "body_cm": 87.6,
+      "range_cm": [
+       94,
+       99
+      ],
+      "ease_cm": 8.9,
+      "label": "loose"
+     }
+    ],
+    "between_sizes": false,
+    "confidence": "low",
+    "advice_th": "ไซซ์ M ยังคับที่เอว ลองไซซ์ใหญ่ขึ้นหรือเลือกผ้ายืด",
+    "kind": "top",
+    "fit_pref": "regular",
+    "stretch": "none"
+   }
+  },
+  {
+   "def": "SizeRecommendation",
+   "note": "praew generic",
+   "value": {
+    "best": "S",
+    "second": "M",
+    "fit": [
+     {
+      "area": "chest",
+      "body_cm": 84.6,
+      "range_cm": [
+       84,
+       89
+      ],
+      "ease_cm": 1.9,
+      "label": "good"
+     },
+     {
+      "area": "waist",
+      "body_cm": 68.0,
+      "range_cm": [
+       68,
+       73
+      ],
+      "ease_cm": 2.5,
+      "label": "good"
+     },
+     {
+      "area": "hip",
+      "body_cm": 93.6,
+      "range_cm": [
+       88,
+       93
+      ],
+      "ease_cm": -3.1,
+      "label": "good"
+     }
+    ],
+    "between_sizes": false,
+    "confidence": "high",
+    "advice_th": "แนะนำไซซ์ S พอดีทุกจุดที่วัด",
+    "kind": "top",
+    "fit_pref": "regular",
+    "stretch": "none"
+   }
+  },
+  {
+   "def": "SizeRecommendation",
+   "note": "pajama oversize",
+   "value": {
+    "best": "F",
+    "second": "XL",
+    "fit": [
+     {
+      "area": "chest",
+      "body_cm": 84.6,
+      "range_cm": [
+       104.0,
+       104.0
+      ],
+      "ease_cm": 19.4,
+      "label": "good"
+     }
+    ],
+    "between_sizes": false,
+    "confidence": "high",
+    "advice_th": "แนะนำไซซ์ F พอดีทุกจุดที่วัด",
+    "kind": "top",
+    "fit_pref": "oversize",
+    "stretch": "none"
+   }
+  },
+  {
+   "def": "SizeRecommendation",
+   "note": "dress stretch tape",
+   "value": {
+    "best": "S",
+    "second": "M",
+    "fit": [
+     {
+      "area": "chest",
+      "body_cm": 85.0,
+      "range_cm": [
+       82.0,
+       86.0
+      ],
+      "ease_cm": -1.0,
+      "label": "good"
+     },
+     {
+      "area": "waist",
+      "body_cm": 68.5,
+      "range_cm": [
+       64.0,
+       68.0
+      ],
+      "ease_cm": -2.5,
+      "label": "good"
+     },
+     {
+      "area": "hip",
+      "body_cm": 94.0,
+      "range_cm": [
+       88.0,
+       92.0
+      ],
+      "ease_cm": -4.0,
+      "label": "good"
+     }
+    ],
+    "between_sizes": false,
+    "confidence": "high",
+    "advice_th": "แนะนำไซซ์ S พอดีทุกจุดที่วัด",
+    "kind": "dress",
+    "fit_pref": "regular",
+    "stretch": "high"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "shirt regular chest",
+   "value": {
+    "area": "chest",
+    "body_cm": 84.6,
+    "range_cm": [
+     91.4,
+     91.4
+    ],
+    "ease_cm": 6.8,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "dress chest",
+   "value": {
+    "area": "chest",
+    "body_cm": 84.6,
+    "range_cm": [
+     87.0,
+     91.0
+    ],
+    "ease_cm": 4.4,
+    "label": "loose"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "dress waist",
+   "value": {
+    "area": "waist",
+    "body_cm": 68.0,
+    "range_cm": [
+     69.0,
+     73.0
+    ],
+    "ease_cm": 3.0,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "dress hip",
+   "value": {
+    "area": "hip",
+    "body_cm": 93.6,
+    "range_cm": [
+     93.0,
+     97.0
+    ],
+    "ease_cm": 1.4,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "jeans slim some-stretch waist",
+   "value": {
+    "area": "waist",
+    "body_cm": 68.0,
+    "range_cm": [
+     68.6,
+     68.6
+    ],
+    "ease_cm": 0.6,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "jeans slim some-stretch hip",
+   "value": {
+    "area": "hip",
+    "body_cm": 93.6,
+    "range_cm": [
+     91.4,
+     91.4
+    ],
+    "ease_cm": -2.2,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "shirt slim chest",
+   "value": {
+    "area": "chest",
+    "body_cm": 84.6,
+    "range_cm": [
+     86.4,
+     86.4
+    ],
+    "ease_cm": 1.8,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "shirt oversize chest",
+   "value": {
+    "area": "chest",
+    "body_cm": 84.6,
+    "range_cm": [
+     101.6,
+     101.6
+    ],
+    "ease_cm": 17.0,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "jeans no stretch waist",
+   "value": {
+    "area": "waist",
+    "body_cm": 68.0,
+    "range_cm": [
+     68.6,
+     68.6
+    ],
+    "ease_cm": 0.6,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "jeans no stretch hip",
+   "value": {
+    "area": "hip",
+    "body_cm": 93.6,
+    "range_cm": [
+     91.4,
+     91.4
+    ],
+    "ease_cm": -2.2,
+    "label": "tight"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "oat generic low conf chest",
+   "value": {
+    "area": "chest",
+    "body_cm": 91.6,
+    "range_cm": [
+     90,
+     95
+    ],
+    "ease_cm": 0.9,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "oat generic low conf waist",
+   "value": {
+    "area": "waist",
+    "body_cm": 81.0,
+    "range_cm": [
+     74,
+     79
+    ],
+    "ease_cm": -4.5,
+    "label": "tight"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "oat generic low conf hip",
+   "value": {
+    "area": "hip",
+    "body_cm": 87.6,
+    "range_cm": [
+     94,
+     99
+    ],
+    "ease_cm": 8.9,
+    "label": "loose"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "praew generic chest",
+   "value": {
+    "area": "chest",
+    "body_cm": 84.6,
+    "range_cm": [
+     84,
+     89
+    ],
+    "ease_cm": 1.9,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "praew generic waist",
+   "value": {
+    "area": "waist",
+    "body_cm": 68.0,
+    "range_cm": [
+     68,
+     73
+    ],
+    "ease_cm": 2.5,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "praew generic hip",
+   "value": {
+    "area": "hip",
+    "body_cm": 93.6,
+    "range_cm": [
+     88,
+     93
+    ],
+    "ease_cm": -3.1,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "pajama oversize chest",
+   "value": {
+    "area": "chest",
+    "body_cm": 84.6,
+    "range_cm": [
+     104.0,
+     104.0
+    ],
+    "ease_cm": 19.4,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "dress stretch tape chest",
+   "value": {
+    "area": "chest",
+    "body_cm": 85.0,
+    "range_cm": [
+     82.0,
+     86.0
+    ],
+    "ease_cm": -1.0,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "dress stretch tape waist",
+   "value": {
+    "area": "waist",
+    "body_cm": 68.5,
+    "range_cm": [
+     64.0,
+     68.0
+    ],
+    "ease_cm": -2.5,
+    "label": "good"
+   }
+  },
+  {
+   "def": "AreaFit",
+   "note": "dress stretch tape hip",
+   "value": {
+    "area": "hip",
+    "body_cm": 94.0,
+    "range_cm": [
+     88.0,
+     92.0
+    ],
+    "ease_cm": -4.0,
+    "label": "good"
+   }
+  },
+  {
+   "def": "ShoeSize",
+   "note": "(940, 1188, 360)",
+   "value": {
+    "foot_cm": 23.5,
+    "shoe_cm": 24.0,
+    "eu": 38,
+    "us_women": 7,
+    "us_men": 5.5,
+    "uk": 4.5,
+    "width": "regular",
+    "approx": true,
+    "note_th": null
+   }
+  },
+  {
+   "def": "ShoeSize",
+   "note": "(1080, 1188, 450)",
+   "value": {
+    "foot_cm": 27.0,
+    "shoe_cm": 27.5,
+    "eu": 42.5,
+    "us_women": 10.5,
+    "us_men": 9,
+    "uk": 8,
+    "width": "wide",
+    "approx": true,
+    "note_th": "หน้าเท้ากว้าง เลือกรุ่นหน้ากว้าง (Wide) หรือขยับขึ้นครึ่งไซซ์"
+   }
+  },
+  {
+   "def": "ShoeSize",
+   "note": "(1000, 1188, 330)",
+   "value": {
+    "foot_cm": 25.0,
+    "shoe_cm": 25.5,
+    "eu": 40,
+    "us_women": 8.5,
+    "us_men": 7,
+    "uk": 6,
+    "width": "narrow",
+    "approx": true,
+    "note_th": null
+   }
+  },
+  {
+   "def": "ShoeSize",
+   "note": "(700, 1188, None)",
+   "value": {
+    "foot_cm": 17.5,
+    "shoe_cm": 18.0,
+    "eu": 35,
+    "us_women": 5,
+    "us_men": 3.5,
+    "uk": 2.5,
+    "width": null,
+    "approx": true,
+    "note_th": "เด็ก/เท้าเล็กกว่าตาราง ใช้ตารางเด็กของร้าน"
+   }
+  },
+  {
+   "def": "ShoeSize",
+   "note": "(1160, 1188, 440)",
+   "value": {
+    "foot_cm": 29.0,
+    "shoe_cm": 29.5,
+    "eu": 45,
+    "us_women": 12.5,
+    "us_men": 11,
+    "uk": 10,
+    "width": "regular",
+    "approx": true,
+    "note_th": null
+   }
+  },
+  {
+   "def": "SizePassport",
+   "note": "praew",
+   "value": {
+    "name_th": "พี่แพรว",
+    "updated": "2026-12-22",
+    "top": "S",
+    "jeans_waist_in": 27,
+    "cm": {
+     "chest": 84.6,
+     "waist": 68.0,
+     "hip": 93.6
+    },
+    "inch": {
+     "chest": 33.3,
+     "waist": 26.8,
+     "hip": 36.9
+    },
+    "shoe_eu": 38,
+    "margin_cm": 2.0,
+    "share_numbers": false
+   }
+  },
+  {
+   "def": "SizePassport",
+   "note": "oat",
+   "value": {
+    "name_th": "พี่โอ๊ต",
+    "updated": "2026-12-20",
+    "top": "M",
+    "jeans_waist_in": 32,
+    "cm": {
+     "chest": 91.6,
+     "waist": 81.0,
+     "hip": 87.6
+    },
+    "inch": {
+     "chest": 36.1,
+     "waist": 31.9,
+     "hip": 34.5
+    },
+    "shoe_eu": 45,
+    "margin_cm": 5.0,
+    "share_numbers": false
+   }
+  },
+  {
+   "def": "SizePassport",
+   "note": "nuan tape no shoe",
+   "value": {
+    "name_th": "คุณแม่นวล",
+    "updated": "2026-12-22",
+    "top": "M",
+    "jeans_waist_in": 31,
+    "cm": {
+     "chest": 92.0,
+     "waist": 80.0,
+     "hip": 98.0
+    },
+    "inch": {
+     "chest": 36.2,
+     "waist": 31.5,
+     "hip": 38.6
+    },
+    "shoe_eu": null,
+    "margin_cm": 1.0,
+    "share_numbers": false
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "()",
+   "value": {
+    "for_th": "พี่แพรว",
+    "kind": "top",
+    "size": "S",
+    "jeans_waist_in": null,
+    "shoe_eu": null,
+    "tip_th": "ถามร้านเรื่องเปลี่ยนไซซ์ได้ไหมก่อนซื้อ และเก็บใบเสร็จ/ป้ายไว้"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "('top', 'oversize')",
+   "value": {
+    "for_th": "พี่แพรว",
+    "kind": "top",
+    "size": "M",
+    "jeans_waist_in": null,
+    "shoe_eu": null,
+    "tip_th": "ถามร้านเรื่องเปลี่ยนไซซ์ได้ไหมก่อนซื้อ และเก็บใบเสร็จ/ป้ายไว้"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "('bottom',)",
+   "value": {
+    "for_th": "พี่แพรว",
+    "kind": "bottom",
+    "size": "S",
+    "jeans_waist_in": 27,
+    "shoe_eu": null,
+    "tip_th": "ถามร้านเรื่องเปลี่ยนไซซ์ได้ไหมก่อนซื้อ และเก็บใบเสร็จ/ป้ายไว้"
+   }
+  },
+  {
+   "def": "GiftPick",
+   "note": "('shoes',)",
+   "value": {
+    "for_th": "พี่แพรว",
+    "kind": "shoes",
+    "size": "S",
+    "jeans_waist_in": null,
+    "shoe_eu": 38,
+    "tip_th": "ถามร้านเรื่องเปลี่ยนไซซ์ได้ไหมก่อนซื้อ และเก็บใบเสร็จ/ป้ายไว้"
+   }
+  },
+  {
+   "def": "ReturnRisk",
+   "note": "None",
+   "value": {
+    "level": "low",
+    "points": 0,
+    "reasons_th": [],
+    "tip_th": "สั่งได้เลย"
+   }
+  },
+  {
+   "def": "ReturnRisk",
+   "note": "runs_small",
+   "value": {
+    "level": "high",
+    "points": 5,
+    "reasons_th": [
+     "อยู่ระหว่างสองไซซ์",
+     "บางจุดคับ/หลวม",
+     "รีวิวบอกไซซ์เล็กกว่าปกติ — ขยับขึ้น 1 ไซซ์"
+    ],
+    "tip_th": "แชตถามร้านพร้อมตัวเลขของคุณก่อนสั่ง"
+   }
+  },
+  {
+   "def": "ReturnRisk",
+   "note": "true_to_size",
+   "value": {
+    "level": "low",
+    "points": 0,
+    "reasons_th": [],
+    "tip_th": "สั่งได้เลย"
+   }
+  },
+  {
+   "def": "ReturnRisk",
+   "note": "None",
+   "value": {
+    "level": "high",
+    "points": 4,
+    "reasons_th": [
+     "ตัวเลขคลาดเคลื่อนสูง",
+     "บางจุดคับ/หลวม"
+    ],
+    "tip_th": "แชตถามร้านพร้อมตัวเลขของคุณก่อนสั่ง"
+   }
+  },
+  {
+   "def": "ReturnRisk",
+   "note": "runs_large",
+   "value": {
+    "level": "low",
+    "points": 1,
+    "reasons_th": [
+     "รีวิวบอกไซซ์ใหญ่กว่าปกติ"
+    ],
+    "tip_th": "สั่งได้เลย"
+   }
+  },
+  {
+   "def": "LogEntry",
+   "note": "2026-09-15",
+   "value": {
+    "date": "2026-09-15",
+    "cm": {
+     "chest": 85.5,
+     "waist": 69.0,
+     "hip": 94.0
+    }
+   }
+  },
+  {
+   "def": "LogEntry",
+   "note": "2026-12-22",
+   "value": {
+    "date": "2026-12-22",
+    "cm": {
+     "chest": 84.6,
+     "waist": 68.0,
+     "hip": 93.6
+    }
+   }
+  },
+  {
+   "def": "LogSummary",
+   "note": "",
+   "value": {
+    "today": "2026-12-22",
+    "entries": 2,
+    "last_date": "2026-12-22",
+    "days_since": 0,
+    "change_cm": {
+     "chest": -0.9,
+     "waist": -1.0,
+     "hip": -0.4
+    },
+    "hidden": false,
+    "remeasure": false,
+    "note_th": "ไซซ์เปลี่ยนได้ตามฤดูและเสื้อผ้า วัดใหม่ทุก 3 เดือนหรือก่อนช้อปใหญ่"
+   }
+  },
+  {
+   "def": "LogSummary",
+   "note": "hidden",
+   "value": {
+    "today": "2026-12-22",
+    "entries": 2,
+    "last_date": "2026-12-22",
+    "days_since": 0,
+    "change_cm": {},
+    "hidden": true,
+    "remeasure": false,
+    "note_th": "ไซซ์เปลี่ยนได้ตามฤดูและเสื้อผ้า วัดใหม่ทุก 3 เดือนหรือก่อนช้อปใหญ่"
+   }
+  },
+  {
+   "def": "LogSummary",
+   "note": "remeasure",
+   "value": {
+    "today": "2026-12-22",
+    "entries": 1,
+    "last_date": "2026-09-15",
+    "days_since": 98,
+    "change_cm": {},
+    "hidden": false,
+    "remeasure": true,
+    "note_th": "ไซซ์เปลี่ยนได้ตามฤดูและเสื้อผ้า วัดใหม่ทุก 3 เดือนหรือก่อนช้อปใหญ่"
+   }
+  },
+  {
+   "def": "LogSummary",
+   "note": "empty",
+   "value": {
+    "today": "2026-12-22",
+    "entries": 0,
+    "last_date": null,
+    "days_since": null,
+    "change_cm": {},
+    "hidden": false,
+    "remeasure": true,
+    "note_th": "ไซซ์เปลี่ยนได้ตามฤดูและเสื้อผ้า วัดใหม่ทุก 3 เดือนหรือก่อนช้อปใหญ่"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "size_card",
+   "value": {
+    "layout": "size_card",
+    "size": "1080x1350",
+    "shows_numbers": false,
+    "top": "S",
+    "shoe_eu": 38,
+    "watermark": "SizeSure · AI วันละแอป",
+    "badge_th": "สั่งออนไลน์ ไซซ์พอดีตั้งแต่ครั้งแรก"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "before_after",
+   "value": {
+    "layout": "before_after",
+    "size": "1080x1350",
+    "shows_numbers": false,
+    "top": "S",
+    "shoe_eu": 38,
+    "watermark": "SizeSure · AI วันละแอป",
+    "badge_th": "สั่งออนไลน์ ไซซ์พอดีตั้งแต่ครั้งแรก"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "fit_meter",
+   "value": {
+    "layout": "fit_meter",
+    "size": "1080x1350",
+    "shows_numbers": false,
+    "top": "S",
+    "shoe_eu": 38,
+    "watermark": "SizeSure · AI วันละแอป",
+    "badge_th": "สั่งออนไลน์ ไซซ์พอดีตั้งแต่ครั้งแรก"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "15",
+   "value": {
+    "seconds": 15,
+    "ratio": "9:16",
+    "bpm": 120,
+    "shots": [
+     {
+      "kind": "problem",
+      "start": 0.0,
+      "end": 2.5,
+      "caption_th": "กล่องพัสดุ + เสื้อคับ \"สั่งออนไลน์ไซซ์ไม่เคยพอดี?\""
+     },
+     {
+      "kind": "photos",
+      "start": 2.5,
+      "end": 5.0,
+      "caption_th": "ถ่ายหน้า-ข้าง 2 รูป เส้นวัดวิ่งบนตัว"
+     },
+     {
+      "kind": "numbers",
+      "start": 5.0,
+      "end": 7.5,
+      "caption_th": "ตัวเลขรอบอก เอว สะโพกเด้งขึ้น"
+     },
+     {
+      "kind": "chart",
+      "start": 7.5,
+      "end": 10.0,
+      "caption_th": "แคปตารางไซซ์ร้าน → ไฮไลต์ M พอดี"
+     },
+     {
+      "kind": "fit",
+      "start": 10.0,
+      "end": 12.5,
+      "caption_th": "มิเตอร์ พอดี/คับ/หลวม รายจุด + รองเท้าบน A4"
+     },
+     {
+      "kind": "cta",
+      "start": 12.5,
+      "end": 15.0,
+      "caption_th": "คอมเมนต์ SIZE รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "SizeSure · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "20",
+   "value": {
+    "seconds": 20,
+    "ratio": "9:16",
+    "bpm": 120,
+    "shots": [
+     {
+      "kind": "problem",
+      "start": 0.0,
+      "end": 3.3,
+      "caption_th": "กล่องพัสดุ + เสื้อคับ \"สั่งออนไลน์ไซซ์ไม่เคยพอดี?\""
+     },
+     {
+      "kind": "photos",
+      "start": 3.3,
+      "end": 6.7,
+      "caption_th": "ถ่ายหน้า-ข้าง 2 รูป เส้นวัดวิ่งบนตัว"
+     },
+     {
+      "kind": "numbers",
+      "start": 6.7,
+      "end": 10.0,
+      "caption_th": "ตัวเลขรอบอก เอว สะโพกเด้งขึ้น"
+     },
+     {
+      "kind": "chart",
+      "start": 10.0,
+      "end": 13.3,
+      "caption_th": "แคปตารางไซซ์ร้าน → ไฮไลต์ M พอดี"
+     },
+     {
+      "kind": "fit",
+      "start": 13.3,
+      "end": 16.7,
+      "caption_th": "มิเตอร์ พอดี/คับ/หลวม รายจุด + รองเท้าบน A4"
+     },
+     {
+      "kind": "cta",
+      "start": 16.7,
+      "end": 20.0,
+      "caption_th": "คอมเมนต์ SIZE รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "SizeSure · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "30",
+   "value": {
+    "seconds": 30,
+    "ratio": "9:16",
+    "bpm": 120,
+    "shots": [
+     {
+      "kind": "problem",
+      "start": 0.0,
+      "end": 5.0,
+      "caption_th": "กล่องพัสดุ + เสื้อคับ \"สั่งออนไลน์ไซซ์ไม่เคยพอดี?\""
+     },
+     {
+      "kind": "photos",
+      "start": 5.0,
+      "end": 10.0,
+      "caption_th": "ถ่ายหน้า-ข้าง 2 รูป เส้นวัดวิ่งบนตัว"
+     },
+     {
+      "kind": "numbers",
+      "start": 10.0,
+      "end": 15.0,
+      "caption_th": "ตัวเลขรอบอก เอว สะโพกเด้งขึ้น"
+     },
+     {
+      "kind": "chart",
+      "start": 15.0,
+      "end": 20.0,
+      "caption_th": "แคปตารางไซซ์ร้าน → ไฮไลต์ M พอดี"
+     },
+     {
+      "kind": "fit",
+      "start": 20.0,
+      "end": 25.0,
+      "caption_th": "มิเตอร์ พอดี/คับ/หลวม รายจุด + รองเท้าบน A4"
+     },
+     {
+      "kind": "cta",
+      "start": 25.0,
+      "end": 30.0,
+      "caption_th": "คอมเมนต์ SIZE รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "SizeSure · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "problem",
+   "value": {
+    "kind": "problem",
+    "start": 0.0,
+    "end": 4.0,
+    "caption_th": "กล่องพัสดุ + เสื้อคับ \"สั่งออนไลน์ไซซ์ไม่เคยพอดี?\""
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "photos",
+   "value": {
+    "kind": "photos",
+    "start": 4.0,
+    "end": 8.0,
+    "caption_th": "ถ่ายหน้า-ข้าง 2 รูป เส้นวัดวิ่งบนตัว"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "numbers",
+   "value": {
+    "kind": "numbers",
+    "start": 8.0,
+    "end": 12.0,
+    "caption_th": "ตัวเลขรอบอก เอว สะโพกเด้งขึ้น"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "chart",
+   "value": {
+    "kind": "chart",
+    "start": 12.0,
+    "end": 16.0,
+    "caption_th": "แคปตารางไซซ์ร้าน → ไฮไลต์ M พอดี"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "fit",
+   "value": {
+    "kind": "fit",
+    "start": 16.0,
+    "end": 20.0,
+    "caption_th": "มิเตอร์ พอดี/คับ/หลวม รายจุด + รองเท้าบน A4"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "cta",
+   "value": {
+    "kind": "cta",
+    "start": 20.0,
+    "end": 24.0,
+    "caption_th": "คอมเมนต์ SIZE รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(0,)",
+   "value": {
+    "plan": "free",
+    "measures_per_day": 3,
+    "used": 0,
+    "left": 3,
+    "blocked": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(2,)",
+   "value": {
+    "plan": "free",
+    "measures_per_day": 3,
+    "used": 2,
+    "left": 1,
+    "blocked": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(3,)",
+   "value": {
+    "plan": "free",
+    "measures_per_day": 3,
+    "used": 3,
+    "left": 0,
+    "blocked": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(10, 'plus')",
+   "value": {
+    "plan": "plus",
+    "measures_per_day": 30,
+    "used": 10,
+    "left": 20,
+    "blocked": false
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(28, True)",
+   "value": {
+    "allowed": true,
+    "level": "ok",
+    "flags": [],
+    "messages_th": [
+     "ตัวเลขเป็นค่าประมาณ ใช้เลือกไซซ์ประกอบตารางของร้านเสมอ รูปถูกลบหลังวัด"
+    ],
+    "manual_entry_ok": true
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(15, True)",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "minor_photo"
+    ],
+    "messages_th": [
+     "อายุต่ำกว่า 18 ปี ไม่ใช้การวัดจากรูป — ให้ผู้ปกครองวัดด้วยสายวัดแล้วกรอกตัวเลขแทน"
+    ],
+    "manual_entry_ok": true
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(30, False)",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "other_person"
+    ],
+    "messages_th": [
+     "วัดได้เฉพาะตัวเอง หรือคนที่อยู่ด้วยและยินยอมเท่านั้น ห้ามใช้รูปคนอื่นจากโซเชียล"
+    ],
+    "manual_entry_ok": true
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(30, True, ('nudity',))",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "nudity"
+    ],
+    "messages_th": [
+     "ต้องใส่เสื้อผ้าพอดีตัว (เช่น เสื้อยืด+เลกกิ้ง) ห้ามถ่ายแบบไม่ใส่เสื้อผ้าหรือชุดชั้นในอย่างเดียว"
+    ],
+    "manual_entry_ok": true
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(30, True, ('loose_clothes',))",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "loose_clothes"
+    ],
+    "messages_th": [
+     "เสื้อผ้าหลวม ตัวเลขอาจคลาด ±5 ซม. ใส่ชุดพอดีตัวแล้วถ่ายใหม่จะแม่นขึ้น"
+    ],
+    "manual_entry_ok": true
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(40, True, ('multiple_people',))",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "multiple_people"
+    ],
+    "messages_th": [
+     "เห็นหลายคนในรูป ให้ถ่ายทีละคน"
+    ],
+    "manual_entry_ok": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "None",
+   "value": {
+    "flag": null,
+    "level": "ok",
+    "message_th": "ตัวเลขเป็นค่าประมาณ ใช้เลือกไซซ์ประกอบตารางของร้านเสมอ รูปถูกลบหลังวัด",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "nudity",
+   "value": {
+    "flag": "nudity",
+    "level": "stop",
+    "message_th": "ต้องใส่เสื้อผ้าพอดีตัว (เช่น เสื้อยืด+เลกกิ้ง) ห้ามถ่ายแบบไม่ใส่เสื้อผ้าหรือชุดชั้นในอย่างเดียว",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "minor_photo",
+   "value": {
+    "flag": "minor_photo",
+    "level": "stop",
+    "message_th": "อายุต่ำกว่า 18 ปี ไม่ใช้การวัดจากรูป — ให้ผู้ปกครองวัดด้วยสายวัดแล้วกรอกตัวเลขแทน",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "other_person",
+   "value": {
+    "flag": "other_person",
+    "level": "stop",
+    "message_th": "วัดได้เฉพาะตัวเอง หรือคนที่อยู่ด้วยและยินยอมเท่านั้น ห้ามใช้รูปคนอื่นจากโซเชียล",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "multiple_people",
+   "value": {
+    "flag": "multiple_people",
+    "level": "warn",
+    "message_th": "เห็นหลายคนในรูป ให้ถ่ายทีละคน",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "body_shaming",
+   "value": {
+    "flag": "body_shaming",
+    "level": "stop",
+    "message_th": "แอปไม่ให้คะแนนรูปร่าง ไม่คำนวณ 'หุ่นดี/ไม่ดี' และไม่แนะนำลดน้ำหนัก",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "loose_clothes",
+   "value": {
+    "flag": "loose_clothes",
+    "level": "warn",
+    "message_th": "เสื้อผ้าหลวม ตัวเลขอาจคลาด ±5 ซม. ใส่ชุดพอดีตัวแล้วถ่ายใหม่จะแม่นขึ้น",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "medical_use",
+   "value": {
+    "flag": "medical_use",
+    "level": "warn",
+    "message_th": "ไม่ใช้แทนการวัดทางการแพทย์หรือตัดชุดพิธีที่ต้องเป๊ะ ให้ช่างวัดจริง",
+    "block": false
+   }
+  }
+ ]
+}

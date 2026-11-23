@@ -1,0 +1,1091 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://github.com/arm-haha/ai-wanla-app/2026-12-22-sizesure/schemas.json",
+ "title": "SizeSure",
+ "$defs": {
+  "Person": {
+   "type": "object",
+   "required": [
+    "id",
+    "name_th",
+    "name_en",
+    "age",
+    "height_cm",
+    "city_th",
+    "updated"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "name_th": {
+     "type": "string"
+    },
+    "name_en": {
+     "type": "string"
+    },
+    "age": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 110
+    },
+    "height_cm": {
+     "type": "number",
+     "minimum": 50,
+     "maximum": 230
+    },
+    "city_th": {
+     "type": "string"
+    },
+    "updated": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    }
+   },
+   "additionalProperties": false
+  },
+  "BodyPhoto": {
+   "type": "object",
+   "required": [
+    "id",
+    "light",
+    "full_body",
+    "pose_ok",
+    "clothing",
+    "ref_visible"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "light": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "full_body": {
+     "enum": [
+      0,
+      1
+     ]
+    },
+    "pose_ok": {
+     "enum": [
+      0,
+      1
+     ]
+    },
+    "clothing": {
+     "enum": [
+      "fitted",
+      "normal",
+      "loose",
+      "bulky"
+     ]
+    },
+    "ref_visible": {
+     "enum": [
+      0,
+      1
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "PhotoCheck": {
+   "type": "object",
+   "required": [
+    "score",
+    "ok",
+    "tips_th"
+   ],
+   "properties": {
+    "score": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 100
+    },
+    "ok": {
+     "type": "boolean"
+    },
+    "tips_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "AiBodyMeasure": {
+   "type": "object",
+   "required": [
+    "front",
+    "side",
+    "a4_px",
+    "clothing",
+    "people",
+    "nudity",
+    "pose_ok",
+    "confidence"
+   ],
+   "properties": {
+    "front": {
+     "type": "object",
+     "required": [
+      "height_px",
+      "shoulder_px",
+      "chest_px",
+      "waist_px",
+      "hip_px",
+      "inseam_px",
+      "arm_px"
+     ],
+     "properties": {
+      "height_px": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "shoulder_px": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "chest_px": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "waist_px": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "hip_px": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "inseam_px": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "arm_px": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      }
+     },
+     "additionalProperties": false
+    },
+    "side": {
+     "type": "object",
+     "required": [
+      "height_px",
+      "chest_px",
+      "waist_px",
+      "hip_px"
+     ],
+     "properties": {
+      "height_px": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "chest_px": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "waist_px": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "hip_px": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      }
+     },
+     "additionalProperties": false
+    },
+    "a4_px": {
+     "type": [
+      "number",
+      "null"
+     ],
+     "exclusiveMinimum": 0
+    },
+    "clothing": {
+     "enum": [
+      "fitted",
+      "normal",
+      "loose",
+      "bulky"
+     ]
+    },
+    "people": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "nudity": {
+     "type": "boolean"
+    },
+    "pose_ok": {
+     "type": "boolean"
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "Measurements": {
+   "type": "object",
+   "required": [
+    "height_cm",
+    "cm",
+    "margin_cm",
+    "clothing",
+    "warnings",
+    "scale_note_th",
+    "source"
+   ],
+   "properties": {
+    "height_cm": {
+     "type": "number"
+    },
+    "cm": {
+     "type": "object",
+     "required": [
+      "chest",
+      "waist",
+      "hip",
+      "shoulder",
+      "inseam",
+      "sleeve"
+     ],
+     "properties": {
+      "chest": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "waist": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "hip": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "shoulder": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "inseam": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "sleeve": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      }
+     },
+     "additionalProperties": false
+    },
+    "margin_cm": {
+     "type": "number",
+     "exclusiveMinimum": 0
+    },
+    "clothing": {
+     "enum": [
+      "fitted",
+      "normal",
+      "loose",
+      "bulky"
+     ]
+    },
+    "warnings": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "scale_mismatch",
+       "loose_clothes"
+      ]
+     }
+    },
+    "scale_note_th": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "source": {
+     "enum": [
+      "photo",
+      "tape",
+      "mixed"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "AiChartRead": {
+   "type": "object",
+   "required": [
+    "unit",
+    "method",
+    "rows"
+   ],
+   "properties": {
+    "shop_th": {
+     "type": "string"
+    },
+    "unit": {
+     "enum": [
+      "cm",
+      "inch"
+     ]
+    },
+    "method": {
+     "enum": [
+      "body",
+      "garment",
+      "flat"
+     ]
+    },
+    "rows": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "label",
+       "values"
+      ],
+      "properties": {
+       "label": {
+        "type": "string"
+       },
+       "values": {
+        "type": "object",
+        "additionalProperties": {
+         "oneOf": [
+          {
+           "type": "number",
+           "exclusiveMinimum": 0
+          },
+          {
+           "type": "array",
+           "items": {
+            "type": "number",
+            "exclusiveMinimum": 0
+           },
+           "minItems": 2,
+           "maxItems": 2
+          }
+         ]
+        }
+       }
+      },
+      "additionalProperties": false
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "SizeChart": {
+   "type": "object",
+   "required": [
+    "shop_th",
+    "kind",
+    "rows",
+    "converted",
+    "note_th"
+   ],
+   "properties": {
+    "shop_th": {
+     "type": "string"
+    },
+    "kind": {
+     "enum": [
+      "body",
+      "garment"
+     ]
+    },
+    "rows": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "label",
+       "cm"
+      ],
+      "properties": {
+       "label": {
+        "type": "string"
+       },
+       "cm": {
+        "type": "object",
+        "additionalProperties": {
+         "type": "array",
+         "items": {
+          "type": "number"
+         },
+         "minItems": 2,
+         "maxItems": 2
+        }
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "converted": {
+     "type": "boolean"
+    },
+    "note_th": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "AreaFit": {
+   "type": "object",
+   "required": [
+    "area",
+    "body_cm",
+    "range_cm",
+    "ease_cm",
+    "label"
+   ],
+   "properties": {
+    "area": {
+     "enum": [
+      "chest",
+      "waist",
+      "hip"
+     ]
+    },
+    "body_cm": {
+     "type": "number"
+    },
+    "range_cm": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "minItems": 2,
+     "maxItems": 2
+    },
+    "ease_cm": {
+     "type": "number"
+    },
+    "label": {
+     "enum": [
+      "good",
+      "tight",
+      "loose"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "SizeRecommendation": {
+   "type": "object",
+   "required": [
+    "best",
+    "second",
+    "fit",
+    "between_sizes",
+    "confidence",
+    "advice_th",
+    "kind",
+    "fit_pref",
+    "stretch"
+   ],
+   "properties": {
+    "best": {
+     "type": "string"
+    },
+    "second": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "fit": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/AreaFit"
+     },
+     "minItems": 1
+    },
+    "between_sizes": {
+     "type": "boolean"
+    },
+    "confidence": {
+     "enum": [
+      "high",
+      "medium",
+      "low"
+     ]
+    },
+    "advice_th": {
+     "type": "string"
+    },
+    "kind": {
+     "enum": [
+      "top",
+      "dress",
+      "bottom"
+     ]
+    },
+    "fit_pref": {
+     "enum": [
+      "slim",
+      "regular",
+      "oversize"
+     ]
+    },
+    "stretch": {
+     "enum": [
+      "none",
+      "some",
+      "high"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShoeSize": {
+   "type": "object",
+   "required": [
+    "foot_cm",
+    "shoe_cm",
+    "eu",
+    "us_women",
+    "us_men",
+    "uk",
+    "width",
+    "approx",
+    "note_th"
+   ],
+   "properties": {
+    "foot_cm": {
+     "type": "number",
+     "exclusiveMinimum": 0
+    },
+    "shoe_cm": {
+     "type": "number",
+     "exclusiveMinimum": 0
+    },
+    "eu": {
+     "type": "number"
+    },
+    "us_women": {
+     "type": "number"
+    },
+    "us_men": {
+     "type": "number"
+    },
+    "uk": {
+     "type": "number"
+    },
+    "width": {
+     "enum": [
+      "narrow",
+      "regular",
+      "wide",
+      null
+     ]
+    },
+    "approx": {
+     "const": true
+    },
+    "note_th": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "SizePassport": {
+   "type": "object",
+   "required": [
+    "name_th",
+    "updated",
+    "top",
+    "jeans_waist_in",
+    "cm",
+    "inch",
+    "shoe_eu",
+    "margin_cm",
+    "share_numbers"
+   ],
+   "properties": {
+    "name_th": {
+     "type": "string"
+    },
+    "updated": {
+     "type": "string"
+    },
+    "top": {
+     "enum": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+     ]
+    },
+    "jeans_waist_in": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "cm": {
+     "type": "object",
+     "required": [
+      "chest",
+      "waist",
+      "hip"
+     ],
+     "properties": {
+      "chest": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "waist": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "hip": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      }
+     },
+     "additionalProperties": false
+    },
+    "inch": {
+     "type": "object",
+     "required": [
+      "chest",
+      "waist",
+      "hip"
+     ],
+     "properties": {
+      "chest": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "waist": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "hip": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      }
+     },
+     "additionalProperties": false
+    },
+    "shoe_eu": {
+     "type": [
+      "number",
+      "null"
+     ]
+    },
+    "margin_cm": {
+     "type": "number",
+     "exclusiveMinimum": 0
+    },
+    "share_numbers": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "GiftPick": {
+   "type": "object",
+   "required": [
+    "for_th",
+    "kind",
+    "size",
+    "jeans_waist_in",
+    "shoe_eu",
+    "tip_th"
+   ],
+   "properties": {
+    "for_th": {
+     "type": "string"
+    },
+    "kind": {
+     "enum": [
+      "top",
+      "bottom",
+      "shoes"
+     ]
+    },
+    "size": {
+     "type": "string"
+    },
+    "jeans_waist_in": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "shoe_eu": {
+     "type": [
+      "number",
+      "null"
+     ]
+    },
+    "tip_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ReturnRisk": {
+   "type": "object",
+   "required": [
+    "level",
+    "points",
+    "reasons_th",
+    "tip_th"
+   ],
+   "properties": {
+    "level": {
+     "enum": [
+      "low",
+      "medium",
+      "high"
+     ]
+    },
+    "points": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "reasons_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "tip_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "LogEntry": {
+   "type": "object",
+   "required": [
+    "date",
+    "cm"
+   ],
+   "properties": {
+    "date": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "cm": {
+     "type": "object",
+     "required": [
+      "chest",
+      "waist",
+      "hip"
+     ],
+     "properties": {
+      "chest": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "waist": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "hip": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      }
+     },
+     "additionalProperties": false
+    }
+   },
+   "additionalProperties": false
+  },
+  "LogSummary": {
+   "type": "object",
+   "required": [
+    "today",
+    "entries",
+    "last_date",
+    "days_since",
+    "change_cm",
+    "hidden",
+    "remeasure",
+    "note_th"
+   ],
+   "properties": {
+    "today": {
+     "type": "string",
+     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "entries": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "last_date": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "days_since": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "change_cm": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "number"
+     }
+    },
+    "hidden": {
+     "type": "boolean"
+    },
+    "remeasure": {
+     "type": "boolean"
+    },
+    "note_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ShareCard": {
+   "type": "object",
+   "required": [
+    "layout",
+    "size",
+    "shows_numbers",
+    "top",
+    "shoe_eu",
+    "watermark",
+    "badge_th"
+   ],
+   "properties": {
+    "layout": {
+     "enum": [
+      "size_card",
+      "before_after",
+      "fit_meter"
+     ]
+    },
+    "size": {
+     "const": "1080x1350"
+    },
+    "shows_numbers": {
+     "const": false
+    },
+    "top": {
+     "type": "string"
+    },
+    "shoe_eu": {
+     "type": [
+      "number",
+      "null"
+     ]
+    },
+    "watermark": {
+     "type": "string"
+    },
+    "badge_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ReelShot": {
+   "type": "object",
+   "required": [
+    "kind",
+    "start",
+    "end",
+    "caption_th"
+   ],
+   "properties": {
+    "kind": {
+     "enum": [
+      "problem",
+      "photos",
+      "numbers",
+      "chart",
+      "fit",
+      "cta"
+     ]
+    },
+    "start": {
+     "type": "number",
+     "minimum": 0
+    },
+    "end": {
+     "type": "number"
+    },
+    "caption_th": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "ReelPlan": {
+   "type": "object",
+   "required": [
+    "seconds",
+    "ratio",
+    "bpm",
+    "shots",
+    "watermark"
+   ],
+   "properties": {
+    "seconds": {
+     "type": "integer",
+     "minimum": 15,
+     "maximum": 30
+    },
+    "ratio": {
+     "const": "9:16"
+    },
+    "bpm": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "shots": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ReelShot"
+     },
+     "minItems": 3
+    },
+    "watermark": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "Quota": {
+   "type": "object",
+   "required": [
+    "plan",
+    "measures_per_day",
+    "used",
+    "left",
+    "blocked"
+   ],
+   "properties": {
+    "plan": {
+     "enum": [
+      "free",
+      "plus"
+     ]
+    },
+    "measures_per_day": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "used": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "left": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "blocked": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "PrivacyCheck": {
+   "type": "object",
+   "required": [
+    "allowed",
+    "level",
+    "flags",
+    "messages_th",
+    "manual_entry_ok"
+   ],
+   "properties": {
+    "allowed": {
+     "type": "boolean"
+    },
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "flags": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "nudity",
+       "minor_photo",
+       "other_person",
+       "multiple_people",
+       "body_shaming",
+       "loose_clothes",
+       "medical_use"
+      ]
+     }
+    },
+    "messages_th": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "manual_entry_ok": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "SafetyGuard": {
+   "type": "object",
+   "required": [
+    "flag",
+    "level",
+    "message_th",
+    "block"
+   ],
+   "properties": {
+    "flag": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "level": {
+     "enum": [
+      "ok",
+      "warn",
+      "stop"
+     ]
+    },
+    "message_th": {
+     "type": "string"
+    },
+    "block": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}
