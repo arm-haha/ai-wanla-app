@@ -1,0 +1,29 @@
+ปิดเทอมแล้ว ลูกเบื่อ ขอแต่ดูจอ? 🖍️ สมุดระบายสีที่ขายก็มีแต่ภาพเดิม ๆ ลองเอารูปที่ลูกรักที่สุดในมือถือ น้องแมว ตุ๊กตาตัวโปรด ทะเลที่เพิ่งไป มาให้ AI แปลงเป็นหน้าระบายสีในไม่กี่วินาที แล้วปริ้นท์เป็นสมุดที่มีชื่อลูกบนปก 🐱✨
+วันนี้ AI วันละแอป ขอแจกแอป ColorMe (รูปไหนก็ได้ กลายเป็นหน้าระบายสี)
+
+✅ เลือกรูปในมือถือ → ได้หน้าระบายสีเส้นคม ช่องปิดสนิท ลดรายละเอียดให้เหมาะกับวัยอัตโนมัติ (3–5 ขวบเส้นหนา ช่องใหญ่ ไปจนถึงโหมดผู้ใหญ่ระบายคลายเครียด)
+✅ โหมดระบายตามเลข เลขอยู่กลางช่องเสมอ + ตารางสีชื่อไทยตรงกับสีเทียนที่มีทุกบ้าน
+✅ ปริ้นท์ A4 เป็นสมุดระบายสี "ของน้อง…" 1–12 หน้า มีหน้าเฉลย + โหมดประหยัดหมึก
+✅ ระบายเสร็จ ถ่ายกลับมา → Magic Reveal ภาพก่อน/หลังคู่กัน + ดาว 1–3 ดวงแบบชมล้วน ไม่มีคำว่าผิด
+✅ หน้าลากเส้นต่อจุดจากรูปเดียวกัน + ภารกิจระบายประจำวันสะสมสติกเกอร์ + แกลเลอรีครบ 8 หน้าได้สมุดผลงานประจำเดือน
+
+(ใช้รูปที่ถ่ายเอง · ประมวลผลบนเครื่อง รูปไม่ถูกอัปโหลด · การ์ดแชร์ซ่อนหน้าเด็กเสมอ · ไม่แปลงบัตร/เอกสาร · ตัวการ์ตูนลิขสิทธิ์ระบายในบ้านได้ ห้ามพิมพ์ขาย)
+
+แจกฟรีทั้ง PRD, Prompt และโค้ด ใครอยากได้ไปสร้างเองคอมเมนต์ว่า "COLOR" ได้เลย 👇
+#AIวันละแอป #ColorMe #ระบายสี #กิจกรรมปิดเทอม #ของเล่นลูก #AI
+
+--------------------------------------------------
+
+School's out, the kids are bored and only want screens? 🖍️ Store-bought coloring books are always the same pictures. Take the photos your child loves most, the family cat, a favourite teddy, last weekend's beach, and let AI turn them into coloring pages in seconds, then print a book with their name on the cover 🐱✨
+Today's free app from AI One App a Day: ColorMe
+
+✅ Pick any photo → a clean coloring page with closed shapes, auto-simplified for your child's age (thick lines and big areas for 3–5s, all the way up to a calm mode for grown-ups)
+✅ Colour-by-number mode with numbers always in the middle of each area + a legend matching everyday crayon colours
+✅ Print an A4 coloring book "by <your child>" with 1–12 pages, an answer key and an ink-saver mode
+✅ When it's done, snap it back → a Magic Reveal with before/after side by side + 1–3 stars that only praise, never "wrong"
+✅ A dot-to-dot page from the same photo, a daily coloring quest with sticker streaks, and a gallery that becomes a monthly art book at 8 pages
+
+(Use your own photos. Processed on the device, photos are never uploaded. Children's faces are always hidden on share cards. No ID cards or documents. Copyrighted characters are fine at home, never for sale.)
+
+The full PRD, prompts and code are free. Comment "COLOR" to get the pack 👇
+#AIOneAppADay #ColorMe #ColoringPages #KidsActivities #AI

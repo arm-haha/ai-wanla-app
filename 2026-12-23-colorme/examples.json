@@ -1,0 +1,3070 @@
+{
+ "examples": [
+  {
+   "def": "Child",
+   "note": "Khaopan",
+   "value": {
+    "id": "k01",
+    "name_th": "น้องข้าวปั้น",
+    "name_en": "Khaopan",
+    "age": 6,
+    "city_th": "นนทบุรี"
+   }
+  },
+  {
+   "def": "Child",
+   "note": "Khaitun",
+   "value": {
+    "id": "k02",
+    "name_th": "น้องไข่ตุ๋น",
+    "name_en": "Khaitun",
+    "age": 4,
+    "city_th": "เชียงใหม่"
+   }
+  },
+  {
+   "def": "Child",
+   "note": "Phupha",
+   "value": {
+    "id": "k03",
+    "name_th": "น้องภูผา",
+    "name_en": "Phupha",
+    "age": 10,
+    "city_th": "ขอนแก่น"
+   }
+  },
+  {
+   "def": "Child",
+   "note": "Fon",
+   "value": {
+    "id": "k04",
+    "name_th": "คุณแม่ฝน",
+    "name_en": "Fon",
+    "age": 36,
+    "city_th": "นนทบุรี"
+   }
+  },
+  {
+   "def": "Crayon",
+   "note": "red",
+   "value": {
+    "key": "red",
+    "name_th": "แดง",
+    "name_en": "Red",
+    "hex": "#E63946"
+   }
+  },
+  {
+   "def": "Crayon",
+   "note": "orange",
+   "value": {
+    "key": "orange",
+    "name_th": "ส้ม",
+    "name_en": "Orange",
+    "hex": "#F78C28"
+   }
+  },
+  {
+   "def": "Crayon",
+   "note": "yellow",
+   "value": {
+    "key": "yellow",
+    "name_th": "เหลือง",
+    "name_en": "Yellow",
+    "hex": "#FFD60A"
+   }
+  },
+  {
+   "def": "Crayon",
+   "note": "lime",
+   "value": {
+    "key": "lime",
+    "name_th": "เขียวอ่อน",
+    "name_en": "Light green",
+    "hex": "#96D250"
+   }
+  },
+  {
+   "def": "Crayon",
+   "note": "green",
+   "value": {
+    "key": "green",
+    "name_th": "เขียว",
+    "name_en": "Green",
+    "hex": "#289646"
+   }
+  },
+  {
+   "def": "Crayon",
+   "note": "sky",
+   "value": {
+    "key": "sky",
+    "name_th": "ฟ้า",
+    "name_en": "Sky blue",
+    "hex": "#78BEF0"
+   }
+  },
+  {
+   "def": "Crayon",
+   "note": "blue",
+   "value": {
+    "key": "blue",
+    "name_th": "น้ำเงิน",
+    "name_en": "Blue",
+    "hex": "#1E50BE"
+   }
+  },
+  {
+   "def": "Crayon",
+   "note": "purple",
+   "value": {
+    "key": "purple",
+    "name_th": "ม่วง",
+    "name_en": "Purple",
+    "hex": "#8C50BE"
+   }
+  },
+  {
+   "def": "Crayon",
+   "note": "pink",
+   "value": {
+    "key": "pink",
+    "name_th": "ชมพู",
+    "name_en": "Pink",
+    "hex": "#FF8CB4"
+   }
+  },
+  {
+   "def": "Crayon",
+   "note": "brown",
+   "value": {
+    "key": "brown",
+    "name_th": "น้ำตาล",
+    "name_en": "Brown",
+    "hex": "#8C5A32"
+   }
+  },
+  {
+   "def": "Crayon",
+   "note": "gray",
+   "value": {
+    "key": "gray",
+    "name_th": "เทา",
+    "name_en": "Gray",
+    "hex": "#96969B"
+   }
+  },
+  {
+   "def": "Crayon",
+   "note": "black",
+   "value": {
+    "key": "black",
+    "name_th": "ดำ",
+    "name_en": "Black",
+    "hex": "#1E1E1E"
+   }
+  },
+  {
+   "def": "Crayon",
+   "note": "white",
+   "value": {
+    "key": "white",
+    "name_th": "ขาว (เว้นไว้)",
+    "name_en": "White (leave blank)",
+    "hex": "#FAFAFA"
+   }
+  },
+  {
+   "def": "Level",
+   "note": "tiny",
+   "value": {
+    "key": "tiny",
+    "ages": [
+     3,
+     5
+    ],
+    "name_th": "ตัวจิ๋ว 3–5 ขวบ",
+    "max_colors": 4,
+    "min_area": 24,
+    "max_regions": 12,
+    "line_px": 8,
+    "numbers": false,
+    "dots": 10
+   }
+  },
+  {
+   "def": "Level",
+   "note": "kid",
+   "value": {
+    "key": "kid",
+    "ages": [
+     6,
+     8
+    ],
+    "name_th": "ประถมต้น 6–8 ขวบ",
+    "max_colors": 7,
+    "min_area": 6,
+    "max_regions": 30,
+    "line_px": 5,
+    "numbers": true,
+    "dots": 20
+   }
+  },
+  {
+   "def": "Level",
+   "note": "big",
+   "value": {
+    "key": "big",
+    "ages": [
+     9,
+     12
+    ],
+    "name_th": "ประถมปลาย 9–12 ปี",
+    "max_colors": 8,
+    "min_area": 2,
+    "max_regions": 60,
+    "line_px": 3,
+    "numbers": true,
+    "dots": 40
+   }
+  },
+  {
+   "def": "Level",
+   "note": "calm",
+   "value": {
+    "key": "calm",
+    "ages": [
+     13,
+     120
+    ],
+    "name_th": "ผู้ใหญ่ระบายคลายเครียด",
+    "max_colors": 12,
+    "min_area": 1,
+    "max_regions": 200,
+    "line_px": 2,
+    "numbers": true,
+    "dots": 80
+   }
+  },
+  {
+   "def": "PhotoInput",
+   "note": "p01",
+   "value": {
+    "id": "p01",
+    "light": 0.9,
+    "sharp": 0.85,
+    "subject": 0.6,
+    "busy": 0.3,
+    "w": 24,
+    "h": 30
+   }
+  },
+  {
+   "def": "PhotoCheck",
+   "note": "p01",
+   "value": {
+    "score": 78,
+    "ok": true,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "PhotoInput",
+   "note": "p02",
+   "value": {
+    "id": "p02",
+    "light": 0.6,
+    "sharp": 0.7,
+    "subject": 0.25,
+    "busy": 0.5,
+    "w": 96,
+    "h": 120
+   }
+  },
+  {
+   "def": "PhotoCheck",
+   "note": "p02",
+   "value": {
+    "score": 53,
+    "ok": false,
+    "tips_th": [
+     "ตัวหลักเล็กไป ครอปให้ใหญ่ขึ้น"
+    ]
+   }
+  },
+  {
+   "def": "PhotoInput",
+   "note": "p03",
+   "value": {
+    "id": "p03",
+    "light": 0.4,
+    "sharp": 0.3,
+    "subject": 0.2,
+    "busy": 0.8,
+    "w": 96,
+    "h": 72
+   }
+  },
+  {
+   "def": "PhotoCheck",
+   "note": "p03",
+   "value": {
+    "score": 29,
+    "ok": false,
+    "tips_th": [
+     "รูปมืดไป เลือกรูปที่สว่างกว่านี้",
+     "รูปเบลอ เส้นจะขาด ๆ เลือกรูปที่ชัดกว่า",
+     "ตัวหลักเล็กไป ครอปให้ใหญ่ขึ้น",
+     "พื้นหลังรกมาก เปิด 'ลบพื้นหลัง' จะได้เส้นสวยขึ้น"
+    ]
+   }
+  },
+  {
+   "def": "AiPhotoClean",
+   "note": "แมวส้มนั่งบนสนามหญ้า",
+   "value": {
+    "subject_th": "แมวส้มนั่งบนสนามหญ้า",
+    "background": "simplify",
+    "people": 0,
+    "child_faces": 0,
+    "nudity": false,
+    "id_document": false,
+    "violent": false,
+    "copyright_character": false,
+    "suggested_title_th": "น้องส้มจี๊ดอาบแดด",
+    "confidence": 0.93
+   }
+  },
+  {
+   "def": "AiPhotoClean",
+   "note": "เด็กสองคนเล่นทราย",
+   "value": {
+    "subject_th": "เด็กสองคนเล่นทราย",
+    "background": "remove",
+    "people": 2,
+    "child_faces": 2,
+    "nudity": false,
+    "id_document": false,
+    "violent": false,
+    "copyright_character": false,
+    "suggested_title_th": "ปิดเทอมที่ทะเล",
+    "confidence": 0.81
+   }
+  },
+  {
+   "def": "AiPhotoClean",
+   "note": "ตุ๊กตาการ์ตูนหมีสีน้ำตาล",
+   "value": {
+    "subject_th": "ตุ๊กตาการ์ตูนหมีสีน้ำตาล",
+    "background": "keep",
+    "people": 0,
+    "child_faces": 0,
+    "nudity": false,
+    "id_document": false,
+    "violent": false,
+    "copyright_character": true,
+    "suggested_title_th": "ตุ๊กตาหมีตัวโปรด",
+    "confidence": 0.77
+   }
+  },
+  {
+   "def": "AiPhotoClean",
+   "note": "บัตรประจำตัว",
+   "value": {
+    "subject_th": "บัตรประจำตัว",
+    "background": "keep",
+    "people": 1,
+    "child_faces": 0,
+    "nudity": false,
+    "id_document": true,
+    "violent": false,
+    "copyright_character": false,
+    "suggested_title_th": "-",
+    "confidence": 0.9
+   }
+  },
+  {
+   "def": "Palette",
+   "note": "4",
+   "value": {
+    "level": "tiny",
+    "keys": [
+     "orange",
+     "yellow",
+     "lime",
+     "sky"
+    ]
+   }
+  },
+  {
+   "def": "Palette",
+   "note": "6",
+   "value": {
+    "level": "kid",
+    "keys": [
+     "red",
+     "orange",
+     "yellow",
+     "lime",
+     "green",
+     "sky",
+     "brown"
+    ]
+   }
+  },
+  {
+   "def": "Palette",
+   "note": "10",
+   "value": {
+    "level": "big",
+    "keys": [
+     "red",
+     "orange",
+     "yellow",
+     "lime",
+     "green",
+     "sky",
+     "brown",
+     "black"
+    ]
+   }
+  },
+  {
+   "def": "Palette",
+   "note": "36",
+   "value": {
+    "level": "calm",
+    "keys": [
+     "red",
+     "orange",
+     "yellow",
+     "lime",
+     "green",
+     "sky",
+     "brown",
+     "black"
+    ]
+   }
+  },
+  {
+   "def": "ColoringPage",
+   "note": "tiny 4y",
+   "value": {
+    "level": "tiny",
+    "mode": "numbers",
+    "w": 24,
+    "h": 30,
+    "colors": 4,
+    "regions": 4,
+    "min_area": 24,
+    "simplify_passes": 0,
+    "line_px": 8,
+    "show_numbers": false,
+    "edge_ratio": 0.15,
+    "legend": [
+     {
+      "num": 1,
+      "key": "orange",
+      "name_th": "ส้ม",
+      "hex": "#F78C28",
+      "regions": 1
+     },
+     {
+      "num": 2,
+      "key": "yellow",
+      "name_th": "เหลือง",
+      "hex": "#FFD60A",
+      "regions": 1
+     },
+     {
+      "num": 3,
+      "key": "lime",
+      "name_th": "เขียวอ่อน",
+      "hex": "#96D250",
+      "regions": 1
+     },
+     {
+      "num": 4,
+      "key": "sky",
+      "name_th": "ฟ้า",
+      "hex": "#78BEF0",
+      "regions": 1
+     }
+    ],
+    "labels": []
+   }
+  },
+  {
+   "def": "ColoringPage",
+   "note": "kid 6y numbers",
+   "value": {
+    "level": "kid",
+    "mode": "numbers",
+    "w": 24,
+    "h": 30,
+    "colors": 6,
+    "regions": 8,
+    "min_area": 6,
+    "simplify_passes": 0,
+    "line_px": 5,
+    "show_numbers": true,
+    "edge_ratio": 0.217,
+    "legend": [
+     {
+      "num": 1,
+      "key": "red",
+      "name_th": "แดง",
+      "hex": "#E63946",
+      "regions": 1
+     },
+     {
+      "num": 2,
+      "key": "orange",
+      "name_th": "ส้ม",
+      "hex": "#F78C28",
+      "regions": 2
+     },
+     {
+      "num": 3,
+      "key": "yellow",
+      "name_th": "เหลือง",
+      "hex": "#FFD60A",
+      "regions": 1
+     },
+     {
+      "num": 4,
+      "key": "lime",
+      "name_th": "เขียวอ่อน",
+      "hex": "#96D250",
+      "regions": 1
+     },
+     {
+      "num": 5,
+      "key": "sky",
+      "name_th": "ฟ้า",
+      "hex": "#78BEF0",
+      "regions": 1
+     },
+     {
+      "num": 6,
+      "key": "brown",
+      "name_th": "น้ำตาล",
+      "hex": "#8C5A32",
+      "regions": 2
+     }
+    ],
+    "labels": [
+     {
+      "region": 1,
+      "num": 5,
+      "x": 4,
+      "y": 4,
+      "fits": true
+     },
+     {
+      "region": 2,
+      "num": 3,
+      "x": 18,
+      "y": 4,
+      "fits": true
+     },
+     {
+      "region": 3,
+      "num": 2,
+      "x": 12,
+      "y": 10,
+      "fits": true
+     },
+     {
+      "region": 4,
+      "num": 1,
+      "x": 9,
+      "y": 15,
+      "fits": true
+     },
+     {
+      "region": 5,
+      "num": 2,
+      "x": 8,
+      "y": 17,
+      "fits": true
+     },
+     {
+      "region": 6,
+      "num": 4,
+      "x": 4,
+      "y": 25,
+      "fits": true
+     },
+     {
+      "region": 7,
+      "num": 6,
+      "x": 8,
+      "y": 19,
+      "fits": true
+     },
+     {
+      "region": 8,
+      "num": 6,
+      "x": 8,
+      "y": 22,
+      "fits": true
+     }
+    ]
+   }
+  },
+  {
+   "def": "ColoringPage",
+   "note": "big 10y",
+   "value": {
+    "level": "big",
+    "mode": "numbers",
+    "w": 24,
+    "h": 30,
+    "colors": 8,
+    "regions": 19,
+    "min_area": 2,
+    "simplify_passes": 0,
+    "line_px": 3,
+    "show_numbers": true,
+    "edge_ratio": 0.296,
+    "legend": [
+     {
+      "num": 1,
+      "key": "red",
+      "name_th": "แดง",
+      "hex": "#E63946",
+      "regions": 1
+     },
+     {
+      "num": 2,
+      "key": "orange",
+      "name_th": "ส้ม",
+      "hex": "#F78C28",
+      "regions": 2
+     },
+     {
+      "num": 3,
+      "key": "yellow",
+      "name_th": "เหลือง",
+      "hex": "#FFD60A",
+      "regions": 1
+     },
+     {
+      "num": 4,
+      "key": "lime",
+      "name_th": "เขียวอ่อน",
+      "hex": "#96D250",
+      "regions": 1
+     },
+     {
+      "num": 5,
+      "key": "green",
+      "name_th": "เขียว",
+      "hex": "#289646",
+      "regions": 9
+     },
+     {
+      "num": 6,
+      "key": "sky",
+      "name_th": "ฟ้า",
+      "hex": "#78BEF0",
+      "regions": 1
+     },
+     {
+      "num": 7,
+      "key": "brown",
+      "name_th": "น้ำตาล",
+      "hex": "#8C5A32",
+      "regions": 2
+     },
+     {
+      "num": 8,
+      "key": "black",
+      "name_th": "ดำ",
+      "hex": "#1E1E1E",
+      "regions": 2
+     }
+    ],
+    "labels": [
+     {
+      "region": 1,
+      "num": 6,
+      "x": 4,
+      "y": 4,
+      "fits": true
+     },
+     {
+      "region": 2,
+      "num": 3,
+      "x": 18,
+      "y": 4,
+      "fits": true
+     },
+     {
+      "region": 3,
+      "num": 2,
+      "x": 9,
+      "y": 7,
+      "fits": true
+     },
+     {
+      "region": 4,
+      "num": 8,
+      "x": 10,
+      "y": 9,
+      "fits": false
+     },
+     {
+      "region": 5,
+      "num": 8,
+      "x": 14,
+      "y": 9,
+      "fits": false
+     },
+     {
+      "region": 6,
+      "num": 1,
+      "x": 9,
+      "y": 15,
+      "fits": true
+     },
+     {
+      "region": 7,
+      "num": 2,
+      "x": 8,
+      "y": 17,
+      "fits": true
+     },
+     {
+      "region": 8,
+      "num": 4,
+      "x": 2,
+      "y": 21,
+      "fits": true
+     },
+     {
+      "region": 9,
+      "num": 7,
+      "x": 8,
+      "y": 19,
+      "fits": true
+     },
+     {
+      "region": 10,
+      "num": 7,
+      "x": 8,
+      "y": 22,
+      "fits": true
+     },
+     {
+      "region": 11,
+      "num": 5,
+      "x": 1,
+      "y": 24,
+      "fits": false
+     },
+     {
+      "region": 12,
+      "num": 5,
+      "x": 6,
+      "y": 24,
+      "fits": false
+     },
+     {
+      "region": 13,
+      "num": 5,
+      "x": 21,
+      "y": 24,
+      "fits": false
+     },
+     {
+      "region": 14,
+      "num": 5,
+      "x": 16,
+      "y": 25,
+      "fits": false
+     },
+     {
+      "region": 15,
+      "num": 5,
+      "x": 1,
+      "y": 28,
+      "fits": false
+     },
+     {
+      "region": 16,
+      "num": 5,
+      "x": 6,
+      "y": 28,
+      "fits": false
+     },
+     {
+      "region": 17,
+      "num": 5,
+      "x": 11,
+      "y": 28,
+      "fits": false
+     },
+     {
+      "region": 18,
+      "num": 5,
+      "x": 16,
+      "y": 28,
+      "fits": false
+     },
+     {
+      "region": 19,
+      "num": 5,
+      "x": 21,
+      "y": 28,
+      "fits": false
+     }
+    ]
+   }
+  },
+  {
+   "def": "ColoringPage",
+   "note": "calm adult",
+   "value": {
+    "level": "calm",
+    "mode": "numbers",
+    "w": 24,
+    "h": 30,
+    "colors": 8,
+    "regions": 19,
+    "min_area": 1,
+    "simplify_passes": 0,
+    "line_px": 2,
+    "show_numbers": true,
+    "edge_ratio": 0.296,
+    "legend": [
+     {
+      "num": 1,
+      "key": "red",
+      "name_th": "แดง",
+      "hex": "#E63946",
+      "regions": 1
+     },
+     {
+      "num": 2,
+      "key": "orange",
+      "name_th": "ส้ม",
+      "hex": "#F78C28",
+      "regions": 2
+     },
+     {
+      "num": 3,
+      "key": "yellow",
+      "name_th": "เหลือง",
+      "hex": "#FFD60A",
+      "regions": 1
+     },
+     {
+      "num": 4,
+      "key": "lime",
+      "name_th": "เขียวอ่อน",
+      "hex": "#96D250",
+      "regions": 1
+     },
+     {
+      "num": 5,
+      "key": "green",
+      "name_th": "เขียว",
+      "hex": "#289646",
+      "regions": 9
+     },
+     {
+      "num": 6,
+      "key": "sky",
+      "name_th": "ฟ้า",
+      "hex": "#78BEF0",
+      "regions": 1
+     },
+     {
+      "num": 7,
+      "key": "brown",
+      "name_th": "น้ำตาล",
+      "hex": "#8C5A32",
+      "regions": 2
+     },
+     {
+      "num": 8,
+      "key": "black",
+      "name_th": "ดำ",
+      "hex": "#1E1E1E",
+      "regions": 2
+     }
+    ],
+    "labels": [
+     {
+      "region": 1,
+      "num": 6,
+      "x": 4,
+      "y": 4,
+      "fits": true
+     },
+     {
+      "region": 2,
+      "num": 3,
+      "x": 18,
+      "y": 4,
+      "fits": true
+     },
+     {
+      "region": 3,
+      "num": 2,
+      "x": 9,
+      "y": 7,
+      "fits": true
+     },
+     {
+      "region": 4,
+      "num": 8,
+      "x": 10,
+      "y": 9,
+      "fits": false
+     },
+     {
+      "region": 5,
+      "num": 8,
+      "x": 14,
+      "y": 9,
+      "fits": false
+     },
+     {
+      "region": 6,
+      "num": 1,
+      "x": 9,
+      "y": 15,
+      "fits": true
+     },
+     {
+      "region": 7,
+      "num": 2,
+      "x": 8,
+      "y": 17,
+      "fits": true
+     },
+     {
+      "region": 8,
+      "num": 4,
+      "x": 2,
+      "y": 21,
+      "fits": true
+     },
+     {
+      "region": 9,
+      "num": 7,
+      "x": 8,
+      "y": 19,
+      "fits": true
+     },
+     {
+      "region": 10,
+      "num": 7,
+      "x": 8,
+      "y": 22,
+      "fits": true
+     },
+     {
+      "region": 11,
+      "num": 5,
+      "x": 1,
+      "y": 24,
+      "fits": false
+     },
+     {
+      "region": 12,
+      "num": 5,
+      "x": 6,
+      "y": 24,
+      "fits": false
+     },
+     {
+      "region": 13,
+      "num": 5,
+      "x": 21,
+      "y": 24,
+      "fits": false
+     },
+     {
+      "region": 14,
+      "num": 5,
+      "x": 16,
+      "y": 25,
+      "fits": false
+     },
+     {
+      "region": 15,
+      "num": 5,
+      "x": 1,
+      "y": 28,
+      "fits": false
+     },
+     {
+      "region": 16,
+      "num": 5,
+      "x": 6,
+      "y": 28,
+      "fits": false
+     },
+     {
+      "region": 17,
+      "num": 5,
+      "x": 11,
+      "y": 28,
+      "fits": false
+     },
+     {
+      "region": 18,
+      "num": 5,
+      "x": 16,
+      "y": 28,
+      "fits": false
+     },
+     {
+      "region": 19,
+      "num": 5,
+      "x": 21,
+      "y": 28,
+      "fits": false
+     }
+    ]
+   }
+  },
+  {
+   "def": "ColoringPage",
+   "note": "kid lineart",
+   "value": {
+    "level": "kid",
+    "mode": "lineart",
+    "w": 24,
+    "h": 30,
+    "colors": 6,
+    "regions": 8,
+    "min_area": 6,
+    "simplify_passes": 0,
+    "line_px": 5,
+    "show_numbers": false,
+    "edge_ratio": 0.217,
+    "legend": [
+     {
+      "num": 1,
+      "key": "red",
+      "name_th": "แดง",
+      "hex": "#E63946",
+      "regions": 1
+     },
+     {
+      "num": 2,
+      "key": "orange",
+      "name_th": "ส้ม",
+      "hex": "#F78C28",
+      "regions": 2
+     },
+     {
+      "num": 3,
+      "key": "yellow",
+      "name_th": "เหลือง",
+      "hex": "#FFD60A",
+      "regions": 1
+     },
+     {
+      "num": 4,
+      "key": "lime",
+      "name_th": "เขียวอ่อน",
+      "hex": "#96D250",
+      "regions": 1
+     },
+     {
+      "num": 5,
+      "key": "sky",
+      "name_th": "ฟ้า",
+      "hex": "#78BEF0",
+      "regions": 1
+     },
+     {
+      "num": 6,
+      "key": "brown",
+      "name_th": "น้ำตาล",
+      "hex": "#8C5A32",
+      "regions": 2
+     }
+    ],
+    "labels": []
+   }
+  },
+  {
+   "def": "ColoringPage",
+   "note": "stripes auto-simplify",
+   "value": {
+    "level": "tiny",
+    "mode": "numbers",
+    "w": 40,
+    "h": 30,
+    "colors": 1,
+    "regions": 1,
+    "min_area": 96,
+    "simplify_passes": 2,
+    "line_px": 8,
+    "show_numbers": false,
+    "edge_ratio": 0.0,
+    "legend": [
+     {
+      "num": 1,
+      "key": "red",
+      "name_th": "แดง",
+      "hex": "#E63946",
+      "regions": 1
+     }
+    ],
+    "labels": []
+   }
+  },
+  {
+   "def": "ColoringPage",
+   "note": "big lineart",
+   "value": {
+    "level": "big",
+    "mode": "lineart",
+    "w": 24,
+    "h": 30,
+    "colors": 8,
+    "regions": 19,
+    "min_area": 2,
+    "simplify_passes": 0,
+    "line_px": 3,
+    "show_numbers": false,
+    "edge_ratio": 0.296,
+    "legend": [
+     {
+      "num": 1,
+      "key": "red",
+      "name_th": "แดง",
+      "hex": "#E63946",
+      "regions": 1
+     },
+     {
+      "num": 2,
+      "key": "orange",
+      "name_th": "ส้ม",
+      "hex": "#F78C28",
+      "regions": 2
+     },
+     {
+      "num": 3,
+      "key": "yellow",
+      "name_th": "เหลือง",
+      "hex": "#FFD60A",
+      "regions": 1
+     },
+     {
+      "num": 4,
+      "key": "lime",
+      "name_th": "เขียวอ่อน",
+      "hex": "#96D250",
+      "regions": 1
+     },
+     {
+      "num": 5,
+      "key": "green",
+      "name_th": "เขียว",
+      "hex": "#289646",
+      "regions": 9
+     },
+     {
+      "num": 6,
+      "key": "sky",
+      "name_th": "ฟ้า",
+      "hex": "#78BEF0",
+      "regions": 1
+     },
+     {
+      "num": 7,
+      "key": "brown",
+      "name_th": "น้ำตาล",
+      "hex": "#8C5A32",
+      "regions": 2
+     },
+     {
+      "num": 8,
+      "key": "black",
+      "name_th": "ดำ",
+      "hex": "#1E1E1E",
+      "regions": 2
+     }
+    ],
+    "labels": []
+   }
+  },
+  {
+   "def": "LegendItem",
+   "note": "red",
+   "value": {
+    "num": 1,
+    "key": "red",
+    "name_th": "แดง",
+    "hex": "#E63946",
+    "regions": 1
+   }
+  },
+  {
+   "def": "LegendItem",
+   "note": "orange",
+   "value": {
+    "num": 2,
+    "key": "orange",
+    "name_th": "ส้ม",
+    "hex": "#F78C28",
+    "regions": 2
+   }
+  },
+  {
+   "def": "LegendItem",
+   "note": "yellow",
+   "value": {
+    "num": 3,
+    "key": "yellow",
+    "name_th": "เหลือง",
+    "hex": "#FFD60A",
+    "regions": 1
+   }
+  },
+  {
+   "def": "LegendItem",
+   "note": "lime",
+   "value": {
+    "num": 4,
+    "key": "lime",
+    "name_th": "เขียวอ่อน",
+    "hex": "#96D250",
+    "regions": 1
+   }
+  },
+  {
+   "def": "LegendItem",
+   "note": "sky",
+   "value": {
+    "num": 5,
+    "key": "sky",
+    "name_th": "ฟ้า",
+    "hex": "#78BEF0",
+    "regions": 1
+   }
+  },
+  {
+   "def": "LegendItem",
+   "note": "brown",
+   "value": {
+    "num": 6,
+    "key": "brown",
+    "name_th": "น้ำตาล",
+    "hex": "#8C5A32",
+    "regions": 2
+   }
+  },
+  {
+   "def": "LegendItem",
+   "note": "red",
+   "value": {
+    "num": 1,
+    "key": "red",
+    "name_th": "แดง",
+    "hex": "#E63946",
+    "regions": 1
+   }
+  },
+  {
+   "def": "LegendItem",
+   "note": "orange",
+   "value": {
+    "num": 2,
+    "key": "orange",
+    "name_th": "ส้ม",
+    "hex": "#F78C28",
+    "regions": 2
+   }
+  },
+  {
+   "def": "LegendItem",
+   "note": "yellow",
+   "value": {
+    "num": 3,
+    "key": "yellow",
+    "name_th": "เหลือง",
+    "hex": "#FFD60A",
+    "regions": 1
+   }
+  },
+  {
+   "def": "LegendItem",
+   "note": "lime",
+   "value": {
+    "num": 4,
+    "key": "lime",
+    "name_th": "เขียวอ่อน",
+    "hex": "#96D250",
+    "regions": 1
+   }
+  },
+  {
+   "def": "LegendItem",
+   "note": "green",
+   "value": {
+    "num": 5,
+    "key": "green",
+    "name_th": "เขียว",
+    "hex": "#289646",
+    "regions": 9
+   }
+  },
+  {
+   "def": "LegendItem",
+   "note": "sky",
+   "value": {
+    "num": 6,
+    "key": "sky",
+    "name_th": "ฟ้า",
+    "hex": "#78BEF0",
+    "regions": 1
+   }
+  },
+  {
+   "def": "LegendItem",
+   "note": "brown",
+   "value": {
+    "num": 7,
+    "key": "brown",
+    "name_th": "น้ำตาล",
+    "hex": "#8C5A32",
+    "regions": 2
+   }
+  },
+  {
+   "def": "LegendItem",
+   "note": "black",
+   "value": {
+    "num": 8,
+    "key": "black",
+    "name_th": "ดำ",
+    "hex": "#1E1E1E",
+    "regions": 2
+   }
+  },
+  {
+   "def": "RegionLabel",
+   "note": "region 1",
+   "value": {
+    "region": 1,
+    "num": 5,
+    "x": 4,
+    "y": 4,
+    "fits": true
+   }
+  },
+  {
+   "def": "RegionLabel",
+   "note": "region 2",
+   "value": {
+    "region": 2,
+    "num": 3,
+    "x": 18,
+    "y": 4,
+    "fits": true
+   }
+  },
+  {
+   "def": "RegionLabel",
+   "note": "region 3",
+   "value": {
+    "region": 3,
+    "num": 2,
+    "x": 12,
+    "y": 10,
+    "fits": true
+   }
+  },
+  {
+   "def": "RegionLabel",
+   "note": "region 4",
+   "value": {
+    "region": 4,
+    "num": 1,
+    "x": 9,
+    "y": 15,
+    "fits": true
+   }
+  },
+  {
+   "def": "RegionLabel",
+   "note": "region 5",
+   "value": {
+    "region": 5,
+    "num": 2,
+    "x": 8,
+    "y": 17,
+    "fits": true
+   }
+  },
+  {
+   "def": "RegionLabel",
+   "note": "region 6",
+   "value": {
+    "region": 6,
+    "num": 4,
+    "x": 4,
+    "y": 25,
+    "fits": true
+   }
+  },
+  {
+   "def": "RegionLabel",
+   "note": "region 7",
+   "value": {
+    "region": 7,
+    "num": 6,
+    "x": 8,
+    "y": 19,
+    "fits": true
+   }
+  },
+  {
+   "def": "RegionLabel",
+   "note": "region 8",
+   "value": {
+    "region": 8,
+    "num": 6,
+    "x": 8,
+    "y": 22,
+    "fits": true
+   }
+  },
+  {
+   "def": "DotPage",
+   "note": "4",
+   "value": {
+    "level": "tiny",
+    "dots": [
+     {
+      "num": 1,
+      "x": 30.0,
+      "y": 20.0
+     },
+     {
+      "num": 2,
+      "x": 42.1,
+      "y": 15.0
+     },
+     {
+      "num": 3,
+      "x": 65.0,
+      "y": 5.1
+     },
+     {
+      "num": 4,
+      "x": 71.2,
+      "y": 32.1
+     },
+     {
+      "num": 5,
+      "x": 83.0,
+      "y": 56.9
+     },
+     {
+      "num": 6,
+      "x": 81.0,
+      "y": 84.1
+     },
+     {
+      "num": 7,
+      "x": 57.9,
+      "y": 90.0
+     },
+     {
+      "num": 8,
+      "x": 29.9,
+      "y": 90.0
+     },
+     {
+      "num": 9,
+      "x": 17.0,
+      "y": 72.0
+     },
+     {
+      "num": 10,
+      "x": 23.7,
+      "y": 46.7
+     }
+    ],
+    "perimeter": 280.8,
+    "spacing": 28.1,
+    "closed": true
+   }
+  },
+  {
+   "def": "DotPage",
+   "note": "6",
+   "value": {
+    "level": "kid",
+    "dots": [
+     {
+      "num": 1,
+      "x": 30.0,
+      "y": 20.0
+     },
+     {
+      "num": 2,
+      "x": 34.4,
+      "y": 6.7
+     },
+     {
+      "num": 3,
+      "x": 42.1,
+      "y": 15.0
+     },
+     {
+      "num": 4,
+      "x": 56.1,
+      "y": 15.0
+     },
+     {
+      "num": 5,
+      "x": 65.0,
+      "y": 5.1
+     },
+     {
+      "num": 6,
+      "x": 69.4,
+      "y": 18.3
+     },
+     {
+      "num": 7,
+      "x": 71.2,
+      "y": 32.1
+     },
+     {
+      "num": 8,
+      "x": 75.3,
+      "y": 45.1
+     },
+     {
+      "num": 9,
+      "x": 83.0,
+      "y": 56.9
+     },
+     {
+      "num": 10,
+      "x": 83.3,
+      "y": 70.2
+     },
+     {
+      "num": 11,
+      "x": 81.0,
+      "y": 84.1
+     },
+     {
+      "num": 12,
+      "x": 72.0,
+      "y": 90.0
+     },
+     {
+      "num": 13,
+      "x": 57.9,
+      "y": 90.0
+     },
+     {
+      "num": 14,
+      "x": 43.9,
+      "y": 90.0
+     },
+     {
+      "num": 15,
+      "x": 29.9,
+      "y": 90.0
+     },
+     {
+      "num": 16,
+      "x": 19.3,
+      "y": 85.9
+     },
+     {
+      "num": 17,
+      "x": 17.0,
+      "y": 72.0
+     },
+     {
+      "num": 18,
+      "x": 16.0,
+      "y": 58.5
+     },
+     {
+      "num": 19,
+      "x": 23.7,
+      "y": 46.7
+     },
+     {
+      "num": 20,
+      "x": 28.6,
+      "y": 34.0
+     }
+    ],
+    "perimeter": 280.8,
+    "spacing": 14.0,
+    "closed": true
+   }
+  },
+  {
+   "def": "DotPage",
+   "note": "10",
+   "value": {
+    "level": "big",
+    "dots": [
+     {
+      "num": 1,
+      "x": 30.0,
+      "y": 20.0
+     },
+     {
+      "num": 2,
+      "x": 32.2,
+      "y": 13.3
+     },
+     {
+      "num": 3,
+      "x": 34.4,
+      "y": 6.7
+     },
+     {
+      "num": 4,
+      "x": 38.0,
+      "y": 9.3
+     },
+     {
+      "num": 5,
+      "x": 42.1,
+      "y": 15.0
+     },
+     {
+      "num": 6,
+      "x": 49.1,
+      "y": 15.0
+     },
+     {
+      "num": 7,
+      "x": 56.1,
+      "y": 15.0
+     },
+     {
+      "num": 8,
+      "x": 60.9,
+      "y": 10.8
+     },
+     {
+      "num": 9,
+      "x": 65.0,
+      "y": 5.1
+     },
+     {
+      "num": 10,
+      "x": 67.2,
+      "y": 11.6
+     },
+     {
+      "num": 11,
+      "x": 69.4,
+      "y": 18.3
+     },
+     {
+      "num": 12,
+      "x": 70.5,
+      "y": 25.2
+     },
+     {
+      "num": 13,
+      "x": 71.2,
+      "y": 32.1
+     },
+     {
+      "num": 14,
+      "x": 71.9,
+      "y": 39.1
+     },
+     {
+      "num": 15,
+      "x": 75.3,
+      "y": 45.1
+     },
+     {
+      "num": 16,
+      "x": 79.2,
+      "y": 51.0
+     },
+     {
+      "num": 17,
+      "x": 83.0,
+      "y": 56.9
+     },
+     {
+      "num": 18,
+      "x": 84.5,
+      "y": 63.3
+     },
+     {
+      "num": 19,
+      "x": 83.3,
+      "y": 70.2
+     },
+     {
+      "num": 20,
+      "x": 82.1,
+      "y": 77.1
+     },
+     {
+      "num": 21,
+      "x": 81.0,
+      "y": 84.1
+     },
+     {
+      "num": 22,
+      "x": 79.0,
+      "y": 90.0
+     },
+     {
+      "num": 23,
+      "x": 72.0,
+      "y": 90.0
+     },
+     {
+      "num": 24,
+      "x": 65.0,
+      "y": 90.0
+     },
+     {
+      "num": 25,
+      "x": 57.9,
+      "y": 90.0
+     },
+     {
+      "num": 26,
+      "x": 50.9,
+      "y": 90.0
+     },
+     {
+      "num": 27,
+      "x": 43.9,
+      "y": 90.0
+     },
+     {
+      "num": 28,
+      "x": 36.9,
+      "y": 90.0
+     },
+     {
+      "num": 29,
+      "x": 29.9,
+      "y": 90.0
+     },
+     {
+      "num": 30,
+      "x": 22.8,
+      "y": 90.0
+     },
+     {
+      "num": 31,
+      "x": 19.3,
+      "y": 85.9
+     },
+     {
+      "num": 32,
+      "x": 18.2,
+      "y": 79.0
+     },
+     {
+      "num": 33,
+      "x": 17.0,
+      "y": 72.0
+     },
+     {
+      "num": 34,
+      "x": 15.9,
+      "y": 65.1
+     },
+     {
+      "num": 35,
+      "x": 16.0,
+      "y": 58.5
+     },
+     {
+      "num": 36,
+      "x": 19.8,
+      "y": 52.6
+     },
+     {
+      "num": 37,
+      "x": 23.7,
+      "y": 46.7
+     },
+     {
+      "num": 38,
+      "x": 27.5,
+      "y": 40.8
+     },
+     {
+      "num": 39,
+      "x": 28.6,
+      "y": 34.0
+     },
+     {
+      "num": 40,
+      "x": 29.3,
+      "y": 27.0
+     }
+    ],
+    "perimeter": 280.8,
+    "spacing": 7.0,
+    "closed": true
+   }
+  },
+  {
+   "def": "DotPage",
+   "note": "36",
+   "value": {
+    "level": "calm",
+    "dots": [
+     {
+      "num": 1,
+      "x": 30.0,
+      "y": 20.0
+     },
+     {
+      "num": 2,
+      "x": 31.1,
+      "y": 16.7
+     },
+     {
+      "num": 3,
+      "x": 32.2,
+      "y": 13.3
+     },
+     {
+      "num": 4,
+      "x": 33.3,
+      "y": 10.0
+     },
+     {
+      "num": 5,
+      "x": 34.4,
+      "y": 6.7
+     },
+     {
+      "num": 6,
+      "x": 36.0,
+      "y": 6.4
+     },
+     {
+      "num": 7,
+      "x": 38.0,
+      "y": 9.3
+     },
+     {
+      "num": 8,
+      "x": 40.0,
+      "y": 12.2
+     },
+     {
+      "num": 9,
+      "x": 42.1,
+      "y": 15.0
+     },
+     {
+      "num": 10,
+      "x": 45.6,
+      "y": 15.0
+     },
+     {
+      "num": 11,
+      "x": 49.1,
+      "y": 15.0
+     },
+     {
+      "num": 12,
+      "x": 52.6,
+      "y": 15.0
+     },
+     {
+      "num": 13,
+      "x": 56.1,
+      "y": 15.0
+     },
+     {
+      "num": 14,
+      "x": 58.9,
+      "y": 13.7
+     },
+     {
+      "num": 15,
+      "x": 60.9,
+      "y": 10.8
+     },
+     {
+      "num": 16,
+      "x": 62.9,
+      "y": 7.9
+     },
+     {
+      "num": 17,
+      "x": 65.0,
+      "y": 5.1
+     },
+     {
+      "num": 18,
+      "x": 66.1,
+      "y": 8.3
+     },
+     {
+      "num": 19,
+      "x": 67.2,
+      "y": 11.6
+     },
+     {
+      "num": 20,
+      "x": 68.3,
+      "y": 14.9
+     },
+     {
+      "num": 21,
+      "x": 69.4,
+      "y": 18.3
+     },
+     {
+      "num": 22,
+      "x": 70.2,
+      "y": 21.7
+     },
+     {
+      "num": 23,
+      "x": 70.5,
+      "y": 25.2
+     },
+     {
+      "num": 24,
+      "x": 70.9,
+      "y": 28.6
+     },
+     {
+      "num": 25,
+      "x": 71.2,
+      "y": 32.1
+     },
+     {
+      "num": 26,
+      "x": 71.6,
+      "y": 35.6
+     },
+     {
+      "num": 27,
+      "x": 71.9,
+      "y": 39.1
+     },
+     {
+      "num": 28,
+      "x": 73.4,
+      "y": 42.2
+     },
+     {
+      "num": 29,
+      "x": 75.3,
+      "y": 45.1
+     },
+     {
+      "num": 30,
+      "x": 77.3,
+      "y": 48.1
+     },
+     {
+      "num": 31,
+      "x": 79.2,
+      "y": 51.0
+     },
+     {
+      "num": 32,
+      "x": 81.1,
+      "y": 54.0
+     },
+     {
+      "num": 33,
+      "x": 83.0,
+      "y": 56.9
+     },
+     {
+      "num": 34,
+      "x": 84.9,
+      "y": 59.9
+     },
+     {
+      "num": 35,
+      "x": 84.5,
+      "y": 63.3
+     },
+     {
+      "num": 36,
+      "x": 83.9,
+      "y": 66.8
+     },
+     {
+      "num": 37,
+      "x": 83.3,
+      "y": 70.2
+     },
+     {
+      "num": 38,
+      "x": 82.7,
+      "y": 73.7
+     },
+     {
+      "num": 39,
+      "x": 82.1,
+      "y": 77.1
+     },
+     {
+      "num": 40,
+      "x": 81.6,
+      "y": 80.6
+     },
+     {
+      "num": 41,
+      "x": 81.0,
+      "y": 84.1
+     },
+     {
+      "num": 42,
+      "x": 80.4,
+      "y": 87.5
+     },
+     {
+      "num": 43,
+      "x": 79.0,
+      "y": 90.0
+     },
+     {
+      "num": 44,
+      "x": 75.5,
+      "y": 90.0
+     },
+     {
+      "num": 45,
+      "x": 72.0,
+      "y": 90.0
+     },
+     {
+      "num": 46,
+      "x": 68.5,
+      "y": 90.0
+     },
+     {
+      "num": 47,
+      "x": 65.0,
+      "y": 90.0
+     },
+     {
+      "num": 48,
+      "x": 61.5,
+      "y": 90.0
+     },
+     {
+      "num": 49,
+      "x": 57.9,
+      "y": 90.0
+     },
+     {
+      "num": 50,
+      "x": 54.4,
+      "y": 90.0
+     },
+     {
+      "num": 51,
+      "x": 50.9,
+      "y": 90.0
+     },
+     {
+      "num": 52,
+      "x": 47.4,
+      "y": 90.0
+     },
+     {
+      "num": 53,
+      "x": 43.9,
+      "y": 90.0
+     },
+     {
+      "num": 54,
+      "x": 40.4,
+      "y": 90.0
+     },
+     {
+      "num": 55,
+      "x": 36.9,
+      "y": 90.0
+     },
+     {
+      "num": 56,
+      "x": 33.4,
+      "y": 90.0
+     },
+     {
+      "num": 57,
+      "x": 29.9,
+      "y": 90.0
+     },
+     {
+      "num": 58,
+      "x": 26.4,
+      "y": 90.0
+     },
+     {
+      "num": 59,
+      "x": 22.8,
+      "y": 90.0
+     },
+     {
+      "num": 60,
+      "x": 19.9,
+      "y": 89.3
+     },
+     {
+      "num": 61,
+      "x": 19.3,
+      "y": 85.9
+     },
+     {
+      "num": 62,
+      "x": 18.7,
+      "y": 82.4
+     },
+     {
+      "num": 63,
+      "x": 18.2,
+      "y": 79.0
+     },
+     {
+      "num": 64,
+      "x": 17.6,
+      "y": 75.5
+     },
+     {
+      "num": 65,
+      "x": 17.0,
+      "y": 72.0
+     },
+     {
+      "num": 66,
+      "x": 16.4,
+      "y": 68.6
+     },
+     {
+      "num": 67,
+      "x": 15.9,
+      "y": 65.1
+     },
+     {
+      "num": 68,
+      "x": 15.3,
+      "y": 61.6
+     },
+     {
+      "num": 69,
+      "x": 16.0,
+      "y": 58.5
+     },
+     {
+      "num": 70,
+      "x": 17.9,
+      "y": 55.5
+     },
+     {
+      "num": 71,
+      "x": 19.8,
+      "y": 52.6
+     },
+     {
+      "num": 72,
+      "x": 21.7,
+      "y": 49.6
+     },
+     {
+      "num": 73,
+      "x": 23.7,
+      "y": 46.7
+     },
+     {
+      "num": 74,
+      "x": 25.6,
+      "y": 43.7
+     },
+     {
+      "num": 75,
+      "x": 27.5,
+      "y": 40.8
+     },
+     {
+      "num": 76,
+      "x": 28.3,
+      "y": 37.5
+     },
+     {
+      "num": 77,
+      "x": 28.6,
+      "y": 34.0
+     },
+     {
+      "num": 78,
+      "x": 29.0,
+      "y": 30.5
+     },
+     {
+      "num": 79,
+      "x": 29.3,
+      "y": 27.0
+     },
+     {
+      "num": 80,
+      "x": 29.7,
+      "y": 23.5
+     }
+    ],
+    "perimeter": 280.8,
+    "spacing": 3.5,
+    "closed": true
+   }
+  },
+  {
+   "def": "Dot",
+   "note": "1",
+   "value": {
+    "num": 1,
+    "x": 30.0,
+    "y": 20.0
+   }
+  },
+  {
+   "def": "Dot",
+   "note": "2",
+   "value": {
+    "num": 2,
+    "x": 42.1,
+    "y": 15.0
+   }
+  },
+  {
+   "def": "Dot",
+   "note": "3",
+   "value": {
+    "num": 3,
+    "x": 65.0,
+    "y": 5.1
+   }
+  },
+  {
+   "def": "Dot",
+   "note": "4",
+   "value": {
+    "num": 4,
+    "x": 71.2,
+    "y": 32.1
+   }
+  },
+  {
+   "def": "Dot",
+   "note": "5",
+   "value": {
+    "num": 5,
+    "x": 83.0,
+    "y": 56.9
+   }
+  },
+  {
+   "def": "Booklet",
+   "note": "3 pages",
+   "value": {
+    "title_th": "สมุดระบายสีของน้องข้าวปั้น",
+    "pages": 4,
+    "sheets_double_sided": 2,
+    "paper": "A4",
+    "dpi": 300,
+    "px": [
+     2480,
+     3508
+    ],
+    "ink_saver": false,
+    "line_px": 5,
+    "ink_pct": 6.3,
+    "has_answer_key": true
+   }
+  },
+  {
+   "def": "Booklet",
+   "note": "1 page",
+   "value": {
+    "title_th": "สมุดระบายสีของน้องข้าวปั้น",
+    "pages": 2,
+    "sheets_double_sided": 1,
+    "paper": "A4",
+    "dpi": 300,
+    "px": [
+     2480,
+     3508
+    ],
+    "ink_saver": false,
+    "line_px": 5,
+    "ink_pct": 6.5,
+    "has_answer_key": true
+   }
+  },
+  {
+   "def": "Booklet",
+   "note": "12 pages",
+   "value": {
+    "title_th": "สมุดระบายสีของน้องข้าวปั้น",
+    "pages": 13,
+    "sheets_double_sided": 7,
+    "paper": "A4",
+    "dpi": 300,
+    "px": [
+     2480,
+     3508
+    ],
+    "ink_saver": false,
+    "line_px": 5,
+    "ink_pct": 6.5,
+    "has_answer_key": false
+   }
+  },
+  {
+   "def": "Booklet",
+   "note": "ink saver",
+   "value": {
+    "title_th": "สมุดระบายสีของคุณแม่ฝน",
+    "pages": 3,
+    "sheets_double_sided": 2,
+    "paper": "A4",
+    "dpi": 300,
+    "px": [
+     2480,
+     3508
+    ],
+    "ink_saver": true,
+    "line_px": 2,
+    "ink_pct": 3.6,
+    "has_answer_key": true
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "done",
+   "value": {
+    "coverage_pct": 100,
+    "in_lines_pct": 100,
+    "match_pct": 100,
+    "stars": 3,
+    "favorite": "sky",
+    "praise_th": "เสร็จแล้ว! ผลงานศิลปินตัวจริง ชอบสีฟ้าที่เลือกจัง",
+    "done": true
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "half, some other colours",
+   "value": {
+    "coverage_pct": 50,
+    "in_lines_pct": 100,
+    "match_pct": 75,
+    "stars": 2,
+    "favorite": "sky",
+    "praise_th": "เกินครึ่งแล้ว สีสดใสมาก! ชอบสีฟ้าที่เลือกจัง",
+    "done": false
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "just started",
+   "value": {
+    "coverage_pct": 25,
+    "in_lines_pct": 100,
+    "match_pct": 100,
+    "stars": 1,
+    "favorite": "sky",
+    "praise_th": "เริ่มต้นได้สวยมาก! ระบายต่ออีกนิดนะ ชอบสีฟ้าที่เลือกจัง",
+    "done": false
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "over the line",
+   "value": {
+    "coverage_pct": 100,
+    "in_lines_pct": 96,
+    "match_pct": 100,
+    "stars": 3,
+    "favorite": "sky",
+    "praise_th": "เสร็จแล้ว! ผลงานศิลปินตัวจริง ชอบสีฟ้าที่เลือกจัง",
+    "done": true
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "lineart free colours",
+   "value": {
+    "coverage_pct": 100,
+    "in_lines_pct": 100,
+    "match_pct": null,
+    "stars": 3,
+    "favorite": "sky",
+    "praise_th": "เสร็จแล้ว! ผลงานศิลปินตัวจริง ชอบสีฟ้าที่เลือกจัง",
+    "done": true
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "blank",
+   "value": {
+    "coverage_pct": 0,
+    "in_lines_pct": 100,
+    "match_pct": null,
+    "stars": 1,
+    "favorite": null,
+    "praise_th": "เริ่มต้นได้สวยมาก! ระบายต่ออีกนิดนะ",
+    "done": false
+   }
+  },
+  {
+   "def": "Quest",
+   "note": "2026-12-23",
+   "value": {
+    "date": "2026-12-23",
+    "theme_th": "วิวหน้าบ้าน",
+    "streak": 3,
+    "done_today": true,
+    "new_sticker": "ดินสอสีทอง"
+   }
+  },
+  {
+   "def": "Quest",
+   "note": "2026-12-24",
+   "value": {
+    "date": "2026-12-24",
+    "theme_th": "ผลไม้ในตู้เย็น",
+    "streak": 3,
+    "done_today": false,
+    "new_sticker": null
+   }
+  },
+  {
+   "def": "Quest",
+   "note": "2026-12-25",
+   "value": {
+    "date": "2026-12-25",
+    "theme_th": "รองเท้าของเรา",
+    "streak": 0,
+    "done_today": false,
+    "new_sticker": null
+   }
+  },
+  {
+   "def": "Quest",
+   "note": "2026-12-30",
+   "value": {
+    "date": "2026-12-30",
+    "theme_th": "ห้องนอนของเรา",
+    "streak": 7,
+    "done_today": true,
+    "new_sticker": "จานสีสายรุ้ง"
+   }
+  },
+  {
+   "def": "GalleryEntry",
+   "note": "น้องส้มจี๊ด",
+   "value": {
+    "date": "2026-12-05",
+    "title_th": "น้องส้มจี๊ด",
+    "stars": 3,
+    "favorite": "orange"
+   }
+  },
+  {
+   "def": "GalleryEntry",
+   "note": "บ้านคุณยาย",
+   "value": {
+    "date": "2026-12-08",
+    "title_th": "บ้านคุณยาย",
+    "stars": 2,
+    "favorite": "red"
+   }
+  },
+  {
+   "def": "GalleryEntry",
+   "note": "ไอติมแท่ง",
+   "value": {
+    "date": "2026-12-11",
+    "title_th": "ไอติมแท่ง",
+    "stars": 3,
+    "favorite": "pink"
+   }
+  },
+  {
+   "def": "GalleryEntry",
+   "note": "รถคันโปรด",
+   "value": {
+    "date": "2026-12-14",
+    "title_th": "รถคันโปรด",
+    "stars": 2,
+    "favorite": "blue"
+   }
+  },
+  {
+   "def": "GalleryEntry",
+   "note": "ต้นมะม่วง",
+   "value": {
+    "date": "2026-12-17",
+    "title_th": "ต้นมะม่วง",
+    "stars": 3,
+    "favorite": "green"
+   }
+  },
+  {
+   "def": "GalleryEntry",
+   "note": "ทะเลหัวหิน",
+   "value": {
+    "date": "2026-12-19",
+    "title_th": "ทะเลหัวหิน",
+    "stars": 3,
+    "favorite": "sky"
+   }
+  },
+  {
+   "def": "GalleryEntry",
+   "note": "ขนมครก",
+   "value": {
+    "date": "2026-12-21",
+    "title_th": "ขนมครก",
+    "stars": 1,
+    "favorite": "orange"
+   }
+  },
+  {
+   "def": "GalleryEntry",
+   "note": "น้องส้มจี๊ด",
+   "value": {
+    "date": "2026-12-23",
+    "title_th": "น้องส้มจี๊ด",
+    "stars": 3,
+    "favorite": "orange"
+   }
+  },
+  {
+   "def": "GallerySummary",
+   "note": "8 pages",
+   "value": {
+    "month": "2026-12",
+    "pages": 8,
+    "stars": 20,
+    "favorite_th": "ส้ม",
+    "art_book_ready": true,
+    "note_th": "ครบ 8 หน้า ทำสมุดผลงานประจำเดือนได้แล้ว!"
+   }
+  },
+  {
+   "def": "GallerySummary",
+   "note": "5 pages",
+   "value": {
+    "month": "2026-12",
+    "pages": 5,
+    "stars": 13,
+    "favorite_th": "แดง",
+    "art_book_ready": false,
+    "note_th": "อีก 3 หน้า จะได้สมุดผลงานประจำเดือน"
+   }
+  },
+  {
+   "def": "GallerySummary",
+   "note": "empty",
+   "value": {
+    "month": "2026-11",
+    "pages": 0,
+    "stars": 0,
+    "favorite_th": null,
+    "art_book_ready": false,
+    "note_th": "อีก 8 หน้า จะได้สมุดผลงานประจำเดือน"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "before_after",
+   "value": {
+    "layout": "before_after",
+    "size": "1080x1350",
+    "child_face_hidden": true,
+    "stars": 3,
+    "level_th": "ประถมต้น 6–8 ขวบ",
+    "watermark": "ColorMe · AI วันละแอป",
+    "badge_th": "รูปในมือถือ → สมุดระบายสีของหนู"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "reveal",
+   "value": {
+    "layout": "reveal",
+    "size": "1080x1350",
+    "child_face_hidden": true,
+    "stars": 3,
+    "level_th": "ประถมต้น 6–8 ขวบ",
+    "watermark": "ColorMe · AI วันละแอป",
+    "badge_th": "รูปในมือถือ → สมุดระบายสีของหนู"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "booklet",
+   "value": {
+    "layout": "booklet",
+    "size": "1080x1350",
+    "child_face_hidden": true,
+    "stars": null,
+    "level_th": "ประถมต้น 6–8 ขวบ",
+    "watermark": "ColorMe · AI วันละแอป",
+    "badge_th": "รูปในมือถือ → สมุดระบายสีของหนู"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "15",
+   "value": {
+    "seconds": 15,
+    "ratio": "9:16",
+    "bpm": 110,
+    "shots": [
+     {
+      "kind": "hook",
+      "start": 0.0,
+      "end": 2.5,
+      "caption_th": "ปิดเทอม ลูกเบื่อ ติดจอ? \"เอารูปน้องแมวมาระบายสีกัน\""
+     },
+     {
+      "kind": "build",
+      "start": 2.5,
+      "end": 5.0,
+      "caption_th": "ตัดเร่งตอนสร้างแอปด้วย AI จากแพ็กนี้"
+     },
+     {
+      "kind": "magic",
+      "start": 5.0,
+      "end": 7.5,
+      "caption_th": "เลือกรูปในมือถือ → เส้นวาดค่อย ๆ ขึ้น กลายเป็นหน้าระบายสี"
+     },
+     {
+      "kind": "numbers",
+      "start": 7.5,
+      "end": 10.0,
+      "caption_th": "สลับโหมดระบายตามเลข + พิมพ์ A4"
+     },
+     {
+      "kind": "reveal",
+      "start": 10.0,
+      "end": 12.5,
+      "caption_th": "ลูกระบายเสร็จ สแกน → ดาว 3 ดวง + ภาพก่อน/หลังคู่กัน"
+     },
+     {
+      "kind": "cta",
+      "start": 12.5,
+      "end": 15.0,
+      "caption_th": "คอมเมนต์ COLOR รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "ColorMe · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "20",
+   "value": {
+    "seconds": 20,
+    "ratio": "9:16",
+    "bpm": 110,
+    "shots": [
+     {
+      "kind": "hook",
+      "start": 0.0,
+      "end": 3.3,
+      "caption_th": "ปิดเทอม ลูกเบื่อ ติดจอ? \"เอารูปน้องแมวมาระบายสีกัน\""
+     },
+     {
+      "kind": "build",
+      "start": 3.3,
+      "end": 6.7,
+      "caption_th": "ตัดเร่งตอนสร้างแอปด้วย AI จากแพ็กนี้"
+     },
+     {
+      "kind": "magic",
+      "start": 6.7,
+      "end": 10.0,
+      "caption_th": "เลือกรูปในมือถือ → เส้นวาดค่อย ๆ ขึ้น กลายเป็นหน้าระบายสี"
+     },
+     {
+      "kind": "numbers",
+      "start": 10.0,
+      "end": 13.3,
+      "caption_th": "สลับโหมดระบายตามเลข + พิมพ์ A4"
+     },
+     {
+      "kind": "reveal",
+      "start": 13.3,
+      "end": 16.7,
+      "caption_th": "ลูกระบายเสร็จ สแกน → ดาว 3 ดวง + ภาพก่อน/หลังคู่กัน"
+     },
+     {
+      "kind": "cta",
+      "start": 16.7,
+      "end": 20.0,
+      "caption_th": "คอมเมนต์ COLOR รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "ColorMe · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "30",
+   "value": {
+    "seconds": 30,
+    "ratio": "9:16",
+    "bpm": 110,
+    "shots": [
+     {
+      "kind": "hook",
+      "start": 0.0,
+      "end": 5.0,
+      "caption_th": "ปิดเทอม ลูกเบื่อ ติดจอ? \"เอารูปน้องแมวมาระบายสีกัน\""
+     },
+     {
+      "kind": "build",
+      "start": 5.0,
+      "end": 10.0,
+      "caption_th": "ตัดเร่งตอนสร้างแอปด้วย AI จากแพ็กนี้"
+     },
+     {
+      "kind": "magic",
+      "start": 10.0,
+      "end": 15.0,
+      "caption_th": "เลือกรูปในมือถือ → เส้นวาดค่อย ๆ ขึ้น กลายเป็นหน้าระบายสี"
+     },
+     {
+      "kind": "numbers",
+      "start": 15.0,
+      "end": 20.0,
+      "caption_th": "สลับโหมดระบายตามเลข + พิมพ์ A4"
+     },
+     {
+      "kind": "reveal",
+      "start": 20.0,
+      "end": 25.0,
+      "caption_th": "ลูกระบายเสร็จ สแกน → ดาว 3 ดวง + ภาพก่อน/หลังคู่กัน"
+     },
+     {
+      "kind": "cta",
+      "start": 25.0,
+      "end": 30.0,
+      "caption_th": "คอมเมนต์ COLOR รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "ColorMe · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "hook",
+   "value": {
+    "kind": "hook",
+    "start": 0.0,
+    "end": 4.0,
+    "caption_th": "ปิดเทอม ลูกเบื่อ ติดจอ? \"เอารูปน้องแมวมาระบายสีกัน\""
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "build",
+   "value": {
+    "kind": "build",
+    "start": 4.0,
+    "end": 8.0,
+    "caption_th": "ตัดเร่งตอนสร้างแอปด้วย AI จากแพ็กนี้"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "magic",
+   "value": {
+    "kind": "magic",
+    "start": 8.0,
+    "end": 12.0,
+    "caption_th": "เลือกรูปในมือถือ → เส้นวาดค่อย ๆ ขึ้น กลายเป็นหน้าระบายสี"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "numbers",
+   "value": {
+    "kind": "numbers",
+    "start": 12.0,
+    "end": 16.0,
+    "caption_th": "สลับโหมดระบายตามเลข + พิมพ์ A4"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "reveal",
+   "value": {
+    "kind": "reveal",
+    "start": 16.0,
+    "end": 20.0,
+    "caption_th": "ลูกระบายเสร็จ สแกน → ดาว 3 ดวง + ภาพก่อน/หลังคู่กัน"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "cta",
+   "value": {
+    "kind": "cta",
+    "start": 20.0,
+    "end": 24.0,
+    "caption_th": "คอมเมนต์ COLOR รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(0,)",
+   "value": {
+    "plan": "free",
+    "pages_per_day": 5,
+    "used": 0,
+    "left": 5,
+    "blocked": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(3,)",
+   "value": {
+    "plan": "free",
+    "pages_per_day": 5,
+    "used": 3,
+    "left": 2,
+    "blocked": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(5,)",
+   "value": {
+    "plan": "free",
+    "pages_per_day": 5,
+    "used": 5,
+    "left": 0,
+    "blocked": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(12, 'plus')",
+   "value": {
+    "plan": "plus",
+    "pages_per_day": 50,
+    "used": 12,
+    "left": 38,
+    "blocked": false
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(True, True)",
+   "value": {
+    "allowed": true,
+    "level": "ok",
+    "flags": [],
+    "messages_th": [
+     "ใช้รูปที่เราถ่ายเองหรือได้รับอนุญาต ประมวลผลบนเครื่อง รูปต้นฉบับไม่ถูกอัปโหลด"
+    ],
+    "parent_mode": true,
+    "share_allowed": true
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(True, False)",
+   "value": {
+    "allowed": true,
+    "level": "ok",
+    "flags": [],
+    "messages_th": [
+     "ใช้รูปที่เราถ่ายเองหรือได้รับอนุญาต ประมวลผลบนเครื่อง รูปต้นฉบับไม่ถูกอัปโหลด"
+    ],
+    "parent_mode": false,
+    "share_allowed": false
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(False, True)",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "other_child_face"
+    ],
+    "messages_th": [
+     "มีหน้าเด็กคนอื่นในรูป ใช้ในบ้านได้ แต่ก่อนแชร์ต้องได้รับอนุญาตจากผู้ปกครองของเขา (การ์ดแชร์จะซ่อนหน้าให้)"
+    ],
+    "parent_mode": true,
+    "share_allowed": false
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(True, True, ('copyright_character',))",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "copyright_character"
+    ],
+    "messages_th": [
+     "เจอตัวการ์ตูน/โลโก้ที่มีลิขสิทธิ์ ระบายเล่นในบ้านได้ ห้ามพิมพ์ขาย — แนะนำแปลงเป็นตัวละครทั่วไป"
+    ],
+    "parent_mode": true,
+    "share_allowed": false
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(True, True, ('id_document',))",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "id_document"
+    ],
+    "messages_th": [
+     "ดูเหมือนบัตรประชาชน/สลิป/เอกสาร มีข้อมูลส่วนตัว ไม่แปลงเป็นหน้าระบายสี"
+    ],
+    "parent_mode": true,
+    "share_allowed": false
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(True, True, ('nudity',))",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "nudity"
+    ],
+    "messages_th": [
+     "รูปนี้ใช้ไม่ได้ เลือกรูปที่ทุกคนแต่งตัวเรียบร้อย"
+    ],
+    "parent_mode": true,
+    "share_allowed": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "None",
+   "value": {
+    "flag": null,
+    "level": "ok",
+    "message_th": "ใช้รูปที่เราถ่ายเองหรือได้รับอนุญาต ประมวลผลบนเครื่อง รูปต้นฉบับไม่ถูกอัปโหลด",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "nudity",
+   "value": {
+    "flag": "nudity",
+    "level": "stop",
+    "message_th": "รูปนี้ใช้ไม่ได้ เลือกรูปที่ทุกคนแต่งตัวเรียบร้อย",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "id_document",
+   "value": {
+    "flag": "id_document",
+    "level": "stop",
+    "message_th": "ดูเหมือนบัตรประชาชน/สลิป/เอกสาร มีข้อมูลส่วนตัว ไม่แปลงเป็นหน้าระบายสี",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "violent",
+   "value": {
+    "flag": "violent",
+    "level": "stop",
+    "message_th": "เนื้อหาไม่เหมาะกับเด็ก เลือกรูปอื่นนะ",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "other_child_face",
+   "value": {
+    "flag": "other_child_face",
+    "level": "warn",
+    "message_th": "มีหน้าเด็กคนอื่นในรูป ใช้ในบ้านได้ แต่ก่อนแชร์ต้องได้รับอนุญาตจากผู้ปกครองของเขา (การ์ดแชร์จะซ่อนหน้าให้)",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "copyright_character",
+   "value": {
+    "flag": "copyright_character",
+    "level": "warn",
+    "message_th": "เจอตัวการ์ตูน/โลโก้ที่มีลิขสิทธิ์ ระบายเล่นในบ้านได้ ห้ามพิมพ์ขาย — แนะนำแปลงเป็นตัวละครทั่วไป",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "selling_pages",
+   "value": {
+    "flag": "selling_pages",
+    "level": "warn",
+    "message_th": "พิมพ์ขายได้เฉพาะหน้าที่มาจากรูปของเราเอง และไม่มีตัวการ์ตูนลิขสิทธิ์",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "screen_time",
+   "value": {
+    "flag": "screen_time",
+    "level": "warn",
+    "message_th": "ระบายบนจอมา 30 นาทีแล้ว พักสายตา แล้วไประบายบนกระดาษกันต่อนะ",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "under_3",
+   "value": {
+    "flag": "under_3",
+    "level": "stop",
+    "message_th": "เด็กต่ำกว่า 3 ขวบยังไม่เหมาะ (สีเทียนชิ้นเล็ก) ให้ผู้ใหญ่เล่นด้วยใกล้ ๆ ในโหมดตัวจิ๋ว",
+    "block": true
+   }
+  }
+ ]
+}
