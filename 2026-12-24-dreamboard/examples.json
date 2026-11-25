@@ -1,0 +1,3153 @@
+{
+ "examples": [
+  {
+   "def": "User",
+   "note": "Mint",
+   "value": {
+    "id": "u01",
+    "name_th": "คุณมิ้นท์",
+    "name_en": "Mint",
+    "age": 28,
+    "city_th": "กรุงเทพฯ",
+    "monthly_income": 25000
+   }
+  },
+  {
+   "def": "User",
+   "note": "Boat",
+   "value": {
+    "id": "u02",
+    "name_th": "คุณโบ๊ท",
+    "name_en": "Boat",
+    "age": 29,
+    "city_th": "นนทบุรี",
+    "monthly_income": 30000
+   }
+  },
+  {
+   "def": "User",
+   "note": "Pim",
+   "value": {
+    "id": "u03",
+    "name_th": "น้องพิม",
+    "name_en": "Pim",
+    "age": 12,
+    "city_th": "ขอนแก่น",
+    "monthly_income": 0
+   }
+  },
+  {
+   "def": "Category",
+   "note": "money",
+   "value": {
+    "key": "money",
+    "name_th": "เงิน",
+    "name_en": "Money",
+    "color": "#F2B705"
+   }
+  },
+  {
+   "def": "Category",
+   "note": "health",
+   "value": {
+    "key": "health",
+    "name_th": "สุขภาพ",
+    "name_en": "Health",
+    "color": "#2EC4B6"
+   }
+  },
+  {
+   "def": "Category",
+   "note": "learn",
+   "value": {
+    "key": "learn",
+    "name_th": "เรียนรู้",
+    "name_en": "Learning",
+    "color": "#5B8DEF"
+   }
+  },
+  {
+   "def": "Category",
+   "note": "career",
+   "value": {
+    "key": "career",
+    "name_th": "งาน",
+    "name_en": "Career",
+    "color": "#8E6CEF"
+   }
+  },
+  {
+   "def": "Category",
+   "note": "travel",
+   "value": {
+    "key": "travel",
+    "name_th": "เที่ยว",
+    "name_en": "Travel",
+    "color": "#FF8C42"
+   }
+  },
+  {
+   "def": "Category",
+   "note": "family",
+   "value": {
+    "key": "family",
+    "name_th": "ครอบครัว",
+    "name_en": "Family",
+    "color": "#FF6B8B"
+   }
+  },
+  {
+   "def": "Category",
+   "note": "home",
+   "value": {
+    "key": "home",
+    "name_th": "บ้าน",
+    "name_en": "Home",
+    "color": "#8AC926"
+   }
+  },
+  {
+   "def": "Category",
+   "note": "habit",
+   "value": {
+    "key": "habit",
+    "name_th": "นิสัยดี",
+    "name_en": "Habits",
+    "color": "#00A6A6"
+   }
+  },
+  {
+   "def": "Category",
+   "note": "mind",
+   "value": {
+    "key": "mind",
+    "name_th": "ใจ",
+    "name_en": "Mind",
+    "color": "#B388EB"
+   }
+  },
+  {
+   "def": "Category",
+   "note": "hobby",
+   "value": {
+    "key": "hobby",
+    "name_th": "งานอดิเรก",
+    "name_en": "Hobby",
+    "color": "#F15BB5"
+   }
+  },
+  {
+   "def": "Unit",
+   "note": "THB",
+   "value": {
+    "key": "THB",
+    "name_th": "บาท",
+    "step": 100,
+    "max_per_month": null
+   }
+  },
+  {
+   "def": "Unit",
+   "note": "kg_loss",
+   "value": {
+    "key": "kg_loss",
+    "name_th": "กก. (ลดลง)",
+    "step": 0.5,
+    "max_per_month": 4.0
+   }
+  },
+  {
+   "def": "Unit",
+   "note": "km",
+   "value": {
+    "key": "km",
+    "name_th": "กม.",
+    "step": 5,
+    "max_per_month": 250
+   }
+  },
+  {
+   "def": "Unit",
+   "note": "book",
+   "value": {
+    "key": "book",
+    "name_th": "เล่ม",
+    "step": 1,
+    "max_per_month": 8
+   }
+  },
+  {
+   "def": "Unit",
+   "note": "trip",
+   "value": {
+    "key": "trip",
+    "name_th": "ทริป",
+    "step": 1,
+    "max_per_month": 4
+   }
+  },
+  {
+   "def": "Unit",
+   "note": "times",
+   "value": {
+    "key": "times",
+    "name_th": "ครั้ง",
+    "step": 1,
+    "max_per_month": 31
+   }
+  },
+  {
+   "def": "Unit",
+   "note": "hours",
+   "value": {
+    "key": "hours",
+    "name_th": "ชั่วโมง",
+    "step": 1,
+    "max_per_month": 120
+   }
+  },
+  {
+   "def": "Unit",
+   "note": "lesson",
+   "value": {
+    "key": "lesson",
+    "name_th": "บทเรียน",
+    "step": 1,
+    "max_per_month": 40
+   }
+  },
+  {
+   "def": "BoardTheme",
+   "note": "pastel",
+   "value": {
+    "key": "pastel",
+    "name_th": "พาสเทลฟ้าใส",
+    "palette": [
+     "#FFD6E0",
+     "#C1E1FF",
+     "#D7F9D0",
+     "#FFF1B8",
+     "#E5D4FF",
+     "#FFE0C2"
+    ]
+   }
+  },
+  {
+   "def": "BoardTheme",
+   "note": "sunrise",
+   "value": {
+    "key": "sunrise",
+    "name_th": "แสงแรกปีใหม่",
+    "palette": [
+     "#FF9A62",
+     "#FFC46B",
+     "#FF6F91",
+     "#FFD79A",
+     "#F9A8D4",
+     "#FDBA74"
+    ]
+   }
+  },
+  {
+   "def": "BoardTheme",
+   "note": "midnight",
+   "value": {
+    "key": "midnight",
+    "name_th": "คืนเคานต์ดาวน์",
+    "palette": [
+     "#1F2A6B",
+     "#3B2A7A",
+     "#0F4C75",
+     "#4C1D95",
+     "#1E3A8A",
+     "#312E81"
+    ]
+   }
+  },
+  {
+   "def": "BoardTheme",
+   "note": "thai_gold",
+   "value": {
+    "key": "thai_gold",
+    "name_th": "ทองมงคล",
+    "palette": [
+     "#B8860B",
+     "#D4AF37",
+     "#8B0000",
+     "#F5DEB3",
+     "#C5A35A",
+     "#7A1F1F"
+    ]
+   }
+  },
+  {
+   "def": "BoardTheme",
+   "note": "nature",
+   "value": {
+    "key": "nature",
+    "name_th": "ป่าเขียวสดชื่น",
+    "palette": [
+     "#2D6A4F",
+     "#52B788",
+     "#95D5B2",
+     "#B7E4C7",
+     "#40916C",
+     "#74C69D"
+    ]
+   }
+  },
+  {
+   "def": "BoardTheme",
+   "note": "minimal",
+   "value": {
+    "key": "minimal",
+    "name_th": "มินิมอลขาวดำ",
+    "palette": [
+     "#F5F5F5",
+     "#E0E0E0",
+     "#FAFAFA",
+     "#EEEEEE",
+     "#D6D6D6",
+     "#FFFFFF"
+    ]
+   }
+  },
+  {
+   "def": "Device",
+   "note": "iphone",
+   "value": {
+    "key": "iphone",
+    "w": 1179,
+    "h": 2556,
+    "clock_zone": 0.32,
+    "bottom_zone": 0.1
+   }
+  },
+  {
+   "def": "Device",
+   "note": "android",
+   "value": {
+    "key": "android",
+    "w": 1080,
+    "h": 2400,
+    "clock_zone": 0.3,
+    "bottom_zone": 0.08
+   }
+  },
+  {
+   "def": "Device",
+   "note": "desktop",
+   "value": {
+    "key": "desktop",
+    "w": 1920,
+    "h": 1080,
+    "clock_zone": 0.0,
+    "bottom_zone": 0.06
+   }
+  },
+  {
+   "def": "GoalText",
+   "note": "ปีหน้าอยากเก็บเงินไป",
+   "value": {
+    "text_th": "ปีหน้าอยากเก็บเงินไปญี่ปุ่นสัก 6 หมื่น",
+    "today": "2026-12-24"
+   }
+  },
+  {
+   "def": "AiGoalParse",
+   "note": "ปีหน้าอยากเก็บเงินไป",
+   "value": {
+    "title_th": "เก็บเงินเที่ยวญี่ปุ่น 60,000 บาท",
+    "category": "money",
+    "unit": "THB",
+    "start_value": 0,
+    "target_value": 60000,
+    "deadline": "2027-12-31",
+    "flags": [],
+    "needs_clarification_th": null,
+    "confidence": 0.92
+   }
+  },
+  {
+   "def": "GoalText",
+   "note": "อยากผอม จาก 68 เหลือ",
+   "value": {
+    "text_th": "อยากผอม จาก 68 เหลือ 62 ก่อนสงกรานต์... ไม่สิ ก่อนกลางปี",
+    "today": "2026-12-24"
+   }
+  },
+  {
+   "def": "AiGoalParse",
+   "note": "อยากผอม จาก 68 เหลือ",
+   "value": {
+    "title_th": "ลดน้ำหนักจาก 68 เหลือ 62 กก.",
+    "category": "health",
+    "unit": "kg_loss",
+    "start_value": 0,
+    "target_value": 6,
+    "deadline": "2027-06-30",
+    "flags": [],
+    "needs_clarification_th": null,
+    "confidence": 0.88
+   }
+  },
+  {
+   "def": "GoalText",
+   "note": "อ่านหนังสือเดือนละ 2",
+   "value": {
+    "text_th": "อ่านหนังสือเดือนละ 2 เล่ม",
+    "today": "2026-12-24"
+   }
+  },
+  {
+   "def": "AiGoalParse",
+   "note": "อ่านหนังสือเดือนละ 2",
+   "value": {
+    "title_th": "อ่านหนังสือให้ได้ 24 เล่ม",
+    "category": "learn",
+    "unit": "book",
+    "start_value": 0,
+    "target_value": 24,
+    "deadline": "2027-12-31",
+    "flags": [],
+    "needs_clarification_th": null,
+    "confidence": 0.9
+   }
+  },
+  {
+   "def": "GoalText",
+   "note": "ลด 10 โลใน 1 เดือนก่",
+   "value": {
+    "text_th": "ลด 10 โลใน 1 เดือนก่อนงานแต่ง",
+    "today": "2026-12-24"
+   }
+  },
+  {
+   "def": "AiGoalParse",
+   "note": "ลด 10 โลใน 1 เดือนก่",
+   "value": {
+    "title_th": "ลด 10 กก. ใน 1 เดือนก่อนงานแต่ง",
+    "category": "health",
+    "unit": "kg_loss",
+    "start_value": 0,
+    "target_value": 10,
+    "deadline": "2027-01-31",
+    "flags": [
+     "extreme_diet"
+    ],
+    "needs_clarification_th": null,
+    "confidence": 0.86
+   }
+  },
+  {
+   "def": "GoalText",
+   "note": "อยากรวย",
+   "value": {
+    "text_th": "อยากรวย",
+    "today": "2026-12-24"
+   }
+  },
+  {
+   "def": "AiGoalParse",
+   "note": "อยากรวย",
+   "value": {
+    "title_th": "อยากรวย",
+    "category": "money",
+    "unit": "",
+    "start_value": 0,
+    "target_value": 0,
+    "deadline": null,
+    "flags": [],
+    "needs_clarification_th": "อยากเก็บเงินเท่าไร ภายในเมื่อไร?",
+    "confidence": 0.4
+   }
+  },
+  {
+   "def": "GoalText",
+   "note": "ขอให้ถูกหวยรางวัลที่",
+   "value": {
+    "text_th": "ขอให้ถูกหวยรางวัลที่ 1",
+    "today": "2026-12-24"
+   }
+  },
+  {
+   "def": "AiGoalParse",
+   "note": "ขอให้ถูกหวยรางวัลที่",
+   "value": {
+    "title_th": "ถูกหวยรางวัลที่ 1",
+    "category": "money",
+    "unit": "",
+    "start_value": 0,
+    "target_value": 0,
+    "deadline": null,
+    "flags": [
+     "gambling"
+    ],
+    "needs_clarification_th": "ลองเปลี่ยนเป็นเป้าเก็บเงินเดือนละเท่าไรดี?",
+    "confidence": 0.8
+   }
+  },
+  {
+   "def": "GoalText",
+   "note": "ให้แฟนเก่ากลับมา",
+   "value": {
+    "text_th": "ให้แฟนเก่ากลับมา",
+    "today": "2026-12-24"
+   }
+  },
+  {
+   "def": "AiGoalParse",
+   "note": "ให้แฟนเก่ากลับมา",
+   "value": {
+    "title_th": "ให้แฟนเก่ากลับมา",
+    "category": "mind",
+    "unit": "",
+    "start_value": 0,
+    "target_value": 0,
+    "deadline": null,
+    "flags": [
+     "other_person"
+    ],
+    "needs_clarification_th": "ลองเขียนเป็นสิ่งที่เราทำเพื่อใจตัวเอง เช่น ออกกำลังกายสัปดาห์ละ 3 ครั้ง",
+    "confidence": 0.7
+   }
+  },
+  {
+   "def": "GoalText",
+   "note": "หัดว่ายน้ำให้เป็น เร",
+   "value": {
+    "text_th": "หัดว่ายน้ำให้เป็น เรียนสัก 12 ครั้ง",
+    "today": "2026-12-24"
+   }
+  },
+  {
+   "def": "AiGoalParse",
+   "note": "หัดว่ายน้ำให้เป็น เร",
+   "value": {
+    "title_th": "เรียนว่ายน้ำ 12 ครั้ง",
+    "category": "hobby",
+    "unit": "lesson",
+    "start_value": 0,
+    "target_value": 12,
+    "deadline": "2027-06-30",
+    "flags": [],
+    "needs_clarification_th": null,
+    "confidence": 0.85
+   }
+  },
+  {
+   "def": "Goal",
+   "note": "g1",
+   "value": {
+    "id": "g1",
+    "title_th": "เก็บเงินเที่ยวญี่ปุ่น 60,000 บาท",
+    "category": "money",
+    "category_th": "เงิน",
+    "unit": "THB",
+    "start_value": 0,
+    "target_value": 60000,
+    "start": "2027-01-01",
+    "deadline": "2027-12-31"
+   }
+  },
+  {
+   "def": "SmartCheck",
+   "note": "g1",
+   "value": {
+    "score": 100,
+    "specific": true,
+    "measurable": true,
+    "achievable": true,
+    "relevant": true,
+    "timed": true,
+    "per_month": 5000.0,
+    "flag": null,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Goal",
+   "note": "g2",
+   "value": {
+    "id": "g2",
+    "title_th": "ลดน้ำหนักจาก 68 เหลือ 62 กก.",
+    "category": "health",
+    "category_th": "สุขภาพ",
+    "unit": "kg_loss",
+    "start_value": 0,
+    "target_value": 6,
+    "start": "2027-01-01",
+    "deadline": "2027-06-30"
+   }
+  },
+  {
+   "def": "SmartCheck",
+   "note": "g2",
+   "value": {
+    "score": 100,
+    "specific": true,
+    "measurable": true,
+    "achievable": true,
+    "relevant": true,
+    "timed": true,
+    "per_month": 1.0,
+    "flag": null,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Goal",
+   "note": "g3",
+   "value": {
+    "id": "g3",
+    "title_th": "อ่านหนังสือให้ได้ 24 เล่ม",
+    "category": "learn",
+    "category_th": "เรียนรู้",
+    "unit": "book",
+    "start_value": 0,
+    "target_value": 24,
+    "start": "2027-01-01",
+    "deadline": "2027-12-31"
+   }
+  },
+  {
+   "def": "SmartCheck",
+   "note": "g3",
+   "value": {
+    "score": 100,
+    "specific": true,
+    "measurable": true,
+    "achievable": true,
+    "relevant": true,
+    "timed": true,
+    "per_month": 2.0,
+    "flag": null,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Goal",
+   "note": "g4",
+   "value": {
+    "id": "g4",
+    "title_th": "วิ่งสะสม 300 กม.",
+    "category": "health",
+    "category_th": "สุขภาพ",
+    "unit": "km",
+    "start_value": 0,
+    "target_value": 300,
+    "start": "2027-01-01",
+    "deadline": "2027-12-31"
+   }
+  },
+  {
+   "def": "SmartCheck",
+   "note": "g4",
+   "value": {
+    "score": 100,
+    "specific": true,
+    "measurable": true,
+    "achievable": true,
+    "relevant": true,
+    "timed": true,
+    "per_month": 25.0,
+    "flag": null,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Goal",
+   "note": "g5",
+   "value": {
+    "id": "g5",
+    "title_th": "พาแม่เที่ยวต่างจังหวัด 4 ทริป",
+    "category": "family",
+    "category_th": "ครอบครัว",
+    "unit": "trip",
+    "start_value": 0,
+    "target_value": 4,
+    "start": "2027-01-01",
+    "deadline": "2027-12-31"
+   }
+  },
+  {
+   "def": "SmartCheck",
+   "note": "g5",
+   "value": {
+    "score": 100,
+    "specific": true,
+    "measurable": true,
+    "achievable": true,
+    "relevant": true,
+    "timed": true,
+    "per_month": 0.33,
+    "flag": null,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Goal",
+   "note": "g6",
+   "value": {
+    "id": "g6",
+    "title_th": "เรียนว่ายน้ำ 12 ครั้ง",
+    "category": "hobby",
+    "category_th": "งานอดิเรก",
+    "unit": "lesson",
+    "start_value": 0,
+    "target_value": 12,
+    "start": "2027-01-01",
+    "deadline": "2027-06-30"
+   }
+  },
+  {
+   "def": "SmartCheck",
+   "note": "g6",
+   "value": {
+    "score": 100,
+    "specific": true,
+    "measurable": true,
+    "achievable": true,
+    "relevant": true,
+    "timed": true,
+    "per_month": 2.0,
+    "flag": null,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Goal",
+   "note": "g7",
+   "value": {
+    "id": "g7",
+    "title_th": "ฝึกภาษาอังกฤษ 100 ชั่วโมง",
+    "category": "learn",
+    "category_th": "เรียนรู้",
+    "unit": "hours",
+    "start_value": 0,
+    "target_value": 100,
+    "start": "2027-01-01",
+    "deadline": "2027-12-31"
+   }
+  },
+  {
+   "def": "SmartCheck",
+   "note": "g7",
+   "value": {
+    "score": 100,
+    "specific": true,
+    "measurable": true,
+    "achievable": true,
+    "relevant": true,
+    "timed": true,
+    "per_month": 8.33,
+    "flag": null,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Goal",
+   "note": "g8",
+   "value": {
+    "id": "g8",
+    "title_th": "โทรหาแม่ 52 ครั้ง",
+    "category": "family",
+    "category_th": "ครอบครัว",
+    "unit": "times",
+    "start_value": 0,
+    "target_value": 52,
+    "start": "2027-01-01",
+    "deadline": "2027-12-31"
+   }
+  },
+  {
+   "def": "SmartCheck",
+   "note": "g8",
+   "value": {
+    "score": 100,
+    "specific": true,
+    "measurable": true,
+    "achievable": true,
+    "relevant": true,
+    "timed": true,
+    "per_month": 4.33,
+    "flag": null,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Goal",
+   "note": "b1",
+   "value": {
+    "id": "b1",
+    "title_th": "ลด 10 กก. ใน 1 เดือนก่อนงานแต่ง",
+    "category": "health",
+    "category_th": "สุขภาพ",
+    "unit": "kg_loss",
+    "start_value": 0,
+    "target_value": 10,
+    "start": "2027-01-01",
+    "deadline": "2027-01-31"
+   }
+  },
+  {
+   "def": "SmartCheck",
+   "note": "b1",
+   "value": {
+    "score": 80,
+    "specific": true,
+    "measurable": true,
+    "achievable": false,
+    "relevant": true,
+    "timed": true,
+    "per_month": 10.0,
+    "flag": "extreme_diet",
+    "tips_th": [
+     "เป้านี้หนักเกินไปสำหรับเวลาที่มี ลองลดตัวเลขหรือยืดเวลา"
+    ]
+   }
+  },
+  {
+   "def": "Goal",
+   "note": "b2",
+   "value": {
+    "id": "b2",
+    "title_th": "อยากรวย",
+    "category": "money",
+    "category_th": "เงิน",
+    "unit": "",
+    "start_value": 0,
+    "target_value": 0,
+    "start": "2027-01-01",
+    "deadline": "2027-01-01"
+   }
+  },
+  {
+   "def": "SmartCheck",
+   "note": "b2",
+   "value": {
+    "score": 20,
+    "specific": false,
+    "measurable": false,
+    "achievable": false,
+    "relevant": true,
+    "timed": false,
+    "per_month": null,
+    "flag": null,
+    "tips_th": [
+     "ใส่ตัวเลขให้ชัด เช่น 'เก็บเงิน 60,000 บาท' แทน 'อยากรวย'",
+     "เลือกหน่วยวัดผล (บาท กม. เล่ม ครั้ง ชั่วโมง…)",
+     "ใส่วันสิ้นสุดภายใน 1 ปี เช่น 31 ธ.ค."
+    ]
+   }
+  },
+  {
+   "def": "Goal",
+   "note": "b3",
+   "value": {
+    "id": "b3",
+    "title_th": "เก็บเงิน 300,000 บาทในปีเดียว",
+    "category": "money",
+    "category_th": "เงิน",
+    "unit": "THB",
+    "start_value": 0,
+    "target_value": 300000,
+    "start": "2027-01-01",
+    "deadline": "2027-12-31"
+   }
+  },
+  {
+   "def": "SmartCheck",
+   "note": "b3",
+   "value": {
+    "score": 80,
+    "specific": true,
+    "measurable": true,
+    "achievable": false,
+    "relevant": true,
+    "timed": true,
+    "per_month": 25000.0,
+    "flag": null,
+    "tips_th": [
+     "เป้านี้หนักเกินไปสำหรับเวลาที่มี ลองลดตัวเลขหรือยืดเวลา"
+    ]
+   }
+  },
+  {
+   "def": "Goal",
+   "note": "b1 re-planned",
+   "value": {
+    "id": "b1",
+    "title_th": "ลด 10 กก. ใน 1 เดือนก่อนงานแต่ง",
+    "category": "health",
+    "category_th": "สุขภาพ",
+    "unit": "kg_loss",
+    "start_value": 0,
+    "target_value": 10,
+    "start": "2027-01-01",
+    "deadline": "2027-05-21"
+   }
+  },
+  {
+   "def": "SmartCheck",
+   "note": "b1 re-planned",
+   "value": {
+    "score": 100,
+    "specific": true,
+    "measurable": true,
+    "achievable": true,
+    "relevant": true,
+    "timed": true,
+    "per_month": 2.0,
+    "flag": null,
+    "tips_th": []
+   }
+  },
+  {
+   "def": "Roadmap",
+   "note": "g1",
+   "value": {
+    "goal_id": "g1",
+    "months": 12,
+    "unit": "THB",
+    "milestones": [
+     {
+      "month": "2027-01",
+      "label_th": "ม.ค. 70",
+      "target": 3500,
+      "delta": 3500,
+      "pct": 6
+     },
+     {
+      "month": "2027-02",
+      "label_th": "ก.พ. 70",
+      "target": 7300,
+      "delta": 3800,
+      "pct": 12
+     },
+     {
+      "month": "2027-03",
+      "label_th": "มี.ค. 70",
+      "target": 11300,
+      "delta": 4000,
+      "pct": 19
+     },
+     {
+      "month": "2027-04",
+      "label_th": "เม.ย. 70",
+      "target": 15600,
+      "delta": 4300,
+      "pct": 26
+     },
+     {
+      "month": "2027-05",
+      "label_th": "พ.ค. 70",
+      "target": 20200,
+      "delta": 4600,
+      "pct": 34
+     },
+     {
+      "month": "2027-06",
+      "label_th": "มิ.ย. 70",
+      "target": 25100,
+      "delta": 4900,
+      "pct": 42
+     },
+     {
+      "month": "2027-07",
+      "label_th": "ก.ค. 70",
+      "target": 30200,
+      "delta": 5100,
+      "pct": 50
+     },
+     {
+      "month": "2027-08",
+      "label_th": "ส.ค. 70",
+      "target": 35600,
+      "delta": 5400,
+      "pct": 59
+     },
+     {
+      "month": "2027-09",
+      "label_th": "ก.ย. 70",
+      "target": 41300,
+      "delta": 5700,
+      "pct": 69
+     },
+     {
+      "month": "2027-10",
+      "label_th": "ต.ค. 70",
+      "target": 47300,
+      "delta": 6000,
+      "pct": 79
+     },
+     {
+      "month": "2027-11",
+      "label_th": "พ.ย. 70",
+      "target": 53500,
+      "delta": 6200,
+      "pct": 89
+     },
+     {
+      "month": "2027-12",
+      "label_th": "ธ.ค. 70",
+      "target": 60000,
+      "delta": 6500,
+      "pct": 100
+     }
+    ]
+   }
+  },
+  {
+   "def": "WeeklyHabit",
+   "note": "g1",
+   "value": {
+    "goal_id": "g1",
+    "weeks": 53,
+    "per_week": 1150,
+    "unit": "THB",
+    "text_th": "เก็บสัปดาห์ละ 1,150 บาท (วันละ ~165 บาท)"
+   }
+  },
+  {
+   "def": "Roadmap",
+   "note": "g2",
+   "value": {
+    "goal_id": "g2",
+    "months": 6,
+    "unit": "kg_loss",
+    "milestones": [
+     {
+      "month": "2027-01",
+      "label_th": "ม.ค. 70",
+      "target": 0.5,
+      "delta": 0.5,
+      "pct": 8
+     },
+     {
+      "month": "2027-02",
+      "label_th": "ก.พ. 70",
+      "target": 1.5,
+      "delta": 1.0,
+      "pct": 25
+     },
+     {
+      "month": "2027-03",
+      "label_th": "มี.ค. 70",
+      "target": 2.5,
+      "delta": 1.0,
+      "pct": 42
+     },
+     {
+      "month": "2027-04",
+      "label_th": "เม.ย. 70",
+      "target": 3.5,
+      "delta": 1.0,
+      "pct": 58
+     },
+     {
+      "month": "2027-05",
+      "label_th": "พ.ค. 70",
+      "target": 4.5,
+      "delta": 1.0,
+      "pct": 75
+     },
+     {
+      "month": "2027-06",
+      "label_th": "มิ.ย. 70",
+      "target": 6,
+      "delta": 1.5,
+      "pct": 100
+     }
+    ]
+   }
+  },
+  {
+   "def": "WeeklyHabit",
+   "note": "g2",
+   "value": {
+    "goal_id": "g2",
+    "weeks": 26,
+    "per_week": 0.3,
+    "unit": "kg_loss",
+    "text_th": "ลดสัปดาห์ละ 0.3 กก. ≈ กินน้อยลง/ขยับมากขึ้น ~350 kcal ต่อวัน"
+   }
+  },
+  {
+   "def": "Roadmap",
+   "note": "g3",
+   "value": {
+    "goal_id": "g3",
+    "months": 12,
+    "unit": "book",
+    "milestones": [
+     {
+      "month": "2027-01",
+      "label_th": "ม.ค. 70",
+      "target": 1,
+      "delta": 1,
+      "pct": 4
+     },
+     {
+      "month": "2027-02",
+      "label_th": "ก.พ. 70",
+      "target": 3,
+      "delta": 2,
+      "pct": 12
+     },
+     {
+      "month": "2027-03",
+      "label_th": "มี.ค. 70",
+      "target": 5,
+      "delta": 2,
+      "pct": 21
+     },
+     {
+      "month": "2027-04",
+      "label_th": "เม.ย. 70",
+      "target": 6,
+      "delta": 1,
+      "pct": 25
+     },
+     {
+      "month": "2027-05",
+      "label_th": "พ.ค. 70",
+      "target": 8,
+      "delta": 2,
+      "pct": 33
+     },
+     {
+      "month": "2027-06",
+      "label_th": "มิ.ย. 70",
+      "target": 10,
+      "delta": 2,
+      "pct": 42
+     },
+     {
+      "month": "2027-07",
+      "label_th": "ก.ค. 70",
+      "target": 12,
+      "delta": 2,
+      "pct": 50
+     },
+     {
+      "month": "2027-08",
+      "label_th": "ส.ค. 70",
+      "target": 14,
+      "delta": 2,
+      "pct": 58
+     },
+     {
+      "month": "2027-09",
+      "label_th": "ก.ย. 70",
+      "target": 17,
+      "delta": 3,
+      "pct": 71
+     },
+     {
+      "month": "2027-10",
+      "label_th": "ต.ค. 70",
+      "target": 19,
+      "delta": 2,
+      "pct": 79
+     },
+     {
+      "month": "2027-11",
+      "label_th": "พ.ย. 70",
+      "target": 21,
+      "delta": 2,
+      "pct": 88
+     },
+     {
+      "month": "2027-12",
+      "label_th": "ธ.ค. 70",
+      "target": 24,
+      "delta": 3,
+      "pct": 100
+     }
+    ]
+   }
+  },
+  {
+   "def": "WeeklyHabit",
+   "note": "g3",
+   "value": {
+    "goal_id": "g3",
+    "weeks": 53,
+    "per_week": 1,
+    "unit": "book",
+    "text_th": "อ่านวันละ ~17 หน้า (เล่มละ ~250 หน้า)"
+   }
+  },
+  {
+   "def": "Roadmap",
+   "note": "g4",
+   "value": {
+    "goal_id": "g4",
+    "months": 12,
+    "unit": "km",
+    "milestones": [
+     {
+      "month": "2027-01",
+      "label_th": "ม.ค. 70",
+      "target": 20,
+      "delta": 20,
+      "pct": 7
+     },
+     {
+      "month": "2027-02",
+      "label_th": "ก.พ. 70",
+      "target": 35,
+      "delta": 15,
+      "pct": 12
+     },
+     {
+      "month": "2027-03",
+      "label_th": "มี.ค. 70",
+      "target": 55,
+      "delta": 20,
+      "pct": 18
+     },
+     {
+      "month": "2027-04",
+      "label_th": "เม.ย. 70",
+      "target": 80,
+      "delta": 25,
+      "pct": 27
+     },
+     {
+      "month": "2027-05",
+      "label_th": "พ.ค. 70",
+      "target": 100,
+      "delta": 20,
+      "pct": 33
+     },
+     {
+      "month": "2027-06",
+      "label_th": "มิ.ย. 70",
+      "target": 125,
+      "delta": 25,
+      "pct": 42
+     },
+     {
+      "month": "2027-07",
+      "label_th": "ก.ค. 70",
+      "target": 150,
+      "delta": 25,
+      "pct": 50
+     },
+     {
+      "month": "2027-08",
+      "label_th": "ส.ค. 70",
+      "target": 180,
+      "delta": 30,
+      "pct": 60
+     },
+     {
+      "month": "2027-09",
+      "label_th": "ก.ย. 70",
+      "target": 205,
+      "delta": 25,
+      "pct": 68
+     },
+     {
+      "month": "2027-10",
+      "label_th": "ต.ค. 70",
+      "target": 235,
+      "delta": 30,
+      "pct": 78
+     },
+     {
+      "month": "2027-11",
+      "label_th": "พ.ย. 70",
+      "target": 270,
+      "delta": 35,
+      "pct": 90
+     },
+     {
+      "month": "2027-12",
+      "label_th": "ธ.ค. 70",
+      "target": 300,
+      "delta": 30,
+      "pct": 100
+     }
+    ]
+   }
+  },
+  {
+   "def": "WeeklyHabit",
+   "note": "g4",
+   "value": {
+    "goal_id": "g4",
+    "weeks": 53,
+    "per_week": 6,
+    "unit": "km",
+    "text_th": "วิ่ง/เดินสัปดาห์ละ 6 กม. (แบ่ง 3 วัน วันละ ~2 กม.)"
+   }
+  },
+  {
+   "def": "Roadmap",
+   "note": "g5",
+   "value": {
+    "goal_id": "g5",
+    "months": 12,
+    "unit": "trip",
+    "milestones": [
+     {
+      "month": "2027-01",
+      "label_th": "ม.ค. 70",
+      "target": 0,
+      "delta": 0,
+      "pct": 0
+     },
+     {
+      "month": "2027-02",
+      "label_th": "ก.พ. 70",
+      "target": 0,
+      "delta": 0,
+      "pct": 0
+     },
+     {
+      "month": "2027-03",
+      "label_th": "มี.ค. 70",
+      "target": 1,
+      "delta": 1,
+      "pct": 25
+     },
+     {
+      "month": "2027-04",
+      "label_th": "เม.ย. 70",
+      "target": 1,
+      "delta": 0,
+      "pct": 25
+     },
+     {
+      "month": "2027-05",
+      "label_th": "พ.ค. 70",
+      "target": 1,
+      "delta": 0,
+      "pct": 25
+     },
+     {
+      "month": "2027-06",
+      "label_th": "มิ.ย. 70",
+      "target": 2,
+      "delta": 1,
+      "pct": 50
+     },
+     {
+      "month": "2027-07",
+      "label_th": "ก.ค. 70",
+      "target": 2,
+      "delta": 0,
+      "pct": 50
+     },
+     {
+      "month": "2027-08",
+      "label_th": "ส.ค. 70",
+      "target": 2,
+      "delta": 0,
+      "pct": 50
+     },
+     {
+      "month": "2027-09",
+      "label_th": "ก.ย. 70",
+      "target": 3,
+      "delta": 1,
+      "pct": 75
+     },
+     {
+      "month": "2027-10",
+      "label_th": "ต.ค. 70",
+      "target": 3,
+      "delta": 0,
+      "pct": 75
+     },
+     {
+      "month": "2027-11",
+      "label_th": "พ.ย. 70",
+      "target": 4,
+      "delta": 1,
+      "pct": 100
+     },
+     {
+      "month": "2027-12",
+      "label_th": "ธ.ค. 70",
+      "target": 4,
+      "delta": 0,
+      "pct": 100
+     }
+    ]
+   }
+  },
+  {
+   "def": "WeeklyHabit",
+   "note": "g5",
+   "value": {
+    "goal_id": "g5",
+    "weeks": 53,
+    "per_week": 1,
+    "unit": "trip",
+    "text_th": "วางแผนทริปทุก ~13 สัปดาห์"
+   }
+  },
+  {
+   "def": "Roadmap",
+   "note": "g6",
+   "value": {
+    "goal_id": "g6",
+    "months": 6,
+    "unit": "lesson",
+    "milestones": [
+     {
+      "month": "2027-01",
+      "label_th": "ม.ค. 70",
+      "target": 1,
+      "delta": 1,
+      "pct": 8
+     },
+     {
+      "month": "2027-02",
+      "label_th": "ก.พ. 70",
+      "target": 3,
+      "delta": 2,
+      "pct": 25
+     },
+     {
+      "month": "2027-03",
+      "label_th": "มี.ค. 70",
+      "target": 5,
+      "delta": 2,
+      "pct": 42
+     },
+     {
+      "month": "2027-04",
+      "label_th": "เม.ย. 70",
+      "target": 7,
+      "delta": 2,
+      "pct": 58
+     },
+     {
+      "month": "2027-05",
+      "label_th": "พ.ค. 70",
+      "target": 9,
+      "delta": 2,
+      "pct": 75
+     },
+     {
+      "month": "2027-06",
+      "label_th": "มิ.ย. 70",
+      "target": 12,
+      "delta": 3,
+      "pct": 100
+     }
+    ]
+   }
+  },
+  {
+   "def": "WeeklyHabit",
+   "note": "g6",
+   "value": {
+    "goal_id": "g6",
+    "weeks": 26,
+    "per_week": 1,
+    "unit": "lesson",
+    "text_th": "สัปดาห์ละ 1 บทเรียน"
+   }
+  },
+  {
+   "def": "Roadmap",
+   "note": "g7",
+   "value": {
+    "goal_id": "g7",
+    "months": 12,
+    "unit": "hours",
+    "milestones": [
+     {
+      "month": "2027-01",
+      "label_th": "ม.ค. 70",
+      "target": 6,
+      "delta": 6,
+      "pct": 6
+     },
+     {
+      "month": "2027-02",
+      "label_th": "ก.พ. 70",
+      "target": 12,
+      "delta": 6,
+      "pct": 12
+     },
+     {
+      "month": "2027-03",
+      "label_th": "มี.ค. 70",
+      "target": 19,
+      "delta": 7,
+      "pct": 19
+     },
+     {
+      "month": "2027-04",
+      "label_th": "เม.ย. 70",
+      "target": 26,
+      "delta": 7,
+      "pct": 26
+     },
+     {
+      "month": "2027-05",
+      "label_th": "พ.ค. 70",
+      "target": 34,
+      "delta": 8,
+      "pct": 34
+     },
+     {
+      "month": "2027-06",
+      "label_th": "มิ.ย. 70",
+      "target": 42,
+      "delta": 8,
+      "pct": 42
+     },
+     {
+      "month": "2027-07",
+      "label_th": "ก.ค. 70",
+      "target": 50,
+      "delta": 8,
+      "pct": 50
+     },
+     {
+      "month": "2027-08",
+      "label_th": "ส.ค. 70",
+      "target": 59,
+      "delta": 9,
+      "pct": 59
+     },
+     {
+      "month": "2027-09",
+      "label_th": "ก.ย. 70",
+      "target": 69,
+      "delta": 10,
+      "pct": 69
+     },
+     {
+      "month": "2027-10",
+      "label_th": "ต.ค. 70",
+      "target": 79,
+      "delta": 10,
+      "pct": 79
+     },
+     {
+      "month": "2027-11",
+      "label_th": "พ.ย. 70",
+      "target": 89,
+      "delta": 10,
+      "pct": 89
+     },
+     {
+      "month": "2027-12",
+      "label_th": "ธ.ค. 70",
+      "target": 100,
+      "delta": 11,
+      "pct": 100
+     }
+    ]
+   }
+  },
+  {
+   "def": "WeeklyHabit",
+   "note": "g7",
+   "value": {
+    "goal_id": "g7",
+    "weeks": 53,
+    "per_week": 2,
+    "unit": "hours",
+    "text_th": "สัปดาห์ละ 2 ชั่วโมง"
+   }
+  },
+  {
+   "def": "Roadmap",
+   "note": "g8",
+   "value": {
+    "goal_id": "g8",
+    "months": 12,
+    "unit": "times",
+    "milestones": [
+     {
+      "month": "2027-01",
+      "label_th": "ม.ค. 70",
+      "target": 3,
+      "delta": 3,
+      "pct": 6
+     },
+     {
+      "month": "2027-02",
+      "label_th": "ก.พ. 70",
+      "target": 6,
+      "delta": 3,
+      "pct": 12
+     },
+     {
+      "month": "2027-03",
+      "label_th": "มี.ค. 70",
+      "target": 10,
+      "delta": 4,
+      "pct": 19
+     },
+     {
+      "month": "2027-04",
+      "label_th": "เม.ย. 70",
+      "target": 14,
+      "delta": 4,
+      "pct": 27
+     },
+     {
+      "month": "2027-05",
+      "label_th": "พ.ค. 70",
+      "target": 18,
+      "delta": 4,
+      "pct": 35
+     },
+     {
+      "month": "2027-06",
+      "label_th": "มิ.ย. 70",
+      "target": 22,
+      "delta": 4,
+      "pct": 42
+     },
+     {
+      "month": "2027-07",
+      "label_th": "ก.ค. 70",
+      "target": 26,
+      "delta": 4,
+      "pct": 50
+     },
+     {
+      "month": "2027-08",
+      "label_th": "ส.ค. 70",
+      "target": 31,
+      "delta": 5,
+      "pct": 60
+     },
+     {
+      "month": "2027-09",
+      "label_th": "ก.ย. 70",
+      "target": 36,
+      "delta": 5,
+      "pct": 69
+     },
+     {
+      "month": "2027-10",
+      "label_th": "ต.ค. 70",
+      "target": 41,
+      "delta": 5,
+      "pct": 79
+     },
+     {
+      "month": "2027-11",
+      "label_th": "พ.ย. 70",
+      "target": 46,
+      "delta": 5,
+      "pct": 88
+     },
+     {
+      "month": "2027-12",
+      "label_th": "ธ.ค. 70",
+      "target": 52,
+      "delta": 6,
+      "pct": 100
+     }
+    ]
+   }
+  },
+  {
+   "def": "WeeklyHabit",
+   "note": "g8",
+   "value": {
+    "goal_id": "g8",
+    "weeks": 53,
+    "per_week": 1,
+    "unit": "times",
+    "text_th": "สัปดาห์ละ 1 ครั้ง"
+   }
+  },
+  {
+   "def": "Milestone",
+   "note": "g1 2027-01",
+   "value": {
+    "month": "2027-01",
+    "label_th": "ม.ค. 70",
+    "target": 3500,
+    "delta": 3500,
+    "pct": 6
+   }
+  },
+  {
+   "def": "Milestone",
+   "note": "g1 2027-02",
+   "value": {
+    "month": "2027-02",
+    "label_th": "ก.พ. 70",
+    "target": 7300,
+    "delta": 3800,
+    "pct": 12
+   }
+  },
+  {
+   "def": "Milestone",
+   "note": "g1 2027-03",
+   "value": {
+    "month": "2027-03",
+    "label_th": "มี.ค. 70",
+    "target": 11300,
+    "delta": 4000,
+    "pct": 19
+   }
+  },
+  {
+   "def": "Milestone",
+   "note": "g1 2027-04",
+   "value": {
+    "month": "2027-04",
+    "label_th": "เม.ย. 70",
+    "target": 15600,
+    "delta": 4300,
+    "pct": 26
+   }
+  },
+  {
+   "def": "Milestone",
+   "note": "g1 2027-05",
+   "value": {
+    "month": "2027-05",
+    "label_th": "พ.ค. 70",
+    "target": 20200,
+    "delta": 4600,
+    "pct": 34
+   }
+  },
+  {
+   "def": "Milestone",
+   "note": "g1 2027-06",
+   "value": {
+    "month": "2027-06",
+    "label_th": "มิ.ย. 70",
+    "target": 25100,
+    "delta": 4900,
+    "pct": 42
+   }
+  },
+  {
+   "def": "Milestone",
+   "note": "g1 2027-07",
+   "value": {
+    "month": "2027-07",
+    "label_th": "ก.ค. 70",
+    "target": 30200,
+    "delta": 5100,
+    "pct": 50
+   }
+  },
+  {
+   "def": "Milestone",
+   "note": "g1 2027-08",
+   "value": {
+    "month": "2027-08",
+    "label_th": "ส.ค. 70",
+    "target": 35600,
+    "delta": 5400,
+    "pct": 59
+   }
+  },
+  {
+   "def": "Milestone",
+   "note": "g1 2027-09",
+   "value": {
+    "month": "2027-09",
+    "label_th": "ก.ย. 70",
+    "target": 41300,
+    "delta": 5700,
+    "pct": 69
+   }
+  },
+  {
+   "def": "Milestone",
+   "note": "g1 2027-10",
+   "value": {
+    "month": "2027-10",
+    "label_th": "ต.ค. 70",
+    "target": 47300,
+    "delta": 6000,
+    "pct": 79
+   }
+  },
+  {
+   "def": "Milestone",
+   "note": "g1 2027-11",
+   "value": {
+    "month": "2027-11",
+    "label_th": "พ.ย. 70",
+    "target": 53500,
+    "delta": 6200,
+    "pct": 89
+   }
+  },
+  {
+   "def": "Milestone",
+   "note": "g1 2027-12",
+   "value": {
+    "month": "2027-12",
+    "label_th": "ธ.ค. 70",
+    "target": 60000,
+    "delta": 6500,
+    "pct": 100
+   }
+  },
+  {
+   "def": "BoardLayout",
+   "note": "sunrise/iphone/5",
+   "value": {
+    "device": "iphone",
+    "theme": "sunrise",
+    "w": 1179,
+    "h": 2556,
+    "safe_top": 817,
+    "safe_bottom": 2300,
+    "tiles": [
+     {
+      "goal_id": "g1",
+      "x": 48,
+      "y": 865,
+      "w": 525,
+      "h": 441,
+      "color": "#FF9A62",
+      "category": "money"
+     },
+     {
+      "goal_id": "g2",
+      "x": 605,
+      "y": 865,
+      "w": 525,
+      "h": 441,
+      "color": "#FFC46B",
+      "category": "health"
+     },
+     {
+      "goal_id": "g3",
+      "x": 48,
+      "y": 1338,
+      "w": 525,
+      "h": 441,
+      "color": "#FF6F91",
+      "category": "learn"
+     },
+     {
+      "goal_id": "g4",
+      "x": 605,
+      "y": 1338,
+      "w": 525,
+      "h": 441,
+      "color": "#FFD79A",
+      "category": "health"
+     },
+     {
+      "goal_id": "g5",
+      "x": 48,
+      "y": 1811,
+      "w": 1083,
+      "h": 441,
+      "color": "#F9A8D4",
+      "category": "family"
+     }
+    ]
+   }
+  },
+  {
+   "def": "BoardLayout",
+   "note": "pastel/android/1",
+   "value": {
+    "device": "android",
+    "theme": "pastel",
+    "w": 1080,
+    "h": 2400,
+    "safe_top": 720,
+    "safe_bottom": 2208,
+    "tiles": [
+     {
+      "goal_id": "g1",
+      "x": 48,
+      "y": 768,
+      "w": 984,
+      "h": 1392,
+      "color": "#FFD6E0",
+      "category": "money"
+     }
+    ]
+   }
+  },
+  {
+   "def": "BoardLayout",
+   "note": "midnight/desktop/5",
+   "value": {
+    "device": "desktop",
+    "theme": "midnight",
+    "w": 1920,
+    "h": 1080,
+    "safe_top": 0,
+    "safe_bottom": 1015,
+    "tiles": [
+     {
+      "goal_id": "g1",
+      "x": 806,
+      "y": 129,
+      "w": 334,
+      "h": 403,
+      "color": "#1F2A6B",
+      "category": "money"
+     },
+     {
+      "goal_id": "g2",
+      "x": 1172,
+      "y": 129,
+      "w": 334,
+      "h": 403,
+      "color": "#3B2A7A",
+      "category": "health"
+     },
+     {
+      "goal_id": "g3",
+      "x": 1538,
+      "y": 129,
+      "w": 334,
+      "h": 403,
+      "color": "#0F4C75",
+      "category": "learn"
+     },
+     {
+      "goal_id": "g4",
+      "x": 806,
+      "y": 564,
+      "w": 334,
+      "h": 403,
+      "color": "#4C1D95",
+      "category": "health"
+     },
+     {
+      "goal_id": "g5",
+      "x": 1172,
+      "y": 564,
+      "w": 334,
+      "h": 403,
+      "color": "#1E3A8A",
+      "category": "family"
+     }
+    ]
+   }
+  },
+  {
+   "def": "BoardLayout",
+   "note": "thai_gold/iphone/3",
+   "value": {
+    "device": "iphone",
+    "theme": "thai_gold",
+    "w": 1179,
+    "h": 2556,
+    "safe_top": 817,
+    "safe_bottom": 2300,
+    "tiles": [
+     {
+      "goal_id": "g1",
+      "x": 48,
+      "y": 865,
+      "w": 525,
+      "h": 677,
+      "color": "#B8860B",
+      "category": "money"
+     },
+     {
+      "goal_id": "g2",
+      "x": 605,
+      "y": 865,
+      "w": 525,
+      "h": 677,
+      "color": "#D4AF37",
+      "category": "health"
+     },
+     {
+      "goal_id": "g3",
+      "x": 48,
+      "y": 1574,
+      "w": 1083,
+      "h": 677,
+      "color": "#8B0000",
+      "category": "learn"
+     }
+    ]
+   }
+  },
+  {
+   "def": "BoardLayout",
+   "note": "nature/android/6",
+   "value": {
+    "device": "android",
+    "theme": "nature",
+    "w": 1080,
+    "h": 2400,
+    "safe_top": 720,
+    "safe_bottom": 2208,
+    "tiles": [
+     {
+      "goal_id": "g1",
+      "x": 48,
+      "y": 768,
+      "w": 476,
+      "h": 442,
+      "color": "#2D6A4F",
+      "category": "money"
+     },
+     {
+      "goal_id": "g2",
+      "x": 556,
+      "y": 768,
+      "w": 476,
+      "h": 442,
+      "color": "#52B788",
+      "category": "health"
+     },
+     {
+      "goal_id": "g3",
+      "x": 48,
+      "y": 1242,
+      "w": 476,
+      "h": 442,
+      "color": "#95D5B2",
+      "category": "learn"
+     },
+     {
+      "goal_id": "g4",
+      "x": 556,
+      "y": 1242,
+      "w": 476,
+      "h": 442,
+      "color": "#B7E4C7",
+      "category": "health"
+     },
+     {
+      "goal_id": "g5",
+      "x": 48,
+      "y": 1716,
+      "w": 476,
+      "h": 442,
+      "color": "#40916C",
+      "category": "family"
+     },
+     {
+      "goal_id": "g6",
+      "x": 556,
+      "y": 1716,
+      "w": 476,
+      "h": 442,
+      "color": "#74C69D",
+      "category": "hobby"
+     }
+    ]
+   }
+  },
+  {
+   "def": "BoardLayout",
+   "note": "minimal/desktop/2",
+   "value": {
+    "device": "desktop",
+    "theme": "minimal",
+    "w": 1920,
+    "h": 1080,
+    "safe_top": 0,
+    "safe_bottom": 1015,
+    "tiles": [
+     {
+      "goal_id": "g1",
+      "x": 806,
+      "y": 129,
+      "w": 517,
+      "h": 838,
+      "color": "#F5F5F5",
+      "category": "money"
+     },
+     {
+      "goal_id": "g2",
+      "x": 1355,
+      "y": 129,
+      "w": 517,
+      "h": 838,
+      "color": "#E0E0E0",
+      "category": "health"
+     }
+    ]
+   }
+  },
+  {
+   "def": "Tile",
+   "note": "g1",
+   "value": {
+    "goal_id": "g1",
+    "x": 48,
+    "y": 865,
+    "w": 525,
+    "h": 441,
+    "color": "#FF9A62",
+    "category": "money"
+   }
+  },
+  {
+   "def": "Tile",
+   "note": "g2",
+   "value": {
+    "goal_id": "g2",
+    "x": 605,
+    "y": 865,
+    "w": 525,
+    "h": 441,
+    "color": "#FFC46B",
+    "category": "health"
+   }
+  },
+  {
+   "def": "Tile",
+   "note": "g3",
+   "value": {
+    "goal_id": "g3",
+    "x": 48,
+    "y": 1338,
+    "w": 525,
+    "h": 441,
+    "color": "#FF6F91",
+    "category": "learn"
+   }
+  },
+  {
+   "def": "Tile",
+   "note": "g4",
+   "value": {
+    "goal_id": "g4",
+    "x": 605,
+    "y": 1338,
+    "w": 525,
+    "h": 441,
+    "color": "#FFD79A",
+    "category": "health"
+   }
+  },
+  {
+   "def": "Tile",
+   "note": "g5",
+   "value": {
+    "goal_id": "g5",
+    "x": 48,
+    "y": 1811,
+    "w": 1083,
+    "h": 441,
+    "color": "#F9A8D4",
+    "category": "family"
+   }
+  },
+  {
+   "def": "WordOfYear",
+   "note": "g1,g2,g3,g4,g5",
+   "value": {
+    "category": "health",
+    "word_th": "แข็งแรง",
+    "word_en": "Strong",
+    "line_th": "คำประจำปี 2570 ของฉัน: แข็งแรง"
+   }
+  },
+  {
+   "def": "WordOfYear",
+   "note": "g1,g3",
+   "value": {
+    "category": "money",
+    "word_th": "มั่นคง",
+    "word_en": "Steady",
+    "line_th": "คำประจำปี 2570 ของฉัน: มั่นคง"
+   }
+  },
+  {
+   "def": "WordOfYear",
+   "note": "g5,g8",
+   "value": {
+    "category": "family",
+    "word_th": "อบอุ่น",
+    "word_en": "Warm",
+    "line_th": "คำประจำปี 2570 ของฉัน: อบอุ่น"
+   }
+  },
+  {
+   "def": "WordOfYear",
+   "note": "g6",
+   "value": {
+    "category": "hobby",
+    "word_th": "สนุก",
+    "word_en": "Play",
+    "line_th": "คำประจำปี 2570 ของฉัน: สนุก"
+   }
+  },
+  {
+   "def": "Countdown",
+   "note": "2026-12-24",
+   "value": {
+    "date": "2026-12-24",
+    "days_to_new_year": 8,
+    "days_passed": 357,
+    "year_pct": 98
+   }
+  },
+  {
+   "def": "Countdown",
+   "note": "2027-01-01",
+   "value": {
+    "date": "2027-01-01",
+    "days_to_new_year": 365,
+    "days_passed": 0,
+    "year_pct": 0
+   }
+  },
+  {
+   "def": "Countdown",
+   "note": "2027-06-30",
+   "value": {
+    "date": "2027-06-30",
+    "days_to_new_year": 185,
+    "days_passed": 180,
+    "year_pct": 49
+   }
+  },
+  {
+   "def": "Countdown",
+   "note": "2027-12-31",
+   "value": {
+    "date": "2027-12-31",
+    "days_to_new_year": 1,
+    "days_passed": 364,
+    "year_pct": 100
+   }
+  },
+  {
+   "def": "LogEntry",
+   "note": "2027-01-28",
+   "value": {
+    "date": "2027-01-28",
+    "amount": 3500
+   }
+  },
+  {
+   "def": "LogEntry",
+   "note": "2027-02-28",
+   "value": {
+    "date": "2027-02-28",
+    "amount": 3000
+   }
+  },
+  {
+   "def": "LogEntry",
+   "note": "2027-03-28",
+   "value": {
+    "date": "2027-03-28",
+    "amount": 4000
+   }
+  },
+  {
+   "def": "LogEntry",
+   "note": "2027-04-28",
+   "value": {
+    "date": "2027-04-28",
+    "amount": 3500
+   }
+  },
+  {
+   "def": "LogEntry",
+   "note": "2027-05-28",
+   "value": {
+    "date": "2027-05-28",
+    "amount": 4000
+   }
+  },
+  {
+   "def": "LogEntry",
+   "note": "2027-06-28",
+   "value": {
+    "date": "2027-06-28",
+    "amount": 4500
+   }
+  },
+  {
+   "def": "LogEntry",
+   "note": "2027-01-15",
+   "value": {
+    "date": "2027-01-15",
+    "amount": 1.0
+   }
+  },
+  {
+   "def": "LogEntry",
+   "note": "2027-02-15",
+   "value": {
+    "date": "2027-02-15",
+    "amount": 1.0
+   }
+  },
+  {
+   "def": "LogEntry",
+   "note": "2027-03-15",
+   "value": {
+    "date": "2027-03-15",
+    "amount": 0.5
+   }
+  },
+  {
+   "def": "Streak",
+   "note": "2027-02-07",
+   "value": {
+    "weeks": 6,
+    "this_week_done": true,
+    "badge_th": null,
+    "next_badge_at": 12
+   }
+  },
+  {
+   "def": "Streak",
+   "note": "2027-02-10",
+   "value": {
+    "weeks": 6,
+    "this_week_done": false,
+    "badge_th": null,
+    "next_badge_at": 12
+   }
+  },
+  {
+   "def": "Streak",
+   "note": "2027-02-16",
+   "value": {
+    "weeks": 0,
+    "this_week_done": false,
+    "badge_th": null,
+    "next_badge_at": 4
+   }
+  },
+  {
+   "def": "Streak",
+   "note": "2027-01-24",
+   "value": {
+    "weeks": 4,
+    "this_week_done": true,
+    "badge_th": "เริ่มต้นแล้ว",
+    "next_badge_at": 12
+   }
+  },
+  {
+   "def": "Streak",
+   "note": "2027-01-24",
+   "value": {
+    "weeks": 0,
+    "this_week_done": false,
+    "badge_th": null,
+    "next_badge_at": 4
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "g1 mid-year",
+   "value": {
+    "goal_id": "g1",
+    "done": 22500,
+    "expected": 25100.0,
+    "pct": 38,
+    "status": "behind",
+    "glow": 1,
+    "message_th": "ช้ากว่าแผนนิดหน่อย ไม่เป็นไร สัปดาห์นี้ลองก้าวเล็ก ๆ อีกครั้ง"
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "g2 mid-year",
+   "value": {
+    "goal_id": "g2",
+    "done": 5.5,
+    "expected": 6.0,
+    "pct": 92,
+    "status": "on_track",
+    "glow": 4,
+    "message_th": "ตรงแผนพอดี ค่อย ๆ ไปแบบนี้แหละ"
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "g3 mid-year",
+   "value": {
+    "goal_id": "g3",
+    "done": 6,
+    "expected": 10.0,
+    "pct": 25,
+    "status": "behind",
+    "glow": 1,
+    "message_th": "ช้ากว่าแผนนิดหน่อย ไม่เป็นไร สัปดาห์นี้ลองก้าวเล็ก ๆ อีกครั้ง"
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "g4 mid-year",
+   "value": {
+    "goal_id": "g4",
+    "done": 165,
+    "expected": 125.0,
+    "pct": 55,
+    "status": "ahead",
+    "glow": 2,
+    "message_th": "นำแผนอยู่ เก่งมาก รักษาจังหวะนี้ไว้"
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "g5 mid-year",
+   "value": {
+    "goal_id": "g5",
+    "done": 1,
+    "expected": 2.0,
+    "pct": 25,
+    "status": "behind",
+    "glow": 1,
+    "message_th": "ช้ากว่าแผนนิดหน่อย ไม่เป็นไร สัปดาห์นี้ลองก้าวเล็ก ๆ อีกครั้ง"
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "g1 2027-03-15",
+   "value": {
+    "goal_id": "g1",
+    "done": 6500,
+    "expected": 9235.48,
+    "pct": 11,
+    "status": "behind",
+    "glow": 0,
+    "message_th": "ช้ากว่าแผนนิดหน่อย ไม่เป็นไร สัปดาห์นี้ลองก้าวเล็ก ๆ อีกครั้ง"
+   }
+  },
+  {
+   "def": "Progress",
+   "note": "g5 done",
+   "value": {
+    "goal_id": "g5",
+    "done": 5,
+    "expected": 0.06,
+    "pct": 100,
+    "status": "done",
+    "glow": 5,
+    "message_th": "สำเร็จแล้ว! ภูมิใจในตัวเองได้เต็มที่"
+   }
+  },
+  {
+   "def": "BoardGlow",
+   "note": "mid-year",
+   "value": {
+    "overall_pct": 47,
+    "level": 2,
+    "lit_tiles": 5,
+    "tiles": [
+     {
+      "goal_id": "g1",
+      "glow": 1
+     },
+     {
+      "goal_id": "g2",
+      "glow": 4
+     },
+     {
+      "goal_id": "g3",
+      "glow": 1
+     },
+     {
+      "goal_id": "g4",
+      "glow": 2
+     },
+     {
+      "goal_id": "g5",
+      "glow": 1
+     }
+    ]
+   }
+  },
+  {
+   "def": "BoardGlow",
+   "note": "week 1",
+   "value": {
+    "overall_pct": 0,
+    "level": 0,
+    "lit_tiles": 0,
+    "tiles": [
+     {
+      "goal_id": "g1",
+      "glow": 0
+     },
+     {
+      "goal_id": "g2",
+      "glow": 0
+     },
+     {
+      "goal_id": "g3",
+      "glow": 0
+     },
+     {
+      "goal_id": "g4",
+      "glow": 0
+     },
+     {
+      "goal_id": "g5",
+      "glow": 0
+     }
+    ]
+   }
+  },
+  {
+   "def": "Review",
+   "note": "mid_year",
+   "value": {
+    "period": "mid_year",
+    "title_th": "ทบทวนครึ่งปี",
+    "goals": 5,
+    "goals_done": 0,
+    "overall_pct": 47,
+    "best_goal_id": "g2",
+    "best_title_th": "ลดน้ำหนักจาก 68 เหลือ 62 กก.",
+    "note_th": "ทุกก้าวนับหมด ปีหน้าเอาใหม่ได้เสมอ"
+   }
+  },
+  {
+   "def": "Review",
+   "note": "year all done",
+   "value": {
+    "period": "year",
+    "title_th": "สรุปปีของฉัน",
+    "goals": 5,
+    "goals_done": 5,
+    "overall_pct": 100,
+    "best_goal_id": "g1",
+    "best_title_th": "เก็บเงินเที่ยวญี่ปุ่น 60,000 บาท",
+    "note_th": "ปีนี้ไปได้ไกลกว่าที่คิด"
+   }
+  },
+  {
+   "def": "BuddyCard",
+   "note": "private",
+   "value": {
+    "owner_th": "คุณมิ้นท์",
+    "buddy_th": "คุณโบ๊ท",
+    "pact_th": "คุณมิ้นท์ กับ คุณโบ๊ท สัญญาว่าจะเช็กอินกันทุกวันอาทิตย์",
+    "items": [
+     {
+      "title_th": "เงิน",
+      "amount_hidden": true
+     },
+     {
+      "title_th": "สุขภาพ",
+      "amount_hidden": true
+     },
+     {
+      "title_th": "อ่านหนังสือให้ได้ 24 เล่ม",
+      "amount_hidden": false
+     },
+     {
+      "title_th": "วิ่งสะสม 300 กม.",
+      "amount_hidden": false
+     },
+     {
+      "title_th": "พาแม่เที่ยวต่างจังหวัด 4 ทริป",
+      "amount_hidden": false
+     }
+    ],
+    "private": true
+   }
+  },
+  {
+   "def": "BuddyCard",
+   "note": "public",
+   "value": {
+    "owner_th": "คุณมิ้นท์",
+    "buddy_th": "คุณโบ๊ท",
+    "pact_th": "คุณมิ้นท์ กับ คุณโบ๊ท สัญญาว่าจะเช็กอินกันทุกวันอาทิตย์",
+    "items": [
+     {
+      "title_th": "อ่านหนังสือให้ได้ 24 เล่ม",
+      "amount_hidden": false
+     },
+     {
+      "title_th": "วิ่งสะสม 300 กม.",
+      "amount_hidden": false
+     },
+     {
+      "title_th": "พาแม่เที่ยวต่างจังหวัด 4 ทริป",
+      "amount_hidden": false
+     }
+    ],
+    "private": false
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "board",
+   "value": {
+    "kind": "board",
+    "size": "1080x1350",
+    "amounts_hidden_default": true,
+    "faces_blurred": true,
+    "glow_level": 0,
+    "word_th": "แข็งแรง",
+    "watermark": "DreamBoard · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "progress",
+   "value": {
+    "kind": "progress",
+    "size": "1080x1350",
+    "amounts_hidden_default": true,
+    "faces_blurred": true,
+    "glow_level": 2,
+    "word_th": null,
+    "watermark": "DreamBoard · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "review",
+   "value": {
+    "kind": "review",
+    "size": "1080x1350",
+    "amounts_hidden_default": true,
+    "faces_blurred": true,
+    "glow_level": 3,
+    "word_th": "แข็งแรง",
+    "watermark": "DreamBoard · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "15",
+   "value": {
+    "seconds": 15,
+    "ratio": "9:16",
+    "bpm": 100,
+    "shots": [
+     {
+      "kind": "hook",
+      "start": 0.0,
+      "end": 2.0,
+      "caption_th": "ปีใหม่ทีไร ตั้งเป้าแล้วลืมทุกปี?"
+     },
+     {
+      "kind": "build",
+      "start": 2.0,
+      "end": 3.8,
+      "caption_th": "สร้างแอปด้วย AI จากแพ็กนี้"
+     },
+     {
+      "kind": "type_goals",
+      "start": 3.8,
+      "end": 6.5,
+      "caption_th": "พิมพ์เป้าแบบบ่น ๆ AI แปลงเป็นเป้าชัด"
+     },
+     {
+      "kind": "board_reveal",
+      "start": 6.5,
+      "end": 9.1,
+      "caption_th": "กดปุ๊บ ได้บอร์ดเป้าหมายสวย ๆ"
+     },
+     {
+      "kind": "lockscreen",
+      "start": 9.1,
+      "end": 11.3,
+      "caption_th": "ตั้งเป็นล็อกสกรีน เห็นทุกครั้งที่ปลดล็อก"
+     },
+     {
+      "kind": "glow_up",
+      "start": 11.3,
+      "end": 13.2,
+      "caption_th": "ทำได้มากขึ้น บอร์ดยิ่งสว่าง"
+     },
+     {
+      "kind": "cta",
+      "start": 13.2,
+      "end": 15.0,
+      "caption_th": "คอมเมนต์ DREAM รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "DreamBoard · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "20",
+   "value": {
+    "seconds": 20,
+    "ratio": "9:16",
+    "bpm": 100,
+    "shots": [
+     {
+      "kind": "hook",
+      "start": 0.0,
+      "end": 2.6,
+      "caption_th": "ปีใหม่ทีไร ตั้งเป้าแล้วลืมทุกปี?"
+     },
+     {
+      "kind": "build",
+      "start": 2.6,
+      "end": 5.0,
+      "caption_th": "สร้างแอปด้วย AI จากแพ็กนี้"
+     },
+     {
+      "kind": "type_goals",
+      "start": 5.0,
+      "end": 8.6,
+      "caption_th": "พิมพ์เป้าแบบบ่น ๆ AI แปลงเป็นเป้าชัด"
+     },
+     {
+      "kind": "board_reveal",
+      "start": 8.6,
+      "end": 12.0,
+      "caption_th": "กดปุ๊บ ได้บอร์ดเป้าหมายสวย ๆ"
+     },
+     {
+      "kind": "lockscreen",
+      "start": 12.0,
+      "end": 15.0,
+      "caption_th": "ตั้งเป็นล็อกสกรีน เห็นทุกครั้งที่ปลดล็อก"
+     },
+     {
+      "kind": "glow_up",
+      "start": 15.0,
+      "end": 17.6,
+      "caption_th": "ทำได้มากขึ้น บอร์ดยิ่งสว่าง"
+     },
+     {
+      "kind": "cta",
+      "start": 17.6,
+      "end": 20.0,
+      "caption_th": "คอมเมนต์ DREAM รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "DreamBoard · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "24",
+   "value": {
+    "seconds": 24,
+    "ratio": "9:16",
+    "bpm": 100,
+    "shots": [
+     {
+      "kind": "hook",
+      "start": 0.0,
+      "end": 3.1,
+      "caption_th": "ปีใหม่ทีไร ตั้งเป้าแล้วลืมทุกปี?"
+     },
+     {
+      "kind": "build",
+      "start": 3.1,
+      "end": 6.0,
+      "caption_th": "สร้างแอปด้วย AI จากแพ็กนี้"
+     },
+     {
+      "kind": "type_goals",
+      "start": 6.0,
+      "end": 10.3,
+      "caption_th": "พิมพ์เป้าแบบบ่น ๆ AI แปลงเป็นเป้าชัด"
+     },
+     {
+      "kind": "board_reveal",
+      "start": 10.3,
+      "end": 14.4,
+      "caption_th": "กดปุ๊บ ได้บอร์ดเป้าหมายสวย ๆ"
+     },
+     {
+      "kind": "lockscreen",
+      "start": 14.4,
+      "end": 18.0,
+      "caption_th": "ตั้งเป็นล็อกสกรีน เห็นทุกครั้งที่ปลดล็อก"
+     },
+     {
+      "kind": "glow_up",
+      "start": 18.0,
+      "end": 21.1,
+      "caption_th": "ทำได้มากขึ้น บอร์ดยิ่งสว่าง"
+     },
+     {
+      "kind": "cta",
+      "start": 21.1,
+      "end": 24.0,
+      "caption_th": "คอมเมนต์ DREAM รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "DreamBoard · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "30",
+   "value": {
+    "seconds": 30,
+    "ratio": "9:16",
+    "bpm": 100,
+    "shots": [
+     {
+      "kind": "hook",
+      "start": 0.0,
+      "end": 3.9,
+      "caption_th": "ปีใหม่ทีไร ตั้งเป้าแล้วลืมทุกปี?"
+     },
+     {
+      "kind": "build",
+      "start": 3.9,
+      "end": 7.5,
+      "caption_th": "สร้างแอปด้วย AI จากแพ็กนี้"
+     },
+     {
+      "kind": "type_goals",
+      "start": 7.5,
+      "end": 12.9,
+      "caption_th": "พิมพ์เป้าแบบบ่น ๆ AI แปลงเป็นเป้าชัด"
+     },
+     {
+      "kind": "board_reveal",
+      "start": 12.9,
+      "end": 18.0,
+      "caption_th": "กดปุ๊บ ได้บอร์ดเป้าหมายสวย ๆ"
+     },
+     {
+      "kind": "lockscreen",
+      "start": 18.0,
+      "end": 22.5,
+      "caption_th": "ตั้งเป็นล็อกสกรีน เห็นทุกครั้งที่ปลดล็อก"
+     },
+     {
+      "kind": "glow_up",
+      "start": 22.5,
+      "end": 26.4,
+      "caption_th": "ทำได้มากขึ้น บอร์ดยิ่งสว่าง"
+     },
+     {
+      "kind": "cta",
+      "start": 26.4,
+      "end": 30.0,
+      "caption_th": "คอมเมนต์ DREAM รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "DreamBoard · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "hook",
+   "value": {
+    "kind": "hook",
+    "start": 0.0,
+    "end": 3.1,
+    "caption_th": "ปีใหม่ทีไร ตั้งเป้าแล้วลืมทุกปี?"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "build",
+   "value": {
+    "kind": "build",
+    "start": 3.1,
+    "end": 6.0,
+    "caption_th": "สร้างแอปด้วย AI จากแพ็กนี้"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "type_goals",
+   "value": {
+    "kind": "type_goals",
+    "start": 6.0,
+    "end": 10.3,
+    "caption_th": "พิมพ์เป้าแบบบ่น ๆ AI แปลงเป็นเป้าชัด"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "board_reveal",
+   "value": {
+    "kind": "board_reveal",
+    "start": 10.3,
+    "end": 14.4,
+    "caption_th": "กดปุ๊บ ได้บอร์ดเป้าหมายสวย ๆ"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "lockscreen",
+   "value": {
+    "kind": "lockscreen",
+    "start": 14.4,
+    "end": 18.0,
+    "caption_th": "ตั้งเป็นล็อกสกรีน เห็นทุกครั้งที่ปลดล็อก"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "glow_up",
+   "value": {
+    "kind": "glow_up",
+    "start": 18.0,
+    "end": 21.1,
+    "caption_th": "ทำได้มากขึ้น บอร์ดยิ่งสว่าง"
+   }
+  },
+  {
+   "def": "ReelShot",
+   "note": "cta",
+   "value": {
+    "kind": "cta",
+    "start": 21.1,
+    "end": 24.0,
+    "caption_th": "คอมเมนต์ DREAM รับแพ็กฟรี"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(0,)",
+   "value": {
+    "plan": "free",
+    "boards_per_day": 3,
+    "used": 0,
+    "left": 3,
+    "blocked": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(2,)",
+   "value": {
+    "plan": "free",
+    "boards_per_day": 3,
+    "used": 2,
+    "left": 1,
+    "blocked": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(3,)",
+   "value": {
+    "plan": "free",
+    "boards_per_day": 3,
+    "used": 3,
+    "left": 0,
+    "blocked": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(5, 'plus')",
+   "value": {
+    "plan": "plus",
+    "boards_per_day": 30,
+    "used": 5,
+    "left": 25,
+    "blocked": false
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "((), 28)",
+   "value": {
+    "allowed": true,
+    "level": "ok",
+    "flags": [],
+    "messages_th": [
+     "ตั้งเป้าที่เราทำเองได้ ข้อมูลเก็บบนเครื่อง การ์ดแชร์ซ่อนตัวเลขเงิน/น้ำหนักได้"
+    ],
+    "share_allowed": true
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(('gambling',), 28)",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "gambling"
+    ],
+    "messages_th": [
+     "หวย/พนันควบคุมไม่ได้ ลองเปลี่ยนเป็นเป้าเก็บเงินที่เราคุมเองได้แทน"
+    ],
+    "share_allowed": true
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "((), 12)",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "minor"
+    ],
+    "messages_th": [
+     "อายุต่ำกว่า 13 ปี ให้ผู้ปกครองช่วยตั้งเป้าและเปิด parent mode ก่อนแชร์"
+    ],
+    "share_allowed": false
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "((), 12, True)",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "minor"
+    ],
+    "messages_th": [
+     "อายุต่ำกว่า 13 ปี ให้ผู้ปกครองช่วยตั้งเป้าและเปิด parent mode ก่อนแชร์"
+    ],
+    "share_allowed": true
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(('self_harm',), 30)",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "self_harm"
+    ],
+    "messages_th": [
+     "ถ้ากำลังรู้สึกไม่ไหว คุยกับสายด่วนสุขภาพจิต 1323 ได้ตลอด 24 ชม. คุณไม่ได้อยู่คนเดียว"
+    ],
+    "share_allowed": false
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(('extreme_diet', 'medical'), 35)",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "extreme_diet",
+     "medical"
+    ],
+    "messages_th": [
+     "ลดเร็วเกินไปไม่ปลอดภัย แอปปรับเป้าให้ไม่เกิน 0.5–1 กก./สัปดาห์ ถ้ามีโรคประจำตัวปรึกษาแพทย์ก่อน",
+     "เรื่องยา/การรักษา ปรึกษาแพทย์ก่อนเปลี่ยนแปลง แอปไม่ใช่คำแนะนำทางการแพทย์"
+    ],
+    "share_allowed": false
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(('photo_of_others',), 28)",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "photo_of_others"
+    ],
+    "messages_th": [
+     "รูปบนบอร์ดต้องเป็นรูปของเราหรือได้รับอนุญาต การ์ดแชร์เบลอหน้าคนอื่นให้อัตโนมัติ"
+    ],
+    "share_allowed": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "None",
+   "value": {
+    "flag": null,
+    "level": "ok",
+    "message_th": "ตั้งเป้าที่เราทำเองได้ ข้อมูลเก็บบนเครื่อง การ์ดแชร์ซ่อนตัวเลขเงิน/น้ำหนักได้",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "extreme_diet",
+   "value": {
+    "flag": "extreme_diet",
+    "level": "stop",
+    "message_th": "ลดเร็วเกินไปไม่ปลอดภัย แอปปรับเป้าให้ไม่เกิน 0.5–1 กก./สัปดาห์ ถ้ามีโรคประจำตัวปรึกษาแพทย์ก่อน",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "self_harm",
+   "value": {
+    "flag": "self_harm",
+    "level": "stop",
+    "message_th": "ถ้ากำลังรู้สึกไม่ไหว คุยกับสายด่วนสุขภาพจิต 1323 ได้ตลอด 24 ชม. คุณไม่ได้อยู่คนเดียว",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "gambling",
+   "value": {
+    "flag": "gambling",
+    "level": "warn",
+    "message_th": "หวย/พนันควบคุมไม่ได้ ลองเปลี่ยนเป็นเป้าเก็บเงินที่เราคุมเองได้แทน",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "get_rich_quick",
+   "value": {
+    "flag": "get_rich_quick",
+    "level": "warn",
+    "message_th": "ระวังโครงการรวยเร็ว/ลงทุนผลตอบแทนสูงผิดปกติ แอปไม่ให้คำแนะนำการลงทุน",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "other_person",
+   "value": {
+    "flag": "other_person",
+    "level": "warn",
+    "message_th": "เป้าที่ขึ้นกับคนอื่นคุมไม่ได้ ลองเขียนเป็นสิ่งที่เราทำเอง เช่น 'โทรหาแม่ทุกอาทิตย์'",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "medical",
+   "value": {
+    "flag": "medical",
+    "level": "warn",
+    "message_th": "เรื่องยา/การรักษา ปรึกษาแพทย์ก่อนเปลี่ยนแปลง แอปไม่ใช่คำแนะนำทางการแพทย์",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "minor",
+   "value": {
+    "flag": "minor",
+    "level": "warn",
+    "message_th": "อายุต่ำกว่า 13 ปี ให้ผู้ปกครองช่วยตั้งเป้าและเปิด parent mode ก่อนแชร์",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "photo_of_others",
+   "value": {
+    "flag": "photo_of_others",
+    "level": "warn",
+    "message_th": "รูปบนบอร์ดต้องเป็นรูปของเราหรือได้รับอนุญาต การ์ดแชร์เบลอหน้าคนอื่นให้อัตโนมัติ",
+    "block": false
+   }
+  }
+ ]
+}
