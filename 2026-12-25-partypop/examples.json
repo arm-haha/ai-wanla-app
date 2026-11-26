@@ -1,0 +1,3490 @@
+{
+ "examples": [
+  {
+   "def": "User",
+   "note": "Prae",
+   "value": {
+    "id": "u01",
+    "name_th": "คุณแพร",
+    "name_en": "Prae",
+    "age": 32,
+    "city_th": "นนทบุรี"
+   }
+  },
+  {
+   "def": "User",
+   "note": "Ton",
+   "value": {
+    "id": "u02",
+    "name_th": "พี่ต้น",
+    "name_en": "Ton",
+    "age": 38,
+    "city_th": "กรุงเทพฯ"
+   }
+  },
+  {
+   "def": "User",
+   "note": "Baibua",
+   "value": {
+    "id": "u03",
+    "name_th": "น้องใบบัว",
+    "name_en": "Baibua",
+    "age": 11,
+    "city_th": "เชียงใหม่"
+   }
+  },
+  {
+   "def": "Theme",
+   "note": "countdown_gold",
+   "value": {
+    "key": "countdown_gold",
+    "name_th": "เคานต์ดาวน์ทองระยิบ",
+    "name_en": "Countdown gold",
+    "palette": [
+     "#14102B",
+     "#FFC440",
+     "#F5E6B8",
+     "#FF6B8B",
+     "#FFFFFF",
+     "#2A1850"
+    ],
+    "dress_th": "ทอง/ดำ/วิบวับ"
+   }
+  },
+  {
+   "def": "Theme",
+   "note": "cozy_xmas",
+   "value": {
+    "key": "cozy_xmas",
+    "name_th": "คริสต์มาสอบอุ่น",
+    "name_en": "Cozy Christmas",
+    "palette": [
+     "#B3202A",
+     "#1F6B45",
+     "#F7E8D0",
+     "#E9B949",
+     "#FFFFFF",
+     "#5A2E1A"
+    ],
+    "dress_th": "แดง/เขียว"
+   }
+  },
+  {
+   "def": "Theme",
+   "note": "pastel_pop",
+   "value": {
+    "key": "pastel_pop",
+    "name_th": "พาสเทลป๊อป",
+    "name_en": "Pastel pop",
+    "palette": [
+     "#FFD6E0",
+     "#C1E1FF",
+     "#D7F9D0",
+     "#FFF1B8",
+     "#E5D4FF",
+     "#FFFFFF"
+    ],
+    "dress_th": "สีพาสเทล"
+   }
+  },
+  {
+   "def": "Theme",
+   "note": "thai_fair",
+   "value": {
+    "key": "thai_fair",
+    "name_th": "งานวัดย้อนยุค",
+    "name_en": "Thai temple fair",
+    "palette": [
+     "#E63946",
+     "#F4A261",
+     "#2A9D8F",
+     "#FFD166",
+     "#FFFFFF",
+     "#264653"
+    ],
+    "dress_th": "ผ้าถุง/เสื้อลายดอก"
+   }
+  },
+  {
+   "def": "Theme",
+   "note": "neon_disco",
+   "value": {
+    "key": "neon_disco",
+    "name_th": "นีออนดิสโก้",
+    "name_en": "Neon disco",
+    "palette": [
+     "#0B0B1E",
+     "#FF2E97",
+     "#00E5FF",
+     "#B967FF",
+     "#FFE600",
+     "#FFFFFF"
+    ],
+    "dress_th": "สีสะท้อนแสง"
+   }
+  },
+  {
+   "def": "Theme",
+   "note": "minimal_white",
+   "value": {
+    "key": "minimal_white",
+    "name_th": "มินิมอลขาวทอง",
+    "name_en": "Minimal white & gold",
+    "palette": [
+     "#FFFFFF",
+     "#F2EDE4",
+     "#D4AF37",
+     "#C9C2B8",
+     "#8A8178",
+     "#1E1E1E"
+    ],
+    "dress_th": "ขาว/ครีม"
+   }
+  },
+  {
+   "def": "DecorItem",
+   "note": "garland",
+   "value": {
+    "key": "garland",
+    "name_th": "ธงราวตัวอักษร HAPPY NEW YEAR",
+    "zone": "wall",
+    "price": 59,
+    "pack_th": "ยาว 2 ม./แพ็ก",
+    "priority": 1,
+    "themes": [
+     "countdown_gold",
+     "cozy_xmas",
+     "pastel_pop",
+     "thai_fair",
+     "neon_disco",
+     "minimal_white"
+    ],
+    "qty_rule": "wall_m/2"
+   }
+  },
+  {
+   "def": "DecorItem",
+   "note": "balloons",
+   "value": {
+    "key": "balloons",
+    "name_th": "ลูกโป่งสีธีม",
+    "zone": "ceiling",
+    "price": 89,
+    "pack_th": "20 ลูก/แพ็ก",
+    "priority": 2,
+    "themes": [
+     "countdown_gold",
+     "cozy_xmas",
+     "pastel_pop",
+     "thai_fair",
+     "neon_disco",
+     "minimal_white"
+    ],
+    "qty_rule": "area*1.5/20"
+   }
+  },
+  {
+   "def": "DecorItem",
+   "note": "lights",
+   "value": {
+    "key": "lights",
+    "name_th": "ไฟ LED เส้น (ใช้ถ่าน/USB)",
+    "zone": "wall",
+    "price": 129,
+    "pack_th": "5 ม./เส้น",
+    "priority": 3,
+    "themes": [
+     "countdown_gold",
+     "cozy_xmas",
+     "pastel_pop",
+     "thai_fair",
+     "neon_disco",
+     "minimal_white"
+    ],
+    "qty_rule": "(wall_m+depth_m)/5"
+   }
+  },
+  {
+   "def": "DecorItem",
+   "note": "backdrop",
+   "value": {
+    "key": "backdrop",
+    "name_th": "ม่านฟอยล์มุมถ่ายรูป",
+    "zone": "photo",
+    "price": 79,
+    "pack_th": "1×2 ม./ชิ้น",
+    "priority": 4,
+    "themes": [
+     "countdown_gold",
+     "cozy_xmas",
+     "pastel_pop",
+     "thai_fair",
+     "neon_disco",
+     "minimal_white"
+    ],
+    "qty_rule": "1"
+   }
+  },
+  {
+   "def": "DecorItem",
+   "note": "number_balloons",
+   "value": {
+    "key": "number_balloons",
+    "name_th": "ลูกโป่งฟอยล์ตัวเลขปีใหม่",
+    "zone": "photo",
+    "price": 159,
+    "pack_th": "4 ตัว/ชุด",
+    "priority": 5,
+    "themes": [
+     "countdown_gold",
+     "neon_disco",
+     "minimal_white",
+     "pastel_pop"
+    ],
+    "qty_rule": "1"
+   }
+  },
+  {
+   "def": "DecorItem",
+   "note": "tablecloth",
+   "value": {
+    "key": "tablecloth",
+    "name_th": "ผ้าปูโต๊ะลายธีม",
+    "zone": "table",
+    "price": 99,
+    "pack_th": "1 ผืน",
+    "priority": 6,
+    "themes": [
+     "countdown_gold",
+     "cozy_xmas",
+     "pastel_pop",
+     "thai_fair",
+     "neon_disco",
+     "minimal_white"
+    ],
+    "qty_rule": "tables"
+   }
+  },
+  {
+   "def": "DecorItem",
+   "note": "hats",
+   "value": {
+    "key": "hats",
+    "name_th": "หมวกปาร์ตี้ + ที่คาดผม",
+    "zone": "guest",
+    "price": 69,
+    "pack_th": "10 ชิ้น/แพ็ก",
+    "priority": 7,
+    "themes": [
+     "countdown_gold",
+     "cozy_xmas",
+     "pastel_pop",
+     "thai_fair",
+     "neon_disco",
+     "minimal_white"
+    ],
+    "qty_rule": "guests/10"
+   }
+  },
+  {
+   "def": "DecorItem",
+   "note": "props",
+   "value": {
+    "key": "props",
+    "name_th": "พร็อพถ่ายรูปบนไม้",
+    "zone": "photo",
+    "price": 99,
+    "pack_th": "12 ชิ้น/ชุด",
+    "priority": 8,
+    "themes": [
+     "countdown_gold",
+     "cozy_xmas",
+     "pastel_pop",
+     "thai_fair",
+     "neon_disco",
+     "minimal_white"
+    ],
+    "qty_rule": "1"
+   }
+  },
+  {
+   "def": "DecorItem",
+   "note": "led_candles",
+   "value": {
+    "key": "led_candles",
+    "name_th": "เทียน LED กลางโต๊ะ",
+    "zone": "table",
+    "price": 89,
+    "pack_th": "6 ชิ้น/แพ็ก",
+    "priority": 9,
+    "themes": [
+     "cozy_xmas",
+     "minimal_white",
+     "countdown_gold"
+    ],
+    "qty_rule": "tables"
+   }
+  },
+  {
+   "def": "DecorItem",
+   "note": "mini_tree",
+   "value": {
+    "key": "mini_tree",
+    "name_th": "ต้นคริสต์มาสตั้งโต๊ะ 60 ซม.",
+    "zone": "floor",
+    "price": 249,
+    "pack_th": "1 ต้น",
+    "priority": 5,
+    "themes": [
+     "cozy_xmas"
+    ],
+    "qty_rule": "1"
+   }
+  },
+  {
+   "def": "DecorItem",
+   "note": "paper_lanterns",
+   "value": {
+    "key": "paper_lanterns",
+    "name_th": "โคมกระดาษงานวัด",
+    "zone": "ceiling",
+    "price": 119,
+    "pack_th": "6 ใบ/แพ็ก",
+    "priority": 3,
+    "themes": [
+     "thai_fair"
+    ],
+    "qty_rule": "wall_m/2"
+   }
+  },
+  {
+   "def": "DecorItem",
+   "note": "disco_ball",
+   "value": {
+    "key": "disco_ball",
+    "name_th": "ลูกบอลดิสโก้ + ไฟหมุน USB",
+    "zone": "ceiling",
+    "price": 199,
+    "pack_th": "1 ชุด",
+    "priority": 3,
+    "themes": [
+     "neon_disco"
+    ],
+    "qty_rule": "1"
+   }
+  },
+  {
+   "def": "AiRoomScan",
+   "note": "ห้องนั่งเล่นคุณแพร",
+   "value": {
+    "room_type": "living",
+    "width_m": 4.2,
+    "depth_m": 3.6,
+    "tables": 1,
+    "has_balcony": true,
+    "rental": true,
+    "zones": [
+     "wall",
+     "sofa",
+     "table",
+     "window",
+     "ceiling"
+    ],
+    "light": "warm",
+    "clutter": 0.35,
+    "confidence": 0.9
+   }
+  },
+  {
+   "def": "Room",
+   "note": "ห้องนั่งเล่นคุณแพร",
+   "value": {
+    "room_type": "living",
+    "width_m": 4.2,
+    "depth_m": 3.6,
+    "area_m2": 15.12,
+    "wall_m": 4.2,
+    "tables": 1,
+    "has_balcony": true,
+    "rental": true
+   }
+  },
+  {
+   "def": "AiRoomScan",
+   "note": "สตูดิโอ",
+   "value": {
+    "room_type": "studio",
+    "width_m": 3.0,
+    "depth_m": 2.5,
+    "tables": 1,
+    "has_balcony": false,
+    "rental": true,
+    "zones": [
+     "wall",
+     "bed",
+     "table"
+    ],
+    "light": "cool",
+    "clutter": 0.6,
+    "confidence": 0.82
+   }
+  },
+  {
+   "def": "Room",
+   "note": "สตูดิโอ",
+   "value": {
+    "room_type": "studio",
+    "width_m": 3.0,
+    "depth_m": 2.5,
+    "area_m2": 7.5,
+    "wall_m": 3.0,
+    "tables": 1,
+    "has_balcony": false,
+    "rental": true
+   }
+  },
+  {
+   "def": "AiRoomScan",
+   "note": "ออฟฟิศ",
+   "value": {
+    "room_type": "office",
+    "width_m": 8.0,
+    "depth_m": 6.0,
+    "tables": 3,
+    "has_balcony": false,
+    "rental": false,
+    "zones": [
+     "wall",
+     "table",
+     "window",
+     "ceiling"
+    ],
+    "light": "cool",
+    "clutter": 0.2,
+    "confidence": 0.88
+   }
+  },
+  {
+   "def": "Room",
+   "note": "ออฟฟิศ",
+   "value": {
+    "room_type": "office",
+    "width_m": 8.0,
+    "depth_m": 6.0,
+    "area_m2": 48.0,
+    "wall_m": 8.0,
+    "tables": 3,
+    "has_balcony": false,
+    "rental": false
+   }
+  },
+  {
+   "def": "Capacity",
+   "note": "fixture 12",
+   "value": {
+    "guests": 12,
+    "seated_max": 8,
+    "standing_max": 17,
+    "status": "mingle",
+    "exit_path_cm": 80,
+    "tip_th": "นั่งได้ 8 คน ที่เหลือยืน/นั่งเบาะพื้น จัดโต๊ะอาหารชิดผนังเป็นบุฟเฟต์",
+    "flag": null
+   }
+  },
+  {
+   "def": "Capacity",
+   "note": "6",
+   "value": {
+    "guests": 6,
+    "seated_max": 8,
+    "standing_max": 17,
+    "status": "comfy",
+    "exit_path_cm": 80,
+    "tip_th": "นั่งได้ครบทุกคน สบาย ๆ",
+    "flag": null
+   }
+  },
+  {
+   "def": "Capacity",
+   "note": "studio 12",
+   "value": {
+    "guests": 12,
+    "seated_max": 4,
+    "standing_max": 8,
+    "status": "over",
+    "exit_path_cm": 80,
+    "tip_th": "เกินพื้นที่ 4 คน ลองใช้ระเบียง แบ่งรอบ หรือย้ายโซนอาหาร",
+    "flag": "over_capacity"
+   }
+  },
+  {
+   "def": "Capacity",
+   "note": "office 30",
+   "value": {
+    "guests": 30,
+    "seated_max": 27,
+    "standing_max": 55,
+    "status": "mingle",
+    "exit_path_cm": 80,
+    "tip_th": "นั่งได้ 27 คน ที่เหลือยืน/นั่งเบาะพื้น จัดโต๊ะอาหารชิดผนังเป็นบุฟเฟต์",
+    "flag": null
+   }
+  },
+  {
+   "def": "Capacity",
+   "note": "studio 5",
+   "value": {
+    "guests": 5,
+    "seated_max": 4,
+    "standing_max": 8,
+    "status": "mingle",
+    "exit_path_cm": 80,
+    "tip_th": "นั่งได้ 4 คน ที่เหลือยืน/นั่งเบาะพื้น จัดโต๊ะอาหารชิดผนังเป็นบุฟเฟต์",
+    "flag": null
+   }
+  },
+  {
+   "def": "BudgetSplit",
+   "note": "4000/9+3",
+   "value": {
+    "total": 4000,
+    "decor": 1000,
+    "food": 2000,
+    "drinks": 480,
+    "games_gifts": 320,
+    "reserve": 200,
+    "per_head": 333,
+    "food_per_guest": 185.2,
+    "potluck": false,
+    "tip_th": "งบพอดี ไม่ต้องให้แขกช่วยถือของมา"
+   }
+  },
+  {
+   "def": "BudgetSplit",
+   "note": "1500/9+3",
+   "value": {
+    "total": 1500,
+    "decor": 375,
+    "food": 750,
+    "drinks": 180,
+    "games_gifts": 120,
+    "reserve": 75,
+    "per_head": 125,
+    "food_per_guest": 69.4,
+    "potluck": true,
+    "tip_th": "งบอาหารต่อคนน้อย ลองให้แขกถือมาคนละ 1 จาน (Potluck) แอปแบ่งให้ว่าใครเอาอะไร"
+   }
+  },
+  {
+   "def": "BudgetSplit",
+   "note": "12000/30+0",
+   "value": {
+    "total": 12000,
+    "decor": 3000,
+    "food": 6000,
+    "drinks": 1440,
+    "games_gifts": 960,
+    "reserve": 600,
+    "per_head": 400,
+    "food_per_guest": 200.0,
+    "potluck": false,
+    "tip_th": "งบพอดี ไม่ต้องให้แขกช่วยถือของมา"
+   }
+  },
+  {
+   "def": "BudgetSplit",
+   "note": "2500/4+2",
+   "value": {
+    "total": 2500,
+    "decor": 625,
+    "food": 1250,
+    "drinks": 300,
+    "games_gifts": 200,
+    "reserve": 125,
+    "per_head": 417,
+    "food_per_guest": 240.4,
+    "potluck": false,
+    "tip_th": "งบพอดี ไม่ต้องให้แขกช่วยถือของมา"
+   }
+  },
+  {
+   "def": "DecoPlan",
+   "note": "countdown_gold 1000",
+   "value": {
+    "theme": "countdown_gold",
+    "theme_th": "เคานต์ดาวน์ทองระยิบ",
+    "budget": 1000,
+    "spent": 950,
+    "left": 50,
+    "items": [
+     {
+      "key": "garland",
+      "name_th": "ธงราวตัวอักษร HAPPY NEW YEAR",
+      "zone": "wall",
+      "packs": 3,
+      "pack_th": "ยาว 2 ม./แพ็ก",
+      "unit_price": 59,
+      "cost": 177,
+      "no_nails": true
+     },
+     {
+      "key": "balloons",
+      "name_th": "ลูกโป่งสีธีม",
+      "zone": "ceiling",
+      "packs": 2,
+      "pack_th": "20 ลูก/แพ็ก",
+      "unit_price": 89,
+      "cost": 178,
+      "no_nails": true
+     },
+     {
+      "key": "lights",
+      "name_th": "ไฟ LED เส้น (ใช้ถ่าน/USB)",
+      "zone": "wall",
+      "packs": 2,
+      "pack_th": "5 ม./เส้น",
+      "unit_price": 129,
+      "cost": 258,
+      "no_nails": true
+     },
+     {
+      "key": "backdrop",
+      "name_th": "ม่านฟอยล์มุมถ่ายรูป",
+      "zone": "photo",
+      "packs": 1,
+      "pack_th": "1×2 ม./ชิ้น",
+      "unit_price": 79,
+      "cost": 79,
+      "no_nails": true
+     },
+     {
+      "key": "number_balloons",
+      "name_th": "ลูกโป่งฟอยล์ตัวเลขปีใหม่",
+      "zone": "photo",
+      "packs": 1,
+      "pack_th": "4 ตัว/ชุด",
+      "unit_price": 159,
+      "cost": 159,
+      "no_nails": true
+     },
+     {
+      "key": "tablecloth",
+      "name_th": "ผ้าปูโต๊ะลายธีม",
+      "zone": "table",
+      "packs": 1,
+      "pack_th": "1 ผืน",
+      "unit_price": 99,
+      "cost": 99,
+      "no_nails": true
+     }
+    ],
+    "skipped": [
+     "hats",
+     "props",
+     "led_candles"
+    ],
+    "zones": [
+     "ceiling",
+     "photo",
+     "table",
+     "wall"
+    ],
+    "palette": [
+     "#14102B",
+     "#FFC440",
+     "#F5E6B8",
+     "#FF6B8B",
+     "#FFFFFF",
+     "#2A1850"
+    ]
+   }
+  },
+  {
+   "def": "DecoPlan",
+   "note": "cozy_xmas 1500",
+   "value": {
+    "theme": "cozy_xmas",
+    "theme_th": "คริสต์มาสอบอุ่น",
+    "budget": 1500,
+    "spent": 1366,
+    "left": 134,
+    "items": [
+     {
+      "key": "garland",
+      "name_th": "ธงราวตัวอักษร HAPPY NEW YEAR",
+      "zone": "wall",
+      "packs": 3,
+      "pack_th": "ยาว 2 ม./แพ็ก",
+      "unit_price": 59,
+      "cost": 177,
+      "no_nails": true
+     },
+     {
+      "key": "balloons",
+      "name_th": "ลูกโป่งสีธีม",
+      "zone": "ceiling",
+      "packs": 2,
+      "pack_th": "20 ลูก/แพ็ก",
+      "unit_price": 89,
+      "cost": 178,
+      "no_nails": true
+     },
+     {
+      "key": "lights",
+      "name_th": "ไฟ LED เส้น (ใช้ถ่าน/USB)",
+      "zone": "wall",
+      "packs": 2,
+      "pack_th": "5 ม./เส้น",
+      "unit_price": 129,
+      "cost": 258,
+      "no_nails": true
+     },
+     {
+      "key": "backdrop",
+      "name_th": "ม่านฟอยล์มุมถ่ายรูป",
+      "zone": "photo",
+      "packs": 1,
+      "pack_th": "1×2 ม./ชิ้น",
+      "unit_price": 79,
+      "cost": 79,
+      "no_nails": true
+     },
+     {
+      "key": "mini_tree",
+      "name_th": "ต้นคริสต์มาสตั้งโต๊ะ 60 ซม.",
+      "zone": "floor",
+      "packs": 1,
+      "pack_th": "1 ต้น",
+      "unit_price": 249,
+      "cost": 249,
+      "no_nails": true
+     },
+     {
+      "key": "tablecloth",
+      "name_th": "ผ้าปูโต๊ะลายธีม",
+      "zone": "table",
+      "packs": 1,
+      "pack_th": "1 ผืน",
+      "unit_price": 99,
+      "cost": 99,
+      "no_nails": true
+     },
+     {
+      "key": "hats",
+      "name_th": "หมวกปาร์ตี้ + ที่คาดผม",
+      "zone": "guest",
+      "packs": 2,
+      "pack_th": "10 ชิ้น/แพ็ก",
+      "unit_price": 69,
+      "cost": 138,
+      "no_nails": true
+     },
+     {
+      "key": "props",
+      "name_th": "พร็อพถ่ายรูปบนไม้",
+      "zone": "photo",
+      "packs": 1,
+      "pack_th": "12 ชิ้น/ชุด",
+      "unit_price": 99,
+      "cost": 99,
+      "no_nails": true
+     },
+     {
+      "key": "led_candles",
+      "name_th": "เทียน LED กลางโต๊ะ",
+      "zone": "table",
+      "packs": 1,
+      "pack_th": "6 ชิ้น/แพ็ก",
+      "unit_price": 89,
+      "cost": 89,
+      "no_nails": true
+     }
+    ],
+    "skipped": [],
+    "zones": [
+     "ceiling",
+     "floor",
+     "guest",
+     "photo",
+     "table",
+     "wall"
+    ],
+    "palette": [
+     "#B3202A",
+     "#1F6B45",
+     "#F7E8D0",
+     "#E9B949",
+     "#FFFFFF",
+     "#5A2E1A"
+    ]
+   }
+  },
+  {
+   "def": "DecoPlan",
+   "note": "pastel_pop 600",
+   "value": {
+    "theme": "pastel_pop",
+    "theme_th": "พาสเทลป๊อป",
+    "budget": 600,
+    "spent": 544,
+    "left": 56,
+    "items": [
+     {
+      "key": "garland",
+      "name_th": "ธงราวตัวอักษร HAPPY NEW YEAR",
+      "zone": "wall",
+      "packs": 2,
+      "pack_th": "ยาว 2 ม./แพ็ก",
+      "unit_price": 59,
+      "cost": 118,
+      "no_nails": true
+     },
+     {
+      "key": "balloons",
+      "name_th": "ลูกโป่งสีธีม",
+      "zone": "ceiling",
+      "packs": 1,
+      "pack_th": "20 ลูก/แพ็ก",
+      "unit_price": 89,
+      "cost": 89,
+      "no_nails": true
+     },
+     {
+      "key": "lights",
+      "name_th": "ไฟ LED เส้น (ใช้ถ่าน/USB)",
+      "zone": "wall",
+      "packs": 2,
+      "pack_th": "5 ม./เส้น",
+      "unit_price": 129,
+      "cost": 258,
+      "no_nails": true
+     },
+     {
+      "key": "backdrop",
+      "name_th": "ม่านฟอยล์มุมถ่ายรูป",
+      "zone": "photo",
+      "packs": 1,
+      "pack_th": "1×2 ม./ชิ้น",
+      "unit_price": 79,
+      "cost": 79,
+      "no_nails": true
+     }
+    ],
+    "skipped": [
+     "number_balloons",
+     "tablecloth",
+     "hats",
+     "props"
+    ],
+    "zones": [
+     "ceiling",
+     "photo",
+     "wall"
+    ],
+    "palette": [
+     "#FFD6E0",
+     "#C1E1FF",
+     "#D7F9D0",
+     "#FFF1B8",
+     "#E5D4FF",
+     "#FFFFFF"
+    ]
+   }
+  },
+  {
+   "def": "DecoPlan",
+   "note": "neon_disco 3000",
+   "value": {
+    "theme": "neon_disco",
+    "theme_th": "นีออนดิสโก้",
+    "budget": 3000,
+    "spent": 2019,
+    "left": 981,
+    "items": [
+     {
+      "key": "garland",
+      "name_th": "ธงราวตัวอักษร HAPPY NEW YEAR",
+      "zone": "wall",
+      "packs": 4,
+      "pack_th": "ยาว 2 ม./แพ็ก",
+      "unit_price": 59,
+      "cost": 236,
+      "no_nails": true
+     },
+     {
+      "key": "balloons",
+      "name_th": "ลูกโป่งสีธีม",
+      "zone": "ceiling",
+      "packs": 4,
+      "pack_th": "20 ลูก/แพ็ก",
+      "unit_price": 89,
+      "cost": 356,
+      "no_nails": true
+     },
+     {
+      "key": "disco_ball",
+      "name_th": "ลูกบอลดิสโก้ + ไฟหมุน USB",
+      "zone": "ceiling",
+      "packs": 1,
+      "pack_th": "1 ชุด",
+      "unit_price": 199,
+      "cost": 199,
+      "no_nails": true
+     },
+     {
+      "key": "lights",
+      "name_th": "ไฟ LED เส้น (ใช้ถ่าน/USB)",
+      "zone": "wall",
+      "packs": 3,
+      "pack_th": "5 ม./เส้น",
+      "unit_price": 129,
+      "cost": 387,
+      "no_nails": true
+     },
+     {
+      "key": "backdrop",
+      "name_th": "ม่านฟอยล์มุมถ่ายรูป",
+      "zone": "photo",
+      "packs": 1,
+      "pack_th": "1×2 ม./ชิ้น",
+      "unit_price": 79,
+      "cost": 79,
+      "no_nails": true
+     },
+     {
+      "key": "number_balloons",
+      "name_th": "ลูกโป่งฟอยล์ตัวเลขปีใหม่",
+      "zone": "photo",
+      "packs": 1,
+      "pack_th": "4 ตัว/ชุด",
+      "unit_price": 159,
+      "cost": 159,
+      "no_nails": true
+     },
+     {
+      "key": "tablecloth",
+      "name_th": "ผ้าปูโต๊ะลายธีม",
+      "zone": "table",
+      "packs": 3,
+      "pack_th": "1 ผืน",
+      "unit_price": 99,
+      "cost": 297,
+      "no_nails": true
+     },
+     {
+      "key": "hats",
+      "name_th": "หมวกปาร์ตี้ + ที่คาดผม",
+      "zone": "guest",
+      "packs": 3,
+      "pack_th": "10 ชิ้น/แพ็ก",
+      "unit_price": 69,
+      "cost": 207,
+      "no_nails": true
+     },
+     {
+      "key": "props",
+      "name_th": "พร็อพถ่ายรูปบนไม้",
+      "zone": "photo",
+      "packs": 1,
+      "pack_th": "12 ชิ้น/ชุด",
+      "unit_price": 99,
+      "cost": 99,
+      "no_nails": true
+     }
+    ],
+    "skipped": [],
+    "zones": [
+     "ceiling",
+     "guest",
+     "photo",
+     "table",
+     "wall"
+    ],
+    "palette": [
+     "#0B0B1E",
+     "#FF2E97",
+     "#00E5FF",
+     "#B967FF",
+     "#FFE600",
+     "#FFFFFF"
+    ]
+   }
+  },
+  {
+   "def": "DecoPlan",
+   "note": "thai_fair 1200",
+   "value": {
+    "theme": "thai_fair",
+    "theme_th": "งานวัดย้อนยุค",
+    "budget": 1200,
+    "spent": 1148,
+    "left": 52,
+    "items": [
+     {
+      "key": "garland",
+      "name_th": "ธงราวตัวอักษร HAPPY NEW YEAR",
+      "zone": "wall",
+      "packs": 3,
+      "pack_th": "ยาว 2 ม./แพ็ก",
+      "unit_price": 59,
+      "cost": 177,
+      "no_nails": true
+     },
+     {
+      "key": "balloons",
+      "name_th": "ลูกโป่งสีธีม",
+      "zone": "ceiling",
+      "packs": 2,
+      "pack_th": "20 ลูก/แพ็ก",
+      "unit_price": 89,
+      "cost": 178,
+      "no_nails": true
+     },
+     {
+      "key": "lights",
+      "name_th": "ไฟ LED เส้น (ใช้ถ่าน/USB)",
+      "zone": "wall",
+      "packs": 2,
+      "pack_th": "5 ม./เส้น",
+      "unit_price": 129,
+      "cost": 258,
+      "no_nails": true
+     },
+     {
+      "key": "paper_lanterns",
+      "name_th": "โคมกระดาษงานวัด",
+      "zone": "ceiling",
+      "packs": 3,
+      "pack_th": "6 ใบ/แพ็ก",
+      "unit_price": 119,
+      "cost": 357,
+      "no_nails": true
+     },
+     {
+      "key": "backdrop",
+      "name_th": "ม่านฟอยล์มุมถ่ายรูป",
+      "zone": "photo",
+      "packs": 1,
+      "pack_th": "1×2 ม./ชิ้น",
+      "unit_price": 79,
+      "cost": 79,
+      "no_nails": true
+     },
+     {
+      "key": "tablecloth",
+      "name_th": "ผ้าปูโต๊ะลายธีม",
+      "zone": "table",
+      "packs": 1,
+      "pack_th": "1 ผืน",
+      "unit_price": 99,
+      "cost": 99,
+      "no_nails": true
+     }
+    ],
+    "skipped": [
+     "hats",
+     "props"
+    ],
+    "zones": [
+     "ceiling",
+     "photo",
+     "table",
+     "wall"
+    ],
+    "palette": [
+     "#E63946",
+     "#F4A261",
+     "#2A9D8F",
+     "#FFD166",
+     "#FFFFFF",
+     "#264653"
+    ]
+   }
+  },
+  {
+   "def": "DecoPlan",
+   "note": "minimal_white 800",
+   "value": {
+    "theme": "minimal_white",
+    "theme_th": "มินิมอลขาวทอง",
+    "budget": 800,
+    "spent": 791,
+    "left": 9,
+    "items": [
+     {
+      "key": "garland",
+      "name_th": "ธงราวตัวอักษร HAPPY NEW YEAR",
+      "zone": "wall",
+      "packs": 3,
+      "pack_th": "ยาว 2 ม./แพ็ก",
+      "unit_price": 59,
+      "cost": 177,
+      "no_nails": true
+     },
+     {
+      "key": "balloons",
+      "name_th": "ลูกโป่งสีธีม",
+      "zone": "ceiling",
+      "packs": 2,
+      "pack_th": "20 ลูก/แพ็ก",
+      "unit_price": 89,
+      "cost": 178,
+      "no_nails": true
+     },
+     {
+      "key": "lights",
+      "name_th": "ไฟ LED เส้น (ใช้ถ่าน/USB)",
+      "zone": "wall",
+      "packs": 2,
+      "pack_th": "5 ม./เส้น",
+      "unit_price": 129,
+      "cost": 258,
+      "no_nails": true
+     },
+     {
+      "key": "backdrop",
+      "name_th": "ม่านฟอยล์มุมถ่ายรูป",
+      "zone": "photo",
+      "packs": 1,
+      "pack_th": "1×2 ม./ชิ้น",
+      "unit_price": 79,
+      "cost": 79,
+      "no_nails": true
+     },
+     {
+      "key": "tablecloth",
+      "name_th": "ผ้าปูโต๊ะลายธีม",
+      "zone": "table",
+      "packs": 1,
+      "pack_th": "1 ผืน",
+      "unit_price": 99,
+      "cost": 99,
+      "no_nails": true
+     }
+    ],
+    "skipped": [
+     "number_balloons",
+     "hats",
+     "props",
+     "led_candles"
+    ],
+    "zones": [
+     "ceiling",
+     "photo",
+     "table",
+     "wall"
+    ],
+    "palette": [
+     "#FFFFFF",
+     "#F2EDE4",
+     "#D4AF37",
+     "#C9C2B8",
+     "#8A8178",
+     "#1E1E1E"
+    ]
+   }
+  },
+  {
+   "def": "DecoPlan",
+   "note": "countdown_gold 0",
+   "value": {
+    "theme": "countdown_gold",
+    "theme_th": "เคานต์ดาวน์ทองระยิบ",
+    "budget": 0,
+    "spent": 0,
+    "left": 0,
+    "items": [],
+    "skipped": [
+     "garland",
+     "balloons",
+     "lights",
+     "backdrop",
+     "number_balloons",
+     "tablecloth",
+     "hats",
+     "props",
+     "led_candles"
+    ],
+    "zones": [],
+    "palette": [
+     "#14102B",
+     "#FFC440",
+     "#F5E6B8",
+     "#FF6B8B",
+     "#FFFFFF",
+     "#2A1850"
+    ]
+   }
+  },
+  {
+   "def": "DecoPick",
+   "note": "garland",
+   "value": {
+    "key": "garland",
+    "name_th": "ธงราวตัวอักษร HAPPY NEW YEAR",
+    "zone": "wall",
+    "packs": 3,
+    "pack_th": "ยาว 2 ม./แพ็ก",
+    "unit_price": 59,
+    "cost": 177,
+    "no_nails": true
+   }
+  },
+  {
+   "def": "DecoPick",
+   "note": "balloons",
+   "value": {
+    "key": "balloons",
+    "name_th": "ลูกโป่งสีธีม",
+    "zone": "ceiling",
+    "packs": 2,
+    "pack_th": "20 ลูก/แพ็ก",
+    "unit_price": 89,
+    "cost": 178,
+    "no_nails": true
+   }
+  },
+  {
+   "def": "DecoPick",
+   "note": "lights",
+   "value": {
+    "key": "lights",
+    "name_th": "ไฟ LED เส้น (ใช้ถ่าน/USB)",
+    "zone": "wall",
+    "packs": 2,
+    "pack_th": "5 ม./เส้น",
+    "unit_price": 129,
+    "cost": 258,
+    "no_nails": true
+   }
+  },
+  {
+   "def": "DecoPick",
+   "note": "backdrop",
+   "value": {
+    "key": "backdrop",
+    "name_th": "ม่านฟอยล์มุมถ่ายรูป",
+    "zone": "photo",
+    "packs": 1,
+    "pack_th": "1×2 ม./ชิ้น",
+    "unit_price": 79,
+    "cost": 79,
+    "no_nails": true
+   }
+  },
+  {
+   "def": "DecoPick",
+   "note": "number_balloons",
+   "value": {
+    "key": "number_balloons",
+    "name_th": "ลูกโป่งฟอยล์ตัวเลขปีใหม่",
+    "zone": "photo",
+    "packs": 1,
+    "pack_th": "4 ตัว/ชุด",
+    "unit_price": 159,
+    "cost": 159,
+    "no_nails": true
+   }
+  },
+  {
+   "def": "DecoPick",
+   "note": "tablecloth",
+   "value": {
+    "key": "tablecloth",
+    "name_th": "ผ้าปูโต๊ะลายธีม",
+    "zone": "table",
+    "packs": 1,
+    "pack_th": "1 ผืน",
+    "unit_price": 99,
+    "cost": 99,
+    "no_nails": true
+   }
+  },
+  {
+   "def": "RenderPrompt",
+   "note": "countdown_gold",
+   "value": {
+    "keep_layout": true,
+    "theme": "countdown_gold",
+    "palette": [
+     "#14102B",
+     "#FFC440",
+     "#F5E6B8",
+     "#FF6B8B",
+     "#FFFFFF",
+     "#2A1850"
+    ],
+    "items_th": "ธงราวตัวอักษร HAPPY NEW YEAR ×3, ลูกโป่งสีธีม ×2, ไฟ LED เส้น (ใช้ถ่าน/USB) ×2, ม่านฟอยล์มุมถ่ายรูป ×1, ลูกโป่งฟอยล์ตัวเลขปีใหม่ ×1, ผ้าปูโต๊ะลายธีม ×1",
+    "forbid": [
+     "text",
+     "faces",
+     "logos",
+     "brands",
+     "real fire",
+     "fireworks indoors"
+    ],
+    "size": "1080x1350"
+   }
+  },
+  {
+   "def": "RenderPrompt",
+   "note": "cozy_xmas",
+   "value": {
+    "keep_layout": true,
+    "theme": "cozy_xmas",
+    "palette": [
+     "#B3202A",
+     "#1F6B45",
+     "#F7E8D0",
+     "#E9B949",
+     "#FFFFFF",
+     "#5A2E1A"
+    ],
+    "items_th": "ธงราวตัวอักษร HAPPY NEW YEAR ×3, ลูกโป่งสีธีม ×2, ไฟ LED เส้น (ใช้ถ่าน/USB) ×2, ม่านฟอยล์มุมถ่ายรูป ×1, ต้นคริสต์มาสตั้งโต๊ะ 60 ซม. ×1, ผ้าปูโต๊ะลายธีม ×1, หมวกปาร์ตี้ + ที่คาดผม ×2, พร็อพถ่ายรูปบนไม้ ×1, เทียน LED กลางโต๊ะ ×1",
+    "forbid": [
+     "text",
+     "faces",
+     "logos",
+     "brands",
+     "real fire",
+     "fireworks indoors"
+    ],
+    "size": "1080x1350"
+   }
+  },
+  {
+   "def": "RenderPrompt",
+   "note": "pastel_pop",
+   "value": {
+    "keep_layout": true,
+    "theme": "pastel_pop",
+    "palette": [
+     "#FFD6E0",
+     "#C1E1FF",
+     "#D7F9D0",
+     "#FFF1B8",
+     "#E5D4FF",
+     "#FFFFFF"
+    ],
+    "items_th": "ธงราวตัวอักษร HAPPY NEW YEAR ×2, ลูกโป่งสีธีม ×1, ไฟ LED เส้น (ใช้ถ่าน/USB) ×2, ม่านฟอยล์มุมถ่ายรูป ×1",
+    "forbid": [
+     "text",
+     "faces",
+     "logos",
+     "brands",
+     "real fire",
+     "fireworks indoors"
+    ],
+    "size": "1080x1350"
+   }
+  },
+  {
+   "def": "RenderPrompt",
+   "note": "neon_disco",
+   "value": {
+    "keep_layout": true,
+    "theme": "neon_disco",
+    "palette": [
+     "#0B0B1E",
+     "#FF2E97",
+     "#00E5FF",
+     "#B967FF",
+     "#FFE600",
+     "#FFFFFF"
+    ],
+    "items_th": "ธงราวตัวอักษร HAPPY NEW YEAR ×4, ลูกโป่งสีธีม ×4, ลูกบอลดิสโก้ + ไฟหมุน USB ×1, ไฟ LED เส้น (ใช้ถ่าน/USB) ×3, ม่านฟอยล์มุมถ่ายรูป ×1, ลูกโป่งฟอยล์ตัวเลขปีใหม่ ×1, ผ้าปูโต๊ะลายธีม ×3, หมวกปาร์ตี้ + ที่คาดผม ×3, พร็อพถ่ายรูปบนไม้ ×1",
+    "forbid": [
+     "text",
+     "faces",
+     "logos",
+     "brands",
+     "real fire",
+     "fireworks indoors"
+    ],
+    "size": "1080x1350"
+   }
+  },
+  {
+   "def": "MenuPlan",
+   "note": "suki 9+3",
+   "value": {
+    "style": "suki",
+    "style_th": "สุกี้/ชาบูหม้อไฟฟ้า",
+    "adults": 9,
+    "kids": 3,
+    "hours": 5.5,
+    "guest_eq": 10.8,
+    "items": [
+     {
+      "key": "meat",
+      "name_th": "หมู/ไก่สไลซ์",
+      "need": 1.62,
+      "unit": "kg",
+      "buy_qty": 2.0,
+      "packs": 4,
+      "cost": 560,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "seafood",
+      "name_th": "ลูกชิ้น/ซีฟู้ดรวม",
+      "need": 1.08,
+      "unit": "kg",
+      "buy_qty": 1.5,
+      "packs": 3,
+      "cost": 330,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "veg",
+      "name_th": "ผักรวม",
+      "need": 1.62,
+      "unit": "kg",
+      "buy_qty": 2.0,
+      "packs": 4,
+      "cost": 160,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "noodle",
+      "name_th": "วุ้นเส้น/บะหมี่",
+      "need": 0.86,
+      "unit": "kg",
+      "buy_qty": 1.0,
+      "packs": 2,
+      "cost": 60,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "sauce",
+      "name_th": "น้ำจิ้ม",
+      "need": 0.54,
+      "unit": "L",
+      "buy_qty": 1.0,
+      "packs": 2,
+      "cost": 90,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "fruit",
+      "name_th": "ผลไม้ตัด",
+      "need": 1.3,
+      "unit": "kg",
+      "buy_qty": 2.0,
+      "packs": 2,
+      "cost": 140,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "dessert",
+      "name_th": "ขนมหวาน/เค้กชิ้น",
+      "need": 10.8,
+      "unit": "ชิ้น",
+      "buy_qty": 11,
+      "packs": 11,
+      "cost": 275,
+      "section_th": "ร้านเบเกอรี่"
+     },
+     {
+      "key": "drink",
+      "name_th": "น้ำอัดลม/น้ำผลไม้",
+      "need": 5.94,
+      "unit": "L",
+      "buy_qty": 6.0,
+      "packs": 4,
+      "cost": 120,
+      "section_th": "ซูเปอร์"
+     },
+     {
+      "key": "water",
+      "name_th": "น้ำดื่ม",
+      "need": 8.91,
+      "unit": "L",
+      "buy_qty": 12.0,
+      "packs": 2,
+      "cost": 84,
+      "section_th": "ซูเปอร์"
+     },
+     {
+      "key": "ice",
+      "name_th": "น้ำแข็ง",
+      "need": 7.2,
+      "unit": "kg",
+      "buy_qty": 9.0,
+      "packs": 3,
+      "cost": 63,
+      "section_th": "ร้านน้ำแข็ง/ซูเปอร์"
+     }
+    ],
+    "total": 1882,
+    "allergy_labels": [],
+    "flag": null
+   }
+  },
+  {
+   "def": "MenuPlan",
+   "note": "buffet 9+3",
+   "value": {
+    "style": "buffet",
+    "style_th": "ข้าว + กับข้าวถาด",
+    "adults": 9,
+    "kids": 3,
+    "hours": 5.5,
+    "guest_eq": 10.8,
+    "items": [
+     {
+      "key": "rice",
+      "name_th": "ข้าวสาร",
+      "need": 1.3,
+      "unit": "kg",
+      "buy_qty": 2.0,
+      "packs": 2,
+      "cost": 90,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "chicken_dish",
+      "name_th": "กับข้าวถาด (ไก่/หมู)",
+      "need": 2.16,
+      "unit": "ถาด",
+      "buy_qty": 3,
+      "packs": 3,
+      "cost": 540,
+      "section_th": "ร้านกับข้าว"
+     },
+     {
+      "key": "veg",
+      "name_th": "ผักรวม",
+      "need": 0.86,
+      "unit": "kg",
+      "buy_qty": 1.0,
+      "packs": 2,
+      "cost": 80,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "fruit",
+      "name_th": "ผลไม้ตัด",
+      "need": 1.3,
+      "unit": "kg",
+      "buy_qty": 2.0,
+      "packs": 2,
+      "cost": 140,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "dessert",
+      "name_th": "ขนมหวาน/เค้กชิ้น",
+      "need": 10.8,
+      "unit": "ชิ้น",
+      "buy_qty": 11,
+      "packs": 11,
+      "cost": 275,
+      "section_th": "ร้านเบเกอรี่"
+     },
+     {
+      "key": "drink",
+      "name_th": "น้ำอัดลม/น้ำผลไม้",
+      "need": 5.94,
+      "unit": "L",
+      "buy_qty": 6.0,
+      "packs": 4,
+      "cost": 120,
+      "section_th": "ซูเปอร์"
+     },
+     {
+      "key": "water",
+      "name_th": "น้ำดื่ม",
+      "need": 8.91,
+      "unit": "L",
+      "buy_qty": 12.0,
+      "packs": 2,
+      "cost": 84,
+      "section_th": "ซูเปอร์"
+     },
+     {
+      "key": "ice",
+      "name_th": "น้ำแข็ง",
+      "need": 7.2,
+      "unit": "kg",
+      "buy_qty": 9.0,
+      "packs": 3,
+      "cost": 63,
+      "section_th": "ร้านน้ำแข็ง/ซูเปอร์"
+     }
+    ],
+    "total": 1392,
+    "allergy_labels": [],
+    "flag": null
+   }
+  },
+  {
+   "def": "MenuPlan",
+   "note": "snack 9+3",
+   "value": {
+    "style": "snack",
+    "style_th": "ของทานเล่นปาร์ตี้",
+    "adults": 9,
+    "kids": 3,
+    "hours": 5.5,
+    "guest_eq": 10.8,
+    "items": [
+     {
+      "key": "snack",
+      "name_th": "ขนมขบเคี้ยว",
+      "need": 1.3,
+      "unit": "kg",
+      "buy_qty": 1.3,
+      "packs": 13,
+      "cost": 286,
+      "section_th": "ซูเปอร์"
+     },
+     {
+      "key": "fruit",
+      "name_th": "ผลไม้ตัด",
+      "need": 2.16,
+      "unit": "kg",
+      "buy_qty": 3.0,
+      "packs": 3,
+      "cost": 210,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "dessert",
+      "name_th": "ขนมหวาน/เค้กชิ้น",
+      "need": 21.6,
+      "unit": "ชิ้น",
+      "buy_qty": 22,
+      "packs": 22,
+      "cost": 550,
+      "section_th": "ร้านเบเกอรี่"
+     },
+     {
+      "key": "chicken_dish",
+      "name_th": "กับข้าวถาด (ไก่/หมู)",
+      "need": 1.3,
+      "unit": "ถาด",
+      "buy_qty": 2,
+      "packs": 2,
+      "cost": 360,
+      "section_th": "ร้านกับข้าว"
+     },
+     {
+      "key": "drink",
+      "name_th": "น้ำอัดลม/น้ำผลไม้",
+      "need": 5.94,
+      "unit": "L",
+      "buy_qty": 6.0,
+      "packs": 4,
+      "cost": 120,
+      "section_th": "ซูเปอร์"
+     },
+     {
+      "key": "water",
+      "name_th": "น้ำดื่ม",
+      "need": 8.91,
+      "unit": "L",
+      "buy_qty": 12.0,
+      "packs": 2,
+      "cost": 84,
+      "section_th": "ซูเปอร์"
+     },
+     {
+      "key": "ice",
+      "name_th": "น้ำแข็ง",
+      "need": 7.2,
+      "unit": "kg",
+      "buy_qty": 9.0,
+      "packs": 3,
+      "cost": 63,
+      "section_th": "ร้านน้ำแข็ง/ซูเปอร์"
+     }
+    ],
+    "total": 1673,
+    "allergy_labels": [],
+    "flag": null
+   }
+  },
+  {
+   "def": "MenuPlan",
+   "note": "buffet 30+0",
+   "value": {
+    "style": "buffet",
+    "style_th": "ข้าว + กับข้าวถาด",
+    "adults": 30,
+    "kids": 0,
+    "hours": 4,
+    "guest_eq": 30.0,
+    "items": [
+     {
+      "key": "rice",
+      "name_th": "ข้าวสาร",
+      "need": 3.6,
+      "unit": "kg",
+      "buy_qty": 4.0,
+      "packs": 4,
+      "cost": 180,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "chicken_dish",
+      "name_th": "กับข้าวถาด (ไก่/หมู)",
+      "need": 6.0,
+      "unit": "ถาด",
+      "buy_qty": 6,
+      "packs": 6,
+      "cost": 1080,
+      "section_th": "ร้านกับข้าว"
+     },
+     {
+      "key": "veg",
+      "name_th": "ผักรวม",
+      "need": 2.4,
+      "unit": "kg",
+      "buy_qty": 2.5,
+      "packs": 5,
+      "cost": 200,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "fruit",
+      "name_th": "ผลไม้ตัด",
+      "need": 3.6,
+      "unit": "kg",
+      "buy_qty": 4.0,
+      "packs": 4,
+      "cost": 280,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "dessert",
+      "name_th": "ขนมหวาน/เค้กชิ้น",
+      "need": 30.0,
+      "unit": "ชิ้น",
+      "buy_qty": 30,
+      "packs": 30,
+      "cost": 750,
+      "section_th": "ร้านเบเกอรี่"
+     },
+     {
+      "key": "drink",
+      "name_th": "น้ำอัดลม/น้ำผลไม้",
+      "need": 12.0,
+      "unit": "L",
+      "buy_qty": 12.0,
+      "packs": 8,
+      "cost": 240,
+      "section_th": "ซูเปอร์"
+     },
+     {
+      "key": "water",
+      "name_th": "น้ำดื่ม",
+      "need": 18.0,
+      "unit": "L",
+      "buy_qty": 18.0,
+      "packs": 3,
+      "cost": 126,
+      "section_th": "ซูเปอร์"
+     },
+     {
+      "key": "ice",
+      "name_th": "น้ำแข็ง",
+      "need": 18.0,
+      "unit": "kg",
+      "buy_qty": 18.0,
+      "packs": 6,
+      "cost": 126,
+      "section_th": "ร้านน้ำแข็ง/ซูเปอร์"
+     }
+    ],
+    "total": 2982,
+    "allergy_labels": [],
+    "flag": null
+   }
+  },
+  {
+   "def": "MenuPlan",
+   "note": "suki 4+2",
+   "value": {
+    "style": "suki",
+    "style_th": "สุกี้/ชาบูหม้อไฟฟ้า",
+    "adults": 4,
+    "kids": 2,
+    "hours": 3,
+    "guest_eq": 5.2,
+    "items": [
+     {
+      "key": "meat",
+      "name_th": "หมู/ไก่สไลซ์",
+      "need": 0.78,
+      "unit": "kg",
+      "buy_qty": 1.0,
+      "packs": 2,
+      "cost": 280,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "seafood",
+      "name_th": "ลูกชิ้น/ซีฟู้ดรวม",
+      "need": 0.52,
+      "unit": "kg",
+      "buy_qty": 1.0,
+      "packs": 2,
+      "cost": 220,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "veg",
+      "name_th": "ผักรวม",
+      "need": 0.78,
+      "unit": "kg",
+      "buy_qty": 1.0,
+      "packs": 2,
+      "cost": 80,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "noodle",
+      "name_th": "วุ้นเส้น/บะหมี่",
+      "need": 0.42,
+      "unit": "kg",
+      "buy_qty": 0.5,
+      "packs": 1,
+      "cost": 30,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "sauce",
+      "name_th": "น้ำจิ้ม",
+      "need": 0.26,
+      "unit": "L",
+      "buy_qty": 0.5,
+      "packs": 1,
+      "cost": 45,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "fruit",
+      "name_th": "ผลไม้ตัด",
+      "need": 0.62,
+      "unit": "kg",
+      "buy_qty": 1.0,
+      "packs": 1,
+      "cost": 70,
+      "section_th": "ตลาด/ซูเปอร์"
+     },
+     {
+      "key": "dessert",
+      "name_th": "ขนมหวาน/เค้กชิ้น",
+      "need": 5.2,
+      "unit": "ชิ้น",
+      "buy_qty": 6,
+      "packs": 6,
+      "cost": 150,
+      "section_th": "ร้านเบเกอรี่"
+     },
+     {
+      "key": "drink",
+      "name_th": "น้ำอัดลม/น้ำผลไม้",
+      "need": 1.56,
+      "unit": "L",
+      "buy_qty": 3.0,
+      "packs": 2,
+      "cost": 60,
+      "section_th": "ซูเปอร์"
+     },
+     {
+      "key": "water",
+      "name_th": "น้ำดื่ม",
+      "need": 2.34,
+      "unit": "L",
+      "buy_qty": 6.0,
+      "packs": 1,
+      "cost": 42,
+      "section_th": "ซูเปอร์"
+     },
+     {
+      "key": "ice",
+      "name_th": "น้ำแข็ง",
+      "need": 3.6,
+      "unit": "kg",
+      "buy_qty": 6.0,
+      "packs": 2,
+      "cost": 42,
+      "section_th": "ร้านน้ำแข็ง/ซูเปอร์"
+     }
+    ],
+    "total": 1019,
+    "allergy_labels": [
+     "กุ้ง"
+    ],
+    "flag": "food_allergy"
+   }
+  },
+  {
+   "def": "MenuItem",
+   "note": "meat",
+   "value": {
+    "key": "meat",
+    "name_th": "หมู/ไก่สไลซ์",
+    "need": 1.62,
+    "unit": "kg",
+    "buy_qty": 2.0,
+    "packs": 4,
+    "cost": 560,
+    "section_th": "ตลาด/ซูเปอร์"
+   }
+  },
+  {
+   "def": "MenuItem",
+   "note": "seafood",
+   "value": {
+    "key": "seafood",
+    "name_th": "ลูกชิ้น/ซีฟู้ดรวม",
+    "need": 1.08,
+    "unit": "kg",
+    "buy_qty": 1.5,
+    "packs": 3,
+    "cost": 330,
+    "section_th": "ตลาด/ซูเปอร์"
+   }
+  },
+  {
+   "def": "MenuItem",
+   "note": "veg",
+   "value": {
+    "key": "veg",
+    "name_th": "ผักรวม",
+    "need": 1.62,
+    "unit": "kg",
+    "buy_qty": 2.0,
+    "packs": 4,
+    "cost": 160,
+    "section_th": "ตลาด/ซูเปอร์"
+   }
+  },
+  {
+   "def": "MenuItem",
+   "note": "noodle",
+   "value": {
+    "key": "noodle",
+    "name_th": "วุ้นเส้น/บะหมี่",
+    "need": 0.86,
+    "unit": "kg",
+    "buy_qty": 1.0,
+    "packs": 2,
+    "cost": 60,
+    "section_th": "ตลาด/ซูเปอร์"
+   }
+  },
+  {
+   "def": "MenuItem",
+   "note": "sauce",
+   "value": {
+    "key": "sauce",
+    "name_th": "น้ำจิ้ม",
+    "need": 0.54,
+    "unit": "L",
+    "buy_qty": 1.0,
+    "packs": 2,
+    "cost": 90,
+    "section_th": "ตลาด/ซูเปอร์"
+   }
+  },
+  {
+   "def": "MenuItem",
+   "note": "fruit",
+   "value": {
+    "key": "fruit",
+    "name_th": "ผลไม้ตัด",
+    "need": 1.3,
+    "unit": "kg",
+    "buy_qty": 2.0,
+    "packs": 2,
+    "cost": 140,
+    "section_th": "ตลาด/ซูเปอร์"
+   }
+  },
+  {
+   "def": "MenuItem",
+   "note": "dessert",
+   "value": {
+    "key": "dessert",
+    "name_th": "ขนมหวาน/เค้กชิ้น",
+    "need": 10.8,
+    "unit": "ชิ้น",
+    "buy_qty": 11,
+    "packs": 11,
+    "cost": 275,
+    "section_th": "ร้านเบเกอรี่"
+   }
+  },
+  {
+   "def": "MenuItem",
+   "note": "drink",
+   "value": {
+    "key": "drink",
+    "name_th": "น้ำอัดลม/น้ำผลไม้",
+    "need": 5.94,
+    "unit": "L",
+    "buy_qty": 6.0,
+    "packs": 4,
+    "cost": 120,
+    "section_th": "ซูเปอร์"
+   }
+  },
+  {
+   "def": "MenuItem",
+   "note": "water",
+   "value": {
+    "key": "water",
+    "name_th": "น้ำดื่ม",
+    "need": 8.91,
+    "unit": "L",
+    "buy_qty": 12.0,
+    "packs": 2,
+    "cost": 84,
+    "section_th": "ซูเปอร์"
+   }
+  },
+  {
+   "def": "MenuItem",
+   "note": "ice",
+   "value": {
+    "key": "ice",
+    "name_th": "น้ำแข็ง",
+    "need": 7.2,
+    "unit": "kg",
+    "buy_qty": 9.0,
+    "packs": 3,
+    "cost": 63,
+    "section_th": "ร้านน้ำแข็ง/ซูเปอร์"
+   }
+  },
+  {
+   "def": "MenuTrim",
+   "note": "2480",
+   "value": {
+    "style": "suki",
+    "total": 1882,
+    "potluck_dishes": 0,
+    "changed": false
+   }
+  },
+  {
+   "def": "MenuTrim",
+   "note": "1500",
+   "value": {
+    "style": "buffet",
+    "total": 1392,
+    "potluck_dishes": 0,
+    "changed": true
+   }
+  },
+  {
+   "def": "MenuTrim",
+   "note": "800",
+   "value": {
+    "style": "suki",
+    "total": 1882,
+    "potluck_dishes": 8,
+    "changed": false
+   }
+  },
+  {
+   "def": "ShoppingList",
+   "note": "fixture fits",
+   "value": {
+    "rows": [
+     {
+      "name_th": "น้ำอัดลม/น้ำผลไม้",
+      "qty_th": "6 L",
+      "section_th": "ซูเปอร์",
+      "cost": 120,
+      "checked": false
+     },
+     {
+      "name_th": "น้ำดื่ม",
+      "qty_th": "12 L",
+      "section_th": "ซูเปอร์",
+      "cost": 84,
+      "checked": false
+     },
+     {
+      "name_th": "หมู/ไก่สไลซ์",
+      "qty_th": "2 kg",
+      "section_th": "ตลาด/ซูเปอร์",
+      "cost": 560,
+      "checked": false
+     },
+     {
+      "name_th": "ลูกชิ้น/ซีฟู้ดรวม",
+      "qty_th": "1.5 kg",
+      "section_th": "ตลาด/ซูเปอร์",
+      "cost": 330,
+      "checked": false
+     },
+     {
+      "name_th": "ผักรวม",
+      "qty_th": "2 kg",
+      "section_th": "ตลาด/ซูเปอร์",
+      "cost": 160,
+      "checked": false
+     },
+     {
+      "name_th": "ผลไม้ตัด",
+      "qty_th": "2 kg",
+      "section_th": "ตลาด/ซูเปอร์",
+      "cost": 140,
+      "checked": false
+     },
+     {
+      "name_th": "น้ำจิ้ม",
+      "qty_th": "1 L",
+      "section_th": "ตลาด/ซูเปอร์",
+      "cost": 90,
+      "checked": false
+     },
+     {
+      "name_th": "วุ้นเส้น/บะหมี่",
+      "qty_th": "1 kg",
+      "section_th": "ตลาด/ซูเปอร์",
+      "cost": 60,
+      "checked": false
+     },
+     {
+      "name_th": "ไฟ LED เส้น (ใช้ถ่าน/USB)",
+      "qty_th": "2 × 5 ม./เส้น",
+      "section_th": "ร้านของตกแต่ง/เครื่องเขียน",
+      "cost": 258,
+      "checked": false
+     },
+     {
+      "name_th": "ลูกโป่งสีธีม",
+      "qty_th": "2 × 20 ลูก/แพ็ก",
+      "section_th": "ร้านของตกแต่ง/เครื่องเขียน",
+      "cost": 178,
+      "checked": false
+     },
+     {
+      "name_th": "ธงราวตัวอักษร HAPPY NEW YEAR",
+      "qty_th": "3 × ยาว 2 ม./แพ็ก",
+      "section_th": "ร้านของตกแต่ง/เครื่องเขียน",
+      "cost": 177,
+      "checked": false
+     },
+     {
+      "name_th": "ลูกโป่งฟอยล์ตัวเลขปีใหม่",
+      "qty_th": "1 × 4 ตัว/ชุด",
+      "section_th": "ร้านของตกแต่ง/เครื่องเขียน",
+      "cost": 159,
+      "checked": false
+     },
+     {
+      "name_th": "ผ้าปูโต๊ะลายธีม",
+      "qty_th": "1 × 1 ผืน",
+      "section_th": "ร้านของตกแต่ง/เครื่องเขียน",
+      "cost": 99,
+      "checked": false
+     },
+     {
+      "name_th": "ม่านฟอยล์มุมถ่ายรูป",
+      "qty_th": "1 × 1×2 ม./ชิ้น",
+      "section_th": "ร้านของตกแต่ง/เครื่องเขียน",
+      "cost": 79,
+      "checked": false
+     },
+     {
+      "name_th": "น้ำแข็ง",
+      "qty_th": "9 kg",
+      "section_th": "ร้านน้ำแข็ง/ซูเปอร์",
+      "cost": 63,
+      "checked": false
+     },
+     {
+      "name_th": "ขนมหวาน/เค้กชิ้น",
+      "qty_th": "11 ชิ้น",
+      "section_th": "ร้านเบเกอรี่",
+      "cost": 275,
+      "checked": false
+     }
+    ],
+    "sections": [
+     {
+      "section_th": "ซูเปอร์",
+      "cost": 204
+     },
+     {
+      "section_th": "ตลาด/ซูเปอร์",
+      "cost": 1340
+     },
+     {
+      "section_th": "ร้านของตกแต่ง/เครื่องเขียน",
+      "cost": 950
+     },
+     {
+      "section_th": "ร้านน้ำแข็ง/ซูเปอร์",
+      "cost": 63
+     },
+     {
+      "section_th": "ร้านเบเกอรี่",
+      "cost": 275
+     }
+    ],
+    "total": 2832,
+    "budget": 4000,
+    "over_by": 0,
+    "fits": true
+   }
+  },
+  {
+   "def": "ShoppingList",
+   "note": "1800 over",
+   "value": {
+    "rows": [
+     {
+      "name_th": "น้ำอัดลม/น้ำผลไม้",
+      "qty_th": "6 L",
+      "section_th": "ซูเปอร์",
+      "cost": 120,
+      "checked": false
+     },
+     {
+      "name_th": "น้ำดื่ม",
+      "qty_th": "12 L",
+      "section_th": "ซูเปอร์",
+      "cost": 84,
+      "checked": false
+     },
+     {
+      "name_th": "หมู/ไก่สไลซ์",
+      "qty_th": "2 kg",
+      "section_th": "ตลาด/ซูเปอร์",
+      "cost": 560,
+      "checked": false
+     },
+     {
+      "name_th": "ลูกชิ้น/ซีฟู้ดรวม",
+      "qty_th": "1.5 kg",
+      "section_th": "ตลาด/ซูเปอร์",
+      "cost": 330,
+      "checked": false
+     },
+     {
+      "name_th": "ผักรวม",
+      "qty_th": "2 kg",
+      "section_th": "ตลาด/ซูเปอร์",
+      "cost": 160,
+      "checked": false
+     },
+     {
+      "name_th": "ผลไม้ตัด",
+      "qty_th": "2 kg",
+      "section_th": "ตลาด/ซูเปอร์",
+      "cost": 140,
+      "checked": false
+     },
+     {
+      "name_th": "น้ำจิ้ม",
+      "qty_th": "1 L",
+      "section_th": "ตลาด/ซูเปอร์",
+      "cost": 90,
+      "checked": false
+     },
+     {
+      "name_th": "วุ้นเส้น/บะหมี่",
+      "qty_th": "1 kg",
+      "section_th": "ตลาด/ซูเปอร์",
+      "cost": 60,
+      "checked": false
+     },
+     {
+      "name_th": "ลูกโป่งสีธีม",
+      "qty_th": "2 × 20 ลูก/แพ็ก",
+      "section_th": "ร้านของตกแต่ง/เครื่องเขียน",
+      "cost": 178,
+      "checked": false
+     },
+     {
+      "name_th": "ธงราวตัวอักษร HAPPY NEW YEAR",
+      "qty_th": "3 × ยาว 2 ม./แพ็ก",
+      "section_th": "ร้านของตกแต่ง/เครื่องเขียน",
+      "cost": 177,
+      "checked": false
+     },
+     {
+      "name_th": "ม่านฟอยล์มุมถ่ายรูป",
+      "qty_th": "1 × 1×2 ม./ชิ้น",
+      "section_th": "ร้านของตกแต่ง/เครื่องเขียน",
+      "cost": 79,
+      "checked": false
+     },
+     {
+      "name_th": "น้ำแข็ง",
+      "qty_th": "9 kg",
+      "section_th": "ร้านน้ำแข็ง/ซูเปอร์",
+      "cost": 63,
+      "checked": false
+     },
+     {
+      "name_th": "ขนมหวาน/เค้กชิ้น",
+      "qty_th": "11 ชิ้น",
+      "section_th": "ร้านเบเกอรี่",
+      "cost": 275,
+      "checked": false
+     }
+    ],
+    "sections": [
+     {
+      "section_th": "ซูเปอร์",
+      "cost": 204
+     },
+     {
+      "section_th": "ตลาด/ซูเปอร์",
+      "cost": 1340
+     },
+     {
+      "section_th": "ร้านของตกแต่ง/เครื่องเขียน",
+      "cost": 434
+     },
+     {
+      "section_th": "ร้านน้ำแข็ง/ซูเปอร์",
+      "cost": 63
+     },
+     {
+      "section_th": "ร้านเบเกอรี่",
+      "cost": 275
+     }
+    ],
+    "total": 2316,
+    "budget": 1800,
+    "over_by": 750,
+    "fits": false
+   }
+  },
+  {
+   "def": "Timeline",
+   "note": "new year",
+   "value": {
+    "start": "2026-12-31T19:00",
+    "end": "2027-01-01T00:30",
+    "tasks": [
+     {
+      "key": "invite",
+      "at": "2026-12-24T19:00",
+      "text_th": "ส่งการ์ดเชิญ + ขอ RSVP",
+      "done": false
+     },
+     {
+      "key": "rsvp",
+      "at": "2026-12-28T19:00",
+      "text_th": "ปิด RSVP · สั่งของตกแต่งออนไลน์",
+      "done": false
+     },
+     {
+      "key": "shop",
+      "at": "2026-12-29T19:00",
+      "text_th": "ซื้อของแห้ง/เครื่องดื่ม · ชาร์จไฟ LED",
+      "done": false
+     },
+     {
+      "key": "decorate",
+      "at": "2026-12-30T19:00",
+      "text_th": "ติดธงราว ลูกโป่ง มุมถ่ายรูป (เทปกาว ไม่เจาะผนัง)",
+      "done": false
+     },
+     {
+      "key": "fresh",
+      "at": "2026-12-31T15:00",
+      "text_th": "ซื้อของสด + น้ำแข็ง",
+      "done": false
+     },
+     {
+      "key": "table",
+      "at": "2026-12-31T17:00",
+      "text_th": "จัดโต๊ะบุฟเฟต์ หม้อไฟฟ้า ป้ายแพ้อาหาร",
+      "done": false
+     },
+     {
+      "key": "test",
+      "at": "2026-12-31T18:00",
+      "text_th": "เทสต์ไฟ เพลย์ลิสต์ มือถือฉายเกม",
+      "done": false
+     },
+     {
+      "key": "welcome",
+      "at": "2026-12-31T19:00",
+      "text_th": "ต้อนรับ ถ่ายรูปมุม backdrop",
+      "done": false
+     },
+     {
+      "key": "games",
+      "at": "2026-12-31T20:30",
+      "text_th": "เกมรอบ 1",
+      "done": false
+     },
+     {
+      "key": "countdown",
+      "at": "2026-12-31T23:59",
+      "text_th": "นับถอยหลัง 10…1 สวัสดีปีใหม่!",
+      "done": false
+     },
+     {
+      "key": "gift_swap",
+      "at": "2027-01-01T00:10",
+      "text_th": "เปิดสลากจับของขวัญ",
+      "done": false
+     },
+     {
+      "key": "home",
+      "at": "2027-01-01T00:30",
+      "text_th": "กลับบ้านปลอดภัย · เก็บกวาด — เรียกรถ/ค้างคืน ไม่ดื่มแล้วขับ",
+      "done": false
+     }
+    ],
+    "flag": "noise_late"
+   }
+  },
+  {
+   "def": "Timeline",
+   "note": "office evening",
+   "value": {
+    "start": "2026-12-26T17:00",
+    "end": "2026-12-26T21:00",
+    "tasks": [
+     {
+      "key": "invite",
+      "at": "2026-12-19T17:00",
+      "text_th": "ส่งการ์ดเชิญ + ขอ RSVP",
+      "done": false
+     },
+     {
+      "key": "rsvp",
+      "at": "2026-12-23T17:00",
+      "text_th": "ปิด RSVP · สั่งของตกแต่งออนไลน์",
+      "done": false
+     },
+     {
+      "key": "shop",
+      "at": "2026-12-24T17:00",
+      "text_th": "ซื้อของแห้ง/เครื่องดื่ม · ชาร์จไฟ LED",
+      "done": false
+     },
+     {
+      "key": "decorate",
+      "at": "2026-12-25T17:00",
+      "text_th": "ติดธงราว ลูกโป่ง มุมถ่ายรูป (เทปกาว ไม่เจาะผนัง)",
+      "done": false
+     },
+     {
+      "key": "fresh",
+      "at": "2026-12-26T13:00",
+      "text_th": "ซื้อของสด + น้ำแข็ง",
+      "done": false
+     },
+     {
+      "key": "table",
+      "at": "2026-12-26T15:00",
+      "text_th": "จัดโต๊ะบุฟเฟต์ หม้อไฟฟ้า ป้ายแพ้อาหาร",
+      "done": false
+     },
+     {
+      "key": "test",
+      "at": "2026-12-26T16:00",
+      "text_th": "เทสต์ไฟ เพลย์ลิสต์ มือถือฉายเกม",
+      "done": false
+     },
+     {
+      "key": "welcome",
+      "at": "2026-12-26T17:00",
+      "text_th": "ต้อนรับ ถ่ายรูปมุม backdrop",
+      "done": false
+     },
+     {
+      "key": "games",
+      "at": "2026-12-26T18:30",
+      "text_th": "เกมรอบ 1",
+      "done": false
+     },
+     {
+      "key": "gift_swap",
+      "at": "2026-12-26T19:30",
+      "text_th": "เปิดสลากจับของขวัญ",
+      "done": false
+     },
+     {
+      "key": "home",
+      "at": "2026-12-26T21:00",
+      "text_th": "กลับบ้านปลอดภัย · เก็บกวาด",
+      "done": false
+     }
+    ],
+    "flag": null
+   }
+  },
+  {
+   "def": "Timeline",
+   "note": "christmas eve",
+   "value": {
+    "start": "2026-12-24T18:00",
+    "end": "2026-12-24T22:00",
+    "tasks": [
+     {
+      "key": "invite",
+      "at": "2026-12-17T18:00",
+      "text_th": "ส่งการ์ดเชิญ + ขอ RSVP",
+      "done": false
+     },
+     {
+      "key": "rsvp",
+      "at": "2026-12-21T18:00",
+      "text_th": "ปิด RSVP · สั่งของตกแต่งออนไลน์",
+      "done": false
+     },
+     {
+      "key": "shop",
+      "at": "2026-12-22T18:00",
+      "text_th": "ซื้อของแห้ง/เครื่องดื่ม · ชาร์จไฟ LED",
+      "done": false
+     },
+     {
+      "key": "decorate",
+      "at": "2026-12-23T18:00",
+      "text_th": "ติดธงราว ลูกโป่ง มุมถ่ายรูป (เทปกาว ไม่เจาะผนัง)",
+      "done": false
+     },
+     {
+      "key": "fresh",
+      "at": "2026-12-24T14:00",
+      "text_th": "ซื้อของสด + น้ำแข็ง",
+      "done": false
+     },
+     {
+      "key": "table",
+      "at": "2026-12-24T16:00",
+      "text_th": "จัดโต๊ะบุฟเฟต์ หม้อไฟฟ้า ป้ายแพ้อาหาร",
+      "done": false
+     },
+     {
+      "key": "test",
+      "at": "2026-12-24T17:00",
+      "text_th": "เทสต์ไฟ เพลย์ลิสต์ มือถือฉายเกม",
+      "done": false
+     },
+     {
+      "key": "welcome",
+      "at": "2026-12-24T18:00",
+      "text_th": "ต้อนรับ ถ่ายรูปมุม backdrop",
+      "done": false
+     },
+     {
+      "key": "games",
+      "at": "2026-12-24T19:30",
+      "text_th": "เกมรอบ 1",
+      "done": false
+     },
+     {
+      "key": "gift_swap",
+      "at": "2026-12-24T20:30",
+      "text_th": "เปิดสลากจับของขวัญ",
+      "done": false
+     },
+     {
+      "key": "home",
+      "at": "2026-12-24T22:00",
+      "text_th": "กลับบ้านปลอดภัย · เก็บกวาด",
+      "done": false
+     }
+    ],
+    "flag": null
+   }
+  },
+  {
+   "def": "GamePlan",
+   "note": "(12, 'family', 3, 60)",
+   "value": {
+    "players": 12,
+    "mode": "family",
+    "kids": 3,
+    "minutes": 55,
+    "games": [
+     {
+      "key": "balloon_pop",
+      "name_th": "เป่าลูกโป่งชิงคำอวยพร",
+      "minutes": 10,
+      "props_th": "ลูกโป่ง + กระดาษคำอวยพร",
+      "kid_ok": true
+     },
+     {
+      "key": "lucky_draw",
+      "name_th": "จับรางวัลประจำงาน",
+      "minutes": 10,
+      "props_th": "สลากจากแอป",
+      "kid_ok": true
+     },
+     {
+      "key": "musical_chairs",
+      "name_th": "เก้าอี้ดนตรี",
+      "minutes": 10,
+      "props_th": "เก้าอี้/เบาะ จำนวนคน − 1",
+      "kid_ok": true
+     },
+     {
+      "key": "pass_parcel",
+      "name_th": "ส่งกล่องของขวัญตามเพลง",
+      "minutes": 10,
+      "props_th": "กล่องห่อหลายชั้น + เพลง",
+      "kid_ok": true
+     },
+     {
+      "key": "charades",
+      "name_th": "ใบ้คำท่าทาง ละคร/เพลงดัง",
+      "minutes": 15,
+      "props_th": "การ์ดคำจากแอป",
+      "kid_ok": true
+     }
+    ],
+    "drinking_games": false
+   }
+  },
+  {
+   "def": "GamePlan",
+   "note": "(30, 'office', 0, 60)",
+   "value": {
+    "players": 30,
+    "mode": "office",
+    "kids": 0,
+    "minutes": 55,
+    "games": [
+     {
+      "key": "lucky_draw",
+      "name_th": "จับรางวัลประจำงาน",
+      "minutes": 10,
+      "props_th": "สลากจากแอป",
+      "kid_ok": true
+     },
+     {
+      "key": "charades",
+      "name_th": "ใบ้คำท่าทาง ละคร/เพลงดัง",
+      "minutes": 15,
+      "props_th": "การ์ดคำจากแอป",
+      "kid_ok": true
+     },
+     {
+      "key": "who_said",
+      "name_th": "ทายสิใครพูด (คำคมปีนี้ของแต่ละคน)",
+      "minutes": 15,
+      "props_th": "กระดาษโน้ต",
+      "kid_ok": false
+     },
+     {
+      "key": "year_quiz",
+      "name_th": "ควิซย้อนปีนี้ (ข่าว/เพลง/มีม)",
+      "minutes": 15,
+      "props_th": "มือถือทุกคน",
+      "kid_ok": false
+     }
+    ],
+    "drinking_games": false
+   }
+  },
+  {
+   "def": "GamePlan",
+   "note": "(8, 'friends', 0, 45)",
+   "value": {
+    "players": 8,
+    "mode": "friends",
+    "kids": 0,
+    "minutes": 40,
+    "games": [
+     {
+      "key": "balloon_pop",
+      "name_th": "เป่าลูกโป่งชิงคำอวยพร",
+      "minutes": 10,
+      "props_th": "ลูกโป่ง + กระดาษคำอวยพร",
+      "kid_ok": true
+     },
+     {
+      "key": "lucky_draw",
+      "name_th": "จับรางวัลประจำงาน",
+      "minutes": 10,
+      "props_th": "สลากจากแอป",
+      "kid_ok": true
+     },
+     {
+      "key": "musical_chairs",
+      "name_th": "เก้าอี้ดนตรี",
+      "minutes": 10,
+      "props_th": "เก้าอี้/เบาะ จำนวนคน − 1",
+      "kid_ok": true
+     },
+     {
+      "key": "pass_parcel",
+      "name_th": "ส่งกล่องของขวัญตามเพลง",
+      "minutes": 10,
+      "props_th": "กล่องห่อหลายชั้น + เพลง",
+      "kid_ok": true
+     }
+    ],
+    "drinking_games": false
+   }
+  },
+  {
+   "def": "GamePlan",
+   "note": "(5, 'family', 2, 30)",
+   "value": {
+    "players": 5,
+    "mode": "family",
+    "kids": 2,
+    "minutes": 30,
+    "games": [
+     {
+      "key": "balloon_pop",
+      "name_th": "เป่าลูกโป่งชิงคำอวยพร",
+      "minutes": 10,
+      "props_th": "ลูกโป่ง + กระดาษคำอวยพร",
+      "kid_ok": true
+     },
+     {
+      "key": "lucky_draw",
+      "name_th": "จับรางวัลประจำงาน",
+      "minutes": 10,
+      "props_th": "สลากจากแอป",
+      "kid_ok": true
+     },
+     {
+      "key": "pass_parcel",
+      "name_th": "ส่งกล่องของขวัญตามเพลง",
+      "minutes": 10,
+      "props_th": "กล่องห่อหลายชั้น + เพลง",
+      "kid_ok": true
+     }
+    ],
+    "drinking_games": false
+   }
+  },
+  {
+   "def": "GiftSwap",
+   "note": "fixture",
+   "value": {
+    "people": 9,
+    "seed": 2027,
+    "budget_cap": 300,
+    "pairs": [
+     {
+      "giver": "แพร",
+      "receiver": "ต่อ",
+      "code": "ED81"
+     },
+     {
+      "giver": "เอก",
+      "receiver": "จูน",
+      "code": "F65E"
+     },
+     {
+      "giver": "แม่ติ๋ม",
+      "receiver": "แพร",
+      "code": "BEDB"
+     },
+     {
+      "giver": "ป้านวล",
+      "receiver": "เอก",
+      "code": "93A7"
+     },
+     {
+      "giver": "บอส",
+      "receiver": "แม่ติ๋ม",
+      "code": "8BD6"
+     },
+     {
+      "giver": "จูน",
+      "receiver": "ฟ้า",
+      "code": "B110"
+     },
+     {
+      "giver": "น้าเล็ก",
+      "receiver": "บอส",
+      "code": "6D15"
+     },
+     {
+      "giver": "ฟ้า",
+      "receiver": "น้าเล็ก",
+      "code": "FD8D"
+     },
+     {
+      "giver": "ต่อ",
+      "receiver": "ป้านวล",
+      "code": "A468"
+     }
+    ],
+    "secret": true,
+    "rule_th": "ของขวัญไม่เกิน 300 บาท ห้ามบอกใครจนถึงเวลาเปิด"
+   }
+  },
+  {
+   "def": "GiftSwap",
+   "note": "office 5",
+   "value": {
+    "people": 5,
+    "seed": 7,
+    "budget_cap": 200,
+    "pairs": [
+     {
+      "giver": "ต้น",
+      "receiver": "เจ",
+      "code": "DBB9"
+     },
+     {
+      "giver": "ฝน",
+      "receiver": "ต้น",
+      "code": "0996"
+     },
+     {
+      "giver": "บี",
+      "receiver": "นุ่น",
+      "code": "AD63"
+     },
+     {
+      "giver": "นุ่น",
+      "receiver": "ฝน",
+      "code": "9697"
+     },
+     {
+      "giver": "เจ",
+      "receiver": "บี",
+      "code": "9369"
+     }
+    ],
+    "secret": true,
+    "rule_th": "ของขวัญไม่เกิน 200 บาท ห้ามบอกใครจนถึงเวลาเปิด"
+   }
+  },
+  {
+   "def": "Invite",
+   "note": "public",
+   "value": {
+    "host_th": "แพร",
+    "title_th": "ปาร์ตี้ส่งท้ายปีบ้านแพร",
+    "date_th": "31 ธ.ค. 2569",
+    "time_th": "19:00 น.",
+    "theme": "countdown_gold",
+    "dress_th": "ทอง/ดำ/วิบวับ",
+    "place_th": "คอนโดริมน้ำ นนทบุรี",
+    "address_th": null,
+    "address_hidden": true,
+    "rsvp_by": "2026-12-28",
+    "palette": [
+     "#14102B",
+     "#FFC440",
+     "#F5E6B8"
+    ],
+    "watermark": "PartyPop · AI วันละแอป"
+   }
+  },
+  {
+   "def": "Invite",
+   "note": "private",
+   "value": {
+    "host_th": "แพร",
+    "title_th": "ปาร์ตี้ส่งท้ายปีบ้านแพร",
+    "date_th": "31 ธ.ค. 2569",
+    "time_th": "19:00 น.",
+    "theme": "countdown_gold",
+    "dress_th": "ทอง/ดำ/วิบวับ",
+    "place_th": "คอนโดริมน้ำ นนทบุรี",
+    "address_th": "ห้อง 1205",
+    "address_hidden": false,
+    "rsvp_by": "2026-12-28",
+    "palette": [
+     "#14102B",
+     "#FFC440",
+     "#F5E6B8"
+    ],
+    "watermark": "PartyPop · AI วันละแอป"
+   }
+  },
+  {
+   "def": "Invite",
+   "note": "office",
+   "value": {
+    "host_th": "ต้น",
+    "title_th": "ปาร์ตี้ส่งท้ายปีบ้านต้น",
+    "date_th": "26 ธ.ค. 2569",
+    "time_th": "17:00 น.",
+    "theme": "neon_disco",
+    "dress_th": "สีสะท้อนแสง",
+    "place_th": "ห้องประชุมชั้น 8",
+    "address_th": null,
+    "address_hidden": true,
+    "rsvp_by": "2026-12-23",
+    "palette": [
+     "#0B0B1E",
+     "#FF2E97",
+     "#00E5FF"
+    ],
+    "watermark": "PartyPop · AI วันละแอป"
+   }
+  },
+  {
+   "def": "CostSplit",
+   "note": "host pays decor",
+   "value": {
+    "total": 2832,
+    "host_pays": 950,
+    "payers": 9,
+    "kids_free": 3,
+    "each": 210,
+    "collected": 1890,
+    "extra": 8
+   }
+  },
+  {
+   "def": "CostSplit",
+   "note": "all share",
+   "value": {
+    "total": 2832,
+    "host_pays": 0,
+    "payers": 9,
+    "kids_free": 3,
+    "each": 320,
+    "collected": 2880,
+    "extra": 48
+   }
+  },
+  {
+   "def": "Countdown",
+   "note": "2026-12-25",
+   "value": {
+    "date": "2026-12-25",
+    "days_to_new_year": 7,
+    "be_year": 2570,
+    "weekday_th": "วันศุกร์"
+   }
+  },
+  {
+   "def": "Countdown",
+   "note": "2026-12-31",
+   "value": {
+    "date": "2026-12-31",
+    "days_to_new_year": 1,
+    "be_year": 2570,
+    "weekday_th": "วันศุกร์"
+   }
+  },
+  {
+   "def": "Countdown",
+   "note": "2026-11-26",
+   "value": {
+    "date": "2026-11-26",
+    "days_to_new_year": 36,
+    "be_year": 2570,
+    "weekday_th": "วันศุกร์"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "before_after",
+   "value": {
+    "kind": "before_after",
+    "size": "1080x1350",
+    "theme": "countdown_gold",
+    "faces_blurred": true,
+    "address_hidden": true,
+    "watermark": "PartyPop · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "invite",
+   "value": {
+    "kind": "invite",
+    "size": "1080x1350",
+    "theme": "countdown_gold",
+    "faces_blurred": true,
+    "address_hidden": true,
+    "watermark": "PartyPop · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ShareCard",
+   "note": "shopping",
+   "value": {
+    "kind": "shopping",
+    "size": "1080x1350",
+    "theme": "countdown_gold",
+    "faces_blurred": true,
+    "address_hidden": true,
+    "watermark": "PartyPop · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "15",
+   "value": {
+    "seconds": 15,
+    "ratio": "9:16",
+    "bpm": 120,
+    "shots": [
+     {
+      "kind": "hook",
+      "start": 0.0,
+      "end": 1.8,
+      "caption_th": "ห้องเดิม ๆ จะจัดปาร์ตี้ปีใหม่ยังไงดี?"
+     },
+     {
+      "kind": "build",
+      "start": 1.8,
+      "end": 3.6,
+      "caption_th": "สร้างแอปด้วย AI จากแพ็กนี้"
+     },
+     {
+      "kind": "scan",
+      "start": 3.6,
+      "end": 5.7,
+      "caption_th": "ถ่ายห้อง + ใส่จำนวนแขก + งบ"
+     },
+     {
+      "kind": "wow",
+      "start": 5.7,
+      "end": 8.4,
+      "caption_th": "ปุ๊บ! ห้องกลายเป็นปาร์ตี้"
+     },
+     {
+      "kind": "list",
+      "start": 8.4,
+      "end": 10.8,
+      "caption_th": "ลิสต์ของ + เมนู ครบในงบ"
+     },
+     {
+      "kind": "swap",
+      "start": 10.8,
+      "end": 12.9,
+      "caption_th": "จับสลากของขวัญในแอป"
+     },
+     {
+      "kind": "cta",
+      "start": 12.9,
+      "end": 15.0,
+      "caption_th": "คอมเมนต์ PARTY รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "PartyPop · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "20",
+   "value": {
+    "seconds": 20,
+    "ratio": "9:16",
+    "bpm": 120,
+    "shots": [
+     {
+      "kind": "hook",
+      "start": 0.0,
+      "end": 2.4,
+      "caption_th": "ห้องเดิม ๆ จะจัดปาร์ตี้ปีใหม่ยังไงดี?"
+     },
+     {
+      "kind": "build",
+      "start": 2.4,
+      "end": 4.8,
+      "caption_th": "สร้างแอปด้วย AI จากแพ็กนี้"
+     },
+     {
+      "kind": "scan",
+      "start": 4.8,
+      "end": 7.6,
+      "caption_th": "ถ่ายห้อง + ใส่จำนวนแขก + งบ"
+     },
+     {
+      "kind": "wow",
+      "start": 7.6,
+      "end": 11.2,
+      "caption_th": "ปุ๊บ! ห้องกลายเป็นปาร์ตี้"
+     },
+     {
+      "kind": "list",
+      "start": 11.2,
+      "end": 14.4,
+      "caption_th": "ลิสต์ของ + เมนู ครบในงบ"
+     },
+     {
+      "kind": "swap",
+      "start": 14.4,
+      "end": 17.2,
+      "caption_th": "จับสลากของขวัญในแอป"
+     },
+     {
+      "kind": "cta",
+      "start": 17.2,
+      "end": 20.0,
+      "caption_th": "คอมเมนต์ PARTY รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "PartyPop · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "24",
+   "value": {
+    "seconds": 24,
+    "ratio": "9:16",
+    "bpm": 120,
+    "shots": [
+     {
+      "kind": "hook",
+      "start": 0.0,
+      "end": 2.9,
+      "caption_th": "ห้องเดิม ๆ จะจัดปาร์ตี้ปีใหม่ยังไงดี?"
+     },
+     {
+      "kind": "build",
+      "start": 2.9,
+      "end": 5.8,
+      "caption_th": "สร้างแอปด้วย AI จากแพ็กนี้"
+     },
+     {
+      "kind": "scan",
+      "start": 5.8,
+      "end": 9.2,
+      "caption_th": "ถ่ายห้อง + ใส่จำนวนแขก + งบ"
+     },
+     {
+      "kind": "wow",
+      "start": 9.2,
+      "end": 13.5,
+      "caption_th": "ปุ๊บ! ห้องกลายเป็นปาร์ตี้"
+     },
+     {
+      "kind": "list",
+      "start": 13.5,
+      "end": 17.3,
+      "caption_th": "ลิสต์ของ + เมนู ครบในงบ"
+     },
+     {
+      "kind": "swap",
+      "start": 17.3,
+      "end": 20.7,
+      "caption_th": "จับสลากของขวัญในแอป"
+     },
+     {
+      "kind": "cta",
+      "start": 20.7,
+      "end": 24.0,
+      "caption_th": "คอมเมนต์ PARTY รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "PartyPop · AI วันละแอป"
+   }
+  },
+  {
+   "def": "ReelPlan",
+   "note": "30",
+   "value": {
+    "seconds": 30,
+    "ratio": "9:16",
+    "bpm": 120,
+    "shots": [
+     {
+      "kind": "hook",
+      "start": 0.0,
+      "end": 3.6,
+      "caption_th": "ห้องเดิม ๆ จะจัดปาร์ตี้ปีใหม่ยังไงดี?"
+     },
+     {
+      "kind": "build",
+      "start": 3.6,
+      "end": 7.2,
+      "caption_th": "สร้างแอปด้วย AI จากแพ็กนี้"
+     },
+     {
+      "kind": "scan",
+      "start": 7.2,
+      "end": 11.4,
+      "caption_th": "ถ่ายห้อง + ใส่จำนวนแขก + งบ"
+     },
+     {
+      "kind": "wow",
+      "start": 11.4,
+      "end": 16.8,
+      "caption_th": "ปุ๊บ! ห้องกลายเป็นปาร์ตี้"
+     },
+     {
+      "kind": "list",
+      "start": 16.8,
+      "end": 21.6,
+      "caption_th": "ลิสต์ของ + เมนู ครบในงบ"
+     },
+     {
+      "kind": "swap",
+      "start": 21.6,
+      "end": 25.8,
+      "caption_th": "จับสลากของขวัญในแอป"
+     },
+     {
+      "kind": "cta",
+      "start": 25.8,
+      "end": 30.0,
+      "caption_th": "คอมเมนต์ PARTY รับแพ็กฟรี"
+     }
+    ],
+    "watermark": "PartyPop · AI วันละแอป"
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(0,)",
+   "value": {
+    "plan": "free",
+    "renders_per_day": 3,
+    "used": 0,
+    "left": 3,
+    "blocked": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(2,)",
+   "value": {
+    "plan": "free",
+    "renders_per_day": 3,
+    "used": 2,
+    "left": 1,
+    "blocked": false
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(3,)",
+   "value": {
+    "plan": "free",
+    "renders_per_day": 3,
+    "used": 3,
+    "left": 0,
+    "blocked": true
+   }
+  },
+  {
+   "def": "Quota",
+   "note": "(5, 'plus')",
+   "value": {
+    "plan": "plus",
+    "renders_per_day": 30,
+    "used": 5,
+    "left": 25,
+    "blocked": false
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "((), 32)",
+   "value": {
+    "allowed": true,
+    "level": "ok",
+    "flags": [],
+    "messages_th": [
+     "ข้อมูลและรูปห้องเก็บบนเครื่อง การ์ดเชิญแชร์ได้โดยไม่โชว์ที่อยู่ ตัวเลขราคาเป็นค่าประมาณ"
+    ],
+    "share_allowed": true
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(('alcohol_minor',), 32)",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "alcohol_minor"
+    ],
+    "messages_th": [
+     "งานนี้มีผู้เยาว์ ไม่ใส่เครื่องดื่มแอลกอฮอล์ในเมนูของเด็ก และไม่มีเกมดื่ม"
+    ],
+    "share_allowed": false
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "((), 11)",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "minor"
+    ],
+    "messages_th": [
+     "อายุต่ำกว่า 13 ปี ให้ผู้ปกครองช่วยวางแผนงานและเปิด parent mode ก่อนแชร์การ์ดเชิญ"
+    ],
+    "share_allowed": false
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "((), 11, True)",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "minor"
+    ],
+    "messages_th": [
+     "อายุต่ำกว่า 13 ปี ให้ผู้ปกครองช่วยวางแผนงานและเปิด parent mode ก่อนแชร์การ์ดเชิญ"
+    ],
+    "share_allowed": true
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(('drink_drive', 'noise_late'), 32)",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "drink_drive",
+     "noise_late"
+    ],
+    "messages_th": [
+     "ดื่มแล้วไม่ขับ — แอปเพิ่มหัวข้อ 'กลับบ้านปลอดภัย' (เรียกรถ/ค้างคืน/คนขับที่ไม่ดื่ม) ในไทม์ไลน์",
+     "หลังเที่ยงคืนลดเสียงเพลง แจ้งเพื่อนบ้านล่วงหน้า และเคารพกฎอาคาร"
+    ],
+    "share_allowed": true
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(('alcohol_minor', 'drink_drive', 'noise_late'), 32)",
+   "value": {
+    "allowed": false,
+    "level": "stop",
+    "flags": [
+     "alcohol_minor",
+     "drink_drive",
+     "noise_late"
+    ],
+    "messages_th": [
+     "งานนี้มีผู้เยาว์ ไม่ใส่เครื่องดื่มแอลกอฮอล์ในเมนูของเด็ก และไม่มีเกมดื่ม",
+     "ดื่มแล้วไม่ขับ — แอปเพิ่มหัวข้อ 'กลับบ้านปลอดภัย' (เรียกรถ/ค้างคืน/คนขับที่ไม่ดื่ม) ในไทม์ไลน์",
+     "หลังเที่ยงคืนลดเสียงเพลง แจ้งเพื่อนบ้านล่วงหน้า และเคารพกฎอาคาร"
+    ],
+    "share_allowed": false
+   }
+  },
+  {
+   "def": "PrivacyCheck",
+   "note": "(('photo_of_others',), 32)",
+   "value": {
+    "allowed": true,
+    "level": "warn",
+    "flags": [
+     "photo_of_others"
+    ],
+    "messages_th": [
+     "รูปที่มีคนอื่น เบลอหน้าก่อนแชร์ เว้นแต่เขาอนุญาต"
+    ],
+    "share_allowed": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "None",
+   "value": {
+    "flag": null,
+    "level": "ok",
+    "message_th": "ข้อมูลและรูปห้องเก็บบนเครื่อง การ์ดเชิญแชร์ได้โดยไม่โชว์ที่อยู่ ตัวเลขราคาเป็นค่าประมาณ",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "alcohol_minor",
+   "value": {
+    "flag": "alcohol_minor",
+    "level": "stop",
+    "message_th": "งานนี้มีผู้เยาว์ ไม่ใส่เครื่องดื่มแอลกอฮอล์ในเมนูของเด็ก และไม่มีเกมดื่ม",
+    "block": true
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "drink_drive",
+   "value": {
+    "flag": "drink_drive",
+    "level": "warn",
+    "message_th": "ดื่มแล้วไม่ขับ — แอปเพิ่มหัวข้อ 'กลับบ้านปลอดภัย' (เรียกรถ/ค้างคืน/คนขับที่ไม่ดื่ม) ในไทม์ไลน์",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "indoor_fire",
+   "value": {
+    "flag": "indoor_fire",
+    "level": "warn",
+    "message_th": "ห้ามจุดพลุ/ประทัด/เทียนจริงหรือเตาถ่านในห้อง ใช้เทียน LED และหม้อไฟฟ้า เช็กกฎคอนโด/หมู่บ้าน",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "over_capacity",
+   "value": {
+    "flag": "over_capacity",
+    "level": "warn",
+    "message_th": "แขกเกินพื้นที่ เว้นทางเดินถึงประตู ≥ 80 ซม. ลองย้ายโต๊ะ ใช้ระเบียง หรือแบ่งรอบ",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "noise_late",
+   "value": {
+    "flag": "noise_late",
+    "level": "warn",
+    "message_th": "หลังเที่ยงคืนลดเสียงเพลง แจ้งเพื่อนบ้านล่วงหน้า และเคารพกฎอาคาร",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "small_kids_balloons",
+   "value": {
+    "flag": "small_kids_balloons",
+    "level": "warn",
+    "message_th": "มีเด็กเล็กต่ำกว่า 3 ขวบ เก็บลูกโป่งแตก/ชิ้นเล็กให้พ้นมือ ป้องกันสำลัก",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "food_allergy",
+   "value": {
+    "flag": "food_allergy",
+    "level": "warn",
+    "message_th": "มีแขกแพ้อาหาร แยกจาน/ป้ายส่วนผสม (ถั่ว กุ้ง นม) ให้ชัด",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "photo_of_others",
+   "value": {
+    "flag": "photo_of_others",
+    "level": "warn",
+    "message_th": "รูปที่มีคนอื่น เบลอหน้าก่อนแชร์ เว้นแต่เขาอนุญาต",
+    "block": false
+   }
+  },
+  {
+   "def": "SafetyGuard",
+   "note": "minor",
+   "value": {
+    "flag": "minor",
+    "level": "warn",
+    "message_th": "อายุต่ำกว่า 13 ปี ให้ผู้ปกครองช่วยวางแผนงานและเปิด parent mode ก่อนแชร์การ์ดเชิญ",
+    "block": false
+   }
+  }
+ ]
+}
